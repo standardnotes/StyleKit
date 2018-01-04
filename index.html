@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<title>StyleKit</title>
+<script src='dist/compiled.js'></script>
+<link href='dist/stylekit.css' rel='stylesheet'>
+<style>
+  #components {
+    display: flex;
+  }
+  
+  #account-panel {
+    margin: 30px;
+    width: 450px;
+  }
+  
+  #signout-button {
+    text-align: right;
+    display: block;
+  }
+  
+  #modal-panel {
+    margin: 30px;
+    width: 750px;
+  }
+</style>
+</head>
+<body>
+<div id='components'>
+<div class='sn-component'>
+<div class='panel' id='account-panel'>
+<div class='header'>
+<h1 class='title'>Account</h1>
+<a class='close-button'>Close</a>
+</div>
+<div class='content'>
+<div class='section'>
+<h3 class='title'>Passcode Lock</h3>
+<div class='button info'>
+<div class='label'>Add Passcode</div>
+</div>
+<p>Add an app passcode to lock the app and encrypt on-device key storage.</p>
+</div>
+<div class='section'>
+<h3 class='title'>Encryption</h3>
+<h4 class='subtitle'>681/681 notes and tags encrypted</h4>
+<p>
+End-to-end encryption is enabled.
+Your data is encrypted before being synced to your private account.
+</p>
+</div>
+<div class='section'>
+<h3 class='title'>Data Backups</h3>
+<div class='button-group'>
+<div class='button info'>
+<div class='label'>Download Backup</div>
+</div>
+<div class='button info'>
+<div class='label'>Import From Backup</div>
+</div>
+</div>
+<p>
+Notes are downloaded in the Standard File format,
+which allows you to re-import back into this app easily.
+To download as plain text files, choose “Decrypted”.
+</p>
+</div>
+</div>
+<div class='footer'>
+<a class='subtle' id='signout-button'>Sign out and clear local data</a>
+</div>
+</div>
+</div>
+<div class='sn-component'>
+<div class='panel sn-component' id='modal-panel'>
+<div class='header'>
+<h1 class='title'>CloudLink</h1>
+<a class='close-button'>Close</a>
+</div>
+<div class='content'>
+<div class='section'>
+<h2 class='title'>Manage Integrations</h2>
+<p>
+CloudLink enables you to install integrations that allow
+for real-time push of your encrypted data to other cloud providers.
+</p>
+<div class='section'>
+<h3 class='outer-title'>Third Party</h3>
+<div class='box-group'>
+<div class='box info'>
+<div class='label'>Connect Dropbox</div>
+</div>
+<div class='box warning'>
+<div class='label'>Disconnect Google Drive</div>
+</div>
+<div class='box danger'>
+<div class='label'>Connect OneDrive</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

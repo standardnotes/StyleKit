@@ -1,0 +1,100 @@
+.red {
+  color: $danger-color;
+}
+
+.tinted {
+  color: $tint-color;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+a {
+  color: $tint-color;
+  cursor: pointer;
+}
+
+.button-group {
+  .button {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}
+
+.button {
+  display: table;
+  border-radius: 3px;
+  padding: 8px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid;
+
+  .label {
+    font-weight: bold;
+    display: table-row;
+
+    &.large {
+      font-size: 18px;
+    }
+  }
+}
+
+.box-group {
+  .box {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}
+
+.box {
+  @extend .button;
+  padding: 30px 20px;
+}
+
+@mixin ui-rect($color) {
+  background-color: rgba($color, 0.1);
+  border-color: $color;
+  color: $color;
+  &:hover {
+    background-color: lighten($color, 48%);
+    color: lighten($color, 3%);
+  }
+}
+
+.info {
+  @include ui-rect($tint-color);
+}
+
+.warning {
+  @include ui-rect($warning-color);
+}
+
+.danger {
+  @include ui-rect($danger-color);
+}
