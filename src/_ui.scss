@@ -13,21 +13,21 @@ h1, h2, h3, h4 {
 
 h1 {
   font-weight: 500;
-  font-size: 22px;
+  font-size: 1.3rem;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 h3 {
   font-weight: normal;
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 h4 {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 0.85rem;
 }
 
 a {
@@ -35,9 +35,35 @@ a {
   cursor: pointer;
 }
 
+p {
+  margin: 0.5rem 0;
+}
+
 .button-group {
+  &.stretch {
+    display: flex;
+    .button {
+      display: block;
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
   .button {
     display: inline-block;
+    margin-bottom: 5px;
+    &:not(:last-child) {
+      margin-right: 5px;
+      &.featured {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.box-group {
+  .box {
+    display: inline-block;
+    margin-bottom: 5px;
     &:not(:last-child) {
       margin-right: 5px;
     }
@@ -47,34 +73,22 @@ a {
 .button {
   display: table;
   border-radius: 3px;
-  padding: 8px 10px;
-  font-size: 15px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.9rem;
   cursor: pointer;
   text-align: center;
   border: 1px solid;
 
   .label {
     font-weight: bold;
-    display: table-row;
-
-    &.large {
-      font-size: 18px;
-    }
-  }
-}
-
-.box-group {
-  .box {
-    display: inline-block;
-    &:not(:last-child) {
-      margin-right: 5px;
-    }
+    display: block;
+    text-align: center;
   }
 }
 
 .box {
   @extend .button;
-  padding: 30px 20px;
+  padding: 2.5rem 1.5rem;
 }
 
 @mixin ui-rect($color) {
@@ -85,7 +99,20 @@ a {
     background-color: lighten($color, 48%);
     color: lighten($color, 3%);
   }
+
+  &.featured {
+    background-color: $color;
+    border: none;
+    color: white;
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+
+    &:hover {
+      background-color: lighten($color, 8%);
+    }
+  }
 }
+
 
 .info {
   @include ui-rect($tint-color);

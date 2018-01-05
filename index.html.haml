@@ -7,6 +7,10 @@
     %link{:href => "dist/stylekit.css", :rel => "stylesheet"}
     :css
 
+      html {
+        font-size: 14px;
+      }
+
       #components {
         display: flex;
       }
@@ -33,19 +37,29 @@
           .header
             %h1.title Account
             %a.close-button Close
+
           .content
-            .section
+            .panel-section.hero
+              %h1.title Sign in or register to enable sync and end-to-end encryption.
+              .button-group.stretch
+                .button.info.featured
+                  .label Sign In
+                .button.info.featured
+                  .label Register
+              %p
+                Standard Notes is free on every platform, and comes standard with sync and encryption.
+            .panel-section
               %h3.title Passcode Lock
+              %p Add an app passcode to lock the app and encrypt on-device key storage.
               .button.info
                 .label Add Passcode
-              %p Add an app passcode to lock the app and encrypt on-device key storage.
-            .section
+            .panel-section
               %h3.title Encryption
               %h4.subtitle 681/681 notes and tags encrypted
               %p
                 End-to-end encryption is enabled.
                 Your data is encrypted before being synced to your private account.
-            .section
+            .panel-section
               %h3.title Data Backups
               .button-group
                 .button.info
@@ -65,12 +79,12 @@
             %h1.title CloudLink
             %a.close-button Close
           .content
-            .section
+            .panel-section
               %h2.title Manage Integrations
               %p
                 CloudLink enables you to install integrations that allow
                 for real-time push of your encrypted data to other cloud providers.
-              .section
+              .panel-section
                 %h3.outer-title Third Party
                 .box-group
                   .box.info

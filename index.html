@@ -6,6 +6,10 @@
 <script src='dist/compiled.js'></script>
 <link href='dist/stylekit.css' rel='stylesheet'>
 <style>
+  html {
+    font-size: 14px;
+  }
+  
   #components {
     display: flex;
   }
@@ -35,14 +39,28 @@
 <a class='close-button'>Close</a>
 </div>
 <div class='content'>
-<div class='section'>
+<div class='panel-section hero'>
+<h1 class='title'>Sign in or register to enable sync and end-to-end encryption.</h1>
+<div class='button-group stretch'>
+<div class='button info featured'>
+<div class='label'>Sign In</div>
+</div>
+<div class='button info featured'>
+<div class='label'>Register</div>
+</div>
+</div>
+<p>
+Standard Notes is free on every platform, and comes standard with sync and encryption.
+</p>
+</div>
+<div class='panel-section'>
 <h3 class='title'>Passcode Lock</h3>
+<p>Add an app passcode to lock the app and encrypt on-device key storage.</p>
 <div class='button info'>
 <div class='label'>Add Passcode</div>
 </div>
-<p>Add an app passcode to lock the app and encrypt on-device key storage.</p>
 </div>
-<div class='section'>
+<div class='panel-section'>
 <h3 class='title'>Encryption</h3>
 <h4 class='subtitle'>681/681 notes and tags encrypted</h4>
 <p>
@@ -50,7 +68,7 @@ End-to-end encryption is enabled.
 Your data is encrypted before being synced to your private account.
 </p>
 </div>
-<div class='section'>
+<div class='panel-section'>
 <h3 class='title'>Data Backups</h3>
 <div class='button-group'>
 <div class='button info'>
@@ -79,13 +97,13 @@ To download as plain text files, choose “Decrypted”.
 <a class='close-button'>Close</a>
 </div>
 <div class='content'>
-<div class='section'>
+<div class='panel-section'>
 <h2 class='title'>Manage Integrations</h2>
 <p>
 CloudLink enables you to install integrations that allow
 for real-time push of your encrypted data to other cloud providers.
 </p>
-<div class='section'>
+<div class='panel-section'>
 <h3 class='outer-title'>Third Party</h3>
 <div class='box-group'>
 <div class='box info'>

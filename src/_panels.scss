@@ -1,13 +1,16 @@
 .panel {
   box-shadow: 0px 2px 13px #C8C8C8;
-  $h-content-padding: 30px;
-  border-radius: 10px;
+  $h-content-padding: 1.8rem;
+  border-radius: 0.7rem;
+  overflow: hidden;
 
   .header {
     display: flex;
     justify-content: space-between;
-    padding: 20px $h-content-padding;
-    border-bottom: 1px solid #F1F1F1;
+    padding: 1.1rem $h-content-padding;
+    border-bottom: 1px solid #E1E1E1;
+    background-color: #F6F6F6;
+    align-items: center;
     .title {
 
     }
@@ -17,12 +20,13 @@
   }
 
   .footer {
-    padding: 20px $h-content-padding;
+    padding: 1.0rem $h-content-padding;
     border-top: 1px solid #F1F1F1;
   }
 
   .content {
-    padding: 20px $h-content-padding;
+    padding: 1.4rem $h-content-padding;
+    padding-bottom: 0;
 
     p {
       color: #454545;
@@ -33,16 +37,33 @@
       font-weight: bold;
     }
 
-    .section {
-      padding-bottom: 6px;
+    .panel-section {
+      padding-bottom: 1.4rem;
+
+      &.hero {
+        text-align: center;
+        .title {
+          margin-bottom: 1.1rem;
+        }
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
       &:not(:last-child) {
-        margin-bottom: 20px;
+        margin-bottom: 1.5rem;
         border-bottom: 1px solid $section-border-color;
       }
+
+      &:last-child {
+        margin-bottom: 0.5rem;
+      }
+
       .outer-title {
         border-bottom: 1px solid $section-border-color;
-        padding-bottom: 12px;
-        margin-top: 30px;
+        padding-bottom: 0.9rem;
+        margin-top: 2.1rem;
         margin-bottom: 15px;
       }
       .title {
