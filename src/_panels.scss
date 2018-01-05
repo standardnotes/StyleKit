@@ -1,8 +1,8 @@
 .panel {
   box-shadow: 0px 2px 13px #C8C8C8;
-  $h-content-padding: 1.8rem;
+  $h-content-padding: 2.0rem;
   border-radius: 0.7rem;
-  overflow: hidden;
+  overflow: scroll;
 
   .header {
     display: flex;
@@ -22,10 +22,20 @@
   .footer {
     padding: 1.0rem $h-content-padding;
     border-top: 1px solid #F1F1F1;
+
+    .left {
+      text-align: right;
+      display: block;
+    }
+
+    .right {
+      text-align: right;
+      display: block;
+    }
   }
 
   .content {
-    padding: 1.4rem $h-content-padding;
+    padding: 1.9rem $h-content-padding;
     padding-bottom: 0;
 
     p {
@@ -38,7 +48,7 @@
     }
 
     .panel-section {
-      padding-bottom: 1.4rem;
+      padding-bottom: 1.6rem;
 
       &.hero {
         text-align: center;
@@ -74,6 +84,82 @@
         color: $tint-color;
         margin-top: -4px;
       }
+    }
+
+    .panel-section .panel-row {
+      display: block;
+      padding: 0.4rem 0;
+    }
+
+    .panel-form {
+      width: 100%;
+      &.half {
+        width: 50%;
+      }
+
+      .form-submit {
+        margin-top: 0.15rem;
+      }
+    }
+  }
+}
+
+
+.menu-panel {
+  box-shadow: 0px 4px 4px #C8C8C8;
+  border-radius: 0.6rem;
+  overflow: scroll;
+
+  .header {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #E1E1E1;
+    background-color: #F6F6F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .subtitle {
+      font-size: 0.95rem;
+      margin-top: 0.2rem;
+      opacity: 0.6;
+    }
+  }
+
+  .row {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid $section-border-color;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+
+    .column {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      &:not(:first-child) {
+        padding-left: 1.0rem;
+        padding-right: 0.15rem;
+      }
+    }
+
+    .button .label {
+      font-size: 0.8rem;
+      font-weight: normal;
+    }
+
+    &:hover {
+      background-color: lighten($section-border-color, 7%);
+    }
+
+    .label {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .sublabel {
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+      opacity: 0.6;
     }
   }
 }

@@ -27,6 +27,11 @@ h3 {
 
 h4 {
   font-weight: bold;
+  font-size: 0.95rem;
+}
+
+h5 {
+  font-weight: bold;
   font-size: 0.85rem;
 }
 
@@ -37,6 +42,50 @@ a {
 
 p {
   margin: 0.5rem 0;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 0.75rem 0.8rem;
+  margin: 0.30rem 0;
+  border-radius: 3px;
+  border: 1px solid lighten($section-border-color, 1.5%);
+  font-size: 1.1rem;
+  width: 100%;
+  outline: 0;
+
+  &.info {
+    border-color: $tint-color;
+    background-color: transparent;
+  }
+}
+
+label {
+  margin: 0.7rem 0;
+  display: block;
+  font-size: 1.1rem;
+}
+
+label input[type='checkbox'] {
+  width: auto;
+  margin-right: 0.5rem; /* Space after checkbox */
+}
+
+.checkbox-group {
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $placeholder-color;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $placeholder-color;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $placeholder-color;
 }
 
 .button-group {
@@ -95,6 +144,7 @@ p {
   background-color: rgba($color, 0.1);
   border-color: $color;
   color: $color;
+
   &:hover {
     background-color: lighten($color, 48%);
     color: lighten($color, 3%);
@@ -104,7 +154,7 @@ p {
     background-color: $color;
     border: none;
     color: white;
-    padding: 0.75rem 0;
+    padding: 0.75rem 1.25rem;
     font-size: 1.1rem;
 
     &:hover {
@@ -113,15 +163,78 @@ p {
   }
 }
 
-
-.info {
+.button.info, .box.info, .notification.info, .circle.info {
   @include ui-rect($tint-color);
 }
 
-.warning {
+.button.warning, .box.warning, .notification.warning {
   @include ui-rect($warning-color);
 }
 
-.danger {
+.button.danger, .box.danger, .notification.danger {
   @include ui-rect($danger-color);
+}
+
+.notification {
+  @extend .box;
+  padding: 1.1rem 1rem;
+  margin: 1.4rem 0;
+  text-align: left;
+  border-radius: 0.2rem;
+  cursor: default;
+
+  &.stretch {
+    width: 100%;
+  }
+
+  .text {
+    line-height: 1.5rem;
+    font-size: 1.05rem;
+    text-align: left;
+    font-weight: normal;
+  }
+}
+
+.circle {
+  @extend .button;
+
+  padding: 0;
+  border-radius: 50%;
+
+  &.small {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.spinner {
+  border: 1px solid #515263;
+  border-radius: 50%;
+  animation: rotate 0.8s infinite linear;
+  border-right-color: transparent;
+
+  &.small {
+    width: 12px;
+    height: 12px;
+  }
+
+  &.info {
+    border-color: $tint-color;
+    border-right-color: transparent;
+  }
+
+  &.warning {
+    border-color: $warning-color;
+    border-right-color: transparent;
+  }
+
+  &.danger {
+    border-color: $danger-color;
+    border-right-color: transparent;
+  }
+}
+
+@keyframes rotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
 }

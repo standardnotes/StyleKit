@@ -19,14 +19,14 @@
     width: 450px;
   }
   
-  #signout-button {
-    text-align: right;
-    display: block;
-  }
-  
   #modal-panel {
     margin: 30px;
     width: 750px;
+  }
+  
+  #menu-panel {
+    margin: 30px;
+    width: 280px;
   }
 </style>
 </head>
@@ -62,7 +62,7 @@ Standard Notes is free on every platform, and comes standard with sync and encry
 </div>
 <div class='panel-section'>
 <h3 class='title'>Encryption</h3>
-<h4 class='subtitle'>681/681 notes and tags encrypted</h4>
+<h5 class='subtitle'>681/681 notes and tags encrypted</h5>
 <p>
 End-to-end encryption is enabled.
 Your data is encrypted before being synced to your private account.
@@ -86,7 +86,7 @@ To download as plain text files, choose “Decrypted”.
 </div>
 </div>
 <div class='footer'>
-<a class='subtle' id='signout-button'>Sign out and clear local data</a>
+<a class='right'>Sign out and clear local data</a>
 </div>
 </div>
 </div>
@@ -117,6 +117,122 @@ for real-time push of your encrypted data to other cloud providers.
 </div>
 </div>
 </div>
+<div class='panel-section'>
+<h3 class='title'>Options</h3>
+<div class='panel-row'>
+<a>Settings</a>
+</div>
+<div class='panel-row'>
+<a>More Info</a>
+</div>
+<div class='panel-row'>
+<a>Help</a>
+</div>
+</div>
+<div class='panel-section'>
+<h3 class='title'>Update Account</h3>
+<p>Fill out the form below to update your email address and password.</p>
+<div class='panel-row panel-form half'>
+<input placeholder='Email'>
+<input placeholder='Password' type='password'>
+<input placeholder='Confirm Password' type='password'>
+<div class='panel-row button-group stretch form-submit'>
+<div class='button info featured'>
+<div class='label'>Save Changes</div>
+</div>
+</div>
+<label>
+<input type='checkbox'>
+Verify Email
+</label>
+</div>
+</div>
+<div class='panel-section'>
+<h3 class='title'>Notifications</h3>
+<div class='notification info'>
+<h1 class='title'>Registration Successful</h1>
+<div class='text'>Your account is pending activation. Please check your email to complete the process.</div>
+</div>
+<div class='notification warning'>
+<h1 class='title'>Weak Password</h1>
+<div class='text'>The password you are attempting to use is weak. Please try again.</div>
+</div>
+<div class='notification danger'>
+<h1 class='title'>No Password Reset</h1>
+<div class='text'>Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='sn-component'>
+<div class='menu-panel sn-component' id='menu-panel'>
+<div class='section'>
+<div class='header'>
+<h4 class='title'>Sort By</h4>
+</div>
+<div class='row'>
+<div class='label'>Date Added</div>
+</div>
+<div class='row'>
+<div class='column'>
+<div class='label'>Date Modified</div>
+<div class='sublabel'>Most recently modified first</div>
+</div>
+</div>
+<div class='row'>
+<div class='label'>Title</div>
+</div>
+</div>
+<div class='section'>
+<div class='header'>
+<div class='column'>
+<h4 class='title'>Display</h4>
+<div class='subtitle'>Manage what appears in the list</div>
+</div>
+<div class='column'>
+<div class='spinner small'></div>
+</div>
+</div>
+<div class='row'>
+<div class='label'>Archived Notes</div>
+</div>
+<div class='row'>
+<div class='label'>Pinned Notes</div>
+</div>
+<div class='row'>
+<div class='label'>Note Preview</div>
+</div>
+</div>
+</div>
+</div>
+<div class='sn-component'>
+<div class='menu-panel sn-component' id='menu-panel'>
+<div class='section'>
+<div class='header'>
+<h4 class='title'>Editors</h4>
+<div class='spinner small info'></div>
+</div>
+<div class='row'>
+<div class='label'>Plain</div>
+</div>
+<div class='row'>
+<div class='column'>
+<div class='circle small info'></div>
+</div>
+<div class='column'>
+<div class='label'>Advanced Markdown</div>
+<div class='sublabel'>Offline available</div>
+</div>
+<div class='column'>
+<div class='button info'>
+<div class='label'>Default</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='label'>Code Editor</div>
 </div>
 </div>
 </div>

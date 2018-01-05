@@ -20,18 +20,19 @@
         width: 450px;
       }
 
-      #signout-button {
-        text-align: right;
-        display: block;
-      }
-
       #modal-panel {
         margin: 30px;
         width: 750px;
       }
 
+      #menu-panel {
+        margin: 30px;
+        width: 280px;
+      }
+
   %body
     #components
+
       .sn-component
         .panel#account-panel
           .header
@@ -55,7 +56,7 @@
                 .label Add Passcode
             .panel-section
               %h3.title Encryption
-              %h4.subtitle 681/681 notes and tags encrypted
+              %h5.subtitle 681/681 notes and tags encrypted
               %p
                 End-to-end encryption is enabled.
                 Your data is encrypted before being synced to your private account.
@@ -71,7 +72,7 @@
                 which allows you to re-import back into this app easily.
                 To download as plain text files, choose “Decrypted”.
           .footer
-            %a.subtle#signout-button Sign out and clear local data
+            %a.right Sign out and clear local data
 
       .sn-component
         .panel#modal-panel.sn-component
@@ -93,3 +94,86 @@
                     .label Disconnect Google Drive
                   .box.danger
                     .label Connect OneDrive
+
+              .panel-section
+                %h3.title Options
+                .panel-row
+                  %a Settings
+                .panel-row
+                  %a More Info
+                .panel-row
+                  %a Help
+
+              .panel-section
+                %h3.title Update Account
+                %p Fill out the form below to update your email address and password.
+                .panel-row.panel-form.half
+                  %input{"placeholder" => "Email"}
+                  %input{"placeholder" => "Password", "type" => "password"}
+                  %input{"placeholder" => "Confirm Password", "type" => "password"}
+                  .panel-row.button-group.stretch.form-submit
+                    .button.info.featured
+                      .label Save Changes
+                  %label
+                    %input{"type" => "checkbox"}
+                    Verify Email
+
+              .panel-section
+                %h3.title Notifications
+                .notification.info
+                  %h1.title Registration Successful
+                  .text Your account is pending activation. Please check your email to complete the process.
+                .notification.warning
+                  %h1.title Weak Password
+                  .text The password you are attempting to use is weak. Please try again.
+                .notification.danger
+                  %h1.title No Password Reset
+                  .text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
+
+      .sn-component
+        .menu-panel#menu-panel.sn-component
+          .section
+            .header
+              %h4.title Sort By
+            .row
+              .label Date Added
+            .row
+              .column
+                .label Date Modified
+                .sublabel Most recently modified first
+            .row
+              .label Title
+
+          .section
+            .header
+              .column
+                %h4.title Display
+                .subtitle Manage what appears in the list
+              .column
+                .spinner.small
+            .row
+              .label Archived Notes
+            .row
+              .label Pinned Notes
+            .row
+              .label Note Preview
+
+      .sn-component
+        .menu-panel#menu-panel.sn-component
+          .section
+            .header
+              %h4.title Editors
+              .spinner.small.info
+            .row
+              .label Plain
+            .row
+              .column
+                .circle.small.info
+              .column
+                .label Advanced Markdown
+                .sublabel Offline available
+              .column
+                .button.info
+                  .label Default
+            .row
+              .label Code Editor
