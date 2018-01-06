@@ -52,9 +52,6 @@
 
       &.hero {
         text-align: center;
-        .title {
-          margin-bottom: 1.1rem;
-        }
       }
 
       p:last-child {
@@ -76,19 +73,41 @@
         margin-top: 2.1rem;
         margin-bottom: 15px;
       }
+
       .title {
-        margin-bottom: 12px;
+
       }
+
       .subtitle {
         @extend .label;
-        color: $tint-color;
         margin-top: -4px;
+
+        &.subtle {
+          font-weight: normal;
+          opacity: 0.6;
+        }
       }
     }
 
     .panel-section .panel-row {
-      display: block;
-      padding: 0.4rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.4rem;
+
+      &:not(:last-child) {
+        padding-bottom: 0.4rem;
+
+        &.condensed {
+          padding-top: 0.2rem;
+          padding-bottom: 0.2rem;
+        }
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
     }
 
     .panel-form {

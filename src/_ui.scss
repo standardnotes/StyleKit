@@ -39,6 +39,10 @@ a {
   cursor: pointer;
 }
 
+.wrap {
+  word-wrap: break-word;
+}
+
 * {
 
     &.info {
@@ -89,14 +93,19 @@ label input[type='checkbox'], input[type='radio'] {
   margin-right: 0.45rem; /* Space after checkbox */
 }
 
-.input-group {
+.horizontal-group {
   > * {
     display: inline-block;
+    vertical-align: middle;
 
     &:not(:first-child) {
       margin-left: 0.9rem;
     }
   }
+}
+
+.input-group {
+  @extend .horizontal-group;
 }
 
 .checkbox-group {
@@ -119,6 +128,7 @@ label input[type='checkbox'], input[type='radio'] {
 .button-group {
   &.stretch {
     display: flex;
+    width: 100%;
     .button {
       display: block;
       flex-grow: 1;
@@ -127,7 +137,7 @@ label input[type='checkbox'], input[type='radio'] {
   }
   .button {
     display: inline-block;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
     &:not(:last-child) {
       margin-right: 5px;
       &.featured {
@@ -140,7 +150,7 @@ label input[type='checkbox'], input[type='radio'] {
 .box-group {
   .box {
     display: inline-block;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
     &:not(:last-child) {
       margin-right: 5px;
     }

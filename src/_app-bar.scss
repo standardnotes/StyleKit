@@ -24,7 +24,14 @@
       margin-left: 1rem;
     }
 
+    &.border {
+      border-left: 1px solid $section-border-color;
+    }
+
     > .column {
+      height: 100%;
+      display: flex;
+      align-items: center;
       &:not(:first-child) {
         margin-left: 0.5rem;
       }
@@ -35,9 +42,15 @@
     align-items: center;
     justify-content: center;
 
+    &.no-pointer {
+      cursor: default;
+    }
+
     &:hover {
       > .label, > .sublabel, > .column > .label, > .column > .sublabel {
+        &:not(.subtle) {
           color: $tint-color;
+        }
       }
     }
 
@@ -51,6 +64,11 @@
       font-size: 0.9rem;
       font-weight: normal;
       white-space: nowrap;
+    }
+
+    .subtle {
+      font-weight: normal;
+      opacity: 0.6;
     }
   }
 }

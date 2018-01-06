@@ -45,33 +45,44 @@
 
           .content
             .panel-section.hero
-              %h1.title Sign in or register to enable sync and end-to-end encryption.
-              .button-group.stretch
-                .button.info.featured
-                  .label Sign In
-                .button.info.featured
-                  .label Register
-              %p
-                Standard Notes is free on every platform, and comes standard with sync and encryption.
+              .panel-row
+                %h1.title Sign in or register to enable sync and end-to-end encryption.
+              .panel-row
+                .button-group.stretch
+                  .button.info.featured
+                    .label Sign In
+                  .button.info.featured
+                    .label Register
+              .panel-row
+                %p
+                  Standard Notes is free on every platform, and comes standard with sync and encryption.
             .panel-section
-              %h3.title Passcode Lock
-              %p Add an app passcode to lock the app and encrypt on-device key storage.
-              .button.info
-                .label Add Passcode
-            .panel-section
-              %h3.title Encryption
-              %h5.subtitle 681/681 notes and tags encrypted
-              %p
-                End-to-end encryption is enabled.
-                Your data is encrypted before being synced to your private account.
-            .panel-section
-              %h3.title Data Backups
-              .button-group
+              .panel-row
+                %h3.title Passcode Lock
+                .sublabel Passcode Not Set
+              .panel-row
+                %p Add an app passcode to lock the app and encrypt on-device key storage.
+              .panel-row
                 .button.info
-                  .label Download Backup
-                .button.info
-                  .label Import From Backup
-              %p
+                  .label Add Passcode
+            .panel-section
+              .panel-row
+                %h3.title Encryption
+              .panel-row
+                %h5.subtitle.info 681/681 notes and tags encrypted
+              .panel-row
+                %p
+                  End-to-end encryption is enabled.
+                  Your data is encrypted before being synced to your private account.
+            .panel-section
+              %h3.title.panel-row Data Backups
+              .panel-row
+                .button-group
+                  .button.info
+                    .label Download Backup
+                  .button.info
+                    .label Import From Backup
+              %p.panel-row
                 Notes are downloaded in the Standard File format,
                 which allows you to re-import back into this app easily.
                 To download as plain text files, choose “Decrypted”.
@@ -90,17 +101,22 @@
                 CloudLink enables you to install integrations that allow
                 for real-time push of your encrypted data to other cloud providers.
               .panel-section
-                %h3.outer-title Third Party
-                .box-group
-                  .box.info
-                    .label Connect Dropbox
-                  .box.warning
-                    .label Disconnect Google Drive
-                  .box.danger
-                    .label Connect OneDrive
+                %h3.outer-title.panel-row Third Party
+                .panel-row
+                  .box-group
+                    .box.info
+                      .label Connect Dropbox
+                    .box.warning
+                      .label Disconnect Google Drive
+                    .box.danger
+                      .label Connect OneDrive
 
               .panel-section
-                %h3.title Options
+                .horizontal-group
+                  .spinner.small.info
+                  .sublabel Syncing 66/100
+              .panel-section
+                %h3.title.panel-row Options
                 .panel-row
                   %a.info Settings
                 .panel-row
@@ -112,22 +128,23 @@
                 %h3.title Update Account
                 %p Fill out the form below to update your email address and password.
                 .panel-row.panel-form.half
-                  %input{"placeholder" => "Email"}
-                  %input{"placeholder" => "Password", "type" => "password"}
-                  %input{"placeholder" => "Confirm Password", "type" => "password"}
-                  .panel-row.button-group.stretch.form-submit
-                    .button.info.featured
-                      .label Save Changes
-                  %label
-                    %input{"type" => "checkbox"}
-                    Verify Email
-                  .input-group
+                  .column
+                    %input{"placeholder" => "Email"}
+                    %input{"placeholder" => "Password", "type" => "password"}
+                    %input{"placeholder" => "Confirm Password", "type" => "password"}
+                    .panel-row.button-group.stretch.form-submit
+                      .button.info.featured
+                        .label Save Changes
                     %label
-                      %input{"type" => "radio"}
-                      Encrypted
-                    %label
-                      %input{"type" => "radio"}
-                      Decrypted
+                      %input{"type" => "checkbox"}
+                      Verify Email
+                    .input-group
+                      %label
+                        %input{"type" => "radio"}
+                        Encrypted
+                      %label
+                        %input{"type" => "radio"}
+                        Decrypted
 
               .panel-section
                 %h3.title Notifications
@@ -215,12 +232,17 @@
             .label Extensions
           .item
             .label Help
+
+          .item.border
+
+          .item
+            .label ProLink
         .center
           .item
             .label.info Update Available
         .right
-          .item
-            .label Last Refreshed 3s Ago
+          .item.no-pointer
+            .label.subtle Last Refreshed 3s Ago
           .item
             .label
               Refresh
