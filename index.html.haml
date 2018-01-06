@@ -37,7 +37,7 @@
         .panel#account-panel
           .header
             %h1.title Account
-            %a.close-button Close
+            %a.close-button.info Close
 
           .content
             .panel-section.hero
@@ -78,7 +78,7 @@
         .panel#modal-panel.sn-component
           .header
             %h1.title CloudLink
-            %a.close-button Close
+            %a.close-button.info Close
           .content
             .panel-section
               %h2.title Manage Integrations
@@ -98,11 +98,11 @@
               .panel-section
                 %h3.title Options
                 .panel-row
-                  %a Settings
+                  %a.info Settings
                 .panel-row
-                  %a More Info
+                  %a.info More Info
                 .panel-row
-                  %a Help
+                  %a.danger Help
 
               .panel-section
                 %h3.title Update Account
@@ -142,7 +142,10 @@
                 .label Date Modified
                 .sublabel Most recently modified first
             .row
-              .label Title
+              .column
+                .circle.small.success
+              .column
+                .label Title
 
           .section
             .header
@@ -159,7 +162,7 @@
               .label Note Preview
 
       .sn-component
-        .menu-panel#menu-panel.sn-component
+        .menu-panel#menu-panel
           .section
             .header
               %h4.title Editors

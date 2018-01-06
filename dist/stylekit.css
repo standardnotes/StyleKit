@@ -167,8 +167,19 @@
   font-size: 0.85rem;
 }
 .sn-component a {
-  color: #086DD6;
   cursor: pointer;
+}
+.sn-component *.info {
+  color: #086DD6;
+}
+.sn-component *.warning {
+  color: #f6a200;
+}
+.sn-component *.danger {
+  color: #F80324;
+}
+.sn-component *.success {
+  color: #2B9612;
 }
 .sn-component p {
   margin: 0.5rem 0;
@@ -312,6 +323,25 @@
 .sn-component .button.danger.featured:hover, .sn-component .danger.featured.box:hover, .sn-component .danger.featured.notification:hover, .sn-component .danger.featured.circle:hover, .sn-component .box.danger.featured:hover, .sn-component .danger.featured.notification:hover, .sn-component .notification.danger.featured:hover {
   background-color: #fc2744;
 }
+.sn-component .button.success, .sn-component .success.box, .sn-component .success.notification, .sn-component .success.circle, .sn-component .box.success, .sn-component .success.notification, .sn-component .notification.success {
+  background-color: rgba(43, 150, 18, 0.1);
+  border-color: #2B9612;
+  color: #2B9612;
+}
+.sn-component .button.success:hover, .sn-component .success.box:hover, .sn-component .success.notification:hover, .sn-component .success.circle:hover, .sn-component .box.success:hover, .sn-component .success.notification:hover, .sn-component .notification.success:hover {
+  background-color: #b7f5a8;
+  color: #2fa414;
+}
+.sn-component .button.success.featured, .sn-component .success.featured.box, .sn-component .success.featured.notification, .sn-component .success.featured.circle, .sn-component .box.success.featured, .sn-component .success.featured.notification, .sn-component .notification.success.featured {
+  background-color: #2B9612;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.1rem;
+}
+.sn-component .button.success.featured:hover, .sn-component .success.featured.box:hover, .sn-component .success.featured.notification:hover, .sn-component .success.featured.circle:hover, .sn-component .box.success.featured:hover, .sn-component .success.featured.notification:hover, .sn-component .notification.success.featured:hover {
+  background-color: #35ba16;
+}
 .sn-component .notification {
   padding: 1.1rem 1rem;
   margin: 1.4rem 0;
@@ -329,6 +359,8 @@
   font-weight: normal;
 }
 .sn-component .circle {
+  border-color: #DDDDDD;
+  background-color: #F6F6F6;
   padding: 0;
   border-radius: 50%;
 }
@@ -356,6 +388,10 @@
 }
 .sn-component .spinner.danger {
   border-color: #F80324;
+  border-right-color: transparent;
+}
+.sn-component .spinner.success {
+  border-color: #2B9612;
   border-right-color: transparent;
 }
 @keyframes rotate {

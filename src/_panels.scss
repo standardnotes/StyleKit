@@ -9,7 +9,7 @@
     justify-content: space-between;
     padding: 1.1rem $h-content-padding;
     border-bottom: 1px solid #E1E1E1;
-    background-color: #F6F6F6;
+    background-color: $default-color;
     align-items: center;
     .title {
 
@@ -113,7 +113,7 @@
   .header {
     padding: 0.8rem 1rem;
     border-bottom: 1px solid #E1E1E1;
-    background-color: #F6F6F6;
+    background-color: $default-color;
     display: flex;
     justify-content: space-between;
     align-items: center;

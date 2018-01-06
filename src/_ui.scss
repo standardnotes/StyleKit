@@ -36,8 +36,26 @@ h5 {
 }
 
 a {
-  color: $tint-color;
   cursor: pointer;
+}
+
+* {
+
+    &.info {
+      color: $tint-color;
+    }
+
+    &.warning {
+      color: $warning-color;
+    }
+
+    &.danger {
+      color: $danger-color;
+    }
+
+    &.success {
+      color: $success-color;
+    }
 }
 
 p {
@@ -175,6 +193,10 @@ label input[type='checkbox'] {
   @include ui-rect($danger-color);
 }
 
+.button.success, .box.success, .notification.success {
+  @include ui-rect($success-color);
+}
+
 .notification {
   @extend .box;
   padding: 1.1rem 1rem;
@@ -197,6 +219,9 @@ label input[type='checkbox'] {
 
 .circle {
   @extend .button;
+
+  border-color: $section-border-color;
+  background-color: $default-color;
 
   padding: 0;
   border-radius: 50%;
@@ -230,6 +255,11 @@ label input[type='checkbox'] {
 
   &.danger {
     border-color: $danger-color;
+    border-right-color: transparent;
+  }
+
+  &.success {
+    border-color: $success-color;
     border-right-color: transparent;
   }
 }
