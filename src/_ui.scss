@@ -6,7 +6,7 @@
   color: $tint-color;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
 }
@@ -84,9 +84,19 @@ label {
   font-size: 1.1rem;
 }
 
-label input[type='checkbox'] {
+label input[type='checkbox'], input[type='radio'] {
   width: auto;
-  margin-right: 0.5rem; /* Space after checkbox */
+  margin-right: 0.45rem; /* Space after checkbox */
+}
+
+.input-group {
+  > * {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: 0.9rem;
+    }
+  }
 }
 
 .checkbox-group {
@@ -158,15 +168,18 @@ label input[type='checkbox'] {
   padding: 2.5rem 1.5rem;
 }
 
-@mixin ui-rect($color) {
+@mixin ui-rect($color, $hoverable) {
   background-color: rgba($color, 0.1);
   border-color: $color;
   color: $color;
 
-  &:hover {
-    background-color: lighten($color, 48%);
-    color: lighten($color, 3%);
+  @if $hoverable == true {
+    &:hover {
+      background-color: lighten($color, 48%);
+      color: lighten($color, 3%);
+    }
   }
+
 
   &.featured {
     background-color: $color;
@@ -181,24 +194,49 @@ label input[type='checkbox'] {
   }
 }
 
-.button.info, .box.info, .notification.info, .circle.info {
-  @include ui-rect($tint-color);
+.button.default, .box.default, .circle.default {
+  @include ui-rect(darken($default-color, 42%), true);
 }
 
-.button.warning, .box.warning, .notification.warning {
-  @include ui-rect($warning-color);
+.button.info, .box.info, .circle.info {
+  @include ui-rect($tint-color, true);
 }
 
-.button.danger, .box.danger, .notification.danger {
-  @include ui-rect($danger-color);
+.button.warning, .box.warning, .circle.warning {
+  @include ui-rect($warning-color, true);
 }
 
-.button.success, .box.success, .notification.success {
-  @include ui-rect($success-color);
+.button.danger, .box.danger, .circle.danger {
+  @include ui-rect($danger-color, true);
+}
+
+.button.success, .box.success, .circle.success {
+  @include ui-rect($success-color, true);
+}
+
+.notification.default {
+  background-color: $default-color;
+  border-color: darken($section-border-color, 10%);
+}
+
+.notification.info {
+  @include ui-rect($tint-color, false);
+}
+
+.notification.warning {
+  @include ui-rect($warning-color, false);
+}
+
+.notification.danger {
+  @include ui-rect($danger-color, false);
+}
+
+.notification.success {
+  @include ui-rect($success-color, false);
 }
 
 .notification {
-  @extend .box;
+  border: 1px solid;
   padding: 1.1rem 1rem;
   margin: 1.4rem 0;
   text-align: left;
@@ -227,8 +265,8 @@ label input[type='checkbox'] {
   border-radius: 50%;
 
   &.small {
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
   }
 }
 

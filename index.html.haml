@@ -30,6 +30,10 @@
         width: 280px;
       }
 
+      #app-bar {
+        width: 100%;
+      }
+
   %body
     #components
 
@@ -117,9 +121,19 @@
                   %label
                     %input{"type" => "checkbox"}
                     Verify Email
+                  .input-group
+                    %label
+                      %input{"type" => "radio"}
+                      Encrypted
+                    %label
+                      %input{"type" => "radio"}
+                      Decrypted
 
               .panel-section
                 %h3.title Notifications
+                .notification.default
+                  %h1.title Registration Pending
+                  .text Your account is pending activation. Please check your email to complete the process.
                 .notification.info
                   %h1.title Registration Successful
                   .text Your account is pending activation. Please check your email to complete the process.
@@ -143,9 +157,11 @@
                 .sublabel Most recently modified first
             .row
               .column
-                .circle.small.success
-              .column
-                .label Title
+                .left
+                  .column
+                    .circle.small.success
+                  .column
+                    .label Title
 
           .section
             .header
@@ -171,12 +187,40 @@
               .label Plain
             .row
               .column
-                .circle.small.info
-              .column
-                .label Advanced Markdown
-                .sublabel Offline available
+                .left
+                  .column
+                    .circle.small.info
+                  .column
+                    .label Advanced
+                    .row
+                      .column
+                        .sublabel Offline available
               .column
                 .button.info
                   .label Default
             .row
               .label Code Editor
+
+    .sn-component
+      #app-bar.app-bar
+        .left
+          .item
+            .column
+              .circle.small.success
+            .column
+              .label Account
+            .column
+              .sublabel Signed In
+          .item
+            .label Extensions
+          .item
+            .label Help
+        .center
+          .item
+            .label.info Update Available
+        .right
+          .item
+            .label Last Refreshed 3s Ago
+          .item
+            .label
+              Refresh

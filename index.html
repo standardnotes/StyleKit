@@ -28,6 +28,10 @@
     margin: 30px;
     width: 280px;
   }
+  
+  #app-bar {
+    width: 100%;
+  }
 </style>
 </head>
 <body>
@@ -145,10 +149,24 @@ for real-time push of your encrypted data to other cloud providers.
 <input type='checkbox'>
 Verify Email
 </label>
+<div class='input-group'>
+<label>
+<input type='radio'>
+Encrypted
+</label>
+<label>
+<input type='radio'>
+Decrypted
+</label>
+</div>
 </div>
 </div>
 <div class='panel-section'>
 <h3 class='title'>Notifications</h3>
+<div class='notification default'>
+<h1 class='title'>Registration Pending</h1>
+<div class='text'>Your account is pending activation. Please check your email to complete the process.</div>
+</div>
 <div class='notification info'>
 <h1 class='title'>Registration Successful</h1>
 <div class='text'>Your account is pending activation. Please check your email to complete the process.</div>
@@ -183,10 +201,14 @@ Verify Email
 </div>
 <div class='row'>
 <div class='column'>
+<div class='left'>
+<div class='column'>
 <div class='circle small success'></div>
 </div>
 <div class='column'>
 <div class='label'>Title</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -224,11 +246,19 @@ Verify Email
 </div>
 <div class='row'>
 <div class='column'>
+<div class='left'>
+<div class='column'>
 <div class='circle small info'></div>
 </div>
 <div class='column'>
-<div class='label'>Advanced Markdown</div>
+<div class='label'>Advanced</div>
+<div class='row'>
+<div class='column'>
 <div class='sublabel'>Offline available</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class='column'>
 <div class='button info'>
@@ -238,6 +268,44 @@ Verify Email
 </div>
 <div class='row'>
 <div class='label'>Code Editor</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='sn-component'>
+<div class='app-bar' id='app-bar'>
+<div class='left'>
+<div class='item'>
+<div class='column'>
+<div class='circle small success'></div>
+</div>
+<div class='column'>
+<div class='label'>Account</div>
+</div>
+<div class='column'>
+<div class='sublabel'>Signed In</div>
+</div>
+</div>
+<div class='item'>
+<div class='label'>Extensions</div>
+</div>
+<div class='item'>
+<div class='label'>Help</div>
+</div>
+</div>
+<div class='center'>
+<div class='item'>
+<div class='label info'>Update Available</div>
+</div>
+</div>
+<div class='right'>
+<div class='item'>
+<div class='label'>Last Refreshed 3s Ago</div>
+</div>
+<div class='item'>
+<div class='label'>
+Refresh
 </div>
 </div>
 </div>

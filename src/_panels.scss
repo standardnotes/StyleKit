@@ -131,6 +131,7 @@
     cursor: pointer;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
     .column {
       display: flex;
@@ -139,6 +140,16 @@
       &:not(:first-child) {
         padding-left: 1.0rem;
         padding-right: 0.15rem;
+      }
+
+      /* Nested row */
+      .row {
+        padding: 0;
+        border-bottom: none;
+      }
+
+      .left {
+        display: flex;
       }
     }
 
