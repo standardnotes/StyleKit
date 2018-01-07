@@ -3,8 +3,21 @@
   $h-content-padding: 2.0rem;
   border-radius: 0.7rem;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+
+  &.static {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+
+    .content {
+      padding: 0;
+    }
+  }
 
   .header {
+    flex-shrink: 0; /* Don't allow to condense in height */
     display: flex;
     justify-content: space-between;
     padding: 1.1rem $h-content-padding;
@@ -37,6 +50,7 @@
   .content {
     padding: 1.9rem $h-content-padding;
     padding-bottom: 0;
+    flex-grow: 1;
 
     p {
       color: #454545;
@@ -49,6 +63,31 @@
 
     .panel-section {
       padding-bottom: 1.6rem;
+
+      .panel-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0.4rem;
+
+        .panel-column {
+          width: 100%;
+        }
+
+        &:not(:last-child) {
+          padding-bottom: 0.4rem;
+
+          &.condensed {
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+          }
+        }
+
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      }
 
       &.hero {
         text-align: center;
@@ -86,27 +125,6 @@
           font-weight: normal;
           opacity: 0.6;
         }
-      }
-    }
-
-    .panel-section .panel-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 0.4rem;
-
-      &:not(:last-child) {
-        padding-bottom: 0.4rem;
-
-        &.condensed {
-          padding-top: 0.2rem;
-          padding-bottom: 0.2rem;
-        }
-      }
-
-      p {
-        margin: 0;
-        padding: 0;
       }
     }
 
