@@ -8,7 +8,8 @@
   padding-top: $border-width;
 
   .table-item {
-    flex-basis: 45%;
+    flex: 45%;
+     flex-flow: wrap;
     border: 1px solid $section-border-color;
     padding: 1rem;
     margin-left: -$border-width;
