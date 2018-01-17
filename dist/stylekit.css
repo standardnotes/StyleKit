@@ -104,6 +104,9 @@
 .sn-component .panel-row.centered {
   justify-content: center;
 }
+.sn-component .panel-row.justify-left {
+  justify-content: flex-start;
+}
 .sn-component .panel-row.default-padding, .sn-component .panel-row:not(:last-child) {
   padding-bottom: 0.4rem;
 }
