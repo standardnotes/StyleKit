@@ -111,6 +111,9 @@
 .sn-component .panel-row.align-top {
   align-items: flex-start;
 }
+.sn-component .panel-row .panel-column.stretch {
+  width: 100%;
+}
 .sn-component .panel-row.default-padding, .sn-component .panel-row:not(:last-child) {
   padding-bottom: 0.4rem;
 }

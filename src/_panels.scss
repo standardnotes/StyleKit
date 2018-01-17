@@ -144,7 +144,9 @@
   }
 
   .panel-column {
-    // width: 100%;
+    &.stretch {
+      width: 100%;
+    }
   }
 
   &.default-padding, &:not(:last-child) {
