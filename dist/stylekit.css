@@ -460,7 +460,7 @@
 }
 .sn-component .notification.default {
   background-color: #F6F6F6;
-  border-color: #c4c4c4;
+  border-color: #DDDDDD;
 }
 .sn-component .notification.info {
   background-color: rgba(8, 109, 214, 0.1);

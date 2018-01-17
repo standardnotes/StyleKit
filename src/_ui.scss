@@ -260,7 +260,7 @@ a.button {
 
 .notification.default {
   background-color: $default-color;
-  border-color: darken($section-border-color, 10%);
+  border-color: $section-border-color;
 }
 
 .notification.info {
