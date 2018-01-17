@@ -138,6 +138,10 @@
     justify-content: flex-start;
   }
 
+  &.align-top {
+    align-items: flex-start;
+  }
+
   .panel-column {
     // width: 100%;
   }
