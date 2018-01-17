@@ -7,6 +7,7 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid $section-border-color;
+  user-select: none;
 
   &.no-edges {
     border-left: 0;

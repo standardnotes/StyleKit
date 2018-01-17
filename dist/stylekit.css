@@ -104,9 +104,6 @@
 .sn-component .panel-row.centered {
   justify-content: center;
 }
-.sn-component .panel-row .panel-column {
-  width: 100%;
-}
 .sn-component .panel-row.default-padding, .sn-component .panel-row:not(:last-child) {
   padding-bottom: 0.4rem;
 }
@@ -135,6 +132,7 @@
   box-shadow: 0px 4px 4px #C8C8C8;
   border-radius: 0.6rem;
   overflow: scroll;
+  user-select: none;
 }
 .sn-component .menu-panel .header {
   padding: 0.8rem 1rem;
@@ -590,6 +588,7 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid #DDDDDD;
+  user-select: none;
 }
 .sn-component .app-bar.no-edges {
   border-left: 0;

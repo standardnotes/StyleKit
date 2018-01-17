@@ -135,7 +135,7 @@
   }
 
   .panel-column {
-    width: 100%;
+    // width: 100%;
   }
 
   &.default-padding, &:not(:last-child) {
@@ -175,6 +175,7 @@
   box-shadow: 0px 4px 4px #C8C8C8;
   border-radius: 0.6rem;
   overflow: scroll;
+  user-select: none;
 
   .header {
     padding: 0.8rem 1rem;
