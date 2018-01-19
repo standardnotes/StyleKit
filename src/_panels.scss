@@ -209,25 +209,44 @@
 
   .row {
     padding: 1rem 1rem;
-    border-bottom: 1px solid $section-border-color;
     cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid $section-border-color;
+
+    &:hover {
+      background-color: lighten($section-border-color, 7%);
+    }
 
     .column {
       display: flex;
       justify-content: center;
       flex-direction: column;
+
       &:not(:first-child) {
         padding-left: 1.0rem;
         padding-right: 0.15rem;
       }
 
+      &.stretch {
+        width: 100%;
+      }
+
+      .subrows {
+        margin-top: 0.2rem;
+      }
+
       /* Nested row */
-      .row {
-        padding: 0;
-        border-bottom: none;
+      .row, .subrow {
+        &:first-child {
+          margin-top: 10px;
+        }
+        border: 1px solid $section-border-color;
+        margin-top: -1px;
+        &:hover {
+          background-color: lighten($section-border-color, 10%);
+        }
       }
 
       .left {
@@ -238,10 +257,6 @@
     .button .label {
       font-size: 0.8rem;
       font-weight: normal;
-    }
-
-    &:hover {
-      background-color: lighten($section-border-color, 7%);
     }
 
     .label {

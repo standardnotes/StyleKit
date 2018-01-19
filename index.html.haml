@@ -3,7 +3,6 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title StyleKit
-    %script{:src => "dist/compiled.js"}
     %link{:href => "dist/stylekit.css", :rel => "stylesheet"}
     :css
 
@@ -240,9 +239,18 @@
             .row
               .label Archived Notes
             .row
-              .label Pinned Notes
+              .column.stretch
+                .label Pinned Notes
+                .subrows
+                  .row.subrow
+                    .label Subrow 1
+                  .row.subrow
+                    .label Subrow 2
             .row
-              .label Note Preview
+              .column
+                .label Note Preview
+              .column
+                .spinner.small
 
       .sn-component
         .menu-panel#menu-panel
@@ -259,9 +267,7 @@
                     .circle.small.info
                   .column
                     .label Advanced
-                    .row
-                      .column
-                        .sublabel Offline available
+                    .sublabel Offline available
               .column
                 .button.info
                   .label Default

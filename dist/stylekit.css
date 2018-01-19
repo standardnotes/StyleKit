@@ -161,11 +161,14 @@
 }
 .sn-component .menu-panel .row {
   padding: 1rem 1rem;
-  border-bottom: 1px solid #DDDDDD;
   cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 1px solid #DDDDDD;
+}
+.sn-component .menu-panel .row:hover {
+  background-color: #efefef;
 }
 .sn-component .menu-panel .row .column {
   display: flex;
@@ -177,9 +180,21 @@
   padding-left: 1.0rem;
   padding-right: 0.15rem;
 }
-.sn-component .menu-panel .row .column .row {
-  padding: 0;
-  border-bottom: none;
+.sn-component .menu-panel .row .column.stretch {
+  width: 100%;
+}
+.sn-component .menu-panel .row .column .subrows {
+  margin-top: 0.2rem;
+}
+.sn-component .menu-panel .row .column .row, .sn-component .menu-panel .row .column .subrow {
+  border: 1px solid #DDDDDD;
+  margin-top: -1px;
+}
+.sn-component .menu-panel .row .column .row:first-child, .sn-component .menu-panel .row .column .subrow:first-child {
+  margin-top: 10px;
+}
+.sn-component .menu-panel .row .column .row:hover, .sn-component .menu-panel .row .column .subrow:hover {
+  background-color: #f7f7f7;
 }
 .sn-component .menu-panel .row .column .left {
   display: flex;
@@ -187,9 +202,6 @@
 .sn-component .menu-panel .row .button .label, .sn-component .menu-panel .row .box .label, .sn-component .menu-panel .row .circle .label, .sn-component .menu-panel .row .button .panel-section .subtitle, .sn-component .panel-section .menu-panel .row .button .subtitle, .sn-component .menu-panel .row .box .panel-section .subtitle, .sn-component .panel-section .menu-panel .row .box .subtitle, .sn-component .menu-panel .row .circle .panel-section .subtitle, .sn-component .panel-section .menu-panel .row .circle .subtitle {
   font-size: 0.8rem;
   font-weight: normal;
-}
-.sn-component .menu-panel .row:hover {
-  background-color: #efefef;
 }
 .sn-component .menu-panel .row .label, .sn-component .menu-panel .row .panel-section .subtitle, .sn-component .panel-section .menu-panel .row .subtitle {
   font-size: 1rem;
