@@ -184,14 +184,11 @@
   width: 100%;
 }
 .sn-component .menu-panel .row .column .subrows {
-  margin-top: 0.2rem;
+  margin-top: 1rem;
 }
 .sn-component .menu-panel .row .column .row, .sn-component .menu-panel .row .column .subrow {
   border: 1px solid #DDDDDD;
   margin-top: -1px;
-}
-.sn-component .menu-panel .row .column .row:first-child, .sn-component .menu-panel .row .column .subrow:first-child {
-  margin-top: 10px;
 }
 .sn-component .menu-panel .row .column .row:hover, .sn-component .menu-panel .row .column .subrow:hover {
   background-color: #f7f7f7;

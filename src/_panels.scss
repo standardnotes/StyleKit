@@ -234,14 +234,11 @@
       }
 
       .subrows {
-        margin-top: 0.2rem;
+        margin-top: 1rem;
       }
 
       /* Nested row */
       .row, .subrow {
-        &:first-child {
-          margin-top: 10px;
-        }
         border: 1px solid $section-border-color;
         margin-top: -1px;
         &:hover {
