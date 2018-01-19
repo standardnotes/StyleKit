@@ -104,6 +104,9 @@
 .sn-component .panel-row.centered {
   justify-content: center;
 }
+.sn-component .panel-row.justify-right {
+  justify-content: flex-end;
+}
 .sn-component .panel-row.justify-left {
   justify-content: flex-start;
 }

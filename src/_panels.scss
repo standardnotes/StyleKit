@@ -135,6 +135,10 @@
     justify-content: center;
   }
 
+  &.justify-right {
+    justify-content: flex-end;
+  }
+
   &.justify-left {
     justify-content: flex-start;
   }
