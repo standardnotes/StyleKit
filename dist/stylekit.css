@@ -8,7 +8,6 @@
   border-radius: 0.7rem;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 .sn-component .panel a:hover {
   text-decoration: underline;

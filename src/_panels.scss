@@ -4,7 +4,7 @@
   border-radius: 0.7rem;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  // overflow: hidden; Removing hidden to allow for .footer to scroll as well. Not sure why I added this yet.
 
   a {
     &:hover {
