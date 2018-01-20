@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   overflow: auto;
+  flex-grow: 1;
 }
 .sn-component .panel a:hover {
   text-decoration: underline;
@@ -51,7 +52,7 @@
   overflow: scroll;
   height: 100%;
 }
-.sn-component .panel .content p {
+.sn-component .panel .content p, .sn-component .panel .content li {
   color: #454545;
   line-height: 1.3;
 }

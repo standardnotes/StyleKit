@@ -4,7 +4,8 @@
   border-radius: 0.7rem;
   display: flex;
   flex-direction: column;
-  overflow: auto; // to hide border-radius 
+  overflow: auto; // to hide border-radius
+  flex-grow: 1;
 
   a {
     &:hover {
@@ -61,7 +62,7 @@
     overflow: scroll;
     height: 100%;
 
-    p {
+    p, li {
       color: #454545;
       line-height: 1.3;
     }
