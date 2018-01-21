@@ -690,6 +690,9 @@
 .sn-component .panel-table .table-item .item-column {
   align-items: center;
 }
+.sn-component .panel-table .table-item .item-column.stretch {
+  width: 100%;
+}
 .sn-component .panel-table .table-item .item-column:not(:first-child) {
   padding-left: 0.75rem;
 }
