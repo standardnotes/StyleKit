@@ -6,6 +6,10 @@
   color: $tint-color;
 }
 
+.selectable {
+  user-select: inherit !important;
+}
+
 h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
@@ -72,8 +76,8 @@ a {
 }
 
 .center-text {
-  text-align: center;
-  justify-content: center;
+  text-align: center !important;
+  justify-content: center !important;
 }
 
 p {
