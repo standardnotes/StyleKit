@@ -1,6 +1,6 @@
 {
   "name": "sn-stylekit",
-  "version": "1.0.1197",
+  "version": "1.0.1198",
   "main": "dist/dist.css",
   "devDependencies": {
     "grunt": "^1.0.1",

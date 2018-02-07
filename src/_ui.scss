@@ -7,7 +7,7 @@
 }
 
 .selectable {
-  user-select: inherit !important;
+  user-select: text !important;
 }
 
 h1, h2, h3, h4, h5 {
@@ -116,6 +116,7 @@ label {
 label input[type='checkbox'], input[type='radio'] {
   width: auto;
   margin-right: 0.45rem; /* Space after checkbox */
+  vertical-align: middle;
 }
 
 .horizontal-group {

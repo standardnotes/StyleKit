@@ -222,7 +222,7 @@
   color: #086DD6;
 }
 .sn-component .selectable {
-  user-select: inherit !important;
+  user-select: text !important;
 }
 .sn-component h1, .sn-component h2, .sn-component h3, .sn-component h4, .sn-component h5 {
   margin: 0;
@@ -308,6 +308,7 @@
   width: auto;
   margin-right: 0.45rem;
   /* Space after checkbox */
+  vertical-align: middle;
 }
 .sn-component .horizontal-group > *, .sn-component .input-group > * {
   display: inline-block;
