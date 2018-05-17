@@ -48,6 +48,10 @@ h5 {
 
 a {
   cursor: pointer;
+
+  &.disabled {
+    color: $section-border-color;
+  }
 }
 
 .wrap {
@@ -170,6 +174,7 @@ label input[type='checkbox'], input[type='radio'] {
   }
   .button {
     display: inline-block;
+    vertical-align: middle;
     // margin-bottom: 5px;
     &:not(:last-child) {
       margin-right: 5px;

@@ -257,6 +257,9 @@
 .sn-component a {
   cursor: pointer;
 }
+.sn-component a.disabled {
+  color: #DDDDDD;
+}
 .sn-component .wrap {
   word-wrap: break-word;
 }
@@ -350,6 +353,7 @@
 }
 .sn-component .button-group .button, .sn-component .button-group .box, .sn-component .button-group .circle {
   display: inline-block;
+  vertical-align: middle;
 }
 .sn-component .button-group .button:not(:last-child), .sn-component .button-group .box:not(:last-child), .sn-component .button-group .circle:not(:last-child) {
   margin-right: 5px;
