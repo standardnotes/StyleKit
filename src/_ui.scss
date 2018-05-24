@@ -76,6 +76,22 @@ a {
       color: $success-color;
     }
 
+    &.info-i {
+      color: $tint-color !important;
+    }
+
+    &.warning-i {
+      color: $warning-color !important;
+    }
+
+    &.danger-i {
+      color: $danger-color !important;
+    }
+
+    &.success-i {
+      color: $success-color !important;
+    }
+
     &.clear {
       background-color: transparent;
       border: none;

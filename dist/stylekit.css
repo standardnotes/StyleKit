@@ -275,6 +275,18 @@
 .sn-component *.success {
   color: #2B9612;
 }
+.sn-component *.info-i {
+  color: #086DD6 !important;
+}
+.sn-component *.warning-i {
+  color: #f6a200 !important;
+}
+.sn-component *.danger-i {
+  color: #F80324 !important;
+}
+.sn-component *.success-i {
+  color: #2B9612 !important;
+}
 .sn-component *.clear {
   background-color: transparent;
   border: none;
