@@ -36,14 +36,8 @@
   padding: 1rem 2rem;
   border-top: 1px solid #E1E1E1;
   box-sizing: border-box;
-}
-.sn-component .panel .footer .left, .sn-component .panel .panel-footer .left {
-  text-align: right;
-  display: block;
-}
-.sn-component .panel .footer .right, .sn-component .panel .panel-footer .right {
-  text-align: right;
-  display: block;
+  display: flex;
+  justify-content: space-between;
 }
 .sn-component .panel .content {
   padding: 1.6rem 2rem;

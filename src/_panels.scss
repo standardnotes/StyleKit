@@ -43,15 +43,15 @@
     padding: 1.0rem $h-content-padding;
     border-top: 1px solid $header-border-color;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
 
     .left {
-      text-align: right;
-      display: block;
+
     }
 
     .right {
-      text-align: right;
-      display: block;
+
     }
   }
 
