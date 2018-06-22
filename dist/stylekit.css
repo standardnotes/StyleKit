@@ -373,6 +373,27 @@
 .sn-component .button-group .button:not(:last-child).featured, .sn-component .button-group .box:not(:last-child).featured, .sn-component .button-group .circle:not(:last-child).featured {
   margin-right: 8px;
 }
+.sn-component .segmented-buttons {
+  display: flex;
+  flex-direction: row;
+}
+.sn-component .segmented-buttons .button, .sn-component .segmented-buttons .box, .sn-component .segmented-buttons .circle {
+  border-radius: 0;
+  white-space: nowrap;
+  margin: 0;
+}
+.sn-component .segmented-buttons .button:not(:last-child), .sn-component .segmented-buttons .box:not(:last-child), .sn-component .segmented-buttons .circle:not(:last-child) {
+  border-right: none;
+}
+.sn-component .segmented-buttons .button:first-child, .sn-component .segmented-buttons .box:first-child, .sn-component .segmented-buttons .circle:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-right: none;
+}
+.sn-component .segmented-buttons .button:last-child, .sn-component .segmented-buttons .box:last-child, .sn-component .segmented-buttons .circle:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
 .sn-component .box-group .box {
   display: inline-block;
 }

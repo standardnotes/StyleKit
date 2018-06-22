@@ -201,6 +201,35 @@ label input[type='checkbox'], input[type='radio'] {
   }
 }
 
+
+$button-border-radius: 3px;
+
+.segmented-buttons {
+  display: flex;
+  flex-direction: row;
+
+  .button {
+    border-radius: 0;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+
+    &:first-child {
+      border-top-left-radius: $button-border-radius;
+      border-bottom-left-radius: $button-border-radius;
+      border-right: none;
+    }
+
+    &:last-child {
+      border-top-right-radius: $button-border-radius;
+      border-bottom-right-radius: $button-border-radius;
+    }
+    margin: 0;
+  }
+}
+
 .box-group {
   .box {
     display: inline-block;
@@ -217,7 +246,7 @@ a.button {
 
 .button {
   display: table;
-  border-radius: 3px;
+  border-radius: $button-border-radius;
   padding: 0.5rem 0.7rem;
   font-size: 0.9rem;
   cursor: pointer;
