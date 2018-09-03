@@ -430,7 +430,7 @@
   color: #8b8b8b;
 }
 .sn-component .button.default:hover, .sn-component .default.box:hover, .sn-component .default.circle:hover, .sn-component .box.default:hover, .sn-component .circle.default:hover {
-  background-color: white;
+  background-color: #f9f9f9;
   color: #939393;
 }
 .sn-component .button.default.featured, .sn-component .default.featured.box, .sn-component .default.featured.circle, .sn-component .box.default.featured, .sn-component .circle.default.featured {
