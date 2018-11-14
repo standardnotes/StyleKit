@@ -64,6 +64,18 @@
               .panel-row
                 .button.info
                   .label Add Passcode
+              .panel-row
+                %div
+                  .horizontal-group
+                    %h4 Autolock
+                    .vertical-rule
+                    %a.info None
+                    %a.info.boxed 1 Min
+                    %a.info 5 Min
+                    %a.info 1 hour
+                  .text-content
+                    %p The autolock timer begins when the window or tab loses focus.
+
             .panel-section
               .panel-row
                 %h3.title Encryption
@@ -81,10 +93,17 @@
                     .label Download Backup
                   .button.info
                     .label Import From Backup
-              %p.panel-row
-                Notes are downloaded in the Standard File format,
-                which allows you to re-import back into this app easily.
-                To download as plain text files, choose “Decrypted”.
+              .panel-row
+                .panel-section.no-bottom-pad
+                  .text-content
+                    %p
+                      Notes are downloaded in the Standard File format,
+                      which allows you to re-import back into this app easily.
+                      To download as plain text files, choose “Decrypted”.
+                    %p
+                      Notes are downloaded in the Standard File format,
+                      which allows you to re-import back into this app easily.
+                      To download as plain text files, choose “Decrypted”.
           .footer
             %a.right Sign out and clear local data
 

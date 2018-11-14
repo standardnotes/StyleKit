@@ -52,6 +52,33 @@ a {
   &.disabled {
     color: $section-border-color;
   }
+
+  &.boxed {
+    border-radius: 3px;
+    color: white;
+    padding: 0.4rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.info {
+      background-color: $tint-color;
+    }
+
+    &.warning {
+      background-color: $warning-color;
+    }
+
+    &.danger {
+      background-color: $danger-color;
+    }
+
+    &.success {
+      background-color: $success-color;
+    }
+
+  }
 }
 
 .wrap {

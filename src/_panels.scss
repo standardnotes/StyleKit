@@ -128,6 +128,16 @@
       opacity: 0.6;
     }
   }
+
+  .text-content {
+    p {
+      margin-bottom: 1rem;
+    }
+
+    p:first-child {
+      margin-top: 0.3rem;
+    }
+  }
 }
 
 .panel-row {
@@ -171,6 +181,12 @@
     margin: 0;
     padding: 0;
   }
+}
+
+.vertical-rule {
+  background-color: $section-border-color;
+  height: 1.5rem;
+  width: 1px;
 }
 
 .panel-form {

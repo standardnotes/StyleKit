@@ -99,6 +99,12 @@
   font-weight: normal;
   opacity: 0.6;
 }
+.sn-component .panel-section .text-content p {
+  margin-bottom: 1rem;
+}
+.sn-component .panel-section .text-content p:first-child {
+  margin-top: 0.3rem;
+}
 .sn-component .panel-row {
   display: flex;
   justify-content: space-between;
@@ -130,6 +136,11 @@
 .sn-component .panel-row p {
   margin: 0;
   padding: 0;
+}
+.sn-component .vertical-rule {
+  background-color: #DDDDDD;
+  height: 1.5rem;
+  width: 1px;
 }
 .sn-component .panel-form {
   width: 100%;
@@ -259,6 +270,26 @@
 }
 .sn-component a.disabled {
   color: #DDDDDD;
+}
+.sn-component a.boxed {
+  border-radius: 3px;
+  color: white;
+  padding: 0.4rem;
+}
+.sn-component a.boxed:hover {
+  text-decoration: none;
+}
+.sn-component a.boxed.info {
+  background-color: #086DD6;
+}
+.sn-component a.boxed.warning {
+  background-color: #f6a200;
+}
+.sn-component a.boxed.danger {
+  background-color: #F80324;
+}
+.sn-component a.boxed.success {
+  background-color: #2B9612;
 }
 .sn-component .wrap {
   word-wrap: break-word;
