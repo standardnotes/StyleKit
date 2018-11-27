@@ -46,6 +46,18 @@ h5 {
   font-size: 0.85rem;
 }
 
+.font-small {
+  font-size: var(--sn-stylekit-font-size-small);
+}
+
+.font-normal {
+  font-size: var(--sn-stylekit-font-size-normal);
+}
+
+.font-large {
+  font-size: var(--sn-stylekit-font-size-large);
+}
+
 a {
   cursor: pointer;
 

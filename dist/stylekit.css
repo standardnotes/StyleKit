@@ -1,3 +1,9 @@
+:root {
+  --sn-stylekit-font-size-small: 0.9rem;
+  --sn-stylekit-font-size-normal: 1.0rem;
+  --sn-stylekit-font-size-large: 1.2rem;
+}
+
 .sn-component {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -264,6 +270,15 @@
 .sn-component h5 {
   font-weight: bold;
   font-size: 0.85rem;
+}
+.sn-component .font-small {
+  font-size: var(--sn-stylekit-font-size-small);
+}
+.sn-component .font-normal {
+  font-size: var(--sn-stylekit-font-size-normal);
+}
+.sn-component .font-large {
+  font-size: var(--sn-stylekit-font-size-large);
 }
 .sn-component a {
   cursor: pointer;

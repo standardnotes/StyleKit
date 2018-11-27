@@ -1,3 +1,9 @@
+:root {
+  --sn-stylekit-font-size-small: 0.9rem;
+  --sn-stylekit-font-size-normal: 1.0rem;
+  --sn-stylekit-font-size-large: 1.2rem;
+}
+
 .sn-component {
   @import "vars";
   @import "panels";
