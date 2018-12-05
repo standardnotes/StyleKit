@@ -1,11 +1,17 @@
+@import "vars";
+
 :root {
   --sn-stylekit-font-size-small: 0.9rem;
   --sn-stylekit-font-size-normal: 1.0rem;
   --sn-stylekit-font-size-large: 1.2rem;
+  --sn-component-background-color: #F6F6F6;
+  --sn-component-foreground-color: black;
+  --sn-component-foreground-highlight-color: #086DD6;
+  --sn-component-outer-border-color: #DDDDDD;
+  --sn-component-inner-border-color: #DDDDDD;
 }
 
 .sn-component {
-  @import "vars";
   @import "panels";
   @import "ui";
   @import "app-bar";
