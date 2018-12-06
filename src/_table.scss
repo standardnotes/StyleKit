@@ -1,4 +1,4 @@
-.panel-table {
+.sk-panel-table {
 
   $border-width: 1px;
 
@@ -7,7 +7,7 @@
   padding-left: $border-width;
   padding-top: $border-width;
 
-  .table-item {
+  .sk-panel-table-item {
     flex: 45%;
      flex-flow: wrap;
     border: 1px solid $section-border-color;
@@ -23,12 +23,12 @@
       margin-bottom: 1rem;
     }
 
-    .item-content {
+    .sk-panel-table-item-content {
       display: flex;
       flex-direction: row;
     }
 
-    .item-column {
+    .sk-panel-table-item-column {
       align-items: center;
 
       &.stretch {
@@ -48,7 +48,7 @@
       }
     }
 
-    .item-footer {
+    .sk-panel-table-item-footer {
        margin-top: 1.25rem;
     }
 

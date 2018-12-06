@@ -13,52 +13,54 @@
   -webkit-user-select: text !important;
 }
 
-h1, h2, h3, h4, h5 {
+.sk-h1, .sk-h2, .sk-h3, .sk-h4, .sk-h5 {
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 
-h1 {
+.sk-h1 {
   font-weight: 500;
   font-size: 1.3rem;
   line-height: 1.9rem;
 }
 
-h2 {
+.sk-h2 {
   font-size: 1.2rem;
   line-height: 1.8rem;
 }
 
-h3 {
-  font-weight: normal;
-  font-size: 1.2rem;
+.sk-h3 {
+  font-size: 1.1rem;
   line-height: 1.7rem;
 }
 
-h4 {
-  font-weight: bold;
+.sk-h4 {
   font-size: 0.95rem;
   line-height: 1.4rem;
 }
 
-h5 {
-  font-weight: bold;
+.sk-h5 {
   font-size: 0.85rem;
 }
 
-.font-small {
+.sk-bold {
+  font-weight: bold;
+}
+
+.sk-font-small {
   font-size: var(--sn-stylekit-font-size-small);
 }
 
-.font-normal {
+.sk-font-normal {
   font-size: var(--sn-stylekit-font-size-normal);
 }
 
-.font-large {
+.sk-font-large {
   font-size: var(--sn-stylekit-font-size-large);
 }
 
-a {
+a.sk-a {
   cursor: pointer;
 
   &.disabled {
@@ -142,12 +144,11 @@ a {
   justify-content: center !important;
 }
 
-p {
+p.sk-p {
   margin: 0.5rem 0;
 }
 
-
-input {
+input.sk-input {
   box-sizing: border-box;
   padding: 0.75rem 0.8rem;
   margin: 0.30rem 0;
@@ -157,6 +158,11 @@ input {
   width: 100%;
   outline: 0;
   resize: none;
+
+  &.clear {
+    background-color: transparent;
+    border: none;
+  }
 
   &.info {
     border-color: $tint-color;
@@ -169,19 +175,26 @@ input {
   }
 }
 
-label {
-  margin: 0.7rem 0;
-  display: block;
-  font-size: 1.1rem;
+.sk-label {
+  font-weight: bold;
+
+  &.no-bold {
+    font-weight: normal;
+  }
 }
 
-label input[type='checkbox'], input[type='radio'] {
+label.sk-label {
+  margin: 0.7rem 0;
+  display: block;
+}
+
+label.sk-label input[type='checkbox'], input[type='radio'] {
   width: auto;
   margin-right: 0.45rem; /* Space after checkbox */
   vertical-align: middle;
 }
 
-.horizontal-group {
+.sk-horizontal-group {
   > * {
     display: inline-block;
     vertical-align: middle;
@@ -192,15 +205,15 @@ label input[type='checkbox'], input[type='radio'] {
   }
 }
 
-.border-bottom {
+.sk-border-bottom {
   border-bottom: 1px solid $section-border-color;
 }
 
-.input-group {
-  @extend .horizontal-group;
+.sk-input-group {
+  @extend .sk-horizontal-group;
 }
 
-.checkbox-group {
+.sk-checkbox-group {
   padding-top: 0.5rem;
   padding-bottom: 0.3rem;
 }
@@ -217,17 +230,17 @@ label input[type='checkbox'], input[type='radio'] {
   color: $placeholder-color;
 }
 
-.button-group {
+.sk-button-group {
   &.stretch {
     display: flex;
     width: 100%;
-    .button {
+    .sk-button {
       display: block;
       flex-grow: 1;
       text-align: center;
     }
   }
-  .button {
+  .sk-button {
     display: inline-block;
     vertical-align: middle;
     // margin-bottom: 5px;
@@ -243,11 +256,11 @@ label input[type='checkbox'], input[type='radio'] {
 
 $button-border-radius: 3px;
 
-.segmented-buttons {
+.sk-segmented-buttons {
   display: flex;
   flex-direction: row;
 
-  .button {
+  .sk-button {
     border-radius: 0;
     white-space: nowrap;
 
@@ -269,8 +282,8 @@ $button-border-radius: 3px;
   }
 }
 
-.box-group {
-  .box {
+.sk-box-group {
+  .sk-box {
     display: inline-block;
     // margin-bottom: 5px;
     &:not(:last-child) {
@@ -279,11 +292,11 @@ $button-border-radius: 3px;
   }
 }
 
-a.button {
+.sk-a.button {
   text-decoration: none;
 }
 
-.button {
+.sk-button {
   display: table;
   border-radius: $button-border-radius;
   padding: 0.5rem 0.7rem;
@@ -292,7 +305,7 @@ a.button {
   text-align: center;
   border: 1px solid;
 
-  .label {
+  .sk-label {
     font-weight: bold;
     display: block;
     text-align: center;
@@ -304,8 +317,8 @@ a.button {
   }
 }
 
-.box {
-  @extend .button;
+.sk-box {
+  @extend .sk-button;
   padding: 2.5rem 1.5rem;
 }
 
@@ -338,48 +351,48 @@ a.button {
   }
 }
 
-.button.default, .box.default, .circle.default {
+.sk-button.default, .sk-box.default, .sk-circle.default {
   @include ui-rect(darken($default-color, 42%), true, lighten($default-color, 1%));
 }
 
-.button.info, .box.info, .circle.info {
+.sk-button.info, .sk-box.info, .sk-circle.info {
   @include ui-rect($tint-color, true);
 }
 
-.button.warning, .box.warning, .circle.warning {
+.sk-button.warning, .sk-box.warning, .sk-circle.warning {
   @include ui-rect($warning-color, true);
 }
 
-.button.danger, .box.danger, .circle.danger {
+.sk-button.danger, .sk-box.danger, .sk-circle.danger {
   @include ui-rect($danger-color, true);
 }
 
-.button.success, .box.success, .circle.success {
+.sk-button.success, .sk-box.success, .sk-circle.success {
   @include ui-rect($success-color, true);
 }
 
-.notification.default {
+.sk-notification.default {
   background-color: $default-color;
   border-color: $section-border-color;
 }
 
-.notification.info {
+.sk-notification.info {
   @include ui-rect($tint-color, false);
 }
 
-.notification.warning {
+.sk-notification.warning {
   @include ui-rect($warning-color, false);
 }
 
-.notification.danger {
+.sk-notification.danger {
   @include ui-rect($danger-color, false);
 }
 
-.notification.success {
+.sk-notification.success {
   @include ui-rect($success-color, false);
 }
 
-.notification {
+.sk-notification {
   border: 1px solid;
   padding: 1.1rem 1rem;
   margin: 1.4rem 0;
@@ -407,8 +420,8 @@ a.button {
   }
 }
 
-.circle {
-  @extend .button;
+.sk-circle {
+  @extend .sk-button;
 
   border-color: $section-border-color;
   background-color: $default-color;
@@ -422,7 +435,7 @@ a.button {
   }
 }
 
-.spinner {
+.sk-spinner {
   border: 1px solid #515263;
   border-radius: 50%;
   animation: rotate 0.8s infinite linear;

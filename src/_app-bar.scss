@@ -1,4 +1,4 @@
-.app-bar {
+.sk-app-bar {
   display: flex;
   width: 100%;
   height: 2rem;
@@ -8,6 +8,10 @@
   align-items: center;
   border: 1px solid $section-border-color;
   user-select: none;
+
+  .sk-label {
+    font-size: 0.9rem;
+  }
 
   &.no-edges {
     border-left: 0;
@@ -19,7 +23,7 @@
     height: 100%;
   }
 
-  .item {
+  .sk-app-bar-item {
     flex-grow: 1;
     &:not(:first-child) {
       margin-left: 1rem;
