@@ -10,3 +10,6 @@
 [submodule "themes/focus-theme"]
 	path = themes/focus-theme
 	url = git@github.com:sn-extensions/focus-theme.git
+[submodule "editors/simple-markdown-editor"]
+	path = editors/simple-markdown-editor
+	url = git@github.com:sn-extensions/simple-markdown-editor.git
