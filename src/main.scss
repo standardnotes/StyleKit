@@ -52,6 +52,8 @@
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   user-select: none;
+
+  color: var(--sn-stylekit-foreground-color);
 }
 
 @import "scrollbar";

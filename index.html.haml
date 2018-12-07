@@ -4,6 +4,11 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title StyleKit
     %link{:href => "dist/stylekit.css", :rel => "stylesheet"}
+    -# %link{:href => "themes/midnight/dist/dist.css", :rel => "stylesheet"}
+    -# %link{:href => "themes/solarized-dark-theme/dist/dist.css", :rel => "stylesheet"}
+    -# %link{:href => "themes/futura-theme/dist/dist.css", :rel => "stylesheet"}
+    -# %link{:href => "themes/titanium-theme/dist/dist.css", :rel => "stylesheet"}
+    %link{:href => "themes/focus-theme/dist/dist.css", :rel => "stylesheet"}
     :css
 
       html {
@@ -14,18 +19,19 @@
         display: flex;
       }
 
-      #account-panel {
+      #components .sn-component {
         margin: 30px;
+      }
+
+      #account-panel {
         width: 450px;
       }
 
       #modal-panel {
-        margin: 30px;
         width: 750px;
       }
 
       #menu-panel {
-        margin: 30px;
         width: 280px;
       }
 
@@ -35,7 +41,6 @@
 
   %body
     #components
-
       .sn-component
         .sk-panel#account-panel
           .sk-panel-header
@@ -104,7 +109,7 @@
             %a.sk-a.right Sign out and clear local data
 
       .sn-component
-        .sk-panel#modal-panel.sn-component
+        .sk-panel#modal-panel
           .sk-panel-header
             %h1.sk-h1.sk-panel-header-title CloudLink
             %a.close-button.info Close
@@ -236,7 +241,7 @@
                           .sk-label Install
 
       .sn-component
-        .sk-menu-panel#menu-panel.sn-component
+        .sk-menu-panel#menu-panel
           .sk-menu-panel-header
             %h4.sk-h4.sk-menu-panel-header-title Sort By
           .row

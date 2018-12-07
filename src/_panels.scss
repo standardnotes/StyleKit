@@ -1,6 +1,7 @@
 .sk-panel {
-  box-shadow: 0px 2px 13px var(--sn-stylekit-shadow-color);
   $h-content-padding: 2.0rem;
+  box-shadow: 0px 2px 13px var(--sn-stylekit-shadow-color);
+  background-color: var(--sn-stylekit-background-color);
   border-radius: 0.7rem;
   display: flex;
   flex-direction: column;
@@ -207,6 +208,7 @@
 
 .sk-menu-panel {
   box-shadow: 0px 4px 4px var(--sn-stylekit-shadow-color);
+  background-color: var(--sn-stylekit-background-color);
   border-radius: 0.6rem;
   overflow: scroll;
   user-select: none;
@@ -242,7 +244,7 @@
     border-bottom: 1px solid var(--sn-stylekit-border-color);
 
     &:hover {
-      background-color: var(--sn-stylekit-border-color);
+      background-color: var(--sn-stylekit-contrast-background-color);
     }
 
     .column {
@@ -265,10 +267,10 @@
 
       /* Nested row */
       .row, .subrow {
-        border: 1px solid var(--sn-stylekit-border-color);
+        border: 1px solid var(--sn-stylekit-contrast-border-color);
         margin-top: -1px;
         &:hover {
-          background-color: var(--sn-stylekit-contrast-background-color);
+          background-color: var(--sn-stylekit-background-color);
         }
       }
 
