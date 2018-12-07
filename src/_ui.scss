@@ -102,35 +102,35 @@ a.sk-a {
 * {
 
     &.info {
-      color: $tint-color;
+      color: var(--sn-stylekit-info-color);
     }
 
     &.warning {
-      color: $warning-color;
+      color: var(--sn-stylekit-warning-color);
     }
 
     &.danger {
-      color: $danger-color;
+      color: var(--sn-stylekit-danger-color);
     }
 
     &.success {
-      color: $success-color;
+      color: var(--sn-stylekit-success-color);
     }
 
     &.info-i {
-      color: $tint-color !important;
+      color: var(--sn-stylekit-info-color) !important;
     }
 
     &.warning-i {
-      color: $warning-color !important;
+      color: var(--sn-stylekit-warning-color) !important;
     }
 
     &.danger-i {
-      color: $danger-color !important;
+      color: var(--sn-stylekit-danger-color) !important;
     }
 
     &.success-i {
-      color: $success-color !important;
+      color: var(--sn-stylekit-success-color) !important;
     }
 
     &.clear {
@@ -322,74 +322,90 @@ $button-border-radius: 3px;
   padding: 2.5rem 1.5rem;
 }
 
-@mixin ui-rect($color, $hoverable, $hover-color: "") {
-  background-color: rgba($color, 0.1);
+@mixin ui-rect($color, $contrast-color, $hoverable) {
   border-color: $color;
-  color: $color;
+  color: $contrast-color;
+
+  position: relative;
+
+  // Make background separately layer so we can set its color using CSS vars
+  // (as opposed to CSS vars in SASS functions, which is impossible).
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    z-index: -1;
+    opacity: 1.0;
+  }
 
   @if $hoverable == true {
     &:hover {
-      @if ($hover-color != "") {
-        background-color: $hover-color;
-      } @else {
-        background-color: lighten($color, 48%);
+      &:before {
+        filter: brightness(130%);
       }
-      color: lighten($color, 3%);
     }
   }
 
   &.featured {
-    background-color: $color;
     border: none;
-    color: white;
     padding: 0.75rem 1.25rem;
     font-size: 1.1rem;
 
+    &:before {
+      opacity: 1.0;
+    }
+
     &:hover {
-      background-color: lighten($color, 8%);
+      &:before {
+        filter: brightness(110%);
+      }
     }
   }
 }
 
 .sk-button.default, .sk-box.default, .sk-circle.default {
-  @include ui-rect(darken($default-color, 42%), true, lighten($default-color, 1%));
+  @include ui-rect(var(--sn-stylekit-default-color), var(--sn-stylekit-default-contrast-color), true);
 }
 
 .sk-button.info, .sk-box.info, .sk-circle.info {
-  @include ui-rect($tint-color, true);
+  @include ui-rect(var(--sn-stylekit-info-color), var(--sn-stylekit-info-contrast-color), true);
 }
 
 .sk-button.warning, .sk-box.warning, .sk-circle.warning {
-  @include ui-rect($warning-color, true);
+  @include ui-rect(var(--sn-stylekit-warning-color), var(--sn-stylekit-warning-contrast-color), true);
 }
 
 .sk-button.danger, .sk-box.danger, .sk-circle.danger {
-  @include ui-rect($danger-color, true);
+  @include ui-rect(var(--sn-stylekit-danger-color), var(--sn-stylekit-danger-contrast-color), true);
 }
 
 .sk-button.success, .sk-box.success, .sk-circle.success {
-  @include ui-rect($success-color, true);
+  @include ui-rect(var(--sn-stylekit-success-color),var(--sn-stylekit-success-contrast-color), true);
 }
 
 .sk-notification.default {
-  background-color: $default-color;
-  border-color: $section-border-color;
+@include ui-rect(var(--sn-stylekit-default-color), var(--sn-stylekit-default-contrast-color), false);
 }
 
 .sk-notification.info {
-  @include ui-rect($tint-color, false);
+  @include ui-rect(var(--sn-stylekit-info-color), var(--sn-stylekit-info-contrast-color), false);
 }
 
 .sk-notification.warning {
-  @include ui-rect($warning-color, false);
+  @include ui-rect(var(--sn-stylekit-warning-color), var(--sn-stylekit-warning-contrast-color), false);
 }
 
 .sk-notification.danger {
-  @include ui-rect($danger-color, false);
+  @include ui-rect(var(--sn-stylekit-danger-color), var(--sn-stylekit-danger-contrast-color), false);
 }
 
 .sk-notification.success {
-  @include ui-rect($success-color, false);
+  @include ui-rect(var(--sn-stylekit-success-color),var(--sn-stylekit-success-contrast-color), false);
 }
 
 .sk-notification {
@@ -423,8 +439,8 @@ $button-border-radius: 3px;
 .sk-circle {
   @extend .sk-button;
 
-  border-color: $section-border-color;
-  background-color: $default-color;
+  border-color: var(--sn-stylekit-contrast-foreground-color);
+  background-color: var(--sn-stylekit-contrast-background-color);
 
   padding: 0;
   border-radius: 50%;

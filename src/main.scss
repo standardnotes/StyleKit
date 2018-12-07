@@ -9,6 +9,43 @@
   --sn-component-foreground-highlight-color: #086DD6;
   --sn-component-outer-border-color: #DDDDDD;
   --sn-component-inner-border-color: #DDDDDD;
+
+  /*
+  $default-color: #F6F6F6;
+  $tint-color: #086DD6;
+  $success-color: #2B9612;
+  $danger-color: #F80324;
+  $warning-color: #f6a200;
+  $section-border-color: #DDDDDD;
+  $placeholder-color: darken($section-border-color, 10%);
+  $header-border-color: #E1E1E1;
+  */
+
+  --sn-stylekit-paragraph-text-color: #454545;
+
+  --sn-stylekit-default-color: #F6F6F6;
+  --sn-stylekit-default-contrast-color: black;
+
+  --sn-stylekit-info-color: #086DD6;
+  --sn-stylekit-info-contrast-color: white;
+
+  --sn-stylekit-success-color: #2B9612;
+  --sn-stylekit-success-contrast-color: white;
+
+  --sn-stylekit-warning-color: #f6a200;
+  --sn-stylekit-warning-contrast-color: white;
+
+  --sn-stylekit-danger-color: #F80324;
+  --sn-stylekit-danger-contrast-color: white;
+
+  --sn-stylekit-background-color: white;
+  --sn-stylekit-border-color: #E1E1E1;
+  --sn-stylekit-foreground-color: black;
+
+  --sn-stylekit-contrast-background-color: var(--sn-stylekit-default-color);
+  --sn-stylekit-contrast-foreground-color: black;
+  --sn-stylekit-contrast-border-color: #E1E1E1;
+
 }
 
 .sn-component {
