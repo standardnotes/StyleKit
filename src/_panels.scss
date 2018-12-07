@@ -1,5 +1,5 @@
 .sk-panel {
-  box-shadow: 0px 2px 13px #C8C8C8;
+  box-shadow: 0px 2px 13px var(--sn-stylekit-shadow-color);
   $h-content-padding: 2.0rem;
   border-radius: 0.7rem;
   display: flex;
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     padding: 1.1rem $h-content-padding;
-    border-bottom: 1px solid var(--sn-stylekit-contrast-border-color);
+    border-bottom: 1px solid var(--sn-stylekit-border-color);
     background-color: var(--sn-stylekit-contrast-background-color);
     align-items: center;
 
@@ -43,7 +43,7 @@
 
   .sk-footer, .sk-panel-footer {
     padding: 1.0rem $h-content-padding;
-    border-top: 1px solid var(--sn-stylekit-contrast-border-color);
+    border-top: 1px solid var(--sn-stylekit-border-color);
     box-sizing: border-box;
 
     .left {
@@ -90,7 +90,7 @@
 
   &:not(:last-child) {
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--sn-stylekit-contrast-border-color);
+    border-bottom: 1px solid var(--sn-stylekit-border-color);
 
     &.no-border {
       border-bottom: none;
@@ -206,7 +206,7 @@
 
 
 .sk-menu-panel {
-  box-shadow: 0px 4px 4px #C8C8C8;
+  box-shadow: 0px 4px 4px var(--sn-stylekit-shadow-color);
   border-radius: 0.6rem;
   overflow: scroll;
   user-select: none;
@@ -217,8 +217,8 @@
 
   .sk-menu-panel-header {
     padding: 0.8rem 1rem;
-    border-bottom: 1px solid darken($default-color, 8%);
-    background-color: darken($default-color, 2%);
+    border-bottom: 1px solid var(--sn-stylekit-border-color);
+    background-color: var(--sn-stylekit-contrast-background-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -239,10 +239,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid lighten($section-border-color, 5%);
+    border-bottom: 1px solid var(--sn-stylekit-border-color);
 
     &:hover {
-      background-color: lighten($section-border-color, 7%);
+      background-color: var(--sn-stylekit-border-color);
     }
 
     .column {
@@ -265,10 +265,10 @@
 
       /* Nested row */
       .row, .subrow {
-        border: 1px solid $section-border-color;
+        border: 1px solid var(--sn-stylekit-border-color);
         margin-top: -1px;
         &:hover {
-          background-color: lighten($section-border-color, 10%);
+          background-color: var(--sn-stylekit-contrast-background-color);
         }
       }
 
@@ -278,17 +278,17 @@
     }
 
     .sk-button .sk-label {
-      font-size: 0.8rem;
+      font-size: var(--sn-stylekit-font-size-xsmall);
       font-weight: normal;
     }
 
     .sk-label {
-      font-size: 1rem;
+      font-size: var(--sn-stylekit-font-size-normal);
       font-weight: bold;
     }
 
     .sublabel {
-      font-size: 0.9rem;
+      font-size: var(--sn-stylekit-font-size-small);
       margin-top: 0.2rem;
       opacity: 0.6;
     }

@@ -1,0 +1,3 @@
+[submodule "themes/midnight"]
+	path = themes/midnight
+	url = git@github.com:sn-extensions/midnight-theme.git

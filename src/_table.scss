@@ -10,7 +10,7 @@
   .sk-panel-table-item {
     flex: 45%;
      flex-flow: wrap;
-    border: 1px solid $section-border-color;
+    border: 1px solid var(--sn-stylekit-border-color);
     padding: 1rem;
     margin-left: -$border-width;
     margin-top: -$border-width;

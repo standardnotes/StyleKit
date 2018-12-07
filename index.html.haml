@@ -136,11 +136,11 @@
                 .sk-panel-row
                   %a.info Settings
                 .sk-panel-row
-                  %a.info More Info
+                  %a.sk-a.info More Info
                 .sk-panel-row
-                  %a.disabled Disabled
+                  %a.sk-a.disabled Disabled
                 .sk-panel-row
-                  %a.danger Help
+                  %a.sk-a.danger Help
 
               .sk-panel-section
                 %h3.sk-h3.sk-panel-section-title.sk-panel-row Update Account
@@ -199,10 +199,14 @@
                           %p.sk-p A fully featured Markdown editor that supports live preview, a styling toolbar, and split pane support.
                       .sk-panel-table-item-footer
                         .sk-segmented-buttons
-                          .sk-button.info Install
-                          .sk-button.danger Uninstall
-                          .sk-button.info Info
-                          .sk-button.default Default
+                          .sk-button.info
+                            .sk-label Install
+                          .sk-button.danger
+                            .sk-label Uninstall
+                          .sk-button.info
+                            .sk-label Info
+                          .sk-button.default
+                            .sk-label Default
                     .sk-panel-table-item
                       .sk-panel-table-item-content
                         .sk-panel-table-item-column
@@ -210,7 +214,8 @@
                           %h4.sk-h4.sk-label Code Editor
                           %p.sk-p Syntax highlighting and convenient keyboard shortcuts for over 120 programming languages. Ideal for code snippets and procedures.
                       .sk-panel-table-item-footer
-                        .sk-button.danger Uninstall
+                        .sk-button.danger
+                          .sk-label Uninstall
                     .sk-panel-table-item
                       .sk-panel-table-item-content
                         .sk-panel-table-item-column
@@ -218,7 +223,8 @@
                           %h4.sk-h4.sk-label Vim Editor
                           %p.sk-p A code editor with Vim key bindings.
                       .sk-panel-table-item-footer
-                        .sk-button.success Open
+                        .sk-button.success
+                          .sk-label Open
                     .sk-panel-table-item
                       .sk-panel-table-item-content
                         .sk-panel-table-item-column
@@ -226,7 +232,8 @@
                           %h4.sk-h4.sk-label Task Editor
                           %p.sk-p A great way to manage short-term and long-term to-do's. You can mark tasks as completed, change their order, and edit the text naturally in place.
                       .sk-panel-table-item-footer
-                        .sk-button.info Install
+                        .sk-button.info
+                          .sk-label Install
 
       .sn-component
         .sk-menu-panel#menu-panel.sn-component
