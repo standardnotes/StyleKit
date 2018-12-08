@@ -4,6 +4,7 @@
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 <title>StyleKit</title>
 <link href='dist/stylekit.css' rel='stylesheet'>
+<link href='themes/titanium-theme/dist/dist.css' rel='stylesheet'>
 <style>
   html {
     font-size: 14px;
@@ -34,18 +35,18 @@
   }
 </style>
 </head>
-<body>
-<div id='components'>
-<div class='sn-component'>
+<body class='sn-component'>
+<div class='sk-panel' id='components'>
+<div class='sn-component sk-panel-content'>
 <div class='sk-panel' id='account-panel'>
 <div class='sk-panel-header'>
-<h1 class='sk-h1 title'>Account</h1>
+<div class='sk-panel-header-title'>Account</div>
 <a class='close-button info'>Close</a>
 </div>
 <div class='sk-panel-content'>
 <div class='sk-panel-section sk-panel-hero'>
 <div class='sk-panel-row'>
-<h1 class='sk-h1 title'>Sign in or register to enable sync and end-to-end encryption.</h1>
+<div class='sk-h1'>Sign in or register to enable sync and end-to-end encryption.</div>
 </div>
 <div class='sk-panel-row'>
 <div class='sk-button-group stretch'>
@@ -64,7 +65,7 @@ Standard Notes is free on every platform, and comes standard with sync and encry
 </div>
 </div>
 <div class='sk-panel-section'>
-<h3 class='sk-h3 sk-panel-section-title'>Passcode Lock</h3>
+<div class='sk-h3 sk-panel-section-title'>Passcode Lock</div>
 <div class='sk-panel-row'>
 <p class='sk-p'>Add an app passcode to lock the app and encrypt on-device key storage.</p>
 </div>
@@ -76,7 +77,7 @@ Standard Notes is free on every platform, and comes standard with sync and encry
 <div class='sk-panel-row'>
 <div>
 <div class='sk-horizontal-group'>
-<h4 class='sk-h4 sk-bold'>Autolock</h4>
+<div class='sk-h4 sk-bold'>Autolock</div>
 <div class='vertical-rule'></div>
 <a class='sk-a info'>None</a>
 <a class='sk-a info boxed'>1 Min</a>
@@ -90,8 +91,8 @@ Standard Notes is free on every platform, and comes standard with sync and encry
 </div>
 </div>
 <div class='sk-panel-section'>
-<h3 class='sk-h3 sk-panel-section-title'>Encryption</h3>
-<h5 class='sk-h5 sk-panel-section-subtitle info'>681/681 notes and tags encrypted</h5>
+<div class='sk-panel-section-title'>Encryption</div>
+<div class='sk-panel-section-subtitle info'>681/681 notes and tags encrypted</div>
 <div class='sk-panel-row'>
 <p class='sk-p'>
 End-to-end encryption is enabled.
@@ -100,7 +101,7 @@ Your data is encrypted before being synced to your private account.
 </div>
 </div>
 <div class='sk-panel-section'>
-<h3 class='sk-h3 sk-panel-section-title'>Data Backups</h3>
+<div class='sk-panel-section-title'>Data Backups</div>
 <div class='sk-panel-row'>
 <div class='sk-button-group'>
 <div class='sk-button info'>
@@ -137,18 +138,18 @@ To download as plain text files, choose “Decrypted”.
 <div class='sn-component'>
 <div class='sk-panel' id='modal-panel'>
 <div class='sk-panel-header'>
-<h1 class='sk-h1 sk-panel-header-title'>CloudLink</h1>
+<div class='sk-panel-header-title'>CloudLink</div>
 <a class='close-button info'>Close</a>
 </div>
 <div class='sk-panel-content'>
 <div class='sk-panel-section'>
-<h1 class='sk-h2 sk-panel-section-title'>Manage Integrations</h1>
+<div class='sk-panel-section-title'>Manage Integrations</div>
 <p class='sk-p'>
 CloudLink enables you to install integrations that allow
 for real-time push of your encrypted data to other cloud providers.
 </p>
 <div class='sk-panel-section'>
-<h3 class='sk-h3 sk-panel-section-outer-title sk-panel-row'>Third Party</h3>
+<div class='sk-panel-section-outer-title sk-panel-row'>Third Party</div>
 <div class='sk-panel-row'>
 <div class='sk-box-group'>
 <div class='sk-box info'>
@@ -167,11 +168,11 @@ for real-time push of your encrypted data to other cloud providers.
 <div class='sk-panel-section'>
 <div class='sk-horizontal-group'>
 <div class='sk-spinner small info'></div>
-<div class='sublabel'>Syncing 66/100</div>
+<div class='sk-sublabel'>Syncing 66/100</div>
 </div>
 </div>
 <div class='sk-panel-section'>
-<h3 class='sk-h3 sk-panel-section-title sk-panel-row'>Options</h3>
+<div class='sk-panel-section-title sk-panel-row'>Options</div>
 <div class='sk-panel-row'>
 <a class='info'>Settings</a>
 </div>
@@ -186,7 +187,7 @@ for real-time push of your encrypted data to other cloud providers.
 </div>
 </div>
 <div class='sk-panel-section'>
-<h3 class='sk-h3 sk-panel-section-title sk-panel-row'>Update Account</h3>
+<div class='sk-panel-section-title sk-panel-row'>Update Account</div>
 <div class='sk-panel-row sk-panel-form half'>
 <div class='panel-column'>
 <input class='sk-input' placeholder='Email'>
@@ -215,38 +216,38 @@ Decrypted
 </div>
 </div>
 <div class='sk-panel-section'>
-<h3 class='sk-h3 title'>Notifications</h3>
-<div class='sk-notification default'>
-<h1 class='sk-h1 title'>Registration Pending</h1>
-<div class='text'>Your account is pending activation. Please check your email to complete the process.</div>
+<div class='sk-panel-section-title'>Notifications</div>
+<div class='sk-notification neutral'>
+<div class='sk-notification-title'>Registration Pending</div>
+<div class='sk-notification-text'>Your account is pending activation. Please check your email to complete the process.</div>
 </div>
 <div class='sk-notification info'>
-<h1 class='sk-h1 title'>Registration Successful</h1>
-<div class='text'>Your account is pending activation. Please check your email to complete the process.</div>
+<div class='sk-notification-title'>Registration Successful</div>
+<div class='sk-notification-text'>Your account is pending activation. Please check your email to complete the process.</div>
 </div>
 <div class='sk-notification warning'>
-<h1 class='sk-h1 title'>Weak Password</h1>
-<div class='text'>The password you are attempting to use is weak. Please try again.</div>
+<div class='sk-notification-title'>Weak Password</div>
+<div class='sk-notification-text'>The password you are attempting to use is weak. Please try again.</div>
 </div>
 <div class='sk-notification danger'>
-<h1 class='sk-h1 title'>No Password Reset</h1>
-<div class='text'>Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.</div>
+<div class='sk-notification-title'>No Password Reset</div>
+<div class='sk-notification-text'>Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.</div>
 </div>
 </div>
 <div class='sk-panel-section'>
-<h3 class='sk-h3 title sk-panel-row centered'>Dashed Inputs</h3>
+<div class='sk-panel-section-title sk-panel-row centered'>Dashed Inputs</div>
 <div class='sk-notification info dashed one-line'>
 <input class='sk-input info clear center-text' placeholder='Enter Your ProLink Activation Code'>
 </div>
 <div class='sk-panel-row centered'>
-<h1 class='sk-h1 title center-text'>
+<div class='sk-h1 title center-text'>
 <strong>Standard Notes Pro</strong>
 gives you access to powerful editors, extensions, tools, themes, and cloud backup options.
-</h1>
+</div>
 </div>
 </div>
 <div class='sk-panel-section'>
-<h3 class='sk-h3 title sk-panel-row'>Menu</h3>
+<div class='sk-panel-section-title sk-panel-row'>Menu</div>
 <div class='sk-panel-row'>
 <div class='sk-panel-table'>
 <div class='sk-panel-table-item'>
@@ -268,7 +269,7 @@ gives you access to powerful editors, extensions, tools, themes, and cloud backu
 <div class='sk-button info'>
 <div class='sk-label'>Info</div>
 </div>
-<div class='sk-button default'>
+<div class='sk-button neutral'>
 <div class='sk-label'>Default</div>
 </div>
 </div>
@@ -326,59 +327,59 @@ gives you access to powerful editors, extensions, tools, themes, and cloud backu
 <div class='sn-component'>
 <div class='sk-menu-panel' id='menu-panel'>
 <div class='sk-menu-panel-header'>
-<h4 class='sk-h4 sk-menu-panel-header-title'>Sort By</h4>
+<div class='sk-menu-panel-header-title'>Sort By</div>
 </div>
-<div class='row'>
+<div class='sk-menu-panel-row'>
 <div class='sk-label'>Date Added</div>
 </div>
-<div class='row'>
-<div class='column'>
+<div class='sk-menu-panel-row'>
+<div class='sk-menu-panel-column'>
 <div class='sk-label'>Date Modified</div>
-<div class='sublabel'>Most recently modified first</div>
+<div class='sk-sublabel'>Most recently modified first</div>
 </div>
 </div>
-<div class='row'>
-<div class='column'>
+<div class='sk-menu-panel-row'>
+<div class='sk-menu-panel-column'>
 <div class='left'>
-<div class='column'>
+<div class='sk-menu-panel-column'>
 <div class='sk-circle small success'></div>
 </div>
-<div class='column'>
+<div class='sk-menu-panel-column'>
 <div class='sk-label'>Title</div>
 </div>
 </div>
 </div>
 </div>
 <div class='sk-menu-panel-header'>
-<div class='column'>
-<h4 class='sk-h4 sk-menu-panel-header-title'>Display</h4>
+<div class='sk-menu-panel-column'>
+<div class='sk-menu-panel-header-title'>Display</div>
 <div class='sk-menu-panel-header-subtitle'>Manage what appears in the list</div>
 </div>
-<div class='column'>
+<div class='sk-menu-panel-column'>
 <div class='sk-spinner small'></div>
 </div>
 </div>
-<div class='row'>
+<div class='sk-menu-panel-row'>
 <div class='sk-label'>Archived Notes</div>
 </div>
-<div class='row'>
-<div class='column stretch'>
+<div class='sk-menu-panel-row'>
+<div class='sk-menu-panel-column stretch'>
 <div class='sk-label'>Pinned Notes</div>
-<div class='subrows'>
-<div class='row subrow'>
+<div class='sk-menu-panel-subrows'>
+<div class='sk-menu-panel-row subrow'>
 <div class='sk-label'>Subrow 1</div>
 </div>
-<div class='row subrow'>
+<div class='sk-menu-panel-row subrow'>
 <div class='sk-label'>Subrow 2</div>
 </div>
 </div>
 </div>
 </div>
-<div class='row'>
-<div class='column'>
+<div class='sk-menu-panel-row'>
+<div class='sk-menu-panel-column'>
 <div class='sk-label'>Note Preview</div>
 </div>
-<div class='column'>
+<div class='sk-menu-panel-column'>
 <div class='sk-spinner small'></div>
 </div>
 </div>
@@ -387,31 +388,31 @@ gives you access to powerful editors, extensions, tools, themes, and cloud backu
 <div class='sn-component'>
 <div class='sk-menu-panel' id='menu-panel'>
 <div class='sk-menu-panel-header'>
-<h4 class='sk-h4 sk-menu-panel-header-title'>Editors</h4>
+<div class='sk-menu-panel-header-title'>Editors</div>
 <div class='sk-spinner small info'></div>
 </div>
-<div class='row'>
+<div class='sk-menu-panel-row'>
 <div class='sk-label'>Plain</div>
 </div>
-<div class='row'>
-<div class='column'>
+<div class='sk-menu-panel-row'>
+<div class='sk-menu-panel-column'>
 <div class='left'>
-<div class='column'>
+<div class='sk-menu-panel-column'>
 <div class='sk-circle small info'></div>
 </div>
-<div class='column'>
+<div class='sk-menu-panel-column'>
 <div class='sk-label'>Advanced</div>
-<div class='sublabel'>Offline available</div>
+<div class='sk-sublabel'>Offline available</div>
 </div>
 </div>
 </div>
-<div class='column'>
+<div class='sk-menu-panel-column'>
 <div class='sk-button info'>
 <div class='sk-label'>Default</div>
 </div>
 </div>
 </div>
-<div class='row'>
+<div class='sk-menu-panel-row'>
 <div class='sk-label'>Code Editor</div>
 </div>
 </div>
@@ -421,14 +422,14 @@ gives you access to powerful editors, extensions, tools, themes, and cloud backu
 <div class='sk-app-bar' id='app-bar'>
 <div class='left'>
 <div class='sk-app-bar-item'>
-<div class='column'>
+<div class='sk-app-bar-item-column'>
 <div class='sk-circle small success'></div>
 </div>
-<div class='column'>
+<div class='sk-app-bar-item-column'>
 <div class='sk-label'>Account</div>
 </div>
-<div class='column'>
-<div class='sublabel'>Signed In</div>
+<div class='sk-app-bar-item-column'>
+<div class='sk-sublabel'>Signed In</div>
 </div>
 </div>
 <div class='sk-app-bar-item'>

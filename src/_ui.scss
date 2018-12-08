@@ -21,27 +21,27 @@
 
 .sk-h1 {
   font-weight: 500;
-  font-size: var(--sn-stylekit-font-size-xxlarge);
+  font-size: var(--sn-stylekit-font-size-h1);
   line-height: 1.9rem;
 }
 
 .sk-h2 {
-  font-size: var(--sn-stylekit-font-size-xlarge);
+  font-size: var(--sn-stylekit-font-size-h2);
   line-height: 1.8rem;
 }
 
 .sk-h3 {
-  font-size: var(--sn-stylekit-font-size-large);
+  font-size: var(--sn-stylekit-font-size-h3);
   line-height: 1.7rem;
 }
 
 .sk-h4 {
-  font-size: var(--sn-stylekit-font-size-normal);
+  font-size: var(--sn-stylekit-font-size-p);
   line-height: 1.4rem;
 }
 
 .sk-h5 {
-  font-size: var(--sn-stylekit-font-size-small);
+  font-size: var(--sn-stylekit-font-size-h5);
 }
 
 .sk-bold {
@@ -49,15 +49,15 @@
 }
 
 .sk-font-small {
-  font-size: var(--sn-stylekit-font-size-small);
+  font-size: var(--sn-stylekit-font-size-h5);
 }
 
 .sk-font-normal {
-  font-size: var(--sn-stylekit-font-size-normal);
+  font-size: var(--sn-stylekit-font-size-p);
 }
 
 .sk-font-large {
-  font-size: var(--sn-stylekit-font-size-large);
+  font-size: var(--sn-stylekit-font-size-h3);
 }
 
 a.sk-a {
@@ -163,7 +163,7 @@ input.sk-input {
   margin: 0.30rem 0;
   border-radius: 3px;
   border: 1px solid var(--sn-stylekit-input-border-color);
-  font-size: var(--sn-stylekit-font-size-large);
+  font-size: var(--sn-stylekit-font-size-h3);
   width: 100%;
   outline: 0;
   resize: none;
@@ -309,10 +309,14 @@ $button-border-radius: 3px;
   display: table;
   border-radius: $button-border-radius;
   padding: 0.5rem 0.7rem;
-  font-size: var(--sn-stylekit-font-size-small);
+  font-size: var(--sn-stylekit-font-size-h5);
   cursor: pointer;
   text-align: center;
   border: 1px solid;
+
+  &.wide {
+    padding: 0.3rem 1.7rem;
+  }
 
   .sk-label {
     font-weight: bold;
@@ -321,7 +325,7 @@ $button-border-radius: 3px;
   }
 
   &.big {
-    font-size: var(--sn-stylekit-font-size-large);
+    font-size: var(--sn-stylekit-font-size-h3);
     padding: 0.7rem 2.5rem;
   }
 }
@@ -367,7 +371,7 @@ $button-border-radius: 3px;
   &.featured {
     border: none;
     padding: 0.75rem 1.25rem;
-    font-size: var(--sn-stylekit-font-size-large);
+    font-size: var(--sn-stylekit-font-size-h3);
 
     &:before {
       opacity: 1.0;
@@ -375,7 +379,23 @@ $button-border-radius: 3px;
   }
 }
 
-.sk-button.default, .sk-box.default, .sk-circle.default {
+.sk-button.contrast, .sk-box.contrast, .sk-circle.contrast {
+  @include ui-rect(var(--sn-stylekit-contrast-background-color), var(--sn-stylekit-contrast-foreground-color), true);
+}
+
+.sk-button.sk-secondary, .sk-box.sk-secondary, .sk-circle.sk-secondary {
+  @include ui-rect(var(--sn-stylekit-secondary-background-color), var(--sn-stylekit-secondary-foreground-color), true);
+}
+
+.sk-button.sk-secondary-contrast, .sk-box.sk-secondary-contrast, .sk-circle.sk-secondary-contrast {
+  @include ui-rect(
+    var(--sn-stylekit-secondary-contrast-background-color),
+    var(--sn-stylekit-secondary-contrast-foreground-color), 
+    true
+  );
+}
+
+.sk-button.neutral, .sk-box.neutral, .sk-circle.neutral {
   @include ui-rect(var(--sn-stylekit-neutral-color), var(--sn-stylekit-neutral-contrast-color), true);
 }
 
@@ -395,8 +415,8 @@ $button-border-radius: 3px;
   @include ui-rect(var(--sn-stylekit-success-color),var(--sn-stylekit-success-contrast-color), true);
 }
 
-.sk-notification.default {
-@include ui-rect(var(--sn-stylekit-neutral-color), var(--sn-stylekit-neutral-contrast-color), false);
+.sk-notification.neutral {
+  @include ui-rect(var(--sn-stylekit-neutral-color), var(--sn-stylekit-neutral-contrast-color), false);
 }
 
 .sk-notification.info {
@@ -435,9 +455,15 @@ $button-border-radius: 3px;
     border-style: dashed;
   }
 
-  .text {
+  .sk-notification-title {
+    font-size: var(--sn-stylekit-font-size-h1);
+    font-weight: bold;
+    line-height: 1.9rem;
+  }
+
+  .sk-notification-text {
     line-height: 1.5rem;
-    font-size: var(--sn-stylekit-font-size-normal);
+    font-size: var(--sn-stylekit-font-size-p);
     text-align: left;
     font-weight: normal;
   }

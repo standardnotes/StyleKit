@@ -7,7 +7,7 @@
     -# %link{:href => "themes/midnight/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/solarized-dark-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/futura-theme/dist/dist.css", :rel => "stylesheet"}
-    -# %link{:href => "themes/titanium-theme/dist/dist.css", :rel => "stylesheet"}
+    %link{:href => "themes/titanium-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/focus-theme/dist/dist.css", :rel => "stylesheet"}
     :css
 
@@ -39,18 +39,18 @@
         width: 100%;
       }
 
-  %body
-    #components
-      .sn-component
+  %body.sn-component
+    #components.sk-panel
+      .sn-component.sk-panel-content
         .sk-panel#account-panel
           .sk-panel-header
-            %h1.sk-h1.title Account
+            .sk-panel-header-title Account
             %a.close-button.info Close
 
           .sk-panel-content
             .sk-panel-section.sk-panel-hero
               .sk-panel-row
-                %h1.sk-h1.title Sign in or register to enable sync and end-to-end encryption.
+                .sk-h1 Sign in or register to enable sync and end-to-end encryption.
               .sk-panel-row
                 .sk-button-group.stretch
                   .sk-button.info.featured
@@ -61,7 +61,7 @@
                 %p.sk-p
                   Standard Notes is free on every platform, and comes standard with sync and encryption.
             .sk-panel-section
-              %h3.sk-h3.sk-panel-section-title Passcode Lock
+              .sk-h3.sk-panel-section-title Passcode Lock
               .sk-panel-row
                 %p.sk-p Add an app passcode to lock the app and encrypt on-device key storage.
               .sk-panel-row
@@ -70,7 +70,7 @@
               .sk-panel-row
                 %div
                   .sk-horizontal-group
-                    %h4.sk-h4.sk-bold Autolock
+                    .sk-h4.sk-bold Autolock
                     .vertical-rule
                     %a.sk-a.info None
                     %a.sk-a.info.boxed 1 Min
@@ -80,14 +80,14 @@
                     %p.sk-p The autolock timer begins when the window or tab loses focus.
 
             .sk-panel-section
-              %h3.sk-h3.sk-panel-section-title Encryption
-              %h5.sk-h5.sk-panel-section-subtitle.info 681/681 notes and tags encrypted
+              .sk-panel-section-title Encryption
+              .sk-panel-section-subtitle.info 681/681 notes and tags encrypted
               .sk-panel-row
                 %p.sk-p
                   End-to-end encryption is enabled.
                   Your data is encrypted before being synced to your private account.
             .sk-panel-section
-              %h3.sk-h3.sk-panel-section-title Data Backups
+              .sk-panel-section-title Data Backups
               .sk-panel-row
                 .sk-button-group
                   .sk-button.info
@@ -111,16 +111,16 @@
       .sn-component
         .sk-panel#modal-panel
           .sk-panel-header
-            %h1.sk-h1.sk-panel-header-title CloudLink
+            .sk-panel-header-title CloudLink
             %a.close-button.info Close
           .sk-panel-content
             .sk-panel-section
-              %h1.sk-h2.sk-panel-section-title Manage Integrations
+              .sk-panel-section-title Manage Integrations
               %p.sk-p
                 CloudLink enables you to install integrations that allow
                 for real-time push of your encrypted data to other cloud providers.
               .sk-panel-section
-                %h3.sk-h3.sk-panel-section-outer-title.sk-panel-row Third Party
+                .sk-panel-section-outer-title.sk-panel-row Third Party
                 .sk-panel-row
                   .sk-box-group
                     .sk-box.info
@@ -135,9 +135,9 @@
               .sk-panel-section
                 .sk-horizontal-group
                   .sk-spinner.small.info
-                  .sublabel Syncing 66/100
+                  .sk-sublabel Syncing 66/100
               .sk-panel-section
-                %h3.sk-h3.sk-panel-section-title.sk-panel-row Options
+                .sk-panel-section-title.sk-panel-row Options
                 .sk-panel-row
                   %a.info Settings
                 .sk-panel-row
@@ -148,7 +148,7 @@
                   %a.sk-a.danger Help
 
               .sk-panel-section
-                %h3.sk-h3.sk-panel-section-title.sk-panel-row Update Account
+                .sk-panel-section-title.sk-panel-row Update Account
                 .sk-panel-row.sk-panel-form.half
                   .panel-column
                     %input.sk-input{"placeholder" => "Email"}
@@ -169,31 +169,31 @@
                         Decrypted
 
               .sk-panel-section
-                %h3.sk-h3.title Notifications
-                .sk-notification.default
-                  %h1.sk-h1.title Registration Pending
-                  .text Your account is pending activation. Please check your email to complete the process.
+                .sk-panel-section-title Notifications
+                .sk-notification.neutral
+                  .sk-notification-title Registration Pending
+                  .sk-notification-text Your account is pending activation. Please check your email to complete the process.
                 .sk-notification.info
-                  %h1.sk-h1.title Registration Successful
-                  .text Your account is pending activation. Please check your email to complete the process.
+                  .sk-notification-title Registration Successful
+                  .sk-notification-text Your account is pending activation. Please check your email to complete the process.
                 .sk-notification.warning
-                  %h1.sk-h1.title Weak Password
-                  .text The password you are attempting to use is weak. Please try again.
+                  .sk-notification-title Weak Password
+                  .sk-notification-text The password you are attempting to use is weak. Please try again.
                 .sk-notification.danger
-                  %h1.sk-h1.title No Password Reset
-                  .text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
+                  .sk-notification-title No Password Reset
+                  .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
 
               .sk-panel-section
-                %h3.sk-h3.title.sk-panel-row.centered Dashed Inputs
+                .sk-panel-section-title.sk-panel-row.centered Dashed Inputs
                 .sk-notification.info.dashed.one-line
                   %input.sk-input.info.clear.center-text{"placeholder" => "Enter Your ProLink Activation Code"}
                 .sk-panel-row.centered
-                  %h1.sk-h1.title.center-text
+                  .sk-h1.title.center-text
                     %strong Standard Notes Pro
                     gives you access to powerful editors, extensions, tools, themes, and cloud backup options.
 
               .sk-panel-section
-                %h3.sk-h3.title.sk-panel-row Menu
+                .sk-panel-section-title.sk-panel-row Menu
                 .sk-panel-row
                   .sk-panel-table
                     .sk-panel-table-item
@@ -210,7 +210,7 @@
                             .sk-label Uninstall
                           .sk-button.info
                             .sk-label Info
-                          .sk-button.default
+                          .sk-button.neutral
                             .sk-label Default
                     .sk-panel-table-item
                       .sk-panel-table-item-content
@@ -243,74 +243,74 @@
       .sn-component
         .sk-menu-panel#menu-panel
           .sk-menu-panel-header
-            %h4.sk-h4.sk-menu-panel-header-title Sort By
-          .row
+            .sk-menu-panel-header-title Sort By
+          .sk-menu-panel-row
             .sk-label Date Added
-          .row
-            .column
+          .sk-menu-panel-row
+            .sk-menu-panel-column
               .sk-label Date Modified
-              .sublabel Most recently modified first
-          .row
-            .column
+              .sk-sublabel Most recently modified first
+          .sk-menu-panel-row
+            .sk-menu-panel-column
               .left
-                .column
+                .sk-menu-panel-column
                   .sk-circle.small.success
-                .column
+                .sk-menu-panel-column
                   .sk-label Title
 
           .sk-menu-panel-header
-            .column
-              %h4.sk-h4.sk-menu-panel-header-title Display
+            .sk-menu-panel-column
+              .sk-menu-panel-header-title Display
               .sk-menu-panel-header-subtitle Manage what appears in the list
-            .column
+            .sk-menu-panel-column
               .sk-spinner.small
-          .row
+          .sk-menu-panel-row
             .sk-label Archived Notes
-          .row
-            .column.stretch
+          .sk-menu-panel-row
+            .sk-menu-panel-column.stretch
               .sk-label Pinned Notes
-              .subrows
-                .row.subrow
+              .sk-menu-panel-subrows
+                .sk-menu-panel-row.subrow
                   .sk-label Subrow 1
-                .row.subrow
+                .sk-menu-panel-row.subrow
                   .sk-label Subrow 2
-          .row
-            .column
+          .sk-menu-panel-row
+            .sk-menu-panel-column
               .sk-label Note Preview
-            .column
+            .sk-menu-panel-column
               .sk-spinner.small
 
       .sn-component
         .sk-menu-panel#menu-panel
           .sk-menu-panel-header
-            %h4.sk-h4.sk-menu-panel-header-title Editors
+            .sk-menu-panel-header-title Editors
             .sk-spinner.small.info
-          .row
+          .sk-menu-panel-row
             .sk-label Plain
-          .row
-            .column
+          .sk-menu-panel-row
+            .sk-menu-panel-column
               .left
-                .column
+                .sk-menu-panel-column
                   .sk-circle.small.info
-                .column
+                .sk-menu-panel-column
                   .sk-label Advanced
-                  .sublabel Offline available
-            .column
+                  .sk-sublabel Offline available
+            .sk-menu-panel-column
               .sk-button.info
                 .sk-label Default
-          .row
+          .sk-menu-panel-row
             .sk-label Code Editor
 
     .sn-component
       #app-bar.sk-app-bar
         .left
           .sk-app-bar-item
-            .column
+            .sk-app-bar-item-column
               .sk-circle.small.success
-            .column
+            .sk-app-bar-item-column
               .sk-label Account
-            .column
-              .sublabel Signed In
+            .sk-app-bar-item-column
+              .sk-sublabel Signed In
           .sk-app-bar-item
             .sk-label Extensions
           .sk-app-bar-item

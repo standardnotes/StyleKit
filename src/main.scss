@@ -1,12 +1,15 @@
 :root {
-  --sn-stylekit-font-size-xsmall: 0.8rem;
-  --sn-stylekit-font-size-small: 0.9rem;
-  --sn-stylekit-font-size-normal: 1.0rem;
-  --sn-stylekit-font-size-large: 1.1rem;
-  --sn-stylekit-font-size-xlarge: 1.2rem;
-  --sn-stylekit-font-size-xxlarge: 1.3rem;
+  --sn-stylekit-font-size-p: 1.0rem;
+  --sn-stylekit-font-size-editor: 1.15rem;
 
-  --sn-stylekit-neutral-color: #464646;
+  --sn-stylekit-font-size-h6: 0.8rem;
+  --sn-stylekit-font-size-h5: 0.9rem;
+  --sn-stylekit-font-size-h4: 1.0rem;
+  --sn-stylekit-font-size-h3: 1.1rem;
+  --sn-stylekit-font-size-h2: 1.2rem;
+  --sn-stylekit-font-size-h1: 1.3rem;
+
+  --sn-stylekit-neutral-color: #7c7c7c;
   --sn-stylekit-neutral-contrast-color: white;
 
   --sn-stylekit-info-color: #086DD6;
@@ -24,12 +27,21 @@
   --sn-stylekit-shadow-color: #C8C8C8;
 
   --sn-stylekit-background-color: white;
-  --sn-stylekit-border-color: #edebeb; // For borders inside background-color
+  --sn-stylekit-border-color: #e3e3e3; // For borders inside background-color
   --sn-stylekit-foreground-color: black;
-
+  // Colors for layers placed on top of non-prefixed background, border, and foreground
   --sn-stylekit-contrast-background-color: #F6F6F6;
-  --sn-stylekit-contrast-foreground-color: black;
+  --sn-stylekit-contrast-foreground-color: #2e2e2e;
   --sn-stylekit-contrast-border-color: #e3e3e3; // For borders inside contrast-background-color
+
+  // Alternative set of background and contrast options
+  --sn-stylekit-secondary-background-color: #F6F6F6;
+  --sn-stylekit-secondary-foreground-color: #2e2e2e;
+  --sn-stylekit-secondary-border-color: #e3e3e3;
+
+  --sn-stylekit-secondary-contrast-background-color: #e3e3e3;
+  --sn-stylekit-secondary-contrast-foreground-color: #2e2e2e;
+  --sn-styleki--secondary-contrast-border-color: #e3e3e3;
 
   --sn-stylekit-paragraph-text-color: #454545;
 
@@ -42,6 +54,7 @@
 
 .sn-component {
   @import "panels";
+  @import "menu-panel";
   @import "ui";
   @import "app-bar";
   @import "table";

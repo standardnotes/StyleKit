@@ -2,6 +2,7 @@
   $h-content-padding: 2.0rem;
   box-shadow: 0px 2px 13px var(--sn-stylekit-shadow-color);
   background-color: var(--sn-stylekit-background-color);
+  border: 1px solid var(--sn-stylekit-contrast-border-color);
   border-radius: 0.7rem;
   display: flex;
   flex-direction: column;
@@ -34,7 +35,8 @@
     align-items: center;
 
     .sk-panel-header-title {
-
+      font-size: var(--sn-stylekit-font-size-h1);
+      font-weight: 500;
     }
 
     .close-button {
@@ -108,8 +110,9 @@
   }
 
   .sk-panel-section-title {
-    margin-bottom: 3px;
+    margin-bottom: 0.5rem;
     font-weight: bold;
+    font-size: var(--sn-stylekit-font-size-h3);
   }
 
   .sk-panel-section-outer-title {
@@ -117,10 +120,14 @@
     padding-bottom: 0.9rem;
     margin-top: 2.1rem;
     margin-bottom: 15px;
+    font-size: var(--sn-stylekit-font-size-h3);
   }
 
   .sk-panel-section-subtitle {
     @extend .sk-label;
+    font-size: var(--sn-stylekit-font-size-h5);
+    margin-bottom: 2px;
+
 
     &.subtle {
       font-weight: normal;
@@ -203,96 +210,4 @@
 .right-aligned {
   justify-content: flex-end;
   text-align: right;
-}
-
-
-.sk-menu-panel {
-  box-shadow: 0px 4px 4px var(--sn-stylekit-shadow-color);
-  background-color: var(--sn-stylekit-background-color);
-  border-radius: 0.6rem;
-  overflow: scroll;
-  user-select: none;
-
-  // For Windows to hide needless scrollbars
-  overflow-y: auto !important;
-  overflow-x: auto !important;
-
-  .sk-menu-panel-header {
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid var(--sn-stylekit-border-color);
-    background-color: var(--sn-stylekit-contrast-background-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .sk-menu-panel-header-subtitle {
-    margin-top: 0.2rem;
-    opacity: 0.6;
-  }
-
-  .sk-menu-panel-header-title {
-    font-weight: bold;
-  }
-
-  .row {
-    padding: 1rem 1rem;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--sn-stylekit-border-color);
-
-    &:hover {
-      background-color: var(--sn-stylekit-contrast-background-color);
-    }
-
-    .column {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-
-      &:not(:first-child) {
-        padding-left: 1.0rem;
-        padding-right: 0.15rem;
-      }
-
-      &.stretch {
-        width: 100%;
-      }
-
-      .subrows {
-        margin-top: 1rem;
-      }
-
-      /* Nested row */
-      .row, .subrow {
-        border: 1px solid var(--sn-stylekit-contrast-border-color);
-        margin-top: -1px;
-        &:hover {
-          background-color: var(--sn-stylekit-background-color);
-        }
-      }
-
-      .left {
-        display: flex;
-      }
-    }
-
-    .sk-button .sk-label {
-      font-size: var(--sn-stylekit-font-size-xsmall);
-      font-weight: normal;
-    }
-
-    .sk-label {
-      font-size: var(--sn-stylekit-font-size-normal);
-      font-weight: bold;
-    }
-
-    .sublabel {
-      font-size: var(--sn-stylekit-font-size-small);
-      margin-top: 0.2rem;
-      opacity: 0.6;
-    }
-  }
 }
