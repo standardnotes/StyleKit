@@ -43,7 +43,6 @@
 .sn-component {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  user-select: none;
   color: var(--sn-stylekit-foreground-color);
 }
 .sn-component .sk-panel {
@@ -1102,6 +1101,9 @@
 }
 .sn-component .sk-panel-table .sk-panel-table-item.no-border {
   border: none;
+}
+.sn-component.no-select {
+  user-select: none;
 }
 
 .windows-web ::-webkit-scrollbar, .windows-desktop ::-webkit-scrollbar, .linux-web ::-webkit-scrollbar, .linux-desktop ::-webkit-scrollbar {

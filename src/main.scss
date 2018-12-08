@@ -1,6 +1,6 @@
 :root {
   --sn-stylekit-base-font-size: 14px;
-  
+
   --sn-stylekit-font-size-p: 1.0rem;
   --sn-stylekit-font-size-editor: 1.15rem;
 
@@ -68,7 +68,10 @@
     "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  user-select: none;
+
+  &.no-select {
+    user-select: none;
+  }
 
   color: var(--sn-stylekit-foreground-color);
 }
