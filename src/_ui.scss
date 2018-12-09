@@ -379,6 +379,10 @@ $button-border-radius: 3px;
   }
 }
 
+.sk-button.sk-base, .sk-box.sk-base, .sk-circle.sk-base {
+  @include ui-rect(var(--sn-stylekit-background-color), var(--sn-stylekit-foreground-color), true);
+}
+
 .sk-button.contrast, .sk-box.contrast, .sk-circle.contrast {
   @include ui-rect(var(--sn-stylekit-contrast-background-color), var(--sn-stylekit-contrast-foreground-color), true);
 }
@@ -390,7 +394,7 @@ $button-border-radius: 3px;
 .sk-button.sk-secondary-contrast, .sk-box.sk-secondary-contrast, .sk-circle.sk-secondary-contrast {
   @include ui-rect(
     var(--sn-stylekit-secondary-contrast-background-color),
-    var(--sn-stylekit-secondary-contrast-foreground-color), 
+    var(--sn-stylekit-secondary-contrast-foreground-color),
     true
   );
 }
@@ -413,6 +417,10 @@ $button-border-radius: 3px;
 
 .sk-button.success, .sk-box.success, .sk-circle.success {
   @include ui-rect(var(--sn-stylekit-success-color),var(--sn-stylekit-success-contrast-color), true);
+}
+
+.sk-notification.sk-base {
+  @include ui-rect(var(--sn-stylekit-background-color), var(--sn-stylekit-foreground-color), false);
 }
 
 .sk-notification.neutral {
