@@ -5,9 +5,9 @@
     %title StyleKit
     %link{:href => "dist/stylekit.css", :rel => "stylesheet"}
     -# %link{:href => "themes/midnight/dist/dist.css", :rel => "stylesheet"}
-    -# %link{:href => "themes/solarized-dark-theme/dist/dist.css", :rel => "stylesheet"}
+    %link{:href => "themes/solarized-dark-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/futura-theme/dist/dist.css", :rel => "stylesheet"}
-    %link{:href => "themes/titanium-theme/dist/dist.css", :rel => "stylesheet"}
+    -# %link{:href => "themes/titanium-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/focus-theme/dist/dist.css", :rel => "stylesheet"}
     :css
 
@@ -151,9 +151,9 @@
                 .sk-panel-section-title.sk-panel-row Update Account
                 .sk-panel-row.sk-panel-form.half
                   .panel-column
-                    %input.sk-input{"placeholder" => "Email"}
-                    %input.sk-input{"placeholder" => "Password", "type" => "password"}
-                    %input.sk-input{"placeholder" => "Confirm Password", "type" => "password"}
+                    %input.sk-input.contrast{"placeholder" => "Email"}
+                    %input.sk-input.contrast{"placeholder" => "Password", "type" => "password"}
+                    %input.sk-input.contrast{"placeholder" => "Confirm Password", "type" => "password"}
                     .sk-panel-row.sk-button-group.stretch.form-submit
                       .sk-button.info.featured
                         .sk-label Save Changes
