@@ -5,10 +5,10 @@
     %title StyleKit
     %link{:href => "dist/stylekit.css", :rel => "stylesheet"}
     -# %link{:href => "themes/midnight/dist/dist.css", :rel => "stylesheet"}
-    %link{:href => "themes/solarized-dark-theme/dist/dist.css", :rel => "stylesheet"}
+    -# %link{:href => "themes/solarized-dark-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/futura-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/titanium-theme/dist/dist.css", :rel => "stylesheet"}
-    -# %link{:href => "themes/focus-theme/dist/dist.css", :rel => "stylesheet"}
+    %link{:href => "themes/focus-theme/dist/dist.css", :rel => "stylesheet"}
     :css
 
       html {
@@ -183,10 +183,23 @@
                   .sk-notification-title No Password Reset
                   .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
 
+                .sk-notification.sk-base
+                  .sk-notification-title Registration Successful
+                  .sk-notification-text Your account is pending activation. Please check your email to complete the process.
+                .sk-notification.contrast
+                  .sk-notification-title Weak Password
+                  .sk-notification-text The password you are attempting to use is weak. Please try again.
+                .sk-notification.sk-secondary
+                  .sk-notification-title No Password Reset
+                  .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
+                .sk-notification.sk-secondary-contrast
+                  .sk-notification-title No Password Reset
+                  .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
+
               .sk-panel-section
                 .sk-panel-section-title.sk-panel-row.centered Dashed Inputs
-                .sk-notification.info.dashed.one-line
-                  %input.sk-input.info.clear.center-text{"placeholder" => "Enter Your ProLink Activation Code"}
+                .sk-notification.sk-secondary-contrast.dashed.one-line
+                  %input.sk-input.contrast.center-text{"placeholder" => "Enter Your ProLink Activation Code"}
                 .sk-panel-row.centered
                   .sk-h1.title.center-text
                     %strong Standard Notes Pro

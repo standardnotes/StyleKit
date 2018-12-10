@@ -336,11 +336,16 @@ $button-border-radius: 3px;
   padding: 2.5rem 1.5rem;
 }
 
-@mixin ui-rect($color, $contrast-color, $hoverable) {
-  border-color: $color;
+@mixin ui-rect($color, $contrast-color, $hoverable, $border-color: "") {
   color: $contrast-color;
   position: relative;
   background-color: $color;
+
+  @if $border-color != "" {
+    border-color: $border-color;
+  } @else {
+    border-color: $color;
+  }
 
   // Make background separately layer so we can set its color using CSS vars
   // (as opposed to CSS vars in SASS functions, which is impossible).
@@ -420,8 +425,24 @@ $button-border-radius: 3px;
   @include ui-rect(var(--sn-stylekit-success-color),var(--sn-stylekit-success-contrast-color), true);
 }
 
+
+
+
+
+.sk-notification.contrast {
+  @include ui-rect(var(--sn-stylekit-contrast-background-color), var(--sn-stylekit-contrast-foreground-color), false, var(--sn-stylekit-contrast-border-color));
+}
+
+.sk-notification.sk-secondary {
+  @include ui-rect(var(--sn-stylekit-secondary-background-color), var(--sn-stylekit-secondary-foreground-color), false, var(--sn-stylekit-secondary-border-color));
+}
+
+.sk-notification.sk-secondary-contrast {
+  @include ui-rect(var(--sn-stylekit-secondary-contrast-background-color), var(--sn-stylekit-secondary-contrast-foreground-color), false, var(--sn-stylekit-secondary-contrast-border-color));
+}
+
 .sk-notification.sk-base {
-  @include ui-rect(var(--sn-stylekit-background-color), var(--sn-stylekit-foreground-color), false);
+  @include ui-rect(var(--sn-stylekit-background-color), var(--sn-stylekit-foreground-color), false, var(--sn-stylekit-border-color));
 }
 
 .sk-notification.neutral {
@@ -462,6 +483,7 @@ $button-border-radius: 3px;
 
   &.dashed {
     border-style: dashed;
+    border-width: 2px;
   }
 
   .sk-notification-title {
