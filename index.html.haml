@@ -130,128 +130,128 @@
                     .sk-box.danger
                       .sk-label Connect OneDrive
 
-                .sk-panel-row
+            .sk-panel-section
+              .sk-horizontal-group
+                .sk-spinner.small.info
+                .sk-sublabel Syncing 66/100
+            .sk-panel-section
+              .sk-panel-section-title.sk-panel-row Options
+              .sk-panel-row
+                %a.info Settings
+              .sk-panel-row
+                %a.sk-a.info More Info
+              .sk-panel-row
+                %a.sk-a.disabled Disabled
+              .sk-panel-row
+                %a.sk-a.danger Help
 
-              .sk-panel-section
-                .sk-horizontal-group
-                  .sk-spinner.small.info
-                  .sk-sublabel Syncing 66/100
-              .sk-panel-section
-                .sk-panel-section-title.sk-panel-row Options
-                .sk-panel-row
-                  %a.info Settings
-                .sk-panel-row
-                  %a.sk-a.info More Info
-                .sk-panel-row
-                  %a.sk-a.disabled Disabled
-                .sk-panel-row
-                  %a.sk-a.danger Help
+            .sk-panel-section
+              .sk-panel-section-title.sk-panel-row Update Account
+              .sk-panel-row.sk-panel-form.half
+                .panel-column
+                  %input.sk-input.contrast{"placeholder" => "Email"}
+                  %input.sk-input.contrast{"placeholder" => "Password", "type" => "password"}
+                  %input.sk-input.contrast{"placeholder" => "Confirm Password", "type" => "password"}
+                  .sk-panel-row.sk-button-group.stretch.form-submit
+                    .sk-button.info.featured
+                      .sk-label Save Changes
+                  %label.sk-label.no-bold
+                    %input.sk-input{"type" => "checkbox"}
+                    Verify Email
+                  .sk-input-group
+                    %label
+                      %input.sk-input{"type" => "radio"}
+                      Encrypted
+                    %label
+                      %input.sk-input{"type" => "radio"}
+                      Decrypted
 
-              .sk-panel-section
-                .sk-panel-section-title.sk-panel-row Update Account
-                .sk-panel-row.sk-panel-form.half
-                  .panel-column
-                    %input.sk-input.contrast{"placeholder" => "Email"}
-                    %input.sk-input.contrast{"placeholder" => "Password", "type" => "password"}
-                    %input.sk-input.contrast{"placeholder" => "Confirm Password", "type" => "password"}
-                    .sk-panel-row.sk-button-group.stretch.form-submit
-                      .sk-button.info.featured
-                        .sk-label Save Changes
-                    %label.sk-label.no-bold
-                      %input.sk-input{"type" => "checkbox"}
-                      Verify Email
-                    .sk-input-group
-                      %label
-                        %input.sk-input{"type" => "radio"}
-                        Encrypted
-                      %label
-                        %input.sk-input{"type" => "radio"}
-                        Decrypted
+            .sk-panel-section
+              .sk-panel-section-title Notifications
+              .sk-notification.neutral
+                .sk-notification-title Registration Pending
+                .sk-notification-text Your account is pending activation. Please check your email to complete the process.
+              .sk-notification.info
+                .sk-notification-title Registration Successful
+                .sk-notification-text Your account is pending activation. Please check your email to complete the process.
+              .sk-notification.warning
+                .sk-notification-title Weak Password
+                .sk-notification-text The password you are attempting to use is weak. Please try again.
+              .sk-notification.danger
+                .sk-notification-title No Password Reset
+                .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
 
-              .sk-panel-section
-                .sk-panel-section-title Notifications
-                .sk-notification.neutral
-                  .sk-notification-title Registration Pending
-                  .sk-notification-text Your account is pending activation. Please check your email to complete the process.
-                .sk-notification.info
-                  .sk-notification-title Registration Successful
-                  .sk-notification-text Your account is pending activation. Please check your email to complete the process.
-                .sk-notification.warning
-                  .sk-notification-title Weak Password
-                  .sk-notification-text The password you are attempting to use is weak. Please try again.
-                .sk-notification.danger
-                  .sk-notification-title No Password Reset
-                  .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
+            %hr.sk-hr
+            .sk-panel-section
+              .sk-notification.sk-base
+                .sk-notification-title Registration Successful
+                .sk-notification-text Your account is pending activation. Please check your email to complete the process.
+              .sk-notification.contrast
+                .sk-notification-title Weak Password
+                .sk-notification-text The password you are attempting to use is weak. Please try again.
+              .sk-notification.sk-secondary
+                .sk-notification-title No Password Reset
+                .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
+              .sk-notification.sk-secondary-contrast
+                .sk-notification-title No Password Reset
+                .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
 
-                .sk-notification.sk-base
-                  .sk-notification-title Registration Successful
-                  .sk-notification-text Your account is pending activation. Please check your email to complete the process.
-                .sk-notification.contrast
-                  .sk-notification-title Weak Password
-                  .sk-notification-text The password you are attempting to use is weak. Please try again.
-                .sk-notification.sk-secondary
-                  .sk-notification-title No Password Reset
-                  .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
-                .sk-notification.sk-secondary-contrast
-                  .sk-notification-title No Password Reset
-                  .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
+            .sk-panel-section
+              .sk-panel-section-title.sk-panel-row.centered Dashed Inputs
+              .sk-notification.sk-secondary-contrast.dashed.one-line
+                %input.sk-input.contrast.center-text{"placeholder" => "Enter Your ProLink Activation Code"}
+              .sk-panel-row.centered
+                .sk-h1.title.center-text
+                  %strong Standard Notes Pro
+                  gives you access to powerful editors, extensions, tools, themes, and cloud backup options.
 
-              .sk-panel-section
-                .sk-panel-section-title.sk-panel-row.centered Dashed Inputs
-                .sk-notification.sk-secondary-contrast.dashed.one-line
-                  %input.sk-input.contrast.center-text{"placeholder" => "Enter Your ProLink Activation Code"}
-                .sk-panel-row.centered
-                  .sk-h1.title.center-text
-                    %strong Standard Notes Pro
-                    gives you access to powerful editors, extensions, tools, themes, and cloud backup options.
-
-              .sk-panel-section
-                .sk-panel-section-title.sk-panel-row Menu
-                .sk-panel-row
-                  .sk-panel-table
-                    .sk-panel-table-item
-                      .sk-panel-table-item-content
-                        .sk-panel-table-item-column
-                          %img{"src" => "https://s3.amazonaws.com/standard-notes/screenshots/models/editors/adv-markdown.jpg"}
-                          %h4.sk-h4.sk-label Advanced Markdown
-                          %p.sk-p A fully featured Markdown editor that supports live preview, a styling toolbar, and split pane support.
-                      .sk-panel-table-item-footer
-                        .sk-segmented-buttons
-                          .sk-button.info
-                            .sk-label Install
-                          .sk-button.danger
-                            .sk-label Uninstall
-                          .sk-button.info
-                            .sk-label Info
-                          .sk-button.neutral
-                            .sk-label Default
-                    .sk-panel-table-item
-                      .sk-panel-table-item-content
-                        .sk-panel-table-item-column
-                          %img{"src" => "https://s3.amazonaws.com/standard-notes/screenshots/models/editors/code.jpg"}
-                          %h4.sk-h4.sk-label Code Editor
-                          %p.sk-p Syntax highlighting and convenient keyboard shortcuts for over 120 programming languages. Ideal for code snippets and procedures.
-                      .sk-panel-table-item-footer
-                        .sk-button.danger
-                          .sk-label Uninstall
-                    .sk-panel-table-item
-                      .sk-panel-table-item-content
-                        .sk-panel-table-item-column
-                          %img{"src" => "https://s3.amazonaws.com/standard-notes/screenshots/models/editors/vim.jpg"}
-                          %h4.sk-h4.sk-label Vim Editor
-                          %p.sk-p A code editor with Vim key bindings.
-                      .sk-panel-table-item-footer
-                        .sk-button.success
-                          .sk-label Open
-                    .sk-panel-table-item
-                      .sk-panel-table-item-content
-                        .sk-panel-table-item-column
-                          %img{"src" => "https://s3.amazonaws.com/standard-notes/screenshots/models/editors/simple-markdown.jpg"}
-                          %h4.sk-h4.sk-label Task Editor
-                          %p.sk-p A great way to manage short-term and long-term to-do's. You can mark tasks as completed, change their order, and edit the text naturally in place.
-                      .sk-panel-table-item-footer
+            .sk-panel-section
+              .sk-panel-section-title.sk-panel-row Menu
+              .sk-panel-row
+                .sk-panel-table
+                  .sk-panel-table-item
+                    .sk-panel-table-item-content
+                      .sk-panel-table-item-column
+                        %img{"src" => "https://s3.amazonaws.com/standard-notes/screenshots/models/editors/adv-markdown.jpg"}
+                        %h4.sk-h4.sk-label Advanced Markdown
+                        %p.sk-p A fully featured Markdown editor that supports live preview, a styling toolbar, and split pane support.
+                    .sk-panel-table-item-footer
+                      .sk-segmented-buttons
                         .sk-button.info
                           .sk-label Install
+                        .sk-button.danger
+                          .sk-label Uninstall
+                        .sk-button.info
+                          .sk-label Info
+                        .sk-button.neutral
+                          .sk-label Default
+                  .sk-panel-table-item
+                    .sk-panel-table-item-content
+                      .sk-panel-table-item-column
+                        %img{"src" => "https://s3.amazonaws.com/standard-notes/screenshots/models/editors/code.jpg"}
+                        %h4.sk-h4.sk-label Code Editor
+                        %p.sk-p Syntax highlighting and convenient keyboard shortcuts for over 120 programming languages. Ideal for code snippets and procedures.
+                    .sk-panel-table-item-footer
+                      .sk-button.danger
+                        .sk-label Uninstall
+                  .sk-panel-table-item
+                    .sk-panel-table-item-content
+                      .sk-panel-table-item-column
+                        %img{"src" => "https://s3.amazonaws.com/standard-notes/screenshots/models/editors/vim.jpg"}
+                        %h4.sk-h4.sk-label Vim Editor
+                        %p.sk-p A code editor with Vim key bindings.
+                    .sk-panel-table-item-footer
+                      .sk-button.success
+                        .sk-label Open
+                  .sk-panel-table-item
+                    .sk-panel-table-item-content
+                      .sk-panel-table-item-column
+                        %img{"src" => "https://s3.amazonaws.com/standard-notes/screenshots/models/editors/simple-markdown.jpg"}
+                        %h4.sk-h4.sk-label Task Editor
+                        %p.sk-p A great way to manage short-term and long-term to-do's. You can mark tasks as completed, change their order, and edit the text naturally in place.
+                    .sk-panel-table-item-footer
+                      .sk-button.info
+                        .sk-label Install
 
       .sn-component
         .sk-menu-panel#menu-panel

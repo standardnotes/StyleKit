@@ -159,11 +159,12 @@ p.sk-p {
 
 input.sk-input {
   box-sizing: border-box;
-  padding: 0.75rem 0.8rem;
+  padding: 0 0.8rem;
   margin: 0.30rem 0;
   border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
 
-  border: none;
   font-size: var(--sn-stylekit-font-size-h3);
   width: 100%;
   outline: 0;
@@ -174,15 +175,9 @@ input.sk-input {
     border: none;
   }
 
-  // &.info {
-  //   border-color: var(--sn-stylekit-info-color);
-  //   background-color: transparent;
-  //   color: var(--sn-stylekit-info-contrast-color);
-  //
-  //   &::-webkit-input-placeholder {
-  //     color: var(--sn-stylekit-info-contrast-color);
-  //   }
-  // }
+  &.no-border {
+    border: none;
+  }
 }
 
 .sk-label {
@@ -314,6 +309,7 @@ $button-border-radius: 3px;
   cursor: pointer;
   text-align: center;
   border: 1px solid;
+  user-select: none;
 
   &.wide {
     padding: 0.3rem 1.7rem;
@@ -385,19 +381,19 @@ $button-border-radius: 3px;
   }
 }
 
-.sk-button.sk-base, .sk-box.sk-base, .sk-circle.sk-base, .sk-input.sk-base {
+.sk-button.sk-base, .sk-box.sk-base, .sk-circle.sk-base {
   @include ui-rect(var(--sn-stylekit-background-color), var(--sn-stylekit-foreground-color), true);
 }
 
-.sk-button.contrast, .sk-box.contrast, .sk-circle.contrast, .sk-input.contrast {
+.sk-button.contrast, .sk-box.contrast, .sk-circle.contrast {
   @include ui-rect(var(--sn-stylekit-contrast-background-color), var(--sn-stylekit-contrast-foreground-color), true);
 }
 
-.sk-button.sk-secondary, .sk-box.sk-secondary, .sk-circle.sk-secondary, .sk-input.sk-secondary {
+.sk-button.sk-secondary, .sk-box.sk-secondary, .sk-circle.sk-secondary {
   @include ui-rect(var(--sn-stylekit-secondary-background-color), var(--sn-stylekit-secondary-foreground-color), true);
 }
 
-.sk-button.sk-secondary-contrast, .sk-box.sk-secondary-contrast, .sk-circle.sk-secondary-contrast, .sk-input.sk-secondary-contrast {
+.sk-button.sk-secondary-contrast, .sk-box.sk-secondary-contrast, .sk-circle.sk-secondary-contrast {
   @include ui-rect(
     var(--sn-stylekit-secondary-contrast-background-color),
     var(--sn-stylekit-secondary-contrast-foreground-color),
@@ -405,23 +401,23 @@ $button-border-radius: 3px;
   );
 }
 
-.sk-button.neutral, .sk-box.neutral, .sk-circle.neutral, .sk-input.neutral {
+.sk-button.neutral, .sk-box.neutral, .sk-circle.neutral {
   @include ui-rect(var(--sn-stylekit-neutral-color), var(--sn-stylekit-neutral-contrast-color), true);
 }
 
-.sk-button.info, .sk-box.info, .sk-circle.info, .sk-input.info {
+.sk-button.info, .sk-box.info, .sk-circle.info {
   @include ui-rect(var(--sn-stylekit-info-color), var(--sn-stylekit-info-contrast-color), true);
 }
 
-.sk-button.warning, .sk-box.warning, .sk-circle.warning, .sk-input.warning {
+.sk-button.warning, .sk-box.warning, .sk-circle.warning {
   @include ui-rect(var(--sn-stylekit-warning-color), var(--sn-stylekit-warning-contrast-color), true);
 }
 
-.sk-button.danger, .sk-box.danger, .sk-circle.danger, .sk-input.danger {
+.sk-button.danger, .sk-box.danger, .sk-circle.danger {
   @include ui-rect(var(--sn-stylekit-danger-color), var(--sn-stylekit-danger-contrast-color), true);
 }
 
-.sk-button.success, .sk-box.success, .sk-circle.success, .sk-input.success {
+.sk-button.success, .sk-box.success, .sk-circle.success {
   @include ui-rect(var(--sn-stylekit-success-color),var(--sn-stylekit-success-contrast-color), true);
 }
 
@@ -429,39 +425,39 @@ $button-border-radius: 3px;
 
 
 
-.sk-notification.contrast {
+.sk-notification.contrast, .sk-input.contrast {
   @include ui-rect(var(--sn-stylekit-contrast-background-color), var(--sn-stylekit-contrast-foreground-color), false, var(--sn-stylekit-contrast-border-color));
 }
 
-.sk-notification.sk-secondary {
+.sk-notification.sk-secondary, .sk-input.sk-secondary {
   @include ui-rect(var(--sn-stylekit-secondary-background-color), var(--sn-stylekit-secondary-foreground-color), false, var(--sn-stylekit-secondary-border-color));
 }
 
-.sk-notification.sk-secondary-contrast {
+.sk-notification.sk-secondary-contrast, .sk-input.sk-secondary-contrast  {
   @include ui-rect(var(--sn-stylekit-secondary-contrast-background-color), var(--sn-stylekit-secondary-contrast-foreground-color), false, var(--sn-stylekit-secondary-contrast-border-color));
 }
 
-.sk-notification.sk-base {
+.sk-notification.sk-base, .sk-input.sk-base {
   @include ui-rect(var(--sn-stylekit-background-color), var(--sn-stylekit-foreground-color), false, var(--sn-stylekit-border-color));
 }
 
-.sk-notification.neutral {
+.sk-notification.neutral, .sk-input.neutral {
   @include ui-rect(var(--sn-stylekit-neutral-color), var(--sn-stylekit-neutral-contrast-color), false);
 }
 
-.sk-notification.info {
+.sk-notification.info, .sk-input.info {
   @include ui-rect(var(--sn-stylekit-info-color), var(--sn-stylekit-info-contrast-color), false);
 }
 
-.sk-notification.warning {
+.sk-notification.warning, .sk-input.warning {
   @include ui-rect(var(--sn-stylekit-warning-color), var(--sn-stylekit-warning-contrast-color), false);
 }
 
-.sk-notification.danger {
+.sk-notification.danger, .sk-input.danger {
   @include ui-rect(var(--sn-stylekit-danger-color), var(--sn-stylekit-danger-contrast-color), false);
 }
 
-.sk-notification.success {
+.sk-notification.success, .sk-input.success {
   @include ui-rect(var(--sn-stylekit-success-color),var(--sn-stylekit-success-contrast-color), false);
 }
 
