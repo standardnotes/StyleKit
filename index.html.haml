@@ -54,9 +54,9 @@
               .sk-panel-row
                 .sk-button-group.stretch
                   .sk-button.info.featured
-                    .sk-h3.sk-label Sign In
+                    .sk-label Sign In
                   .sk-button.info.featured
-                    .sk-h3.sk-label Register
+                    .sk-label Register
               .sk-panel-row
                 %p.sk-p
                   Standard Notes is free on every platform, and comes standard with sync and encryption.
@@ -105,6 +105,12 @@
                       Notes are downloaded in the Standard File format,
                       which allows you to re-import back into this app easily.
                       To download as plain text files, choose “Decrypted”.
+            .sk-panel-section
+              .sk-button.info.featured
+                .sk-horizontal-group
+                  .sk-spinner.small.info-contrast
+                  .sk-h3.sk-label
+                    Generating Login Keys...
           .sk-panel-footer
             %a.sk-a.right Sign out and clear local data
 
@@ -148,7 +154,7 @@
             .sk-panel-section
               .sk-panel-section-title.sk-panel-row Update Account
               .sk-panel-row.sk-panel-form.half
-                .panel-column
+                .sk-panel-column
                   %input.sk-input.contrast{"placeholder" => "Email"}
                   %input.sk-input.contrast{"placeholder" => "Password", "type" => "password"}
                   %input.sk-input.contrast{"placeholder" => "Confirm Password", "type" => "password"}

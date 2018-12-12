@@ -49,6 +49,10 @@
     border-top: 1px solid var(--sn-stylekit-border-color);
     box-sizing: border-box;
 
+    &.extra-padding {
+      padding: 2.0rem $h-content-padding;
+    }
+
     .left {
       text-align: left;
       display: block;
@@ -176,11 +180,11 @@
 
   &.default-padding, &:not(:last-child) {
     padding-bottom: 0.4rem;
+  }
 
-    &.condensed {
-      padding-top: 0.2rem;
-      padding-bottom: 0.2rem;
-    }
+  &.condensed {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
   }
 
   .sk-p {

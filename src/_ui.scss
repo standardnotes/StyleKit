@@ -70,7 +70,7 @@ a.sk-a {
 
   &.boxed {
     border-radius: 3px;
-    padding: 0.4rem;
+    padding: 0.3rem 0.4rem;
 
     &:hover {
       text-decoration: none;
@@ -110,8 +110,16 @@ a.sk-a {
 
 * {
 
+    &.neutral {
+      color: var(--sn-stylekit-neutral-color);
+    }
+
     &.info {
       color: var(--sn-stylekit-info-color);
+    }
+
+    &.info-contrast {
+      color: var(--sn-stylekit-info-contrast-color);
     }
 
     &.warning {
@@ -159,7 +167,7 @@ p.sk-p {
 
 input.sk-input {
   box-sizing: border-box;
-  padding: 0 0.8rem;
+  padding: 0.7rem 0.8rem;
   margin: 0.30rem 0;
   border-radius: 3px;
   border-width: 1px;
@@ -315,7 +323,7 @@ $button-border-radius: 3px;
     padding: 0.3rem 1.7rem;
   }
 
-  .sk-label {
+  > .sk-label {
     font-weight: bold;
     display: block;
     text-align: center;
@@ -525,6 +533,11 @@ $button-border-radius: 3px;
   &.small {
     width: 12px;
     height: 12px;
+  }
+
+  &.info-contrast {
+    border-color: var(--sn-stylekit-info-contrast-color);
+    border-right-color: transparent;
   }
 
   &.info {
