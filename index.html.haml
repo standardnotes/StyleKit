@@ -8,7 +8,7 @@
     -# %link{:href => "themes/solarized-dark-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/futura-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/titanium-theme/dist/dist.css", :rel => "stylesheet"}
-    %link{:href => "themes/focus-theme/dist/dist.css", :rel => "stylesheet"}
+    -# %link{:href => "themes/focus-theme/dist/dist.css", :rel => "stylesheet"}
     :css
 
       html {
@@ -40,7 +40,7 @@
       }
 
   %body.sn-component
-    #components.sk-panel
+    #components.sk-panel.static
       .sn-component.sk-panel-content
         .sk-panel#account-panel
           .sk-panel-header
@@ -187,7 +187,6 @@
                 .sk-notification-title No Password Reset
                 .sk-notification-text Because your notes are encrypted using your password, Standard Notes does not have a password reset option. You cannot forget your password.
 
-            %hr.sk-hr
             .sk-panel-section
               .sk-notification.sk-base
                 .sk-notification-title Registration Successful
@@ -204,8 +203,8 @@
 
             .sk-panel-section
               .sk-panel-section-title.sk-panel-row.centered Dashed Inputs
-              .sk-notification.sk-secondary-contrast.dashed.one-line
-                %input.sk-input.contrast.center-text{"placeholder" => "Enter Your ProLink Activation Code"}
+              .sk-notification.contrast.dashed.one-line
+                %input.sk-input.clear.center-text{"placeholder" => "Enter Your ProLink Activation Code"}
               .sk-panel-row.centered
                 .sk-h1.title.center-text
                   %strong Standard Notes Pro
@@ -348,3 +347,16 @@
           .sk-app-bar-item
             .sk-label
               Refresh
+          .sk-app-bar-item.border
+
+          .sk-app-bar-item
+            .sk-app-bar-item-column
+              .sk-circle.small.success
+
+          .sk-app-bar-item
+            .sk-app-bar-item-column.underline
+              .sk-circle.small.info
+
+          .sk-app-bar-item
+            .sk-app-bar-item-column
+              .sk-circle.small.danger
