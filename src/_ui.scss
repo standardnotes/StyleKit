@@ -402,6 +402,7 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
     top: 0;
     left: 0;
     width: 100%;
+    border-radius: var(--sn-stylekit-general-border-radius);
     box-shadow: inset 0 0 0 1px;
     // color here refers to shadow color
     @if $border-color != "" {
