@@ -407,6 +407,7 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
     left: 0;
     width: 100%;
     border-radius: var(--sn-stylekit-general-border-radius);
+    pointer-events: none; // otherwise this rect would block clickable elements
     // color here refers to shadow color
     @if $border-color != "" {
       color: $border-color;
