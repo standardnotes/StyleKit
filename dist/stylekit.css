@@ -555,6 +555,11 @@
   padding: 2.5rem 1.5rem;
 }
 .sn-component .sk-button.sk-base, .sn-component .sk-base.sk-box, .sn-component .sk-box.sk-base, .sn-component .sk-circle.sk-base {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-foreground-color);
   position: relative;
   background-color: var(--sn-stylekit-background-color);
@@ -595,6 +600,12 @@
 .sn-component .sk-button.sk-base:hover:before, .sn-component .sk-base.sk-box:hover:before, .sn-component .sk-box.sk-base:hover:before, .sn-component .sk-circle.sk-base:hover:before {
   filter: brightness(130%);
 }
+.sn-component .sk-button.sk-base.no-bg, .sn-component .sk-base.no-bg.sk-box, .sn-component .sk-box.sk-base.no-bg, .sn-component .sk-circle.sk-base.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-button.sk-base.no-bg:before, .sn-component .sk-base.no-bg.sk-box:before, .sn-component .sk-box.sk-base.no-bg:before, .sn-component .sk-circle.sk-base.no-bg:before {
+  content: none;
+}
 .sn-component .sk-button.sk-base.featured, .sn-component .sk-base.featured.sk-box, .sn-component .sk-box.sk-base.featured, .sn-component .sk-circle.sk-base.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -604,6 +615,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-button.contrast, .sn-component .contrast.sk-box, .sn-component .sk-box.contrast, .sn-component .sk-circle.contrast {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-contrast-foreground-color);
   position: relative;
   background-color: var(--sn-stylekit-contrast-background-color);
@@ -644,6 +660,12 @@
 .sn-component .sk-button.contrast:hover:before, .sn-component .contrast.sk-box:hover:before, .sn-component .sk-box.contrast:hover:before, .sn-component .sk-circle.contrast:hover:before {
   filter: brightness(130%);
 }
+.sn-component .sk-button.contrast.no-bg, .sn-component .contrast.no-bg.sk-box, .sn-component .sk-box.contrast.no-bg, .sn-component .sk-circle.contrast.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-button.contrast.no-bg:before, .sn-component .contrast.no-bg.sk-box:before, .sn-component .sk-box.contrast.no-bg:before, .sn-component .sk-circle.contrast.no-bg:before {
+  content: none;
+}
 .sn-component .sk-button.contrast.featured, .sn-component .contrast.featured.sk-box, .sn-component .sk-box.contrast.featured, .sn-component .sk-circle.contrast.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -653,6 +675,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-button.sk-secondary, .sn-component .sk-secondary.sk-box, .sn-component .sk-box.sk-secondary, .sn-component .sk-circle.sk-secondary {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-secondary-foreground-color);
   position: relative;
   background-color: var(--sn-stylekit-secondary-background-color);
@@ -693,6 +720,12 @@
 .sn-component .sk-button.sk-secondary:hover:before, .sn-component .sk-secondary.sk-box:hover:before, .sn-component .sk-box.sk-secondary:hover:before, .sn-component .sk-circle.sk-secondary:hover:before {
   filter: brightness(130%);
 }
+.sn-component .sk-button.sk-secondary.no-bg, .sn-component .sk-secondary.no-bg.sk-box, .sn-component .sk-box.sk-secondary.no-bg, .sn-component .sk-circle.sk-secondary.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-button.sk-secondary.no-bg:before, .sn-component .sk-secondary.no-bg.sk-box:before, .sn-component .sk-box.sk-secondary.no-bg:before, .sn-component .sk-circle.sk-secondary.no-bg:before {
+  content: none;
+}
 .sn-component .sk-button.sk-secondary.featured, .sn-component .sk-secondary.featured.sk-box, .sn-component .sk-box.sk-secondary.featured, .sn-component .sk-circle.sk-secondary.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -702,6 +735,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-button.sk-secondary-contrast, .sn-component .sk-secondary-contrast.sk-box, .sn-component .sk-box.sk-secondary-contrast, .sn-component .sk-circle.sk-secondary-contrast {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-secondary-contrast-foreground-color);
   position: relative;
   background-color: var(--sn-stylekit-secondary-contrast-background-color);
@@ -742,6 +780,12 @@
 .sn-component .sk-button.sk-secondary-contrast:hover:before, .sn-component .sk-secondary-contrast.sk-box:hover:before, .sn-component .sk-box.sk-secondary-contrast:hover:before, .sn-component .sk-circle.sk-secondary-contrast:hover:before {
   filter: brightness(130%);
 }
+.sn-component .sk-button.sk-secondary-contrast.no-bg, .sn-component .sk-secondary-contrast.no-bg.sk-box, .sn-component .sk-box.sk-secondary-contrast.no-bg, .sn-component .sk-circle.sk-secondary-contrast.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-button.sk-secondary-contrast.no-bg:before, .sn-component .sk-secondary-contrast.no-bg.sk-box:before, .sn-component .sk-box.sk-secondary-contrast.no-bg:before, .sn-component .sk-circle.sk-secondary-contrast.no-bg:before {
+  content: none;
+}
 .sn-component .sk-button.sk-secondary-contrast.featured, .sn-component .sk-secondary-contrast.featured.sk-box, .sn-component .sk-box.sk-secondary-contrast.featured, .sn-component .sk-circle.sk-secondary-contrast.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -751,6 +795,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-button.neutral, .sn-component .neutral.sk-box, .sn-component .sk-box.neutral, .sn-component .sk-circle.neutral {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-neutral-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-neutral-color);
@@ -791,6 +840,12 @@
 .sn-component .sk-button.neutral:hover:before, .sn-component .neutral.sk-box:hover:before, .sn-component .sk-box.neutral:hover:before, .sn-component .sk-circle.neutral:hover:before {
   filter: brightness(130%);
 }
+.sn-component .sk-button.neutral.no-bg, .sn-component .neutral.no-bg.sk-box, .sn-component .sk-box.neutral.no-bg, .sn-component .sk-circle.neutral.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-button.neutral.no-bg:before, .sn-component .neutral.no-bg.sk-box:before, .sn-component .sk-box.neutral.no-bg:before, .sn-component .sk-circle.neutral.no-bg:before {
+  content: none;
+}
 .sn-component .sk-button.neutral.featured, .sn-component .neutral.featured.sk-box, .sn-component .sk-box.neutral.featured, .sn-component .sk-circle.neutral.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -800,6 +855,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-button.info, .sn-component .info.sk-box, .sn-component .sk-box.info, .sn-component .sk-circle.info {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-info-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-info-color);
@@ -840,6 +900,12 @@
 .sn-component .sk-button.info:hover:before, .sn-component .info.sk-box:hover:before, .sn-component .sk-box.info:hover:before, .sn-component .sk-circle.info:hover:before {
   filter: brightness(130%);
 }
+.sn-component .sk-button.info.no-bg, .sn-component .info.no-bg.sk-box, .sn-component .sk-box.info.no-bg, .sn-component .sk-circle.info.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-button.info.no-bg:before, .sn-component .info.no-bg.sk-box:before, .sn-component .sk-box.info.no-bg:before, .sn-component .sk-circle.info.no-bg:before {
+  content: none;
+}
 .sn-component .sk-button.info.featured, .sn-component .info.featured.sk-box, .sn-component .sk-box.info.featured, .sn-component .sk-circle.info.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -849,6 +915,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-button.warning, .sn-component .warning.sk-box, .sn-component .sk-box.warning, .sn-component .sk-circle.warning {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-warning-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-warning-color);
@@ -889,6 +960,12 @@
 .sn-component .sk-button.warning:hover:before, .sn-component .warning.sk-box:hover:before, .sn-component .sk-box.warning:hover:before, .sn-component .sk-circle.warning:hover:before {
   filter: brightness(130%);
 }
+.sn-component .sk-button.warning.no-bg, .sn-component .warning.no-bg.sk-box, .sn-component .sk-box.warning.no-bg, .sn-component .sk-circle.warning.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-button.warning.no-bg:before, .sn-component .warning.no-bg.sk-box:before, .sn-component .sk-box.warning.no-bg:before, .sn-component .sk-circle.warning.no-bg:before {
+  content: none;
+}
 .sn-component .sk-button.warning.featured, .sn-component .warning.featured.sk-box, .sn-component .sk-box.warning.featured, .sn-component .sk-circle.warning.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -898,6 +975,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-button.danger, .sn-component .danger.sk-box, .sn-component .sk-box.danger, .sn-component .sk-circle.danger {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-danger-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-danger-color);
@@ -938,6 +1020,12 @@
 .sn-component .sk-button.danger:hover:before, .sn-component .danger.sk-box:hover:before, .sn-component .sk-box.danger:hover:before, .sn-component .sk-circle.danger:hover:before {
   filter: brightness(130%);
 }
+.sn-component .sk-button.danger.no-bg, .sn-component .danger.no-bg.sk-box, .sn-component .sk-box.danger.no-bg, .sn-component .sk-circle.danger.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-button.danger.no-bg:before, .sn-component .danger.no-bg.sk-box:before, .sn-component .sk-box.danger.no-bg:before, .sn-component .sk-circle.danger.no-bg:before {
+  content: none;
+}
 .sn-component .sk-button.danger.featured, .sn-component .danger.featured.sk-box, .sn-component .sk-box.danger.featured, .sn-component .sk-circle.danger.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -947,6 +1035,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-button.success, .sn-component .success.sk-box, .sn-component .sk-box.success, .sn-component .sk-circle.success {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-success-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-success-color);
@@ -987,6 +1080,12 @@
 .sn-component .sk-button.success:hover:before, .sn-component .success.sk-box:hover:before, .sn-component .sk-box.success:hover:before, .sn-component .sk-circle.success:hover:before {
   filter: brightness(130%);
 }
+.sn-component .sk-button.success.no-bg, .sn-component .success.no-bg.sk-box, .sn-component .sk-box.success.no-bg, .sn-component .sk-circle.success.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-button.success.no-bg:before, .sn-component .success.no-bg.sk-box:before, .sn-component .sk-box.success.no-bg:before, .sn-component .sk-circle.success.no-bg:before {
+  content: none;
+}
 .sn-component .sk-button.success.featured, .sn-component .success.featured.sk-box, .sn-component .sk-box.success.featured, .sn-component .sk-circle.success.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -996,6 +1095,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-notification.contrast, .sn-component .sk-input.contrast {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-contrast-foreground-color);
   position: relative;
   background-color: var(--sn-stylekit-contrast-background-color);
@@ -1006,6 +1110,7 @@
     We keep border-color as well incase the individual elements want a border in some cases.
   */
   border-color: var(--sn-stylekit-contrast-border-color);
+  border: 1px solid var(--sn-stylekit-contrast-border-color);
 }
 .sn-component .sk-notification.contrast *, .sn-component .sk-input.contrast * {
   position: relative;
@@ -1030,8 +1135,14 @@
   left: 0;
   width: 100%;
   border-radius: var(--sn-stylekit-general-border-radius);
-  box-shadow: inset 0 0 0 1px;
   color: var(--sn-stylekit-contrast-border-color);
+  border-color: var(--sn-stylekit-contrast-border-color);
+}
+.sn-component .sk-notification.contrast.no-bg, .sn-component .sk-input.contrast.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-notification.contrast.no-bg:before, .sn-component .sk-input.contrast.no-bg:before {
+  content: none;
 }
 .sn-component .sk-notification.contrast.featured, .sn-component .sk-input.contrast.featured {
   border: none;
@@ -1042,6 +1153,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-notification.sk-secondary, .sn-component .sk-input.sk-secondary {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-secondary-foreground-color);
   position: relative;
   background-color: var(--sn-stylekit-secondary-background-color);
@@ -1052,6 +1168,7 @@
     We keep border-color as well incase the individual elements want a border in some cases.
   */
   border-color: var(--sn-stylekit-secondary-border-color);
+  border: 1px solid var(--sn-stylekit-secondary-border-color);
 }
 .sn-component .sk-notification.sk-secondary *, .sn-component .sk-input.sk-secondary * {
   position: relative;
@@ -1076,8 +1193,14 @@
   left: 0;
   width: 100%;
   border-radius: var(--sn-stylekit-general-border-radius);
-  box-shadow: inset 0 0 0 1px;
   color: var(--sn-stylekit-secondary-border-color);
+  border-color: var(--sn-stylekit-secondary-border-color);
+}
+.sn-component .sk-notification.sk-secondary.no-bg, .sn-component .sk-input.sk-secondary.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-notification.sk-secondary.no-bg:before, .sn-component .sk-input.sk-secondary.no-bg:before {
+  content: none;
 }
 .sn-component .sk-notification.sk-secondary.featured, .sn-component .sk-input.sk-secondary.featured {
   border: none;
@@ -1088,6 +1211,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-notification.sk-secondary-contrast, .sn-component .sk-input.sk-secondary-contrast {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-secondary-contrast-foreground-color);
   position: relative;
   background-color: var(--sn-stylekit-secondary-contrast-background-color);
@@ -1098,6 +1226,7 @@
     We keep border-color as well incase the individual elements want a border in some cases.
   */
   border-color: var(--sn-stylekit-secondary-contrast-border-color);
+  border: 1px solid var(--sn-stylekit-secondary-contrast-border-color);
 }
 .sn-component .sk-notification.sk-secondary-contrast *, .sn-component .sk-input.sk-secondary-contrast * {
   position: relative;
@@ -1122,8 +1251,14 @@
   left: 0;
   width: 100%;
   border-radius: var(--sn-stylekit-general-border-radius);
-  box-shadow: inset 0 0 0 1px;
   color: var(--sn-stylekit-secondary-contrast-border-color);
+  border-color: var(--sn-stylekit-secondary-contrast-border-color);
+}
+.sn-component .sk-notification.sk-secondary-contrast.no-bg, .sn-component .sk-input.sk-secondary-contrast.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-notification.sk-secondary-contrast.no-bg:before, .sn-component .sk-input.sk-secondary-contrast.no-bg:before {
+  content: none;
 }
 .sn-component .sk-notification.sk-secondary-contrast.featured, .sn-component .sk-input.sk-secondary-contrast.featured {
   border: none;
@@ -1134,6 +1269,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-notification.sk-base, .sn-component .sk-input.sk-base {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-foreground-color);
   position: relative;
   background-color: var(--sn-stylekit-background-color);
@@ -1144,6 +1284,7 @@
     We keep border-color as well incase the individual elements want a border in some cases.
   */
   border-color: var(--sn-stylekit-border-color);
+  border: 1px solid var(--sn-stylekit-border-color);
 }
 .sn-component .sk-notification.sk-base *, .sn-component .sk-input.sk-base * {
   position: relative;
@@ -1168,8 +1309,14 @@
   left: 0;
   width: 100%;
   border-radius: var(--sn-stylekit-general-border-radius);
-  box-shadow: inset 0 0 0 1px;
   color: var(--sn-stylekit-border-color);
+  border-color: var(--sn-stylekit-border-color);
+}
+.sn-component .sk-notification.sk-base.no-bg, .sn-component .sk-input.sk-base.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-notification.sk-base.no-bg:before, .sn-component .sk-input.sk-base.no-bg:before {
+  content: none;
 }
 .sn-component .sk-notification.sk-base.featured, .sn-component .sk-input.sk-base.featured {
   border: none;
@@ -1180,6 +1327,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-notification.neutral, .sn-component .sk-input.neutral {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-neutral-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-neutral-color);
@@ -1217,6 +1369,12 @@
   box-shadow: inset 0 0 0 1px;
   color: var(--sn-stylekit-neutral-color);
 }
+.sn-component .sk-notification.neutral.no-bg, .sn-component .sk-input.neutral.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-notification.neutral.no-bg:before, .sn-component .sk-input.neutral.no-bg:before {
+  content: none;
+}
 .sn-component .sk-notification.neutral.featured, .sn-component .sk-input.neutral.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -1226,6 +1384,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-notification.info, .sn-component .sk-input.info {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-info-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-info-color);
@@ -1263,6 +1426,12 @@
   box-shadow: inset 0 0 0 1px;
   color: var(--sn-stylekit-info-color);
 }
+.sn-component .sk-notification.info.no-bg, .sn-component .sk-input.info.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-notification.info.no-bg:before, .sn-component .sk-input.info.no-bg:before {
+  content: none;
+}
 .sn-component .sk-notification.info.featured, .sn-component .sk-input.info.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -1272,6 +1441,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-notification.warning, .sn-component .sk-input.warning {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-warning-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-warning-color);
@@ -1309,6 +1483,12 @@
   box-shadow: inset 0 0 0 1px;
   color: var(--sn-stylekit-warning-color);
 }
+.sn-component .sk-notification.warning.no-bg, .sn-component .sk-input.warning.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-notification.warning.no-bg:before, .sn-component .sk-input.warning.no-bg:before {
+  content: none;
+}
 .sn-component .sk-notification.warning.featured, .sn-component .sk-input.warning.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -1318,6 +1498,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-notification.danger, .sn-component .sk-input.danger {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-danger-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-danger-color);
@@ -1355,6 +1540,12 @@
   box-shadow: inset 0 0 0 1px;
   color: var(--sn-stylekit-danger-color);
 }
+.sn-component .sk-notification.danger.no-bg, .sn-component .sk-input.danger.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-notification.danger.no-bg:before, .sn-component .sk-input.danger.no-bg:before {
+  content: none;
+}
 .sn-component .sk-notification.danger.featured, .sn-component .sk-input.danger.featured {
   border: none;
   padding: 0.75rem 1.25rem;
@@ -1364,6 +1555,11 @@
   opacity: 1.0;
 }
 .sn-component .sk-notification.success, .sn-component .sk-input.success {
+  /*
+    If $border-color is supplied, we use traditional borders for rect.
+    Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
+    If not, and we're inerferring border from other colors, we use box-shadow, so that we get rounded borders
+  */
   color: var(--sn-stylekit-success-contrast-color);
   position: relative;
   background-color: var(--sn-stylekit-success-color);
@@ -1400,6 +1596,12 @@
   border-radius: var(--sn-stylekit-general-border-radius);
   box-shadow: inset 0 0 0 1px;
   color: var(--sn-stylekit-success-color);
+}
+.sn-component .sk-notification.success.no-bg, .sn-component .sk-input.success.no-bg {
+  background-color: transparent;
+}
+.sn-component .sk-notification.success.no-bg:before, .sn-component .sk-input.success.no-bg:before {
+  content: none;
 }
 .sn-component .sk-notification.success.featured, .sn-component .sk-input.success.featured {
   border: none;
