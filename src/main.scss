@@ -78,4 +78,11 @@
   color: var(--sn-stylekit-foreground-color);
 }
 
+/* Goes outside of .sn-component declaration, as following properties are global */
+input,
+textarea,
+[contenteditable] {
+  caret-color: var(--sn-stylekit-editor-foreground-color);
+}
+
 @import "scrollbar";

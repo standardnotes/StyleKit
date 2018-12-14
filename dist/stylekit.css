@@ -1811,6 +1811,13 @@
   user-select: none;
 }
 
+/* Goes outside of .sn-component declaration, as following properties are global */
+input,
+textarea,
+[contenteditable] {
+  caret-color: var(--sn-stylekit-editor-foreground-color);
+}
+
 .windows-web ::-webkit-scrollbar, .windows-desktop ::-webkit-scrollbar, .linux-web ::-webkit-scrollbar, .linux-desktop ::-webkit-scrollbar {
   width: 17px;
   height: 18px;
