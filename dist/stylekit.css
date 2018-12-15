@@ -373,6 +373,12 @@
 .sn-component .wrap {
   word-wrap: break-word;
 }
+.sn-component *.sk-base {
+  color: var(--sn-stylekit-foreground-color);
+}
+.sn-component *.contrast {
+  color: var(--sn-stylekit-contrast-foreground-color);
+}
 .sn-component *.neutral {
   color: var(--sn-stylekit-neutral-color);
 }

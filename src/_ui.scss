@@ -111,6 +111,14 @@ a.sk-a {
 
 * {
 
+    &.sk-base {
+      color: var(--sn-stylekit-foreground-color);
+    }
+
+    &.contrast {
+      color: var(--sn-stylekit-contrast-foreground-color);
+    }
+
     &.neutral {
       color: var(--sn-stylekit-neutral-color);
     }
