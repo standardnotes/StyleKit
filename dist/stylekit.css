@@ -436,6 +436,7 @@
   resize: none;
 }
 .sn-component input.sk-input.clear {
+  color: var(--sn-stylekit-foreground-color);
   background-color: transparent;
   border: none;
 }

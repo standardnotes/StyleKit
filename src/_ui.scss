@@ -186,6 +186,8 @@ input.sk-input {
   resize: none;
 
   &.clear {
+    // usually sk-inputs should have ui-rect classes like info, warning, etc. If clear, no text color will be assigned unless we do it explicitely.
+    color: var(--sn-stylekit-foreground-color);
     background-color: transparent;
     border: none;
   }
