@@ -282,6 +282,9 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
   .sk-button {
     border-radius: 0;
     white-space: nowrap;
+    margin: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 
     &:not(:last-child) {
       border-right: none;
@@ -303,7 +306,6 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    margin: 0;
   }
 }
 
