@@ -4,14 +4,19 @@
   height: 2rem;
   padding: 0.0rem 0.8rem;
   background-color: var(--sn-stylekit-contrast-background-color);
+  color: var(--sn-stylekit-contrast-foreground-color);
   justify-content: space-between;
   align-items: center;
-  border: 1px solid var(--sn-stylekit-border-color);
+  border: 1px solid var(--sn-stylekit-contrast-border-color);
   user-select: none;
 
   &.no-edges {
     border-left: 0;
     border-right: 0;
+  }
+
+  &.no-bottom-edge {
+    border-bottom: 0;
   }
 
   .left, .right {
