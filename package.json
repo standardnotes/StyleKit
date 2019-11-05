@@ -1,7 +1,10 @@
 {
   "name": "sn-stylekit",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "main": "dist/dist.css",
+  "scripts": {
+    "build": "webpack"
+  },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
