@@ -4,6 +4,14 @@
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 <title>StyleKit</title>
 <link href='dist/stylekit.css' rel='stylesheet'>
+<script src='dist/stylekit.js'></script>
+<script>
+  function presentAlert() {
+  console.log(Stylekit);
+    var alert = new Stylekit.Alert("Hello", "World");
+    alert.present();
+  }
+</script>
 <style>
   html {
     font-size: 14px;
@@ -48,7 +56,7 @@
 <div class='sk-h1'>Sign in or register to enable sync and end-to-end encryption.</div>
 </div>
 <div class='sk-panel-row'>
-<div class='sk-button-group stretch'>
+<div class='sk-button-group stretch' onclick='presentAlert()'>
 <div class='sk-button info featured'>
 <div class='sk-label'>Sign In</div>
 </div>

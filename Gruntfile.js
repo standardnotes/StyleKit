@@ -9,24 +9,6 @@ module.exports = function(grunt) {
         options: {
           spawn: false,
         },
-      },
-      css: {
-        files: ['src/**/*.scss'],
-        tasks: ['sass'],
-        options: {
-          spawn: false,
-        },
-      }
-    },
-
-    sass: {
-      dist: {
-        options: {
-         style: 'expanded'
-       },
-        files: {
-          'dist/stylekit.css': 'src/main.scss'
-        }
       }
     },
 
@@ -46,8 +28,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-haml2html');
 
-  grunt.registerTask('default', ['sass', 'haml']);
+  grunt.registerTask('default', ['haml']);
 };

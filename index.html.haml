@@ -4,11 +4,20 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title StyleKit
     %link{:href => "dist/stylekit.css", :rel => "stylesheet"}
+    %script{:src => "dist/stylekit.js"}
     -# %link{:href => "themes/midnight/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/solarized-dark-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/futura-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/titanium-theme/dist/dist.css", :rel => "stylesheet"}
     -# %link{:href => "themes/focus-theme/dist/dist.css", :rel => "stylesheet"}
+
+    :javascript
+      function presentAlert() {
+      console.log(Stylekit);
+        var alert = new Stylekit.Alert("Hello", "World");
+        alert.present();
+      }
+
     :css
 
       html {
@@ -52,7 +61,7 @@
               .sk-panel-row
                 .sk-h1 Sign in or register to enable sync and end-to-end encryption.
               .sk-panel-row
-                .sk-button-group.stretch
+                .sk-button-group.stretch{"onclick" => "presentAlert()"}
                   .sk-button.info.featured
                     .sk-label Sign In
                   .sk-button.info.featured
