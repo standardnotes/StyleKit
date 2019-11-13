@@ -13,8 +13,15 @@
 
     :javascript
       function presentAlert() {
-      console.log(Stylekit);
-        var alert = new Stylekit.Alert("Hello", "World");
+        var buttons = [
+          {"text": "Cancel", "style" : "neutral", "action" : function() {
+            console.log("Cancel pressed");
+          }},
+          {"text": "Delete", "style" : "danger", "action" : function() {
+            console.log("Delete pressed");
+          }}
+        ]
+        var alert = new Stylekit.SKAlert({title: null, text: "Are you sure you want to permanentely delete 'My favorite note'? This action cannot be undone.", buttons});
         alert.present();
       }
 

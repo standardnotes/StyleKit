@@ -4,22 +4,16 @@ module.exports = function (api) {
   const presets = [
     ["@babel/preset-env", {
       "targets": {
-        "node": "current"
+        "chrome": "58",
+        "ie": "11"
       }
     }]
   ];
 
-  // const plugins = [
-  //   ["@babel/plugin-transform-regenerator", {
-  //     "asyncGenerators": false,
-  //     "generators": false,
-  //     "async": false
-  //   }],
-  //   "@babel/plugin-transform-async-to-generator"
-  // ];
+  const plugins = ["@babel/plugin-transform-classes"];
 
   return {
     presets,
-    // plugins
+    plugins
   };
 }

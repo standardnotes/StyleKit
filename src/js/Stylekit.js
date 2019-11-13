@@ -1,3 +1,3 @@
-import Alert from './Alert';
+import SKAlert from './Alert';
 
-export {Alert}
+export {SKAlert}
