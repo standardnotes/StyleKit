@@ -99,6 +99,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var SKAlert =
 /*#__PURE__*/
 function () {
@@ -106,11 +108,23 @@ function () {
   buttons: [{text, style, action}]
   */
   function SKAlert(_ref) {
+    var _this = this;
+
     var title = _ref.title,
         text = _ref.text,
         buttons = _ref.buttons;
 
     _classCallCheck(this, SKAlert);
+
+    _defineProperty(this, "keyupListener", function (event) {
+      if (event.key === "Enter") {
+        var primaryButton = _this.primaryButton();
+
+        primaryButton.action && primaryButton.action();
+
+        _this.dismiss();
+      }
+    });
 
     this.title = title;
     this.text = text;
@@ -140,8 +154,29 @@ function () {
       return template;
     }
   }, {
+    key: "dismiss",
+    value: function dismiss() {
+      this.onElement.removeChild(this.element);
+      document.removeEventListener("keyup", this.keyupListener);
+    }
+  }, {
+    key: "primaryButton",
+    value: function primaryButton() {
+      var primary = this.buttons.find(function (button) {
+        return button.primary === true;
+      });
+
+      if (!primary) {
+        primary = this.buttons[this.buttons.length - 1];
+      }
+
+      return primary;
+    }
+  }, {
     key: "present",
     value: function present() {
+      var _this2 = this;
+
       var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           onElement = _ref2.onElement;
 
@@ -149,21 +184,20 @@ function () {
         onElement = document.body;
       }
 
-      var div = document.createElement('div');
-      div.innerHTML = this.templateString().trim();
-      var background = div.querySelector(".sk-modal-background");
-      background.addEventListener('click', function () {
-        onElement.removeChild(div);
-      });
+      this.onElement = onElement;
+      this.element = document.createElement('div');
+      this.element.innerHTML = this.templateString().trim();
+      document.addEventListener("keyup", this.keyupListener);
       this.buttons.forEach(function (buttonDesc, index) {
-        var buttonElem = div.querySelector("#button-".concat(index));
+        var buttonElem = _this2.element.querySelector("#button-".concat(index));
 
         buttonElem.onclick = function () {
           buttonDesc.action && buttonDesc.action();
-          onElement.removeChild(div);
+
+          _this2.dismiss();
         };
       });
-      onElement.appendChild(div);
+      onElement.appendChild(this.element);
     }
   }]);
 

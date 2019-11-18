@@ -64,25 +64,45 @@ export default class SKAlert {
     return template;
   }
 
+  dismiss() {
+    this.onElement.removeChild(this.element);
+    document.removeEventListener("keyup", this.keyupListener);
+  }
+
+  primaryButton() {
+    let primary = this.buttons.find((button) => button.primary === true);
+    if(!primary) {
+      primary = this.buttons[this.buttons.length - 1];
+    }
+    return primary;
+  }
+
+  keyupListener = (event) => {
+    if(event.key === "Enter") {
+      let primaryButton = this.primaryButton();
+      primaryButton.action && primaryButton.action();
+      this.dismiss();
+    }
+  }
+
   present({onElement} = {}) {
     if(!onElement) {onElement = document.body;}
 
-    let div = document.createElement('div');
-    div.innerHTML = this.templateString().trim();
+    this.onElement = onElement;
 
-    let background = div.querySelector(".sk-modal-background");
-    background.addEventListener('click', function(){
-      onElement.removeChild(div);
-    });
+    this.element = document.createElement('div');
+    this.element.innerHTML = this.templateString().trim();
 
-    this.buttons.forEach(function(buttonDesc, index) {
-      let buttonElem = div.querySelector(`#button-${index}`);
-      buttonElem.onclick = function() {
+    document.addEventListener("keyup", this.keyupListener);
+
+    this.buttons.forEach((buttonDesc, index) => {
+      let buttonElem = this.element.querySelector(`#button-${index}`);
+      buttonElem.onclick = () => {
         buttonDesc.action && buttonDesc.action();
-        onElement.removeChild(div);
+        this.dismiss();
       }
     })
 
-    onElement.appendChild(div);
+    onElement.appendChild(this.element);
   }
 }
