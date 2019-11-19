@@ -91,6 +91,7 @@ export default class SKAlert {
     this.onElement = onElement;
 
     this.element = document.createElement('div');
+    this.element.className = 'sn-component';
     this.element.innerHTML = this.templateString().trim();
 
     document.addEventListener("keyup", this.keyupListener);
