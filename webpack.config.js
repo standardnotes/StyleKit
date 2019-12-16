@@ -11,10 +11,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    // publicPath: '/',
     filename: './[name]',
     library: 'Stylekit',
-    // libraryTarget: 'commonjs2'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   optimization: {
     minimize: false //Update this to true or false
