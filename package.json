@@ -3,7 +3,8 @@
   "version": "2.0.20",
   "main": "dist/stylekit.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
