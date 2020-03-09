@@ -1,7 +1,6 @@
+/** Grunt exists only for building haml file for dev env. Not used to package bundle. */
 module.exports = function(grunt) {
-
   grunt.initConfig({
-
     watch: {
       haml: {
         files: ['**/*.haml'],
@@ -11,7 +10,6 @@ module.exports = function(grunt) {
         },
       }
     },
-
     haml: {
       dist: {
         expand: true,
@@ -25,10 +23,8 @@ module.exports = function(grunt) {
       },
     },
   });
-
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-haml2html');
-
   grunt.registerTask('default', ['haml']);
 };
