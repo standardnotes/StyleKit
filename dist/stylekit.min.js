@@ -156,10 +156,20 @@ function () {
   }, {
     key: "templateString",
     value: function templateString() {
-      var buttonsTemplate = this.buttonsString();
+      var buttonsTemplate;
+      var panelStyle;
+
+      if (this.buttons) {
+        buttonsTemplate = "\n        <div class=\"sk-panel-row\" style='margin-top: 8px;'>\n          ".concat(this.buttonsString(), "\n        </div>\n      ");
+        panelStyle = '';
+      } else {
+        buttonsTemplate = '';
+        panelStyle = 'style="padding-bottom: 8px"';
+      }
+
       var titleTemplate = this.title ? "<div class='sk-h3 sk-panel-section-title'>".concat(this.title, "</div>") : "";
       var messageTemplate = this.text ? "<p class='sk-p'>".concat(this.text, "</p>") : "";
-      var template = "\n      <div class=\"sk-modal\">\n        <div class=\"sk-modal-background\"></div>\n        <div class=\"sk-modal-content\">\n          <div class=\"sn-component\">\n            <div class=\"sk-panel\" style='max-width: 500px;'>\n              <div class=\"sk-panel-content\">\n                <div class=\"sk-panel-section\">\n                  ".concat(titleTemplate, "\n\n                  <div class=\"sk-panel-row\">\n                    ").concat(messageTemplate, "\n                  </div>\n\n                  <div class=\"sk-panel-row\" style='margin-top: 8px;'>\n                    ").concat(buttonsTemplate, "\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    ");
+      var template = "\n      <div class=\"sk-modal\">\n        <div class=\"sk-modal-background\"></div>\n        <div class=\"sk-modal-content\">\n          <div class=\"sn-component\">\n            <div class=\"sk-panel\" style='max-width: 500px;'>\n              <div class=\"sk-panel-content\" ".concat(panelStyle, ">\n                <div class=\"sk-panel-section\">\n                  ").concat(titleTemplate, "\n\n                  <div class=\"sk-panel-row\">\n                    ").concat(messageTemplate, "\n                  </div>\n\n                  ").concat(buttonsTemplate, "\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    ");
       return template;
     }
   }, {
@@ -197,16 +207,20 @@ function () {
       this.element = document.createElement('div');
       this.element.className = 'sn-component';
       this.element.innerHTML = this.templateString().trim();
-      document.addEventListener("keyup", this.keyupListener);
-      this.buttons.forEach(function (buttonDesc, index) {
-        var buttonElem = _this2.element.querySelector("#button-".concat(index));
 
-        buttonElem.onclick = function () {
-          buttonDesc.action && buttonDesc.action();
+      if (this.buttons) {
+        document.addEventListener("keyup", this.keyupListener);
+        this.buttons.forEach(function (buttonDesc, index) {
+          var buttonElem = _this2.element.querySelector("#button-".concat(index));
 
-          _this2.dismiss();
-        };
-      });
+          buttonElem.onclick = function () {
+            buttonDesc.action && buttonDesc.action();
+
+            _this2.dismiss();
+          };
+        });
+      }
+
       onElement.appendChild(this.element);
     }
   }]);
