@@ -32,7 +32,19 @@ export default class SKAlert {
 
   templateString() {
 
-    let buttonsTemplate = this.buttonsString();
+    let buttonsTemplate;
+    let panelStyle;
+    if (this.buttons) {
+      buttonsTemplate = `
+        <div class="sk-panel-row" style='margin-top: 8px;'>
+          ${this.buttonsString()}
+        </div>
+      `;
+      panelStyle = ''
+    } else {
+      buttonsTemplate = '';
+      panelStyle = 'style="padding-bottom: 8px"';
+    }
     let titleTemplate = this.title ? `<div class='sk-h3 sk-panel-section-title'>${this.title}</div>` : "";
     let messageTemplate = this.text ? `<p class='sk-p'>${this.text}</p>` : "";
 
@@ -42,7 +54,7 @@ export default class SKAlert {
         <div class="sk-modal-content">
           <div class="sn-component">
             <div class="sk-panel" style='max-width: 500px;'>
-              <div class="sk-panel-content">
+              <div class="sk-panel-content" ${panelStyle}>
                 <div class="sk-panel-section">
                   ${titleTemplate}
 
@@ -50,9 +62,7 @@ export default class SKAlert {
                     ${messageTemplate}
                   </div>
 
-                  <div class="sk-panel-row" style='margin-top: 8px;'>
-                    ${buttonsTemplate}
-                  </div>
+                  ${buttonsTemplate}
                 </div>
               </div>
             </div>
@@ -94,15 +104,17 @@ export default class SKAlert {
     this.element.className = 'sn-component';
     this.element.innerHTML = this.templateString().trim();
 
-    document.addEventListener("keyup", this.keyupListener);
+    if (this.buttons) {
+      document.addEventListener("keyup", this.keyupListener);
 
-    this.buttons.forEach((buttonDesc, index) => {
-      let buttonElem = this.element.querySelector(`#button-${index}`);
-      buttonElem.onclick = () => {
-        buttonDesc.action && buttonDesc.action();
-        this.dismiss();
-      }
-    })
+      this.buttons.forEach((buttonDesc, index) => {
+        let buttonElem = this.element.querySelector(`#button-${index}`);
+        buttonElem.onclick = () => {
+          buttonDesc.action && buttonDesc.action();
+          this.dismiss();
+        }
+      });
+    }
 
     onElement.appendChild(this.element);
   }
