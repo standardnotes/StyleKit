@@ -2,7 +2,7 @@
   --sn-stylekit-base-font-size: 13px;
 
   --sn-stylekit-font-size-p: 1.0rem;
-  --sn-stylekit-font-size-editor: 1.21rem;
+  --sn-stylekit-font-size-editor: 1.23rem;
 
   --sn-stylekit-font-size-h6: 0.8rem;
   --sn-stylekit-font-size-h5: 0.9rem;
@@ -58,11 +58,16 @@
   --sn-stylekit-general-border-radius: 2px;
 
   --sn-stylekit-simplified-chinese-font: "Microsoft Yahei", "微软雅黑体";
-  // consolas and monaco don't look good on desktop
-  --sn-stylekit-monospace-font: "Ubuntu Mono", courier, monospace;
+  --sn-stylekit-monospace-font:
+    "SFMono-Regular", Consolas, "Liberation Mono",
+    Menlo, "Ubuntu Mono", "Courier New", monospace;
   --sn-stylekit-sans-serif-font: -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", var(--sn-stylekit-simplified-chinese-font), sans-serif;
+  --sn-stylekit-editor-font-family: var(--sn-stylekit-sans-serif-font);
+
+  --sn-stylekit-theme-type: "light";
+  --sn-stylekit-theme-name: "sn-light";
 }
 
 .sn-component {

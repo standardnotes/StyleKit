@@ -1,77 +1,61 @@
-const webpack = require('webpack');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
-  entry: {
-    "stylekit.js" : path.resolve(__dirname, 'src/js/Stylekit.js'),
-    "stylekit.min.js" : path.resolve(__dirname, 'src/js/Stylekit.js'),
-    "stylekit.css" : path.resolve(__dirname, 'src/css/main.scss'),
-  },
+module.exports = (_, { mode }) => ({
+  entry: path.resolve(__dirname, 'src/Stylekit.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: './[name]',
+    filename: 'stylekit.js',
     library: 'Stylekit',
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
   },
   optimization: {
-    minimize: false //Update this to true or false
+    minimize: false,
   },
-  externals: {
-
-  },
+  externals: {},
   devServer: {
     historyApiFallback: true,
     watchOptions: { aggregateTimeout: 300, poll: 1000 },
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-    }
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers':
+        'X-Requested-With, content-type, Authorization',
+    },
   },
   module: {
     rules: [
-      { test: /\.css$/, include: path.resolve(__dirname, 'src'), loader: 'style-loader!css-loader' },
       {
         test: /\.scss$/,
-        exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            { loader: 'sass-loader', query: { sourceMap: false } },
-          ],
-          publicPath: '../'
-        }),
+        use: [
+          mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                outputStyle: 'expanded',
+              },
+            },
+          },
+        ],
       },
       {
-        test: /\.js[x]?$/, include: [
-          path.resolve(__dirname, 'src'),
-        ], exclude: /node_modules/, loader: 'babel-loader'
-      }
-    ]
+        test: /\.js[x]?$/,
+        loader: 'babel-loader',
+        options: {
+          plugins: ['@babel/plugin-proposal-class-properties'],
+        },
+      },
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css', '.scss'],
   },
   plugins: [
-    function() {
-      this.plugin("done", function(stats) {
-        if (stats.compilation.errors && stats.compilation.errors.length &&
-          process.argv.indexOf("--watch") == -1) {
-          console.log(stats.compilation.errors);
-          process.exit(1);
-        }
-      });
-    },
-
-    new ExtractTextPlugin({ filename: './stylekit.css', disable: false, allChunks: true}),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    })
-  ]
-};
+    new MiniCssExtractPlugin({
+      filename: 'stylekit.css',
+    }),
+  ],
+});
