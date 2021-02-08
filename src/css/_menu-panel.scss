@@ -50,7 +50,7 @@
       flex-direction: column;
 
       &:not(:first-child) {
-        padding-left: 1.0rem;
+        padding-left: 1rem;
         padding-right: 0.15rem;
       }
 
@@ -63,7 +63,8 @@
       }
 
       /* Nested row */
-      .sk-menu-panel-row, .sk-menu-panel-subrow {
+      .sk-menu-panel-row,
+      .sk-menu-panel-subrow {
         border: 1px solid var(--sn-stylekit-contrast-border-color);
         margin-top: -1px;
         &:hover {

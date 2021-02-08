@@ -1,5 +1,7 @@
-.windows-web, .windows-desktop, .linux-web, .linux-desktop {
-
+.windows-web,
+.windows-desktop,
+.linux-web,
+.linux-desktop {
   $thumb-width: 4px;
 
   ::-webkit-scrollbar {
@@ -13,7 +15,8 @@
     background-clip: padding-box;
     -webkit-border-radius: 10px;
     background-color: var(--sn-stylekit-scrollbar-thumb-color);
-    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05),
+      inset 1px 1px 0px rgba(0, 0, 0, 0.05);
   }
 
   ::-webkit-scrollbar-button {

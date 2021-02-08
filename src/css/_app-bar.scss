@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   height: 2rem;
-  padding: 0.0rem 0.8rem;
+  padding: 0rem 0.8rem;
   background-color: var(--sn-stylekit-contrast-background-color);
   color: var(--sn-stylekit-contrast-foreground-color);
   justify-content: space-between;
@@ -19,7 +19,8 @@
     border-bottom: 0;
   }
 
-  .left, .right {
+  .left,
+  .right {
     display: flex;
     height: 100%;
   }
@@ -47,7 +48,6 @@
       }
     }
 
-
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -58,20 +58,25 @@
     }
 
     &:hover {
-      > .sk-label, > .sk-sublabel, > .sk-app-bar-item-column > .sk-label, > .sk-app-bar-item-column > .sk-sublabel {
+      > .sk-label,
+      > .sk-sublabel,
+      > .sk-app-bar-item-column > .sk-label,
+      > .sk-app-bar-item-column > .sk-sublabel {
         &:not(.subtle) {
           color: var(--sn-stylekit-info-color);
         }
       }
     }
 
-    > .sk-label, > .sk-app-bar-item-column > .sk-label {
+    > .sk-label,
+    > .sk-app-bar-item-column > .sk-label {
       font-weight: bold;
       font-size: var(--sn-stylekit-font-size-h5);
       white-space: nowrap;
     }
 
-    > .sk-sublabel, > .sk-app-bar-item-column > .sk-sublabel {
+    > .sk-sublabel,
+    > .sk-app-bar-item-column > .sk-sublabel {
       font-size: var(--sn-stylekit-font-size-h5);
       font-weight: normal;
       white-space: nowrap;
