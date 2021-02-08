@@ -1,5 +1,5 @@
 .sk-panel {
-  $h-content-padding: 2.0rem;
+  $h-content-padding: 2rem;
   box-shadow: 0px 2px 5px var(--sn-stylekit-shadow-color);
   background-color: var(--sn-stylekit-background-color);
   border: 1px solid var(--sn-stylekit-border-color);
@@ -45,13 +45,14 @@
     }
   }
 
-  .sk-footer, .sk-panel-footer {
-    padding: 1.0rem $h-content-padding;
+  .sk-footer,
+  .sk-panel-footer {
+    padding: 1rem $h-content-padding;
     border-top: 1px solid var(--sn-stylekit-border-color);
     box-sizing: border-box;
 
     &.extra-padding {
-      padding: 2.0rem $h-content-padding;
+      padding: 2rem $h-content-padding;
     }
 
     .left {
@@ -76,7 +77,8 @@
     overflow-y: auto !important;
     overflow-x: auto !important;
 
-    .sk-p, .sk-li {
+    .sk-p,
+    .sk-li {
       color: var(--sn-stylekit-paragraph-text-color);
       line-height: 1.3;
     }
@@ -133,7 +135,6 @@
     font-size: var(--sn-stylekit-font-size-h5);
     margin-bottom: 2px;
 
-
     &.subtle {
       font-weight: normal;
       opacity: 0.6;
@@ -179,7 +180,8 @@
     }
   }
 
-  &.default-padding, &:not(:last-child) {
+  &.default-padding,
+  &:not(:last-child) {
     padding-bottom: 0.4rem;
   }
 
@@ -210,7 +212,6 @@
     margin-top: 0.15rem;
   }
 }
-
 
 .right-aligned {
   justify-content: flex-end;

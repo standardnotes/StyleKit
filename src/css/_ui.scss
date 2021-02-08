@@ -13,7 +13,11 @@
   -webkit-user-select: text !important;
 }
 
-.sk-h1, .sk-h2, .sk-h3, .sk-h4, .sk-h5 {
+.sk-h1,
+.sk-h2,
+.sk-h3,
+.sk-h4,
+.sk-h5 {
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -101,7 +105,6 @@ a.sk-a {
       background-color: var(--sn-stylekit-success-color);
       color: var(--sn-stylekit-success-contrast-color);
     }
-
   }
 }
 
@@ -110,59 +113,58 @@ a.sk-a {
 }
 
 * {
+  &.sk-base {
+    color: var(--sn-stylekit-foreground-color);
+  }
 
-    &.sk-base {
-      color: var(--sn-stylekit-foreground-color);
-    }
+  &.contrast {
+    color: var(--sn-stylekit-contrast-foreground-color);
+  }
 
-    &.contrast {
-      color: var(--sn-stylekit-contrast-foreground-color);
-    }
+  &.neutral {
+    color: var(--sn-stylekit-neutral-color);
+  }
 
-    &.neutral {
-      color: var(--sn-stylekit-neutral-color);
-    }
+  &.info {
+    color: var(--sn-stylekit-info-color);
+  }
 
-    &.info {
-      color: var(--sn-stylekit-info-color);
-    }
+  &.info-contrast {
+    color: var(--sn-stylekit-info-contrast-color);
+  }
 
-    &.info-contrast {
-      color: var(--sn-stylekit-info-contrast-color);
-    }
+  &.warning {
+    color: var(--sn-stylekit-warning-color);
+  }
 
-    &.warning {
-      color: var(--sn-stylekit-warning-color);
-    }
+  &.danger {
+    color: var(--sn-stylekit-danger-color);
+  }
 
-    &.danger {
-      color: var(--sn-stylekit-danger-color);
-    }
+  &.success {
+    color: var(--sn-stylekit-success-color);
+  }
 
-    &.success {
-      color: var(--sn-stylekit-success-color);
-    }
+  &.info-i {
+    color: var(--sn-stylekit-info-color) !important;
+  }
 
-    &.info-i {
-      color: var(--sn-stylekit-info-color) !important;
-    }
+  &.warning-i {
+    color: var(--sn-stylekit-warning-color) !important;
+  }
 
-    &.warning-i {
-      color: var(--sn-stylekit-warning-color) !important;
-    }
+  &.danger-i {
+    color: var(--sn-stylekit-danger-color) !important;
+  }
 
-    &.danger-i {
-      color: var(--sn-stylekit-danger-color) !important;
-    }
+  &.success-i {
+    color: var(--sn-stylekit-success-color) !important;
+  }
 
-    &.success-i {
-      color: var(--sn-stylekit-success-color) !important;
-    }
-
-    &.clear {
-      background-color: transparent;
-      border: none;
-    }
+  &.clear {
+    background-color: transparent;
+    border: none;
+  }
 }
 
 .center-text {
@@ -177,7 +179,7 @@ p.sk-p {
 input.sk-input {
   box-sizing: border-box;
   padding: 0.7rem 0.8rem;
-  margin: 0.30rem 0;
+  margin: 0.3rem 0;
   border: none;
 
   font-size: var(--sn-stylekit-font-size-h3);
@@ -210,7 +212,8 @@ label.sk-label {
   display: block;
 }
 
-label.sk-label input[type='checkbox'], input[type='radio'] {
+label.sk-label input[type='checkbox'],
+input[type='radio'] {
   width: auto;
   margin-right: 0.45rem; /* Space after checkbox */
   vertical-align: middle;
@@ -240,16 +243,19 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
   padding-bottom: 0.3rem;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: var( --sn-stylekit-input-placeholder-color);
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--sn-stylekit-input-placeholder-color);
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: var( --sn-stylekit-input-placeholder-color);
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--sn-stylekit-input-placeholder-color);
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: var( --sn-stylekit-input-placeholder-color);
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--sn-stylekit-input-placeholder-color);
 }
 
 .sk-button-group {
@@ -363,7 +369,7 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
   padding: 2.5rem 1.5rem;
 }
 
-@mixin ui-rect($color, $contrast-color, $hoverable, $border-color: "") {
+@mixin ui-rect($color, $contrast-color, $hoverable, $border-color: '') {
   /*
     If $border-color is supplied, we use traditional borders for rect.
     Only sk-notification and sk-input will supply their own border color because inputs don't seem to support inset shadow borders.
@@ -378,7 +384,7 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
     We use box-shadow instead of border so that the borders are rounded properly around the rect.
     We keep border-color as well incase the individual elements want a border in some cases.
   */
-  @if $border-color != "" {
+  @if $border-color != '' {
     // box-shadow: inset 0 0 0 1px $border-color;
     border-color: $border-color;
     border: 1px solid $border-color;
@@ -386,7 +392,6 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
     // box-shadow: inset 0 0 0 1px $color;
     border-color: $color;
   }
-
 
   // Make background separately layer so we can set its color using CSS vars
   // (as opposed to CSS vars in SASS functions, which is impossible).
@@ -397,14 +402,14 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
   }
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: $color;
-    opacity: 1.0;
+    opacity: 1;
     border-radius: var(--sn-stylekit-general-border-radius);
   }
 
@@ -421,7 +426,7 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
     border-radius: var(--sn-stylekit-general-border-radius);
     pointer-events: none; // otherwise this rect would block clickable elements
     // color here refers to shadow color
-    @if $border-color != "" {
+    @if $border-color != '' {
       color: $border-color;
       border-color: $border-color;
     } @else {
@@ -451,24 +456,44 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
     font-size: var(--sn-stylekit-font-size-h3);
 
     &:before {
-      opacity: 1.0;
+      opacity: 1;
     }
   }
 }
 
-.sk-button.sk-base, .sk-box.sk-base, .sk-circle.sk-base {
-  @include ui-rect(var(--sn-stylekit-background-color), var(--sn-stylekit-foreground-color), true);
+.sk-button.sk-base,
+.sk-box.sk-base,
+.sk-circle.sk-base {
+  @include ui-rect(
+    var(--sn-stylekit-background-color),
+    var(--sn-stylekit-foreground-color),
+    true
+  );
 }
 
-.sk-button.contrast, .sk-box.contrast, .sk-circle.contrast {
-  @include ui-rect(var(--sn-stylekit-contrast-background-color), var(--sn-stylekit-contrast-foreground-color), true);
+.sk-button.contrast,
+.sk-box.contrast,
+.sk-circle.contrast {
+  @include ui-rect(
+    var(--sn-stylekit-contrast-background-color),
+    var(--sn-stylekit-contrast-foreground-color),
+    true
+  );
 }
 
-.sk-button.sk-secondary, .sk-box.sk-secondary, .sk-circle.sk-secondary {
-  @include ui-rect(var(--sn-stylekit-secondary-background-color), var(--sn-stylekit-secondary-foreground-color), true);
+.sk-button.sk-secondary,
+.sk-box.sk-secondary,
+.sk-circle.sk-secondary {
+  @include ui-rect(
+    var(--sn-stylekit-secondary-background-color),
+    var(--sn-stylekit-secondary-foreground-color),
+    true
+  );
 }
 
-.sk-button.sk-secondary-contrast, .sk-box.sk-secondary-contrast, .sk-circle.sk-secondary-contrast {
+.sk-button.sk-secondary-contrast,
+.sk-box.sk-secondary-contrast,
+.sk-circle.sk-secondary-contrast {
   @include ui-rect(
     var(--sn-stylekit-secondary-contrast-background-color),
     var(--sn-stylekit-secondary-contrast-foreground-color),
@@ -476,64 +501,139 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
   );
 }
 
-.sk-button.neutral, .sk-box.neutral, .sk-circle.neutral {
-  @include ui-rect(var(--sn-stylekit-neutral-color), var(--sn-stylekit-neutral-contrast-color), true);
+.sk-button.neutral,
+.sk-box.neutral,
+.sk-circle.neutral {
+  @include ui-rect(
+    var(--sn-stylekit-neutral-color),
+    var(--sn-stylekit-neutral-contrast-color),
+    true
+  );
 }
 
-.sk-button.info, .sk-box.info, .sk-circle.info {
-  @include ui-rect(var(--sn-stylekit-info-color), var(--sn-stylekit-info-contrast-color), true);
+.sk-button.info,
+.sk-box.info,
+.sk-circle.info {
+  @include ui-rect(
+    var(--sn-stylekit-info-color),
+    var(--sn-stylekit-info-contrast-color),
+    true
+  );
 }
 
-.sk-button.warning, .sk-box.warning, .sk-circle.warning {
-  @include ui-rect(var(--sn-stylekit-warning-color), var(--sn-stylekit-warning-contrast-color), true);
+.sk-button.warning,
+.sk-box.warning,
+.sk-circle.warning {
+  @include ui-rect(
+    var(--sn-stylekit-warning-color),
+    var(--sn-stylekit-warning-contrast-color),
+    true
+  );
 }
 
-.sk-button.danger, .sk-box.danger, .sk-circle.danger {
-  @include ui-rect(var(--sn-stylekit-danger-color), var(--sn-stylekit-danger-contrast-color), true);
+.sk-button.danger,
+.sk-box.danger,
+.sk-circle.danger {
+  @include ui-rect(
+    var(--sn-stylekit-danger-color),
+    var(--sn-stylekit-danger-contrast-color),
+    true
+  );
 }
 
-.sk-button.success, .sk-box.success, .sk-circle.success {
-  @include ui-rect(var(--sn-stylekit-success-color),var(--sn-stylekit-success-contrast-color), true);
+.sk-button.success,
+.sk-box.success,
+.sk-circle.success {
+  @include ui-rect(
+    var(--sn-stylekit-success-color),
+    var(--sn-stylekit-success-contrast-color),
+    true
+  );
 }
 
-
-
-
-
-.sk-notification.contrast, .sk-input.contrast {
-  @include ui-rect(var(--sn-stylekit-contrast-background-color), var(--sn-stylekit-contrast-foreground-color), false, var(--sn-stylekit-contrast-border-color));
+.sk-notification.contrast,
+.sk-input.contrast {
+  @include ui-rect(
+    var(--sn-stylekit-contrast-background-color),
+    var(--sn-stylekit-contrast-foreground-color),
+    false,
+    var(--sn-stylekit-contrast-border-color)
+  );
 }
 
-.sk-notification.sk-secondary, .sk-input.sk-secondary {
-  @include ui-rect(var(--sn-stylekit-secondary-background-color), var(--sn-stylekit-secondary-foreground-color), false, var(--sn-stylekit-secondary-border-color));
+.sk-notification.sk-secondary,
+.sk-input.sk-secondary {
+  @include ui-rect(
+    var(--sn-stylekit-secondary-background-color),
+    var(--sn-stylekit-secondary-foreground-color),
+    false,
+    var(--sn-stylekit-secondary-border-color)
+  );
 }
 
-.sk-notification.sk-secondary-contrast, .sk-input.sk-secondary-contrast  {
-  @include ui-rect(var(--sn-stylekit-secondary-contrast-background-color), var(--sn-stylekit-secondary-contrast-foreground-color), false, var(--sn-stylekit-secondary-contrast-border-color));
+.sk-notification.sk-secondary-contrast,
+.sk-input.sk-secondary-contrast {
+  @include ui-rect(
+    var(--sn-stylekit-secondary-contrast-background-color),
+    var(--sn-stylekit-secondary-contrast-foreground-color),
+    false,
+    var(--sn-stylekit-secondary-contrast-border-color)
+  );
 }
 
-.sk-notification.sk-base, .sk-input.sk-base {
-  @include ui-rect(var(--sn-stylekit-background-color), var(--sn-stylekit-foreground-color), false, var(--sn-stylekit-border-color));
+.sk-notification.sk-base,
+.sk-input.sk-base {
+  @include ui-rect(
+    var(--sn-stylekit-background-color),
+    var(--sn-stylekit-foreground-color),
+    false,
+    var(--sn-stylekit-border-color)
+  );
 }
 
-.sk-notification.neutral, .sk-input.neutral {
-  @include ui-rect(var(--sn-stylekit-neutral-color), var(--sn-stylekit-neutral-contrast-color), false);
+.sk-notification.neutral,
+.sk-input.neutral {
+  @include ui-rect(
+    var(--sn-stylekit-neutral-color),
+    var(--sn-stylekit-neutral-contrast-color),
+    false
+  );
 }
 
-.sk-notification.info, .sk-input.info {
-  @include ui-rect(var(--sn-stylekit-info-color), var(--sn-stylekit-info-contrast-color), false);
+.sk-notification.info,
+.sk-input.info {
+  @include ui-rect(
+    var(--sn-stylekit-info-color),
+    var(--sn-stylekit-info-contrast-color),
+    false
+  );
 }
 
-.sk-notification.warning, .sk-input.warning {
-  @include ui-rect(var(--sn-stylekit-warning-color), var(--sn-stylekit-warning-contrast-color), false);
+.sk-notification.warning,
+.sk-input.warning {
+  @include ui-rect(
+    var(--sn-stylekit-warning-color),
+    var(--sn-stylekit-warning-contrast-color),
+    false
+  );
 }
 
-.sk-notification.danger, .sk-input.danger {
-  @include ui-rect(var(--sn-stylekit-danger-color), var(--sn-stylekit-danger-contrast-color), false);
+.sk-notification.danger,
+.sk-input.danger {
+  @include ui-rect(
+    var(--sn-stylekit-danger-color),
+    var(--sn-stylekit-danger-contrast-color),
+    false
+  );
 }
 
-.sk-notification.success, .sk-input.success {
-  @include ui-rect(var(--sn-stylekit-success-color),var(--sn-stylekit-success-contrast-color), false);
+.sk-notification.success,
+.sk-input.success {
+  @include ui-rect(
+    var(--sn-stylekit-success-color),
+    var(--sn-stylekit-success-contrast-color),
+    false
+  );
 }
 
 .sk-notification {
@@ -637,6 +737,10 @@ label.sk-label input[type='checkbox'], input[type='radio'] {
 }
 
 @keyframes rotate {
-  0%    { transform: rotate(0deg); }
-  100%  { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
