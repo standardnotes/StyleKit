@@ -10,19 +10,19 @@
   --sn-stylekit-font-size-h2: 1.2rem;
   --sn-stylekit-font-size-h1: 1.3rem;
   --sn-stylekit-neutral-color: #989898;
-  --sn-stylekit-neutral-contrast-color: white;
+  --sn-stylekit-neutral-contrast-color: #ffffff;
   --sn-stylekit-info-color: #086DD6;
-  --sn-stylekit-info-contrast-color: white;
+  --sn-stylekit-info-contrast-color: #ffffff;
   --sn-stylekit-success-color: #2B9612;
-  --sn-stylekit-success-contrast-color: white;
+  --sn-stylekit-success-contrast-color: #ffffff;
   --sn-stylekit-warning-color: #f6a200;
-  --sn-stylekit-warning-contrast-color: white;
+  --sn-stylekit-warning-contrast-color: #ffffff;
   --sn-stylekit-danger-color: #F80324;
-  --sn-stylekit-danger-contrast-color: white;
+  --sn-stylekit-danger-contrast-color: #ffffff;
   --sn-stylekit-shadow-color: #C8C8C8;
-  --sn-stylekit-background-color: white;
+  --sn-stylekit-background-color: #ffffff;
   --sn-stylekit-border-color: #e3e3e3;
-  --sn-stylekit-foreground-color: black;
+  --sn-stylekit-foreground-color: #000000;
   --sn-stylekit-contrast-background-color: #F6F6F6;
   --sn-stylekit-contrast-foreground-color: #2e2e2e;
   --sn-stylekit-contrast-border-color: #e3e3e3;
@@ -35,7 +35,7 @@
   --sn-stylekit-editor-background-color: var(--sn-stylekit-background-color);
   --sn-stylekit-editor-foreground-color: var(--sn-stylekit-foreground-color);
   --sn-stylekit-paragraph-text-color: #454545;
-  --sn-stylekit-input-placeholder-color: rgb(168, 168, 168);
+  --sn-stylekit-input-placeholder-color: #a8a8a8;
   --sn-stylekit-input-border-color: #e3e3e3;
   --sn-stylekit-scrollbar-thumb-color: #dfdfdf;
   --sn-stylekit-scrollbar-track-border-color: #E7E7E7;
@@ -2261,7 +2261,7 @@ textarea,
 .windows-web ::-webkit-scrollbar, .windows-desktop ::-webkit-scrollbar, .linux-web ::-webkit-scrollbar, .linux-desktop ::-webkit-scrollbar {
   width: 17px;
   height: 18px;
-  border-left: 0.5px solid var(--sn-stylekit-scrollbar-track-border-color-color);
+  border-left: 0.5px solid var(--sn-stylekit-scrollbar-track-border-color);
 }
 
 .windows-web ::-webkit-scrollbar-thumb, .windows-desktop ::-webkit-scrollbar-thumb, .linux-web ::-webkit-scrollbar-thumb, .linux-desktop ::-webkit-scrollbar-thumb {
