@@ -52,7 +52,7 @@ module.exports = (_, { mode }) => ({
   },
   resolve: {
     alias: {
-      "@Components": path.resolve(__dirname, 'src/components')
+      '@Components': path.resolve(__dirname, 'src/components'),
     },
     extensions: ['.js', '.jsx', '.css', '.scss'],
   },
