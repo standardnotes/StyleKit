@@ -1,15 +1,15 @@
 [submodule "themes/midnight"]
 	path = themes/midnight
-	url = git@github.com:sn-extensions/midnight-theme.git
+	url = https://github.com/sn-extensions/midnight-theme.git
 [submodule "themes/solarized-dark-theme"]
 	path = themes/solarized-dark-theme
-	url = git@github.com:sn-extensions/solarized-dark-theme.git
+	url = https://github.com/sn-extensions/solarized-dark-theme.git
 [submodule "themes/futura-theme"]
 	path = themes/futura-theme
-	url = git@github.com:sn-extensions/futura-theme.git
+	url = https://github.com/sn-extensions/futura-theme.git
 [submodule "themes/focus-theme"]
 	path = themes/focus-theme
-	url = git@github.com:sn-extensions/focus-theme.git
-	[submodule "themes/titanium-theme"]
-		path = themes/titanium-theme
-		url = git@github.com:sn-extensions/titanium-theme.git
+	url = https://github.com/sn-extensions/focus-theme.git
+[submodule "themes/titanium-theme"]
+	path = themes/titanium-theme
+	url = https://github.com/sn-extensions/titanium-theme.git
