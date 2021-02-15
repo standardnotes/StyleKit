@@ -8,7 +8,8 @@ module.exports = {
   addons: [
     "@storybook/addon-actions",
     "@storybook/addon-links",
-    "@storybook/addon-essentials"
+    "@storybook/addon-essentials",
+    "@storybook/addon-a11y"
   ],
   /**
    * Extending Storybook's webpack config.
@@ -16,13 +17,25 @@ module.exports = {
    * This is necessary for @reach packages to work.
    */
   webpackFinal: (config) => {
-    config.resolve = {
-      alias: {
-        'react': 'preact/compat',
-        'react-dom': 'preact/compat',
-        "@Components": path.resolve(__dirname, '../src/components')
-      }
-    };
+    config.entry.push(path.resolve(__dirname, '../src/css/main.scss'));
+    config.resolve.alias["react"] = 'preact/compat';
+    config.resolve.alias["react-dom"] = 'preact/compat';
+    config.resolve.alias["@Components"] = path.resolve(__dirname, '../src/components');
+    config.module.rules.push({
+      test: /\.s[ac]ss$/i,
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            sassOptions: {
+              outputStyle: 'expanded',
+            },
+          },
+        },
+      ],
+    });
     return config;
   }
 }
