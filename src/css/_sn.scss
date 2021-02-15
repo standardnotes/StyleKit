@@ -1,0 +1,119 @@
+*, ::before, ::after {
+  font-family: var(--sn-stylekit-sans-serif-font);
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(sn-stylekit-secondary-contrast-border-color);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.sn-button {
+  @extend .border-0;
+  @extend .cursor-pointer;
+  @extend .font-bold;
+  @extend .py-2;
+  @extend .px-3;
+  @extend .rounded;
+  @extend .text-sm;
+  @extend .hover\:brightness-130;
+}
+
+.sn-button.contrast {
+  background-color: var(--sn-stylekit-contrast-foreground-color);
+  color: var(--sn-stylekit-contrast-background-color);
+}
+
+.sn-button.neutral {
+  background-color: var(--sn-stylekit-neutral-color);
+  color: var(--sn-stylekit-neutral-contrast-color);
+}
+
+.sn-button.info {
+  background-color: var(--sn-stylekit-info-color);
+  color: var(--sn-stylekit-info-contrast-color);
+}
+
+.sn-button.warning {
+  background-color: var(--sn-stylekit-warning-color);
+  color: var(--sn-stylekit-warning-contrast-color);
+}
+
+.sn-button.danger {
+  background-color: var(--sn-stylekit-danger-color);
+  color: var(--sn-stylekit-danger-contrast-color);
+}
+
+.sn-button.success {
+  background-color: var(--sn-stylekit-success-color);
+  color: var(--sn-stylekit-success-contrast-color);
+}
+
+.sn-dropdown-menu {
+  @extend .cursor-pointer;
+  @extend .inline-flex;
+  @extend .justify-center;
+  @extend .w-auto;
+  @extend .rounded-sm;
+  @extend .border;
+  @extend .border-gray-300;
+  @extend .px-2;
+  @extend .py-2;
+  @extend .bg-white;
+  @extend .text-sm;
+  @extend .font-medium;
+  @extend .text-gray-700;
+  @extend .hover\:bg-gray-50;
+  @extend .leading-4;
+}
+
+.sn-dropdown-menu > :first-child {
+  @extend .mr-2;
+}
+
+.sn-dropdown-menu > :last-child {
+  @extend .ml-6;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sn-dropdown-menu-list[data-reach-menu-list],
+.sn-dropdown-menu-list[data-reach-menu-items] {
+  animation: slide-down 0.2s ease;
+  @extend .origin-top-right;
+  @extend .absolute;
+  @extend .mt-2;
+  @extend .w-56;
+  @extend .rounded-sm;
+  @extend .shadow-lg;
+  @extend .bg-white;
+  @extend .ring-1;
+  @extend .ring-black;
+  @extend .ring-opacity-5;
+  @extend .py-2;
+  @extend .border-gray-300;
+}
+
+.sn-dropdown-menu-list [data-reach-menu-item] {
+  @extend .block;
+  @extend .px-4;
+  @extend .py-2;
+  @extend .text-sm;
+  @extend .text-gray-700;
+  @extend .hover\:bg-gray-100;
+  @extend .hover\:text-gray-900;
+}

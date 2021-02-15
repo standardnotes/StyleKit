@@ -1,12 +1,19 @@
 /** @jsx h */
 import { h } from 'preact';
 import { DropdownMenu } from '@Components/DropdownMenu';
+import { SNComponentWrapper } from '../decorators';
 
 export default {
-  title: 'DropdownMenu',
+  title: 'Design System/Atoms/DropdownMenu',
   component: DropdownMenu,
+  decorators: [SNComponentWrapper],
   argTypes: {
     items: {
+      table: {
+        disable: true
+      },
+    },
+    icon: {
       table: {
         disable: true
       },
@@ -18,7 +25,8 @@ const Template = (args) => <DropdownMenu {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Device',
+  icon: (<span>📋</span>),
+  label: 'Rich text',
   items: [
     {
       label: 'iOS',
