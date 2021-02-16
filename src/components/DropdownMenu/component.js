@@ -7,6 +7,7 @@ import {
   MenuItem
 } from "@reach/menu-button";
 import "@reach/menu-button/styles.css";
+import { Icon } from "@Components/Icon";
 import PropTypes from 'prop-types';
 
 export default class DropdownMenu extends Component {
@@ -17,7 +18,7 @@ export default class DropdownMenu extends Component {
         {({ isExpanded }) => (
           <Fragment>
             <MenuButton className="sn-dropdown-menu">
-              {icon && icon} {label} <span aria-hidden>{isExpanded ? "▴" : "▾"}</span>
+              {icon && icon} {label} {isExpanded ? <Icon name="menu-arrow-up" /> : <Icon name="menu-arrow-down" />}
             </MenuButton>
             <MenuList className="sn-dropdown-menu-list">
               {items.map((item) => (

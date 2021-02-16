@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
 import { DropdownMenu } from '@Components/DropdownMenu';
+import { Icon } from '@Components/Icon';
 import { SNComponentWrapper } from '../decorators';
 
 export default {
@@ -25,38 +26,23 @@ const Template = (args) => <DropdownMenu {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  icon: (<span>📋</span>),
+  icon: <Icon name="text-rich" />,
   label: 'Rich text',
   items: [
     {
-      label: 'iOS',
-      value: 'ios',
-      icon: <span>🍏</span>
+      label: 'Undo',
+      value: 'undo',
+      icon: <Icon name="undo" classList="mr-2" />
     },
     {
-      label: 'Android',
-      value: 'android',
-      icon: <span>🤖</span>
+      label: 'Redo',
+      value: 'redo',
+      icon: <Icon name="redo" classList="mr-2" />
     },
     {
-      label: 'macOS',
-      value: 'macos',
-      icon: <span>💻</span>
-    },
-    {
-      label: 'Windows',
-      value: 'windows',
-      icon: <span>🖥️</span>
-    },
-    {
-      label: 'Linux',
-      value: 'linux',
-      icon: <span>🐧</span>
-    },
-    {
-      label: 'Web app',
-      value: 'webapp',
-      icon: <span>🌐</span>
+      label: 'Note history',
+      value: 'note-history',
+      icon: <Icon name="history" classList="mr-2" />
     },
   ],
 };
