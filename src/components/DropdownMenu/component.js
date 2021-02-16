@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 export default class DropdownMenu extends Component {
   render() {
-    const { label, items, icon } = this.props;
+    const { label, items, icon, onSelectItem } = this.props;
     return (
       <Menu>
         {({ isExpanded }) => (
@@ -22,7 +22,9 @@ export default class DropdownMenu extends Component {
             </MenuButton>
             <MenuList className="sn-dropdown-menu-list">
               {items.map((item) => (
-                <MenuItem valueText={item.value}>{item.icon && item.icon} {item.label}</MenuItem>
+                <MenuItem valueText={item.value} onSelect={() => item.onSelect ? item.onSelect(item.value) : onSelectItem(item.value)}>
+                  {item.icon && item.icon} {item.label}
+                </MenuItem>
               ))}
             </MenuList>
           </Fragment>
@@ -35,5 +37,6 @@ export default class DropdownMenu extends Component {
 DropdownMenu.propTypes = {
   label: PropTypes.string.isRequired,
   items: PropTypes.array.isRequired,
+  onSelectItem: PropTypes.func.isRequired,
   icon: PropTypes.element,
 };

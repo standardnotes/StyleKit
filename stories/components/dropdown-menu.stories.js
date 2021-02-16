@@ -19,6 +19,9 @@ export default {
         disable: true
       },
     },
+    onSelectItem: {
+      action: 'clicked'
+    },
   },
 };
 
@@ -37,7 +40,8 @@ Primary.args = {
     {
       label: 'Redo',
       value: 'redo',
-      icon: <Icon name="redo" classList="mr-2" />
+      icon: <Icon name="redo" classList="mr-2" />,
+      onSelect: (value) => alert(`Item's onSelect callback triggered: ${value}`)
     },
     {
       label: 'Note history',
