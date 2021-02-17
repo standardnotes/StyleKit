@@ -64,13 +64,14 @@ button, input, select, textarea {
   @extend .border;
   @extend .border-gray-300;
   @extend .px-2;
-  @extend .py-2;
+  @extend .py-1;
   @extend .bg-white;
   @extend .text-sm;
   @extend .font-medium;
   @extend .text-gray-700;
   @extend .hover\:bg-gray-50;
   @extend .leading-4;
+  @extend .h-32;
 }
 
 .sn-dropdown-menu > :first-child {
@@ -112,7 +113,8 @@ button, input, select, textarea {
 
 .sn-dropdown-menu-list [data-reach-menu-item] {
   @extend .flex;
-  @extend .px-3;
+  @extend .align-items-center;
+  @extend .px-2;
   @extend .py-2;
   @extend .text-sm;
   @extend .text-gray-700;

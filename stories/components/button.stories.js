@@ -31,36 +31,36 @@ const Template = (args) => <Button {...args} />;
 
 export const Info = Template.bind({});
 Info.args = {
-  label: 'Button',
+  label: 'Create note',
   variant: 'info'
 };
 
 export const Contrast = Template.bind({});
 Contrast.args = {
-  label: 'Button',
+  label: 'Create note',
   variant: 'contrast'
 };
 
 export const Neutral = Template.bind({});
 Neutral.args = {
-  label: 'Button',
+  label: 'Create note',
   variant: 'neutral'
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
-  label: 'Button',
+  label: 'Create note',
   variant: 'warning'
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
-  label: 'Button',
+  label: 'Create note',
   variant: 'danger'
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  label: 'Button',
+  label: 'Create note',
   variant: 'success'
 };
