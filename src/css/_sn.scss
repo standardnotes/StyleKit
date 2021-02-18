@@ -1,20 +1,6 @@
-*, ::before, ::after {
-  font-family: var(--sn-stylekit-sans-serif-font);
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(sn-stylekit-secondary-contrast-border-color);
-}
-
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
 .sn-button {
   @extend .border-0;
+  @extend .border-solid;
   @extend .cursor-pointer;
   @extend .font-bold;
   @extend .py-2;
@@ -22,6 +8,8 @@ button, input, select, textarea {
   @extend .rounded;
   @extend .text-sm;
   @extend .hover\:brightness-130;
+  @extend .no-focus-outline;
+  @extend .no-focus-shadow;
 }
 
 .sn-button.contrast {
@@ -55,6 +43,8 @@ button, input, select, textarea {
 }
 
 .sn-dropdown-menu {
+  @extend .border-0;
+  @extend .border-solid;
   @extend .cursor-pointer;
   @extend .inline-flex;
   @extend .justify-center;
@@ -71,7 +61,8 @@ button, input, select, textarea {
   @extend .text-gray-700;
   @extend .hover\:bg-gray-50;
   @extend .leading-4;
-  @extend .h-32;
+  @extend .no-focus-outline;
+  @extend .no-focus-shadow;
 }
 
 .sn-dropdown-menu > :first-child {
@@ -79,7 +70,7 @@ button, input, select, textarea {
 }
 
 .sn-dropdown-menu > :last-child {
-  @extend .ml-6;
+  @extend .ml-2;
 }
 
 @keyframes slide-down {
@@ -102,22 +93,66 @@ button, input, select, textarea {
   @extend .mt-2;
   @extend .w-56;
   @extend .rounded-sm;
-  @extend .shadow-lg;
   @extend .bg-white;
-  @extend .ring-1;
-  @extend .ring-black;
-  @extend .ring-opacity-5;
   @extend .py-2;
   @extend .border-gray-300;
+  @extend .no-focus-outline;
+  @extend .no-focus-shadow;
 }
 
 .sn-dropdown-menu-list [data-reach-menu-item] {
   @extend .flex;
   @extend .align-items-center;
   @extend .px-2;
-  @extend .py-2;
+  @extend .py-1;
   @extend .text-sm;
-  @extend .text-gray-700;
   @extend .hover\:bg-gray-100;
   @extend .hover\:text-gray-900;
+  @extend .no-focus-outline;
+  @extend .no-focus-shadow;
+}
+
+.sn-listbox {
+  @extend .cursor-pointer;
+  @extend .inline-flex;
+  @extend .justify-center;
+  @extend .align-items-center;
+  @extend .rounded-sm;
+  @extend .border;
+  @extend .border-gray-300;
+  @extend .bg-white;
+  @extend .text-sm;
+  @extend .font-medium;
+  @extend .text-gray-700;
+  @extend .hover\:bg-gray-50;
+  @extend .border-0;
+  @extend .border-solid;
+  @extend .no-focus-outline;
+  @extend .no-focus-shadow;
+}
+
+.sn-listbox-button[data-reach-listbox-button] {
+  @extend .py-1;
+  @extend .border-0;
+  @extend .no-focus-outline;
+  @extend .no-focus-shadow;
+}
+
+.sn-listbox-list[data-reach-listbox-list] {
+  animation: slide-down 0.2s ease;
+  @extend .origin-top-right;
+  @extend .rounded-sm;
+  @extend .bg-white;
+  @extend .border-gray-300;
+  @extend .text-sm;
+  @extend .no-focus-outline;
+  @extend .no-focus-shadow;
+}
+
+.sn-listbox-popover[data-reach-listbox-popover] {
+  @extend .rounded-sm;
+  @extend .mt-2;
+  @extend .border-gray-300;
+  @extend .no-focus-outline;
+  @extend .no-focus-shadow;
 }

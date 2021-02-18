@@ -76,6 +76,8 @@
   @import 'app-bar';
   @import 'table';
   @import 'modal';
+  @import 'utils';
+  @import 'sn';
 
   font-family: var(--sn-stylekit-sans-serif-font);
   -webkit-font-smoothing: antialiased;
@@ -95,7 +97,3 @@ textarea,
 }
 
 @import 'scrollbar';
-
-/* New v4 styles */
-@import 'utils';
-@import 'sn';
