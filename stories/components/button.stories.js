@@ -1,12 +1,9 @@
-/** @jsx h */
 import { h } from 'preact';
 import { Button } from '@Components/Button';
-import { SNComponentWrapper } from '../decorators';
 
 export default {
   title: 'Design System/Atoms/Button',
   component: Button,
-  decorators: [SNComponentWrapper],
   argTypes: {
     onClick: {
       action: 'clicked'

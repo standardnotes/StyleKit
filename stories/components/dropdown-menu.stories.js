@@ -1,13 +1,10 @@
-/** @jsx h */
 import { h } from 'preact';
 import { DropdownMenu } from '@Components/DropdownMenu';
 import { Icon } from '@Components/Icon';
-import { SNComponentWrapper } from '../decorators';
 
 export default {
   title: 'Design System/Atoms/DropdownMenu',
   component: DropdownMenu,
-  decorators: [SNComponentWrapper],
   argTypes: {
     items: {
       table: {

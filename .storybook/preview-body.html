@@ -1,0 +1,10 @@
+<div id="root"></div>
+<script type="text/javascript">
+  /**
+   * We need to append "sn-component" class to the body element and not to div#root.
+   * This is because:
+   * 1. All components are childs of sn-component
+   * 2. Reach UI Portal is appended at the end of the body element
+  */
+  document.body.classList.add("sn-component");
+</script>
