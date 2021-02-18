@@ -2,7 +2,10 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (_, { mode }) => ({
-  entry: path.resolve(__dirname, 'src/Stylekit.js'),
+  entry: [
+    path.resolve(__dirname, 'src/Stylekit.js'),
+    path.resolve(__dirname, 'src/custom-elements.js')
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'stylekit.js',
@@ -27,7 +30,7 @@ module.exports = (_, { mode }) => ({
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: [
           mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader',
@@ -48,10 +51,23 @@ module.exports = (_, { mode }) => ({
           plugins: ['@babel/plugin-proposal-class-properties'],
         },
       },
+      {
+        test: /\.(svg)(\?.*)?$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000000,
+            },
+          },
+        ],
+      }
     ],
   },
   resolve: {
     alias: {
+      "react": 'preact/compat',
+      "react-dom": 'preact/compat',
       '@Components': path.resolve(__dirname, 'src/components'),
     },
     extensions: ['.js', '.jsx', '.css', '.scss'],
