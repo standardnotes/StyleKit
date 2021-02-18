@@ -272,6 +272,19 @@
                   </div>
                 </div>
               </div>
+              <div class="sk-panel-row">
+                <sn-listbox id="simple-select" default-value="option-0"></sn-listbox>
+                <script type="text/javascript">
+                  const select = document.getElementById("simple-select");
+                  select.options = [...Array(20).keys()].map((value) => {
+                    return {
+                      value: `option-${value}`,
+                      label: `A simple option: ${value}`,
+                    };
+                  });
+                  select.onChange = (value) => alert(value);
+                </script>
+              </div>
             </div>
             <div class="sk-panel-section">
               <div class="sk-panel-section-title">Notifications</div>
