@@ -11,20 +11,22 @@ import { Icon } from "@Components/Icon";
 import PropTypes from 'prop-types';
 
 export default class ListBox extends Component {
-  getInitialValue() {
-    const { defaultValue, options } = this.props;
-    return (options && options[0].value || defaultValue);
-  }
-
   render() {
-    const { defaultValue, options, onChange } = this.props;
-    const initialValue = this.getInitialValue();
+    const { defaultValue, placeholder, options, onChange } = this.props;
+    
+    /**
+     * If no options yet, we don't want to render the component.
+     */
+    if (!options) {
+      return;
+    }
+
     return (
-      <ListboxInput className="sn-listbox" defaultValue={defaultValue} onChange={onChange} value={initialValue}>
+      <ListboxInput className="sn-listbox" defaultValue={defaultValue} onChange={onChange}>
         {({ value, valueLabel, isExpanded }) => (
           <Fragment>
             <ListboxButton className="sn-listbox-button">
-              <span data-value={value}>{valueLabel}</span> {isExpanded ? <Icon name="menu-arrow-up" /> : <Icon name="menu-arrow-down" />}
+              <span data-value={value}>{valueLabel ?? placeholder}</span> {isExpanded ? <Icon name="menu-arrow-up" /> : <Icon name="menu-arrow-down" />}
             </ListboxButton>
             <ListboxPopover className="sn-listbox-popover">
               <ListboxList className="sn-listbox-list">
@@ -45,9 +47,11 @@ export default class ListBox extends Component {
 ListBox.propTypes = {
   defaultValue: PropTypes.string,
   options: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string
 };
 
 ListBox.defaultProps = {
-  defaultValue: ""
+  defaultValue: "",
+  placeholder: "Choose an option..."
 };
