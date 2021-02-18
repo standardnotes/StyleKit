@@ -1,4 +1,3 @@
-/** @jsx h */
 import { h, Component, Fragment } from "preact";
 import {
   Menu,

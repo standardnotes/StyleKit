@@ -1,4 +1,3 @@
-/** @jsx h */
 import { h, Component } from "preact";
 import PropTypes from 'prop-types';
 import IconSprite from './icons-sprite.svg';
