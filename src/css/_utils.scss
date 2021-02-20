@@ -54,7 +54,7 @@
 }
 
 .border-gray-300 {
-  border-color: rgba(209, 213, 219, 1)
+  border-color: var(--sn-stylekit-border-color);
 }
 
 .px-2 {
@@ -63,7 +63,7 @@
 }
 
 .bg-white {
-  background-color: rgba(255, 255, 255, 1)
+  background-color: var(--sn-stylekit-background-color)
 }
 
 .font-medium {
@@ -71,11 +71,11 @@
 }
 
 .text-gray-700 {
-  color: rgba(55, 65, 81, 1)
+  color: rgba(55, 65, 81, 1); // TODO: replace with a var from :root
 }
 
 .hover\:bg-gray-50:hover {
-  background-color: rgba(249, 250, 251, 1)
+  background-color: rgba(249, 250, 251, 1); // TODO: replace with a var from :root
 }
 
 .leading-4 {
@@ -124,11 +124,11 @@
 }
 
 .hover\:bg-gray-100:hover {
-  background-color: rgba(243, 244, 246, 1);
+  background-color: rgba(243, 244, 246, 1); // TODO: replace with a var from :root
 }
 
 .hover\:text-gray-900:hover {
-  color: rgba(17, 24, 39, 1);
+  color: rgba(17, 24, 39, 1); // TODO: replace with a var from :root
 }
 
 .align-items-center {
@@ -171,4 +171,14 @@
 
 .min-w-265 {
   min-width: 265px;
+}
+
+.selected\:bg-gray-100[data-selected],
+.selected\:bg-gray-100[aria-selected="true"] {
+  background-color: rgba(243, 244, 246, 1); // TODO: replace with a var from :root
+}
+
+.selected\:text-gray-900[data-selected],
+.selected\:text-gray-900[aria-selected="true"] {
+  color: rgba(17, 24, 39, 1); // TODO: replace with a var from :root
 }

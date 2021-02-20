@@ -108,6 +108,8 @@
   @extend .no-focus-shadow;
   @extend .px-2;
   @extend .py-1;
+  @extend .selected\:bg-gray-100;
+  @extend .selected\:text-gray-900;
   @extend .text-sm;
 }
 
@@ -150,6 +152,11 @@
   @extend .rounded-sm;
   @extend .slide-down-animation;
   @extend .text-sm;
+}
+
+.sn-listbox-list-option {
+  @extend .selected\:bg-gray-100;
+  @extend .selected\:text-gray-900;
 }
 
 .sn-listbox-popover {

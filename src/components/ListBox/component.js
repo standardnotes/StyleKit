@@ -28,7 +28,7 @@ const ListBox = ({ defaultValue, placeholder, options, onChange }) => {
           <ListboxPopover className="sn-listbox-popover">
             <ListboxList className="sn-listbox-list">
               {options && options.map((option) => (
-                <ListboxOption value={option.value} valueText={option.label}>
+                <ListboxOption className="sn-listbox-list-option" value={option.value} valueText={option.label}>
                   {option.label}
                 </ListboxOption>
               ))}
