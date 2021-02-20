@@ -63,19 +63,19 @@
 }
 
 .bg-white {
-  background-color: var(--sn-stylekit-background-color)
+  background-color: var(--sn-stylekit-background-color);
 }
 
 .font-medium {
   font-weight: 500
 }
 
-.text-gray-700 {
-  color: rgba(55, 65, 81, 1); // TODO: replace with a var from :root
+.text-color {
+  color: var( --sn-stylekit-contrast-foreground-color);
 }
 
-.hover\:bg-gray-50:hover {
-  background-color: rgba(249, 250, 251, 1); // TODO: replace with a var from :root
+.hover\:bg-color:hover {
+  background-color: var(--sn-stylekit-contrast-background-color);
 }
 
 .leading-4 {
@@ -123,14 +123,6 @@
   padding-right: 1rem;
 }
 
-.hover\:bg-gray-100:hover {
-  background-color: rgba(243, 244, 246, 1); // TODO: replace with a var from :root
-}
-
-.hover\:text-gray-900:hover {
-  color: rgba(17, 24, 39, 1); // TODO: replace with a var from :root
-}
-
 .align-items-center {
   align-items: center;
 }
@@ -173,12 +165,12 @@
   min-width: 265px;
 }
 
-.selected\:bg-gray-100[data-selected],
-.selected\:bg-gray-100[aria-selected="true"] {
-  background-color: rgba(243, 244, 246, 1); // TODO: replace with a var from :root
+.selected\:bg-color[data-selected],
+.selected\:bg-color[aria-selected="true"] {
+  background-color: var(--sn-stylekit-contrast-background-color);
 }
 
-.selected\:text-gray-900[data-selected],
-.selected\:text-gray-900[aria-selected="true"] {
-  color: rgba(17, 24, 39, 1); // TODO: replace with a var from :root
+.selected\:fg-color[data-selected],
+.selected\:fg-color[aria-selected="true"] {
+  color: var(--sn-stylekit-contrast-foreground-color);
 }

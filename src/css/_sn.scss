@@ -51,7 +51,7 @@
   @extend .border;
   @extend .cursor-pointer;
   @extend .font-medium;
-  @extend .hover\:bg-gray-50;
+  @extend .hover\:bg-color;
   @extend .inline-flex;
   @extend .justify-center;
   @extend .leading-4;
@@ -60,7 +60,7 @@
   @extend .px-2;
   @extend .py-1;
   @extend .rounded-sm;
-  @extend .text-gray-700;
+  @extend .text-color;
   @extend .text-sm;
   @extend .w-auto;
 }
@@ -102,14 +102,13 @@
 .sn-dropdown-menu-list-item {
   @extend .align-items-center;
   @extend .flex;
-  @extend .hover\:bg-gray-100;
-  @extend .hover\:text-gray-900;
+  @extend .hover\:bg-color;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .px-2;
   @extend .py-1;
-  @extend .selected\:bg-gray-100;
-  @extend .selected\:text-gray-900;
+  @extend .selected\:bg-color;
+  @extend .selected\:fg-color;
   @extend .text-sm;
 }
 
@@ -126,13 +125,13 @@
   @extend .border;
   @extend .cursor-pointer;
   @extend .font-medium;
-  @extend .hover\:bg-gray-50;
+  @extend .hover\:bg-color;
   @extend .inline-flex;
   @extend .justify-center;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .rounded-sm;
-  @extend .text-gray-700;
+  @extend .text-color;
   @extend .text-sm;
 }
 
@@ -155,8 +154,8 @@
 }
 
 .sn-listbox-list-option {
-  @extend .selected\:bg-gray-100;
-  @extend .selected\:text-gray-900;
+  @extend .selected\:bg-color;
+  @extend .selected\:fg-color;
 }
 
 .sn-listbox-popover {
