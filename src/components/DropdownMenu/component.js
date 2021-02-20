@@ -18,8 +18,14 @@ const DropdownMenu = ({ label, items, icon, onSelectItem }) => {
             {icon && icon} {label} {isExpanded ? <Icon name="menu-arrow-up" /> : <Icon name="menu-arrow-down" />}
           </MenuButton>
           <MenuList className="sn-dropdown-menu-list">
-            {items.map((item) => (
-              <MenuItem valueText={item.value} onSelect={() => item.onSelect ? item.onSelect(item.value) : onSelectItem(item.value)}>
+            {items && items.map((item) => (
+              <MenuItem
+                className="sn-dropdown-menu-list-item"
+                valueText={item.value}
+                onSelect={() =>
+                  item.onSelect ? item.onSelect(item.value) : onSelectItem(item.value)
+                }
+              >
                 {item.icon && item.icon} {item.label}
               </MenuItem>
             ))}
