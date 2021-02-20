@@ -164,3 +164,7 @@
 .no-focus-shadow:focus, .no-focus-shadow:focus-within {
   box-shadow: none;
 }
+
+.slide-down-animation {
+  animation: slide-down 0.2s ease;
+}
