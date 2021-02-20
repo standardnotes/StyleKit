@@ -1,16 +1,13 @@
-import { h, Component } from "preact";
+import { h } from "preact";
 import PropTypes from 'prop-types';
 import IconSprite from './icons-sprite.svg';
 
-export default class Icon extends Component {
-  render() {
-    const { name, width, height, classList } = this.props;
-    return (
-      <svg className={`sn-icon ${classList ? classList : ''}`} width={width} height={height}>
-        <use href={IconSprite + `#ic-${name}`}></use>
-      </svg>
-    );
-  }
+const Icon = ({ name, width, height, className }) => {
+  return (
+    <svg className={`sn-icon ${className ? className : ''}`} width={width} height={height}>
+      <use href={IconSprite + `#ic-${name}`}></use>
+    </svg>
+  );
 };
 
 Icon.propTypes = {
@@ -31,3 +28,5 @@ Icon.defaultProps = {
   width: 20,
   height: 20
 };
+
+export default Icon;

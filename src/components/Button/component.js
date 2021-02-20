@@ -1,4 +1,4 @@
-import { h, Component } from "preact";
+import { h } from "preact";
 import {
   Menu,
   MenuButton
@@ -6,17 +6,14 @@ import {
 import "@reach/menu-button/styles.css";
 import PropTypes from 'prop-types';
 
-export default class Button extends Component {
-  render() {
-    const { label, onClick, variant } = this.props;
-    return (
-      <Menu>
-        <MenuButton className={`sn-button ${variant}`} onClick={onClick}>
-          <span>{label}</span>
-        </MenuButton>
-      </Menu>
-    );
-  }
+const Button = ({ label, onClick, variant }) => {
+  return (
+    <Menu>
+      <MenuButton className={`sn-button ${variant}`} onClick={onClick}>
+        <span>{label}</span>
+      </MenuButton>
+    </Menu>
+  );
 };
 
 Button.propTypes = {
@@ -36,3 +33,4 @@ Button.defaultProps = {
   variant: "info"
 };
 
+export default Button;
