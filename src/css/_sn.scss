@@ -65,11 +65,11 @@
   @extend .w-auto;
 }
 
-.sn-dropdown-menu > :first-child {
+.sn-dropdown-menu > .sn-icon:first-child {
   @extend .mr-2;
 }
 
-.sn-dropdown-menu > :last-child {
+.sn-dropdown-menu > .sn-icon:last-child {
   @extend .ml-2;
 }
 
@@ -84,11 +84,11 @@
   }
 }
 
-.sn-dropdown-menu-list[data-reach-menu-list],
-.sn-dropdown-menu-list[data-reach-menu-items] {
+.sn-dropdown-menu-list {
   @extend .absolute;
   @extend .bg-white;
   @extend .border-gray-300;
+  @extend .min-w-265;
   @extend .mt-2;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
@@ -99,7 +99,7 @@
   @extend .w-56;
 }
 
-.sn-dropdown-menu-list [data-reach-menu-item] {
+.sn-dropdown-menu-list-item {
   @extend .align-items-center;
   @extend .flex;
   @extend .hover\:bg-gray-100;
@@ -109,6 +109,10 @@
   @extend .px-2;
   @extend .py-1;
   @extend .text-sm;
+}
+
+.sn-dropdown-menu-list-item > .sn-icon {
+  @extend .mr-2;
 }
 
 .sn-listbox {
@@ -130,14 +134,14 @@
   @extend .text-sm;
 }
 
-.sn-listbox-button[data-reach-listbox-button] {
+.sn-listbox-button {
   @extend .border-0;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .py-1;
 }
 
-.sn-listbox-list[data-reach-listbox-list] {
+.sn-listbox-list {
   @extend .bg-white;
   @extend .border-gray-300;
   @extend .no-focus-outline;
@@ -148,7 +152,7 @@
   @extend .text-sm;
 }
 
-.sn-listbox-popover[data-reach-listbox-popover] {
+.sn-listbox-popover {
   @extend .border-gray-300;
   @extend .mt-2;
   @extend .no-focus-outline;
