@@ -10,7 +10,7 @@ const Button = ({ label, onClick, variant }) => {
   return (
     <Menu>
       <MenuButton className={`sn-button ${variant}`} onClick={onClick}>
-        <span>{label}</span>
+        {label}
       </MenuButton>
     </Menu>
   );
