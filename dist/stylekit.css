@@ -1,4 +1,343 @@
 @charset "UTF-8";
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
 :root {
   --sn-stylekit-base-font-size: 13px;
   --sn-stylekit-font-size-p: 1rem;
@@ -2498,20 +2837,19 @@
   box-shadow: 0px 2px 35px 0px rgba(0, 0, 0, 0.19);
 }
 
-.sn-component .border-0, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox, .sn-component .sn-listbox-button[data-reach-listbox-button] {
+.sn-component .border-0, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox, .sn-component .sn-listbox-button {
   border-width: 0px;
 }
 
-.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
+.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox, .sn-component .sn-listbox-button, .sn-component .sn-listbox-list-option {
   cursor: pointer;
 }
 
-.sn-component .font-bold, .sn-component .sn-button {
+.sn-component .font-bold {
   font-weight: 700;
 }
 
-.sn-component .py-2, .sn-component .sn-button, .sn-component .sn-dropdown-menu-list[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list[data-reach-menu-items] {
+.sn-component .py-2, .sn-component .sn-button, .sn-component .sn-dropdown-menu-list {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -2525,24 +2863,23 @@
   border-radius: 0.25rem;
 }
 
-.sn-component .text-sm, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list [data-reach-menu-item], .sn-component .sn-listbox, .sn-component .sn-listbox-list[data-reach-listbox-list] {
-  font-size: 0.85rem;
-  line-height: 1rem;
+.sn-component .text-sm, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox, .sn-component .sn-listbox-list, .sn-component .sn-listbox-list-option {
+  font-size: 0.875rem;
 }
 
 .sn-component .hover\:brightness-130:hover, .sn-component .sn-button:hover {
   filter: brightness(130%);
 }
 
-.sn-component .inline-flex, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
+.sn-component .inline-flex, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox, .sn-component .sn-listbox-button {
   display: inline-flex;
 }
 
-.sn-component .justify-center, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
+.sn-component .justify-center, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox, .sn-component .sn-listbox-button {
   justify-content: center;
 }
 
-.sn-component .w-auto, .sn-component .sn-dropdown-menu {
+.sn-component .w-auto, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
   width: auto;
 }
 
@@ -2554,42 +2891,40 @@
   border-width: 1px;
 }
 
-.sn-component .border-gray-300, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list[data-reach-menu-items], .sn-component .sn-listbox, .sn-component .sn-listbox-list[data-reach-listbox-list], .sn-component .sn-listbox-popover[data-reach-listbox-popover] {
-  border-color: #d1d5db;
+.sn-component .border-gray-300, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list, .sn-component .sn-listbox-popover {
+  border-color: var(--sn-stylekit-border-color);
 }
 
-.sn-component .px-2, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list [data-reach-menu-item] {
+.sn-component .px-2, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.sn-component .bg-white, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list[data-reach-menu-items], .sn-component .sn-listbox, .sn-component .sn-listbox-list[data-reach-listbox-list] {
-  background-color: white;
+.sn-component .bg-white, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list {
+  background-color: var(--sn-stylekit-background-color);
 }
 
-.sn-component .font-medium, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
+.sn-component .font-medium, .sn-component .sn-button {
   font-weight: 500;
 }
 
-.sn-component .text-gray-700, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
-  color: #374151;
+.sn-component .text-color, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list {
+  color: var(--sn-stylekit-contrast-foreground-color);
 }
 
-.sn-component .hover\:bg-gray-50:hover, .sn-component .sn-dropdown-menu:hover, .sn-component .sn-listbox:hover {
-  background-color: #f9fafb;
+.sn-component .hover\:bg-color:hover, .sn-component .sn-dropdown-menu:hover, .sn-component .sn-dropdown-menu-list-item:hover, .sn-component .sn-listbox:hover {
+  background-color: var(--sn-stylekit-contrast-background-color);
 }
 
-.sn-component .leading-4, .sn-component .sn-dropdown-menu {
+.sn-component .leading-4, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
   line-height: 1rem;
 }
 
-.sn-component .mr-2, .sn-component .sn-dropdown-menu > :first-child {
+.sn-component .mr-2, .sn-component .sn-dropdown-menu > .sn-icon:first-child, .sn-component .sn-dropdown-menu-list-item > .sn-icon {
   margin-right: 0.5rem;
 }
 
-.sn-component .ml-2, .sn-component .sn-dropdown-menu > :last-child {
+.sn-component .ml-2, .sn-component .sn-dropdown-menu > .sn-icon:last-child, .sn-component .sn-listbox-button > .sn-icon:last-child {
   margin-left: 0.5rem;
 }
 
@@ -2597,29 +2932,24 @@
   margin-left: 1.5rem;
 }
 
-.sn-component .origin-top-right, .sn-component .sn-dropdown-menu-list[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list[data-reach-menu-items], .sn-component .sn-listbox-list[data-reach-listbox-list] {
+.sn-component .origin-top-right, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox-list {
   transform-origin: top right;
 }
 
-.sn-component .absolute, .sn-component .sn-dropdown-menu-list[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list[data-reach-menu-items] {
+.sn-component .absolute, .sn-component .sn-dropdown-menu-list {
   position: absolute;
 }
 
-.sn-component .mt-2, .sn-component .sn-dropdown-menu-list[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list[data-reach-menu-items], .sn-component .sn-listbox-popover[data-reach-listbox-popover] {
+.sn-component .mt-2, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox-popover {
   margin-top: 0.5rem;
 }
 
-.sn-component .w-56, .sn-component .sn-dropdown-menu-list[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list[data-reach-menu-items] {
+.sn-component .w-56, .sn-component .sn-dropdown-menu-list {
   width: 14rem;
 }
 
-.sn-component .rounded-sm, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list[data-reach-menu-items], .sn-component .sn-listbox, .sn-component .sn-listbox-list[data-reach-listbox-list], .sn-component .sn-listbox-popover[data-reach-listbox-popover] {
-  border-radius: 0.2rem;
+.sn-component .rounded-sm, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list, .sn-component .sn-listbox-popover {
+  border-radius: 0.25rem;
 }
 
 .sn-component .block {
@@ -2631,19 +2961,11 @@
   padding-right: 1rem;
 }
 
-.sn-component .hover\:bg-gray-100:hover, .sn-component .sn-dropdown-menu-list :hover[data-reach-menu-item] {
-  background-color: #f3f4f6;
-}
-
-.sn-component .hover\:text-gray-900:hover, .sn-component .sn-dropdown-menu-list :hover[data-reach-menu-item] {
-  color: #111827;
-}
-
-.sn-component .align-items-center, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list [data-reach-menu-item], .sn-component .sn-listbox {
+.sn-component .align-items-center, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox, .sn-component .sn-listbox-button {
   align-items: center;
 }
 
-.sn-component .flex, .sn-component .sn-dropdown-menu-list [data-reach-menu-item] {
+.sn-component .flex, .sn-component .sn-dropdown-menu-list-item {
   display: flex;
 }
 
@@ -2652,12 +2974,12 @@
   padding-right: 0.25rem;
 }
 
-.sn-component .py-1, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list [data-reach-menu-item], .sn-component .sn-listbox-button[data-reach-listbox-button] {
+.sn-component .py-1, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox-button {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
 
-.sn-component .h-32 {
+.sn-component .h-32, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
   height: 2rem;
 }
 
@@ -2665,16 +2987,51 @@
   border-style: solid;
 }
 
-.sn-component .no-focus-outline:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list:focus[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list:focus[data-reach-menu-items], .sn-component .sn-dropdown-menu-list :focus[data-reach-menu-item], .sn-component .sn-listbox:focus, .sn-component .sn-listbox-button:focus[data-reach-listbox-button], .sn-component .sn-listbox-list:focus[data-reach-listbox-list], .sn-component .sn-listbox-popover:focus[data-reach-listbox-popover], .sn-component .no-focus-outline:focus-within, .sn-component .sn-button:focus-within, .sn-component .sn-dropdown-menu:focus-within, .sn-component .sn-dropdown-menu-list:focus-within[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list:focus-within[data-reach-menu-items], .sn-component .sn-dropdown-menu-list :focus-within[data-reach-menu-item], .sn-component .sn-listbox:focus-within, .sn-component .sn-listbox-button:focus-within[data-reach-listbox-button], .sn-component .sn-listbox-list:focus-within[data-reach-listbox-list], .sn-component .sn-listbox-popover:focus-within[data-reach-listbox-popover] {
+.sn-component .no-focus-outline:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-listbox:focus, .sn-component .sn-listbox-button:focus, .sn-component .sn-listbox-list:focus, .sn-component .sn-listbox-popover:focus, .sn-component .no-focus-outline:focus-within, .sn-component .sn-button:focus-within, .sn-component .sn-dropdown-menu:focus-within, .sn-component .sn-dropdown-menu-list:focus-within, .sn-component .sn-dropdown-menu-list-item:focus-within, .sn-component .sn-listbox:focus-within, .sn-component .sn-listbox-button:focus-within, .sn-component .sn-listbox-list:focus-within, .sn-component .sn-listbox-popover:focus-within {
   outline: none;
 }
 
-.sn-component .no-focus-shadow:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list:focus[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list:focus[data-reach-menu-items], .sn-component .sn-dropdown-menu-list :focus[data-reach-menu-item], .sn-component .sn-listbox:focus, .sn-component .sn-listbox-button:focus[data-reach-listbox-button], .sn-component .sn-listbox-list:focus[data-reach-listbox-list], .sn-component .sn-listbox-popover:focus[data-reach-listbox-popover], .sn-component .no-focus-shadow:focus-within, .sn-component .sn-button:focus-within, .sn-component .sn-dropdown-menu:focus-within, .sn-component .sn-dropdown-menu-list:focus-within[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list:focus-within[data-reach-menu-items], .sn-component .sn-dropdown-menu-list :focus-within[data-reach-menu-item], .sn-component .sn-listbox:focus-within, .sn-component .sn-listbox-button:focus-within[data-reach-listbox-button], .sn-component .sn-listbox-list:focus-within[data-reach-listbox-list], .sn-component .sn-listbox-popover:focus-within[data-reach-listbox-popover] {
+.sn-component .no-focus-shadow:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-listbox:focus, .sn-component .sn-listbox-button:focus, .sn-component .sn-listbox-list:focus, .sn-component .sn-listbox-popover:focus, .sn-component .no-focus-shadow:focus-within, .sn-component .sn-button:focus-within, .sn-component .sn-dropdown-menu:focus-within, .sn-component .sn-dropdown-menu-list-item:focus-within, .sn-component .sn-listbox:focus-within, .sn-component .sn-listbox-button:focus-within, .sn-component .sn-listbox-list:focus-within, .sn-component .sn-listbox-popover:focus-within {
   box-shadow: none;
+}
+
+.sn-component .slide-down-animation, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox-list {
+  animation: slide-down 0.2s ease;
+}
+
+.sn-component .min-w-265, .sn-component .sn-dropdown-menu-list {
+  min-width: 265px;
+}
+
+.sn-component .selected\:bg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-listbox-list-option[data-selected],
+.sn-component .selected\:bg-color[aria-selected="true"],
+.sn-component .sn-dropdown-menu-list-item[aria-selected="true"],
+.sn-component .sn-listbox-list-option[aria-selected="true"] {
+  background-color: var(--sn-stylekit-contrast-background-color);
+}
+
+.sn-component .selected\:fg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-listbox-list-option[data-selected],
+.sn-component .selected\:fg-color[aria-selected="true"],
+.sn-component .sn-dropdown-menu-list-item[aria-selected="true"],
+.sn-component .sn-listbox-list-option[aria-selected="true"] {
+  color: var(--sn-stylekit-contrast-foreground-color);
+}
+
+.sn-component .box-shadow, .sn-component .sn-dropdown-menu-list {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sn-component .font-normal, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list-option {
+  font-weight: 300;
+}
+
+.sn-component .no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sn-component .border-box, .sn-component .sn-listbox {
+  box-sizing: border-box;
 }
 
 .sn-component .sn-button.contrast {
@@ -2716,16 +3073,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.sn-component .sn-dropdown-menu-list[data-reach-menu-list],
-.sn-component .sn-dropdown-menu-list[data-reach-menu-items] {
-  animation: slide-down 0.2s ease;
-  min-width: 265px;
-}
-
-.sn-component .sn-listbox-list[data-reach-listbox-list] {
-  animation: slide-down 0.2s ease;
 }
 
 .sn-component.no-select {
@@ -2780,73 +3127,6 @@ textarea,
 .linux-web ::-webkit-scrollbar-corner,
 .linux-desktop ::-webkit-scrollbar-corner {
   background-color: transparent;
-}
-
-/* Used to detect in JavaScript if apps have loaded styles or not. */
-:root {
-  --reach-menu-button: 1;
-}
-
-[data-reach-menu],
-[data-reach-menu-popover] {
-  display: block;
-  position: absolute;
-}
-
-[data-reach-menu][hidden],
-[data-reach-menu-popover][hidden] {
-  display: none;
-}
-
-[data-reach-menu-list],
-[data-reach-menu-items] {
-  display: block;
-  white-space: nowrap;
-  border: solid 1px rgba(0, 0, 0, 0.25);
-  background: rgba(255, 255, 255, 0.99);
-  outline: none;
-  padding: 1rem 0;
-  font-size: 85%;
-}
-
-[data-reach-menu-item] {
-  display: block;
-  user-select: none;
-}
-
-/*
- The dom structure of a MenuLink is reach-menu-item > a,
- so to target all items we can use `data-reach-menu-item`
-*/
-[data-reach-menu-item] {
-  /*
-    These are styled in one rule instead of something like a[data-reach-menu-item]
-    and li[data-reach-menu-item] so that apps don't have to fight specificity and
-    can style both li and a menu items with one rule,
-    ie: `[data-selected] { background: red; }`.
-    Otherwise they'd have to define two styles, one for a and one for li.
-  */
-  /* reach-menu-item */
-  cursor: pointer;
-  /* a */
-  display: block;
-  color: inherit;
-  font: inherit;
-  text-decoration: initial;
-  /* both */
-  padding: 5px 20px;
-}
-
-/* pseudo pseudo selector */
-[data-reach-menu-item][data-selected] {
-  background: #1159a6;
-  color: white;
-  outline: none;
-}
-
-[data-reach-menu-item][aria-disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 :root {

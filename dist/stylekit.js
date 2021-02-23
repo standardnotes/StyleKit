@@ -4044,21 +4044,17 @@ function reducer(state, action) {
 
 
 
-class Button extends p {
-  render() {
-    const {
-      label,
-      onClick,
-      variant
-    } = this.props;
-    return preact_module_a(Menu, null, preact_module_a(MenuButton, {
-      className: `sn-button ${variant}`,
-      onClick: onClick
-    }, preact_module_a("span", null, label)));
-  }
+const Button = ({
+  label,
+  onClick,
+  variant
+}) => {
+  return preact_module_a(Menu, null, preact_module_a(MenuButton, {
+    className: `sn-button ${variant}`,
+    onClick: onClick
+  }, label));
+};
 
-}
-;
 Button.propTypes = {
   label: (prop_types_default()).string.isRequired,
   onClick: (prop_types_default()).func.isRequired,
@@ -4067,33 +4063,31 @@ Button.propTypes = {
 Button.defaultProps = {
   variant: "info"
 };
+/* harmony default export */ const component = (Button);
 ;// CONCATENATED MODULE: ./src/components/Button/index.js
 
 ;// CONCATENATED MODULE: ./src/components/Icon/icons-sprite.svg
-/* harmony default export */ const icons_sprite = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgaWQ9ImljLWhpc3RvcnkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cGF0aCBkPSJNMTEuNjY3IDYuNjY3aC0xLjI1djQuMTY2bDMuNTY2IDIuMTE3LjYtMS4wMDgtMi45MTYtMS43MzRWNi42Njd6TTExLjI1IDIuNWE3LjUgNy41IDAgMDAtNy41IDcuNWgtMi41bDMuMyAzLjM1OEw3LjkxNyAxMGgtMi41YTUuODMzIDUuODMzIDAgMTE1LjgzMyA1LjgzMyA1Ljc4NiA1Ljc4NiAwIDAxLTQuMTE3LTEuNzE2TDUuOTUgMTUuM2E3LjQxMyA3LjQxMyAwIDAwNS4zIDIuMiA3LjUgNy41IDAgMDAwLTE1eiIgZmlsbD0iIzcyNzY3RSIgLz4KICA8L3N2Zz4KICA8c3ZnIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIiBpZD0iaWMtbWVudS1hcnJvdy11cCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDE4MCA5Ljk5OTkyNTYxMzQwMzMyLDEwLjQxNjU3NDQ3ODE0OTQxNCkiIGZpbGw9IiM3Mjc2N0UiIGQ9Im01LjgzMzI1LDguMzMzMjVsNC4xNjY2Nyw0LjE2NjY1bDQuMTY2NjgsLTQuMTY2NjVsLTguMzMzMzUsMHoiLz4KICA8L3N2Zz4KICA8c3ZnIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIiBpZD0iaWMtbWVudS1hcnJvdy1kb3duIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTUuODMzIDguMzMzTDEwIDEyLjVsNC4xNjctNC4xNjdINS44MzN6IiBmaWxsPSIjNzI3NjdFIiAvPgogIDwvc3ZnPgogIDxzdmcgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMjAgMjAiIGlkPSJpYy1yZWRvIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTE0LjUzNyA5LjRhNy4zMDYgNy4zMDYgMCAwMC00LjcyMi0xLjczM2MtMy4xODIgMC01Ljg3IDIuMDItNi44MTUgNC44MTNsMS42MTUuNTJjLjcxOC0yLjEyNyAyLjc3MS0zLjY2NyA1LjItMy42NjcgMS4zMzUgMCAyLjU1My40OCAzLjUwNCAxLjI1NEwxMC44NDIgMTNIMTdWN2wtMi40NjMgMi40eiIgZmlsbD0iIzcyNzY3RSIgLz4KICA8L3N2Zz4KICA8c3ZnIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIiBpZD0iaWMtdGV4dC1yaWNoIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTIuNSA3LjVoNXY1aC01di01em0wLTMuMzMzaDE1djEuNjY2aC0xNVY0LjE2NnptMTUgMy4zMzN2MS42NjZIOS4xNjdWNy41SDE3LjV6bTAgMy4zMzNWMTIuNUg5LjE2N3YtMS42NjdIMTcuNXptLTE1IDMuMzMzaDExLjY2N3YxLjY2N0gyLjV2LTEuNjY3eiIgZmlsbD0iIzcyNzY3RSIgLz4KICA8L3N2Zz4KICA8c3ZnIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIiBpZD0iaWMtdW5kbyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xMC4xODEgNy42NjdBNy4zIDcuMyAwIDAwNS40NjIgOS40TDMgN3Y2aDYuMTU1TDYuNjggMTAuNTg3YTUuNTIzIDUuNTIzIDAgMDEzLjUwMS0xLjI1NGMyLjQyMSAwIDQuNDggMS41NCA1LjE5OCAzLjY2N0wxNyAxMi40OGMtLjk1LTIuNzkzLTMuNjM5LTQuODEzLTYuODE5LTQuODEzeiIgZmlsbD0iIzcyNzY3RSIgLz4KICA8L3N2Zz4KPC9zdmc+");
+/* harmony default export */ const icons_sprite = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxzdmcgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMjAgMjAiIGlkPSJpYy1oaXN0b3J5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTExLjY2NyA2LjY2N2gtMS4yNXY0LjE2NmwzLjU2NiAyLjExNy42LTEuMDA4LTIuOTE2LTEuNzM0VjYuNjY3ek0xMS4yNSAyLjVhNy41IDcuNSAwIDAwLTcuNSA3LjVoLTIuNWwzLjMgMy4zNThMNy45MTcgMTBoLTIuNWE1LjgzMyA1LjgzMyAwIDExNS44MzMgNS44MzMgNS43ODYgNS43ODYgMCAwMS00LjExNy0xLjcxNkw1Ljk1IDE1LjNhNy40MTMgNy40MTMgMCAwMDUuMyAyLjIgNy41IDcuNSAwIDAwMC0xNXoiIGZpbGw9IiM3Mjc2N0UiIC8+CiAgPC9zdmc+CiAgPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgaWQ9ImljLW1lbnUtYXJyb3ctdXAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgxODAgOS45OTk5MjU2MTM0MDMzMiwxMC40MTY1NzQ0NzgxNDk0MTQpIiBmaWxsPSIjNzI3NjdFIiBkPSJtNS44MzMyNSw4LjMzMzI1bDQuMTY2NjcsNC4xNjY2NWw0LjE2NjY4LC00LjE2NjY1bC04LjMzMzM1LDB6Ii8+CiAgPC9zdmc+CiAgPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgaWQ9ImljLW1lbnUtYXJyb3ctZG93biIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01LjgzMyA4LjMzM0wxMCAxMi41bDQuMTY3LTQuMTY3SDUuODMzeiIgZmlsbD0iIzcyNzY3RSIgLz4KICA8L3N2Zz4KICA8c3ZnIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIiBpZD0iaWMtcmVkbyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xNC41MzcgOS40YTcuMzA2IDcuMzA2IDAgMDAtNC43MjItMS43MzNjLTMuMTgyIDAtNS44NyAyLjAyLTYuODE1IDQuODEzbDEuNjE1LjUyYy43MTgtMi4xMjcgMi43NzEtMy42NjcgNS4yLTMuNjY3IDEuMzM1IDAgMi41NTMuNDggMy41MDQgMS4yNTRMMTAuODQyIDEzSDE3VjdsLTIuNDYzIDIuNHoiIGZpbGw9IiM3Mjc2N0UiIC8+CiAgPC9zdmc+CiAgPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgaWQ9ImljLXRleHQtcmljaCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yLjUgNy41aDV2NWgtNXYtNXptMC0zLjMzM2gxNXYxLjY2NmgtMTVWNC4xNjZ6bTE1IDMuMzMzdjEuNjY2SDkuMTY3VjcuNUgxNy41em0wIDMuMzMzVjEyLjVIOS4xNjd2LTEuNjY3SDE3LjV6bS0xNSAzLjMzM2gxMS42Njd2MS42NjdIMi41di0xLjY2N3oiIGZpbGw9IiM3Mjc2N0UiIC8+CiAgPC9zdmc+CiAgPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgaWQ9ImljLXVuZG8iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cGF0aCBkPSJNMTAuMTgxIDcuNjY3QTcuMyA3LjMgMCAwMDUuNDYyIDkuNEwzIDd2Nmg2LjE1NUw2LjY4IDEwLjU4N2E1LjUyMyA1LjUyMyAwIDAxMy41MDEtMS4yNTRjMi40MjEgMCA0LjQ4IDEuNTQgNS4xOTggMy42NjdMMTcgMTIuNDhjLS45NS0yLjc5My0zLjYzOS00LjgxMy02LjgxOS00LjgxM3oiIGZpbGw9IiM3Mjc2N0UiIC8+CiAgPC9zdmc+Cjwvc3ZnPg==");
 ;// CONCATENATED MODULE: ./src/components/Icon/component.js
 
 
 
-class Icon extends p {
-  render() {
-    const {
-      name,
-      width,
-      height,
-      classList
-    } = this.props;
-    return preact_module_a("svg", {
-      className: `sn-icon ${classList ? classList : ''}`,
-      width: width,
-      height: height
-    }, preact_module_a("use", {
-      href: icons_sprite + `#ic-${name}`
-    }));
-  }
 
-}
-;
+const Icon = ({
+  name,
+  width,
+  height,
+  className
+}) => {
+  return preact_module_a("svg", {
+    className: `sn-icon ${className ? className : ''}`,
+    width: width,
+    height: height
+  }, preact_module_a("use", {
+    href: icons_sprite + `#ic-${name}`
+  }));
+};
+
 Icon.propTypes = {
   name: prop_types_default().oneOf(["history", "menu-arrow-down", "menu-arrow-up", "text-rich", "undo", "redo"]).isRequired,
   classList: (prop_types_default()).string,
@@ -4104,6 +4098,7 @@ Icon.defaultProps = {
   width: 20,
   height: 20
 };
+/* harmony default export */ const Icon_component = (Icon);
 ;// CONCATENATED MODULE: ./src/components/Icon/index.js
 
 ;// CONCATENATED MODULE: ./src/components/DropdownMenu/component.js
@@ -4112,38 +4107,36 @@ Icon.defaultProps = {
 
 
 
-class DropdownMenu extends p {
-  render() {
-    const {
-      label,
-      items,
-      icon,
-      onSelectItem
-    } = this.props;
-    return preact_module_a(Menu, null, ({
-      isExpanded
-    }) => preact_module_a(y, null, preact_module_a(MenuButton, {
-      className: "sn-dropdown-menu"
-    }, icon && icon, " ", label, " ", isExpanded ? preact_module_a(Icon, {
-      name: "menu-arrow-up"
-    }) : preact_module_a(Icon, {
-      name: "menu-arrow-down"
-    })), preact_module_a(MenuList, {
-      className: "sn-dropdown-menu-list"
-    }, items.map(item => preact_module_a(MenuItem, {
-      valueText: item.value,
-      onSelect: () => item.onSelect ? item.onSelect(item.value) : onSelectItem(item.value)
-    }, item.icon && item.icon, " ", item.label)))));
-  }
+const DropdownMenu = ({
+  label,
+  items,
+  icon,
+  onSelectItem
+}) => {
+  return preact_module_a(Menu, null, ({
+    isExpanded
+  }) => preact_module_a(y, null, preact_module_a(MenuButton, {
+    className: "sn-dropdown-menu"
+  }, icon && icon, " ", label, " ", isExpanded ? preact_module_a(Icon_component, {
+    name: "menu-arrow-up"
+  }) : preact_module_a(Icon_component, {
+    name: "menu-arrow-down"
+  })), preact_module_a(MenuList, {
+    className: "sn-dropdown-menu-list"
+  }, items && items.map(item => preact_module_a(MenuItem, {
+    className: "sn-dropdown-menu-list-item",
+    valueText: item.value,
+    onSelect: () => item.onSelect ? item.onSelect(item.value) : onSelectItem(item.value)
+  }, item.icon && item.icon, " ", item.label)))));
+};
 
-}
-;
 DropdownMenu.propTypes = {
   label: (prop_types_default()).string.isRequired,
   items: (prop_types_default()).array.isRequired,
   onSelectItem: (prop_types_default()).func.isRequired,
   icon: (prop_types_default()).element
 };
+/* harmony default export */ const DropdownMenu_component = (DropdownMenu);
 ;// CONCATENATED MODULE: ./src/components/DropdownMenu/index.js
 
 ;// CONCATENATED MODULE: ./node_modules/@xstate/fsm/es/index.js
@@ -6092,50 +6085,47 @@ function useControlledStateSync(controlPropValue, internalValue, send) {
 
 
 
-class ListBox extends p {
-  render() {
-    const {
-      defaultValue,
-      placeholder,
-      options,
-      onChange
-    } = this.props;
-    /**
-     * If no options yet, we don't want to render the component.
-     */
 
-    if (!options) {
-      return;
-    }
-
-    return preact_module_a(ListboxInput, {
-      className: "sn-listbox",
-      defaultValue: defaultValue,
-      onChange: onChange
-    }, ({
-      value,
-      valueLabel,
-      isExpanded
-    }) => preact_module_a(y, null, preact_module_a(ListboxButton, {
-      className: "sn-listbox-button"
-    }, preact_module_a("span", {
-      "data-value": value
-    }, valueLabel ?? placeholder), " ", isExpanded ? preact_module_a(Icon, {
-      name: "menu-arrow-up"
-    }) : preact_module_a(Icon, {
-      name: "menu-arrow-down"
-    })), preact_module_a(ListboxPopover, {
-      className: "sn-listbox-popover"
-    }, preact_module_a(ListboxList, {
-      className: "sn-listbox-list"
-    }, options && options.map(option => preact_module_a(ListboxOption, {
-      value: option.value,
-      valueText: option.label
-    }, option.label))))));
+const ListBox = ({
+  defaultValue,
+  placeholder,
+  options,
+  onChange
+}) => {
+  /**
+   * If no options yet, we don't want to render the component.
+   */
+  if (!options) {
+    return;
   }
 
-}
-;
+  return preact_module_a(ListboxInput, {
+    className: "sn-listbox",
+    defaultValue: defaultValue,
+    onChange: onChange
+  }, ({
+    value,
+    valueLabel,
+    isExpanded
+  }) => preact_module_a(y, null, preact_module_a(ListboxButton, {
+    className: "sn-listbox-button"
+  }, preact_module_a("span", {
+    "data-value": value
+  }, valueLabel ?? placeholder), " ", isExpanded ? preact_module_a(Icon_component, {
+    name: "menu-arrow-up"
+  }) : preact_module_a(Icon_component, {
+    name: "menu-arrow-down"
+  })), preact_module_a(ListboxPopover, {
+    className: "sn-listbox-popover"
+  }, preact_module_a(ListboxList, {
+    className: "sn-listbox-list"
+  }, options && options.map(option => preact_module_a(ListboxOption, {
+    className: "sn-listbox-list-option",
+    value: option.value,
+    valueText: option.label
+  }, option.label))))));
+};
+
 ListBox.propTypes = {
   defaultValue: (prop_types_default()).string,
   options: (prop_types_default()).array.isRequired,
@@ -6146,6 +6136,7 @@ ListBox.defaultProps = {
   defaultValue: "",
   placeholder: "Choose an option..."
 };
+/* harmony default export */ const ListBox_component = (ListBox);
 ;// CONCATENATED MODULE: ./src/components/ListBox/index.js
 
 ;// CONCATENATED MODULE: ./src/index.js
@@ -6156,9 +6147,9 @@ ListBox.defaultProps = {
 ;// CONCATENATED MODULE: ./src/custom-elements.js
 
 
-preact_custom_element_esm(Button, 'sn-button');
-preact_custom_element_esm(DropdownMenu, 'sn-dropdown-menu');
-preact_custom_element_esm(ListBox, 'sn-listbox');
+preact_custom_element_esm(component, 'sn-button');
+preact_custom_element_esm(DropdownMenu_component, 'sn-dropdown-menu');
+preact_custom_element_esm(ListBox_component, 'sn-listbox');
 
 /***/ })
 
