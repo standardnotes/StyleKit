@@ -25,8 +25,7 @@
 }
 
 .text-sm {
-  font-size: 0.85rem;
-  line-height: 1rem;
+  font-size: 0.875rem;
 }
 
 .hover\:brightness-130:hover {
@@ -111,7 +110,7 @@
 }
 
 .rounded-sm {
-  border-radius: 0.2rem
+  border-radius: 0.25rem
 }
 
 .block {
@@ -173,4 +172,21 @@
 .selected\:fg-color[data-selected],
 .selected\:fg-color[aria-selected="true"] {
   color: var(--sn-stylekit-contrast-foreground-color);
+}
+
+.box-shadow {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.font-normal {
+  font-weight: 300;
+}
+
+.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.border-box {
+  box-sizing: border-box;
 }

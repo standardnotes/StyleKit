@@ -2,8 +2,9 @@
   @extend .border-0;
   @extend .border-solid;
   @extend .cursor-pointer;
-  @extend .font-bold;
+  @extend .font-medium;
   @extend .hover\:brightness-130;
+  @extend .h-32;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .px-3;
@@ -50,7 +51,8 @@
   @extend .border-solid;
   @extend .border;
   @extend .cursor-pointer;
-  @extend .font-medium;
+  @extend .font-normal;
+  @extend .h-32;
   @extend .hover\:bg-color;
   @extend .inline-flex;
   @extend .justify-center;
@@ -88,19 +90,22 @@
   @extend .absolute;
   @extend .bg-white;
   @extend .border-gray-300;
+  @extend .box-shadow;
+  @extend .font-normal;
   @extend .min-w-265;
   @extend .mt-2;
   @extend .no-focus-outline;
-  @extend .no-focus-shadow;
   @extend .origin-top-right;
   @extend .py-2;
   @extend .rounded-sm;
   @extend .slide-down-animation;
+  @extend .text-color;
   @extend .w-56;
 }
 
 .sn-dropdown-menu-list-item {
   @extend .align-items-center;
+  @extend .cursor-pointer;
   @extend .flex;
   @extend .hover\:bg-color;
   @extend .no-focus-outline;
@@ -123,23 +128,35 @@
   @extend .border-gray-300;
   @extend .border-solid;
   @extend .border;
+  @extend .border-box;
   @extend .cursor-pointer;
-  @extend .font-medium;
+  @extend .font-normal;
+  @extend .h-32;
   @extend .hover\:bg-color;
   @extend .inline-flex;
   @extend .justify-center;
+  @extend .leading-4;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .rounded-sm;
   @extend .text-color;
   @extend .text-sm;
+  @extend .w-auto;
 }
 
 .sn-listbox-button {
+  @extend .align-items-center;
   @extend .border-0;
+  @extend .cursor-pointer;
+  @extend .inline-flex;
+  @extend .justify-center;
+  @extend .py-1;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
-  @extend .py-1;
+}
+
+.sn-listbox-button > .sn-icon:last-child {
+  @extend .ml-2;
 }
 
 .sn-listbox-list {
@@ -150,12 +167,16 @@
   @extend .origin-top-right;
   @extend .rounded-sm;
   @extend .slide-down-animation;
+  @extend .text-color;
   @extend .text-sm;
 }
 
 .sn-listbox-list-option {
+  @extend .cursor-pointer;
   @extend .selected\:bg-color;
   @extend .selected\:fg-color;
+  @extend .font-normal;
+  @extend .text-sm;
 }
 
 .sn-listbox-popover {

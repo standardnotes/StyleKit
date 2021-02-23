@@ -3,7 +3,6 @@ import {
   Menu,
   MenuButton
 } from "@reach/menu-button";
-import "@reach/menu-button/styles.css";
 import PropTypes from 'prop-types';
 
 const Button = ({ label, onClick, variant }) => {

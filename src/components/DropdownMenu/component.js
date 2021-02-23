@@ -5,7 +5,6 @@ import {
   MenuButton,
   MenuItem
 } from "@reach/menu-button";
-import "@reach/menu-button/styles.css";
 import { Icon } from "@Components/Icon";
 import PropTypes from 'prop-types';
 
