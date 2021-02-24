@@ -1,5 +1,5 @@
 .sn-button {
-  @extend .border-0;
+  @extend .no-border;
   @extend .border-solid;
   @extend .cursor-pointer;
   @extend .font-medium;
@@ -46,7 +46,7 @@
 .sn-dropdown-menu {
   @extend .align-items-center;
   @extend .bg-white;
-  @extend .border-0;
+  @extend .no-border;
   @extend .border-gray-300;
   @extend .border-solid;
   @extend .border;
@@ -124,7 +124,7 @@
 .sn-listbox {
   @extend .align-items-center;
   @extend .bg-white;
-  @extend .border-0;
+  @extend .no-border;
   @extend .border-gray-300;
   @extend .border-solid;
   @extend .border;
@@ -146,7 +146,7 @@
 
 .sn-listbox-button {
   @extend .align-items-center;
-  @extend .border-0;
+  @extend .no-border;
   @extend .cursor-pointer;
   @extend .inline-flex;
   @extend .justify-center;
@@ -186,5 +186,6 @@
   @extend .mt-2;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
+  @extend .no-border;
   @extend .rounded-sm;
 }
