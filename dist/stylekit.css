@@ -498,7 +498,7 @@ template {
   border-bottom: 1px solid var(--sn-stylekit-border-color);
 }
 
-.sn-component .sk-panel-section:not(:last-child).no-border {
+.sn-component .sk-panel-section:not(:last-child).no-border, .sn-component .sk-panel-section.sn-button:not(:last-child), .sn-component .sk-panel-section.sn-dropdown-menu:not(:last-child), .sn-component .sk-panel-section.sn-listbox:not(:last-child), .sn-component .sk-panel-section.sn-listbox-button:not(:last-child), .sn-component .sk-panel-section.sn-listbox-popover:not(:last-child) {
   border-bottom: none;
 }
 
@@ -896,7 +896,7 @@ template {
   border: none;
 }
 
-.sn-component input.sk-input.no-border {
+.sn-component input.sk-input.no-border, .sn-component input.sk-input.sn-button, .sn-component input.sk-input.sn-dropdown-menu, .sn-component input.sk-input.sn-listbox, .sn-component input.sk-input.sn-listbox-button, .sn-component input.sk-input.sn-listbox-popover {
   border: none;
 }
 
@@ -2769,7 +2769,7 @@ template {
   margin-top: 1.25rem;
 }
 
-.sn-component .sk-panel-table .sk-panel-table-item.no-border {
+.sn-component .sk-panel-table .sk-panel-table-item.no-border, .sn-component .sk-panel-table .sk-panel-table-item.sn-button, .sn-component .sk-panel-table .sk-panel-table-item.sn-dropdown-menu, .sn-component .sk-panel-table .sk-panel-table-item.sn-listbox, .sn-component .sk-panel-table .sk-panel-table-item.sn-listbox-button, .sn-component .sk-panel-table .sk-panel-table-item.sn-listbox-popover {
   border: none;
 }
 
@@ -2838,7 +2838,7 @@ template {
   box-shadow: 0px 2px 35px 0px rgba(0, 0, 0, 0.19);
 }
 
-.sn-component .border-0, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox, .sn-component .sn-listbox-button {
+.sn-component .no-border, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox, .sn-component .sn-listbox-button, .sn-component .sn-listbox-popover {
   border-width: 0px;
 }
 
@@ -2980,8 +2980,8 @@ template {
   padding-bottom: 0.25rem;
 }
 
-.sn-component .h-32, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox {
-  height: 2rem;
+.sn-component .m-h-32, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox {
+  min-height: 2rem;
 }
 
 .sn-component .border-solid, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
