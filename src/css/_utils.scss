@@ -74,7 +74,7 @@
 }
 
 .hover\:bg-color:hover {
-  background-color: var(--sn-stylekit-contrast-background-color);
+  background-color: var(--sn-stylekit-list-item-highlight-color);
 }
 
 .leading-4 {
@@ -166,7 +166,7 @@
 
 .selected\:bg-color[data-selected],
 .selected\:bg-color[aria-selected="true"] {
-  background-color: var(--sn-stylekit-contrast-background-color);
+  background-color: var(--sn-stylekit-list-item-highlight-color);
 }
 
 .selected\:fg-color[data-selected],

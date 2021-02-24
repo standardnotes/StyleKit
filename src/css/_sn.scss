@@ -111,10 +111,10 @@
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .px-2;
-  @extend .py-1;
   @extend .selected\:bg-color;
   @extend .selected\:fg-color;
   @extend .text-sm;
+  @extend .h-32;
 }
 
 .sn-dropdown-menu-list-item > .sn-icon {
@@ -177,6 +177,7 @@
   @extend .selected\:fg-color;
   @extend .font-normal;
   @extend .text-sm;
+  @extend .py-2;
 }
 
 .sn-listbox-popover {
