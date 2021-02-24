@@ -3018,7 +3018,7 @@ template {
   color: var(--sn-stylekit-contrast-foreground-color);
 }
 
-.sn-component .box-shadow, .sn-component .sn-dropdown-menu-list {
+.sn-component .box-shadow, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox-popover, .sn-component .box-shadow:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-listbox-popover:focus, .sn-component .box-shadow:focus-within, .sn-component .sn-dropdown-menu-list:focus-within, .sn-component .sn-listbox-popover:focus-within {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(0, 0, 0, 0.04);
 }
 
