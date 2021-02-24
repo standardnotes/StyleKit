@@ -12,19 +12,151 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 871:
-/***/ (() => {
-
-
-
-
-/***/ }),
-
-/***/ 866:
+/***/ 754:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "SKAlert": () => (/* reexport */ SKAlert)
+});
+
+;// CONCATENATED MODULE: ./src/js/Alert.js
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+class SKAlert {
+  /*
+  buttons: [{text, style, action}]
+  */
+  constructor({
+    title,
+    text,
+    buttons
+  }) {
+    _defineProperty(this, "keyupListener", event => {
+      if (event.key === 'Enter') {
+        let primaryButton = this.primaryButton();
+        primaryButton.action && primaryButton.action();
+        this.dismiss();
+      }
+    });
+
+    this.title = title;
+    this.text = text;
+    this.buttons = buttons;
+  }
+
+  buttonsString() {
+    const genButton = function (buttonDesc, index) {
+      return `
+        <div id='button-${index}' class='sk-button ${buttonDesc.style}'>
+          <div class='sk-label'>${buttonDesc.text}</div>
+        </div>
+      `;
+    };
+
+    let buttonString = this.buttons.map(function (buttonDesc, index) {
+      return genButton(buttonDesc, index);
+    }).join('');
+    let str = `
+      <div class='sk-button-group'>
+        ${buttonString}
+      </div>
+    `;
+    return str;
+  }
+
+  templateString() {
+    let buttonsTemplate;
+    let panelStyle;
+
+    if (this.buttons) {
+      buttonsTemplate = `
+        <div class="sk-panel-row" style='margin-top: 8px;'>
+          ${this.buttonsString()}
+        </div>
+      `;
+      panelStyle = '';
+    } else {
+      buttonsTemplate = '';
+      panelStyle = 'style="padding-bottom: 8px"';
+    }
+
+    let titleTemplate = this.title ? `<div class='sk-h3 sk-panel-section-title'>${this.title}</div>` : '';
+    let messageTemplate = this.text ? `<p class='sk-p'>${this.text}</p>` : '';
+    let template = `
+      <div class="sk-modal">
+        <div class="sk-modal-background"></div>
+        <div class="sk-modal-content">
+          <div class="sn-component">
+            <div class="sk-panel" style='max-width: 500px;'>
+              <div class="sk-panel-content" ${panelStyle}>
+                <div class="sk-panel-section">
+                  ${titleTemplate}
+
+                  <div class="sk-panel-row">
+                    ${messageTemplate}
+                  </div>
+
+                  ${buttonsTemplate}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    return template;
+  }
+
+  dismiss() {
+    this.onElement.removeChild(this.element);
+    document.removeEventListener('keyup', this.keyupListener);
+  }
+
+  primaryButton() {
+    let primary = this.buttons.find(button => button.primary === true);
+
+    if (!primary) {
+      primary = this.buttons[this.buttons.length - 1];
+    }
+
+    return primary;
+  }
+
+  present({
+    onElement
+  } = {}) {
+    if (!onElement) {
+      onElement = document.body;
+    }
+
+    this.onElement = onElement;
+    this.element = document.createElement('div');
+    this.element.className = 'sn-component';
+    this.element.innerHTML = this.templateString().trim();
+
+    if (this.buttons) {
+      document.addEventListener('keyup', this.keyupListener);
+      this.buttons.forEach((buttonDesc, index) => {
+        let buttonElem = this.element.querySelector(`#button-${index}`);
+
+        buttonElem.onclick = () => {
+          buttonDesc.action && buttonDesc.action();
+          this.dismiss();
+        };
+      });
+    }
+
+    onElement.appendChild(this.element);
+  }
+
+}
+;// CONCATENATED MODULE: ./src/stylekit.js
+
+
 
 
 /***/ })
@@ -54,7 +186,30 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/******/ 	// the startup function
+/******/ 	// It's empty as some runtime module handles the default behavior
+/******/ 	__webpack_require__.x = x => {};
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -66,12 +221,99 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// Promise = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			388: 0
+/******/ 		};
+/******/ 		
+/******/ 		var deferredModules = [
+/******/ 			[754]
+/******/ 		];
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		var checkDeferredModules = x => {};
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime, executeModules] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0, resolves = [];
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					resolves.push(installedChunks[chunkId][0]);
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			for(moduleId in moreModules) {
+/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 				}
+/******/ 			}
+/******/ 			if(runtime) runtime(__webpack_require__);
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			while(resolves.length) {
+/******/ 				resolves.shift()();
+/******/ 			}
+/******/ 		
+/******/ 			// add entry modules from loaded chunk to deferred list
+/******/ 			if(executeModules) deferredModules.push.apply(deferredModules, executeModules);
+/******/ 		
+/******/ 			// run deferred modules when all chunks ready
+/******/ 			return checkDeferredModules();
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkSK_name_"] = self["webpackChunkSK_name_"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 		
+/******/ 		function checkDeferredModulesImpl() {
+/******/ 			var result;
+/******/ 			for(var i = 0; i < deferredModules.length; i++) {
+/******/ 				var deferredModule = deferredModules[i];
+/******/ 				var fulfilled = true;
+/******/ 				for(var j = 1; j < deferredModule.length; j++) {
+/******/ 					var depId = deferredModule[j];
+/******/ 					if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferredModules.splice(i--, 1);
+/******/ 					result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 				}
+/******/ 			}
+/******/ 			if(deferredModules.length === 0) {
+/******/ 				__webpack_require__.x();
+/******/ 				__webpack_require__.x = x => {};
+/******/ 			}
+/******/ 			return result;
+/******/ 		}
+/******/ 		var startup = __webpack_require__.x;
+/******/ 		__webpack_require__.x = () => {
+/******/ 			// reset startup function so it can be called again when more startup code is added
+/******/ 			__webpack_require__.x = startup || (x => {});
+/******/ 			return (checkDeferredModules = checkDeferredModulesImpl)();
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 /******/ 	// module exports must be returned from runtime so entry inlining is disabled
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	__webpack_require__(871);
-/******/ 	return __webpack_require__(866);
+/******/ 	// run startup
+/******/ 	return __webpack_require__.x();
 /******/ })()
 ;
 });
