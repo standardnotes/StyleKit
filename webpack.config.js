@@ -3,14 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (_, { mode }) => ({
   entry: {
-    "stylekit": [
-      path.resolve(__dirname, 'src/stylekit.js'),
-      path.resolve(__dirname, 'src/css/main.scss')
-    ],
-    "web-components": [
-      path.resolve(__dirname, 'src/web-components.js'),
-      path.resolve(__dirname, 'src/css/main.scss')
-    ]
+    "stylekit": path.resolve(__dirname, 'src/stylekit.js'),
+    "web-components": path.resolve(__dirname, 'src/web-components.js')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -21,6 +15,16 @@ module.exports = (_, { mode }) => ({
   },
   optimization: {
     minimize: false,
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          type: 'css/mini-extract',
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
   externals: {},
   devServer: {
@@ -80,7 +84,7 @@ module.exports = (_, { mode }) => ({
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'stylekit.css',
     }),
   ],
 });
