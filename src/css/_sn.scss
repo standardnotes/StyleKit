@@ -182,6 +182,7 @@
 
 .sn-listbox-popover {
   @extend .border-gray-300;
+  @extend .box-shadow;
   @extend .mt-2;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;

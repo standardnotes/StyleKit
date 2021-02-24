@@ -26,7 +26,7 @@ Primary.args = {
       value: 'first-option'
     },
     {
-      label: 'Second-option',
+      label: 'Second option',
       value: 'second-option'
     },
     {
