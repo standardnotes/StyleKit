@@ -2,14 +2,14 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (_, { mode }) => ({
-  entry: [
-    path.resolve(__dirname, 'src/Stylekit.js'),
-    path.resolve(__dirname, 'src/custom-elements.js')
-  ],
+  entry: {
+    stylekit: [path.resolve(__dirname, 'src/stylekit.js'), path.resolve(__dirname, 'src/css/main.scss')],
+    webcomponents: path.resolve(__dirname, 'src/web-components.js')
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'stylekit.js',
-    library: 'Stylekit',
+    filename: '[name].js',
+    library: ['SK', '[name]'],
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
@@ -74,7 +74,7 @@ module.exports = (_, { mode }) => ({
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'stylekit.css',
+      filename: '[name].css',
     }),
   ],
 });
