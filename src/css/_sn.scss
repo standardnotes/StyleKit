@@ -4,7 +4,7 @@
   @extend .cursor-pointer;
   @extend .font-medium;
   @extend .hover\:brightness-130;
-  @extend .h-32;
+  @extend .m-h-32;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .px-3;
@@ -52,7 +52,7 @@
   @extend .border;
   @extend .cursor-pointer;
   @extend .font-normal;
-  @extend .h-32;
+  @extend .m-h-32;
   @extend .hover\:bg-color;
   @extend .inline-flex;
   @extend .justify-center;
@@ -114,7 +114,7 @@
   @extend .selected\:bg-color;
   @extend .selected\:fg-color;
   @extend .text-sm;
-  @extend .h-32;
+  @extend .m-h-32;
 }
 
 .sn-dropdown-menu-list-item > .sn-icon {
@@ -131,7 +131,7 @@
   @extend .border-box;
   @extend .cursor-pointer;
   @extend .font-normal;
-  @extend .h-32;
+  @extend .m-h-32;
   @extend .hover\:bg-color;
   @extend .inline-flex;
   @extend .justify-center;
