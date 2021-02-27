@@ -5,8 +5,8 @@
   "scripts": {
     "build": "webpack --mode='production'",
     "start": "webpack --watch --mode='development'",
-    "lint": "prettier --check .",
-    "lint:fix": "prettier --write .",
+    "lint": "prettier --check *.js",
+    "lint:fix": "prettier --write *.js",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook"
   },

@@ -3,8 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (_, { mode }) => ({
   entry: {
-    "stylekit": path.resolve(__dirname, 'src/stylekit.js'),
-    "web-components": path.resolve(__dirname, 'src/web-components.js')
+    stylekit: path.resolve(__dirname, 'src/stylekit.js'),
+    'web-components': path.resolve(__dirname, 'src/web-components.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -71,13 +71,13 @@ module.exports = (_, { mode }) => ({
             },
           },
         ],
-      }
+      },
     ],
   },
   resolve: {
     alias: {
-      "react": 'preact/compat',
-      "react-dom": 'preact/compat',
+      react: 'preact/compat',
+      'react-dom': 'preact/compat',
       '@Components': path.resolve(__dirname, 'src/components'),
     },
     extensions: ['.js', '.jsx', '.css', '.scss'],
