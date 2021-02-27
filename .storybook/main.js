@@ -20,6 +20,7 @@ module.exports = {
     config.entry.push(path.resolve(__dirname, '../src/css/main.scss'));
     config.resolve.alias["react"] = 'preact/compat';
     config.resolve.alias["react-dom"] = 'preact/compat';
+    config.resolve.alias["react-dom/test-utils"] = 'preact/test-utils';
     config.resolve.alias["@Components"] = path.resolve(__dirname, '../src/components');
     config.module.rules.push({
       test: /\.s[ac]ss$/i,

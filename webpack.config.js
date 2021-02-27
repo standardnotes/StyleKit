@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = (_, { mode }) => ({
   entry: {
     stylekit: path.resolve(__dirname, 'src/stylekit.js'),
+    components: path.resolve(__dirname, 'src/index.js'),
     'web-components': path.resolve(__dirname, 'src/web-components.js'),
   },
   output: {
@@ -33,8 +34,7 @@ module.exports = (_, { mode }) => ({
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-      'Access-Control-Allow-Headers':
-        'X-Requested-With, content-type, Authorization',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
     },
   },
   module: {
@@ -78,6 +78,7 @@ module.exports = (_, { mode }) => ({
     alias: {
       react: 'preact/compat',
       'react-dom': 'preact/compat',
+      'react-dom/test-utils': 'preact/test-utils',
       '@Components': path.resolve(__dirname, 'src/components'),
     },
     extensions: ['.js', '.jsx', '.css', '.scss'],
