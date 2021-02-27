@@ -1,9 +1,9 @@
 import { h } from 'preact';
-import { ListBox } from '@Components/ListBox';
+import { Select } from '@Components/Select';
 
 export default {
-  title: 'Design System/Atoms/ListBox',
-  component: ListBox,
+  title: 'Design System/Atoms/Select',
+  component: Select,
   argTypes: {
     options: {
       table: {
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template = (args) => <ListBox {...args} />;
+const Template = (args) => <Select {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

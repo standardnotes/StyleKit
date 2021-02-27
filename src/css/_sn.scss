@@ -110,7 +110,7 @@
   @extend .mr-2;
 }
 
-.sn-listbox {
+.sn-select {
   @extend .align-items-center;
   @extend .bg-white;
   @extend .no-border;
@@ -133,7 +133,7 @@
   @extend .w-auto;
 }
 
-.sn-listbox-button {
+.sn-select-button {
   @extend .align-items-center;
   @extend .no-border;
   @extend .cursor-pointer;
@@ -144,11 +144,11 @@
   @extend .no-focus-shadow;
 }
 
-.sn-listbox-button > .sn-icon:last-child {
+.sn-select-button > .sn-icon:last-child {
   @extend .ml-2;
 }
 
-.sn-listbox-list {
+.sn-select-list {
   @extend .bg-white;
   @extend .border-gray-300;
   @extend .border-rounded-sm;
@@ -159,7 +159,7 @@
   @extend .text-sm;
 }
 
-.sn-listbox-list-option {
+.sn-select-list-option {
   @extend .cursor-pointer;
   @extend .selected\:bg-color;
   @extend .selected\:fg-color;
@@ -168,7 +168,7 @@
   @extend .py-2;
 }
 
-.sn-listbox-popover {
+.sn-select-popover {
   @extend .border-gray-300;
   @extend .border-rounded-sm;
   @extend .box-shadow;

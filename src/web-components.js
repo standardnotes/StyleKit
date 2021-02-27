@@ -1,6 +1,6 @@
 import register from 'preact-custom-element';
-import { Button, DropdownMenu, ListBox } from './index';
+import { Button, DropdownMenu, Select } from './index';
 
 register(Button, 'sn-button');
 register(DropdownMenu, 'sn-dropdown-menu');
-register(ListBox, 'sn-listbox');
+register(Select, 'sn-select');

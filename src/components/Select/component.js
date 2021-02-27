@@ -10,7 +10,7 @@ import "@reach/listbox/styles.css";
 import { Icon } from "@Components/Icon";
 import PropTypes from 'prop-types';
 
-const ListBox = ({ defaultValue, placeholder, options, onChange }) => {
+const Select = ({ defaultValue, placeholder, options, onChange }) => {
   /**
    * If no options yet, we don't want to render the component.
    */
@@ -19,16 +19,16 @@ const ListBox = ({ defaultValue, placeholder, options, onChange }) => {
   }
 
   return (
-    <ListboxInput className="sn-listbox" defaultValue={defaultValue} onChange={onChange}>
+    <ListboxInput className="sn-select" defaultValue={defaultValue} onChange={onChange}>
       {({ value, valueLabel, isExpanded }) => (
         <Fragment>
-          <ListboxButton className="sn-listbox-button">
+          <ListboxButton className="sn-select-button">
             <span data-value={value}>{valueLabel ?? placeholder}</span> {isExpanded ? <Icon name="menu-arrow-up" /> : <Icon name="menu-arrow-down" />}
           </ListboxButton>
-          <ListboxPopover className="sn-listbox-popover">
-            <ListboxList className="sn-listbox-list">
+          <ListboxPopover className="sn-select-popover">
+            <ListboxList className="sn-select-list">
               {options && options.map((option) => (
-                <ListboxOption className="sn-listbox-list-option" value={option.value} valueText={option.label}>
+                <ListboxOption className="sn-select-list-option" value={option.value} valueText={option.label}>
                   {option.label}
                 </ListboxOption>
               ))}
@@ -40,16 +40,16 @@ const ListBox = ({ defaultValue, placeholder, options, onChange }) => {
   );
 };
 
-ListBox.propTypes = {
+Select.propTypes = {
   defaultValue: PropTypes.string,
   options: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string
 };
 
-ListBox.defaultProps = {
+Select.defaultProps = {
   defaultValue: "",
   placeholder: "Choose an option..."
 };
 
-export default ListBox;
+export default Select;
