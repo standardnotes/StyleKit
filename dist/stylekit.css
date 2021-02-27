@@ -498,7 +498,7 @@ template {
   border-bottom: 1px solid var(--sn-stylekit-border-color);
 }
 
-.sn-component .sk-panel-section:not(:last-child).no-border, .sn-component .sk-panel-section.sn-button:not(:last-child), .sn-component .sk-panel-section.sn-dropdown-menu:not(:last-child), .sn-component .sk-panel-section.sn-listbox:not(:last-child), .sn-component .sk-panel-section.sn-listbox-button:not(:last-child), .sn-component .sk-panel-section.sn-listbox-popover:not(:last-child) {
+.sn-component .sk-panel-section:not(:last-child).no-border, .sn-component .sk-panel-section.sn-button:not(:last-child), .sn-component .sk-panel-section.sn-dropdown-menu:not(:last-child), .sn-component .sk-panel-section.sn-select:not(:last-child), .sn-component .sk-panel-section.sn-select-button:not(:last-child), .sn-component .sk-panel-section.sn-select-popover:not(:last-child) {
   border-bottom: none;
 }
 
@@ -896,7 +896,7 @@ template {
   border: none;
 }
 
-.sn-component input.sk-input.no-border, .sn-component input.sk-input.sn-button, .sn-component input.sk-input.sn-dropdown-menu, .sn-component input.sk-input.sn-listbox, .sn-component input.sk-input.sn-listbox-button, .sn-component input.sk-input.sn-listbox-popover {
+.sn-component input.sk-input.no-border, .sn-component input.sk-input.sn-button, .sn-component input.sk-input.sn-dropdown-menu, .sn-component input.sk-input.sn-select, .sn-component input.sk-input.sn-select-button, .sn-component input.sk-input.sn-select-popover {
   border: none;
 }
 
@@ -2664,7 +2664,7 @@ template {
   margin-left: 1rem;
 }
 
-.sn-component .sk-app-bar .sk-app-bar-item.border, .sn-component .sk-app-bar .sk-app-bar-item.sn-dropdown-menu, .sn-component .sk-app-bar .sk-app-bar-item.sn-listbox {
+.sn-component .sk-app-bar .sk-app-bar-item.border, .sn-component .sk-app-bar .sk-app-bar-item.sn-dropdown-menu, .sn-component .sk-app-bar .sk-app-bar-item.sn-select {
   border-left: 1px solid var(--sn-stylekit-contrast-border-color);
 }
 
@@ -2769,7 +2769,7 @@ template {
   margin-top: 1.25rem;
 }
 
-.sn-component .sk-panel-table .sk-panel-table-item.no-border, .sn-component .sk-panel-table .sk-panel-table-item.sn-button, .sn-component .sk-panel-table .sk-panel-table-item.sn-dropdown-menu, .sn-component .sk-panel-table .sk-panel-table-item.sn-listbox, .sn-component .sk-panel-table .sk-panel-table-item.sn-listbox-button, .sn-component .sk-panel-table .sk-panel-table-item.sn-listbox-popover {
+.sn-component .sk-panel-table .sk-panel-table-item.no-border, .sn-component .sk-panel-table .sk-panel-table-item.sn-button, .sn-component .sk-panel-table .sk-panel-table-item.sn-dropdown-menu, .sn-component .sk-panel-table .sk-panel-table-item.sn-select, .sn-component .sk-panel-table .sk-panel-table-item.sn-select-button, .sn-component .sk-panel-table .sk-panel-table-item.sn-select-popover {
   border: none;
 }
 
@@ -2838,19 +2838,168 @@ template {
   box-shadow: 0px 2px 35px 0px rgba(0, 0, 0, 0.19);
 }
 
-.sn-component .no-border, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox, .sn-component .sn-listbox-button, .sn-component .sn-listbox-popover {
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sn-component .slide-down-animation, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-popover {
+  animation: slide-down 0.2s ease;
+}
+
+.sn-component .no-border, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-popover {
   border-width: 0px;
 }
 
-.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox, .sn-component .sn-listbox-button, .sn-component .sn-listbox-list-option {
+.sn-component .border-rounded, .sn-component .sn-button {
+  border-radius: 0.25rem;
+}
+
+.sn-component .border-rounded-md {
+  border-radius: 0.375rem;
+}
+
+.sn-component .border, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
+  border-width: 1px;
+}
+
+.sn-component .border-gray-300, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list, .sn-component .sn-select-popover {
+  border-color: var(--sn-stylekit-border-color);
+}
+
+.sn-component .border-rounded-sm, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list, .sn-component .sn-select-popover {
+  border-radius: 0.25rem;
+}
+
+.sn-component .border-solid, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
+  border-style: solid;
+}
+
+.sn-component .border-box, .sn-component .sn-select {
+  box-sizing: border-box;
+}
+
+.sn-component .bg-white, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list {
+  background-color: var(--sn-stylekit-background-color);
+}
+
+.sn-component .text-color, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list {
+  color: var(--sn-stylekit-contrast-foreground-color);
+}
+
+.sn-component .selected\:bg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-select-list-option[data-selected],
+.sn-component .selected\:bg-color[aria-selected="true"],
+.sn-component .sn-dropdown-menu-list-item[aria-selected="true"],
+.sn-component .sn-select-list-option[aria-selected="true"] {
+  background-color: var(--sn-stylekit-list-item-highlight-color);
+}
+
+.sn-component .selected\:fg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-select-list-option[data-selected],
+.sn-component .selected\:fg-color[aria-selected="true"],
+.sn-component .sn-dropdown-menu-list-item[aria-selected="true"],
+.sn-component .sn-select-list-option[aria-selected="true"] {
+  color: var(--sn-stylekit-contrast-foreground-color);
+}
+
+.sn-component .inline-flex, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button {
+  display: inline-flex;
+}
+
+.sn-component .block {
+  display: block;
+}
+
+.sn-component .flex, .sn-component .sn-dropdown-menu-list-item {
+  display: flex;
+}
+
+.sn-component .align-items-center, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button {
+  align-items: center;
+}
+
+.sn-component .justify-center, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button {
+  justify-content: center;
+}
+
+.sn-component .absolute, .sn-component .sn-dropdown-menu-list {
+  position: absolute;
+}
+
+.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
   cursor: pointer;
+}
+
+.sn-component .origin-top-right, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-list {
+  transform-origin: top right;
+}
+
+.sn-component .no-focus-shadow:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus, .sn-component .no-focus-shadow:focus-within, .sn-component .sn-button:focus-within, .sn-component .sn-dropdown-menu:focus-within, .sn-component .sn-dropdown-menu-list-item:focus-within, .sn-component .sn-select:focus-within, .sn-component .sn-select-button:focus-within, .sn-component .sn-select-list:focus-within, .sn-component .sn-select-popover:focus-within {
+  box-shadow: none;
+}
+
+.sn-component .box-shadow, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-popover, .sn-component .box-shadow:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-select-popover:focus, .sn-component .box-shadow:focus-within, .sn-component .sn-dropdown-menu-list:focus-within, .sn-component .sn-select-popover:focus-within {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sn-component .no-focus-outline:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus, .sn-component .no-focus-outline:focus-within, .sn-component .sn-button:focus-within, .sn-component .sn-dropdown-menu:focus-within, .sn-component .sn-dropdown-menu-list:focus-within, .sn-component .sn-dropdown-menu-list-item:focus-within, .sn-component .sn-select:focus-within, .sn-component .sn-select-button:focus-within, .sn-component .sn-select-list:focus-within, .sn-component .sn-select-popover:focus-within {
+  outline: none;
+}
+
+.sn-component .font-normal, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list-option {
+  font-weight: 300;
 }
 
 .sn-component .font-bold {
   font-weight: 700;
 }
 
-.sn-component .py-2, .sn-component .sn-button, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox-list-option {
+.sn-component .text-sm, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-list, .sn-component .sn-select-list-option {
+  font-size: 0.875rem;
+}
+
+.sn-component .font-medium, .sn-component .sn-button {
+  font-weight: 500;
+}
+
+.sn-component .m-h-32, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select {
+  min-height: 2rem;
+}
+
+.sn-component .leading-4, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
+  line-height: 1rem;
+}
+
+.sn-component .hover\:brightness-130:hover, .sn-component .sn-button:hover {
+  filter: brightness(130%);
+}
+
+.sn-component .hover\:bg-color:hover, .sn-component .sn-dropdown-menu:hover, .sn-component .sn-dropdown-menu-list-item:hover, .sn-component .sn-select:hover {
+  background-color: var(--sn-stylekit-list-item-highlight-color);
+}
+
+.sn-component .mr-2, .sn-component .sn-dropdown-menu > .sn-icon:first-child, .sn-component .sn-dropdown-menu-list-item > .sn-icon {
+  margin-right: 0.5rem;
+}
+
+.sn-component .ml-2, .sn-component .sn-dropdown-menu > .sn-icon:last-child, .sn-component .sn-select-button > .sn-icon:last-child {
+  margin-left: 0.5rem;
+}
+
+.sn-component .ml-6 {
+  margin-left: 1.5rem;
+}
+
+.sn-component .mt-2, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-popover {
+  margin-top: 0.5rem;
+}
+
+.sn-component .py-2, .sn-component .sn-button, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-list-option {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -2860,101 +3009,9 @@ template {
   padding-right: 0.75rem;
 }
 
-.sn-component .rounded, .sn-component .sn-button {
-  border-radius: 0.25rem;
-}
-
-.sn-component .text-sm, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox, .sn-component .sn-listbox-list, .sn-component .sn-listbox-list-option {
-  font-size: 0.875rem;
-}
-
-.sn-component .hover\:brightness-130:hover, .sn-component .sn-button:hover {
-  filter: brightness(130%);
-}
-
-.sn-component .inline-flex, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox, .sn-component .sn-listbox-button {
-  display: inline-flex;
-}
-
-.sn-component .justify-center, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox, .sn-component .sn-listbox-button {
-  justify-content: center;
-}
-
-.sn-component .w-auto, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
-  width: auto;
-}
-
-.sn-component .rounded-md {
-  border-radius: 0.375rem;
-}
-
-.sn-component .border, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
-  border-width: 1px;
-}
-
-.sn-component .border-gray-300, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list, .sn-component .sn-listbox-popover {
-  border-color: var(--sn-stylekit-border-color);
-}
-
 .sn-component .px-2, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.sn-component .bg-white, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list {
-  background-color: var(--sn-stylekit-background-color);
-}
-
-.sn-component .font-medium, .sn-component .sn-button {
-  font-weight: 500;
-}
-
-.sn-component .text-color, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list {
-  color: var(--sn-stylekit-contrast-foreground-color);
-}
-
-.sn-component .hover\:bg-color:hover, .sn-component .sn-dropdown-menu:hover, .sn-component .sn-dropdown-menu-list-item:hover, .sn-component .sn-listbox:hover {
-  background-color: var(--sn-stylekit-list-item-highlight-color);
-}
-
-.sn-component .leading-4, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
-  line-height: 1rem;
-}
-
-.sn-component .mr-2, .sn-component .sn-dropdown-menu > .sn-icon:first-child, .sn-component .sn-dropdown-menu-list-item > .sn-icon {
-  margin-right: 0.5rem;
-}
-
-.sn-component .ml-2, .sn-component .sn-dropdown-menu > .sn-icon:last-child, .sn-component .sn-listbox-button > .sn-icon:last-child {
-  margin-left: 0.5rem;
-}
-
-.sn-component .ml-6 {
-  margin-left: 1.5rem;
-}
-
-.sn-component .origin-top-right, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox-list {
-  transform-origin: top right;
-}
-
-.sn-component .absolute, .sn-component .sn-dropdown-menu-list {
-  position: absolute;
-}
-
-.sn-component .mt-2, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox-popover {
-  margin-top: 0.5rem;
-}
-
-.sn-component .w-56, .sn-component .sn-dropdown-menu-list {
-  width: 14rem;
-}
-
-.sn-component .rounded-sm, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list, .sn-component .sn-listbox-popover {
-  border-radius: 0.25rem;
-}
-
-.sn-component .block {
-  display: block;
 }
 
 .sn-component .px-4 {
@@ -2962,68 +3019,14 @@ template {
   padding-right: 1rem;
 }
 
-.sn-component .align-items-center, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox, .sn-component .sn-listbox-button {
-  align-items: center;
-}
-
-.sn-component .flex, .sn-component .sn-dropdown-menu-list-item {
-  display: flex;
-}
-
 .sn-component .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
 
-.sn-component .py-1, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox-button {
+.sn-component .py-1, .sn-component .sn-dropdown-menu, .sn-component .sn-select-button {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.sn-component .m-h-32, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-listbox {
-  min-height: 2rem;
-}
-
-.sn-component .border-solid, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-listbox {
-  border-style: solid;
-}
-
-.sn-component .no-focus-outline:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-listbox:focus, .sn-component .sn-listbox-button:focus, .sn-component .sn-listbox-list:focus, .sn-component .sn-listbox-popover:focus, .sn-component .no-focus-outline:focus-within, .sn-component .sn-button:focus-within, .sn-component .sn-dropdown-menu:focus-within, .sn-component .sn-dropdown-menu-list:focus-within, .sn-component .sn-dropdown-menu-list-item:focus-within, .sn-component .sn-listbox:focus-within, .sn-component .sn-listbox-button:focus-within, .sn-component .sn-listbox-list:focus-within, .sn-component .sn-listbox-popover:focus-within {
-  outline: none;
-}
-
-.sn-component .no-focus-shadow:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-listbox:focus, .sn-component .sn-listbox-button:focus, .sn-component .sn-listbox-list:focus, .sn-component .sn-listbox-popover:focus, .sn-component .no-focus-shadow:focus-within, .sn-component .sn-button:focus-within, .sn-component .sn-dropdown-menu:focus-within, .sn-component .sn-dropdown-menu-list-item:focus-within, .sn-component .sn-listbox:focus-within, .sn-component .sn-listbox-button:focus-within, .sn-component .sn-listbox-list:focus-within, .sn-component .sn-listbox-popover:focus-within {
-  box-shadow: none;
-}
-
-.sn-component .slide-down-animation, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox-list {
-  animation: slide-down 0.2s ease;
-}
-
-.sn-component .min-w-265, .sn-component .sn-dropdown-menu-list {
-  min-width: 265px;
-}
-
-.sn-component .selected\:bg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-listbox-list-option[data-selected],
-.sn-component .selected\:bg-color[aria-selected="true"],
-.sn-component .sn-dropdown-menu-list-item[aria-selected="true"],
-.sn-component .sn-listbox-list-option[aria-selected="true"] {
-  background-color: var(--sn-stylekit-list-item-highlight-color);
-}
-
-.sn-component .selected\:fg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-listbox-list-option[data-selected],
-.sn-component .selected\:fg-color[aria-selected="true"],
-.sn-component .sn-dropdown-menu-list-item[aria-selected="true"],
-.sn-component .sn-listbox-list-option[aria-selected="true"] {
-  color: var(--sn-stylekit-contrast-foreground-color);
-}
-
-.sn-component .box-shadow, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox-popover, .sn-component .box-shadow:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-listbox-popover:focus, .sn-component .box-shadow:focus-within, .sn-component .sn-dropdown-menu-list:focus-within, .sn-component .sn-listbox-popover:focus-within {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.sn-component .font-normal, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-listbox, .sn-component .sn-listbox-list-option {
-  font-weight: 300;
 }
 
 .sn-component .no-padding {
@@ -3031,8 +3034,16 @@ template {
   padding-bottom: 0;
 }
 
-.sn-component .border-box, .sn-component .sn-listbox {
-  box-sizing: border-box;
+.sn-component .w-auto, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
+  width: auto;
+}
+
+.sn-component .w-56, .sn-component .sn-dropdown-menu-list {
+  width: 14rem;
+}
+
+.sn-component .min-w-265, .sn-component .sn-dropdown-menu-list {
+  min-width: 265px;
 }
 
 .sn-component .sn-button.contrast {
@@ -3063,17 +3074,6 @@ template {
 .sn-component .sn-button.success {
   background-color: var(--sn-stylekit-success-color);
   color: var(--sn-stylekit-success-contrast-color);
-}
-
-@keyframes slide-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .sn-component.no-select {

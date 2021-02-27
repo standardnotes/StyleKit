@@ -6,7 +6,7 @@
 	else if(typeof exports === 'object')
 		exports["SK"] = factory();
 	else
-		root["SK"] = root["SK"] || {}, root["SK"]["web-components"] = factory();
+		root["SK"] = root["SK"] || {}, root["SK"]["components"] = factory();
 })(self, function() {
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
@@ -717,6 +717,8 @@ module.exports = warning;
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -6045,143 +6047,6 @@ Select.defaultProps = {
 
 
 
-/***/ }),
-
-/***/ 867:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./node_modules/preact/dist/preact.module.js
-var preact_module = __webpack_require__(972);
-;// CONCATENATED MODULE: ./node_modules/preact-custom-element/dist/preact-custom-element.esm.js
-
-
-function r() {
-  return (r = Object.assign || function (t) {
-    for (var e = 1; e < arguments.length; e++) {
-      var n = arguments[e];
-
-      for (var o in n) Object.prototype.hasOwnProperty.call(n, o) && (t[o] = n[o]);
-    }
-
-    return t;
-  }).apply(this, arguments);
-}
-
-function i(t) {
-  this.getChildContext = function () {
-    return t.context;
-  };
-
-  var e = t.children,
-      n = function (t, e) {
-    if (null == t) return {};
-    var n,
-        o,
-        r = {},
-        i = Object.keys(t);
-
-    for (o = 0; o < i.length; o++) e.indexOf(n = i[o]) >= 0 || (r[n] = t[n]);
-
-    return r;
-  }(t, ["context", "children"]);
-
-  return (0,preact_module/* cloneElement */.Tm)(e, n);
-}
-
-function a() {
-  var o = new CustomEvent("_preact", {
-    detail: {},
-    bubbles: !0,
-    cancelable: !0
-  });
-  this.dispatchEvent(o), this._vdom = (0,preact_module.h)(i, r({}, this._props, {
-    context: o.detail.context
-  }), function e(n, o) {
-    if (3 === n.nodeType) return n.data;
-    if (1 !== n.nodeType) return null;
-    var r = [],
-        i = {},
-        a = 0,
-        c = n.attributes,
-        l = n.childNodes;
-
-    for (a = c.length; a--;) "slot" !== c[a].name && (i[c[a].name] = c[a].value, i[s(c[a].name)] = c[a].value);
-
-    for (a = l.length; a--;) {
-      var p = e(l[a], null),
-          d = l[a].slot;
-      d ? i[d] = (0,preact_module.h)(u, {
-        name: d
-      }, p) : r[a] = p;
-    }
-
-    var h = o ? (0,preact_module.h)(u, null, r) : r;
-    return (0,preact_module.h)(o || n.nodeName.toLowerCase(), i, h);
-  }(this, this._vdomComponent)), (this.hasAttribute("hydrate") ? preact_module/* hydrate */.ZB : preact_module/* render */.sY)(this._vdom, this._root);
-}
-
-function s(t) {
-  return t.replace(/-(\w)/g, function (t, e) {
-    return e ? e.toUpperCase() : "";
-  });
-}
-
-function c(t, e, r) {
-  if (this._vdom) {
-    var i = {};
-    i[t] = r = null == r ? void 0 : r, i[s(t)] = r, this._vdom = (0,preact_module/* cloneElement */.Tm)(this._vdom, i), (0,preact_module/* render */.sY)(this._vdom, this._root);
-  }
-}
-
-function l() {
-  (0,preact_module/* render */.sY)(this._vdom = null, this._root);
-}
-
-function u(e, n) {
-  var o = this;
-  return (0,preact_module.h)("slot", r({}, e, {
-    ref: function (t) {
-      t ? (o.ref = t, o._listener || (o._listener = function (t) {
-        t.stopPropagation(), t.detail.context = n;
-      }, t.addEventListener("_preact", o._listener))) : o.ref.removeEventListener("_preact", o._listener);
-    }
-  }));
-}
-
-/* harmony default export */ function preact_custom_element_esm(t, e, n, o) {
-  function r() {
-    var e = Reflect.construct(HTMLElement, [], r);
-    return e._vdomComponent = t, e._root = o && o.shadow ? e.attachShadow({
-      mode: "open"
-    }) : e, e;
-  }
-
-  return (r.prototype = Object.create(HTMLElement.prototype)).constructor = r, r.prototype.connectedCallback = a, r.prototype.attributeChangedCallback = c, r.prototype.disconnectedCallback = l, n = n || t.observedAttributes || Object.keys(t.propTypes || {}), r.observedAttributes = n, n.forEach(function (t) {
-    Object.defineProperty(r.prototype, t, {
-      get: function () {
-        return this._vdom.props[t];
-      },
-      set: function (e) {
-        this._vdom ? this.attributeChangedCallback(t, null, e) : (this._props || (this._props = {}), this._props[t] = e, this.connectedCallback());
-        var n = typeof e;
-        null != e && "string" !== n && "boolean" !== n && "number" !== n || this.setAttribute(t, e);
-      }
-    });
-  }), customElements.define(e || t.tagName || t.displayName || t.name, r);
-}
-// EXTERNAL MODULE: ./src/index.js + 22 modules
-var src = __webpack_require__(839);
-;// CONCATENATED MODULE: ./src/web-components.js
-
-
-preact_custom_element_esm(src.Button, 'sn-button');
-preact_custom_element_esm(src.DropdownMenu, 'sn-dropdown-menu');
-preact_custom_element_esm(src.Select, 'sn-select');
-
 /***/ })
 
 /******/ 	});
@@ -6264,12 +6129,11 @@ preact_custom_element_esm(src.Select, 'sn-select');
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// Promise = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			195: 0,
 /******/ 			160: 0
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
-/******/ 			[867]
+/******/ 			[839]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		
