@@ -1,5 +1,6 @@
 .sn-button {
   @extend .no-border;
+  @extend .border-rounded;
   @extend .border-solid;
   @extend .cursor-pointer;
   @extend .font-medium;
@@ -9,7 +10,6 @@
   @extend .no-focus-shadow;
   @extend .px-3;
   @extend .py-2;
-  @extend .rounded;
   @extend .text-sm;
 }
 
@@ -48,6 +48,7 @@
   @extend .bg-white;
   @extend .no-border;
   @extend .border-gray-300;
+  @extend .border-rounded-sm;
   @extend .border-solid;
   @extend .border;
   @extend .cursor-pointer;
@@ -61,7 +62,6 @@
   @extend .no-focus-shadow;
   @extend .px-2;
   @extend .py-1;
-  @extend .rounded-sm;
   @extend .text-color;
   @extend .text-sm;
   @extend .w-auto;
@@ -75,21 +75,11 @@
   @extend .ml-2;
 }
 
-@keyframes slide-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .sn-dropdown-menu-list {
   @extend .absolute;
   @extend .bg-white;
   @extend .border-gray-300;
+  @extend .border-rounded-sm;
   @extend .box-shadow;
   @extend .font-normal;
   @extend .min-w-265;
@@ -97,7 +87,6 @@
   @extend .no-focus-outline;
   @extend .origin-top-right;
   @extend .py-2;
-  @extend .rounded-sm;
   @extend .slide-down-animation;
   @extend .text-color;
   @extend .w-56;
@@ -129,6 +118,7 @@
   @extend .border-solid;
   @extend .border;
   @extend .border-box;
+  @extend .border-rounded-sm;
   @extend .cursor-pointer;
   @extend .font-normal;
   @extend .m-h-32;
@@ -138,7 +128,6 @@
   @extend .leading-4;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
-  @extend .rounded-sm;
   @extend .text-color;
   @extend .text-sm;
   @extend .w-auto;
@@ -162,11 +151,10 @@
 .sn-listbox-list {
   @extend .bg-white;
   @extend .border-gray-300;
+  @extend .border-rounded-sm;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .origin-top-right;
-  @extend .rounded-sm;
-  @extend .slide-down-animation;
   @extend .text-color;
   @extend .text-sm;
 }
@@ -182,10 +170,11 @@
 
 .sn-listbox-popover {
   @extend .border-gray-300;
+  @extend .border-rounded-sm;
   @extend .box-shadow;
   @extend .mt-2;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .no-border;
-  @extend .rounded-sm;
+  @extend .slide-down-animation;
 }
