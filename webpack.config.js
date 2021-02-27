@@ -2,16 +2,30 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (_, { mode }) => ({
-  entry: path.resolve(__dirname, 'src/Stylekit.js'),
+  entry: {
+    stylekit: path.resolve(__dirname, 'src/stylekit.js'),
+    components: path.resolve(__dirname, 'src/index.js'),
+    'web-components': path.resolve(__dirname, 'src/web-components.js'),
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'stylekit.js',
-    library: 'Stylekit',
+    filename: '[name].js',
+    library: ['SK', '[name]'],
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
   optimization: {
     minimize: false,
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          type: 'css/mini-extract',
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
   externals: {},
   devServer: {
@@ -27,7 +41,7 @@ module.exports = (_, { mode }) => ({
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: [
           mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader',
@@ -48,9 +62,26 @@ module.exports = (_, { mode }) => ({
           plugins: ['@babel/plugin-proposal-class-properties'],
         },
       },
+      {
+        test: /\.(svg)(\?.*)?$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000000,
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
+    alias: {
+      react: 'preact/compat',
+      'react-dom': 'preact/compat',
+      'react-dom/test-utils': 'preact/test-utils',
+      '@Components': path.resolve(__dirname, 'src/components'),
+    },
     extensions: ['.js', '.jsx', '.css', '.scss'],
   },
   plugins: [

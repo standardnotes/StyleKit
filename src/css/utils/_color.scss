@@ -1,0 +1,17 @@
+.bg-white {
+  background-color: var(--sn-stylekit-background-color);
+}
+
+.text-color {
+  color: var( --sn-stylekit-contrast-foreground-color);
+}
+
+.selected\:bg-color[data-selected],
+.selected\:bg-color[aria-selected="true"] {
+  background-color: var(--sn-stylekit-list-item-highlight-color);
+}
+
+.selected\:fg-color[data-selected],
+.selected\:fg-color[aria-selected="true"] {
+  color: var(--sn-stylekit-contrast-foreground-color);
+}

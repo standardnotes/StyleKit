@@ -1,3 +1,5 @@
+@import 'normalize';
+
 :root {
   --sn-stylekit-base-font-size: 13px;
 
@@ -28,7 +30,7 @@
 
   --sn-stylekit-shadow-color: #c8c8c8;
   --sn-stylekit-background-color: #ffffff;
-  --sn-stylekit-border-color: #e3e3e3; // For borders inside background-color
+  --sn-stylekit-border-color: #dfe1e4; // For borders inside background-color
   --sn-stylekit-foreground-color: #000000;
   // Colors for layers placed on top of non-prefixed background, border, and foreground
   --sn-stylekit-contrast-background-color: #f6f6f6;
@@ -42,7 +44,7 @@
 
   --sn-stylekit-secondary-contrast-background-color: #e3e3e3;
   --sn-stylekit-secondary-contrast-foreground-color: #2e2e2e;
-  --sn-stylekit--secondary-contrast-border-color: #a2a2a2;
+  --sn-stylekit-secondary-contrast-border-color: #a2a2a2;
 
   --sn-stylekit-editor-background-color: var(--sn-stylekit-background-color);
   --sn-stylekit-editor-foreground-color: var(--sn-stylekit-foreground-color);
@@ -56,6 +58,8 @@
   --sn-stylekit-scrollbar-track-border-color: #e7e7e7;
 
   --sn-stylekit-general-border-radius: 2px;
+
+  --sn-stylekit-list-item-highlight-color: #f4f5f7;
 
   --sn-stylekit-simplified-chinese-font: 'Microsoft Yahei', '微软雅黑体';
   --sn-stylekit-monospace-font: 'SFMono-Regular', Consolas, 'Liberation Mono',
@@ -76,6 +80,8 @@
   @import 'app-bar';
   @import 'table';
   @import 'modal';
+  @import 'utils';
+  @import 'sn';
 
   font-family: var(--sn-stylekit-sans-serif-font);
   -webkit-font-smoothing: antialiased;
