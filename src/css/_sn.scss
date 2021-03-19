@@ -152,9 +152,11 @@
   @extend .bg-white;
   @extend .border-gray-300;
   @extend .border-rounded-sm;
+  @extend .m-h-256;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
   @extend .origin-top-right;
+  @extend .overflow-auto;
   @extend .text-color;
   @extend .text-sm;
 }
@@ -172,6 +174,7 @@
   @extend .border-gray-300;
   @extend .border-rounded-sm;
   @extend .box-shadow;
+  @extend .m-h-256;
   @extend .mt-2;
   @extend .no-focus-outline;
   @extend .no-focus-shadow;
