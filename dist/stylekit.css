@@ -2939,6 +2939,10 @@ template {
   transform-origin: top right;
 }
 
+.sn-component .overflow-auto, .sn-component .sn-select-list {
+  overflow: auto;
+}
+
 .sn-component .no-focus-shadow:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus, .sn-component .no-focus-shadow:focus-within, .sn-component .sn-button:focus-within, .sn-component .sn-dropdown-menu:focus-within, .sn-component .sn-dropdown-menu-list-item:focus-within, .sn-component .sn-select:focus-within, .sn-component .sn-select-button:focus-within, .sn-component .sn-select-list:focus-within, .sn-component .sn-select-popover:focus-within {
   box-shadow: none;
 }
@@ -2973,6 +2977,10 @@ template {
 
 .sn-component .leading-4, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
   line-height: 1rem;
+}
+
+.sn-component .m-h-256, .sn-component .sn-select-list, .sn-component .sn-select-popover {
+  min-height: 16rem;
 }
 
 .sn-component .hover\:brightness-130:hover, .sn-component .sn-button:hover {
