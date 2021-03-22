@@ -2,10 +2,18 @@
   width: auto
 }
 
+.w-full {
+  width: 100%;
+}
+
 .w-56 {
   width: 14rem
 }
 
 .min-w-265 {
   min-width: 265px;
+}
+
+.max-w-md {
+  max-width: 28rem;
 }

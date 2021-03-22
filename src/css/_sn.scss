@@ -3,14 +3,27 @@
   @extend .border-rounded;
   @extend .border-solid;
   @extend .cursor-pointer;
-  @extend .font-medium;
-  @extend .hover\:brightness-130;
+  @extend .capitalize;
+  @extend .font-bold;
   @extend .m-h-32;
-  @extend .no-focus-outline;
-  @extend .no-focus-shadow;
   @extend .px-3;
   @extend .py-2;
   @extend .text-sm;
+}
+
+.sn-button.small {
+  @extend .text-xs;
+}
+
+.sn-button.outlined {
+  @extend .bg-default;
+  @extend .border;
+  @extend .border-gray-300;
+  @extend .color-text;
+  @extend .hover\:bg-highlight;
+  @extend .focus\:bg-highlight;
+  @extend .focus\:shadow-none;
+  @extend .focus\:outline-none;
 }
 
 .sn-button.contrast {
@@ -19,33 +32,41 @@
 }
 
 .sn-button.neutral {
+  @extend .hover\:brightness-130;
   background-color: var(--sn-stylekit-neutral-color);
   color: var(--sn-stylekit-neutral-contrast-color);
 }
 
 .sn-button.info {
-  background-color: var(--sn-stylekit-info-color);
-  color: var(--sn-stylekit-info-contrast-color);
+  @extend .bg-info;
+  @extend .color-info-contrast;
+  @extend .hover\:bg-info-dark;
+  @extend .focus\:bg-info-dark;
+  @extend .focus\:shadow-none;
+  @extend .focus\:outline-none;
 }
 
 .sn-button.warning {
+  @extend .hover\:brightness-130;
   background-color: var(--sn-stylekit-warning-color);
   color: var(--sn-stylekit-warning-contrast-color);
 }
 
 .sn-button.danger {
+  @extend .hover\:brightness-130;
   background-color: var(--sn-stylekit-danger-color);
   color: var(--sn-stylekit-danger-contrast-color);
 }
 
 .sn-button.success {
+  @extend .hover\:brightness-130;
   background-color: var(--sn-stylekit-success-color);
   color: var(--sn-stylekit-success-contrast-color);
 }
 
 .sn-dropdown-menu {
-  @extend .align-items-center;
-  @extend .bg-white;
+  @extend .items-center;
+  @extend .bg-default;
   @extend .no-border;
   @extend .border-gray-300;
   @extend .border-rounded-sm;
@@ -54,15 +75,15 @@
   @extend .cursor-pointer;
   @extend .font-normal;
   @extend .m-h-32;
-  @extend .hover\:bg-color;
+  @extend .hover\:bg-highlight;
   @extend .inline-flex;
   @extend .justify-center;
   @extend .leading-4;
-  @extend .no-focus-outline;
-  @extend .no-focus-shadow;
+  @extend .focus\:outline-none;
+  @extend .focus\:shadow-none;
   @extend .px-2;
   @extend .py-1;
-  @extend .text-color;
+  @extend .color-text;
   @extend .text-sm;
   @extend .w-auto;
 }
@@ -77,28 +98,28 @@
 
 .sn-dropdown-menu-list {
   @extend .absolute;
-  @extend .bg-white;
+  @extend .bg-default;
   @extend .border-gray-300;
   @extend .border-rounded-sm;
   @extend .box-shadow;
   @extend .font-normal;
   @extend .min-w-265;
   @extend .mt-2;
-  @extend .no-focus-outline;
+  @extend .focus\:outline-none;
   @extend .origin-top-right;
   @extend .py-2;
   @extend .slide-down-animation;
-  @extend .text-color;
+  @extend .color-text;
   @extend .w-56;
 }
 
 .sn-dropdown-menu-list-item {
-  @extend .align-items-center;
+  @extend .items-center;
   @extend .cursor-pointer;
   @extend .flex;
-  @extend .hover\:bg-color;
-  @extend .no-focus-outline;
-  @extend .no-focus-shadow;
+  @extend .hover\:bg-highlight;
+  @extend .focus\:outline-none;
+  @extend .focus\:shadow-none;
   @extend .px-2;
   @extend .selected\:bg-color;
   @extend .selected\:fg-color;
@@ -111,8 +132,8 @@
 }
 
 .sn-select {
-  @extend .align-items-center;
-  @extend .bg-white;
+  @extend .items-center;
+  @extend .bg-default;
   @extend .no-border;
   @extend .border-gray-300;
   @extend .border-solid;
@@ -122,26 +143,26 @@
   @extend .cursor-pointer;
   @extend .font-normal;
   @extend .m-h-32;
-  @extend .hover\:bg-color;
+  @extend .hover\:bg-highlight;
   @extend .inline-flex;
   @extend .justify-center;
   @extend .leading-4;
-  @extend .no-focus-outline;
-  @extend .no-focus-shadow;
-  @extend .text-color;
+  @extend .focus\:outline-none;
+  @extend .focus\:shadow-none;
+  @extend .color-text;
   @extend .text-sm;
   @extend .w-auto;
 }
 
 .sn-select-button {
-  @extend .align-items-center;
+  @extend .items-center;
   @extend .no-border;
   @extend .cursor-pointer;
   @extend .inline-flex;
   @extend .justify-center;
   @extend .py-1;
-  @extend .no-focus-outline;
-  @extend .no-focus-shadow;
+  @extend .focus\:outline-none;
+  @extend .focus\:shadow-none;
 }
 
 .sn-select-button > .sn-icon:last-child {
@@ -149,13 +170,13 @@
 }
 
 .sn-select-list {
-  @extend .bg-white;
+  @extend .bg-default;
   @extend .border-gray-300;
   @extend .border-rounded-sm;
-  @extend .no-focus-outline;
-  @extend .no-focus-shadow;
+  @extend .focus\:outline-none;
+  @extend .focus\:shadow-none;
   @extend .origin-top-right;
-  @extend .text-color;
+  @extend .color-text;
   @extend .text-sm;
 }
 
@@ -173,8 +194,8 @@
   @extend .border-rounded-sm;
   @extend .box-shadow;
   @extend .mt-2;
-  @extend .no-focus-outline;
-  @extend .no-focus-shadow;
+  @extend .focus\:outline-none;
+  @extend .focus\:shadow-none;
   @extend .no-border;
   @extend .slide-down-animation;
 }
