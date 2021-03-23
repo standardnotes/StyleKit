@@ -27,6 +27,7 @@
 }
 
 .sn-button.contrast {
+  @extend .hover\:brightness-130;
   background-color: var(--sn-stylekit-contrast-foreground-color);
   color: var(--sn-stylekit-contrast-background-color);
 }
