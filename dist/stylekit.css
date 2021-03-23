@@ -2974,7 +2974,7 @@ template {
   transform-origin: top right;
 }
 
-.sn-component .hover\:brightness-130:hover, .sn-component .sn-button.neutral:hover, .sn-component .sn-button.warning:hover, .sn-component .sn-button.danger:hover, .sn-component .sn-button.success:hover {
+.sn-component .hover\:brightness-130:hover, .sn-component .sn-button.contrast:hover, .sn-component .sn-button.neutral:hover, .sn-component .sn-button.warning:hover, .sn-component .sn-button.danger:hover, .sn-component .sn-button.success:hover {
   filter: brightness(130%);
 }
 
@@ -3063,12 +3063,20 @@ template {
   margin-right: 0.5rem;
 }
 
+.sn-component .ml-1\.5 {
+  margin-left: 0.375rem;
+}
+
 .sn-component .ml-2, .sn-component .sn-dropdown-menu > .sn-icon:last-child, .sn-component .sn-select-button > .sn-icon:last-child {
   margin-left: 0.5rem;
 }
 
 .sn-component .ml-6 {
   margin-left: 1.5rem;
+}
+
+.sn-component .mr-1\.5 {
+  margin-left: 0.375rem;
 }
 
 .sn-component .mt-1 {
