@@ -1,0 +1,34 @@
+.hover\:brightness-130:hover {
+  filter: brightness(130%);
+}
+
+.hover\:bg-highlight:hover {
+  background-color: var(--sn-stylekit-list-item-highlight-color);
+}
+
+.focus\:bg-highlight:focus {
+  background-color: var(--sn-stylekit-list-item-highlight-color);
+}
+
+.hover\:bg-info-dark:hover {
+  @extend .bg-info-dark;
+}
+.focus\:bg-info-dark:focus {
+  @extend .bg-info-dark;
+}
+
+/**
+ * Do not use these rules without explicitly handling focus in a different
+ * way, otherwise keyboard focus will break.
+ */
+.focus\:shadow-none:focus {
+  box-shadow: none;
+}
+
+.focus\:outline-none:focus {
+  outline: none;
+}
+
+.box-shadow, .box-shadow:focus, .box-shadow:focus-within {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(0, 0, 0, 0.04);
+}

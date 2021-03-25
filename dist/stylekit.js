@@ -51,9 +51,9 @@ class SKAlert {
   buttonsString() {
     const genButton = function (buttonDesc, index) {
       return `
-        <div id='button-${index}' class='sk-button ${buttonDesc.style}'>
+        <button id='button-${index}' class='sn-button ${buttonDesc.style}'>
           <div class='sk-label'>${buttonDesc.text}</div>
-        </div>
+        </button>
       `;
     };
 

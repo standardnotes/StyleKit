@@ -1,9 +1,20 @@
-.bg-white {
+.bg-default {
   background-color: var(--sn-stylekit-background-color);
 }
 
-.text-color {
+.bg-info {
+  background-color: var(--sn-stylekit-info-color);
+}
+.bg-info-dark {
+  background-color: var(--sn-stylekit-info-color-darkened);
+}
+
+.color-text {
   color: var( --sn-stylekit-contrast-foreground-color);
+}
+
+.color-info-contrast {
+  color: var(--sn-stylekit-info-contrast-color);
 }
 
 .selected\:bg-color[data-selected],
