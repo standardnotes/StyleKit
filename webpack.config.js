@@ -43,7 +43,7 @@ module.exports = (_, { mode }) => ({
       {
         test: /\.(scss|css)$/,
         use: [
-          mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'sass-loader',
