@@ -2974,6 +2974,10 @@ template {
   transform-origin: top right;
 }
 
+.sn-component .overflow-auto, .sn-component .sn-select-list {
+  overflow: auto;
+}
+
 .sn-component .hover\:brightness-130:hover, .sn-component .sn-button.contrast:hover, .sn-component .sn-button.neutral:hover, .sn-component .sn-button.warning:hover, .sn-component .sn-button.danger:hover, .sn-component .sn-button.success:hover {
   filter: brightness(130%);
 }
@@ -3046,12 +3050,16 @@ template {
   height: 100%;
 }
 
-.sn-component .m-h-32, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select {
+.sn-component .min-h-32, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select {
   min-height: 2rem;
 }
 
 .sn-component .leading-4, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
   line-height: 1rem;
+}
+
+.sn-component .max-h-256, .sn-component .sn-select-list, .sn-component .sn-select-popover {
+  max-height: 16rem;
 }
 
 .sn-component .my-1 {

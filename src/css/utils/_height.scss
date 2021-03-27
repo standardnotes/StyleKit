@@ -2,10 +2,14 @@
   height: 100%;
 }
 
-.m-h-32 {
+.min-h-32 {
   min-height: 2rem;
 }
 
 .leading-4 {
   line-height: 1rem;
+}
+
+.max-h-256 {
+  max-height: 16rem;
 }
