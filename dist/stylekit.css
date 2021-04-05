@@ -348,6 +348,9 @@ template {
   --sn-stylekit-font-size-h3: 1.1rem;
   --sn-stylekit-font-size-h2: 1.2rem;
   --sn-stylekit-font-size-h1: 1.3rem;
+  --sn-stylekit-grey-3: #dfe1e4;
+  --sn-stylekit-grey-4: #eeeff1;
+  --sn-stylekit-grey-5: #f4f5f7;
   --sn-stylekit-neutral-color: #989898;
   --sn-stylekit-neutral-contrast-color: #ffffff;
   --sn-stylekit-info-color: #086dd6;
@@ -361,7 +364,7 @@ template {
   --sn-stylekit-danger-contrast-color: #ffffff;
   --sn-stylekit-shadow-color: #c8c8c8;
   --sn-stylekit-background-color: #ffffff;
-  --sn-stylekit-border-color: #dfe1e4;
+  --sn-stylekit-border-color: var(--sn-stylekit-grey-3);
   --sn-stylekit-foreground-color: #000000;
   --sn-stylekit-contrast-background-color: #f6f6f6;
   --sn-stylekit-contrast-foreground-color: #2e2e2e;
@@ -380,7 +383,7 @@ template {
   --sn-stylekit-scrollbar-thumb-color: #dfdfdf;
   --sn-stylekit-scrollbar-track-border-color: #e7e7e7;
   --sn-stylekit-general-border-radius: 2px;
-  --sn-stylekit-list-item-highlight-color: #f4f5f7;
+  --sn-stylekit-list-item-highlight-color: var(--sn-stylekit-grey-5);
   --sn-stylekit-simplified-chinese-font: 'Microsoft Yahei', '微软雅黑体';
   --sn-stylekit-monospace-font: 'SFMono-Regular', Consolas, 'Liberation Mono',
     Menlo, 'Ubuntu Mono', 'Courier New', monospace;
@@ -396,6 +399,10 @@ template {
   /**
  * Do not use these rules without explicitly handling focus in a different
  * way, otherwise keyboard focus will break.
+ */
+  /**
+ * A button that is just an icon. Separated from .sn-button because there
+ * is almost no style overlap.
  */
   font-family: var(--sn-stylekit-sans-serif-font);
   -webkit-font-smoothing: antialiased;
@@ -503,7 +510,7 @@ template {
   border-bottom: 1px solid var(--sn-stylekit-border-color);
 }
 
-.sn-component .sk-panel-section:not(:last-child).no-border, .sn-component .sk-panel-section.sn-button:not(:last-child), .sn-component .sk-panel-section.sn-dropdown-menu:not(:last-child), .sn-component .sk-panel-section.sn-select:not(:last-child), .sn-component .sk-panel-section.sn-select-button:not(:last-child), .sn-component .sk-panel-section.sn-select-popover:not(:last-child) {
+.sn-component .sk-panel-section:not(:last-child).no-border {
   border-bottom: none;
 }
 
@@ -901,7 +908,7 @@ template {
   border: none;
 }
 
-.sn-component input.sk-input.no-border, .sn-component input.sk-input.sn-button, .sn-component input.sk-input.sn-dropdown-menu, .sn-component input.sk-input.sn-select, .sn-component input.sk-input.sn-select-button, .sn-component input.sk-input.sn-select-popover {
+.sn-component input.sk-input.no-border {
   border: none;
 }
 
@@ -2774,7 +2781,7 @@ template {
   margin-top: 1.25rem;
 }
 
-.sn-component .sk-panel-table .sk-panel-table-item.no-border, .sn-component .sk-panel-table .sk-panel-table-item.sn-button, .sn-component .sk-panel-table .sk-panel-table-item.sn-dropdown-menu, .sn-component .sk-panel-table .sk-panel-table-item.sn-select, .sn-component .sk-panel-table .sk-panel-table-item.sn-select-button, .sn-component .sk-panel-table .sk-panel-table-item.sn-select-popover {
+.sn-component .sk-panel-table .sk-panel-table-item.no-border {
   border: none;
 }
 
@@ -2858,19 +2865,15 @@ template {
   animation: slide-down 0.2s ease;
 }
 
-.sn-component .no-border, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-popover {
+.sn-component .no-border {
+  border: none;
+}
+
+.sn-component .border-0, .sn-component .sn-button, .sn-component .sn-icon-button, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-popover {
   border-width: 0px;
 }
 
-.sn-component .border-rounded, .sn-component .sn-button {
-  border-radius: 0.25rem;
-}
-
-.sn-component .border-rounded-md {
-  border-radius: 0.375rem;
-}
-
-.sn-component .border, .sn-component .sn-button.outlined, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
+.sn-component .border-1 {
   border-width: 1px;
 }
 
@@ -2878,8 +2881,16 @@ template {
   border-color: var(--sn-stylekit-border-color);
 }
 
-.sn-component .border-rounded-sm, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list, .sn-component .sn-select-popover {
+.sn-component .border-rounded-md {
+  border-radius: 0.375rem;
+}
+
+.sn-component .rounded, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list, .sn-component .sn-select-popover {
   border-radius: 0.25rem;
+}
+
+.sn-component .rounded-full, .sn-component .sn-icon-button {
+  border-radius: 9999px;
 }
 
 .sn-component .border-solid, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
@@ -2898,8 +2909,24 @@ template {
   background-color: var(--sn-stylekit-info-color);
 }
 
-.sn-component .bg-info-dark, .sn-component .hover\:bg-info-dark:hover, .sn-component .sn-button.info:hover, .sn-component .focus\:bg-info-dark:focus, .sn-component .sn-button.info:focus {
+.sn-component .bg-info-dark, .sn-component .hover\:bg-info-dark:hover, .sn-component .focus\:bg-info-dark:focus {
   background-color: var(--sn-stylekit-info-color-darkened);
+}
+
+.sn-component .bg-transparent, .sn-component .sn-icon-button {
+  background-color: transparent;
+}
+
+.sn-component .bg-contrast, .sn-component .hover\:bg-contrast:hover {
+  background-color: var(--sn-stylekit-contrast-background-color);
+}
+
+.sn-component .bg-secondary-contrast {
+  background-color: var(--sn-stylekit-secondary-contrast-background-color);
+}
+
+.sn-component .color-neutral, .sn-component .sn-icon-button {
+  color: var(--sn-stylekit-neutral-color);
 }
 
 .sn-component .color-text, .sn-component .sn-button.outlined, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list {
@@ -2952,6 +2979,15 @@ template {
   justify-content: center;
 }
 
+.sn-component .justify-between {
+  justify-content: space-between;
+}
+
+.sn-component .gap-1 {
+  grid-gap: 0.25rem;
+  gap: 0.25rem;
+}
+
 .sn-component .gap-2 {
   grid-gap: 0.5rem;
   gap: 0.5rem;
@@ -2966,7 +3002,7 @@ template {
   position: absolute;
 }
 
-.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
+.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-icon-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
   cursor: pointer;
 }
 
@@ -2974,7 +3010,11 @@ template {
   transform-origin: top right;
 }
 
-.sn-component .hover\:brightness-130:hover, .sn-component .sn-button.contrast:hover, .sn-component .sn-button.neutral:hover, .sn-component .sn-button.warning:hover, .sn-component .sn-button.danger:hover, .sn-component .sn-button.success:hover {
+.sn-component .hover\:brightness-130:hover, .sn-component .sn-button.contrast:hover, .sn-component .sn-button.neutral:hover, .sn-component .sn-button.info:hover, .sn-component .sn-button.warning:hover, .sn-component .sn-button.danger:hover, .sn-component .sn-button.success:hover {
+  filter: brightness(130%);
+}
+
+.sn-component .focus\:brightness-130:focus, .sn-component .sn-button.neutral:focus, .sn-component .sn-button.info:focus, .sn-component .sn-button.warning:focus, .sn-component .sn-button.danger:focus, .sn-component .sn-button.success:focus {
   filter: brightness(130%);
 }
 
@@ -2986,16 +3026,32 @@ template {
   background-color: var(--sn-stylekit-list-item-highlight-color);
 }
 
-.sn-component .focus\:shadow-none:focus, .sn-component .sn-button.outlined:focus, .sn-component .sn-button.info:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus {
-  box-shadow: none;
+.sn-component .focus\:padded-ring-info:focus, .sn-component .sn-icon-button:focus {
+  box-shadow: 0 0 0 2px var(--sn-stylekit-background-color), 0 0 0 4px var(--sn-stylekit-info-color);
 }
 
-.sn-component .focus\:outline-none:focus, .sn-component .sn-button.outlined:focus, .sn-component .sn-button.info:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus {
-  outline: none;
+.sn-component .focus-within\:padded-ring-info:focus-within {
+  box-shadow: 0 0 0 2px var(--sn-stylekit-background-color), 0 0 0 4px var(--sn-stylekit-info-color);
 }
 
 .sn-component .box-shadow, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-popover, .sn-component .box-shadow:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-select-popover:focus, .sn-component .box-shadow:focus-within, .sn-component .sn-dropdown-menu-list:focus-within, .sn-component .sn-select-popover:focus-within {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sn-component .focus\:outline-none:focus, .sn-component .sn-button.outlined:focus, .sn-component .sn-button.info:focus, .sn-component .sn-icon-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus {
+  outline: none;
+}
+
+.sn-component .focus\:shadow-none:focus, .sn-component .sn-button.outlined:focus, .sn-component .sn-button.info:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus {
+  box-shadow: none;
+}
+
+.sn-component .focus-within\:outline-none:focus-within {
+  outline: none;
+}
+
+.sn-component .focus-within\:shadow-none:focus-within {
+  box-shadow: none;
 }
 
 .sn-component .capitalize, .sn-component .sn-button {
@@ -3046,12 +3102,24 @@ template {
   height: 100%;
 }
 
+.sn-component .h-20px, .sn-component .sn-icon-button {
+  height: 20px;
+}
+
 .sn-component .m-h-32, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select {
   min-height: 2rem;
 }
 
+.sn-component .min-h-20px, .sn-component .sn-icon-button {
+  height: 20px;
+}
+
 .sn-component .leading-4, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
   line-height: 1rem;
+}
+
+.sn-component .m-0, .sn-component .sn-icon-button {
+  margin: 0;
 }
 
 .sn-component .my-1 {
@@ -3131,9 +3199,11 @@ template {
   padding-bottom: 0.25rem;
 }
 
-.sn-component .no-padding {
+.sn-component .p-0, .sn-component .sn-icon-button {
   padding-top: 0;
   padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .sn-component .w-auto, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
@@ -3148,12 +3218,44 @@ template {
   width: 14rem;
 }
 
-.sn-component .min-w-265, .sn-component .sn-dropdown-menu-list {
+.sn-component .w-20px, .sn-component .sn-icon-button {
+  width: 20px;
+}
+
+.sn-component .min-w-265px, .sn-component .sn-dropdown-menu-list {
   min-width: 265px;
+}
+
+.sn-component .min-w-20px, .sn-component .sn-icon-button {
+  min-width: 20px;
+}
+
+.sn-component .min-w-80 {
+  min-width: 20rem;
 }
 
 .sn-component .max-w-md {
   max-width: 28rem;
+}
+
+.sn-component .duration-150 {
+  transition-duration: 150ms;
+}
+
+.sn-component .ease-out {
+  transition-timing-function: ease-out;
+}
+
+.sn-component .transition-background {
+  transition-property: background;
+}
+
+.sn-component .transition-transform {
+  transition-property: transform;
+}
+
+.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-icon-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
+  cursor: pointer;
 }
 
 .sn-component .sn-button.contrast {
@@ -3179,6 +3281,10 @@ template {
 .sn-component .sn-button.success {
   background-color: var(--sn-stylekit-success-color);
   color: var(--sn-stylekit-success-contrast-color);
+}
+
+.sn-component [data-reach-custom-checkbox-container] {
+  margin: 0;
 }
 
 .sn-component.no-select {

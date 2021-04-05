@@ -6,7 +6,6 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem
 }
-
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem
@@ -37,7 +36,9 @@
   padding-bottom: 0.25rem
 }
 
-.no-padding {
+.p-0 {
   padding-top: 0;
   padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
