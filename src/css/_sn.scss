@@ -17,7 +17,7 @@
 
 .sn-button.outlined {
   @extend .bg-default;
-  @extend .border;
+  @extend .border-1;
   @extend .border-gray-300;
   @extend .color-text;
   @extend .hover\:bg-highlight;
@@ -96,7 +96,7 @@
   @extend .border-gray-300;
   @extend .rounded;
   @extend .border-solid;
-  @extend .border;
+  @extend .border-1;
   @extend .cursor-pointer;
   @extend .font-normal;
   @extend .m-h-32;
@@ -162,7 +162,7 @@
   @extend .border-0;
   @extend .border-gray-300;
   @extend .border-solid;
-  @extend .border;
+  @extend .border-1;
   @extend .border-box;
   @extend .rounded;
   @extend .cursor-pointer;

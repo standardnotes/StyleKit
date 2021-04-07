@@ -2676,7 +2676,7 @@ template {
   margin-left: 1rem;
 }
 
-.sn-component .sk-app-bar .sk-app-bar-item.border, .sn-component .sk-app-bar .sk-app-bar-item.sn-button.outlined, .sn-component .sk-app-bar .sk-app-bar-item.sn-dropdown-menu, .sn-component .sk-app-bar .sk-app-bar-item.sn-select {
+.sn-component .sk-app-bar .sk-app-bar-item.border {
   border-left: 1px solid var(--sn-stylekit-contrast-border-color);
 }
 
@@ -2873,7 +2873,7 @@ template {
   border-width: 0px;
 }
 
-.sn-component .border-1 {
+.sn-component .border-1, .sn-component .sn-button.outlined, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
   border-width: 1px;
 }
 
