@@ -400,10 +400,6 @@ template {
  * Do not use these rules without explicitly handling focus in a different
  * way, otherwise keyboard focus will break.
  */
-  /**
- * A button that is just an icon. Separated from .sn-button because there
- * is almost no style overlap.
- */
   font-family: var(--sn-stylekit-sans-serif-font);
   -webkit-font-smoothing: antialiased;
   color: var(--sn-stylekit-foreground-color);
@@ -2869,7 +2865,7 @@ template {
   border: none;
 }
 
-.sn-component .border-0, .sn-component .sn-button, .sn-component .sn-icon-button, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-popover {
+.sn-component .border-0, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-popover {
   border-width: 0px;
 }
 
@@ -2889,7 +2885,7 @@ template {
   border-radius: 0.25rem;
 }
 
-.sn-component .rounded-full, .sn-component .sn-icon-button {
+.sn-component .rounded-full {
   border-radius: 9999px;
 }
 
@@ -2913,7 +2909,7 @@ template {
   background-color: var(--sn-stylekit-info-color-darkened);
 }
 
-.sn-component .bg-transparent, .sn-component .sn-icon-button {
+.sn-component .bg-transparent {
   background-color: transparent;
 }
 
@@ -2925,7 +2921,7 @@ template {
   background-color: var(--sn-stylekit-secondary-contrast-background-color);
 }
 
-.sn-component .color-neutral, .sn-component .sn-icon-button {
+.sn-component .color-neutral {
   color: var(--sn-stylekit-neutral-color);
 }
 
@@ -3002,7 +2998,7 @@ template {
   position: absolute;
 }
 
-.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-icon-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
+.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
   cursor: pointer;
 }
 
@@ -3010,11 +3006,11 @@ template {
   transform-origin: top right;
 }
 
-.sn-component .hover\:brightness-130:hover, .sn-component .sn-button.contrast:hover, .sn-component .sn-button.neutral:hover, .sn-component .sn-button.info:hover, .sn-component .sn-button.warning:hover, .sn-component .sn-button.danger:hover, .sn-component .sn-button.success:hover {
+.sn-component .hover\:brightness-130:hover, .sn-component .sn-button:hover {
   filter: brightness(130%);
 }
 
-.sn-component .focus\:brightness-130:focus, .sn-component .sn-button.neutral:focus, .sn-component .sn-button.info:focus, .sn-component .sn-button.warning:focus, .sn-component .sn-button.danger:focus, .sn-component .sn-button.success:focus {
+.sn-component .focus\:brightness-130:focus, .sn-component .sn-button:focus {
   filter: brightness(130%);
 }
 
@@ -3026,7 +3022,7 @@ template {
   background-color: var(--sn-stylekit-list-item-highlight-color);
 }
 
-.sn-component .focus\:padded-ring-info:focus, .sn-component .sn-icon-button:focus {
+.sn-component .focus\:padded-ring-info:focus {
   box-shadow: 0 0 0 2px var(--sn-stylekit-background-color), 0 0 0 4px var(--sn-stylekit-info-color);
 }
 
@@ -3038,11 +3034,11 @@ template {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.sn-component .focus\:outline-none:focus, .sn-component .sn-button.outlined:focus, .sn-component .sn-button.info:focus, .sn-component .sn-icon-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus {
+.sn-component .focus\:outline-none:focus, .sn-component .sn-button:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus {
   outline: none;
 }
 
-.sn-component .focus\:shadow-none:focus, .sn-component .sn-button.outlined:focus, .sn-component .sn-button.info:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus {
+.sn-component .focus\:shadow-none:focus, .sn-component .sn-button.outlined:focus, .sn-component .sn-dropdown-menu:focus, .sn-component .sn-dropdown-menu-list-item:focus, .sn-component .sn-select:focus, .sn-component .sn-select-button:focus, .sn-component .sn-select-list:focus, .sn-component .sn-select-popover:focus {
   box-shadow: none;
 }
 
@@ -3102,7 +3098,7 @@ template {
   height: 100%;
 }
 
-.sn-component .h-20px, .sn-component .sn-icon-button {
+.sn-component .h-20px {
   height: 20px;
 }
 
@@ -3110,7 +3106,7 @@ template {
   min-height: 2rem;
 }
 
-.sn-component .min-h-20px, .sn-component .sn-icon-button {
+.sn-component .min-h-20px {
   height: 20px;
 }
 
@@ -3118,7 +3114,7 @@ template {
   line-height: 1rem;
 }
 
-.sn-component .m-0, .sn-component .sn-icon-button {
+.sn-component .m-0 {
   margin: 0;
 }
 
@@ -3199,7 +3195,7 @@ template {
   padding-bottom: 0.25rem;
 }
 
-.sn-component .p-0, .sn-component .sn-icon-button {
+.sn-component .p-0 {
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0;
@@ -3218,7 +3214,7 @@ template {
   width: 14rem;
 }
 
-.sn-component .w-20px, .sn-component .sn-icon-button {
+.sn-component .w-20px {
   width: 20px;
 }
 
@@ -3226,7 +3222,7 @@ template {
   min-width: 265px;
 }
 
-.sn-component .min-w-20px, .sn-component .sn-icon-button {
+.sn-component .min-w-20px {
   min-width: 20px;
 }
 
@@ -3254,7 +3250,7 @@ template {
   transition-property: transform;
 }
 
-.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-icon-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
+.sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
   cursor: pointer;
 }
 

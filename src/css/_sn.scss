@@ -9,6 +9,10 @@
   @extend .px-3;
   @extend .py-2;
   @extend .text-sm;
+
+  @extend .hover\:brightness-130;
+  @extend .focus\:brightness-130;
+  @extend .focus\:outline-none;
 }
 
 .sn-button.small {
@@ -42,51 +46,21 @@
 .sn-button.info {
   @extend .bg-info;
   @extend .color-info-contrast;
-  @extend .hover\:brightness-130;
-  @extend .focus\:brightness-130;
-  @extend .focus\:shadow-none;
-  @extend .focus\:outline-none;
 }
 
 .sn-button.warning {
-  @extend .hover\:brightness-130;
-  @extend .focus\:brightness-130;
   background-color: var(--sn-stylekit-warning-color);
   color: var(--sn-stylekit-warning-contrast-color);
 }
 
 .sn-button.danger {
-  @extend .hover\:brightness-130;
-  @extend .focus\:brightness-130;
   background-color: var(--sn-stylekit-danger-color);
   color: var(--sn-stylekit-danger-contrast-color);
 }
 
 .sn-button.success {
-  @extend .hover\:brightness-130;
-  @extend .focus\:brightness-130;
   background-color: var(--sn-stylekit-success-color);
   color: var(--sn-stylekit-success-contrast-color);
-}
-
-/**
- * A button that is just an icon. Separated from .sn-button because there
- * is almost no style overlap.
- */
-.sn-icon-button {
-  @extend .border-0;
-  @extend .m-0;
-  @extend .p-0;
-  @extend .h-20px;
-  @extend .min-h-20px;
-  @extend .w-20px;
-  @extend .min-w-20px;
-  @extend .bg-transparent;
-  @extend .cursor-pointer;
-  @extend .rounded-full;
-  @extend .color-neutral;
-  @extend .focus\:outline-none;
-  @extend .focus\:padded-ring-info;
 }
 
 .sn-dropdown-menu {
