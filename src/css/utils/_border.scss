@@ -1,16 +1,12 @@
 .no-border {
+  border: none;
+}
+
+.border-0 {
   border-width: 0px
 }
 
-.border-rounded {
-  border-radius: 0.25rem
-}
-
-.border-rounded-md {
-  border-radius: 0.375rem
-}
-
-.border {
+.border-1 {
   border-width: 1px
 }
 
@@ -18,8 +14,16 @@
   border-color: var(--sn-stylekit-border-color);
 }
 
-.border-rounded-sm {
+.border-rounded-md {
+  border-radius: 0.375rem
+}
+
+.rounded {
   border-radius: 0.25rem
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .border-solid {

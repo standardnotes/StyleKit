@@ -9,8 +9,24 @@
   background-color: var(--sn-stylekit-info-color-darkened);
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-contrast {
+  background-color: var(--sn-stylekit-contrast-background-color);
+}
+
+.bg-secondary-contrast {
+  background-color: var(--sn-stylekit-secondary-contrast-background-color);
+}
+
+.color-neutral {
+  color: var(--sn-stylekit-neutral-color)
+}
+
 .color-text {
-  color: var( --sn-stylekit-contrast-foreground-color);
+  color: var(--sn-stylekit-contrast-foreground-color);
 }
 
 .color-info-contrast {

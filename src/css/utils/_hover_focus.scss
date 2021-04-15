@@ -2,12 +2,20 @@
   filter: brightness(130%);
 }
 
+.focus\:brightness-130:focus {
+  filter: brightness(130%);
+}
+
 .hover\:bg-highlight:hover {
   background-color: var(--sn-stylekit-list-item-highlight-color);
 }
 
 .focus\:bg-highlight:focus {
   background-color: var(--sn-stylekit-list-item-highlight-color);
+}
+
+.hover\:bg-contrast:hover {
+  @extend .bg-contrast;
 }
 
 .hover\:bg-info-dark:hover {
@@ -17,18 +25,33 @@
   @extend .bg-info-dark;
 }
 
-/**
- * Do not use these rules without explicitly handling focus in a different
- * way, otherwise keyboard focus will break.
- */
-.focus\:shadow-none:focus {
-  box-shadow: none;
+.focus\:padded-ring-info:focus {
+  box-shadow: 0 0 0 2px var(--sn-stylekit-background-color),
+    0 0 0 4px var(--sn-stylekit-info-color);
 }
 
-.focus\:outline-none:focus {
-  outline: none;
+.focus-within\:padded-ring-info:focus-within {
+  box-shadow: 0 0 0 2px var(--sn-stylekit-background-color),
+    0 0 0 4px var(--sn-stylekit-info-color);
 }
 
 .box-shadow, .box-shadow:focus, .box-shadow:focus-within {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/**
+ * Do not use these rules without explicitly handling focus in a different
+ * way, otherwise keyboard focus will break.
+ */
+.focus\:outline-none:focus {
+  outline: none;
+}
+.focus\:shadow-none:focus {
+  box-shadow: none;
+}
+.focus-within\:outline-none:focus-within {
+  outline: none;
+}
+.focus-within\:shadow-none:focus-within {
+  box-shadow: none;
 }

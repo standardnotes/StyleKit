@@ -13,6 +13,10 @@
   --sn-stylekit-font-size-h2: 1.2rem;
   --sn-stylekit-font-size-h1: 1.3rem;
 
+  --sn-stylekit-grey-3: #dfe1e4;
+  --sn-stylekit-grey-4: #eeeff1;
+  --sn-stylekit-grey-5: #f4f5f7;
+
   --sn-stylekit-neutral-color: #989898;
   --sn-stylekit-neutral-contrast-color: #ffffff;
 
@@ -31,7 +35,7 @@
 
   --sn-stylekit-shadow-color: #c8c8c8;
   --sn-stylekit-background-color: #ffffff;
-  --sn-stylekit-border-color: #dfe1e4; // For borders inside background-color
+  --sn-stylekit-border-color: var(--sn-stylekit-grey-3); // For borders inside background-color
   --sn-stylekit-foreground-color: #000000;
   // Colors for layers placed on top of non-prefixed background, border, and foreground
   --sn-stylekit-contrast-background-color: #f6f6f6;
@@ -60,7 +64,7 @@
 
   --sn-stylekit-general-border-radius: 2px;
 
-  --sn-stylekit-list-item-highlight-color: #f4f5f7;
+  --sn-stylekit-list-item-highlight-color: var(--sn-stylekit-grey-5);
 
   --sn-stylekit-simplified-chinese-font: 'Microsoft Yahei', '微软雅黑体';
   --sn-stylekit-monospace-font: 'SFMono-Regular', Consolas, 'Liberation Mono',
@@ -83,6 +87,7 @@
   @import 'modal';
   @import 'utils';
   @import 'sn';
+  @import 'reach-overrides';
 
   font-family: var(--sn-stylekit-sans-serif-font);
   -webkit-font-smoothing: antialiased;
