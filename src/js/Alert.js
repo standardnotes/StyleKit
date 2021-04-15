@@ -78,7 +78,6 @@ export default class SKAlert {
 
   dismiss() {
     this.onElement.removeChild(this.element);
-    document.removeEventListener('keyup', this.keyupListener);
   }
 
   primaryButton() {
@@ -88,14 +87,6 @@ export default class SKAlert {
     }
     return primary;
   }
-
-  keyupListener = (event) => {
-    if (event.key === 'Enter') {
-      let primaryButton = this.primaryButton();
-      primaryButton.action && primaryButton.action();
-      this.dismiss();
-    }
-  };
 
   present({ onElement } = {}) {
     if (!onElement) {
@@ -108,18 +99,19 @@ export default class SKAlert {
     this.element.className = 'sn-component';
     this.element.innerHTML = this.templateString().trim();
 
-    if (this.buttons) {
-      document.addEventListener('keyup', this.keyupListener);
+    onElement.appendChild(this.element);
 
+    if (this.buttons && this.buttons.length) {
       this.buttons.forEach((buttonDesc, index) => {
         let buttonElem = this.element.querySelector(`#button-${index}`);
         buttonElem.onclick = () => {
           buttonDesc.action && buttonDesc.action();
           this.dismiss();
         };
+        if (index === 0) {
+          buttonElem.focus();
+        }
       });
     }
-
-    onElement.appendChild(this.element);
   }
 }

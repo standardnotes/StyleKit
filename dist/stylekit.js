@@ -24,8 +24,6 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// CONCATENATED MODULE: ./src/js/Alert.js
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 class SKAlert {
   /*
   buttons: [{text, style, action}]
@@ -35,14 +33,6 @@ class SKAlert {
     text,
     buttons
   }) {
-    _defineProperty(this, "keyupListener", event => {
-      if (event.key === 'Enter') {
-        let primaryButton = this.primaryButton();
-        primaryButton.action && primaryButton.action();
-        this.dismiss();
-      }
-    });
-
     this.title = title;
     this.text = text;
     this.buttons = buttons;
@@ -113,7 +103,6 @@ class SKAlert {
 
   dismiss() {
     this.onElement.removeChild(this.element);
-    document.removeEventListener('keyup', this.keyupListener);
   }
 
   primaryButton() {
@@ -137,9 +126,9 @@ class SKAlert {
     this.element = document.createElement('div');
     this.element.className = 'sn-component';
     this.element.innerHTML = this.templateString().trim();
+    onElement.appendChild(this.element);
 
-    if (this.buttons) {
-      document.addEventListener('keyup', this.keyupListener);
+    if (this.buttons && this.buttons.length) {
       this.buttons.forEach((buttonDesc, index) => {
         let buttonElem = this.element.querySelector(`#button-${index}`);
 
@@ -147,10 +136,12 @@ class SKAlert {
           buttonDesc.action && buttonDesc.action();
           this.dismiss();
         };
+
+        if (index === 0) {
+          buttonElem.focus();
+        }
       });
     }
-
-    onElement.appendChild(this.element);
   }
 
 }
