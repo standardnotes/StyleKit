@@ -11,7 +11,7 @@
   overflow-x: auto !important;
 
   .sk-menu-panel-header {
-    padding: 0.8rem 1rem;
+    padding: 0.65rem 0.8125rem;
     border-bottom: 1px solid var(--sn-stylekit-contrast-border-color);
     background-color: var(--sn-stylekit-contrast-background-color);
     color: var(--sn-stylekit-contrast-foreground-color);
@@ -26,12 +26,12 @@
   }
 
   .sk-menu-panel-header-subtitle {
-    margin-top: 0.2rem;
+    margin-top: 0.1625rem;
     opacity: 0.6;
   }
 
   .sk-menu-panel-row {
-    padding: 1rem 1rem;
+    padding: 0.8125rem 0.8125rem;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -51,7 +51,7 @@
 
       &:not(:first-child) {
         padding-left: 1rem;
-        padding-right: 0.15rem;
+        padding-right: 0.121875rem;
       }
 
       &.stretch {
@@ -59,7 +59,7 @@
       }
 
       .sk-menu-panel-subrows {
-        margin-top: 1rem;
+        margin-top: 0.8125rem;
       }
 
       /* Nested row */
@@ -89,7 +89,7 @@
 
     .sk-sublabel {
       font-size: var(--sn-stylekit-font-size-h5);
-      margin-top: 0.2rem;
+      margin-top: 0.1625rem;
       opacity: 0.6;
     }
   }

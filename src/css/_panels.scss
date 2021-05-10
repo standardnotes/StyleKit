@@ -1,5 +1,5 @@
 .sk-panel {
-  $h-content-padding: 2rem;
+  $h-content-padding: 1.625rem;
   box-shadow: 0px 2px 5px var(--sn-stylekit-shadow-color);
   background-color: var(--sn-stylekit-background-color);
   border: 1px solid var(--sn-stylekit-border-color);
@@ -29,7 +29,7 @@
     flex-shrink: 0; /* Don't allow to condense in height */
     display: flex;
     justify-content: space-between;
-    padding: 1.1rem $h-content-padding;
+    padding: 0.89375rem $h-content-padding;
     border-bottom: 1px solid var(--sn-stylekit-contrast-border-color);
     background-color: var(--sn-stylekit-contrast-background-color);
     color: var(--sn-stylekit-contrast-foreground-color);
@@ -47,12 +47,12 @@
 
   .sk-footer,
   .sk-panel-footer {
-    padding: 1rem $h-content-padding;
+    padding: 0.8125rem $h-content-padding;
     border-top: 1px solid var(--sn-stylekit-border-color);
     box-sizing: border-box;
 
     &.extra-padding {
-      padding: 2rem $h-content-padding;
+      padding: 1.625rem $h-content-padding;
     }
 
     .left {
@@ -67,7 +67,7 @@
   }
 
   .sk-panel-content {
-    padding: 1.6rem $h-content-padding;
+    padding: 1.3rem $h-content-padding;
     padding-bottom: 0;
     flex-grow: 1;
     overflow: scroll;
@@ -86,7 +86,7 @@
 }
 
 .sk-panel-section {
-  padding-bottom: 1.6rem;
+  padding-bottom: 1.3rem;
   display: flex;
   flex-direction: column;
 
@@ -99,7 +99,7 @@
   }
 
   &:not(:last-child) {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.21875rem;
     border-bottom: 1px solid var(--sn-stylekit-border-color);
 
     &.no-border {
@@ -117,15 +117,15 @@
   }
 
   .sk-panel-section-title {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.40625rem;
     font-weight: bold;
     font-size: var(--sn-stylekit-font-size-h3);
   }
 
   .sk-panel-section-outer-title {
     border-bottom: 1px solid var(--sn-stylekit-border-color);
-    padding-bottom: 0.9rem;
-    margin-top: 2.1rem;
+    padding-bottom: 0.73125rem;
+    margin-top: 1.70625rem;
     margin-bottom: 15px;
     font-size: var(--sn-stylekit-font-size-h3);
   }
@@ -143,11 +143,11 @@
 
   .text-content {
     .sk-p {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8175rem;
     }
 
     p:first-child {
-      margin-top: 0.3rem;
+      margin-top: 0.24375rem;
     }
   }
 }
@@ -156,7 +156,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 0.4rem;
+  padding-top: 0.325rem;
 
   &.centered {
     justify-content: center;
@@ -182,12 +182,12 @@
 
   &.default-padding,
   &:not(:last-child) {
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.325rem;
   }
 
   &.condensed {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    padding-top: 0.1625rem;
+    padding-bottom: 0.1625rem;
   }
 
   .sk-p {
@@ -198,7 +198,7 @@
 
 .vertical-rule {
   background-color: var(--sn-stylekit-border-color);
-  height: 1.5rem;
+  height: 1.21875rem;
   width: 1px;
 }
 
@@ -209,7 +209,7 @@
   }
 
   .form-submit {
-    margin-top: 0.15rem;
+    margin-top: 0.121875rem;
   }
 }
 

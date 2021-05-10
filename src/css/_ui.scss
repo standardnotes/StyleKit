@@ -26,22 +26,22 @@
 .sk-h1 {
   font-weight: 500;
   font-size: var(--sn-stylekit-font-size-h1);
-  line-height: 1.9rem;
+  line-height: 1.54375rem;
 }
 
 .sk-h2 {
   font-size: var(--sn-stylekit-font-size-h2);
-  line-height: 1.8rem;
+  line-height: 1.4625rem;
 }
 
 .sk-h3 {
   font-size: var(--sn-stylekit-font-size-h3);
-  line-height: 1.7rem;
+  line-height: 1.38125rem;
 }
 
 .sk-h4 {
   font-size: var(--sn-stylekit-font-size-p);
-  line-height: 1.4rem;
+  line-height: 1.1375rem;
 }
 
 .sk-h5 {
@@ -75,7 +75,7 @@ a.sk-a {
 
   &.boxed {
     border-radius: var(--sn-stylekit-general-border-radius);
-    padding: 0.3rem 0.4rem;
+    padding: 0.24375rem 0.325rem;
 
     &:hover {
       text-decoration: none;
@@ -173,13 +173,13 @@ a.sk-a {
 }
 
 p.sk-p {
-  margin: 0.5rem 0;
+  margin: 0.40625rem 0;
 }
 
 input.sk-input {
   box-sizing: border-box;
-  padding: 0.7rem 0.8rem;
-  margin: 0.3rem 0;
+  padding: 0.56875rem 0.65rem;
+  margin: 0.24375rem 0;
   border: none;
 
   font-size: var(--sn-stylekit-font-size-h3);
@@ -208,14 +208,14 @@ input.sk-input {
 }
 
 label.sk-label {
-  margin: 0.7rem 0;
+  margin: 0.56875rem 0;
   display: block;
 }
 
 label.sk-label input[type='checkbox'],
 input[type='radio'] {
   width: auto;
-  margin-right: 0.45rem; /* Space after checkbox */
+  margin-right: 0.365625rem; /* Space after checkbox */
   vertical-align: middle;
 }
 
@@ -225,7 +225,7 @@ input[type='radio'] {
     vertical-align: middle;
 
     &:not(:first-child) {
-      margin-left: 0.9rem;
+      margin-left: 0.73125rem;
     }
   }
 }
@@ -239,8 +239,8 @@ input[type='radio'] {
 }
 
 .sk-checkbox-group {
-  padding-top: 0.5rem;
-  padding-bottom: 0.3rem;
+  padding-top: 0.40625rem;
+  padding-bottom: 0.24375rem;
 }
 
 ::placeholder {
@@ -331,7 +331,7 @@ input[type='radio'] {
 
 .sk-button {
   display: table;
-  padding: 0.5rem 0.7rem;
+  padding: 0.40625rem 0.56875rem;
   font-size: var(--sn-stylekit-font-size-h5);
   cursor: pointer;
   text-align: center;
@@ -349,7 +349,7 @@ input[type='radio'] {
   }
 
   &.wide {
-    padding: 0.3rem 1.7rem;
+    padding: 0.24375rem 1.38125rem;
   }
 
   > .sk-label {
@@ -360,13 +360,13 @@ input[type='radio'] {
 
   &.big {
     font-size: var(--sn-stylekit-font-size-h3);
-    padding: 0.7rem 2.5rem;
+    padding: 0.56875rem 2.03125rem;
   }
 }
 
 .sk-box {
   @extend .sk-button;
-  padding: 2.5rem 1.5rem;
+  padding: 2.03125rem 1.21875rem;
 }
 
 @mixin ui-rect($color, $contrast-color, $hoverable, $border-color: '') {
@@ -452,7 +452,7 @@ input[type='radio'] {
 
   &.featured {
     border: none;
-    padding: 0.75rem 1.25rem;
+    padding: 0.609375rem 1.015625rem;
     font-size: var(--sn-stylekit-font-size-h3);
 
     &:before {
@@ -637,13 +637,13 @@ input[type='radio'] {
 }
 
 .sk-notification {
-  padding: 1.1rem 1rem;
-  margin: 1.4rem 0;
+  padding: 0.89375rem 0.8125rem;
+  margin: 1.1375rem 0;
   text-align: left;
   cursor: default;
 
   &.one-line {
-    padding: 0rem 0.4rem;
+    padding: 0rem 0.325rem;
   }
 
   &.stretch {
@@ -663,11 +663,11 @@ input[type='radio'] {
   .sk-notification-title {
     font-size: var(--sn-stylekit-font-size-h1);
     font-weight: bold;
-    line-height: 1.9rem;
+    line-height: 1.54375rem;
   }
 
   .sk-notification-text {
-    line-height: 1.5rem;
+    line-height: 1.21875rem;
     font-size: var(--sn-stylekit-font-size-p);
     text-align: left;
     font-weight: normal;
