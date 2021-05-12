@@ -11,7 +11,7 @@ export default class SKAlert {
   buttonsString() {
     const genButton = function (buttonDesc, index) {
       return `
-        <button id='button-${index}' class='sn-button ${buttonDesc.style}'>
+        <button id='button-${index}' class='sn-button small ${buttonDesc.style}'>
           <div class='sk-label'>${buttonDesc.text}</div>
         </button>
       `;
