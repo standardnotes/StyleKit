@@ -1,14 +1,13 @@
 .sn-button {
+  font-size: 0.8125rem;
+  padding: 0.609375rem;
+  min-height: 1.8125rem;
   @extend .border-0;
   @extend .rounded;
   @extend .border-solid;
   @extend .cursor-pointer;
   @extend .capitalize;
   @extend .font-bold;
-  @extend .m-h-32;
-  @extend .px-3;
-  @extend .py-2;
-  @extend .text-sm;
 
   @extend .hover\:brightness-130;
   @extend .focus\:brightness-130;
@@ -16,7 +15,8 @@
 }
 
 .sn-button.small {
-  @extend .text-xs;
+  font-size: 0.7109375rem;
+  padding: 0.40625rem 0.609375rem;
 }
 
 .sn-button.outlined {

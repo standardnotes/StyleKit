@@ -3066,12 +3066,12 @@ template {
   text-align: center;
 }
 
-.sn-component .text-xs, .sn-component .sn-button.small {
+.sn-component .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
 }
 
-.sn-component .text-sm, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-list, .sn-component .sn-select-list-option {
+.sn-component .text-sm, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-list, .sn-component .sn-select-list-option {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
@@ -3102,7 +3102,7 @@ template {
   height: 20px;
 }
 
-.sn-component .m-h-32, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select {
+.sn-component .m-h-32, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select {
   min-height: 2rem;
 }
 
@@ -3160,7 +3160,7 @@ template {
   padding-bottom: 0.25rem;
 }
 
-.sn-component .py-2, .sn-component .sn-button, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-list-option {
+.sn-component .py-2, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-list-option {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -3170,7 +3170,7 @@ template {
   padding-bottom: 0.75rem;
 }
 
-.sn-component .px-3, .sn-component .sn-button {
+.sn-component .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
@@ -3252,6 +3252,17 @@ template {
 
 .sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
   cursor: pointer;
+}
+
+.sn-component .sn-button {
+  font-size: 0.8125rem;
+  padding: 0.609375rem;
+  min-height: 1.8125rem;
+}
+
+.sn-component .sn-button.small {
+  font-size: 0.7109375rem;
+  padding: 0.40625rem 0.609375rem;
 }
 
 .sn-component .sn-button.contrast {
