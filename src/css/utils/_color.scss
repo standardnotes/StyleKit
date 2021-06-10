@@ -21,6 +21,18 @@
   background-color: var(--sn-stylekit-secondary-contrast-background-color);
 }
 
+.bg-border {
+  background-color: var(--sn-stylekit-border-color);
+}
+
+.bg-clip-padding {
+  background-clip: padding-box;
+}
+
+.bg-neutral {
+  background-color: var(--sn-stylekit-neutral-color);
+}
+
 .color-neutral {
   color: var(--sn-stylekit-neutral-color)
 }
@@ -29,6 +41,17 @@
   color: var(--sn-stylekit-contrast-foreground-color);
 }
 
+.color-foreground {
+  color: var(--sn-stylekit-foreground-color);
+}
+
+.color-danger {
+  color: var(--sn-stylekit-danger-color);
+}
+
+.color-info {
+  color: var(--sn-stylekit-info-color);
+}
 .color-info-contrast {
   color: var(--sn-stylekit-info-contrast-color);
 }
