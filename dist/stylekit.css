@@ -2873,8 +2873,32 @@ template {
   border-width: 1px;
 }
 
+.sn-component .border-2 {
+  border-width: 2px;
+}
+
+.sn-component .border-b-1 {
+  border-bottom-width: 1px;
+}
+
 .sn-component .border-gray-300, .sn-component .sn-button.outlined, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list, .sn-component .sn-select-popover {
   border-color: var(--sn-stylekit-border-color);
+}
+
+.sn-component .border-background {
+  border-color: var(--sn-stylekit-background-color);
+}
+
+.sn-component .border-transparent {
+  border-color: transparent;
+}
+
+.sn-component .border-info {
+  border-color: var(--sn-stylekit-info-color);
+}
+
+.sn-component .border-neutral {
+  border-color: var(--sn-stylekit-neutral-color);
 }
 
 .sn-component .border-rounded-md {
@@ -2897,6 +2921,14 @@ template {
   box-sizing: border-box;
 }
 
+.sn-component .ring-info, .sn-component .focus\:ring-info:focus, .sn-component .focus-within\:ring-info:focus-within {
+  box-shadow: 0 0 0 2px var(--sn-stylekit-info-color);
+}
+
+.sn-component .inner-ring-info, .sn-component .focus\:inner-ring-info:focus {
+  box-shadow: inset 0 0 0 2px var(--sn-stylekit-info-color);
+}
+
 .sn-component .bg-default, .sn-component .sn-button.outlined, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list {
   background-color: var(--sn-stylekit-background-color);
 }
@@ -2913,20 +2945,44 @@ template {
   background-color: transparent;
 }
 
-.sn-component .bg-contrast, .sn-component .hover\:bg-contrast:hover {
+.sn-component .bg-contrast, .sn-component .hover\:bg-contrast:hover, .sn-component .focus\:bg-contrast:focus {
   background-color: var(--sn-stylekit-contrast-background-color);
 }
 
-.sn-component .bg-secondary-contrast {
+.sn-component .bg-secondary-contrast, .sn-component .hover\:bg-secondary-contrast:hover, .sn-component .focus\:bg-secondary-contrast:focus {
   background-color: var(--sn-stylekit-secondary-contrast-background-color);
+}
+
+.sn-component .bg-border {
+  background-color: var(--sn-stylekit-border-color);
+}
+
+.sn-component .bg-clip-padding {
+  background-clip: padding-box;
+}
+
+.sn-component .bg-neutral {
+  background-color: var(--sn-stylekit-neutral-color);
 }
 
 .sn-component .color-neutral {
   color: var(--sn-stylekit-neutral-color);
 }
 
-.sn-component .color-text, .sn-component .sn-button.outlined, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list {
+.sn-component .color-text, .sn-component .hover\:color-text:hover, .sn-component .focus\:color-text:focus, .sn-component .sn-button.outlined, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list {
   color: var(--sn-stylekit-contrast-foreground-color);
+}
+
+.sn-component .color-foreground {
+  color: var(--sn-stylekit-foreground-color);
+}
+
+.sn-component .color-danger {
+  color: var(--sn-stylekit-danger-color);
+}
+
+.sn-component .color-info {
+  color: var(--sn-stylekit-info-color);
 }
 
 .sn-component .color-info-contrast, .sn-component .sn-button.info {
@@ -2967,8 +3023,20 @@ template {
   flex-grow: 1;
 }
 
+.sn-component .flex-wrap {
+  flex-wrap: wrap;
+}
+
+.sn-component .grid {
+  display: grid;
+}
+
 .sn-component .items-center, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button {
   align-items: center;
+}
+
+.sn-component .items-start {
+  align-items: flex-start;
 }
 
 .sn-component .justify-center, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button {
@@ -2977,6 +3045,10 @@ template {
 
 .sn-component .justify-between {
   justify-content: space-between;
+}
+
+.sn-component .justify-start {
+  justify-content: flex-start;
 }
 
 .sn-component .gap-1 {
@@ -2998,12 +3070,32 @@ template {
   position: absolute;
 }
 
+.sn-component .fixed {
+  position: fixed;
+}
+
 .sn-component .cursor-pointer, .sn-component .sn-button, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-select-list-option {
   cursor: pointer;
 }
 
 .sn-component .origin-top-right, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-list {
   transform-origin: top right;
+}
+
+.sn-component .overflow-auto {
+  overflow: auto;
+}
+
+.sn-component .overflow-y-auto {
+  overflow-y: auto;
+}
+
+.sn-component .overflow-hidden {
+  overflow: hidden;
+}
+
+.sn-component .overflow-ellipsis {
+  text-overflow: ellipsis;
 }
 
 .sn-component .hover\:brightness-130:hover, .sn-component .sn-button:hover {
@@ -3026,8 +3118,16 @@ template {
   box-shadow: 0 0 0 2px var(--sn-stylekit-background-color), 0 0 0 4px var(--sn-stylekit-info-color);
 }
 
+.sn-component .focus\:border-bottom:focus {
+  border-bottom: 2px solid var(--sn-stylekit-info-color);
+}
+
 .sn-component .focus-within\:padded-ring-info:focus-within {
   box-shadow: 0 0 0 2px var(--sn-stylekit-background-color), 0 0 0 4px var(--sn-stylekit-info-color);
+}
+
+.sn-component .focus-within\:border-background:focus-within {
+  border-color: var(--sn-stylekit-background-color);
 }
 
 .sn-component .box-shadow, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-popover, .sn-component .box-shadow:focus, .sn-component .sn-dropdown-menu-list:focus, .sn-component .sn-select-popover:focus, .sn-component .box-shadow:focus-within, .sn-component .sn-dropdown-menu-list:focus-within, .sn-component .sn-select-popover:focus-within {
@@ -3062,6 +3162,10 @@ template {
   font-weight: 700;
 }
 
+.sn-component .text-left {
+  text-align: left;
+}
+
 .sn-component .text-center {
   text-align: center;
 }
@@ -3090,16 +3194,85 @@ template {
   line-height: 2rem;
 }
 
+.sn-component .text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .sn-component .font-medium {
   font-weight: 500;
+}
+
+.sn-component .leading-4, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
+  line-height: 1rem;
+}
+
+.sn-component .whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.sn-component .whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .sn-component .h-full {
   height: 100%;
 }
 
+.sn-component .h-90vh {
+  height: 90vh;
+}
+
+.sn-component .h-0 {
+  height: 0;
+}
+
+.sn-component .h-3\.5 {
+  height: 0.875rem;
+}
+
+.sn-component .h-4\.5 {
+  height: 1.125rem;
+}
+
+.sn-component .h-5 {
+  height: 1.25rem;
+}
+
+.sn-component .h-6 {
+  height: 1.5rem;
+}
+
+.sn-component .h-7 {
+  height: 1.75rem;
+}
+
+.sn-component .h-8 {
+  height: 2rem;
+}
+
+.sn-component .h-9 {
+  height: 2.25rem;
+}
+
+.sn-component .h-10 {
+  height: 2.5rem;
+}
+
+.sn-component .h-18 {
+  height: 4.5rem;
+}
+
+.sn-component .h-1px {
+  height: 1px;
+}
+
 .sn-component .h-20px {
   height: 20px;
+}
+
+.sn-component .min-h-5 {
+  min-height: 1.25rem;
 }
 
 .sn-component .m-h-32, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item, .sn-component .sn-select {
@@ -3110,8 +3283,8 @@ template {
   height: 20px;
 }
 
-.sn-component .leading-4, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
-  line-height: 1rem;
+.sn-component .max-h-120 {
+  max-height: 30rem;
 }
 
 .sn-component .m-0 {
@@ -3123,24 +3296,13 @@ template {
   margin-bottom: 0.25rem;
 }
 
-.sn-component .mr-2, .sn-component .sn-dropdown-menu > .sn-icon:first-child, .sn-component .sn-dropdown-menu-list-item > .sn-icon {
-  margin-right: 0.5rem;
+.sn-component .my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.sn-component .ml-1\.5 {
-  margin-left: 0.375rem;
-}
-
-.sn-component .ml-2, .sn-component .sn-dropdown-menu > .sn-icon:last-child, .sn-component .sn-select-button > .sn-icon:last-child {
-  margin-left: 0.5rem;
-}
-
-.sn-component .ml-6 {
-  margin-left: 1.5rem;
-}
-
-.sn-component .mr-1\.5 {
-  margin-right: 0.375rem;
+.sn-component .-mt-1 {
+  margin-top: -0.25rem;
 }
 
 .sn-component .mt-1 {
@@ -3155,9 +3317,61 @@ template {
   margin-top: 1rem;
 }
 
+.sn-component .-mr-2 {
+  margin-right: -0.5rem;
+}
+
+.sn-component .mr-1 {
+  margin-right: 0.25rem;
+}
+
+.sn-component .mr-1\.5 {
+  margin-right: 0.375rem;
+}
+
+.sn-component .mr-2, .sn-component .sn-dropdown-menu > .sn-icon:first-child, .sn-component .sn-dropdown-menu-list-item > .sn-icon {
+  margin-right: 0.5rem;
+}
+
+.sn-component .mr-10 {
+  margin-right: 2.5rem;
+}
+
+.sn-component .ml-1 {
+  margin-left: 0.25rem;
+}
+
+.sn-component .ml-1\.5 {
+  margin-left: 0.375rem;
+}
+
+.sn-component .ml-2, .sn-component .sn-dropdown-menu > .sn-icon:last-child, .sn-component .sn-select-button > .sn-icon:last-child {
+  margin-left: 0.5rem;
+}
+
+.sn-component .ml-6 {
+  margin-left: 1.5rem;
+}
+
+.sn-component .p-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sn-component .p-2 {
+  padding: 0.5rem;
+}
+
 .sn-component .py-1, .sn-component .sn-dropdown-menu, .sn-component .sn-select-button {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+.sn-component .py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
 }
 
 .sn-component .py-2, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select-list-option {
@@ -3170,19 +3384,9 @@ template {
   padding-bottom: 0.75rem;
 }
 
-.sn-component .px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.sn-component .px-2, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.sn-component .px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.sn-component .py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .sn-component .px-1 {
@@ -3190,16 +3394,27 @@ template {
   padding-right: 0.25rem;
 }
 
-.sn-component .py-1, .sn-component .sn-dropdown-menu, .sn-component .sn-select-button {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+.sn-component .px-2, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list-item {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
-.sn-component .p-0 {
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
+.sn-component .px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.sn-component .px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.sn-component .pr-2 {
+  padding-right: 0.5rem;
+}
+
+.sn-component .pl-1 {
+  padding-left: 0.25rem;
 }
 
 .sn-component .w-auto, .sn-component .sn-dropdown-menu, .sn-component .sn-select {
@@ -3210,8 +3425,32 @@ template {
   width: 100%;
 }
 
+.sn-component .w-0 {
+  width: 0;
+}
+
+.sn-component .w-3\.5 {
+  width: 0.875rem;
+}
+
+.sn-component .w-5 {
+  width: 1.25rem;
+}
+
+.sn-component .w-8 {
+  width: 2rem;
+}
+
 .sn-component .w-56, .sn-component .sn-dropdown-menu-list {
   width: 14rem;
+}
+
+.sn-component .w-70 {
+  width: 17.5rem;
+}
+
+.sn-component .w-80 {
+  width: 20rem;
 }
 
 .sn-component .w-20px {
@@ -3226,12 +3465,32 @@ template {
   min-width: 20px;
 }
 
+.sn-component .min-w-5 {
+  min-width: 1.25rem;
+}
+
+.sn-component .min-w-40 {
+  min-width: 10rem;
+}
+
 .sn-component .min-w-80 {
   min-width: 20rem;
 }
 
+.sn-component .max-w-xs {
+  max-width: 20rem;
+}
+
 .sn-component .max-w-md {
   max-width: 28rem;
+}
+
+.sn-component .max-w-40 {
+  max-width: 10rem;
+}
+
+.sn-component .max-w-290px {
+  max-width: 290px;
 }
 
 .sn-component .duration-150 {
