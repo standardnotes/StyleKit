@@ -2,10 +2,51 @@
   height: 100%;
 }
 
+.h-90vh {
+  height: 90vh;
+}
+
+.h-0 {
+  height: 0;
+}
+.h-3\.5 {
+  height: 0.875rem;
+}
+.h-4\.5 {
+  height: 1.125rem;
+}
+.h-5 {
+  height: 1.25rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.h-7 {
+  height: 1.75rem;
+}
+.h-8 {
+  height: 2rem;
+}
+.h-9 {
+  height: 2.25rem;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.h-18 {
+  height: 4.5rem;
+}
+
+.h-1px {
+  height: 1px;
+}
 .h-20px {
   height: 20px;
 }
 
+.min-h-5 {
+  min-height: 1.25rem;
+}
 .m-h-32 {
   min-height: 2rem;
 }
@@ -14,6 +55,6 @@
   height: 20px;
 }
 
-.leading-4 {
-  line-height: 1rem;
+.max-h-120 {
+  max-height: 30rem;
 }
