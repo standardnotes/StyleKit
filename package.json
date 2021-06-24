@@ -1,6 +1,6 @@
 {
   "name": "sn-stylekit",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "main": "dist/stylekit.js",
   "scripts": {
     "build": "webpack --mode='production'",
@@ -12,12 +12,15 @@
     "clean-cache:gh-pages": "rm -rf node_modules/.cache/gh-pages",
     "publish:storybook": "gh-pages -b gh-pages -d storybook"
   },
+  "dependencies": {
+    "@reach/listbox": "^0.15.0",
+    "@reach/menu-button": "^0.15.1",
+    "prop-types": "^15.7.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/plugin-transform-react-jsx": "^7.12.16",
-    "@reach/listbox": "^0.13.0",
-    "@reach/menu-button": "^0.13.0",
     "@storybook/addon-a11y": "^6.1.17",
     "@storybook/addon-actions": "^6.1.17",
     "@storybook/addon-essentials": "^6.1.17",
