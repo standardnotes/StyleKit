@@ -1,406 +1,15 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("preact"));
 	else if(typeof define === 'function' && define.amd)
-		define("SK", [], factory);
+		define("SK", ["preact"], factory);
 	else if(typeof exports === 'object')
-		exports["SK"] = factory();
+		exports["SK"] = factory(require("preact"));
 	else
-		root["SK"] = root["SK"] || {}, root["SK"]["components"] = factory();
-})(self, function() {
+		root["SK"] = root["SK"] || {}, root["SK"]["components"] = factory(root["_"]);
+})(self, function(__WEBPACK_EXTERNAL_MODULE__670__) {
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
-
-/***/ 972:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "sY": () => (/* binding */ N),
-/* harmony export */   "ZB": () => (/* binding */ O),
-/* harmony export */   "az": () => (/* binding */ a),
-/* harmony export */   "h": () => (/* binding */ a),
-/* harmony export */   "HY": () => (/* binding */ y),
-/* harmony export */   "Vf": () => (/* binding */ h),
-/* harmony export */   "wA": () => (/* binding */ p),
-/* harmony export */   "Tm": () => (/* binding */ S),
-/* harmony export */   "kr": () => (/* binding */ q),
-/* harmony export */   "bR": () => (/* binding */ w),
-/* harmony export */   "YM": () => (/* binding */ n)
-/* harmony export */ });
-/* unused harmony export isValidElement */
-var n,
-    l,
-    u,
-    i,
-    t,
-    r,
-    o = {},
-    f = [],
-    e = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
-
-function c(n, l) {
-  for (var u in l) n[u] = l[u];
-
-  return n;
-}
-
-function s(n) {
-  var l = n.parentNode;
-  l && l.removeChild(n);
-}
-
-function a(n, l, u) {
-  var i,
-      t,
-      r,
-      o = arguments,
-      f = {};
-
-  for (r in l) "key" == r ? i = l[r] : "ref" == r ? t = l[r] : f[r] = l[r];
-
-  if (arguments.length > 3) for (u = [u], r = 3; r < arguments.length; r++) u.push(o[r]);
-  if (null != u && (f.children = u), "function" == typeof n && null != n.defaultProps) for (r in n.defaultProps) void 0 === f[r] && (f[r] = n.defaultProps[r]);
-  return v(n, f, i, t, null);
-}
-
-function v(l, u, i, t, r) {
-  var o = {
-    type: l,
-    props: u,
-    key: i,
-    ref: t,
-    __k: null,
-    __: null,
-    __b: 0,
-    __e: null,
-    __d: void 0,
-    __c: null,
-    __h: null,
-    constructor: void 0,
-    __v: null == r ? ++n.__v : r
-  };
-  return null != n.vnode && n.vnode(o), o;
-}
-
-function h() {
-  return {
-    current: null
-  };
-}
-
-function y(n) {
-  return n.children;
-}
-
-function p(n, l) {
-  this.props = n, this.context = l;
-}
-
-function d(n, l) {
-  if (null == l) return n.__ ? d(n.__, n.__.__k.indexOf(n) + 1) : null;
-
-  for (var u; l < n.__k.length; l++) if (null != (u = n.__k[l]) && null != u.__e) return u.__e;
-
-  return "function" == typeof n.type ? d(n) : null;
-}
-
-function _(n) {
-  var l, u;
-
-  if (null != (n = n.__) && null != n.__c) {
-    for (n.__e = n.__c.base = null, l = 0; l < n.__k.length; l++) if (null != (u = n.__k[l]) && null != u.__e) {
-      n.__e = n.__c.base = u.__e;
-      break;
-    }
-
-    return _(n);
-  }
-}
-
-function k(l) {
-  (!l.__d && (l.__d = !0) && u.push(l) && !m.__r++ || t !== n.debounceRendering) && ((t = n.debounceRendering) || i)(m);
-}
-
-function m() {
-  for (var n; m.__r = u.length;) n = u.sort(function (n, l) {
-    return n.__v.__b - l.__v.__b;
-  }), u = [], n.some(function (n) {
-    var l, u, i, t, r, o;
-    n.__d && (r = (t = (l = n).__v).__e, (o = l.__P) && (u = [], (i = c({}, t)).__v = t.__v + 1, T(o, t, i, l.__n, void 0 !== o.ownerSVGElement, null != t.__h ? [r] : null, u, null == r ? d(t) : r, t.__h), j(u, t), t.__e != r && _(t)));
-  });
-}
-
-function b(n, l, u, i, t, r, e, c, s, a) {
-  var h,
-      p,
-      _,
-      k,
-      m,
-      b,
-      w,
-      A = i && i.__k || f,
-      P = A.length;
-
-  for (u.__k = [], h = 0; h < l.length; h++) if (null != (k = u.__k[h] = null == (k = l[h]) || "boolean" == typeof k ? null : "string" == typeof k || "number" == typeof k ? v(null, k, null, null, k) : Array.isArray(k) ? v(y, {
-    children: k
-  }, null, null, null) : k.__b > 0 ? v(k.type, k.props, k.key, null, k.__v) : k)) {
-    if (k.__ = u, k.__b = u.__b + 1, null === (_ = A[h]) || _ && k.key == _.key && k.type === _.type) A[h] = void 0;else for (p = 0; p < P; p++) {
-      if ((_ = A[p]) && k.key == _.key && k.type === _.type) {
-        A[p] = void 0;
-        break;
-      }
-
-      _ = null;
-    }
-    T(n, k, _ = _ || o, t, r, e, c, s, a), m = k.__e, (p = k.ref) && _.ref != p && (w || (w = []), _.ref && w.push(_.ref, null, k), w.push(p, k.__c || m, k)), null != m ? (null == b && (b = m), "function" == typeof k.type && null != k.__k && k.__k === _.__k ? k.__d = s = g(k, s, n) : s = x(n, k, _, A, m, s), a || "option" !== u.type ? "function" == typeof u.type && (u.__d = s) : n.value = "") : s && _.__e == s && s.parentNode != n && (s = d(_));
-  }
-
-  for (u.__e = b, h = P; h--;) null != A[h] && ("function" == typeof u.type && null != A[h].__e && A[h].__e == u.__d && (u.__d = d(i, h + 1)), L(A[h], A[h]));
-
-  if (w) for (h = 0; h < w.length; h++) I(w[h], w[++h], w[++h]);
-}
-
-function g(n, l, u) {
-  var i, t;
-
-  for (i = 0; i < n.__k.length; i++) (t = n.__k[i]) && (t.__ = n, l = "function" == typeof t.type ? g(t, l, u) : x(u, t, t, n.__k, t.__e, l));
-
-  return l;
-}
-
-function w(n, l) {
-  return l = l || [], null == n || "boolean" == typeof n || (Array.isArray(n) ? n.some(function (n) {
-    w(n, l);
-  }) : l.push(n)), l;
-}
-
-function x(n, l, u, i, t, r) {
-  var o, f, e;
-  if (void 0 !== l.__d) o = l.__d, l.__d = void 0;else if (null == u || t != r || null == t.parentNode) n: if (null == r || r.parentNode !== n) n.appendChild(t), o = null;else {
-    for (f = r, e = 0; (f = f.nextSibling) && e < i.length; e += 2) if (f == t) break n;
-
-    n.insertBefore(t, r), o = r;
-  }
-  return void 0 !== o ? o : t.nextSibling;
-}
-
-function A(n, l, u, i, t) {
-  var r;
-
-  for (r in u) "children" === r || "key" === r || r in l || C(n, r, null, u[r], i);
-
-  for (r in l) t && "function" != typeof l[r] || "children" === r || "key" === r || "value" === r || "checked" === r || u[r] === l[r] || C(n, r, l[r], u[r], i);
-}
-
-function P(n, l, u) {
-  "-" === l[0] ? n.setProperty(l, u) : n[l] = null == u ? "" : "number" != typeof u || e.test(l) ? u : u + "px";
-}
-
-function C(n, l, u, i, t) {
-  var r;
-
-  n: if ("style" === l) {
-    if ("string" == typeof u) n.style.cssText = u;else {
-      if ("string" == typeof i && (n.style.cssText = i = ""), i) for (l in i) u && l in u || P(n.style, l, "");
-      if (u) for (l in u) i && u[l] === i[l] || P(n.style, l, u[l]);
-    }
-  } else if ("o" === l[0] && "n" === l[1]) r = l !== (l = l.replace(/Capture$/, "")), l = l.toLowerCase() in n ? l.toLowerCase().slice(2) : l.slice(2), n.l || (n.l = {}), n.l[l + r] = u, u ? i || n.addEventListener(l, r ? H : $, r) : n.removeEventListener(l, r ? H : $, r);else if ("dangerouslySetInnerHTML" !== l) {
-    if (t) l = l.replace(/xlink[H:h]/, "h").replace(/sName$/, "s");else if ("href" !== l && "list" !== l && "form" !== l && "download" !== l && l in n) try {
-      n[l] = null == u ? "" : u;
-      break n;
-    } catch (n) {}
-    "function" == typeof u || (null != u && (!1 !== u || "a" === l[0] && "r" === l[1]) ? n.setAttribute(l, u) : n.removeAttribute(l));
-  }
-}
-
-function $(l) {
-  this.l[l.type + !1](n.event ? n.event(l) : l);
-}
-
-function H(l) {
-  this.l[l.type + !0](n.event ? n.event(l) : l);
-}
-
-function T(l, u, i, t, r, o, f, e, s) {
-  var a,
-      v,
-      h,
-      d,
-      _,
-      k,
-      m,
-      g,
-      w,
-      x,
-      A,
-      P = u.type;
-
-  if (void 0 !== u.constructor) return null;
-  null != i.__h && (s = i.__h, e = u.__e = i.__e, u.__h = null, o = [e]), (a = n.__b) && a(u);
-
-  try {
-    n: if ("function" == typeof P) {
-      if (g = u.props, w = (a = P.contextType) && t[a.__c], x = a ? w ? w.props.value : a.__ : t, i.__c ? m = (v = u.__c = i.__c).__ = v.__E : ("prototype" in P && P.prototype.render ? u.__c = v = new P(g, x) : (u.__c = v = new p(g, x), v.constructor = P, v.render = M), w && w.sub(v), v.props = g, v.state || (v.state = {}), v.context = x, v.__n = t, h = v.__d = !0, v.__h = []), null == v.__s && (v.__s = v.state), null != P.getDerivedStateFromProps && (v.__s == v.state && (v.__s = c({}, v.__s)), c(v.__s, P.getDerivedStateFromProps(g, v.__s))), d = v.props, _ = v.state, h) null == P.getDerivedStateFromProps && null != v.componentWillMount && v.componentWillMount(), null != v.componentDidMount && v.__h.push(v.componentDidMount);else {
-        if (null == P.getDerivedStateFromProps && g !== d && null != v.componentWillReceiveProps && v.componentWillReceiveProps(g, x), !v.__e && null != v.shouldComponentUpdate && !1 === v.shouldComponentUpdate(g, v.__s, x) || u.__v === i.__v) {
-          v.props = g, v.state = v.__s, u.__v !== i.__v && (v.__d = !1), v.__v = u, u.__e = i.__e, u.__k = i.__k, v.__h.length && f.push(v);
-          break n;
-        }
-
-        null != v.componentWillUpdate && v.componentWillUpdate(g, v.__s, x), null != v.componentDidUpdate && v.__h.push(function () {
-          v.componentDidUpdate(d, _, k);
-        });
-      }
-      v.context = x, v.props = g, v.state = v.__s, (a = n.__r) && a(u), v.__d = !1, v.__v = u, v.__P = l, a = v.render(v.props, v.state, v.context), v.state = v.__s, null != v.getChildContext && (t = c(c({}, t), v.getChildContext())), h || null == v.getSnapshotBeforeUpdate || (k = v.getSnapshotBeforeUpdate(d, _)), A = null != a && a.type === y && null == a.key ? a.props.children : a, b(l, Array.isArray(A) ? A : [A], u, i, t, r, o, f, e, s), v.base = u.__e, u.__h = null, v.__h.length && f.push(v), m && (v.__E = v.__ = null), v.__e = !1;
-    } else null == o && u.__v === i.__v ? (u.__k = i.__k, u.__e = i.__e) : u.__e = z(i.__e, u, i, t, r, o, f, s);
-
-    (a = n.diffed) && a(u);
-  } catch (l) {
-    u.__v = null, (s || null != o) && (u.__e = e, u.__h = !!s, o[o.indexOf(e)] = null), n.__e(l, u, i);
-  }
-}
-
-function j(l, u) {
-  n.__c && n.__c(u, l), l.some(function (u) {
-    try {
-      l = u.__h, u.__h = [], l.some(function (n) {
-        n.call(u);
-      });
-    } catch (l) {
-      n.__e(l, u.__v);
-    }
-  });
-}
-
-function z(n, l, u, i, t, r, e, c) {
-  var a,
-      v,
-      h,
-      y,
-      p = u.props,
-      d = l.props,
-      _ = l.type,
-      k = 0;
-  if ("svg" === _ && (t = !0), null != r) for (; k < r.length; k++) if ((a = r[k]) && (a === n || (_ ? a.localName == _ : 3 == a.nodeType))) {
-    n = a, r[k] = null;
-    break;
-  }
-
-  if (null == n) {
-    if (null === _) return document.createTextNode(d);
-    n = t ? document.createElementNS("http://www.w3.org/2000/svg", _) : document.createElement(_, d.is && d), r = null, c = !1;
-  }
-
-  if (null === _) p === d || c && n.data === d || (n.data = d);else {
-    if (r = r && f.slice.call(n.childNodes), v = (p = u.props || o).dangerouslySetInnerHTML, h = d.dangerouslySetInnerHTML, !c) {
-      if (null != r) for (p = {}, y = 0; y < n.attributes.length; y++) p[n.attributes[y].name] = n.attributes[y].value;
-      (h || v) && (h && (v && h.__html == v.__html || h.__html === n.innerHTML) || (n.innerHTML = h && h.__html || ""));
-    }
-
-    if (A(n, d, p, t, c), h) l.__k = [];else if (k = l.props.children, b(n, Array.isArray(k) ? k : [k], l, u, i, t && "foreignObject" !== _, r, e, n.firstChild, c), null != r) for (k = r.length; k--;) null != r[k] && s(r[k]);
-    c || ("value" in d && void 0 !== (k = d.value) && (k !== n.value || "progress" === _ && !k) && C(n, "value", k, p.value, !1), "checked" in d && void 0 !== (k = d.checked) && k !== n.checked && C(n, "checked", k, p.checked, !1));
-  }
-  return n;
-}
-
-function I(l, u, i) {
-  try {
-    "function" == typeof l ? l(u) : l.current = u;
-  } catch (l) {
-    n.__e(l, i);
-  }
-}
-
-function L(l, u, i) {
-  var t, r, o;
-
-  if (n.unmount && n.unmount(l), (t = l.ref) && (t.current && t.current !== l.__e || I(t, null, u)), i || "function" == typeof l.type || (i = null != (r = l.__e)), l.__e = l.__d = void 0, null != (t = l.__c)) {
-    if (t.componentWillUnmount) try {
-      t.componentWillUnmount();
-    } catch (l) {
-      n.__e(l, u);
-    }
-    t.base = t.__P = null;
-  }
-
-  if (t = l.__k) for (o = 0; o < t.length; o++) t[o] && L(t[o], u, i);
-  null != r && s(r);
-}
-
-function M(n, l, u) {
-  return this.constructor(n, u);
-}
-
-function N(l, u, i) {
-  var t, r, e;
-  n.__ && n.__(l, u), r = (t = "function" == typeof i) ? null : i && i.__k || u.__k, e = [], T(u, l = (!t && i || u).__k = a(y, null, [l]), r || o, o, void 0 !== u.ownerSVGElement, !t && i ? [i] : r ? null : u.firstChild ? f.slice.call(u.childNodes) : null, e, !t && i ? i : r ? r.__e : u.firstChild, t), j(e, l);
-}
-
-function O(n, l) {
-  N(n, l, O);
-}
-
-function S(n, l, u) {
-  var i,
-      t,
-      r,
-      o = arguments,
-      f = c({}, n.props);
-
-  for (r in l) "key" == r ? i = l[r] : "ref" == r ? t = l[r] : f[r] = l[r];
-
-  if (arguments.length > 3) for (u = [u], r = 3; r < arguments.length; r++) u.push(o[r]);
-  return null != u && (f.children = u), v(n.type, f, i || n.key, t || n.ref, null);
-}
-
-function q(n, l) {
-  var u = {
-    __c: l = "__cC" + r++,
-    __: n,
-    Consumer: function (n, l) {
-      return n.children(l);
-    },
-    Provider: function (n) {
-      var u, i;
-      return this.getChildContext || (u = [], (i = {})[l] = this, this.getChildContext = function () {
-        return i;
-      }, this.shouldComponentUpdate = function (n) {
-        this.props.value !== n.value && u.some(k);
-      }, this.sub = function (n) {
-        u.push(n);
-        var l = n.componentWillUnmount;
-
-        n.componentWillUnmount = function () {
-          u.splice(u.indexOf(n), 1), l && l.call(n);
-        };
-      }), n.children;
-    }
-  };
-  return u.Provider.__ = u.Consumer.contextType = u;
-}
-
-n = {
-  __e: function (n, l) {
-    for (var u, i, t; l = l.__;) if ((u = l.__c) && !u.__) try {
-      if ((i = u.constructor) && null != i.getDerivedStateFromError && (u.setState(i.getDerivedStateFromError(n)), t = u.__d), null != u.componentDidCatch && (u.componentDidCatch(n), t = u.__d), t) return u.__E = u;
-    } catch (l) {
-      n = l;
-    }
-
-    throw n;
-  },
-  __v: 0
-}, l = function (n) {
-  return null != n && void 0 === n.constructor;
-}, p.prototype.setState = function (n, l) {
-  var u;
-  u = null != this.__s && this.__s !== this.state ? this.__s : this.__s = c({}, this.state), "function" == typeof n && (n = n(c({}, u), this.props)), n && c(u, n), null != n && this.__v && (l && this.__h.push(l), k(this));
-}, p.prototype.forceUpdate = function (n) {
-  this.__v && (this.__e = !0, n && this.__h.push(n), k(this));
-}, p.prototype.render = y, u = [], i = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, m.__r = 0, r = 0;
-
-
-/***/ }),
 
 /***/ 245:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
@@ -643,77 +252,7 @@ module.exports = tabbable;
 
 /***/ }),
 
-/***/ 92:
-/***/ ((module) => {
-
-"use strict";
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var __DEV__ = "production" !== 'production';
-
-var warning = function () {};
-
-if (__DEV__) {
-  var printWarning = function printWarning(format, args) {
-    var len = arguments.length;
-    args = new Array(len > 1 ? len - 1 : 0);
-
-    for (var key = 1; key < len; key++) {
-      args[key - 1] = arguments[key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  warning = function (condition, format, args) {
-    var len = arguments.length;
-    args = new Array(len > 2 ? len - 2 : 0);
-
-    for (var key = 2; key < len; key++) {
-      args[key - 2] = arguments[key];
-    }
-
-    if (format === undefined) {
-      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-
-    if (!condition) {
-      printWarning.apply(null, [format].concat(args));
-    }
-  };
-}
-
-module.exports = warning;
-
-/***/ }),
-
-/***/ 839:
+/***/ 998:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -727,8 +266,8 @@ __webpack_require__.d(__webpack_exports__, {
   "Select": () => (/* reexport */ Select_component)
 });
 
-// EXTERNAL MODULE: ./node_modules/preact/dist/preact.module.js
-var preact_module = __webpack_require__(972);
+// EXTERNAL MODULE: external {"commonjs":"preact","commonjs2":"preact","amd":"preact","root":"_"}
+var external_commonjs_preact_commonjs2_preact_amd_preact_root_ = __webpack_require__(670);
 ;// CONCATENATED MODULE: ./node_modules/preact/hooks/dist/hooks.module.js
 
 var t,
@@ -736,14 +275,14 @@ var t,
     r,
     o = 0,
     i = [],
-    c = preact_module/* options.__b */.YM.__b,
-    f = preact_module/* options.__r */.YM.__r,
-    e = preact_module/* options.diffed */.YM.diffed,
-    a = preact_module/* options.__c */.YM.__c,
-    v = preact_module/* options.unmount */.YM.unmount;
+    c = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b,
+    f = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r,
+    e = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed,
+    a = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c,
+    v = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount;
 
 function m(t, r) {
-  preact_module/* options.__h */.YM.__h && preact_module/* options.__h */.YM.__h(u, t, o || r), o = 0;
+  external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h(u, t, o || r), o = 0;
   var i = u.__H || (u.__H = {
     __: [],
     __h: []
@@ -765,12 +304,12 @@ function p(n, r, o) {
 
 function y(r, o) {
   var i = m(t++, 3);
-  !preact_module/* options.__s */.YM.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__H.__h.push(i));
+  !external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__H.__h.push(i));
 }
 
 function h(r, o) {
   var i = m(t++, 4);
-  !preact_module/* options.__s */.YM.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__h.push(i));
+  !external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__h.push(i));
 }
 
 function s(n) {
@@ -805,7 +344,7 @@ function F(n) {
 }
 
 function T(t, u) {
-  preact_module/* options.useDebugValue */.YM.useDebugValue && preact_module/* options.useDebugValue */.YM.useDebugValue(u ? u(t) : t);
+  external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.useDebugValue && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.useDebugValue(u ? u(t) : t);
 }
 
 function q(n) {
@@ -823,21 +362,21 @@ function x() {
     if (t.__P) try {
       t.__H.__h.forEach(g), t.__H.__h.forEach(j), t.__H.__h = [];
     } catch (u) {
-      t.__H.__h = [], preact_module/* options.__e */.YM.__e(u, t.__v);
+      t.__H.__h = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, t.__v);
     }
   }), i = [];
 }
 
-preact_module/* options.__b */.YM.__b = function (n) {
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = function (n) {
   u = null, c && c(n);
-}, preact_module/* options.__r */.YM.__r = function (n) {
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r = function (n) {
   f && f(n), t = 0;
   var r = (u = n.__c).__H;
   r && (r.__h.forEach(g), r.__h.forEach(j), r.__h = []);
-}, preact_module/* options.diffed */.YM.diffed = function (t) {
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed = function (t) {
   e && e(t);
   var o = t.__c;
-  o && o.__H && o.__H.__h.length && (1 !== i.push(o) && r === preact_module/* options.requestAnimationFrame */.YM.requestAnimationFrame || ((r = preact_module/* options.requestAnimationFrame */.YM.requestAnimationFrame) || function (n) {
+  o && o.__H && o.__H.__h.length && (1 !== i.push(o) && r === external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame || ((r = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame) || function (n) {
     var t,
         u = function () {
       clearTimeout(r), b && cancelAnimationFrame(t), setTimeout(n);
@@ -846,7 +385,7 @@ preact_module/* options.__b */.YM.__b = function (n) {
 
     b && (t = requestAnimationFrame(u));
   })(x)), u = void 0;
-}, preact_module/* options.__c */.YM.__c = function (t, u) {
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c = function (t, u) {
   u.some(function (t) {
     try {
       t.__h.forEach(g), t.__h = t.__h.filter(function (n) {
@@ -855,16 +394,16 @@ preact_module/* options.__b */.YM.__b = function (n) {
     } catch (r) {
       u.some(function (n) {
         n.__h && (n.__h = []);
-      }), u = [], preact_module/* options.__e */.YM.__e(r, t.__v);
+      }), u = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(r, t.__v);
     }
   }), a && a(t, u);
-}, preact_module/* options.unmount */.YM.unmount = function (t) {
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount = function (t) {
   v && v(t);
   var u = t.__c;
   if (u && u.__H) try {
     u.__H.__.forEach(g);
   } catch (t) {
-    preact_module/* options.__e */.YM.__e(t, u.__v);
+    external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(t, u.__v);
   }
 };
 var b = "function" == typeof requestAnimationFrame;
@@ -922,18 +461,18 @@ function compat_module_g(n, t) {
   }
 
   function r(t) {
-    return this.shouldComponentUpdate = e, (0,preact_module/* createElement */.az)(n, t);
+    return this.shouldComponentUpdate = e, (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(n, t);
   }
 
   return r.displayName = "Memo(" + (n.displayName || n.name) + ")", r.prototype.isReactComponent = !0, r.__f = !0, r;
 }
 
-(E.prototype = new preact_module/* Component */.wA()).isPureReactComponent = !0, E.prototype.shouldComponentUpdate = function (n, t) {
+(E.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).isPureReactComponent = !0, E.prototype.shouldComponentUpdate = function (n, t) {
   return S(this.props, n) || S(this.state, t);
 };
-var compat_module_w = preact_module/* options.__b */.YM.__b;
+var compat_module_w = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b;
 
-preact_module/* options.__b */.YM.__b = function (n) {
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = function (n) {
   n.type && n.type.__f && n.ref && (n.props.ref = n.ref, n.ref = null), compat_module_w && compat_module_w(n);
 };
 
@@ -949,22 +488,22 @@ function compat_module_x(n) {
 }
 
 var N = function (n, t) {
-  return null == n ? null : (0,preact_module/* toChildArray */.bR)((0,preact_module/* toChildArray */.bR)(n).map(t));
+  return null == n ? null : (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)((0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(n).map(t));
 },
     compat_module_k = {
   map: N,
   forEach: N,
   count: function (n) {
-    return n ? (0,preact_module/* toChildArray */.bR)(n).length : 0;
+    return n ? (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(n).length : 0;
   },
   only: function (n) {
-    var t = (0,preact_module/* toChildArray */.bR)(n);
+    var t = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(n);
     if (1 !== t.length) throw "Children.only";
     return t[0];
   },
-  toArray: preact_module/* toChildArray */.bR
+  toArray: external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray
 },
-    compat_module_A = preact_module/* options.__e */.YM.__e;
+    compat_module_A = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e;
 
 function O() {
   this.__u = 0, this.t = null, this.__b = null;
@@ -985,7 +524,7 @@ function U(n) {
       r = n;
     }), r) throw r;
     if (!e) throw t;
-    return (0,preact_module/* createElement */.az)(e, u);
+    return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(e, u);
   }
 
   return u.displayName = "Lazy", u.__f = !0, u;
@@ -995,10 +534,10 @@ function D() {
   this.u = null, this.o = null;
 }
 
-preact_module/* options.__e */.YM.__e = function (n, t, e) {
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e = function (n, t, e) {
   if (n.then) for (var r, u = t; u = u.__;) if ((r = u.__c) && r.__c) return null == t.__e && (t.__e = e.__e, t.__k = e.__k), r.__c(n, t);
   compat_module_A(n, t, e);
-}, (O.prototype = new preact_module/* Component */.wA()).__c = function (n, t) {
+}, (O.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).__c = function (n, t) {
   var e = t.__c,
       r = this;
   null == r.t && (r.t = []), r.t.push(e);
@@ -1057,8 +596,8 @@ preact_module/* options.__e */.YM.__e = function (n, t, e) {
     this.__b = null;
   }
 
-  var u = t.__e && (0,preact_module/* createElement */.az)(preact_module/* Fragment */.HY, null, n.fallback);
-  return u && (u.__h = null), [(0,preact_module/* createElement */.az)(preact_module/* Fragment */.HY, null, t.__e ? null : n.children), u];
+  var u = t.__e && (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment, null, n.fallback);
+  return u && (u.__h = null), [(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment, null, t.__e ? null : n.children), u];
 };
 
 var compat_module_F = function (n, t, e) {
@@ -1080,7 +619,7 @@ function compat_module_T(n) {
   var t = this,
       e = n.i;
   t.componentWillUnmount = function () {
-    (0,preact_module/* render */.sY)(null, t.l), t.l = null, t.i = null;
+    (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)(null, t.l), t.l = null, t.i = null;
   }, t.i && t.i !== e && t.componentWillUnmount(), n.__v ? (t.l || (t.i = e, t.l = {
     nodeType: 1,
     parentNode: e,
@@ -1094,19 +633,19 @@ function compat_module_T(n) {
     removeChild: function (n) {
       this.childNodes.splice(this.childNodes.indexOf(n) >>> 1, 1), t.i.removeChild(n);
     }
-  }), (0,preact_module/* render */.sY)((0,preact_module/* createElement */.az)(M, {
+  }), (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)((0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(M, {
     context: t.context
   }, n.__v), t.l)) : t.l && t.componentWillUnmount();
 }
 
 function compat_module_j(n, t) {
-  return (0,preact_module/* createElement */.az)(compat_module_T, {
+  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(compat_module_T, {
     __v: n,
     i: t
   });
 }
 
-(D.prototype = new preact_module/* Component */.wA()).__e = function (n) {
+(D.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).__e = function (n) {
   var t = this,
       e = L(t.__v),
       r = t.o.get(n);
@@ -1119,7 +658,7 @@ function compat_module_j(n, t) {
   };
 }, D.prototype.render = function (n) {
   this.u = null, this.o = new Map();
-  var t = (0,preact_module/* toChildArray */.bR)(n.children);
+  var t = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(n.children);
   n.revealOrder && "b" === n.revealOrder[0] && t.reverse();
 
   for (var e = t.length; e--;) this.o.set(t[e], this.u = [1, 0, this.u]);
@@ -1139,15 +678,15 @@ var I = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.element"
 };
 
 function V(n, t, e) {
-  return null == t.__k && (t.textContent = ""), (0,preact_module/* render */.sY)(n, t), "function" == typeof e && e(), n ? n.__c : null;
+  return null == t.__k && (t.textContent = ""), (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)(n, t), "function" == typeof e && e(), n ? n.__c : null;
 }
 
 function z(n, t, e) {
-  return (0,preact_module/* hydrate */.ZB)(n, t), "function" == typeof e && e(), n ? n.__c : null;
+  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.hydrate)(n, t), "function" == typeof e && e(), n ? n.__c : null;
 }
 
-preact_module/* Component.prototype.isReactComponent */.wA.prototype.isReactComponent = {}, ["componentWillMount", "componentWillReceiveProps", "componentWillUpdate"].forEach(function (n) {
-  Object.defineProperty(preact_module/* Component.prototype */.wA.prototype, n, {
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component.prototype.isReactComponent = {}, ["componentWillMount", "componentWillReceiveProps", "componentWillUpdate"].forEach(function (n) {
+  Object.defineProperty(external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component.prototype, n, {
     configurable: !0,
     get: function () {
       return this["UNSAFE_" + n];
@@ -1161,7 +700,7 @@ preact_module/* Component.prototype.isReactComponent */.wA.prototype.isReactComp
     }
   });
 });
-var B = preact_module/* options.event */.YM.event;
+var B = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.event;
 
 function H() {}
 
@@ -1173,7 +712,7 @@ function Y() {
   return this.defaultPrevented;
 }
 
-preact_module/* options.event */.YM.event = function (n) {
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.event = function (n) {
   return B && (n = B(n)), n.persist = H, n.isPropagationStopped = Z, n.isDefaultPrevented = Y, n.nativeEvent = n;
 };
 
@@ -1184,9 +723,9 @@ var $,
     return this.class;
   }
 },
-    G = preact_module/* options.vnode */.YM.vnode;
+    G = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.vnode;
 
-preact_module/* options.vnode */.YM.vnode = function (n) {
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.vnode = function (n) {
   var t = n.type,
       e = n.props,
       r = e;
@@ -1197,9 +736,9 @@ preact_module/* options.vnode */.YM.vnode = function (n) {
       "value" === u && "defaultValue" in e && null == o || ("defaultValue" === u && "value" in e && null == e.value ? u = "value" : "download" === u && !0 === o ? o = "" : /ondoubleclick/i.test(u) ? u = "ondblclick" : /^onchange(textarea|input)/i.test(u + t) && !P(e.type) ? u = "oninput" : /^on(Ani|Tra|Tou|BeforeInp)/.test(u) ? u = u.toLowerCase() : W.test(u) ? u = u.replace(/[A-Z0-9]/, "-$&").toLowerCase() : null === o && (o = void 0), r[u] = o);
     }
 
-    "select" == t && r.multiple && Array.isArray(r.value) && (r.value = (0,preact_module/* toChildArray */.bR)(e.children).forEach(function (n) {
+    "select" == t && r.multiple && Array.isArray(r.value) && (r.value = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(e.children).forEach(function (n) {
       n.props.selected = -1 != r.value.indexOf(n.props.value);
-    })), "select" == t && null != r.defaultValue && (r.value = (0,preact_module/* toChildArray */.bR)(e.children).forEach(function (n) {
+    })), "select" == t && null != r.defaultValue && (r.value = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(e.children).forEach(function (n) {
       n.props.selected = r.multiple ? -1 != r.defaultValue.indexOf(n.props.value) : r.defaultValue == n.props.value;
     })), n.props = r;
   }
@@ -1207,9 +746,9 @@ preact_module/* options.vnode */.YM.vnode = function (n) {
   t && e.class != e.className && (compat_module_q.enumerable = "className" in e, null != e.className && (r.class = e.className), Object.defineProperty(r, "className", compat_module_q)), n.$$typeof = I, G && G(n);
 };
 
-var J = preact_module/* options.__r */.YM.__r;
+var J = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r;
 
-preact_module/* options.__r */.YM.__r = function (n) {
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r = function (n) {
   J && J(n), $ = n.__c;
 };
 
@@ -1238,7 +777,7 @@ var un = "object" == typeof performance && "function" == typeof performance.now 
     on = "16.8.0";
 
 function ln(n) {
-  return preact_module/* createElement.bind */.az.bind(null, n);
+  return external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement.bind(null, n);
 }
 
 function fn(n) {
@@ -1246,11 +785,11 @@ function fn(n) {
 }
 
 function cn(n) {
-  return fn(n) ? preact_module/* cloneElement.apply */.Tm.apply(null, arguments) : n;
+  return fn(n) ? external_commonjs_preact_commonjs2_preact_amd_preact_root_.cloneElement.apply(null, arguments) : n;
 }
 
 function an(n) {
-  return !!n.__k && ((0,preact_module/* render */.sY)(null, n), !0);
+  return !!n.__k && ((0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)(null, n), !0);
 }
 
 function sn(n) {
@@ -1260,7 +799,7 @@ function sn(n) {
 var hn = function (n, t) {
   return n(t);
 },
-    pn = preact_module/* Fragment */.HY;
+    pn = external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment;
 
 /* harmony default export */ const compat_module = ({
   useState: l,
@@ -1279,20 +818,20 @@ var hn = function (n, t) {
   hydrate: z,
   unmountComponentAtNode: an,
   createPortal: compat_module_j,
-  createElement: preact_module/* createElement */.az,
-  createContext: preact_module/* createContext */.kr,
+  createElement: external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement,
+  createContext: external_commonjs_preact_commonjs2_preact_amd_preact_root_.createContext,
   createFactory: ln,
   cloneElement: cn,
-  createRef: preact_module/* createRef */.Vf,
-  Fragment: preact_module/* Fragment */.HY,
+  createRef: external_commonjs_preact_commonjs2_preact_amd_preact_root_.createRef,
+  Fragment: external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment,
   isValidElement: fn,
   findDOMNode: sn,
-  Component: preact_module/* Component */.wA,
+  Component: external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component,
   PureComponent: E,
   memo: compat_module_g,
   forwardRef: compat_module_x,
   unstable_batchedUpdates: hn,
-  StrictMode: preact_module/* Fragment */.HY,
+  StrictMode: external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment,
   Suspense: O,
   SuspenseList: D,
   lazy: U,
@@ -1302,18 +841,18 @@ var hn = function (n, t) {
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
 var prop_types = __webpack_require__(838);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-// EXTERNAL MODULE: ./node_modules/warning/warning.js
-var warning = __webpack_require__(92);
-var warning_default = /*#__PURE__*/__webpack_require__.n(warning);
-;// CONCATENATED MODULE: ./node_modules/@reach/utils/dist/utils.esm.js
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/can-use-dom/dist/reach-utils-can-use-dom.esm.js
+function canUseDOM() {
+  return !!(typeof window !== "undefined" && window.document && window.document.createElement);
+}
 
 
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-isomorphic-layout-effect/dist/reach-utils-use-isomorphic-layout-effect.esm.js
 
-/* eslint-disable no-restricted-globals, eqeqeq  */
 
 /**
- * React currently throws a warning when using useLayoutEffect on the server.
- * To get around it, we can conditionally useEffect on the server (no-op) and
+ * React currently throws a warning when using useLayoutEffect on the server. To
+ * get around it, we can conditionally useEffect on the server (no-op) and
  * useLayoutEffect in the browser. We occasionally need useLayoutEffect to
  * ensure we don't get a render flash for certain operations, but we may also
  * need affected components to render on the server. One example is when setting
@@ -1329,10 +868,6 @@ var warning_default = /*#__PURE__*/__webpack_require__.n(warning);
  * all, so a better approach would be to lazily render those in a parent
  * component after client-side hydration.
  *
- * TODO: We are calling useLayoutEffect in a couple of places that will likely
- * cause some issues for SSR users, whether the warning shows or not. Audit and
- * fix these.
- *
  * https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
  * https://github.com/reduxjs/react-redux/blob/master/src/utils/useIsomorphicLayoutEffect.js
  *
@@ -1340,598 +875,9 @@ var warning_default = /*#__PURE__*/__webpack_require__.n(warning);
  * @param deps
  */
 
-var useIsomorphicLayoutEffect = /*#__PURE__*/canUseDOM() ? h : y;
-var checkedPkgs = {};
-/**
- * Copy of Facebook's warning package.
- *
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical paths.
- * Removing the logging code for production environments will keep the same
- * logic and follow the same code paths.
- *
- * @see https://github.com/BerkeleyTrue/warning/blob/master/warning.js
- */
+var reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect = /*#__PURE__*/canUseDOM() ? h : y;
 
-var utils_esm_warning = (warning_default());
-/**
- * When in dev mode, checks that styles for a given @reach package are loaded.
- *
- * @param packageName Name of the package to check.
- * @example checkStyles("dialog") will check for styles for @reach/dialog
- */
-
-var checkStyles = utils_esm_noop;
-
-if (false) { var _ref, env; }
-/**
- * Ponyfill for the global object in some environments.
- *
- * @link https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
- */
-
-
-var ponyfillGlobal = typeof window != "undefined" && window.Math == Math ? window : typeof self != "undefined" && self.Math == Math ? self :
-/*#__PURE__*/
-// eslint-disable-next-line no-new-func
-Function("return this")();
-/**
- * Passes or assigns an arbitrary value to a ref function or object.
- *
- * @param ref
- * @param value
- */
-
-function assignRef(ref, value) {
-  if (ref == null) return;
-
-  if (utils_esm_isFunction(ref)) {
-    ref(value);
-  } else {
-    try {
-      ref.current = value;
-    } catch (error) {
-      throw new Error("Cannot assign value \"" + value + "\" to ref \"" + ref + "\"");
-    }
-  }
-}
-/**
- * Checks true|"true" vs false|"false"
- *
- * @param value
- */
-
-
-function boolOrBoolString(value) {
-  return value === "true" ? true : isBoolean(value) ? value : false;
-}
-
-function canUseDOM() {
-  return !!(typeof window !== "undefined" && window.document && window.document.createElement);
-}
-/**
- * Type-safe clone element
- *
- * @param element
- * @param props
- * @param children
- */
-
-
-function cloneValidElement(element, props) {
-  for (var _len = arguments.length, children = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-    children[_key - 2] = arguments[_key];
-  }
-
-  return isValidElement(element) ? cloneElement.apply(React, [element, props].concat(children)) : element;
-}
-
-function createNamedContext(name, defaultValue) {
-  var Ctx = (0,preact_module/* createContext */.kr)(defaultValue);
-  Ctx.displayName = name;
-  return Ctx;
-}
-/**
- * This is a hack for sure. The thing is, getting a component to intelligently
- * infer props based on a component or JSX string passed into an `as` prop is
- * kind of a huge pain. Getting it to work and satisfy the constraints of
- * `forwardRef` seems dang near impossible. To avoid needing to do this awkward
- * type song-and-dance every time we want to forward a ref into a component
- * that accepts an `as` prop, we abstract all of that mess to this function for
- * the time time being.
- */
-
-
-function utils_esm_forwardRefWithAs(render) {
-  return compat_module_x(render);
-}
-
-function memoWithAs(Component, propsAreEqual) {
-  return compat_module_g(Component, propsAreEqual);
-}
-/**
- * Get the size of the working document minus the scrollbar offset.
- *
- * @param element
- */
-
-
-function getDocumentDimensions(element) {
-  var _ownerDocument$docume, _ownerDocument$docume2;
-
-  var ownerDocument = getOwnerDocument(element);
-  var ownerWindow = ownerDocument.defaultView || window;
-
-  if (!ownerDocument) {
-    return {
-      width: 0,
-      height: 0
-    };
-  }
-
-  return {
-    width: (_ownerDocument$docume = ownerDocument.documentElement.clientWidth) !== null && _ownerDocument$docume !== void 0 ? _ownerDocument$docume : ownerWindow.innerWidth,
-    height: (_ownerDocument$docume2 = ownerDocument.documentElement.clientHeight) !== null && _ownerDocument$docume2 !== void 0 ? _ownerDocument$docume2 : ownerWindow.innerHeight
-  };
-}
-/**
- * Get the scoll position of the global window object relative to a given node.
- *
- * @param element
- */
-
-
-function getScrollPosition(element) {
-  var ownerDocument = getOwnerDocument(element);
-  var ownerWindow = ownerDocument.defaultView || window;
-
-  if (!ownerDocument) {
-    return {
-      scrollX: 0,
-      scrollY: 0
-    };
-  }
-
-  return {
-    scrollX: ownerWindow.scrollX,
-    scrollY: ownerWindow.scrollY
-  };
-}
-/**
- * Get a computed style value by property.
- *
- * @param element
- * @param styleProp
- */
-
-
-function getElementComputedStyle(element, styleProp) {
-  var ownerDocument = getOwnerDocument(element);
-  var ownerWindow = (ownerDocument === null || ownerDocument === void 0 ? void 0 : ownerDocument.defaultView) || window;
-
-  if (ownerWindow) {
-    return ownerWindow.getComputedStyle(element, null).getPropertyValue(styleProp);
-  }
-
-  return null;
-}
-/**
- * Get an element's owner document. Useful when components are used in iframes
- * or other environments like dev tools.
- *
- * @param element
- */
-
-
-function getOwnerDocument(element) {
-  return canUseDOM() ? element ? element.ownerDocument : document : null;
-}
-/**
- * TODO: Remove in 1.0
- */
-
-
-function getOwnerWindow(element) {
-  var ownerDocument = getOwnerDocument(element);
-  return ownerDocument ? ownerDocument.defaultView || window : null;
-}
-/**
- * Get the scrollbar offset distance.
- *
- * TODO: Remove in 1.0 (we used this in public examples)
- */
-
-
-function getScrollbarOffset() {
-  try {
-    if (window.innerWidth > document.documentElement.clientWidth) {
-      return window.innerWidth - document.documentElement.clientWidth;
-    }
-  } catch (err) {}
-
-  return 0;
-}
-/**
- * Checks whether or not a value is a boolean.
- *
- * @param value
- */
-
-
-function isBoolean(value) {
-  return typeof value === "boolean";
-}
-/**
- * Checks whether or not a value is a function.
- *
- * @param value
- */
-
-
-function utils_esm_isFunction(value) {
-  return !!(value && {}.toString.call(value) == "[object Function]");
-}
-/**
- * Checks whether or not a value is a number.
- *
- * @param value
- */
-
-
-function isNumber(value) {
-  return typeof value === "number" && !isNaN(value);
-}
-/**
- * Detects right clicks
- *
- * @param nativeEvent
- */
-
-
-function isRightClick(nativeEvent) {
-  return "which" in nativeEvent ? nativeEvent.which === 3 : "button" in nativeEvent ? nativeEvent.button === 2 : false;
-}
-/**
- * Checks whether or not a value is a string.
- *
- * @param value
- */
-
-
-function isString(value) {
-  return typeof value === "string";
-}
-/**
- * Joins strings to format IDs for compound components.
- *
- * @param args
- */
-
-
-function utils_esm_makeId() {
-  for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-    args[_key2] = arguments[_key2];
-  }
-
-  return args.filter(function (val) {
-    return val != null;
-  }).join("--");
-}
-/**
- * No-op function.
- */
-
-
-function utils_esm_noop() {}
-/**
- * Convert our state strings for HTML data attributes.
- * No need for a fancy kebab-caser here, we know what our state strings are!
- *
- * @param state
- */
-
-
-function stateToAttributeString(state) {
-  return String(state).replace(/([\s_]+)/g, "-").toLowerCase();
-}
-/**
- * Check if a component is controlled or uncontrolled and return the correct
- * state value and setter accordingly. If the component state is controlled by
- * the app, the setter is a noop.
- *
- * @param controlledValue
- * @param defaultValue
- */
-
-
-function useControlledState(controlledValue, defaultValue) {
-  var controlledRef = useRef(controlledValue != null);
-
-  var _React$useState = useState(defaultValue),
-      valueState = _React$useState[0],
-      setValue = _React$useState[1];
-
-  var set = useCallback(function (n) {
-    if (!controlledRef.current) {
-      setValue(n);
-    }
-  }, []);
-  return [controlledRef.current ? controlledValue : valueState, set];
-}
-/**
- * Logs a warning in dev mode when a component switches from controlled to
- * uncontrolled, or vice versa
- *
- * A single prop should typically be used to determine whether or not a
- * component is controlled or not.
- *
- * @param controlledValue
- * @param controlledPropName
- * @param componentName
- */
-
-
-var useControlledSwitchWarning = utils_esm_noop;
-
-if (false) {}
-
-var useCheckStyles = utils_esm_noop;
-
-if (false) {}
-/**
- * React hook for creating a value exactly once.
- * @see https://github.com/Andarist/use-constant
- */
-
-
-function useConstant(fn) {
-  var ref = s();
-
-  if (!ref.current) {
-    ref.current = {
-      v: fn()
-    };
-  }
-
-  return ref.current.v;
-}
-/**
- * @param callback
- */
-
-
-function useEventCallback(callback) {
-  var ref = useRef(callback);
-  useIsomorphicLayoutEffect(function () {
-    ref.current = callback;
-  });
-  return useCallback(function (event) {
-    for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
-      args[_key3 - 1] = arguments[_key3];
-    }
-
-    return ref.current.apply(ref, [event].concat(args));
-  }, []);
-}
-
-function useLazyRef(fn) {
-  var ref = useRef({
-    __internalSet: true
-  });
-
-  if (ref.current && ref.current.__internalSet === true) {
-    ref.current = fn();
-  }
-
-  return ref;
-}
-/**
- * TODO: Remove in 1.0
- * @alias useStableCallback
- * @param callback
- */
-
-
-var useCallbackProp = useStableCallback;
-/**
- * Adds a DOM event listener
- *
- * @param eventName
- * @param listener
- * @param element
- */
-
-function useEventListener(eventName, listener, element) {
-  if (element === void 0) {
-    element = window;
-  }
-
-  var savedHandler = useRef(listener);
-  useEffect(function () {
-    savedHandler.current = listener;
-  }, [listener]);
-  useEffect(function () {
-    var isSupported = element && element.addEventListener;
-
-    if (!isSupported) {
-      if (false) {}
-
-      return;
-    }
-
-    function eventListener(event) {
-      savedHandler.current(event);
-    }
-
-    element.addEventListener(eventName, eventListener);
-    return function () {
-      element.removeEventListener(eventName, eventListener);
-    };
-  }, [eventName, element]);
-}
-/**
- * Detect when focus changes in our document.
- *
- * @param handleChange
- * @param when
- * @param ownerDocument
- */
-
-
-function useFocusChange(handleChange, when, ownerDocument) {
-  if (handleChange === void 0) {
-    handleChange = console.log;
-  }
-
-  if (when === void 0) {
-    when = "focus";
-  }
-
-  if (ownerDocument === void 0) {
-    ownerDocument = document;
-  }
-
-  var lastActiveElement = useRef(ownerDocument.activeElement);
-  useEffect(function () {
-    lastActiveElement.current = ownerDocument.activeElement;
-
-    function onChange(event) {
-      if (lastActiveElement.current !== ownerDocument.activeElement) {
-        handleChange(ownerDocument.activeElement, lastActiveElement.current, event);
-        lastActiveElement.current = ownerDocument.activeElement;
-      }
-    }
-
-    ownerDocument.addEventListener(when, onChange, true);
-    return function () {
-      ownerDocument.removeEventListener(when, onChange);
-    };
-  }, [when, handleChange, ownerDocument]);
-}
-/**
- * Forces a re-render, similar to `forceUpdate` in class components.
- */
-
-
-function useForceUpdate() {
-  var _React$useState2 = l(Object.create(null)),
-      dispatch = _React$useState2[1];
-
-  return A(function () {
-    dispatch(Object.create(null));
-  }, []);
-}
-/**
- * Passes or assigns a value to multiple refs (typically a DOM node). Useful for
- * dealing with components that need an explicit ref for DOM calculations but
- * also forwards refs assigned by an app.
- *
- * @param refs Refs to fork
- */
-
-
-function useForkedRef() {
-  for (var _len4 = arguments.length, refs = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-    refs[_key4] = arguments[_key4];
-  }
-
-  return d(function () {
-    if (refs.every(function (ref) {
-      return ref == null;
-    })) {
-      return null;
-    }
-
-    return function (node) {
-      refs.forEach(function (ref) {
-        assignRef(ref, node);
-      });
-    }; // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [].concat(refs));
-}
-/**
- * Returns the previous value of a reference after a component update.
- *
- * @param value
- */
-
-
-function usePrevious(value) {
-  var ref = s(null);
-  y(function () {
-    ref.current = value;
-  }, [value]);
-  return ref.current;
-}
-/**
- * Converts a callback to a ref to avoid triggering re-renders when passed as a
- * prop and exposed as a stable function to avoid executing effects when
- * passed as a dependency.
- */
-
-
-function useStableCallback(callback) {
-  var callbackRef = s(callback);
-  y(function () {
-    callbackRef.current = callback;
-  }); // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  return A(function () {
-    callbackRef.current && callbackRef.current.apply(callbackRef, arguments);
-  }, []);
-}
-/**
- * Call an effect after a component update, skipping the initial mount.
- *
- * @param effect Effect to call
- * @param deps Effect dependency list
- */
-
-
-function useUpdateEffect(effect, deps) {
-  var mounted = useRef(false);
-  useEffect(function () {
-    if (mounted.current) {
-      effect();
-    } else {
-      mounted.current = true;
-    } // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  }, deps);
-}
-/**
- * Just a lil state logger
- *
- * @param state
- * @param DEBUG
- */
-
-
-var useStateLogger = (/* unused pure expression or super */ null && (utils_esm_noop));
-
-if (false) {}
-/**
- * Wraps a lib-defined event handler and a user-defined event handler, returning
- * a single handler that allows a user to prevent lib-defined handlers from
- * firing.
- *
- * @param theirHandler User-supplied event handler
- * @param ourHandler Library-supplied event handler
- */
-
-
-function wrapEvent(theirHandler, ourHandler) {
-  return function (event) {
-    theirHandler && theirHandler(event);
-
-    if (!event.defaultPrevented) {
-      return ourHandler(event);
-    }
-  };
-}
-
-
-;// CONCATENATED MODULE: ./node_modules/@reach/auto-id/dist/auto-id.esm.js
+;// CONCATENATED MODULE: ./node_modules/@reach/auto-id/dist/reach-auto-id.esm.js
 
 
 /*
@@ -2009,7 +955,7 @@ var genId = function genId() {
  */
 
 
-function auto_id_esm_useId(idFromProps) {
+function reach_auto_id_esm_useId(idFromProps) {
   /*
    * If this instance isn't part of the initial render, we don't have to do the
    * double render/patch-up dance. We can just generate the ID and return it.
@@ -2020,7 +966,7 @@ function auto_id_esm_useId(idFromProps) {
       id = _React$useState[0],
       setId = _React$useState[1];
 
-  useIsomorphicLayoutEffect(function () {
+  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     if (id === null) {
       /*
        * Patch the ID after render. We do this in `useLayoutEffect` to avoid any
@@ -2046,7 +992,24 @@ function auto_id_esm_useId(idFromProps) {
 }
 
 
-;// CONCATENATED MODULE: ./node_modules/@reach/portal/dist/portal.esm.js
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-force-update/dist/reach-utils-use-force-update.esm.js
+
+/**
+ * Forces a re-render, similar to `forceUpdate` in class components.
+ */
+
+function useForceUpdate() {
+  var _useState = l(Object.create(null)),
+      dispatch = _useState[1];
+
+  return A(function () {
+    dispatch(Object.create(null));
+  }, []);
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/portal/dist/reach-portal.esm.js
+
 
 
 
@@ -2076,13 +1039,13 @@ var Portal = function Portal(_ref) {
   var mountNode = s(null);
   var portalNode = s(null);
   var forceUpdate = useForceUpdate();
-  useIsomorphicLayoutEffect(function () {
+  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     // This ref may be null when a hot-loader replaces components on the page
     if (!mountNode.current) return; // It's possible that the content of the portal has, itself, been portaled.
     // In that case, it's important to append to the correct document element.
 
     var ownerDocument = mountNode.current.ownerDocument;
-    portalNode.current = ownerDocument === null || ownerDocument === void 0 ? void 0 : ownerDocument.createElement(type);
+    portalNode.current = ownerDocument == null ? void 0 : ownerDocument.createElement(type);
     ownerDocument.body.appendChild(portalNode.current);
     forceUpdate();
     return function () {
@@ -2091,15 +1054,19 @@ var Portal = function Portal(_ref) {
       }
     };
   }, [type, forceUpdate]);
-  return portalNode.current ? compat_module_j(children, portalNode.current) : (0,preact_module/* createElement */.az)("span", {
+  return portalNode.current ? /*#__PURE__*/compat_module_j(children, portalNode.current) : /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)("span", {
     ref: mountNode
   });
 };
+/**
+ * @see Docs https://reach.tech/portal#portal-props
+ */
+
 
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
 
-/* harmony default export */ const portal_esm = ((/* unused pure expression or super */ null && (Portal)));
+/* harmony default export */ const reach_portal_esm = ((/* unused pure expression or super */ null && (Portal)));
 
 ;// CONCATENATED MODULE: ./node_modules/@reach/observe-rect/dist/observe-rect.esm.js
 var props = ["bottom", "height", "left", "right", "top", "width"];
@@ -2173,7 +1140,51 @@ function observeRect(node, cb) {
 }
 
 /* harmony default export */ const observe_rect_esm = (observeRect);
-;// CONCATENATED MODULE: ./node_modules/@reach/rect/dist/rect.esm.js
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/type-check/dist/reach-utils-type-check.esm.js
+/**
+ * Checks whether or not a value is a boolean.
+ *
+ * @param value
+ */
+function isBoolean(value) {
+  return typeof value === "boolean";
+}
+/**
+ * Checks whether or not a value is a function.
+ *
+ * @param value
+ */
+
+
+function reach_utils_type_check_esm_isFunction(value) {
+  // eslint-disable-next-line eqeqeq
+  return !!(value && {}.toString.call(value) == "[object Function]");
+}
+/**
+ * Checks whether or not a value is a number.
+ *
+ * @param value
+ */
+
+
+function isNumber(value) {
+  return typeof value === "number" && !isNaN(value);
+}
+/**
+ * Checks whether or not a value is a string.
+ *
+ * @param value
+ */
+
+
+function isString(value) {
+  return typeof value === "string";
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/rect/dist/reach-rect.esm.js
+
+
 
 
 
@@ -2209,8 +1220,13 @@ var Rect = function Rect(_ref) {
     rect: rect
   });
 };
+/**
+ * @see Docs https://reach.tech/rect#rect-props
+ */
 
-if (false) {}
+
+if (false) {} ////////////////////////////////////////////////////////////////////////////////
+
 /**
  * useRect
  *
@@ -2229,11 +1245,11 @@ function useRect(nodeRef, observeOrOptions, deprecated_onChange) {
   } else {
     var _observeOrOptions$obs;
 
-    observe = (_observeOrOptions$obs = observeOrOptions === null || observeOrOptions === void 0 ? void 0 : observeOrOptions.observe) !== null && _observeOrOptions$obs !== void 0 ? _observeOrOptions$obs : true;
-    onChange = observeOrOptions === null || observeOrOptions === void 0 ? void 0 : observeOrOptions.onChange;
+    observe = (_observeOrOptions$obs = observeOrOptions == null ? void 0 : observeOrOptions.observe) != null ? _observeOrOptions$obs : true;
+    onChange = observeOrOptions == null ? void 0 : observeOrOptions.onChange;
   }
 
-  if (utils_esm_isFunction(deprecated_onChange)) {
+  if (reach_utils_type_check_esm_isFunction(deprecated_onChange)) {
     onChange = deprecated_onChange;
   }
 
@@ -2255,20 +1271,20 @@ function useRect(nodeRef, observeOrOptions, deprecated_onChange) {
     onChangeRef.current && onChangeRef.current(rect);
   }, []); // eslint-disable-next-line react-hooks/exhaustive-deps
 
-  useIsomorphicLayoutEffect(function () {
+  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     onChangeRef.current = onChange;
 
     if (nodeRef.current !== element) {
       setElement(nodeRef.current);
     }
   });
-  useIsomorphicLayoutEffect(function () {
+  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     if (element && !initialRectIsSet.current) {
       initialRectIsSet.current = true;
       setRect(element.getBoundingClientRect());
     }
   }, [element]);
-  useIsomorphicLayoutEffect(function () {
+  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     var observer;
     var elem = element; // State initializes before refs are placed, meaning the element state will
     // be undefined on the first render. We still want the rect on the first
@@ -2298,20 +1314,148 @@ function useRect(nodeRef, observeOrOptions, deprecated_onChange) {
     }
   }, [observe, element, nodeRef, stableOnChange]);
   return rect;
-} ////////////////////////////////////////////////////////////////////////////////
+}
+
+/* harmony default export */ const reach_rect_esm = ((/* unused pure expression or super */ null && (Rect)));
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/owner-document/dist/reach-utils-owner-document.esm.js
+
+/**
+ * Get an element's owner document. Useful when components are used in iframes
+ * or other environments like dev tools.
+ *
+ * @param element
+ */
+
+function getOwnerDocument(element) {
+  return canUseDOM() ? element ? element.ownerDocument : document : null;
+}
+/**
+ * TODO: Remove in 1.0
+ */
 
 
-/* harmony default export */ const rect_esm = ((/* unused pure expression or super */ null && (Rect)));
+function getOwnerWindow(element) {
+  var ownerDocument = getOwnerDocument(element);
+  return ownerDocument ? ownerDocument.defaultView || window : null;
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/compose-refs/dist/reach-utils-compose-refs.esm.js
+
+
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _createForOfIteratorHelperLoose(o, allowArrayLike) {
+  var it;
+
+  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
+      return function () {
+        if (i >= o.length) return {
+          done: true
+        };
+        return {
+          done: false,
+          value: o[i++]
+        };
+      };
+    }
+
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  it = o[Symbol.iterator]();
+  return it.next.bind(it);
+}
+/**
+ * Passes or assigns an arbitrary value to a ref function or object.
+ *
+ * @param ref
+ * @param value
+ */
+
+
+function assignRef(ref, value) {
+  if (ref == null) return;
+
+  if (reach_utils_type_check_esm_isFunction(ref)) {
+    ref(value);
+  } else {
+    try {
+      ref.current = value;
+    } catch (error) {
+      throw new Error("Cannot assign value \"" + value + "\" to ref \"" + ref + "\"");
+    }
+  }
+}
+/**
+ * Passes or assigns a value to multiple refs (typically a DOM node). Useful for
+ * dealing with components that need an explicit ref for DOM calculations but
+ * also forwards refs assigned by an app.
+ *
+ * @param refs Refs to fork
+ */
+
+
+function useComposedRefs() {
+  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
+    refs[_key] = arguments[_key];
+  }
+
+  return A(function (node) {
+    for (var _iterator = _createForOfIteratorHelperLoose(refs), _step; !(_step = _iterator()).done;) {
+      var ref = _step.value;
+      assignRef(ref, node);
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  }, refs);
+}
+
 
 // EXTERNAL MODULE: ./node_modules/tabbable/index.js
 var tabbable = __webpack_require__(453);
 var tabbable_default = /*#__PURE__*/__webpack_require__.n(tabbable);
-;// CONCATENATED MODULE: ./node_modules/@reach/popover/dist/popover.esm.js
+;// CONCATENATED MODULE: ./node_modules/@reach/popover/dist/reach-popover.esm.js
 
 
 
 
 
+
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -2329,29 +1473,15 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
-}
+} ////////////////////////////////////////////////////////////////////////////////
 
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
 /**
  * Popover
  */
 
 
-var Popover = /*#__PURE__*/utils_esm_forwardRefWithAs(function Popover(props, ref) {
-  return (0,preact_module/* createElement */.az)(Portal, null, (0,preact_module/* createElement */.az)(PopoverImpl, Object.assign({
+var Popover = /*#__PURE__*/compat_module_x(function Popover(props, ref) {
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Portal, null, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(PopoverImpl, _extends({
     ref: ref
   }, props)));
 });
@@ -2366,7 +1496,7 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var PopoverImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function PopoverImpl(_ref, forwardedRef) {
+var PopoverImpl = /*#__PURE__*/compat_module_x(function PopoverImpl(_ref, forwardedRef) {
   var _ref$as = _ref.as,
       Comp = _ref$as === void 0 ? "div" : _ref$as,
       targetRef = _ref.targetRef,
@@ -2383,9 +1513,9 @@ var PopoverImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function PopoverImpl(_
   var targetRect = useRect(targetRef, {
     observe: !props.hidden
   });
-  var ref = useForkedRef(popoverRef, forwardedRef);
+  var ref = useComposedRefs(popoverRef, forwardedRef);
   useSimulateTabNavigationForReactTree(targetRef, popoverRef);
-  return (0,preact_module/* createElement */.az)(Comp, Object.assign({
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, _extends({
     "data-reach-popover": "",
     ref: ref
   }, props, {
@@ -2410,12 +1540,9 @@ function getStyles(position, targetRect, popoverRect) {
   };
 }
 
-function getTopPosition(targetRect, popoverRect) {
-  var _getCollisions = getCollisions(targetRect, popoverRect),
-      directionUp = _getCollisions.directionUp;
-
+function getTopPosition(targetRect, popoverRect, isDirectionUp) {
   return {
-    top: directionUp ? targetRect.top - popoverRect.height + window.pageYOffset + "px" : targetRect.top + targetRect.height + window.pageYOffset + "px"
+    top: isDirectionUp ? targetRect.top - popoverRect.height + window.pageYOffset + "px" : targetRect.top + targetRect.height + window.pageYOffset + "px"
   };
 }
 
@@ -2424,12 +1551,13 @@ var positionDefault = function positionDefault(targetRect, popoverRect) {
     return {};
   }
 
-  var _getCollisions2 = getCollisions(targetRect, popoverRect),
-      directionRight = _getCollisions2.directionRight;
+  var _getCollisions = getCollisions(targetRect, popoverRect),
+      directionRight = _getCollisions.directionRight,
+      directionUp = _getCollisions.directionUp;
 
   return _extends({
     left: directionRight ? targetRect.right - popoverRect.width + window.pageXOffset + "px" : targetRect.left + window.pageXOffset + "px"
-  }, getTopPosition(targetRect, popoverRect));
+  }, getTopPosition(targetRect, popoverRect, directionUp));
 };
 
 var positionRight = function positionRight(targetRect, popoverRect) {
@@ -2437,12 +1565,13 @@ var positionRight = function positionRight(targetRect, popoverRect) {
     return {};
   }
 
-  var _getCollisions3 = getCollisions(targetRect, popoverRect),
-      directionLeft = _getCollisions3.directionLeft;
+  var _getCollisions2 = getCollisions(targetRect, popoverRect),
+      directionLeft = _getCollisions2.directionLeft,
+      directionUp = _getCollisions2.directionUp;
 
   return _extends({
     left: directionLeft ? targetRect.left + window.pageXOffset + "px" : targetRect.right - popoverRect.width + window.pageXOffset + "px"
-  }, getTopPosition(targetRect, popoverRect));
+  }, getTopPosition(targetRect, popoverRect, directionUp));
 };
 
 var positionMatchWidth = function positionMatchWidth(targetRect, popoverRect) {
@@ -2450,10 +1579,13 @@ var positionMatchWidth = function positionMatchWidth(targetRect, popoverRect) {
     return {};
   }
 
+  var _getCollisions3 = getCollisions(targetRect, popoverRect),
+      directionUp = _getCollisions3.directionUp;
+
   return _extends({
     width: targetRect.width,
     left: targetRect.left
-  }, getTopPosition(targetRect, popoverRect));
+  }, getTopPosition(targetRect, popoverRect, directionUp));
 };
 
 function getCollisions(targetRect, popoverRect, offsetLeft, offsetBottom) {
@@ -2593,7 +1725,7 @@ function useSimulateTabNavigationForReactTree(triggerRef, popoverRef) {
     var _triggerRef$current;
 
     event.preventDefault();
-    (_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.focus();
+    (_triggerRef$current = triggerRef.current) == null ? void 0 : _triggerRef$current.focus();
   }
 
   function tabbedToBrowserChrome(event) {
@@ -2634,31 +1766,50 @@ function useSimulateTabNavigationForReactTree(triggerRef, popoverRef) {
 } ////////////////////////////////////////////////////////////////////////////////
 
 
-/* harmony default export */ const popover_esm = ((/* unused pure expression or super */ null && (Popover)));
+/* harmony default export */ const reach_popover_esm = ((/* unused pure expression or super */ null && (Popover)));
 
-;// CONCATENATED MODULE: ./node_modules/@reach/descendants/dist/descendants.esm.js
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-previous/dist/reach-utils-use-previous.esm.js
 
+/**
+ * Returns the previous value of a reference after a component update.
+ *
+ * @param value
+ */
 
-
-function descendants_esm_extends() {
-  descendants_esm_extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return descendants_esm_extends.apply(this, arguments);
+function usePrevious(value) {
+  var ref = s(null);
+  y(function () {
+    ref.current = value;
+  }, [value]);
+  return ref.current;
 }
 
-function descendants_esm_objectWithoutPropertiesLoose(source, excluded) {
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/context/dist/reach-utils-context.esm.js
+
+
+function createNamedContext(name, defaultValue) {
+  var Ctx = /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createContext)(defaultValue);
+
+  if (false) {}
+
+  return Ctx;
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/noop/dist/reach-utils-noop.esm.js
+function reach_utils_noop_esm_noop() {}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/descendants/dist/reach-descendants.esm.js
+
+
+
+
+
+
+
+function reach_descendants_esm_objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -2673,16 +1824,34 @@ function descendants_esm_objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 
+function reach_descendants_esm_extends() {
+  reach_descendants_esm_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return reach_descendants_esm_extends.apply(this, arguments);
+}
+
 function createDescendantContext(name, initialValue) {
   if (initialValue === void 0) {
     initialValue = {};
   }
 
   var descendants = [];
-  return createNamedContext(name, descendants_esm_extends({
+  return createNamedContext(name, reach_descendants_esm_extends({
     descendants: descendants,
-    registerDescendant: utils_esm_noop,
-    unregisterDescendant: utils_esm_noop
+    registerDescendant: reach_utils_noop_esm_noop,
+    unregisterDescendant: reach_utils_noop_esm_noop
   }, initialValue));
 }
 /**
@@ -2723,7 +1892,7 @@ function useDescendant(descendant, context, indexProp) {
   // collection.
 
 
-  var index = indexProp !== null && indexProp !== void 0 ? indexProp : descendants.findIndex(function (item) {
+  var index = indexProp != null ? indexProp : descendants.findIndex(function (item) {
     return item.element === descendant.element;
   });
   var previousDescendants = usePrevious(descendants); // We also need to re-register descendants any time ANY of the other
@@ -2734,12 +1903,12 @@ function useDescendant(descendant, context, indexProp) {
   var someDescendantsHaveChanged = descendants.some(function (descendant, index) {
     var _previousDescendants$;
 
-    return descendant.element !== (previousDescendants === null || previousDescendants === void 0 ? void 0 : (_previousDescendants$ = previousDescendants[index]) === null || _previousDescendants$ === void 0 ? void 0 : _previousDescendants$.element);
+    return descendant.element !== (previousDescendants == null ? void 0 : (_previousDescendants$ = previousDescendants[index]) == null ? void 0 : _previousDescendants$.element);
   }); // Prevent any flashing
 
-  useIsomorphicLayoutEffect(function () {
+  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     if (!descendant.element) forceUpdate();
-    registerDescendant(descendants_esm_extends({}, descendant, {
+    registerDescendant(reach_descendants_esm_extends({}, descendant, {
       index: index
     }));
     return function () {
@@ -2765,7 +1934,7 @@ function DescendantProvider(_ref) {
   var registerDescendant = A(function (_ref2) {
     var element = _ref2.element,
         explicitIndex = _ref2.index,
-        rest = descendants_esm_objectWithoutPropertiesLoose(_ref2, ["element", "index"]);
+        rest = reach_descendants_esm_objectWithoutPropertiesLoose(_ref2, ["element", "index"]);
 
     if (!element) {
       return;
@@ -2775,13 +1944,13 @@ function DescendantProvider(_ref) {
       var newItems;
 
       if (explicitIndex != null) {
-        newItems = [].concat(items, [descendants_esm_extends({}, rest, {
+        newItems = [].concat(items, [reach_descendants_esm_extends({}, rest, {
           element: element,
           index: explicitIndex
         })]);
       } else if (items.length === 0) {
         // If there are no items, register at index 0 and bail.
-        newItems = [].concat(items, [descendants_esm_extends({}, rest, {
+        newItems = [].concat(items, [reach_descendants_esm_extends({}, rest, {
           element: element,
           index: 0
         })]);
@@ -2815,7 +1984,7 @@ function DescendantProvider(_ref) {
           return Boolean(item.element.compareDocumentPosition(element) & Node.DOCUMENT_POSITION_PRECEDING);
         });
 
-        var newItem = descendants_esm_extends({}, rest, {
+        var newItem = reach_descendants_esm_extends({}, rest, {
           element: element,
           index: index
         }); // If an index is not found we will push the element to the end.
@@ -2829,7 +1998,7 @@ function DescendantProvider(_ref) {
       }
 
       return newItems.map(function (item, index) {
-        return descendants_esm_extends({}, item, {
+        return reach_descendants_esm_extends({}, item, {
           index: index
         });
       });
@@ -2854,7 +2023,7 @@ function DescendantProvider(_ref) {
   // between renders.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   []);
-  return (0,preact_module/* createElement */.az)(Ctx.Provider, {
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Ctx.Provider, {
     value: d(function () {
       return {
         descendants: items,
@@ -2894,13 +2063,13 @@ function useDescendantKeyDown(context, options) {
       rotate = _options$rotate === void 0 ? true : _options$rotate,
       _options$rtl = options.rtl,
       rtl = _options$rtl === void 0 ? false : _options$rtl;
-  var index = currentIndex !== null && currentIndex !== void 0 ? currentIndex : -1;
   return function handleKeyDown(event) {
     if (!["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight", "PageUp", "PageDown", "Home", "End"].includes(event.key)) {
       return;
-    } // If we use a filter function, we need to re-index our descendants array
-    // so that filtered descendent elements aren't selected.
+    }
 
+    var index = currentIndex != null ? currentIndex : -1; // If we use a filter function, we need to re-index our descendants array
+    // so that filtered descendent elements aren't selected.
 
     var selectableDescendants = filter ? descendants.filter(filter) : descendants; // Current index should map to the updated array vs. the original
     // descendants array.
@@ -2996,10 +2165,118 @@ function useDescendantKeyDown(context, options) {
         break;
     }
   };
+} ////////////////////////////////////////////////////////////////////////////////
+
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/is-right-click/dist/reach-utils-is-right-click.esm.js
+/**
+ * Detects right clicks
+ *
+ * @param nativeEvent
+ */
+function isRightClick(nativeEvent) {
+  return "which" in nativeEvent ? nativeEvent.which === 3 : "button" in nativeEvent ? nativeEvent.button === 2 : false;
 }
 
 
-;// CONCATENATED MODULE: ./node_modules/@reach/menu-button/dist/menu-button.esm.js
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/make-id/dist/reach-utils-make-id.esm.js
+/**
+ * Joins strings to format IDs for compound components.
+ *
+ * @param args
+ */
+function reach_utils_make_id_esm_makeId() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return args.filter(function (val) {
+    return val != null;
+  }).join("--");
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/dev-utils/dist/reach-utils-dev-utils.esm.js
+
+/* eslint-disable react-hooks/rules-of-hooks */
+
+var checkedPkgs = {};
+/**
+ * Just a lil state logger
+ *
+ * @param state
+ * @param DEBUG
+ */
+
+function useStateLogger(state, DEBUG) {
+  if (DEBUG === void 0) {
+    DEBUG = false;
+  }
+
+  if (false) { var debugRef; }
+}
+/**
+ * When in dev mode, checks that styles for a given `@reach` package are loaded.
+ *
+ * @param packageName Name of the package to check.
+ * @example checkStyles("dialog") will check for styles for @reach/dialog
+ */
+
+
+function checkStyles(packageName) {
+  if (false) { var _ref, environment; }
+}
+/**
+ * When in dev mode, checks that styles for a given `@reach` package are loaded.
+ *
+ * @param packageName Name of the package to check.
+ * @example useCheckStyles("dialog") will check for styles for @reach/dialog
+ */
+
+
+function useCheckStyles(packageName) {
+  if (false) { var name; }
+}
+/**
+ * Logs a warning in dev mode when a component switches from controlled to
+ * uncontrolled, or vice versa
+ *
+ * A single prop should typically be used to determine whether or not a
+ * component is controlled or not.
+ *
+ * @param controlledValue
+ * @param controlledPropName
+ * @param componentName
+ */
+
+
+function useControlledSwitchWarning(controlledValue, controlledPropName, componentName) {
+  if (false) { var nameCache, controlledRef; }
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/compose-event-handlers/dist/reach-utils-compose-event-handlers.esm.js
+/**
+ * Wraps a lib-defined event handler and a user-defined event handler, returning
+ * a single handler that allows a user to prevent lib-defined handlers from
+ * firing.
+ *
+ * @param theirHandler User-supplied event handler
+ * @param ourHandler Library-supplied event handler
+ */
+function composeEventHandlers(theirHandler, ourHandler) {
+  return function (event) {
+    theirHandler && theirHandler(event);
+
+    if (!event.defaultPrevented) {
+      return ourHandler(event);
+    }
+  };
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/menu-button/dist/reach-menu-button.esm.js
 
 
 
@@ -3007,8 +2284,18 @@ function useDescendantKeyDown(context, options) {
 
 
 
-function menu_button_esm_extends() {
-  menu_button_esm_extends = Object.assign || function (target) {
+
+
+
+
+
+
+
+
+
+
+function reach_menu_button_esm_extends() {
+  reach_menu_button_esm_extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -3022,10 +2309,10 @@ function menu_button_esm_extends() {
     return target;
   };
 
-  return menu_button_esm_extends.apply(this, arguments);
+  return reach_menu_button_esm_extends.apply(this, arguments);
 }
 
-function menu_button_esm_objectWithoutPropertiesLoose(source, excluded) {
+function reach_menu_button_esm_objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -3038,7 +2325,8 @@ function menu_button_esm_objectWithoutPropertiesLoose(source, excluded) {
   }
 
   return target;
-} // Actions
+} ////////////////////////////////////////////////////////////////////////////////
+// Actions
 
 
 var CLEAR_SELECTION_INDEX = "CLEAR_SELECTION_INDEX";
@@ -3051,7 +2339,8 @@ var SEARCH_FOR_ITEM = "SEARCH_FOR_ITEM";
 var SELECT_ITEM_AT_INDEX = "SELECT_ITEM_AT_INDEX";
 var SET_BUTTON_ID = "SET_BUTTON_ID";
 var MenuDescendantContext = /*#__PURE__*/createDescendantContext("MenuDescendantContext");
-var MenuContext = /*#__PURE__*/createNamedContext("MenuContext", {});
+var StableMenuContext = /*#__PURE__*/createNamedContext("StableMenuContext", {});
+var UnstableMenuContext = /*#__PURE__*/createNamedContext("UnstableMenuContext", {});
 var initialState = {
   // The button ID is needed for aria controls and can be set directly and
   // updated for top-level use via context. Otherwise a default is set by useId.
@@ -3091,9 +2380,9 @@ var Menu = function Menu(_ref) {
       state = _React$useReducer[0],
       dispatch = _React$useReducer[1];
 
-  var _id = auto_id_esm_useId(id);
+  var _id = reach_auto_id_esm_useId(id);
 
-  var menuId = id || utils_esm_makeId("menu", _id); // We use an event listener attached to the window to capture outside clicks
+  var menuId = id || reach_utils_make_id_esm_makeId("menu", _id); // We use an event listener attached to the window to capture outside clicks
   // that close the menu. We don't want the initial button click to trigger this
   // when a menu is closed, so we can track this behavior in a ref for now.
   // We shouldn't need this when we rewrite with state machine logic.
@@ -3109,16 +2398,22 @@ var Menu = function Menu(_ref) {
   // click rather than selecting an item. This is similar to a native select
   // on most platforms, and our menu button popover works similarly.
 
-  var readyToSelect = s(false);
-  var context = {
-    buttonRef: buttonRef,
-    dispatch: dispatch,
+  var readyToSelect = s(false); // Trying a new approach for splitting up contexts by stable/unstable
+  // references. We'll see how it goes!
+
+  var stableContext = d(function () {
+    return {
+      buttonRef: buttonRef,
+      dispatch: dispatch,
+      menuRef: menuRef,
+      popoverRef: popoverRef,
+      buttonClickedRef: buttonClickedRef,
+      readyToSelect: readyToSelect,
+      selectCallbacks: selectCallbacks
+    };
+  }, []);
+  var unstableContext = {
     menuId: menuId,
-    menuRef: menuRef,
-    popoverRef: popoverRef,
-    buttonClickedRef: buttonClickedRef,
-    readyToSelect: readyToSelect,
-    selectCallbacks: selectCallbacks,
     state: state
   }; // When the menu is open, focus is placed on the menu itself so that
   // keyboard navigation is still possible.
@@ -3128,7 +2423,7 @@ var Menu = function Menu(_ref) {
       // @ts-ignore
       window.__REACH_DISABLE_TOOLTIPS = true;
       window.requestAnimationFrame(function () {
-        menu_button_esm_focus(menuRef.current);
+        reach_menu_button_esm_focus(menuRef.current);
       });
     } else {
       // We want to ignore the immediate focus of a tooltip so it doesn't pop
@@ -3139,18 +2434,24 @@ var Menu = function Menu(_ref) {
     }
   }, [state.isExpanded]);
   useCheckStyles("menu-button");
-  return (0,preact_module/* createElement */.az)(DescendantProvider, {
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(DescendantProvider, {
     context: MenuDescendantContext,
     items: descendants,
     set: setDescendants
-  }, (0,preact_module/* createElement */.az)(MenuContext.Provider, {
-    value: context
-  }, utils_esm_isFunction(children) ? children({
+  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(StableMenuContext.Provider, {
+    value: stableContext
+  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(UnstableMenuContext.Provider, {
+    value: unstableContext
+  }, reach_utils_type_check_esm_isFunction(children) ? children({
     isExpanded: state.isExpanded,
     // TODO: Remove in 1.0
     isOpen: state.isExpanded
-  }) : children));
+  }) : children)));
 };
+/**
+ * @see Docs https://reach.tech/menu-button#menu-props
+ */
+
 
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
@@ -3164,24 +2465,26 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuButton = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuButton(_ref2, forwardedRef) {
+var MenuButton = /*#__PURE__*/compat_module_x(function MenuButton(_ref2, forwardedRef) {
   var _ref2$as = _ref2.as,
       Comp = _ref2$as === void 0 ? "button" : _ref2$as,
       onKeyDown = _ref2.onKeyDown,
       onMouseDown = _ref2.onMouseDown,
       id = _ref2.id,
-      props = menu_button_esm_objectWithoutPropertiesLoose(_ref2, ["as", "onKeyDown", "onMouseDown", "id"]);
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref2, ["as", "onKeyDown", "onMouseDown", "id"]);
 
-  var _React$useContext = F(MenuContext),
+  var _React$useContext = F(StableMenuContext),
       buttonRef = _React$useContext.buttonRef,
       buttonClickedRef = _React$useContext.buttonClickedRef,
-      menuId = _React$useContext.menuId,
-      _React$useContext$sta = _React$useContext.state,
-      buttonId = _React$useContext$sta.buttonId,
-      isExpanded = _React$useContext$sta.isExpanded,
       dispatch = _React$useContext.dispatch;
 
-  var ref = useForkedRef(buttonRef, forwardedRef);
+  var _React$useContext2 = F(UnstableMenuContext),
+      menuId = _React$useContext2.menuId,
+      _React$useContext2$st = _React$useContext2.state,
+      buttonId = _React$useContext2$st.buttonId,
+      isExpanded = _React$useContext2$st.isExpanded;
+
+  var ref = useComposedRefs(buttonRef, forwardedRef);
   var items = useDescendants(MenuDescendantContext);
   var firstNonDisabledIndex = d(function () {
     return items.findIndex(function (item) {
@@ -3189,7 +2492,7 @@ var MenuButton = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuButton(_re
     });
   }, [items]);
   y(function () {
-    var newButtonId = id != null ? id : menuId ? utils_esm_makeId("menu-button", menuId) : "menu-button";
+    var newButtonId = id != null ? id : menuId ? reach_utils_make_id_esm_makeId("menu-button", menuId) : "menu-button";
 
     if (buttonId !== newButtonId) {
       dispatch({
@@ -3230,14 +2533,11 @@ var MenuButton = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuButton(_re
       buttonClickedRef.current = true;
     }
 
-    if (menu_button_esm_isRightClick(event.nativeEvent)) {
+    if (isRightClick(event.nativeEvent)) {
       return;
     } else if (isExpanded) {
       dispatch({
-        type: CLOSE_MENU,
-        payload: {
-          buttonRef: buttonRef
-        }
+        type: CLOSE_MENU
       });
     } else {
       dispatch({
@@ -3246,23 +2546,32 @@ var MenuButton = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuButton(_re
     }
   }
 
-  return (0,preact_module/* createElement */.az)(Comp // When the menu is displayed, the element with role `button` has
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // When the menu is displayed, the element with role `button` has
   // `aria-expanded` set to `true`. When the menu is hidden, it is
   // recommended that `aria-expanded` is not present.
   // https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton
-  , Object.assign({
-    "aria-expanded": isExpanded ? true : undefined,
-    "aria-haspopup": true,
+  , reach_menu_button_esm_extends({
+    "aria-expanded": isExpanded ? true : undefined // The element with role `button` has `aria-haspopup` set to either
+    // `"menu"` or `true`.
+    // https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton
+    ,
+    "aria-haspopup": true // Optionally, the element with role `button` has a value specified for
+    // `aria-controls` that refers to the element with role `menu`.
+    // https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton
+    ,
     "aria-controls": menuId
   }, props, {
     ref: ref,
     "data-reach-menu-button": "",
     id: buttonId || undefined,
-    onKeyDown: wrapEvent(onKeyDown, handleKeyDown),
-    onMouseDown: wrapEvent(onMouseDown, handleMouseDown),
+    onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown),
+    onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),
     type: "button"
   }));
 });
+/**
+ * @see Docs https://reach.tech/menu-button#menubutton-props
+ */
 
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
@@ -3273,8 +2582,9 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl(_ref3, forwardedRef) {
-  var Comp = _ref3.as,
+var MenuItemImpl = /*#__PURE__*/compat_module_x(function MenuItemImpl(_ref3, forwardedRef) {
+  var _ref3$as = _ref3.as,
+      Comp = _ref3$as === void 0 ? "div" : _ref3$as,
       indexProp = _ref3.index,
       _ref3$isLink = _ref3.isLink,
       isLink = _ref3$isLink === void 0 ? false : _ref3$isLink,
@@ -3288,16 +2598,18 @@ var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl
       onSelect = _ref3.onSelect,
       disabled = _ref3.disabled,
       valueTextProp = _ref3.valueText,
-      props = menu_button_esm_objectWithoutPropertiesLoose(_ref3, ["as", "index", "isLink", "onClick", "onDragStart", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onSelect", "disabled", "valueText"]);
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref3, ["as", "index", "isLink", "onClick", "onDragStart", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onSelect", "disabled", "valueText"]);
 
-  var _React$useContext2 = F(MenuContext),
-      buttonRef = _React$useContext2.buttonRef,
-      dispatch = _React$useContext2.dispatch,
-      readyToSelect = _React$useContext2.readyToSelect,
-      selectCallbacks = _React$useContext2.selectCallbacks,
-      _React$useContext2$st = _React$useContext2.state,
-      selectionIndex = _React$useContext2$st.selectionIndex,
-      isExpanded = _React$useContext2$st.isExpanded;
+  var _React$useContext3 = F(StableMenuContext),
+      buttonRef = _React$useContext3.buttonRef,
+      dispatch = _React$useContext3.dispatch,
+      readyToSelect = _React$useContext3.readyToSelect,
+      selectCallbacks = _React$useContext3.selectCallbacks;
+
+  var _React$useContext4 = F(UnstableMenuContext),
+      _React$useContext4$st = _React$useContext4.state,
+      selectionIndex = _React$useContext4$st.selectionIndex,
+      isExpanded = _React$useContext4$st.isExpanded;
 
   var ownRef = s(null); // After the ref is mounted to the DOM node, we check to see if we have an
   // explicit valueText prop before looking for the node's textContent for
@@ -3307,16 +2619,12 @@ var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl
       valueText = _React$useState[0],
       setValueText = _React$useState[1];
 
-  var setValueTextFromDom = A(function (node) {
-    if (node) {
-      ownRef.current = node;
-
-      if (!valueTextProp || node.textContent && valueText !== node.textContent) {
-        setValueText(node.textContent);
-      }
+  var setValueTextFromDOM = A(function (node) {
+    if (!valueTextProp && node != null && node.textContent) {
+      setValueText(node.textContent);
     }
-  }, [valueText, valueTextProp]);
-  var ref = useForkedRef(forwardedRef, setValueTextFromDom);
+  }, [valueTextProp]);
+  var ref = useComposedRefs(forwardedRef, ownRef, setValueTextFromDOM);
   var mouseEventStarted = s(false);
   var index = useDescendant({
     element: ownRef.current,
@@ -3329,7 +2637,7 @@ var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl
   selectCallbacks.current[index] = onSelect;
 
   function select() {
-    menu_button_esm_focus(buttonRef.current);
+    reach_menu_button_esm_focus(buttonRef.current);
     onSelect && onSelect();
     dispatch({
       type: CLICK_MENU_ITEM
@@ -3337,7 +2645,7 @@ var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl
   }
 
   function handleClick(event) {
-    if (isLink && !menu_button_esm_isRightClick(event.nativeEvent)) {
+    if (isLink && !isRightClick(event.nativeEvent)) {
       if (disabled) {
         event.preventDefault();
       } else {
@@ -3356,11 +2664,13 @@ var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl
   }
 
   function handleMouseDown(event) {
-    if (menu_button_esm_isRightClick(event.nativeEvent)) return;
+    if (isRightClick(event.nativeEvent)) {
+      return;
+    }
 
     if (isLink) {
-      // Signal that the mouse is down so we can react call the right function
-      // if the user is clicking on a link.
+      // Signal that the mouse is down so we can call the right function if the
+      // user is clicking on a link.
       mouseEventStarted.current = true;
     } else {
       event.preventDefault();
@@ -3404,7 +2714,7 @@ var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl
       return;
     }
 
-    if (menu_button_esm_isRightClick(event.nativeEvent)) return;
+    if (isRightClick(event.nativeEvent)) return;
 
     if (isLink) {
       // If a mousedown event was initiated on a menu link followed by a
@@ -3432,17 +2742,16 @@ var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl
 
   y(function () {
     var ownerDocument = getOwnerDocument(ownRef.current);
-
-    var listener = function listener() {
-      return mouseEventStarted.current = false;
-    };
-
     ownerDocument.addEventListener("mouseup", listener);
     return function () {
-      return ownerDocument.removeEventListener("mouseup", listener);
+      ownerDocument.removeEventListener("mouseup", listener);
     };
+
+    function listener() {
+      mouseEventStarted.current = false;
+    }
   }, []);
-  return (0,preact_module/* createElement */.az)(Comp, Object.assign({
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, reach_menu_button_esm_extends({
     role: "menuitem",
     id: useMenuItemId(index),
     tabIndex: -1
@@ -3452,13 +2761,13 @@ var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl
     "data-reach-menu-item": "",
     "data-selected": isSelected ? "" : undefined,
     "data-valuetext": valueText,
-    onClick: wrapEvent(onClick, handleClick),
-    onDragStart: wrapEvent(onDragStart, handleDragStart),
-    onMouseDown: wrapEvent(onMouseDown, handleMouseDown),
-    onMouseEnter: wrapEvent(onMouseEnter, handleMouseEnter),
-    onMouseLeave: wrapEvent(onMouseLeave, handleMouseLeave),
-    onMouseMove: wrapEvent(onMouseMove, handleMouseMove),
-    onMouseUp: wrapEvent(onMouseUp, handleMouseUp)
+    onClick: composeEventHandlers(onClick, handleClick),
+    onDragStart: composeEventHandlers(onDragStart, handleDragStart),
+    onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),
+    onMouseEnter: composeEventHandlers(onMouseEnter, handleMouseEnter),
+    onMouseLeave: composeEventHandlers(onMouseLeave, handleMouseLeave),
+    onMouseMove: composeEventHandlers(onMouseMove, handleMouseMove),
+    onMouseUp: composeEventHandlers(onMouseUp, handleMouseUp)
   }));
 }); ////////////////////////////////////////////////////////////////////////////////
 
@@ -3470,16 +2779,19 @@ var MenuItemImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItemImpl
  * @see Docs https://reach.tech/menu-button#menuitem
  */
 
-var MenuItem = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItem(_ref4, forwardedRef) {
+var MenuItem = /*#__PURE__*/compat_module_x(function MenuItem(_ref4, forwardedRef) {
   var _ref4$as = _ref4.as,
       as = _ref4$as === void 0 ? "div" : _ref4$as,
-      props = menu_button_esm_objectWithoutPropertiesLoose(_ref4, ["as"]);
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref4, ["as"]);
 
-  return (0,preact_module/* createElement */.az)(MenuItemImpl, Object.assign({}, props, {
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(MenuItemImpl, reach_menu_button_esm_extends({}, props, {
     ref: forwardedRef,
     as: as
   }));
 });
+/**
+ * @see Docs https://reach.tech/menu-button#menuitem-props
+ */
 
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
@@ -3494,28 +2806,31 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuItems = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItems(_ref5, forwardedRef) {
+var MenuItems = /*#__PURE__*/compat_module_x(function MenuItems(_ref5, forwardedRef) {
   var _ref5$as = _ref5.as,
       Comp = _ref5$as === void 0 ? "div" : _ref5$as,
-      children = _ref5.children,
-      id = _ref5.id,
-      onKeyDown = _ref5.onKeyDown,
-      props = menu_button_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children", "id", "onKeyDown"]);
+      children = _ref5.children;
+  _ref5.id;
 
-  var _React$useContext3 = F(MenuContext),
-      menuId = _React$useContext3.menuId,
-      dispatch = _React$useContext3.dispatch,
-      buttonRef = _React$useContext3.buttonRef,
-      menuRef = _React$useContext3.menuRef,
-      selectCallbacks = _React$useContext3.selectCallbacks,
-      _React$useContext3$st = _React$useContext3.state,
-      isExpanded = _React$useContext3$st.isExpanded,
-      buttonId = _React$useContext3$st.buttonId,
-      selectionIndex = _React$useContext3$st.selectionIndex,
-      typeaheadQuery = _React$useContext3$st.typeaheadQuery;
+  var onKeyDown = _ref5.onKeyDown,
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children", "id", "onKeyDown"]);
+
+  var _React$useContext5 = F(StableMenuContext),
+      dispatch = _React$useContext5.dispatch,
+      buttonRef = _React$useContext5.buttonRef,
+      menuRef = _React$useContext5.menuRef,
+      selectCallbacks = _React$useContext5.selectCallbacks;
+
+  var _React$useContext6 = F(UnstableMenuContext),
+      menuId = _React$useContext6.menuId,
+      _React$useContext6$st = _React$useContext6.state,
+      isExpanded = _React$useContext6$st.isExpanded,
+      buttonId = _React$useContext6$st.buttonId,
+      selectionIndex = _React$useContext6$st.selectionIndex,
+      typeaheadQuery = _React$useContext6$st.typeaheadQuery;
 
   var menuItems = useDescendants(MenuDescendantContext);
-  var ref = useForkedRef(menuRef, forwardedRef);
+  var ref = useComposedRefs(menuRef, forwardedRef);
   y(function () {
     // Respond to user char key input with typeahead
     var match = findItemFromTypeahead(menuItems, typeaheadQuery);
@@ -3570,7 +2885,7 @@ var MenuItems = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItems(_ref5
       });
     }
   }, [dispatch, menuItems, prevMenuItemsLength, prevSelected, prevSelectionIndex, selectionIndex]);
-  var handleKeyDown = wrapEvent(function handleKeyDown(event) {
+  var handleKeyDown = composeEventHandlers(function handleKeyDown(event) {
     var key = event.key;
 
     if (!isExpanded) {
@@ -3594,7 +2909,7 @@ var MenuItems = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItems(_ref5
             // We fire the onSelect callback next so the app can manage
             // focus if needed.
 
-            menu_button_esm_focus(buttonRef.current);
+            reach_menu_button_esm_focus(buttonRef.current);
             selectCallbacks.current[selected.index] && selectCallbacks.current[selected.index]();
             dispatch({
               type: CLICK_MENU_ITEM
@@ -3605,12 +2920,9 @@ var MenuItems = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItems(_ref5
         break;
 
       case "Escape":
-        menu_button_esm_focus(buttonRef.current);
+        reach_menu_button_esm_focus(buttonRef.current);
         dispatch({
-          type: CLOSE_MENU,
-          payload: {
-            buttonRef: buttonRef
-          }
+          type: CLOSE_MENU
         });
         break;
 
@@ -3649,28 +2961,36 @@ var MenuItems = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuItems(_ref5
     },
     key: "index"
   }));
-  return (// TODO: Should probably file a but in jsx-a11y, but this is correct
+  return (
+    /*#__PURE__*/
+    // TODO: Should probably file a but in jsx-a11y, but this is correct
     // according to https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-actions-active-descendant.html
     // eslint-disable-next-line jsx-a11y/aria-activedescendant-has-tabindex
-    (0,preact_module/* createElement */.az)(Comp // Refers to the descendant menuitem element that is visually indicated
+    (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // Refers to the descendant menuitem element that is visually indicated
     // as focused.
     // https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-actions-active-descendant.html
-    , Object.assign({
-      "aria-activedescendant": useMenuItemId(selectionIndex) || undefined,
-      "aria-labelledby": buttonId || undefined,
-      // The element that contains the menu items displayed by activating the
+    , reach_menu_button_esm_extends({
+      "aria-activedescendant": useMenuItemId(selectionIndex) || undefined // Refers to the element that contains the accessible name for the
+      // `menu`. The menu is labeled by the menu button.
+      // https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-actions-active-descendant.html
+      ,
+      "aria-labelledby": buttonId || undefined // The element that contains the menu items displayed by activating the
       // button has role menu.
       // https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton
+      ,
       role: "menu",
       tabIndex: -1
     }, props, {
       ref: ref,
       "data-reach-menu-items": "",
       id: menuId,
-      onKeyDown: wrapEvent(onKeyDown, handleKeyDown)
+      onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown)
     }), children)
   );
 });
+/**
+ * @see Docs https://reach.tech/menu-button#menuitems-props
+ */
 
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
@@ -3687,28 +3007,25 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuLink = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRefWithAs(function MenuLink(_ref6, forwardedRef) {
+var MenuLink = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function MenuLink(_ref6, forwardedRef) {
   var _ref6$as = _ref6.as,
       as = _ref6$as === void 0 ? "a" : _ref6$as,
       component = _ref6.component,
       onSelect = _ref6.onSelect,
-      props = menu_button_esm_objectWithoutPropertiesLoose(_ref6, ["as", "component", "onSelect"]);
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref6, ["as", "component", "onSelect"]);
 
-  if (component) {
-    console.warn("[@reach/menu-button]: Please use the `as` prop instead of `component`.");
-  }
-
-  return createElement("div", {
-    role: "none",
-    tabIndex: -1
-  }, createElement(MenuItemImpl, Object.assign({}, props, {
+  useDevWarning(!component, "[@reach/menu-button]: Please use the `as` prop instead of `component`");
+  return /*#__PURE__*/createElement(MenuItemImpl, reach_menu_button_esm_extends({}, props, {
     ref: forwardedRef,
     "data-reach-menu-link": "",
     as: as,
     isLink: true,
     onSelect: onSelect || noop
-  })));
+  }));
 })));
+/**
+ * @see Docs https://reach.tech/menu-button#menulink-props
+ */
 
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
@@ -3722,52 +3039,63 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuList = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuList(_ref7, forwardedRef) {
+var MenuList = /*#__PURE__*/compat_module_x(function MenuList(_ref7, forwardedRef) {
   var _ref7$portal = _ref7.portal,
       portal = _ref7$portal === void 0 ? true : _ref7$portal,
-      props = menu_button_esm_objectWithoutPropertiesLoose(_ref7, ["portal"]);
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref7, ["portal"]);
 
-  return (0,preact_module/* createElement */.az)(MenuPopover, {
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(MenuPopover, {
     portal: portal
-  }, (0,preact_module/* createElement */.az)(MenuItems, Object.assign({}, props, {
+  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(MenuItems, reach_menu_button_esm_extends({}, props, {
     ref: forwardedRef,
     "data-reach-menu-list": ""
   })));
 });
+/**
+ * @see Docs https://reach.tech/menu-button#menulist-props
+ */
 
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * MenuPopover
- *
- * A low-level wrapper for the popover that appears when a menu button is open.
- * You can compose it with `MenuItems` for more control over the nested
- * components and their rendered DOM nodes, or if you need to nest arbitrary
- * components between the outer wrapper and your list.
- *
- * @see Docs https://reach.tech/menu-button#menupopover
- */
+  * 
+  
+  *
+  * A low-level wrapper for the popover that appears when a menu button is open.
+  * You can compose it with `MenuItems` for more control over the nested
+  * components and their rendered DOM nodes, or if you need to nest arbitrary
+  * components between the outer wrapper and your list.
+  *
+  * @see Docs https://reach.tech/menu-button#menupopover
+  */
 
 
-var MenuPopover = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuPopover(_ref8, forwardedRef) {
+var MenuPopover = /*#__PURE__*/compat_module_x(function MenuPopover(_ref8, forwardedRef) {
   var _ref8$as = _ref8.as,
       Comp = _ref8$as === void 0 ? "div" : _ref8$as,
       children = _ref8.children,
+      onBlur = _ref8.onBlur,
       _ref8$portal = _ref8.portal,
       portal = _ref8$portal === void 0 ? true : _ref8$portal,
       position = _ref8.position,
-      props = menu_button_esm_objectWithoutPropertiesLoose(_ref8, ["as", "children", "portal", "position"]);
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref8, ["as", "children", "onBlur", "portal", "position"]);
 
-  var _React$useContext4 = F(MenuContext),
-      buttonRef = _React$useContext4.buttonRef,
-      buttonClickedRef = _React$useContext4.buttonClickedRef,
-      dispatch = _React$useContext4.dispatch,
-      menuRef = _React$useContext4.menuRef,
-      popoverRef = _React$useContext4.popoverRef,
-      isExpanded = _React$useContext4.state.isExpanded;
+  var _React$useContext7 = F(StableMenuContext),
+      buttonRef = _React$useContext7.buttonRef,
+      buttonClickedRef = _React$useContext7.buttonClickedRef,
+      dispatch = _React$useContext7.dispatch,
+      menuRef = _React$useContext7.menuRef,
+      popoverRef = _React$useContext7.popoverRef;
 
-  var ref = useForkedRef(popoverRef, forwardedRef);
+  var _React$useContext8 = F(UnstableMenuContext),
+      isExpanded = _React$useContext8.state.isExpanded;
+
+  var ref = useComposedRefs(popoverRef, forwardedRef);
   y(function () {
+    if (!isExpanded) {
+      return;
+    }
+
     var ownerDocument = getOwnerDocument(popoverRef.current);
 
     function listener(event) {
@@ -3776,10 +3104,7 @@ var MenuPopover = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuPopover(_
       } else if (!popoverContainsEventTarget(popoverRef.current, event.target)) {
         // We on want to close only if focus rests outside the menu
         dispatch({
-          type: CLOSE_MENU,
-          payload: {
-            buttonRef: buttonRef
-          }
+          type: CLOSE_MENU
         });
       }
     }
@@ -3790,23 +3115,35 @@ var MenuPopover = /*#__PURE__*/utils_esm_forwardRefWithAs(function MenuPopover(_
     return function () {
       ownerDocument.removeEventListener("mousedown", listener); // ownerDocument.removeEventListener("touchstart", listener);
     };
-  }, [buttonClickedRef, buttonRef, dispatch, menuRef, popoverRef]);
+  }, [buttonClickedRef, buttonRef, dispatch, menuRef, popoverRef, isExpanded]);
 
-  var commonProps = menu_button_esm_extends({
+  var commonProps = reach_menu_button_esm_extends({
     ref: ref,
     // TODO: remove in 1.0
     "data-reach-menu": "",
     "data-reach-menu-popover": "",
     hidden: !isExpanded,
-    children: children
+    children: children,
+    onBlur: composeEventHandlers(onBlur, function (event) {
+      if (event.currentTarget.contains(event.relatedTarget)) {
+        return;
+      }
+
+      dispatch({
+        type: CLOSE_MENU
+      });
+    })
   }, props);
 
-  return portal ? (0,preact_module/* createElement */.az)(Popover, Object.assign({}, commonProps, {
+  return portal ? /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Popover, reach_menu_button_esm_extends({}, commonProps, {
     as: Comp,
     targetRef: buttonRef,
     position: position
-  })) : (0,preact_module/* createElement */.az)(Comp, Object.assign({}, commonProps));
+  })) : /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, commonProps);
 });
+/**
+ * @see Docs https://reach.tech/menu-button#menupopover-props
+ */
 
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
@@ -3818,8 +3155,8 @@ if (false) {} //////////////////////////////////////////////////////////////////
 
 
 function useMenuButtonContext() {
-  var _React$useContext5 = useContext(MenuContext),
-      isExpanded = _React$useContext5.state.isExpanded;
+  var _React$useContext9 = useContext(UnstableMenuContext),
+      isExpanded = _React$useContext9.state.isExpanded;
 
   return useMemo(function () {
     return {
@@ -3847,23 +3184,19 @@ function findItemFromTypeahead(items, string) {
   var found = items.find(function (item) {
     var _item$element, _item$element$dataset, _item$element$dataset2;
 
-    return item.disabled ? false : (_item$element = item.element) === null || _item$element === void 0 ? void 0 : (_item$element$dataset = _item$element.dataset) === null || _item$element$dataset === void 0 ? void 0 : (_item$element$dataset2 = _item$element$dataset.valuetext) === null || _item$element$dataset2 === void 0 ? void 0 : _item$element$dataset2.toLowerCase().startsWith(string);
+    return item.disabled ? false : (_item$element = item.element) == null ? void 0 : (_item$element$dataset = _item$element.dataset) == null ? void 0 : (_item$element$dataset2 = _item$element$dataset.valuetext) == null ? void 0 : _item$element$dataset2.toLowerCase().startsWith(string);
   });
   return found ? items.indexOf(found) : null;
 }
 
 function useMenuItemId(index) {
-  var _React$useContext6 = F(MenuContext),
-      menuId = _React$useContext6.menuId;
+  var _React$useContext10 = F(UnstableMenuContext),
+      menuId = _React$useContext10.menuId;
 
-  return index != null && index > -1 ? utils_esm_makeId("option-" + index, menuId) : undefined;
+  return index != null && index > -1 ? reach_utils_make_id_esm_makeId("option-" + index, menuId) : undefined;
 }
 
-function menu_button_esm_isRightClick(nativeEvent) {
-  return nativeEvent.which === 3 || nativeEvent.button === 2;
-}
-
-function menu_button_esm_focus(element) {
+function reach_menu_button_esm_focus(element) {
   element && element.focus();
 }
 
@@ -3878,38 +3211,38 @@ function reducer(state, action) {
 
   switch (action.type) {
     case CLICK_MENU_ITEM:
-      return menu_button_esm_extends({}, state, {
+      return reach_menu_button_esm_extends({}, state, {
         isExpanded: false,
         selectionIndex: -1
       });
 
     case CLOSE_MENU:
-      return menu_button_esm_extends({}, state, {
+      return reach_menu_button_esm_extends({}, state, {
         isExpanded: false,
         selectionIndex: -1
       });
 
     case OPEN_MENU_AT_FIRST_ITEM:
-      return menu_button_esm_extends({}, state, {
+      return reach_menu_button_esm_extends({}, state, {
         isExpanded: true,
         selectionIndex: 0
       });
 
     case OPEN_MENU_AT_INDEX:
-      return menu_button_esm_extends({}, state, {
+      return reach_menu_button_esm_extends({}, state, {
         isExpanded: true,
         selectionIndex: action.payload.index
       });
 
     case OPEN_MENU_CLEARED:
-      return menu_button_esm_extends({}, state, {
+      return reach_menu_button_esm_extends({}, state, {
         isExpanded: true,
         selectionIndex: -1
       });
 
     case SELECT_ITEM_AT_INDEX:
       if (action.payload.index >= 0) {
-        return menu_button_esm_extends({}, state, {
+        return reach_menu_button_esm_extends({}, state, {
           selectionIndex: action.payload.max != null ? Math.min(Math.max(action.payload.index, 0), action.payload.max) : Math.max(action.payload.index, 0)
         });
       }
@@ -3917,18 +3250,18 @@ function reducer(state, action) {
       return state;
 
     case CLEAR_SELECTION_INDEX:
-      return menu_button_esm_extends({}, state, {
+      return reach_menu_button_esm_extends({}, state, {
         selectionIndex: -1
       });
 
     case SET_BUTTON_ID:
-      return menu_button_esm_extends({}, state, {
+      return reach_menu_button_esm_extends({}, state, {
         buttonId: action.payload
       });
 
     case SEARCH_FOR_ITEM:
       if (typeof action.payload !== "undefined") {
-        return menu_button_esm_extends({}, state, {
+        return reach_menu_button_esm_extends({}, state, {
           typeaheadQuery: action.payload
         });
       }
@@ -3939,6 +3272,11 @@ function reducer(state, action) {
       return state;
   }
 }
+
+function useDevWarning(condition, message) {
+  if (false) { var messageRef; }
+} ////////////////////////////////////////////////////////////////////////////////
+
 
 
 ;// CONCATENATED MODULE: ./src/components/Button/component.js
@@ -3951,7 +3289,7 @@ const Button = ({
   onClick,
   variant
 }) => {
-  return (0,preact_module.h)(Menu, null, (0,preact_module.h)(MenuButton, {
+  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(Menu, null, (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(MenuButton, {
     className: `sn-button ${variant}`,
     onClick: onClick
   }, label));
@@ -3981,11 +3319,11 @@ const Icon = ({
   height,
   className
 }) => {
-  return (0,preact_module.h)("svg", {
+  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)("svg", {
     className: `sn-icon ${className ? className : ''}`,
     width: width,
     height: height
-  }, (0,preact_module.h)("use", {
+  }, (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)("use", {
     href: icons_sprite + `#ic-${name}`
   }));
 };
@@ -4015,17 +3353,17 @@ const DropdownMenu = ({
   icon,
   onSelectItem
 }) => {
-  return (0,preact_module.h)(Menu, null, ({
+  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(Menu, null, ({
     isExpanded
-  }) => (0,preact_module.h)(preact_module/* Fragment */.HY, null, (0,preact_module.h)(MenuButton, {
+  }) => (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment, null, (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(MenuButton, {
     className: "sn-dropdown-menu"
-  }, icon && icon, " ", label, " ", isExpanded ? (0,preact_module.h)(Icon_component, {
+  }, icon && icon, " ", label, " ", isExpanded ? (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(Icon_component, {
     name: "menu-arrow-up"
-  }) : (0,preact_module.h)(Icon_component, {
+  }) : (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(Icon_component, {
     name: "menu-arrow-down"
-  })), (0,preact_module.h)(MenuList, {
+  })), (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(MenuList, {
     className: "sn-dropdown-menu-list"
-  }, items && items.map(item => (0,preact_module.h)(MenuItem, {
+  }, items && items.map(item => (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(MenuItem, {
     className: "sn-dropdown-menu-list-item",
     valueText: item.value,
     onSelect: () => item.onSelect ? item.onSelect(item.value) : onSelectItem(item.value)
@@ -4040,6 +3378,54 @@ DropdownMenu.propTypes = {
 };
 /* harmony default export */ const DropdownMenu_component = (DropdownMenu);
 ;// CONCATENATED MODULE: ./src/components/DropdownMenu/index.js
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-stable-callback/dist/reach-utils-use-stable-callback.esm.js
+
+
+
+/* eslint-disable react-hooks/rules-of-hooks */
+
+/**
+ * Converts a callback to a ref to avoid triggering re-renders when passed as a
+ * prop and exposed as a stable function to avoid executing effects when
+ * passed as a dependency.
+ */
+
+function createStableCallbackHook(useEffectHook, callback) {
+  var callbackRef = s(callback);
+  useEffectHook(function () {
+    callbackRef.current = callback;
+  }); // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  return A(function () {
+    callbackRef.current && callbackRef.current.apply(callbackRef, arguments);
+  }, []);
+}
+/**
+ * Converts a callback to a ref to avoid triggering re-renders when passed as a
+ * prop and exposed as a stable function to avoid executing effects when passed
+ * as a dependency.
+ */
+
+
+function useStableCallback(callback) {
+  return createStableCallbackHook(y, callback);
+}
+/**
+ * Converts a callback to a ref to avoid triggering re-renders when passed as a
+ * prop and exposed as a stable function to avoid executing effects when passed
+ * as a dependency.
+ *
+ * Use this over `useStableCallback` when you want the callback to be cached in
+ * `useLayoutEffect` instead of `useEffect` to deal with timing issues only when
+ * needed.
+ */
+
+
+function useStableLayoutCallback(callback) {
+  return createStableCallbackHook(useIsomorphicLayoutEffect, callback);
+}
+
 
 ;// CONCATENATED MODULE: ./node_modules/@xstate/fsm/es/index.js
 /*! *****************************************************************************
@@ -4259,14 +3645,35 @@ function es_f(e) {
 }
 
 
-;// CONCATENATED MODULE: ./node_modules/@reach/machine/dist/machine.esm.js
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-constant/dist/reach-utils-use-constant.esm.js
+
+/**
+ * React hook for creating a value exactly once.
+ * @see https://github.com/Andarist/use-constant
+ */
+
+function useConstant(fn) {
+  var ref = s();
+
+  if (!ref.current) {
+    ref.current = {
+      v: fn()
+    };
+  }
+
+  return ref.current.v;
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/machine/dist/reach-machine.esm.js
 
 
 
 
 
-function machine_esm_extends() {
-  machine_esm_extends = Object.assign || function (target) {
+
+function reach_machine_esm_extends() {
+  reach_machine_esm_extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -4280,7 +3687,7 @@ function machine_esm_extends() {
     return target;
   };
 
-  return machine_esm_extends.apply(this, arguments);
+  return reach_machine_esm_extends.apply(this, arguments);
 }
 
 var getServiceState = function getServiceState(service) {
@@ -4340,7 +3747,7 @@ function useMachine(initialMachine, refs, DEBUG) {
       type: rawEvent
     } : rawEvent;
     var refValues = unwrapRefs(refs);
-    service.send(machine_esm_extends({}, event, {
+    service.send(reach_machine_esm_extends({}, event, {
       lastEventType: lastEventType.current,
       refs: refValues
     }));
@@ -4369,7 +3776,7 @@ function useMachine(initialMachine, refs, DEBUG) {
   // point, but if we do we can maybe reconsider this approach.
 
   var memoizedState = d(function () {
-    return machine_esm_extends({}, state, {
+    return reach_machine_esm_extends({}, state, {
       matches: function matches(value) {
         return value === state.value;
       }
@@ -4413,20 +3820,30 @@ function useCreateMachine(machineDefinition, options) {
   return useConstant(function () {
     return es_c(machineDefinition, options);
   });
-}
-
-
-;// CONCATENATED MODULE: ./node_modules/@reach/listbox/dist/listbox.esm.js
+} ////////////////////////////////////////////////////////////////////////////////
 
 
 
-
+;// CONCATENATED MODULE: ./node_modules/@reach/listbox/dist/reach-listbox.esm.js
 
 
 
 
-function listbox_esm_extends() {
-  listbox_esm_extends = Object.assign || function (target) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+function reach_listbox_esm_extends() {
+  reach_listbox_esm_extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -4440,10 +3857,10 @@ function listbox_esm_extends() {
     return target;
   };
 
-  return listbox_esm_extends.apply(this, arguments);
+  return reach_listbox_esm_extends.apply(this, arguments);
 }
 
-function listbox_esm_objectWithoutPropertiesLoose(source, excluded) {
+function reach_listbox_esm_objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -4458,27 +3875,23 @@ function listbox_esm_objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 
-var _commonEvents; // States
+var _commonEvents; ////////////////////////////////////////////////////////////////////////////////
+// States
 
 
-var ListboxStates;
-
-(function (ListboxStates) {
-  // Resting/closed state.
-  ListboxStates["Idle"] = "IDLE"; // Listbox is open but the user is not yet navigating.
-
-  ListboxStates["Open"] = "OPEN"; // The user is navigating the list
-
-  ListboxStates["Navigating"] = "NAVIGATING"; // The user has moused-down but hasn't made a selection yet
-
-  ListboxStates["Dragging"] = "DRAGGING"; // The user is interacting with arbitrary elements inside the popover
-
-  ListboxStates["Interacting"] = "INTERACTING";
-})(ListboxStates || (ListboxStates = {})); ////////////////////////////////////////////////////////////////////////////////
+var ListboxStates; ////////////////////////////////////////////////////////////////////////////////
 // Events
 
+(function (ListboxStates) {
+  ListboxStates["Idle"] = "IDLE";
+  ListboxStates["Open"] = "OPEN";
+  ListboxStates["Navigating"] = "NAVIGATING";
+  ListboxStates["Dragging"] = "DRAGGING";
+  ListboxStates["Interacting"] = "INTERACTING";
+})(ListboxStates || (ListboxStates = {}));
 
-var ListboxEvents;
+var ListboxEvents; ////////////////////////////////////////////////////////////////////////////////
+// Actions and conditions
 
 (function (ListboxEvents) {
   ListboxEvents["ButtonMouseDown"] = "BUTTON_MOUSE_DOWN";
@@ -4497,19 +3910,17 @@ var ListboxEvents;
   ListboxEvents["OptionTouchStart"] = "OPTION_TOUCH_START";
   ListboxEvents["OptionMouseMove"] = "OPTION_MOUSE_MOVE";
   ListboxEvents["OptionMouseEnter"] = "OPTION_MOUSE_ENTER";
-  ListboxEvents["OutsideMouseDown"] = "OUTSIDE_MOUSE_DOWN";
-  ListboxEvents["OutsideMouseUp"] = "OUTSIDE_MOUSE_UP"; // Uncontrolled value changes come from specific events (click, key, etc.)
-  // ValueChange > Value change may have come from somewhere else
-
-  ListboxEvents["ValueChange"] = "VALUE_CHANGE";
   ListboxEvents["OptionMouseDown"] = "OPTION_MOUSE_DOWN";
   ListboxEvents["OptionMouseUp"] = "OPTION_MOUSE_UP";
+  ListboxEvents["OptionClick"] = "OPTION_CLICK";
+  ListboxEvents["OptionPress"] = "OPTION_PRESS";
+  ListboxEvents["OutsideMouseDown"] = "OUTSIDE_MOUSE_DOWN";
+  ListboxEvents["OutsideMouseUp"] = "OUTSIDE_MOUSE_UP";
+  ListboxEvents["ValueChange"] = "VALUE_CHANGE";
   ListboxEvents["PopoverPointerDown"] = "POPOVER_POINTER_DOWN";
   ListboxEvents["PopoverPointerUp"] = "POPOVER_POINTER_UP";
   ListboxEvents["UpdateAfterTypeahead"] = "UPDATE_AFTER_TYPEAHEAD";
-})(ListboxEvents || (ListboxEvents = {})); ////////////////////////////////////////////////////////////////////////////////
-// Actions and conditions
-
+})(ListboxEvents || (ListboxEvents = {}));
 
 var clearNavigationValue = /*#__PURE__*/es_r({
   navigationValue: null
@@ -4522,7 +3933,7 @@ var assignValue = /*#__PURE__*/es_r({
     return event.value;
   }
 });
-var listbox_esm_navigate = /*#__PURE__*/es_r({
+var reach_listbox_esm_navigate = /*#__PURE__*/es_r({
   navigationValue: function navigationValue(data, event) {
     return event.value;
   }
@@ -4541,7 +3952,7 @@ var navigateFromCurrentValue = /*#__PURE__*/es_r({
 
       return ((_data$options$find = data.options.find(function (option) {
         return !option.disabled;
-      })) === null || _data$options$find === void 0 ? void 0 : _data$options$find.value) || null;
+      })) == null ? void 0 : _data$options$find.value) || null;
     }
   }
 });
@@ -4553,7 +3964,7 @@ function listboxLostFocus(data, event) {
         popover = _event$refs.popover;
     var relatedTarget = event.relatedTarget;
     var ownerDocument = getOwnerDocument(popover);
-    return !!((ownerDocument === null || ownerDocument === void 0 ? void 0 : ownerDocument.activeElement) !== list && popover && !popover.contains(relatedTarget || (ownerDocument === null || ownerDocument === void 0 ? void 0 : ownerDocument.activeElement)));
+    return !!((ownerDocument == null ? void 0 : ownerDocument.activeElement) !== list && popover && !popover.contains(relatedTarget || (ownerDocument == null ? void 0 : ownerDocument.activeElement)));
   }
 
   return false;
@@ -4621,8 +4032,12 @@ function optionIsNavigable(data, event) {
 }
 
 function optionIsSelectable(data, event) {
-  if (event && event.disabled) {
+  if ("disabled" in event && event.disabled) {
     return false;
+  }
+
+  if ("value" in event) {
+    return event.value != null;
   }
 
   return data.navigationValue != null;
@@ -4699,7 +4114,7 @@ var setNavSelectionFromTypeahead = /*#__PURE__*/es_r({
 });
 var commonEvents = (_commonEvents = {}, _commonEvents[ListboxEvents.GetDerivedData] = {
   actions: /*#__PURE__*/es_r(function (ctx, event) {
-    return listbox_esm_extends({}, ctx, event.data);
+    return reach_listbox_esm_extends({}, ctx, event.data);
   })
 }, _commonEvents[ListboxEvents.ValueChange] = {
   actions: [assignValue, selectOption]
@@ -4726,7 +4141,7 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
       typeaheadQuery: null
     },
     states: (_states = {}, _states[ListboxStates.Idle] = {
-      on: listbox_esm_extends({}, commonEvents, (_extends2 = {}, _extends2[ListboxEvents.ButtonMouseDown] = {
+      on: reach_listbox_esm_extends({}, commonEvents, (_extends2 = {}, _extends2[ListboxEvents.ButtonMouseDown] = {
         target: ListboxStates.Open,
         actions: [navigateFromCurrentValue],
         cond: listboxIsNotDisabled
@@ -4755,7 +4170,7 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
       }, _extends2))
     }, _states[ListboxStates.Interacting] = {
       entry: [clearNavigationValue],
-      on: listbox_esm_extends({}, commonEvents, (_extends3 = {}, _extends3[ListboxEvents.ClearNavSelection] = {
+      on: reach_listbox_esm_extends({}, commonEvents, (_extends3 = {}, _extends3[ListboxEvents.ClearNavSelection] = {
         actions: [clearNavigationValue, focusList]
       }, _extends3[ListboxEvents.KeyDownEnter] = {
         target: ListboxStates.Idle,
@@ -4811,18 +4226,26 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
         actions: clearTypeahead
       }], _extends3[ListboxEvents.OptionTouchStart] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead],
+        actions: [reach_listbox_esm_navigate, clearTypeahead],
         cond: optionIsNavigable
+      }, _extends3[ListboxEvents.OptionClick] = {
+        target: ListboxStates.Idle,
+        actions: [assignValue, clearTypeahead, focusButton, selectOption],
+        cond: optionIsSelectable
+      }, _extends3[ListboxEvents.OptionPress] = {
+        target: ListboxStates.Idle,
+        actions: [assignValue, clearTypeahead, focusButton, selectOption],
+        cond: optionIsSelectable
       }, _extends3[ListboxEvents.OptionMouseEnter] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead],
+        actions: [reach_listbox_esm_navigate, clearTypeahead],
         cond: optionIsNavigable
       }, _extends3[ListboxEvents.KeyDownNavigate] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead, focusList]
+        actions: [reach_listbox_esm_navigate, clearTypeahead, focusList]
       }, _extends3))
     }, _states[ListboxStates.Open] = {
-      on: listbox_esm_extends({}, commonEvents, (_extends4 = {}, _extends4[ListboxEvents.ClearNavSelection] = {
+      on: reach_listbox_esm_extends({}, commonEvents, (_extends4 = {}, _extends4[ListboxEvents.ClearNavSelection] = {
         actions: [clearNavigationValue]
       }, _extends4[ListboxEvents.KeyDownEnter] = {
         target: ListboxStates.Idle,
@@ -4875,11 +4298,19 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
         actions: [navigateFromCurrentValue, focusList]
       }, _extends4[ListboxEvents.OptionTouchStart] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead],
+        actions: [reach_listbox_esm_navigate, clearTypeahead],
         cond: optionIsNavigable
+      }, _extends4[ListboxEvents.OptionClick] = {
+        target: ListboxStates.Idle,
+        actions: [assignValue, clearTypeahead, focusButton, selectOption],
+        cond: optionIsSelectable
+      }, _extends4[ListboxEvents.OptionPress] = {
+        target: ListboxStates.Idle,
+        actions: [assignValue, clearTypeahead, focusButton, selectOption],
+        cond: optionIsSelectable
       }, _extends4[ListboxEvents.KeyDownNavigate] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead, focusList]
+        actions: [reach_listbox_esm_navigate, clearTypeahead, focusList]
       }, _extends4[ListboxEvents.KeyDownSearch] = {
         target: ListboxStates.Navigating,
         actions: setTypeahead
@@ -4889,13 +4320,13 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
         actions: clearTypeahead
       }, _extends4[ListboxEvents.OptionMouseMove] = [{
         target: ListboxStates.Dragging,
-        actions: [listbox_esm_navigate],
+        actions: [reach_listbox_esm_navigate],
         cond: optionIsNavigable
       }, {
         target: ListboxStates.Dragging
       }], _extends4))
     }, _states[ListboxStates.Dragging] = {
-      on: listbox_esm_extends({}, commonEvents, (_extends5 = {}, _extends5[ListboxEvents.ClearNavSelection] = {
+      on: reach_listbox_esm_extends({}, commonEvents, (_extends5 = {}, _extends5[ListboxEvents.ClearNavSelection] = {
         actions: [clearNavigationValue]
       }, _extends5[ListboxEvents.KeyDownEnter] = {
         target: ListboxStates.Idle,
@@ -4949,15 +4380,23 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
         actions: [navigateFromCurrentValue, focusList]
       }, _extends5[ListboxEvents.OptionTouchStart] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead],
+        actions: [reach_listbox_esm_navigate, clearTypeahead],
         cond: optionIsNavigable
+      }, _extends5[ListboxEvents.OptionClick] = {
+        target: ListboxStates.Idle,
+        actions: [assignValue, clearTypeahead, focusButton, selectOption],
+        cond: optionIsSelectable
+      }, _extends5[ListboxEvents.OptionPress] = {
+        target: ListboxStates.Idle,
+        actions: [assignValue, clearTypeahead, focusButton, selectOption],
+        cond: optionIsSelectable
       }, _extends5[ListboxEvents.OptionMouseEnter] = {
         target: ListboxStates.Dragging,
-        actions: [listbox_esm_navigate, clearTypeahead],
+        actions: [reach_listbox_esm_navigate, clearTypeahead],
         cond: optionIsNavigable
       }, _extends5[ListboxEvents.KeyDownNavigate] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead, focusList]
+        actions: [reach_listbox_esm_navigate, clearTypeahead, focusList]
       }, _extends5[ListboxEvents.KeyDownSearch] = {
         target: ListboxStates.Navigating,
         actions: setTypeahead
@@ -4967,7 +4406,7 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
         actions: clearTypeahead
       }, _extends5[ListboxEvents.OptionMouseMove] = [{
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate],
+        actions: [reach_listbox_esm_navigate],
         cond: optionIsNavigable
       }, {
         target: ListboxStates.Navigating
@@ -4977,7 +4416,7 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
         cond: optionIsSelectable
       }, _extends5))
     }, _states[ListboxStates.Navigating] = {
-      on: listbox_esm_extends({}, commonEvents, (_extends6 = {}, _extends6[ListboxEvents.ClearNavSelection] = {
+      on: reach_listbox_esm_extends({}, commonEvents, (_extends6 = {}, _extends6[ListboxEvents.ClearNavSelection] = {
         actions: [clearNavigationValue, focusList]
       }, _extends6[ListboxEvents.KeyDownEnter] = {
         target: ListboxStates.Idle,
@@ -5030,15 +4469,23 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
         actions: [navigateFromCurrentValue, focusList]
       }, _extends6[ListboxEvents.OptionTouchStart] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead],
+        actions: [reach_listbox_esm_navigate, clearTypeahead],
         cond: optionIsNavigable
+      }, _extends6[ListboxEvents.OptionClick] = {
+        target: ListboxStates.Idle,
+        actions: [assignValue, clearTypeahead, focusButton, selectOption],
+        cond: optionIsSelectable
+      }, _extends6[ListboxEvents.OptionPress] = {
+        target: ListboxStates.Idle,
+        actions: [assignValue, clearTypeahead, focusButton, selectOption],
+        cond: optionIsSelectable
       }, _extends6[ListboxEvents.OptionMouseEnter] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead],
+        actions: [reach_listbox_esm_navigate, clearTypeahead],
         cond: optionIsNavigable
       }, _extends6[ListboxEvents.KeyDownNavigate] = {
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate, clearTypeahead, focusList]
+        actions: [reach_listbox_esm_navigate, clearTypeahead, focusList]
       }, _extends6[ListboxEvents.KeyDownSearch] = {
         target: ListboxStates.Navigating,
         actions: setTypeahead
@@ -5048,7 +4495,7 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
         actions: clearTypeahead
       }, _extends6[ListboxEvents.OptionMouseMove] = [{
         target: ListboxStates.Navigating,
-        actions: [listbox_esm_navigate],
+        actions: [reach_listbox_esm_navigate],
         cond: optionIsNavigable
       }, {
         target: ListboxStates.Navigating
@@ -5074,7 +4521,13 @@ function findOptionFromValue(value, options) {
   return value ? options.find(function (option) {
     return option.value === value;
   }) : undefined;
-}
+} ////////////////////////////////////////////////////////////////////////////////
+// Types
+
+/**
+ * Shared partial interface for all of our event objects.
+ */
+
 
 var DEBUG = false; ////////////////////////////////////////////////////////////////////////////////
 // ListboxContext
@@ -5091,7 +4544,7 @@ var ListboxGroupContext = /*#__PURE__*/createNamedContext("ListboxGroupContext",
  * @see Docs https://reach.tech/listbox#listboxinput
  */
 
-var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput(_ref, forwardedRef) {
+var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forwardedRef) {
   var _ref$as = _ref.as,
       Comp = _ref$as === void 0 ? "div" : _ref$as,
       ariaLabelledBy = _ref["aria-labelledby"],
@@ -5105,17 +4558,16 @@ var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput
       onChange = _ref.onChange,
       required = _ref.required,
       valueProp = _ref.value,
-      _ref$_componentName = _ref._componentName,
-      _componentName = _ref$_componentName === void 0 ? "ListboxInput" : _ref$_componentName,
-      props = listbox_esm_objectWithoutPropertiesLoose(_ref, ["as", "aria-labelledby", "aria-label", "children", "defaultValue", "disabled", "form", "name", "onChange", "required", "value", "_componentName"]);
+      _ref$__componentName = _ref.__componentName,
+      __componentName = _ref$__componentName === void 0 ? "ListboxInput" : _ref$__componentName,
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref, ["as", "aria-labelledby", "aria-label", "children", "defaultValue", "disabled", "form", "name", "onChange", "required", "value", "__componentName"]);
 
   var isControlled = s(valueProp != null);
 
   var _useDescendantsInit = useDescendantsInit(),
       options = _useDescendantsInit[0],
-      setOptions = _useDescendantsInit[1];
+      setOptions = _useDescendantsInit[1]; // DOM refs
 
-  var stableOnChange = useStableCallback(onChange); // DOM refs
 
   var buttonRef = s(null);
   var hiddenInputRef = s(null);
@@ -5140,13 +4592,18 @@ var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput
     selectedOption: selectedOptionRef
   }, DEBUG),
       state = _useMachine[0],
-      send = _useMachine[1]; // IDs for aria attributes
+      send = _useMachine[1];
 
+  var stableOnChange = useStableCallback(function (newValue) {
+    if (newValue !== state.context.value) {
+      onChange == null ? void 0 : onChange(newValue);
+    }
+  }); // IDs for aria attributes
 
-  var _id = auto_id_esm_useId(props.id);
+  var _id = reach_auto_id_esm_useId(props.id);
 
-  var id = props.id || utils_esm_makeId("listbox-input", _id);
-  var ref = useForkedRef(inputRef, forwardedRef); // If the button has children, we just render them as the label.
+  var id = props.id || reach_utils_make_id_esm_makeId("listbox-input", _id);
+  var ref = useComposedRefs(inputRef, forwardedRef); // If the button has children, we just render them as the label.
   // Otherwise we'll find the option with a value that matches the listbox value
   // and use its label in the button. We'll get that here and send it to the
   // button via context.
@@ -5207,7 +4664,7 @@ var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput
       }
     }
 
-  useControlledSwitchWarning(valueProp, "value", _componentName); // Even if the app controls state, we still need to update it internally to
+  useControlledSwitchWarning(valueProp, "value", __componentName); // Even if the app controls state, we still need to update it internally to
   // run the state machine transitions
 
   useControlledStateSync(valueProp, state.context.value, function () {
@@ -5216,7 +4673,7 @@ var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput
       value: valueProp
     });
   });
-  useIsomorphicLayoutEffect(function () {
+  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     send({
       type: ListboxEvents.GetDerivedData,
       data: {
@@ -5229,7 +4686,7 @@ var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput
       var target = event.target,
           relatedTarget = event.relatedTarget;
 
-      if (!listbox_esm_popoverContainsEventTarget(popoverRef.current, target)) {
+      if (!reach_listbox_esm_popoverContainsEventTarget(popoverRef.current, target)) {
         send({
           type: ListboxEvents.OutsideMouseDown,
           relatedTarget: relatedTarget || target
@@ -5250,7 +4707,7 @@ var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput
       var target = event.target,
           relatedTarget = event.relatedTarget;
 
-      if (!listbox_esm_popoverContainsEventTarget(popoverRef.current, target)) {
+      if (!reach_listbox_esm_popoverContainsEventTarget(popoverRef.current, target)) {
         send({
           type: ListboxEvents.OutsideMouseUp,
           relatedTarget: relatedTarget || target
@@ -5267,19 +4724,19 @@ var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput
     };
   }, [send, isExpanded]);
   useCheckStyles("listbox");
-  return (0,preact_module/* createElement */.az)(DescendantProvider, {
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(DescendantProvider, {
     context: ListboxDescendantContext,
     items: options,
     set: setOptions
-  }, (0,preact_module/* createElement */.az)(ListboxContext.Provider, {
+  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(ListboxContext.Provider, {
     value: context
-  }, (0,preact_module/* createElement */.az)(Comp, Object.assign({}, props, {
+  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, reach_listbox_esm_extends({}, props, {
     ref: ref,
     "data-reach-listbox-input": "",
     "data-state": isExpanded ? "expanded" : "closed",
     "data-value": state.context.value,
     id: id
-  }), utils_esm_isFunction(children) ? children({
+  }), reach_utils_type_check_esm_isFunction(children) ? children({
     id: id,
     isExpanded: isExpanded,
     value: state.context.value,
@@ -5288,7 +4745,7 @@ var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput
     valueLabel: valueLabel,
     // TODO: Remove in 1.0
     expanded: isExpanded
-  }) : children), (form || name || required) && (0,preact_module/* createElement */.az)("input", {
+  }) : children), (form || name || required) && /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)("input", {
     ref: hiddenInputRef,
     "data-reach-listbox-hidden-input": "",
     disabled: disabled,
@@ -5302,7 +4759,11 @@ var ListboxInput = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxInput
   })));
 });
 
-if (false) {} ////////////////////////////////////////////////////////////////////////////////
+if (false) {}
+/**
+ * @see Docs https://reach.tech/listbox#listboxinput-props
+ */
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Listbox
@@ -5320,34 +4781,38 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var Listbox = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRefWithAs(function Listbox(_ref2, forwardedRef) {
+var Listbox = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function Listbox(_ref2, forwardedRef) {
   var _ref2$arrow = _ref2.arrow,
       arrow = _ref2$arrow === void 0 ? "▼" : _ref2$arrow,
       button = _ref2.button,
       children = _ref2.children,
       _ref2$portal = _ref2.portal,
       portal = _ref2$portal === void 0 ? true : _ref2$portal,
-      props = listbox_esm_objectWithoutPropertiesLoose(_ref2, ["arrow", "button", "children", "portal"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref2, ["arrow", "button", "children", "portal"]);
 
-  return createElement(ListboxInput, Object.assign({}, props, {
-    _componentName: "Listbox",
+  return /*#__PURE__*/createElement(ListboxInput, reach_listbox_esm_extends({}, props, {
+    __componentName: "Listbox",
     ref: forwardedRef
   }), function (_ref3) {
     var value = _ref3.value,
         valueLabel = _ref3.valueLabel;
-    return createElement(Fragment, null, createElement(ListboxButton, {
+    return /*#__PURE__*/createElement(Fragment, null, /*#__PURE__*/createElement(ListboxButton, {
       arrow: arrow,
       children: button ? isFunction(button) ? button({
         value: value,
         label: valueLabel
       }) : button : undefined
-    }), createElement(ListboxPopover, {
+    }), /*#__PURE__*/createElement(ListboxPopover, {
       portal: portal
-    }, createElement(ListboxList, null, children)));
+    }, /*#__PURE__*/createElement(ListboxList, null, children)));
   });
 })));
 
-if (false) {} ////////////////////////////////////////////////////////////////////////////////
+if (false) {}
+/**
+ * @see Docs https://reach.tech/listbox#listbox-props
+ */
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * ListboxButton
@@ -5358,7 +4823,7 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var ListboxButtonImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxButton(_ref4, forwardedRef) {
+var ListboxButtonImpl = /*#__PURE__*/compat_module_x(function ListboxButton(_ref4, forwardedRef) {
   var ariaLabel = _ref4["aria-label"],
       _ref4$arrow = _ref4.arrow,
       arrow = _ref4$arrow === void 0 ? false : _ref4$arrow,
@@ -5368,7 +4833,7 @@ var ListboxButtonImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function Listbox
       onKeyDown = _ref4.onKeyDown,
       onMouseDown = _ref4.onMouseDown,
       onMouseUp = _ref4.onMouseUp,
-      props = listbox_esm_objectWithoutPropertiesLoose(_ref4, ["aria-label", "arrow", "as", "children", "onKeyDown", "onMouseDown", "onMouseUp"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref4, ["aria-label", "arrow", "as", "children", "onKeyDown", "onMouseDown", "onMouseUp"]);
 
   var _React$useContext = F(ListboxContext),
       ariaLabelledBy = _React$useContext.ariaLabelledBy,
@@ -5381,7 +4846,7 @@ var ListboxButtonImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function Listbox
       listboxValueLabel = _React$useContext.listboxValueLabel;
 
   var listboxValue = stateData.value;
-  var ref = useForkedRef(buttonRef, forwardedRef);
+  var ref = useComposedRefs(buttonRef, forwardedRef);
   var handleKeyDown = useKeyDown();
 
   function handleMouseDown(event) {
@@ -5405,7 +4870,7 @@ var ListboxButtonImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function Listbox
     }
   }
 
-  var id = utils_esm_makeId("button", listboxId); // If the button has children, we just render them as the label
+  var id = reach_utils_make_id_esm_makeId("button", listboxId); // If the button has children, we just render them as the label
   // If a user needs the label on the server to prevent hydration mismatch
   // errors, they need to control the state of the component and pass a label
   // directly to the button.
@@ -5413,7 +4878,7 @@ var ListboxButtonImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function Listbox
   var label = d(function () {
     if (!children) {
       return listboxValueLabel;
-    } else if (utils_esm_isFunction(children)) {
+    } else if (reach_utils_type_check_esm_isFunction(children)) {
       return children({
         isExpanded: isExpanded,
         label: listboxValueLabel,
@@ -5425,34 +4890,51 @@ var ListboxButtonImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function Listbox
 
     return children;
   }, [children, listboxValueLabel, isExpanded, listboxValue]);
-  return (0,preact_module/* createElement */.az)(Comp // Applicable to all host language elements regardless of whether a
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // Applicable to all host language elements regardless of whether a
   // `role` is applied.
   // https://www.w3.org/WAI/PF/aria/states_and_properties#global_states_header
-  , Object.assign({
-    "aria-disabled": disabled || undefined,
-    "aria-expanded": isExpanded || undefined,
-    "aria-haspopup": "listbox",
+  , reach_listbox_esm_extends({
+    "aria-disabled": disabled || undefined // Set by the JavaScript when the listbox is displayed. Otherwise, is
+    // not present.
+    // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-collapsible.html
+    ,
+    "aria-expanded": isExpanded || undefined // Indicates that activating the button displays a listbox.
+    // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-collapsible.html
+    ,
+    "aria-haspopup": "listbox" // References the two elements whose labels are concatenated by the
+    // browser to label the button. The first element is a span containing
+    // perceivable label for the listbox component. The second element is
+    // the button itself; the button text is set to the name of the
+    // currently chosen element.
+    // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-collapsible.html
+    // If an `aria-label` is passed, we should skip `aria-labelledby` to
+    // avoid confusion.
+    ,
     "aria-labelledby": ariaLabel ? undefined : [ariaLabelledBy, id].filter(Boolean).join(" "),
-    "aria-label": ariaLabel,
-    // Identifies the element as a button widget.
+    "aria-label": ariaLabel // Identifies the element as a button widget.
     // https://www.w3.org/TR/wai-aria-practices-1.2/examples/button/button.html
-    role: "button",
-    // Includes the element in the tab sequence.
+    ,
+    role: "button" // Includes the element in the tab sequence.
     // https://www.w3.org/TR/wai-aria-practices-1.2/examples/button/button.html
+    ,
     tabIndex: disabled ? -1 : 0
   }, props, {
     ref: ref,
     "data-reach-listbox-button": "",
     id: id,
-    onKeyDown: wrapEvent(onKeyDown, handleKeyDown),
-    onMouseDown: wrapEvent(onMouseDown, handleMouseDown),
-    onMouseUp: wrapEvent(onMouseUp, handleMouseUp)
-  }), label, arrow && (0,preact_module/* createElement */.az)(ListboxArrow, null, isBoolean(arrow) ? null : arrow));
+    onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown),
+    onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),
+    onMouseUp: composeEventHandlers(onMouseUp, handleMouseUp)
+  }), label, arrow && /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(ListboxArrow, null, isBoolean(arrow) ? null : arrow));
 });
 
 if (false) {}
 
-var ListboxButton = /*#__PURE__*/memoWithAs(ListboxButtonImpl); ////////////////////////////////////////////////////////////////////////////////
+var ListboxButton = /*#__PURE__*/compat_module_g(ListboxButtonImpl);
+/**
+ * @see Docs https://reach.tech/listbox#listboxbutton-props
+ */
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * ListboxArrow
@@ -5462,24 +4944,24 @@ var ListboxButton = /*#__PURE__*/memoWithAs(ListboxButtonImpl); ////////////////
  * @see Docs https://reach.tech/listbox#listboxarrow
  */
 
-var ListboxArrowImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxArrow(_ref5, forwardedRef) {
+var ListboxArrowImpl = /*#__PURE__*/compat_module_x(function ListboxArrow(_ref5, forwardedRef) {
   var _ref5$as = _ref5.as,
       Comp = _ref5$as === void 0 ? "span" : _ref5$as,
       children = _ref5.children,
-      props = listbox_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children"]);
 
   var _React$useContext2 = F(ListboxContext),
       isExpanded = _React$useContext2.isExpanded;
 
-  return (0,preact_module/* createElement */.az)(Comp // The arrow provides no semantic value and its inner content should be
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // The arrow provides no semantic value and its inner content should be
   // hidden from the accessibility tree
-  , Object.assign({
+  , reach_listbox_esm_extends({
     "aria-hidden": true
   }, props, {
     ref: forwardedRef,
     "data-reach-listbox-arrow": "",
     "data-expanded": isExpanded ? "" : undefined
-  }), utils_esm_isFunction(children) ? children({
+  }), reach_utils_type_check_esm_isFunction(children) ? children({
     isExpanded: isExpanded,
     // TODO: Remove in 1.0
     expanded: isExpanded
@@ -5488,7 +4970,11 @@ var ListboxArrowImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxA
 
 if (false) {}
 
-var ListboxArrow = /*#__PURE__*/memoWithAs(ListboxArrowImpl); ////////////////////////////////////////////////////////////////////////////////
+var ListboxArrow = /*#__PURE__*/compat_module_g(ListboxArrowImpl);
+/**
+ * @see Docs https://reach.tech/listbox#listboxarrow-props
+ */
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * ListboxPopover
@@ -5498,7 +4984,7 @@ var ListboxArrow = /*#__PURE__*/memoWithAs(ListboxArrowImpl); //////////////////
  * @see Docs https://reach.tech/listbox#listboxpopover
  */
 
-var ListboxPopoverImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxPopover(_ref6, forwardedRef) {
+var ListboxPopoverImpl = /*#__PURE__*/compat_module_x(function ListboxPopover(_ref6, forwardedRef) {
   var _ref6$as = _ref6.as,
       Comp = _ref6$as === void 0 ? "div" : _ref6$as,
       _ref6$position = _ref6.position,
@@ -5508,7 +4994,7 @@ var ListboxPopoverImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function Listbo
       _ref6$portal = _ref6.portal,
       portal = _ref6$portal === void 0 ? true : _ref6$portal,
       unstable_observableRefs = _ref6.unstable_observableRefs,
-      props = listbox_esm_objectWithoutPropertiesLoose(_ref6, ["as", "position", "onBlur", "onKeyDown", "portal", "unstable_observableRefs"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref6, ["as", "position", "onBlur", "onKeyDown", "portal", "unstable_observableRefs"]);
 
   var _React$useContext3 = F(ListboxContext),
       buttonRef = _React$useContext3.buttonRef,
@@ -5516,17 +5002,17 @@ var ListboxPopoverImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function Listbo
       send = _React$useContext3.send,
       isExpanded = _React$useContext3.isExpanded;
 
-  var ref = useForkedRef(popoverRef, forwardedRef);
+  var ref = useComposedRefs(popoverRef, forwardedRef);
   var handleKeyDown = useKeyDown();
 
-  var commonProps = listbox_esm_extends({
+  var commonProps = reach_listbox_esm_extends({
     hidden: !isExpanded,
     tabIndex: -1
   }, props, {
     ref: ref,
     "data-reach-listbox-popover": "",
-    onBlur: wrapEvent(onBlur, handleBlur),
-    onKeyDown: wrapEvent(onKeyDown, handleKeyDown)
+    onBlur: composeEventHandlers(onBlur, handleBlur),
+    onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown)
   });
 
   function handleBlur(event) {
@@ -5539,17 +5025,21 @@ var ListboxPopoverImpl = /*#__PURE__*/utils_esm_forwardRefWithAs(function Listbo
     });
   }
 
-  return portal ? (0,preact_module/* createElement */.az)(Popover, Object.assign({}, commonProps, {
+  return portal ? /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Popover, reach_listbox_esm_extends({}, commonProps, {
     as: Comp,
     targetRef: buttonRef,
     position: position,
     unstable_observableRefs: unstable_observableRefs
-  })) : (0,preact_module/* createElement */.az)(Comp, Object.assign({}, commonProps));
+  })) : /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, commonProps);
 });
 
 if (false) {}
 
-var ListboxPopover = /*#__PURE__*/memoWithAs(ListboxPopoverImpl); ////////////////////////////////////////////////////////////////////////////////
+var ListboxPopover = /*#__PURE__*/compat_module_g(ListboxPopoverImpl);
+/**
+ * @see Docs https://reach.tech/listbox#listboxpopover-props
+ */
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * ListboxList
@@ -5559,10 +5049,10 @@ var ListboxPopover = /*#__PURE__*/memoWithAs(ListboxPopoverImpl); //////////////
  * @see Docs https://reach.tech/listbox#listboxlist
  */
 
-var ListboxList = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxList(_ref7, forwardedRef) {
+var ListboxList = /*#__PURE__*/compat_module_x(function ListboxList(_ref7, forwardedRef) {
   var _ref7$as = _ref7.as,
       Comp = _ref7$as === void 0 ? "ul" : _ref7$as,
-      props = listbox_esm_objectWithoutPropertiesLoose(_ref7, ["as"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref7, ["as"]);
 
   var _React$useContext4 = F(ListboxContext),
       ariaLabel = _React$useContext4.ariaLabel,
@@ -5574,32 +5064,42 @@ var ListboxList = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxList(_
       value = _React$useContext4$st.value,
       navigationValue = _React$useContext4$st.navigationValue;
 
-  var ref = useForkedRef(forwardedRef, listRef);
-  return (0,preact_module/* createElement */.az)(Comp // Tells assistive technologies which of the options, if any, is
+  var ref = useComposedRefs(forwardedRef, listRef);
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // Tells assistive technologies which of the options, if any, is
   // visually indicated as having keyboard focus. DOM focus remains on the
   // `ul` element and the idref specified for `aria-activedescendant`
   // refers to the `li` element that is visually styled as focused. When
   // navigation keys, such as `Down Arrow`, are pressed, the JavaScript
   // changes the value.
   // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-grouped.html
-  , Object.assign({
-    "aria-activedescendant": useOptionId(isExpanded ? navigationValue : value),
+  , reach_listbox_esm_extends({
+    "aria-activedescendant": useOptionId(isExpanded ? navigationValue : value) // If the listbox is not part of another widget, then it has a visible
+    // label referenced by `aria-labelledby` on the element with role
+    // `listbox`.
+    // https://www.w3.org/TR/wai-aria-practices-1.2/#Listbox
+    // If an `aria-label` is passed, we should skip `aria-labelledby` to
+    // avoid confusion.
+    ,
     "aria-labelledby": ariaLabel ? undefined : ariaLabelledBy,
-    "aria-label": ariaLabel,
-    // An element that contains or owns all the listbox options has role
+    "aria-label": ariaLabel // An element that contains or owns all the listbox options has role
     // listbox.
     // https://www.w3.org/TR/wai-aria-practices-1.2/#Listbox
-    role: "listbox",
-    // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-collapsible.html
+    ,
+    role: "listbox" // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-collapsible.html
+    ,
     tabIndex: -1
   }, props, {
     ref: ref,
     "data-reach-listbox-list": "",
-    id: utils_esm_makeId("listbox", listboxId)
+    id: reach_utils_make_id_esm_makeId("listbox", listboxId)
   }));
 });
 
-if (false) {} ////////////////////////////////////////////////////////////////////////////////
+if (false) {}
+/**
+ * @see Docs https://reach.tech/listbox#listboxlist-props
+ */
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * ListboxOption
@@ -5610,11 +5110,12 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var ListboxOption = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxOption(_ref8, forwardedRef) {
+var ListboxOption = /*#__PURE__*/compat_module_x(function ListboxOption(_ref8, forwardedRef) {
   var _ref8$as = _ref8.as,
       Comp = _ref8$as === void 0 ? "li" : _ref8$as,
       children = _ref8.children,
       disabled = _ref8.disabled,
+      onClick = _ref8.onClick,
       onMouseDown = _ref8.onMouseDown,
       onMouseEnter = _ref8.onMouseEnter,
       onMouseLeave = _ref8.onMouseLeave,
@@ -5623,7 +5124,7 @@ var ListboxOption = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxOpti
       onTouchStart = _ref8.onTouchStart,
       value = _ref8.value,
       labelProp = _ref8.label,
-      props = listbox_esm_objectWithoutPropertiesLoose(_ref8, ["as", "children", "disabled", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onTouchStart", "value", "label"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref8, ["as", "children", "disabled", "onClick", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onTouchStart", "value", "label"]);
 
   if (false) {}
 
@@ -5666,7 +5167,7 @@ var ListboxOption = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxOpti
   }, [labelProp]);
   var isHighlighted = navigationValue ? navigationValue === value : false;
   var isSelected = listboxValue === value;
-  var ref = useForkedRef(getLabelFromDomNode, forwardedRef, ownRef, isSelected ? selectedOptionRef : null, isHighlighted ? highlightedOptionRef : null);
+  var ref = useComposedRefs(getLabelFromDomNode, forwardedRef, ownRef, isSelected ? selectedOptionRef : null, isHighlighted ? highlightedOptionRef : null);
 
   function handleMouseEnter() {
     send({
@@ -5711,6 +5212,22 @@ var ListboxOption = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxOpti
     }
   }
 
+  function handleClick(event) {
+    // Generally an option will be selected on mouseup, but in case this isn't
+    // handled correctly by the device (whether because it's a touch/pen or
+    // virtual click event) we want to handle selection on a full click event
+    // just in case. This should address issues with screenreader selection,
+    // but this needs more robust testing.
+    if (!isRightClick(event.nativeEvent)) {
+      send({
+        type: ListboxEvents.OptionClick,
+        value: value,
+        callback: onValueChange,
+        disabled: !!disabled
+      });
+    }
+  }
+
   function handleMouseMove() {
     // We don't really *need* these guards since we put all of our transition
     // logic in the state machine, but in this case it seems wise not to
@@ -5725,33 +5242,42 @@ var ListboxOption = /*#__PURE__*/utils_esm_forwardRefWithAs(function ListboxOpti
     }
   }
 
-  return (0,preact_module/* createElement */.az)(Comp // In a single-select listbox, the selected option has `aria-selected`
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // In a single-select listbox, the selected option has `aria-selected`
   // set to `true`.
   // https://www.w3.org/TR/wai-aria-practices-1.2/#Listbox
-  , Object.assign({
-    "aria-selected": (isExpanded ? isHighlighted : isSelected) || undefined,
-    "aria-disabled": disabled || undefined,
-    // Each option in the listbox has role `option` and is a DOM descendant
+  , reach_listbox_esm_extends({
+    "aria-selected": (isExpanded ? isHighlighted : isSelected) || undefined // Applicable to all host language elements regardless of whether a
+    // `role` is applied.
+    // https://www.w3.org/WAI/PF/aria/states_and_properties#global_states_header
+    ,
+    "aria-disabled": disabled || undefined // Each option in the listbox has role `option` and is a DOM descendant
     // of the element with role `listbox`.
     // https://www.w3.org/TR/wai-aria-practices-1.2/#Listbox
+    ,
     role: "option"
   }, props, {
     ref: ref,
     id: useOptionId(value),
     "data-reach-listbox-option": "",
-    "data-current": isSelected ? "" : undefined,
+    "data-current-nav": isHighlighted ? "" : undefined,
+    "data-current-selected": isSelected ? "" : undefined,
     "data-label": label,
     "data-value": value,
-    onMouseDown: wrapEvent(onMouseDown, handleMouseDown),
-    onMouseEnter: wrapEvent(onMouseEnter, handleMouseEnter),
-    onMouseLeave: wrapEvent(onMouseLeave, handleMouseLeave),
-    onMouseMove: wrapEvent(onMouseMove, handleMouseMove),
-    onMouseUp: wrapEvent(onMouseUp, handleMouseUp),
-    onTouchStart: wrapEvent(onTouchStart, handleTouchStart)
+    onClick: composeEventHandlers(onClick, handleClick),
+    onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),
+    onMouseEnter: composeEventHandlers(onMouseEnter, handleMouseEnter),
+    onMouseLeave: composeEventHandlers(onMouseLeave, handleMouseLeave),
+    onMouseMove: composeEventHandlers(onMouseMove, handleMouseMove),
+    onMouseUp: composeEventHandlers(onMouseUp, handleMouseUp),
+    onTouchStart: composeEventHandlers(onTouchStart, handleTouchStart)
   }), children);
 });
 
-if (false) {} ////////////////////////////////////////////////////////////////////////////////
+if (false) {}
+/**
+ * @see Docs https://reach.tech/listbox#listboxoption-props
+ */
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * ListboxGroup
@@ -5762,35 +5288,39 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var ListboxGroup = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRefWithAs(function ListboxGroup(_ref9, forwardedRef) {
+var ListboxGroup = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function ListboxGroup(_ref9, forwardedRef) {
   var _ref9$as = _ref9.as,
       Comp = _ref9$as === void 0 ? "div" : _ref9$as,
       label = _ref9.label,
       children = _ref9.children,
-      props = listbox_esm_objectWithoutPropertiesLoose(_ref9, ["as", "label", "children"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref9, ["as", "label", "children"]);
 
   var _React$useContext6 = useContext(ListboxContext),
       listboxId = _React$useContext6.listboxId;
 
   var labelId = makeId("label", useId(props.id), listboxId);
-  return createElement(ListboxGroupContext.Provider, {
+  return /*#__PURE__*/createElement(ListboxGroupContext.Provider, {
     value: {
       labelId: labelId
     }
-  }, createElement(Comp // Refers to the element containing the option group label
+  }, /*#__PURE__*/createElement(Comp // Refers to the element containing the option group label
   // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-grouped.html
-  , Object.assign({
-    "aria-labelledby": labelId,
-    // Identifies a group of related options
+  , reach_listbox_esm_extends({
+    "aria-labelledby": labelId // Identifies a group of related options
     // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-grouped.html
+    ,
     role: "group"
   }, props, {
     "data-reach-listbox-group": "",
     ref: forwardedRef
-  }), label && createElement(ListboxGroupLabel, null, label), children));
+  }), label && /*#__PURE__*/createElement(ListboxGroupLabel, null, label), children));
 })));
 
-if (false) {} ////////////////////////////////////////////////////////////////////////////////
+if (false) {}
+/**
+ * @see Docs https://reach.tech/listbox#listboxgroup-props
+ */
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * ListboxGroupLabel
@@ -5799,19 +5329,17 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var ListboxGroupLabel = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRefWithAs(function ListboxGroupLabel(_ref10, forwardedRef) {
+var ListboxGroupLabel = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function ListboxGroupLabel(_ref10, forwardedRef) {
   var _ref10$as = _ref10.as,
       Comp = _ref10$as === void 0 ? "span" : _ref10$as,
-      props = listbox_esm_objectWithoutPropertiesLoose(_ref10, ["as"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref10, ["as"]);
 
   var _React$useContext7 = useContext(ListboxGroupContext),
       labelId = _React$useContext7.labelId;
 
-  return createElement(Comp // See examples
+  return /*#__PURE__*/createElement(Comp // See examples
   // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-grouped.html
-  , Object.assign({
-    // See examples
-    // https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-grouped.html
+  , reach_listbox_esm_extends({
     role: "presentation"
   }, props, {
     ref: forwardedRef,
@@ -5820,7 +5348,11 @@ var ListboxGroupLabel = /*#__PURE__*/(/* unused pure expression or super */ null
   }));
 })));
 
-if (false) {} ////////////////////////////////////////////////////////////////////////////////
+if (false) {}
+/**
+ * @see Docs https://reach.tech/listbox#listboxgroup-props
+ */
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * A hook that exposes data for a given `Listbox` component to its descendants.
@@ -5889,7 +5421,7 @@ function useKeyDown() {
     var value = _ref11.value;
     return value === navigationValue;
   });
-  var handleKeyDown = wrapEvent(function (event) {
+  var handleKeyDown = composeEventHandlers(function (event) {
     var key = event.key;
     var isSearching = isString(key) && key.length === 1;
     var navOption = options.find(function (option) {
@@ -5902,7 +5434,7 @@ function useKeyDown() {
           type: ListboxEvents.KeyDownEnter,
           value: navigationValue,
           callback: onValueChange,
-          disabled: !!((navOption === null || navOption === void 0 ? void 0 : navOption.disabled) || listboxDisabled)
+          disabled: !!(navOption != null && navOption.disabled || listboxDisabled)
         });
         return;
 
@@ -5913,7 +5445,7 @@ function useKeyDown() {
           type: ListboxEvents.KeyDownSpace,
           value: navigationValue,
           callback: onValueChange,
-          disabled: !!((navOption === null || navOption === void 0 ? void 0 : navOption.disabled) || listboxDisabled)
+          disabled: !!(navOption != null && navOption.disabled || listboxDisabled)
         });
         return;
 
@@ -5964,12 +5496,14 @@ function useOptionId(value) {
   var _React$useContext10 = F(ListboxContext),
       listboxId = _React$useContext10.listboxId;
 
-  return value ? utils_esm_makeId("option-" + value, listboxId) : undefined;
+  return value ? reach_utils_make_id_esm_makeId("option-" + value, listboxId) : undefined;
 }
 
-function listbox_esm_popoverContainsEventTarget(popover, target) {
+function reach_listbox_esm_popoverContainsEventTarget(popover, target) {
   return !!(popover && popover.contains(target));
-}
+} ////////////////////////////////////////////////////////////////////////////////
+// Types
+
 
 function useControlledStateSync(controlPropValue, internalValue, send) {
   var _React$useRef = s(controlPropValue != null),
@@ -5978,8 +5512,12 @@ function useControlledStateSync(controlPropValue, internalValue, send) {
   if (isControlled && controlPropValue !== internalValue) {
     send();
   }
-}
+} ////////////////////////////////////////////////////////////////////////////////
 
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/listbox/styles.css
+// extracted by mini-css-extract-plugin
 
 ;// CONCATENATED MODULE: ./src/components/Select/component.js
 
@@ -6001,7 +5539,7 @@ const Select = ({
     return;
   }
 
-  return (0,preact_module.h)(ListboxInput, {
+  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(ListboxInput, {
     className: "sn-select",
     defaultValue: defaultValue,
     onChange: onChange
@@ -6009,19 +5547,19 @@ const Select = ({
     value,
     valueLabel,
     isExpanded
-  }) => (0,preact_module.h)(preact_module/* Fragment */.HY, null, (0,preact_module.h)(ListboxButton, {
+  }) => (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment, null, (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(ListboxButton, {
     className: "sn-select-button"
-  }, (0,preact_module.h)("span", {
+  }, (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)("span", {
     "data-value": value
-  }, valueLabel ?? placeholder), " ", isExpanded ? (0,preact_module.h)(Icon_component, {
+  }, valueLabel ?? placeholder), " ", isExpanded ? (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(Icon_component, {
     name: "menu-arrow-up"
-  }) : (0,preact_module.h)(Icon_component, {
+  }) : (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(Icon_component, {
     name: "menu-arrow-down"
-  })), (0,preact_module.h)(ListboxPopover, {
+  })), (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(ListboxPopover, {
     className: "sn-select-popover"
-  }, (0,preact_module.h)(ListboxList, {
+  }, (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(ListboxList, {
     className: "sn-select-list"
-  }, options && options.map(option => (0,preact_module.h)(ListboxOption, {
+  }, options && options.map(option => (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.h)(ListboxOption, {
     className: "sn-select-list-option",
     value: option.value,
     valueText: option.label
@@ -6046,6 +5584,14 @@ Select.defaultProps = {
 
 
 
+
+/***/ }),
+
+/***/ 670:
+/***/ ((module) => {
+
+"use strict";
+module.exports = __WEBPACK_EXTERNAL_MODULE__670__;
 
 /***/ })
 
@@ -6133,7 +5679,7 @@ Select.defaultProps = {
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
-/******/ 			[839]
+/******/ 			[998]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		

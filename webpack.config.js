@@ -27,7 +27,14 @@ module.exports = (_, { mode }) => ({
       },
     },
   },
-  externals: {},
+  externals: {
+    preact: {
+      commonjs: 'preact',
+      commonjs2: 'preact',
+      amd: 'preact',
+      root: '_',
+    },
+  },
   devServer: {
     historyApiFallback: true,
     watchOptions: { aggregateTimeout: 300, poll: 1000 },
@@ -59,7 +66,11 @@ module.exports = (_, { mode }) => ({
         test: /\.js[x]?$/,
         loader: 'babel-loader',
         options: {
-          plugins: ['@babel/plugin-proposal-class-properties'],
+          presets: ['preact'],
+          plugins: [
+            ['@babel/plugin-proposal-class-properties'],
+            ['@babel/plugin-transform-react-jsx', { pragma: 'h' }],
+          ],
         },
       },
       {

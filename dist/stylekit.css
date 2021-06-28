@@ -3651,16 +3651,16 @@ textarea,
   user-select: none;
 }
 
-[data-reach-listbox-option][aria-selected="true"] {
+[data-reach-listbox-option][data-current-nav] {
   background: #1672d4;
   color: white;
 }
 
-[data-reach-listbox-option][data-current] {
+[data-reach-listbox-option][data-current-selected] {
   font-weight: bolder;
 }
 
-[data-reach-listbox-option][data-current][data-confirming] {
+[data-reach-listbox-option][data-current-selected][data-confirming] {
   animation: flash 100ms;
   animation-iteration-count: 1;
 }
