@@ -198,3 +198,49 @@
   @extend .border-0;
   @extend .slide-down-animation;
 }
+
+/**
+ * A button that is just an icon. Separated from .sn-button because there
+ * is almost no style overlap.
+ */
+.sn-icon-button {
+  @extend .color-grey-1;
+  @extend .w-8;
+  @extend .h-8;
+  @extend .flex;
+  @extend .justify-center;
+  @extend .items-center;
+  @extend .border-solid;
+  @extend .border-1;
+  @extend .border-neutral;
+  @extend .bg-clip-padding;
+  @extend .m-0;
+  @extend .p-0;
+  @extend .bg-transparent;
+  @extend .cursor-pointer;
+  @extend .rounded-full;
+  @extend .hover\:color-text;
+  @extend .focus\:color-text;
+  @extend .hover\:bg-contrast;
+  @extend .focus\:bg-contrast;
+  @extend .focus\:outline-none;
+  @extend .focus\:ring-info;
+}
+
+.sn-icon-button.info {
+  @extend .bg-info;
+  @extend .color-info-contrast;
+
+  &:hover,
+  &:focus {
+    @extend .color-info-contrast;
+    @extend .bg-info-dark;
+  }
+}
+
+.sn-full-screen {
+  @extend .h-full;
+  @extend .w-full;
+  @extend .absolute;
+  @extend .top-left-0;
+}

@@ -1,5 +1,5 @@
 .inline-flex {
-  display: inline-flex
+  display: inline-flex;
 }
 
 .block {
@@ -12,6 +12,10 @@
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-grow {
@@ -64,11 +68,11 @@
 }
 
 .cursor-pointer {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .origin-top-right {
-  transform-origin: top right
+  transform-origin: top right;
 }
 
 .overflow-auto {

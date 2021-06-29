@@ -34,7 +34,7 @@
 }
 
 .color-neutral {
-  color: var(--sn-stylekit-neutral-color)
+  color: var(--sn-stylekit-neutral-color);
 }
 
 .color-text {
@@ -56,12 +56,16 @@
   color: var(--sn-stylekit-info-contrast-color);
 }
 
+.color-grey-1 {
+  color: var(--sn-stylekit-grey-1);
+}
+
 .selected\:bg-color[data-selected],
-.selected\:bg-color[aria-selected="true"] {
+.selected\:bg-color[aria-selected='true'] {
   background-color: var(--sn-stylekit-list-item-highlight-color);
 }
 
 .selected\:fg-color[data-selected],
-.selected\:fg-color[aria-selected="true"] {
+.selected\:fg-color[aria-selected='true'] {
   color: var(--sn-stylekit-contrast-foreground-color);
 }
