@@ -239,8 +239,9 @@
 }
 
 .sn-full-screen {
-  @extend .h-full;
-  @extend .w-full;
+  @extend .h-100vh;
+  @extend .w-100vw;
+
   @extend .absolute;
   @extend .top-left-0;
 }

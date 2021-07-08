@@ -6,6 +6,10 @@
   height: 100%;
 }
 
+.h-100vh {
+  height: 100vh;
+}
+
 .h-90vh {
   height: 90vh;
 }
@@ -49,6 +53,10 @@
 }
 .h-20px {
   height: 20px;
+}
+
+.min-h-0 {
+  min-height: 0;
 }
 
 .min-h-5 {

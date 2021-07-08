@@ -3046,6 +3046,10 @@ template {
   flex-grow: 1;
 }
 
+.sn-component .flex-shrink {
+  flex-shrink: 1;
+}
+
 .sn-component .flex-wrap {
   flex-wrap: wrap;
 }
@@ -3060,6 +3064,10 @@ template {
 
 .sn-component .items-start {
   align-items: flex-start;
+}
+
+.sn-component .items-stretch {
+  align-items: stretch;
 }
 
 .sn-component .justify-center, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button, .sn-component .sn-icon-button {
@@ -3119,6 +3127,14 @@ template {
 
 .sn-component .overflow-ellipsis {
   text-overflow: ellipsis;
+}
+
+.sn-component .flex-shrink-max {
+  flex-shrink: 10000;
+}
+
+.sn-component .flex-basis-55 {
+  flex-basis: 13.75rem;
 }
 
 .sn-component .hover\:brightness-130:hover, .sn-component .sn-button:hover {
@@ -3242,8 +3258,12 @@ template {
   height: auto;
 }
 
-.sn-component .h-full, .sn-component .sn-full-screen {
+.sn-component .h-full {
   height: 100%;
+}
+
+.sn-component .h-100vh, .sn-component .sn-full-screen {
+  height: 100vh;
 }
 
 .sn-component .h-90vh {
@@ -3302,6 +3322,10 @@ template {
   height: 20px;
 }
 
+.sn-component .min-h-0 {
+  min-height: 0;
+}
+
 .sn-component .min-h-5 {
   min-height: 1.25rem;
 }
@@ -3332,6 +3356,11 @@ template {
   margin-bottom: 0.5rem;
 }
 
+.sn-component .my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .sn-component .-mt-1 {
   margin-top: -0.25rem;
 }
@@ -3344,8 +3373,20 @@ template {
   margin-top: 0.5rem;
 }
 
+.sn-component .mt-3 {
+  margin-top: 0.75rem;
+}
+
 .sn-component .mt-4 {
   margin-top: 1rem;
+}
+
+.sn-component .mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.sn-component .mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .sn-component .-mr-2 {
@@ -3455,6 +3496,11 @@ template {
   padding-right: 1rem;
 }
 
+.sn-component .px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .sn-component .pr-2 {
   padding-right: 0.5rem;
 }
@@ -3467,8 +3513,12 @@ template {
   width: auto;
 }
 
-.sn-component .w-full, .sn-component .sn-full-screen {
+.sn-component .w-full {
   width: 100%;
+}
+
+.sn-component .w-100vw, .sn-component .sn-full-screen {
+  width: 100vw;
 }
 
 .sn-component .w-0 {
@@ -3485,6 +3535,10 @@ template {
 
 .sn-component .w-8, .sn-component .sn-icon-button {
   width: 2rem;
+}
+
+.sn-component .w-55 {
+  width: 13.75rem;
 }
 
 .sn-component .w-56, .sn-component .sn-dropdown-menu-list {
@@ -3511,6 +3565,10 @@ template {
   min-width: 20px;
 }
 
+.sn-component .min-w-0 {
+  min-width: 0;
+}
+
 .sn-component .min-w-5 {
   min-width: 1.25rem;
 }
@@ -3521,6 +3579,10 @@ template {
 
 .sn-component .min-w-42 {
   min-width: 10.5rem;
+}
+
+.sn-component .min-w-55 {
+  min-width: 13.75rem;
 }
 
 .sn-component .min-w-80 {
@@ -3537,6 +3599,10 @@ template {
 
 .sn-component .max-w-40 {
   max-width: 10rem;
+}
+
+.sn-component .max-w-124 {
+  max-width: 31rem;
 }
 
 .sn-component .max-w-290px {
