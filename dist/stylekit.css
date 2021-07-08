@@ -3521,6 +3521,11 @@ template {
   width: 100vw;
 }
 
+.sn-component .fit-content {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .sn-component .w-0 {
   width: 0;
 }
