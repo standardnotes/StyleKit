@@ -33,6 +33,10 @@
   background-color: var(--sn-stylekit-neutral-color);
 }
 
+.bg-grey-5 {
+  background-color: var(--sn-stylekit-grey-5);
+}
+
 .color-neutral {
   color: var(--sn-stylekit-neutral-color);
 }
@@ -58,6 +62,10 @@
 
 .color-grey-1 {
   color: var(--sn-stylekit-grey-1);
+}
+
+.color-black {
+  color: var(--sn-stylekit-black);
 }
 
 .selected\:bg-color[data-selected],
