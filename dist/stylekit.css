@@ -348,6 +348,7 @@ template {
   --sn-stylekit-font-size-h3: 0.89375rem;
   --sn-stylekit-font-size-h2: 0.975rem;
   --sn-stylekit-font-size-h1: 1.05625rem;
+  --sn-stylekit-black: #19191c;
   --sn-stylekit-grey-1: #72767e;
   --sn-stylekit-grey-3: #dfe1e4;
   --sn-stylekit-grey-4: #eeeff1;
@@ -2980,6 +2981,10 @@ template {
   background-color: var(--sn-stylekit-neutral-color);
 }
 
+.sn-component .bg-grey-5 {
+  background-color: var(--sn-stylekit-grey-5);
+}
+
 .sn-component .color-neutral {
   color: var(--sn-stylekit-neutral-color);
 }
@@ -3006,6 +3011,10 @@ template {
 
 .sn-component .color-grey-1, .sn-component .sn-icon-button {
   color: var(--sn-stylekit-grey-1);
+}
+
+.sn-component .color-black {
+  color: var(--sn-stylekit-black);
 }
 
 .sn-component .selected\:bg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-select-list-option[data-selected],
@@ -3095,6 +3104,11 @@ template {
 .sn-component .gap-3 {
   grid-gap: 0.75rem;
   gap: 0.75rem;
+}
+
+.sn-component .gap-4 {
+  grid-gap: 1rem;
+  gap: 1rem;
 }
 
 .sn-component .absolute, .sn-component .sn-dropdown-menu-list, .sn-component .sn-full-screen {
@@ -3219,6 +3233,11 @@ template {
   line-height: 1.25rem;
 }
 
+.sn-component .text-input {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
 .sn-component .text-base {
   font-size: 1rem;
 }
@@ -3272,6 +3291,10 @@ template {
 
 .sn-component .h-0 {
   height: 0;
+}
+
+.sn-component .h-2 {
+  height: 0.5rem;
 }
 
 .sn-component .h-3\.5 {
@@ -3542,6 +3565,10 @@ template {
   width: 2rem;
 }
 
+.sn-component .w-30 {
+  width: 7.5rem;
+}
+
 .sn-component .w-55 {
   width: 13.75rem;
 }
@@ -3556,6 +3583,10 @@ template {
 
 .sn-component .w-80 {
   width: 20rem;
+}
+
+.sn-component .w-125 {
+  width: 31.25rem;
 }
 
 .sn-component .w-20px {
@@ -3606,8 +3637,8 @@ template {
   max-width: 10rem;
 }
 
-.sn-component .max-w-124 {
-  max-width: 31rem;
+.sn-component .max-w-125 {
+  max-width: 31.25rem;
 }
 
 .sn-component .max-w-290px {
