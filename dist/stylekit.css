@@ -348,12 +348,14 @@ template {
   --sn-stylekit-font-size-h3: 0.89375rem;
   --sn-stylekit-font-size-h2: 0.975rem;
   --sn-stylekit-font-size-h1: 1.05625rem;
+  --sn-stylekit-white: #ffffff;
   --sn-stylekit-black: #19191c;
   --sn-stylekit-grey-1: #72767e;
   --sn-stylekit-grey-3: #dfe1e4;
   --sn-stylekit-grey-4: #eeeff1;
   --sn-stylekit-grey-5: #f4f5f7;
   --sn-stylekit-grey-6: #e5e5e5;
+  --sn-stylekit-dark-red: #cc2128;
   --sn-stylekit-neutral-color: #989898;
   --sn-stylekit-neutral-contrast-color: #ffffff;
   --sn-stylekit-info-color: #086dd6;
@@ -2941,6 +2943,14 @@ template {
   box-shadow: inset 0 0 0 2px var(--sn-stylekit-info-color);
 }
 
+.sn-component .shadow-overlay {
+  box-shadow: 0px 4px 24px 0px #00000029;
+}
+
+.sn-component .border-dark-red {
+  border-color: var(--sn-stylekit-dark-red);
+}
+
 .sn-component .border-bottom-1-gray {
   border-bottom-color: var(--sn-stylekit-border-color);
 }
@@ -2985,6 +2995,10 @@ template {
   background-color: var(--sn-stylekit-grey-5);
 }
 
+.sn-component .bg-black {
+  background-color: var(--sn-stylekit-black);
+}
+
 .sn-component .color-neutral {
   color: var(--sn-stylekit-neutral-color);
 }
@@ -3015,6 +3029,18 @@ template {
 
 .sn-component .color-black {
   color: var(--sn-stylekit-black);
+}
+
+.sn-component .color-white {
+  color: var(--sn-stylekit-white);
+}
+
+.sn-component .color-dark-red {
+  color: var(--sn-stylekit-dark-red);
+}
+
+.sn-component .stroke-info {
+  stroke: var(--sn-stylekit-info-color);
 }
 
 .sn-component .selected\:bg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-select-list-option[data-selected],
@@ -3089,6 +3115,10 @@ template {
 
 .sn-component .justify-start {
   justify-content: flex-start;
+}
+
+.sn-component .justify-end {
+  justify-content: flex-end;
 }
 
 .sn-component .gap-1 {
@@ -3247,6 +3277,11 @@ template {
   line-height: 1.75rem;
 }
 
+.sn-component .text-lg-sm-lh {
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+}
+
 .sn-component .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -3301,6 +3336,10 @@ template {
   height: 0.875rem;
 }
 
+.sn-component .h-4 {
+  height: 1rem;
+}
+
 .sn-component .h-4\.5 {
   height: 1.125rem;
 }
@@ -3335,6 +3374,10 @@ template {
 
 .sn-component .h-18 {
   height: 4.5rem;
+}
+
+.sn-component .h-25 {
+  height: 6.25rem;
 }
 
 .sn-component .h-1px {
@@ -3484,6 +3527,11 @@ template {
   padding-bottom: 0.75rem;
 }
 
+.sn-component .py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .sn-component .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -3553,8 +3601,16 @@ template {
   width: 0;
 }
 
+.sn-component .w-2 {
+  width: 0.5rem;
+}
+
 .sn-component .w-3\.5 {
   width: 0.875rem;
+}
+
+.sn-component .w-4 {
+  width: 1rem;
 }
 
 .sn-component .w-5 {
@@ -3563,6 +3619,10 @@ template {
 
 .sn-component .w-8, .sn-component .sn-icon-button {
   width: 2rem;
+}
+
+.sn-component .w-25 {
+  width: 6.25rem;
 }
 
 .sn-component .w-30 {
@@ -3585,8 +3645,16 @@ template {
   width: 20rem;
 }
 
+.sn-component .w-103 {
+  width: 25.75rem;
+}
+
 .sn-component .w-125 {
   width: 31.25rem;
+}
+
+.sn-component .w-160 {
+  width: 40rem;
 }
 
 .sn-component .w-20px {
@@ -3605,8 +3673,16 @@ template {
   min-width: 0;
 }
 
+.sn-component .min-w-4 {
+  min-width: 1rem;
+}
+
 .sn-component .min-w-5 {
   min-width: 1.25rem;
+}
+
+.sn-component .min-w-20 {
+  min-width: 5rem;
 }
 
 .sn-component .min-w-40 {
@@ -3671,6 +3747,14 @@ template {
 
 .sn-component .left-0, .sn-component .top-left-0, .sn-component .sn-full-screen {
   left: 0;
+}
+
+.sn-component .top-neg-10 {
+  top: -2.5rem;
+}
+
+.sn-component .left-neg-51 {
+  left: -12.75rem;
 }
 
 .sn-component .sn-button {
