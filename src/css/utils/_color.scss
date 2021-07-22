@@ -80,10 +80,6 @@
   color: var(--sn-stylekit-dark-red);
 }
 
-.stroke-info {
-  stroke: var(--sn-stylekit-info-color);
-}
-
 .selected\:bg-color[data-selected],
 .selected\:bg-color[aria-selected='true'] {
   background-color: var(--sn-stylekit-list-item-highlight-color);

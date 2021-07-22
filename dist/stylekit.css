@@ -3039,10 +3039,6 @@ template {
   color: var(--sn-stylekit-dark-red);
 }
 
-.sn-component .stroke-info {
-  stroke: var(--sn-stylekit-info-color);
-}
-
 .sn-component .selected\:bg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-select-list-option[data-selected],
 .sn-component .selected\:bg-color[aria-selected='true'],
 .sn-component .sn-dropdown-menu-list-item[aria-selected='true'],
@@ -3275,11 +3271,6 @@ template {
 .sn-component .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.sn-component .text-lg-sm-lh {
-  font-size: 1.125rem;
-  line-height: 1.375rem;
 }
 
 .sn-component .text-2xl {
@@ -3572,6 +3563,14 @@ template {
   padding-right: 1.5rem;
 }
 
+.sn-component .pt-4 {
+  padding-top: 1rem;
+}
+
+.sn-component .pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .sn-component .pr-2 {
   padding-right: 0.5rem;
 }
@@ -3749,11 +3748,11 @@ template {
   left: 0;
 }
 
-.sn-component .top-neg-10 {
+.sn-component .-top-10 {
   top: -2.5rem;
 }
 
-.sn-component .left-neg-51 {
+.sn-component .-left-51 {
   left: -12.75rem;
 }
 
