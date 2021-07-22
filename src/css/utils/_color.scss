@@ -37,6 +37,10 @@
   background-color: var(--sn-stylekit-grey-5);
 }
 
+.bg-black {
+  background-color: var(--sn-stylekit-black);
+}
+
 .color-neutral {
   color: var(--sn-stylekit-neutral-color);
 }
@@ -66,6 +70,18 @@
 
 .color-black {
   color: var(--sn-stylekit-black);
+}
+
+.color-white {
+  color: var(--sn-stylekit-white);
+}
+
+.color-dark-red {
+  color: var(--sn-stylekit-dark-red);
+}
+
+.stroke-info {
+  stroke: var(--sn-stylekit-info-color);
 }
 
 .selected\:bg-color[data-selected],
