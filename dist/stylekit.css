@@ -3169,10 +3169,6 @@ template {
   text-overflow: ellipsis;
 }
 
-.sn-component .flex-shrink-max {
-  flex-shrink: 10000;
-}
-
 .sn-component .flex-basis-55 {
   flex-basis: 13.75rem;
 }
