@@ -3458,6 +3458,10 @@ template {
   margin-right: 0.5rem;
 }
 
+.sn-component .mr-9 {
+  margin-right: 2.25rem;
+}
+
 .sn-component .mr-10 {
   margin-right: 2.5rem;
 }
@@ -3476,6 +3480,10 @@ template {
 
 .sn-component .ml-6 {
   margin-left: 1.5rem;
+}
+
+.sn-component .ml-9 {
+  margin-left: 2.25rem;
 }
 
 .sn-component .p-0, .sn-component .sn-icon-button {
@@ -3565,6 +3573,10 @@ template {
 
 .sn-component .pb-3 {
   padding-bottom: 0.75rem;
+}
+
+.sn-component .pb-9 {
+  padding-bottom: 2.25rem;
 }
 
 .sn-component .pr-2 {
