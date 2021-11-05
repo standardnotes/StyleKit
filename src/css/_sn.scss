@@ -22,7 +22,7 @@
 .sn-button.outlined {
   @extend .bg-default;
   @extend .border-1;
-  @extend .border-gray-300;
+  @extend .border-main;
   @extend .color-text;
   @extend .hover\:bg-highlight;
   @extend .focus\:bg-highlight;
@@ -67,7 +67,7 @@
   @extend .items-center;
   @extend .bg-default;
   @extend .border-0;
-  @extend .border-gray-300;
+  @extend .border-main;
   @extend .rounded;
   @extend .border-solid;
   @extend .border-1;
@@ -98,7 +98,7 @@
 .sn-dropdown-menu-list {
   @extend .absolute;
   @extend .bg-default;
-  @extend .border-gray-300;
+  @extend .border-main;
   @extend .rounded;
   @extend .box-shadow;
   @extend .font-normal;
@@ -134,7 +134,7 @@
   @extend .items-center;
   @extend .bg-default;
   @extend .border-0;
-  @extend .border-gray-300;
+  @extend .border-main;
   @extend .border-solid;
   @extend .border-1;
   @extend .border-box;
@@ -170,7 +170,7 @@
 
 .sn-select-list {
   @extend .bg-default;
-  @extend .border-gray-300;
+  @extend .border-main;
   @extend .rounded;
   @extend .focus\:outline-none;
   @extend .focus\:shadow-none;
@@ -189,7 +189,7 @@
 }
 
 .sn-select-popover {
-  @extend .border-gray-300;
+  @extend .border-main;
   @extend .rounded;
   @extend .box-shadow;
   @extend .mt-2;
