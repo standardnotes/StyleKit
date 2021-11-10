@@ -388,7 +388,7 @@ template {
   --sn-stylekit-input-border-color: #e3e3e3;
   --sn-stylekit-scrollbar-thumb-color: #dfdfdf;
   --sn-stylekit-scrollbar-track-border-color: #e7e7e7;
-  --sn-stylekit-menu-border-color: #cdcdcd;
+  --sn-stylekit-menu-border-color: #fff;
   --sn-stylekit-general-border-radius: 2px;
   --sn-stylekit-list-item-highlight-color: var(--sn-stylekit-grey-5);
   --sn-stylekit-simplified-chinese-font: 'Microsoft Yahei', '微软雅黑体';
