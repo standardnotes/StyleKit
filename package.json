@@ -1,6 +1,6 @@
 {
   "name": "sn-stylekit",
-  "version": "5.2.12",
+  "version": "5.2.13",
   "main": "dist/stylekit.js",
   "scripts": {
     "build": "webpack --mode='production'",
