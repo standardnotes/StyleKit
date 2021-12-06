@@ -3000,7 +3000,7 @@ template {
   background-color: var(--sn-stylekit-black);
 }
 
-.sn-component .color-neutral {
+.sn-component .color-neutral, .sn-component .sn-icon-button {
   color: var(--sn-stylekit-neutral-color);
 }
 
@@ -3024,7 +3024,7 @@ template {
   color: var(--sn-stylekit-info-contrast-color);
 }
 
-.sn-component .color-grey-1, .sn-component .sn-icon-button {
+.sn-component .color-grey-1 {
   color: var(--sn-stylekit-grey-1);
 }
 
