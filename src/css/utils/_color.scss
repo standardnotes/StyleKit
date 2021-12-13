@@ -90,7 +90,7 @@
   color: var(--sn-stylekit-contrast-foreground-color);
 }
 
-@for $i from 1 to 6 {
+@for $i from 1 to 7 {
   .color-accessory-tint-#{$i} {
     color: var(--sn-stylekit-accessory-tint-color-#{$i});
   }

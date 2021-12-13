@@ -3080,6 +3080,10 @@ template {
   color: var(--sn-stylekit-accessory-tint-color-5);
 }
 
+.sn-component .color-accessory-tint-6 {
+  color: var(--sn-stylekit-accessory-tint-color-6);
+}
+
 .sn-component .inline-flex, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button {
   display: inline-flex;
 }
