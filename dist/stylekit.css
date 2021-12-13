@@ -400,6 +400,12 @@ template {
   --sn-stylekit-editor-font-family: var(--sn-stylekit-sans-serif-font);
   --sn-stylekit-theme-type: light;
   --sn-stylekit-theme-name: sn-light;
+  --sn-stylekit-accessory-tint-color-1: #086dd6;
+  --sn-stylekit-accessory-tint-color-2: #ea6595;
+  --sn-stylekit-accessory-tint-color-3: #ebad00;
+  --sn-stylekit-accessory-tint-color-4: #7049cf;
+  --sn-stylekit-accessory-tint-color-5: #1aa772;
+  --sn-stylekit-accessory-tint-color-6: #f28c52;
 }
 
 .sn-component {
@@ -3052,6 +3058,26 @@ template {
 .sn-component .sn-dropdown-menu-list-item[aria-selected='true'],
 .sn-component .sn-select-list-option[aria-selected='true'] {
   color: var(--sn-stylekit-contrast-foreground-color);
+}
+
+.sn-component .color-accessory-tint-1 {
+  color: var(--sn-stylekit-accessory-tint-color-1);
+}
+
+.sn-component .color-accessory-tint-2 {
+  color: var(--sn-stylekit-accessory-tint-color-2);
+}
+
+.sn-component .color-accessory-tint-3 {
+  color: var(--sn-stylekit-accessory-tint-color-3);
+}
+
+.sn-component .color-accessory-tint-4 {
+  color: var(--sn-stylekit-accessory-tint-color-4);
+}
+
+.sn-component .color-accessory-tint-5 {
+  color: var(--sn-stylekit-accessory-tint-color-5);
 }
 
 .sn-component .inline-flex, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button {

@@ -89,3 +89,9 @@
 .selected\:fg-color[aria-selected='true'] {
   color: var(--sn-stylekit-contrast-foreground-color);
 }
+
+@for $i from 1 to 6 {
+  .color-accessory-tint-#{$i} {
+    color: var(--sn-stylekit-accessory-tint-color-#{$i});
+  }
+}
