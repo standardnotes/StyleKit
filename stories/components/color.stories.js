@@ -2,6 +2,7 @@ import { h } from 'preact';
 
 export default {
   title: 'Design System/Styles/Colors',
+  component: DemoComponent,
   argTypes: {
     onClick: {
       action: 'clicked',
@@ -10,6 +11,7 @@ export default {
       control: {
         type: 'select',
         options: [
+          'info',
           'black',
           'grey-1',
           'grey-2',
@@ -24,12 +26,20 @@ export default {
   },
 };
 
-const Template = (args) => (
+const DemoComponent = (args) => (
   <label className={`color-${args.variant}`}>{args.label}</label>
 );
 
-export const Info = Template.bind({});
+export const Info = DemoComponent.bind({});
+
 Info.args = {
   label: 'Some Label',
   variant: 'info',
+};
+
+export const Grey3 = DemoComponent.bind({});
+
+Grey3.args = {
+  label: 'Some Label',
+  variant: 'grey-3',
 };
