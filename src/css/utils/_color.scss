@@ -2,83 +2,55 @@
   background-color: var(--sn-stylekit-background-color);
 }
 
-.bg-info {
-  background-color: var(--sn-stylekit-info-color);
-}
-.bg-info-dark {
-  background-color: var(--sn-stylekit-info-color-darkened);
-}
-
-.bg-transparent {
-  background-color: transparent;
-}
-
 .bg-contrast {
   background-color: var(--sn-stylekit-contrast-background-color);
-}
-
-.bg-secondary-contrast {
-  background-color: var(--sn-stylekit-secondary-contrast-background-color);
 }
 
 .bg-border {
   background-color: var(--sn-stylekit-border-color);
 }
 
+.bg-secondary-contrast {
+  background-color: var(--sn-stylekit-secondary-contrast-background-color);
+}
+
 .bg-clip-padding {
   background-clip: padding-box;
 }
 
-.bg-neutral {
-  background-color: var(--sn-stylekit-neutral-color);
+.bg-transparent {
+  background-color: transparent;
 }
 
-.bg-grey-5 {
-  background-color: var(--sn-stylekit-grey-5);
+@mixin define-color($name, $source: null) {
+  .bg-#{$name} {
+    background-color: var(--sn-stylekit-#{if($source, $source, $name)});
+  }
+
+  .color-#{$name} {
+    color: var(--sn-stylekit-#{if($source, $source, $name)});
+  }
 }
 
-.bg-black {
-  background-color: var(--sn-stylekit-black);
-}
+@include define-color("neutral", "neutral-color");
+@include define-color("text", "contrast-foreground-color");
+@include define-color("foreground", "foreground-color");
+@include define-color("danger", "danger-color");
+@include define-color("info", "info-color");
+@include define-color("info-contrast", "info-contrast-color");
+@include define-color("info-dark", "info-color-darkened");
 
-.color-neutral {
-  color: var(--sn-stylekit-neutral-color);
-}
+@include define-color("grey-1");
+@include define-color("grey-2");
+@include define-color("grey-3");
+@include define-color("grey-4");
+@include define-color("grey-5");
+@include define-color("grey-6");
+@include define-color("grey-super-light");
 
-.color-text {
-  color: var(--sn-stylekit-contrast-foreground-color);
-}
-
-.color-foreground {
-  color: var(--sn-stylekit-foreground-color);
-}
-
-.color-danger {
-  color: var(--sn-stylekit-danger-color);
-}
-
-.color-info {
-  color: var(--sn-stylekit-info-color);
-}
-.color-info-contrast {
-  color: var(--sn-stylekit-info-contrast-color);
-}
-
-.color-grey-1 {
-  color: var(--sn-stylekit-grey-1);
-}
-
-.color-black {
-  color: var(--sn-stylekit-black);
-}
-
-.color-white {
-  color: var(--sn-stylekit-white);
-}
-
-.color-dark-red {
-  color: var(--sn-stylekit-dark-red);
-}
+@include define-color("black");
+@include define-color("white");
+@include define-color("dark-red");
 
 .selected\:bg-color[data-selected],
 .selected\:bg-color[aria-selected='true'] {

@@ -351,10 +351,12 @@ template {
   --sn-stylekit-white: #ffffff;
   --sn-stylekit-black: #19191c;
   --sn-stylekit-grey-1: #72767e;
+  --sn-stylekit-grey-2: #bbbec4;
   --sn-stylekit-grey-3: #dfe1e4;
   --sn-stylekit-grey-4: #eeeff1;
   --sn-stylekit-grey-5: #f4f5f7;
   --sn-stylekit-grey-6: #e5e5e5;
+  --sn-stylekit-grey-super-light: #f9f9f9;
   --sn-stylekit-dark-red: #cc2128;
   --sn-stylekit-neutral-color: #989898;
   --sn-stylekit-neutral-contrast-color: #ffffff;
@@ -2966,80 +2968,156 @@ template {
   background-color: var(--sn-stylekit-background-color);
 }
 
-.sn-component .bg-info, .sn-component .sn-button.info, .sn-component .sn-icon-button.info {
-  background-color: var(--sn-stylekit-info-color);
-}
-
-.sn-component .bg-info-dark, .sn-component .hover\:bg-info-dark:hover, .sn-component .focus\:bg-info-dark:focus, .sn-component .sn-icon-button.info:hover, .sn-component .sn-icon-button.info:focus {
-  background-color: var(--sn-stylekit-info-color-darkened);
-}
-
-.sn-component .bg-transparent, .sn-component .sn-icon-button {
-  background-color: transparent;
-}
-
 .sn-component .bg-contrast, .sn-component .hover\:bg-contrast:hover, .sn-component .sn-icon-button:hover, .sn-component .focus\:bg-contrast:focus, .sn-component .sn-icon-button:focus {
   background-color: var(--sn-stylekit-contrast-background-color);
-}
-
-.sn-component .bg-secondary-contrast, .sn-component .hover\:bg-secondary-contrast:hover, .sn-component .focus\:bg-secondary-contrast:focus {
-  background-color: var(--sn-stylekit-secondary-contrast-background-color);
 }
 
 .sn-component .bg-border {
   background-color: var(--sn-stylekit-border-color);
 }
 
+.sn-component .bg-secondary-contrast, .sn-component .hover\:bg-secondary-contrast:hover, .sn-component .focus\:bg-secondary-contrast:focus {
+  background-color: var(--sn-stylekit-secondary-contrast-background-color);
+}
+
 .sn-component .bg-clip-padding, .sn-component .sn-icon-button {
   background-clip: padding-box;
+}
+
+.sn-component .bg-transparent, .sn-component .sn-icon-button {
+  background-color: transparent;
 }
 
 .sn-component .bg-neutral {
   background-color: var(--sn-stylekit-neutral-color);
 }
 
-.sn-component .bg-grey-5 {
-  background-color: var(--sn-stylekit-grey-5);
-}
-
-.sn-component .bg-black {
-  background-color: var(--sn-stylekit-black);
-}
-
 .sn-component .color-neutral, .sn-component .sn-icon-button {
   color: var(--sn-stylekit-neutral-color);
+}
+
+.sn-component .bg-text {
+  background-color: var(--sn-stylekit-contrast-foreground-color);
 }
 
 .sn-component .color-text, .sn-component .hover\:color-text:hover, .sn-component .sn-icon-button:hover, .sn-component .focus\:color-text:focus, .sn-component .sn-icon-button:focus, .sn-component .sn-button.outlined, .sn-component .sn-dropdown-menu, .sn-component .sn-dropdown-menu-list, .sn-component .sn-select, .sn-component .sn-select-list {
   color: var(--sn-stylekit-contrast-foreground-color);
 }
 
+.sn-component .bg-foreground {
+  background-color: var(--sn-stylekit-foreground-color);
+}
+
 .sn-component .color-foreground {
   color: var(--sn-stylekit-foreground-color);
+}
+
+.sn-component .bg-danger {
+  background-color: var(--sn-stylekit-danger-color);
 }
 
 .sn-component .color-danger {
   color: var(--sn-stylekit-danger-color);
 }
 
+.sn-component .bg-info, .sn-component .sn-button.info, .sn-component .sn-icon-button.info {
+  background-color: var(--sn-stylekit-info-color);
+}
+
 .sn-component .color-info {
   color: var(--sn-stylekit-info-color);
+}
+
+.sn-component .bg-info-contrast {
+  background-color: var(--sn-stylekit-info-contrast-color);
 }
 
 .sn-component .color-info-contrast, .sn-component .sn-button.info, .sn-component .sn-icon-button.info, .sn-component .sn-icon-button.info:hover, .sn-component .sn-icon-button.info:focus {
   color: var(--sn-stylekit-info-contrast-color);
 }
 
+.sn-component .bg-info-dark, .sn-component .hover\:bg-info-dark:hover, .sn-component .focus\:bg-info-dark:focus, .sn-component .sn-icon-button.info:hover, .sn-component .sn-icon-button.info:focus {
+  background-color: var(--sn-stylekit-info-color-darkened);
+}
+
+.sn-component .color-info-dark {
+  color: var(--sn-stylekit-info-color-darkened);
+}
+
+.sn-component .bg-grey-1 {
+  background-color: var(--sn-stylekit-grey-1);
+}
+
 .sn-component .color-grey-1 {
   color: var(--sn-stylekit-grey-1);
+}
+
+.sn-component .bg-grey-2 {
+  background-color: var(--sn-stylekit-grey-2);
+}
+
+.sn-component .color-grey-2 {
+  color: var(--sn-stylekit-grey-2);
+}
+
+.sn-component .bg-grey-3 {
+  background-color: var(--sn-stylekit-grey-3);
+}
+
+.sn-component .color-grey-3 {
+  color: var(--sn-stylekit-grey-3);
+}
+
+.sn-component .bg-grey-4 {
+  background-color: var(--sn-stylekit-grey-4);
+}
+
+.sn-component .color-grey-4 {
+  color: var(--sn-stylekit-grey-4);
+}
+
+.sn-component .bg-grey-5 {
+  background-color: var(--sn-stylekit-grey-5);
+}
+
+.sn-component .color-grey-5 {
+  color: var(--sn-stylekit-grey-5);
+}
+
+.sn-component .bg-grey-6 {
+  background-color: var(--sn-stylekit-grey-6);
+}
+
+.sn-component .color-grey-6 {
+  color: var(--sn-stylekit-grey-6);
+}
+
+.sn-component .bg-grey-super-light {
+  background-color: var(--sn-stylekit-grey-super-light);
+}
+
+.sn-component .color-grey-super-light {
+  color: var(--sn-stylekit-grey-super-light);
+}
+
+.sn-component .bg-black {
+  background-color: var(--sn-stylekit-black);
 }
 
 .sn-component .color-black {
   color: var(--sn-stylekit-black);
 }
 
+.sn-component .bg-white {
+  background-color: var(--sn-stylekit-white);
+}
+
 .sn-component .color-white {
   color: var(--sn-stylekit-white);
+}
+
+.sn-component .bg-dark-red {
+  background-color: var(--sn-stylekit-dark-red);
 }
 
 .sn-component .color-dark-red {
