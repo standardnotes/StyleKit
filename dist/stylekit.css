@@ -354,6 +354,7 @@ template {
   --sn-stylekit-grey-2: #bbbec4;
   --sn-stylekit-grey-3: #dfe1e4;
   --sn-stylekit-grey-4: #eeeff1;
+  --sn-stylekit-grey-4-opacity-variant: #bbbec43d;
   --sn-stylekit-grey-5: #f4f5f7;
   --sn-stylekit-grey-6: #e5e5e5;
   --sn-stylekit-grey-super-light: #f9f9f9;
@@ -3076,6 +3077,14 @@ template {
   color: var(--sn-stylekit-grey-4);
 }
 
+.sn-component .bg-grey-4-opacity-variant {
+  background-color: var(--sn-stylekit-grey-4-opacity-variant);
+}
+
+.sn-component .color-grey-4-opacity-variant {
+  color: var(--sn-stylekit-grey-4-opacity-variant);
+}
+
 .sn-component .bg-grey-5 {
   background-color: var(--sn-stylekit-grey-5);
 }
@@ -3124,6 +3133,54 @@ template {
   color: var(--sn-stylekit-dark-red);
 }
 
+.sn-component .bg-accessory-tint-1 {
+  background-color: var(--sn-stylekit-accessory-tint-color-1);
+}
+
+.sn-component .color-accessory-tint-1 {
+  color: var(--sn-stylekit-accessory-tint-color-1);
+}
+
+.sn-component .bg-accessory-tint-2 {
+  background-color: var(--sn-stylekit-accessory-tint-color-2);
+}
+
+.sn-component .color-accessory-tint-2 {
+  color: var(--sn-stylekit-accessory-tint-color-2);
+}
+
+.sn-component .bg-accessory-tint-3 {
+  background-color: var(--sn-stylekit-accessory-tint-color-3);
+}
+
+.sn-component .color-accessory-tint-3 {
+  color: var(--sn-stylekit-accessory-tint-color-3);
+}
+
+.sn-component .bg-accessory-tint-4 {
+  background-color: var(--sn-stylekit-accessory-tint-color-4);
+}
+
+.sn-component .color-accessory-tint-4 {
+  color: var(--sn-stylekit-accessory-tint-color-4);
+}
+
+.sn-component .bg-accessory-tint-5 {
+  background-color: var(--sn-stylekit-accessory-tint-color-5);
+}
+
+.sn-component .color-accessory-tint-5 {
+  color: var(--sn-stylekit-accessory-tint-color-5);
+}
+
+.sn-component .bg-accessory-tint-6 {
+  background-color: var(--sn-stylekit-accessory-tint-color-6);
+}
+
+.sn-component .color-accessory-tint-6 {
+  color: var(--sn-stylekit-accessory-tint-color-6);
+}
+
 .sn-component .selected\:bg-color[data-selected], .sn-component .sn-dropdown-menu-list-item[data-selected], .sn-component .sn-select-list-option[data-selected],
 .sn-component .selected\:bg-color[aria-selected='true'],
 .sn-component .sn-dropdown-menu-list-item[aria-selected='true'],
@@ -3136,30 +3193,6 @@ template {
 .sn-component .sn-dropdown-menu-list-item[aria-selected='true'],
 .sn-component .sn-select-list-option[aria-selected='true'] {
   color: var(--sn-stylekit-contrast-foreground-color);
-}
-
-.sn-component .color-accessory-tint-1 {
-  color: var(--sn-stylekit-accessory-tint-color-1);
-}
-
-.sn-component .color-accessory-tint-2 {
-  color: var(--sn-stylekit-accessory-tint-color-2);
-}
-
-.sn-component .color-accessory-tint-3 {
-  color: var(--sn-stylekit-accessory-tint-color-3);
-}
-
-.sn-component .color-accessory-tint-4 {
-  color: var(--sn-stylekit-accessory-tint-color-4);
-}
-
-.sn-component .color-accessory-tint-5 {
-  color: var(--sn-stylekit-accessory-tint-color-5);
-}
-
-.sn-component .color-accessory-tint-6 {
-  color: var(--sn-stylekit-accessory-tint-color-6);
 }
 
 .sn-component .inline-flex, .sn-component .sn-dropdown-menu, .sn-component .sn-select, .sn-component .sn-select-button {

@@ -44,6 +44,7 @@
 @include define-color("grey-2");
 @include define-color("grey-3");
 @include define-color("grey-4");
+@include define-color("grey-4-opacity-variant");
 @include define-color("grey-5");
 @include define-color("grey-6");
 @include define-color("grey-super-light");
@@ -51,6 +52,10 @@
 @include define-color("black");
 @include define-color("white");
 @include define-color("dark-red");
+
+@for $i from 1 to 7 {
+  @include define-color("accessory-tint-#{$i}", "accessory-tint-color-#{$i}");
+}
 
 .selected\:bg-color[data-selected],
 .selected\:bg-color[aria-selected='true'] {
@@ -60,10 +65,4 @@
 .selected\:fg-color[data-selected],
 .selected\:fg-color[aria-selected='true'] {
   color: var(--sn-stylekit-contrast-foreground-color);
-}
-
-@for $i from 1 to 7 {
-  .color-accessory-tint-#{$i} {
-    color: var(--sn-stylekit-accessory-tint-color-#{$i});
-  }
 }
