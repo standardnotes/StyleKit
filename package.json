@@ -2,6 +2,9 @@
   "name": "@standardnotes/stylekit",
   "version": "5.3.4",
   "main": "dist/stylekit.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "webpack --mode='production'",
     "start": "webpack --watch --mode='development'",
