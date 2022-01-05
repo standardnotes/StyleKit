@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.3.2](https://github.com/standardnotes/StyleKit/compare/v5.3.1...v5.3.2) (2022-01-05)
+
+
+### Bug Fixes
+
+* stylekit repo url in package.json ([01485ed](https://github.com/standardnotes/StyleKit/commit/01485ed00e646bb61af4e959c8bd2c7609128246))
+
 ### [5.3.1](https://github.com/sn-extensions/stylekit/compare/v5.3.0...v5.3.1) (2022-01-05)
 
 
