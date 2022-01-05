@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.3.4](https://github.com/standardnotes/StyleKit/compare/v5.3.3...v5.3.4) (2022-01-05)
+
+
+### Bug Fixes
+
+* publishing step ([7d9afe3](https://github.com/standardnotes/StyleKit/commit/7d9afe3a20f008fc3b0386d1b0d2e4cb720fe7cd))
+
 ### [5.3.3](https://github.com/standardnotes/StyleKit/compare/v5.3.2...v5.3.3) (2022-01-05)
 
 
