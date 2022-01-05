@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.3.1](https://github.com/sn-extensions/stylekit/compare/v5.3.0...v5.3.1) (2022-01-05)
+
+
+### Bug Fixes
+
+* add npm token to publishing workflow ([d84c030](https://github.com/sn-extensions/stylekit/commit/d84c030572f49a7e3396ae1747e941aaf99bfe6a))
+
 ## [5.3.0](https://github.com/sn-extensions/stylekit/compare/v5.2.11...v5.3.0) (2022-01-05)
 
 
