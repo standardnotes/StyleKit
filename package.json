@@ -10,7 +10,8 @@
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook -o storybook",
     "clean-cache:gh-pages": "rm -rf node_modules/.cache/gh-pages",
-    "publish:storybook": "gh-pages -b gh-pages -d storybook"
+    "publish:storybook": "gh-pages -b gh-pages -d storybook",
+    "release": "standard-version"
   },
   "dependencies": {
     "@reach/listbox": "^0.15.0",
@@ -21,6 +22,8 @@
     "@babel/core": "^7.12.13",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/plugin-transform-react-jsx": "^7.12.16",
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
     "@storybook/addon-a11y": "^6.1.17",
     "@storybook/addon-actions": "^6.1.17",
     "@storybook/addon-essentials": "^6.1.17",
@@ -31,6 +34,7 @@
     "core-js": "^3.8.3",
     "css-loader": "~5.0.1",
     "gh-pages": "^3.1.0",
+    "husky": "^7.0.4",
     "mini-css-extract-plugin": "^1.3.5",
     "node-sass": "^5.0.0",
     "pre-push": "^0.1.1",
@@ -38,6 +42,7 @@
     "preact-custom-element": "^4.2.1",
     "prettier": "2.2.1",
     "sass-loader": "^10.1.1",
+    "standard-version": "^9.3.2",
     "style-loader": "~2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.20.0",
@@ -50,6 +55,16 @@
   "pre-push": [
     "lint"
   ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/sn-extensions/stylekit.git"
