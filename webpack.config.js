@@ -77,7 +77,7 @@ module.exports = (_, { mode }) => ({
         test: /\.(svg)(\?.*)?$/i,
         use: [
           {
-            loader: 'url-loader',
+            loader: '@svgr/webpack',
             options: {
               limit: 10000000,
             },
