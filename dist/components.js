@@ -252,7 +252,7 @@ module.exports = tabbable;
 
 /***/ }),
 
-/***/ 998:
+/***/ 118:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3307,7 +3307,73 @@ Button.defaultProps = {
 ;// CONCATENATED MODULE: ./src/components/Button/index.js
 
 ;// CONCATENATED MODULE: ./src/components/Icon/icons-sprite.svg
-/* harmony default export */ const icons_sprite = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxzdmcgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMjAgMjAiIGlkPSJpYy1oaXN0b3J5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTExLjY2NyA2LjY2N2gtMS4yNXY0LjE2NmwzLjU2NiAyLjExNy42LTEuMDA4LTIuOTE2LTEuNzM0VjYuNjY3ek0xMS4yNSAyLjVhNy41IDcuNSAwIDAwLTcuNSA3LjVoLTIuNWwzLjMgMy4zNThMNy45MTcgMTBoLTIuNWE1LjgzMyA1LjgzMyAwIDExNS44MzMgNS44MzMgNS43ODYgNS43ODYgMCAwMS00LjExNy0xLjcxNkw1Ljk1IDE1LjNhNy40MTMgNy40MTMgMCAwMDUuMyAyLjIgNy41IDcuNSAwIDAwMC0xNXoiIGZpbGw9IiM3Mjc2N0UiIC8+CiAgPC9zdmc+CiAgPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgaWQ9ImljLW1lbnUtYXJyb3ctdXAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgxODAgOS45OTk5MjU2MTM0MDMzMiwxMC40MTY1NzQ0NzgxNDk0MTQpIiBmaWxsPSIjNzI3NjdFIiBkPSJtNS44MzMyNSw4LjMzMzI1bDQuMTY2NjcsNC4xNjY2NWw0LjE2NjY4LC00LjE2NjY1bC04LjMzMzM1LDB6Ii8+CiAgPC9zdmc+CiAgPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgaWQ9ImljLW1lbnUtYXJyb3ctZG93biIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik01LjgzMyA4LjMzM0wxMCAxMi41bDQuMTY3LTQuMTY3SDUuODMzeiIgZmlsbD0iIzcyNzY3RSIgLz4KICA8L3N2Zz4KICA8c3ZnIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIiBpZD0iaWMtcmVkbyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xNC41MzcgOS40YTcuMzA2IDcuMzA2IDAgMDAtNC43MjItMS43MzNjLTMuMTgyIDAtNS44NyAyLjAyLTYuODE1IDQuODEzbDEuNjE1LjUyYy43MTgtMi4xMjcgMi43NzEtMy42NjcgNS4yLTMuNjY3IDEuMzM1IDAgMi41NTMuNDggMy41MDQgMS4yNTRMMTAuODQyIDEzSDE3VjdsLTIuNDYzIDIuNHoiIGZpbGw9IiM3Mjc2N0UiIC8+CiAgPC9zdmc+CiAgPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgaWQ9ImljLXRleHQtcmljaCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yLjUgNy41aDV2NWgtNXYtNXptMC0zLjMzM2gxNXYxLjY2NmgtMTVWNC4xNjZ6bTE1IDMuMzMzdjEuNjY2SDkuMTY3VjcuNUgxNy41em0wIDMuMzMzVjEyLjVIOS4xNjd2LTEuNjY3SDE3LjV6bS0xNSAzLjMzM2gxMS42Njd2MS42NjdIMi41di0xLjY2N3oiIGZpbGw9IiM3Mjc2N0UiIC8+CiAgPC9zdmc+CiAgPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgaWQ9ImljLXVuZG8iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cGF0aCBkPSJNMTAuMTgxIDcuNjY3QTcuMyA3LjMgMCAwMDUuNDYyIDkuNEwzIDd2Nmg2LjE1NUw2LjY4IDEwLjU4N2E1LjUyMyA1LjUyMyAwIDAxMy41MDEtMS4yNTRjMi40MjEgMCA0LjQ4IDEuNTQgNS4xOTggMy42NjdMMTcgMTIuNDhjLS45NS0yLjc5My0zLjYzOS00LjgxMy02LjgxOS00LjgxM3oiIGZpbGw9IiM3Mjc2N0UiIC8+CiAgPC9zdmc+Cjwvc3ZnPg==");
+var _path, _path2, _path3, _path4, _path5, _path6;
+
+function icons_sprite_extends() { icons_sprite_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return icons_sprite_extends.apply(this, arguments); }
+
+
+
+var SvgIconsSprite = function SvgIconsSprite(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+    width: 20,
+    height: 20,
+    fill: "none",
+    viewBox: "0 0 20 20",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path || (_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M11.667 6.667h-1.25v4.166l3.566 2.117.6-1.008-2.916-1.734V6.667zM11.25 2.5a7.5 7.5 0 0 0-7.5 7.5h-2.5l3.3 3.358L7.917 10h-2.5a5.833 5.833 0 1 1 5.833 5.833 5.786 5.786 0 0 1-4.117-1.716L5.95 15.3a7.413 7.413 0 0 0 5.3 2.2 7.5 7.5 0 0 0 0-15z",
+    fill: "#72767E"
+  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+    width: 20,
+    height: 20,
+    fill: "none",
+    viewBox: "0 0 20 20",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path2 || (_path2 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    fill: "#72767E",
+    d: "M14.167 12.5 10 8.333 5.833 12.5h8.334z"
+  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+    width: 20,
+    height: 20,
+    fill: "none",
+    viewBox: "0 0 20 20",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path3 || (_path3 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M5.833 8.333 10 12.5l4.167-4.167H5.833z",
+    fill: "#72767E"
+  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+    width: 20,
+    height: 20,
+    fill: "none",
+    viewBox: "0 0 20 20",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path4 || (_path4 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M14.537 9.4a7.306 7.306 0 0 0-4.722-1.733c-3.182 0-5.87 2.02-6.815 4.813l1.615.52c.718-2.127 2.771-3.667 5.2-3.667 1.335 0 2.553.48 3.504 1.254L10.842 13H17V7l-2.463 2.4z",
+    fill: "#72767E"
+  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+    width: 20,
+    height: 20,
+    fill: "none",
+    viewBox: "0 0 20 20",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path5 || (_path5 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M2.5 7.5h5v5h-5v-5zm0-3.333h15v1.666h-15V4.166zm15 3.333v1.666H9.167V7.5H17.5zm0 3.333V12.5H9.167v-1.667H17.5zm-15 3.333h11.667v1.667H2.5v-1.667z",
+    fill: "#72767E"
+  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+    width: 20,
+    height: 20,
+    fill: "none",
+    viewBox: "0 0 20 20",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path6 || (_path6 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10.181 7.667A7.3 7.3 0 0 0 5.462 9.4L3 7v6h6.155L6.68 10.587a5.523 5.523 0 0 1 3.501-1.254c2.421 0 4.48 1.54 5.198 3.667L17 12.48c-.95-2.793-3.639-4.813-6.819-4.813z",
+    fill: "#72767E"
+  }))));
+};
+
+/* harmony default export */ const icons_sprite = (SvgIconsSprite);
 ;// CONCATENATED MODULE: ./src/components/Icon/component.js
 
 
@@ -3913,7 +3979,6 @@ var ListboxEvents; /////////////////////////////////////////////////////////////
   ListboxEvents["OptionMouseDown"] = "OPTION_MOUSE_DOWN";
   ListboxEvents["OptionMouseUp"] = "OPTION_MOUSE_UP";
   ListboxEvents["OptionClick"] = "OPTION_CLICK";
-  ListboxEvents["ListMouseUp"] = "LIST_MOUSE_UP";
   ListboxEvents["OptionPress"] = "OPTION_PRESS";
   ListboxEvents["OutsideMouseDown"] = "OUTSIDE_MOUSE_DOWN";
   ListboxEvents["OutsideMouseUp"] = "OUTSIDE_MOUSE_UP";
@@ -4297,9 +4362,6 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
       }], _extends4[ListboxEvents.ButtonMouseUp] = {
         target: ListboxStates.Navigating,
         actions: [navigateFromCurrentValue, focusList]
-      }, _extends4[ListboxEvents.ListMouseUp] = {
-        target: ListboxStates.Navigating,
-        actions: [navigateFromCurrentValue, focusList]
       }, _extends4[ListboxEvents.OptionTouchStart] = {
         target: ListboxStates.Navigating,
         actions: [reach_listbox_esm_navigate, clearTypeahead],
@@ -4533,15 +4595,6 @@ function findOptionFromValue(value, options) {
  */
 
 
-var _excluded = ["as", "aria-labelledby", "aria-label", "children", "defaultValue", "disabled", "form", "name", "onChange", "required", "value", "__componentName"],
-    _excluded2 = (/* unused pure expression or super */ null && (["arrow", "button", "children", "portal"])),
-    _excluded3 = ["aria-label", "arrow", "as", "children", "onKeyDown", "onMouseDown", "onMouseUp"],
-    _excluded4 = ["as", "children"],
-    _excluded5 = ["as", "position", "onBlur", "onKeyDown", "onMouseUp", "portal", "unstable_observableRefs"],
-    _excluded6 = ["as"],
-    _excluded7 = ["as", "children", "disabled", "onClick", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onTouchStart", "value", "label"],
-    _excluded8 = (/* unused pure expression or super */ null && (["as", "label", "children"])),
-    _excluded9 = (/* unused pure expression or super */ null && (["as"]));
 var DEBUG = false; ////////////////////////////////////////////////////////////////////////////////
 // ListboxContext
 
@@ -4573,7 +4626,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
       valueProp = _ref.value,
       _ref$__componentName = _ref.__componentName,
       __componentName = _ref$__componentName === void 0 ? "ListboxInput" : _ref$__componentName,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref, _excluded);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref, ["as", "aria-labelledby", "aria-label", "children", "defaultValue", "disabled", "form", "name", "onChange", "required", "value", "__componentName"]);
 
   var isControlled = s(valueProp != null);
 
@@ -4607,12 +4660,11 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
       state = _useMachine[0],
       send = _useMachine[1];
 
-  function handleValueChange(newValue) {
+  var stableOnChange = useStableCallback(function (newValue) {
     if (newValue !== state.context.value) {
       onChange == null ? void 0 : onChange(newValue);
     }
-  } // IDs for aria attributes
-
+  }); // IDs for aria attributes
 
   var _id = reach_auto_id_esm_useId(props.id);
 
@@ -4631,24 +4683,27 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     });
     return selected ? selected.label : null;
   }, [options, state.context.value]);
-  var isExpanded = isListboxExpanded(state.value);
-  var context = {
-    ariaLabel: ariaLabel,
-    ariaLabelledBy: ariaLabelledBy,
-    buttonRef: buttonRef,
-    disabled: disabled,
-    highlightedOptionRef: highlightedOptionRef,
-    isExpanded: isExpanded,
-    listboxId: id,
-    listboxValueLabel: valueLabel,
-    listRef: listRef,
-    onValueChange: handleValueChange,
-    popoverRef: popoverRef,
-    selectedOptionRef: selectedOptionRef,
-    send: send,
-    state: state.value,
-    stateData: state.context
-  }; // For uncontrolled listbox components where no `defaultValue` is provided, we
+  var isExpanded = isListboxExpanded(state.value); // TODO: Remove duplication and memoize
+
+  var context = d(function () {
+    return {
+      ariaLabel: ariaLabel,
+      ariaLabelledBy: ariaLabelledBy,
+      disabled: disabled,
+      isExpanded: isExpanded,
+      listboxId: id,
+      listboxValueLabel: valueLabel,
+      onValueChange: stableOnChange,
+      buttonRef: buttonRef,
+      listRef: listRef,
+      popoverRef: popoverRef,
+      selectedOptionRef: selectedOptionRef,
+      highlightedOptionRef: highlightedOptionRef,
+      send: send,
+      state: state.value,
+      stateData: state.context
+    };
+  }, [ariaLabel, ariaLabelledBy, state.value, state.context, disabled, id, isExpanded, stableOnChange, send, valueLabel]); // For uncontrolled listbox components where no `defaultValue` is provided, we
   // will update the value based on the value of the first selectable option.
   // We call the update directly because:
   //   A) we only ever need to do this once, so we can guard with a ref
@@ -4735,19 +4790,19 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     };
   }, [send, isExpanded]);
   useCheckStyles("listbox");
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, reach_listbox_esm_extends({}, props, {
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(DescendantProvider, {
+    context: ListboxDescendantContext,
+    items: options,
+    set: setOptions
+  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(ListboxContext.Provider, {
+    value: context
+  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, reach_listbox_esm_extends({}, props, {
     ref: ref,
     "data-reach-listbox-input": "",
     "data-state": isExpanded ? "expanded" : "closed",
     "data-value": state.context.value,
     id: id
-  }), /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(ListboxContext.Provider, {
-    value: context
-  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(DescendantProvider, {
-    context: ListboxDescendantContext,
-    items: options,
-    set: setOptions
-  }, reach_utils_type_check_esm_isFunction(children) ? children({
+  }), reach_utils_type_check_esm_isFunction(children) ? children({
     id: id,
     isExpanded: isExpanded,
     value: state.context.value,
@@ -4756,7 +4811,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     valueLabel: valueLabel,
     // TODO: Remove in 1.0
     expanded: isExpanded
-  }) : children, (form || name || required) && /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)("input", {
+  }) : children), (form || name || required) && /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)("input", {
     ref: hiddenInputRef,
     "data-reach-listbox-hidden-input": "",
     disabled: disabled,
@@ -4767,7 +4822,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     tabIndex: -1,
     type: "hidden",
     value: state.context.value || ""
-  }))));
+  })));
 });
 
 if (false) {}
@@ -4799,7 +4854,7 @@ var Listbox = /*#__PURE__*/(/* unused pure expression or super */ null && (forwa
       children = _ref2.children,
       _ref2$portal = _ref2.portal,
       portal = _ref2$portal === void 0 ? true : _ref2$portal,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref2, _excluded2);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref2, ["arrow", "button", "children", "portal"]);
 
   return /*#__PURE__*/createElement(ListboxInput, reach_listbox_esm_extends({}, props, {
     __componentName: "Listbox",
@@ -4844,16 +4899,16 @@ var ListboxButtonImpl = /*#__PURE__*/compat_module_x(function ListboxButton(_ref
       onKeyDown = _ref4.onKeyDown,
       onMouseDown = _ref4.onMouseDown,
       onMouseUp = _ref4.onMouseUp,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref4, _excluded3);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref4, ["aria-label", "arrow", "as", "children", "onKeyDown", "onMouseDown", "onMouseUp"]);
 
   var _React$useContext = F(ListboxContext),
-      buttonRef = _React$useContext.buttonRef,
-      send = _React$useContext.send,
       ariaLabelledBy = _React$useContext.ariaLabelledBy,
+      buttonRef = _React$useContext.buttonRef,
       disabled = _React$useContext.disabled,
       isExpanded = _React$useContext.isExpanded,
       listboxId = _React$useContext.listboxId,
       stateData = _React$useContext.stateData,
+      send = _React$useContext.send,
       listboxValueLabel = _React$useContext.listboxValueLabel;
 
   var listboxValue = stateData.value;
@@ -4959,7 +5014,7 @@ var ListboxArrowImpl = /*#__PURE__*/compat_module_x(function ListboxArrow(_ref5,
   var _ref5$as = _ref5.as,
       Comp = _ref5$as === void 0 ? "span" : _ref5$as,
       children = _ref5.children,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref5, _excluded4);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children"]);
 
   var _React$useContext2 = F(ListboxContext),
       isExpanded = _React$useContext2.isExpanded;
@@ -5002,26 +5057,19 @@ var ListboxPopoverImpl = /*#__PURE__*/compat_module_x(function ListboxPopover(_r
       position = _ref6$position === void 0 ? positionMatchWidth : _ref6$position,
       onBlur = _ref6.onBlur,
       onKeyDown = _ref6.onKeyDown,
-      onMouseUp = _ref6.onMouseUp,
       _ref6$portal = _ref6.portal,
       portal = _ref6$portal === void 0 ? true : _ref6$portal,
       unstable_observableRefs = _ref6.unstable_observableRefs,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref6, _excluded5);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref6, ["as", "position", "onBlur", "onKeyDown", "portal", "unstable_observableRefs"]);
 
   var _React$useContext3 = F(ListboxContext),
-      isExpanded = _React$useContext3.isExpanded,
       buttonRef = _React$useContext3.buttonRef,
       popoverRef = _React$useContext3.popoverRef,
-      send = _React$useContext3.send;
+      send = _React$useContext3.send,
+      isExpanded = _React$useContext3.isExpanded;
 
   var ref = useComposedRefs(popoverRef, forwardedRef);
   var handleKeyDown = useKeyDown();
-
-  function handleMouseUp() {
-    send({
-      type: ListboxEvents.ListMouseUp
-    });
-  }
 
   var commonProps = reach_listbox_esm_extends({
     hidden: !isExpanded,
@@ -5029,7 +5077,6 @@ var ListboxPopoverImpl = /*#__PURE__*/compat_module_x(function ListboxPopover(_r
   }, props, {
     ref: ref,
     "data-reach-listbox-popover": "",
-    onMouseUp: composeEventHandlers(onMouseUp, handleMouseUp),
     onBlur: composeEventHandlers(onBlur, handleBlur),
     onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown)
   });
@@ -5071,14 +5118,14 @@ var ListboxPopover = /*#__PURE__*/compat_module_g(ListboxPopoverImpl);
 var ListboxList = /*#__PURE__*/compat_module_x(function ListboxList(_ref7, forwardedRef) {
   var _ref7$as = _ref7.as,
       Comp = _ref7$as === void 0 ? "ul" : _ref7$as,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref7, _excluded6);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref7, ["as"]);
 
   var _React$useContext4 = F(ListboxContext),
-      listRef = _React$useContext4.listRef,
       ariaLabel = _React$useContext4.ariaLabel,
       ariaLabelledBy = _React$useContext4.ariaLabelledBy,
       isExpanded = _React$useContext4.isExpanded,
       listboxId = _React$useContext4.listboxId,
+      listRef = _React$useContext4.listRef,
       _React$useContext4$st = _React$useContext4.stateData,
       value = _React$useContext4$st.value,
       navigationValue = _React$useContext4$st.navigationValue;
@@ -5143,16 +5190,16 @@ var ListboxOption = /*#__PURE__*/compat_module_x(function ListboxOption(_ref8, f
       onTouchStart = _ref8.onTouchStart,
       value = _ref8.value,
       labelProp = _ref8.label,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref8, _excluded7);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref8, ["as", "children", "disabled", "onClick", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onTouchStart", "value", "label"]);
 
   if (false) {}
 
   var _React$useContext5 = F(ListboxContext),
       highlightedOptionRef = _React$useContext5.highlightedOptionRef,
-      selectedOptionRef = _React$useContext5.selectedOptionRef,
-      send = _React$useContext5.send,
       isExpanded = _React$useContext5.isExpanded,
       onValueChange = _React$useContext5.onValueChange,
+      selectedOptionRef = _React$useContext5.selectedOptionRef,
+      send = _React$useContext5.send,
       state = _React$useContext5.state,
       _React$useContext5$st = _React$useContext5.stateData,
       listboxValue = _React$useContext5$st.value,
@@ -5312,7 +5359,7 @@ var ListboxGroup = /*#__PURE__*/(/* unused pure expression or super */ null && (
       Comp = _ref9$as === void 0 ? "div" : _ref9$as,
       label = _ref9.label,
       children = _ref9.children,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref9, _excluded8);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref9, ["as", "label", "children"]);
 
   var _React$useContext6 = useContext(ListboxContext),
       listboxId = _React$useContext6.listboxId;
@@ -5351,7 +5398,7 @@ if (false) {}
 var ListboxGroupLabel = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function ListboxGroupLabel(_ref10, forwardedRef) {
   var _ref10$as = _ref10.as,
       Comp = _ref10$as === void 0 ? "span" : _ref10$as,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref10, _excluded9);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref10, ["as"]);
 
   var _React$useContext7 = useContext(ListboxGroupContext),
       labelId = _React$useContext7.labelId;
@@ -5383,10 +5430,10 @@ if (false) {}
 function useListboxContext() {
   var _React$useContext8 = useContext(ListboxContext),
       highlightedOptionRef = _React$useContext8.highlightedOptionRef,
-      selectedOptionRef = _React$useContext8.selectedOptionRef,
       listboxId = _React$useContext8.listboxId,
       listboxValueLabel = _React$useContext8.listboxValueLabel,
       isExpanded = _React$useContext8.isExpanded,
+      selectedOptionRef = _React$useContext8.selectedOptionRef,
       value = _React$useContext8.stateData.value;
 
   return useMemo(function () {
@@ -5408,21 +5455,20 @@ function isListboxExpanded(state) {
 
 function useKeyDown() {
   var _React$useContext9 = F(ListboxContext),
-      send = _React$useContext9.send,
       listboxDisabled = _React$useContext9.disabled,
       onValueChange = _React$useContext9.onValueChange,
       _React$useContext9$st = _React$useContext9.stateData,
       navigationValue = _React$useContext9$st.navigationValue,
-      typeaheadQuery = _React$useContext9$st.typeaheadQuery;
+      typeaheadQuery = _React$useContext9$st.typeaheadQuery,
+      send = _React$useContext9.send;
 
   var options = useDescendants(ListboxDescendantContext);
-  var stableOnValueChange = useStableCallback(onValueChange);
   y(function () {
     if (typeaheadQuery) {
       send({
         type: ListboxEvents.UpdateAfterTypeahead,
         query: typeaheadQuery,
-        callback: stableOnValueChange
+        callback: onValueChange
       });
     }
 
@@ -5436,7 +5482,7 @@ function useKeyDown() {
     return function () {
       window.clearTimeout(timeout);
     };
-  }, [stableOnValueChange, send, typeaheadQuery]);
+  }, [onValueChange, send, typeaheadQuery]);
   var index = options.findIndex(function (_ref11) {
     var value = _ref11.value;
     return value === navigationValue;
@@ -5699,7 +5745,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__670__;
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
-/******/ 			[998]
+/******/ 			[118]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		

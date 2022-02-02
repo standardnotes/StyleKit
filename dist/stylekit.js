@@ -1,18 +1,18 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("preact"));
 	else if(typeof define === 'function' && define.amd)
-		define("SK", [], factory);
+		define("SK", ["preact"], factory);
 	else if(typeof exports === 'object')
-		exports["SK"] = factory();
+		exports["SK"] = factory(require("preact"));
 	else
-		root["SK"] = root["SK"] || {}, root["SK"]["stylekit"] = factory();
-})(self, function() {
+		root["SK"] = root["SK"] || {}, root["SK"]["stylekit"] = factory(root["_"]);
+})(self, function(__WEBPACK_EXTERNAL_MODULE__670__) {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 754:
+/***/ 561:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -20,7 +20,73 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "SKAlert": () => (/* reexport */ SKAlert)
+  "AccessibilityIcon": () => (/* reexport */ ic_accessibility),
+  "AccountCircleIcon": () => (/* reexport */ ic_account_circle),
+  "AddIcon": () => (/* reexport */ ic_add),
+  "ArchiveIcon": () => (/* reexport */ ic_archive),
+  "ArrowLeftIcon": () => (/* reexport */ ic_arrow_left),
+  "ArrowsSortDownIcon": () => (/* reexport */ ic_arrows_sort_down),
+  "ArrowsSortUpIcon": () => (/* reexport */ ic_arrows_sort_up),
+  "AuthenticatorIcon": () => (/* reexport */ ic_authenticator),
+  "CheckBoldIcon": () => (/* reexport */ ic_check_bold),
+  "CheckCircleIcon": () => (/* reexport */ ic_check_circle),
+  "CheckIcon": () => (/* reexport */ ic_check),
+  "ChevronDownIcon": () => (/* reexport */ ic_chevron_down),
+  "ChevronRightIcon": () => (/* reexport */ ic_chevron_right),
+  "CloseIcon": () => (/* reexport */ ic_close),
+  "CloudOffIcon": () => (/* reexport */ ic_cloud_off),
+  "CodeIcon": () => (/* reexport */ ic_code),
+  "CopyIcon": () => (/* reexport */ ic_copy),
+  "DownloadIcon": () => (/* reexport */ ic_download),
+  "EditorIcon": () => (/* reexport */ ic_editor),
+  "EmailIcon": () => (/* reexport */ ic_email),
+  "EyeIcon": () => (/* reexport */ ic_eye),
+  "EyeOffIcon": () => (/* reexport */ ic_eye_off),
+  "HashtagIcon": () => (/* reexport */ ic_hashtag),
+  "HelpIcon": () => (/* reexport */ ic_help),
+  "IlNotesIcon": () => (/* reexport */ il_notes),
+  "InfoIcon": () => (/* reexport */ ic_info),
+  "KeyboardIcon": () => (/* reexport */ ic_keyboard),
+  "LinkOffIcon": () => (/* reexport */ ic_link_off),
+  "ListBulleted": () => (/* reexport */ ic_list_bulleted),
+  "ListedIcon": () => (/* reexport */ ic_listed),
+  "LockFilledIcon": () => (/* reexport */ ic_lock_filled),
+  "LockIcon": () => (/* reexport */ ic_lock),
+  "MarkdownIcon": () => (/* reexport */ ic_markdown),
+  "MenuArrowDownAlt": () => (/* reexport */ ic_menu_arrow_down_alt),
+  "MenuArrowDownIcon": () => (/* reexport */ ic_menu_arrow_down),
+  "MenuArrowRight": () => (/* reexport */ ic_menu_arrow_right),
+  "MenuCloseIcon": () => (/* reexport */ ic_menu_close),
+  "MoreIcon": () => (/* reexport */ ic_more),
+  "NotesIcon": () => (/* reexport */ ic_notes),
+  "PasswordIcon": () => (/* reexport */ ic_textbox_password),
+  "PencilOffIcon": () => (/* reexport */ ic_pencil_off),
+  "PinFilledIcon": () => (/* reexport */ ic_pin_filled),
+  "PinIcon": () => (/* reexport */ ic_pin),
+  "PlainTextIcon": () => (/* reexport */ ic_text_paragraph),
+  "PremiumFeatureIcon": () => (/* reexport */ ic_premium_feature),
+  "RestoreIcon": () => (/* reexport */ ic_restore),
+  "RichTextIcon": () => (/* reexport */ ic_text_rich),
+  "SKAlert": () => (/* reexport */ SKAlert),
+  "SecurityIcon": () => (/* reexport */ ic_security),
+  "ServerIcon": () => (/* reexport */ ic_server),
+  "SettingsIcon": () => (/* reexport */ ic_settings),
+  "SignInIcon": () => (/* reexport */ ic_signin),
+  "SignOutIcon": () => (/* reexport */ ic_signout),
+  "SpreadsheetsIcon": () => (/* reexport */ ic_spreadsheets),
+  "StarIcon": () => (/* reexport */ ic_star),
+  "SyncIcon": () => (/* reexport */ ic_sync),
+  "TasksIcon": () => (/* reexport */ ic_tasks),
+  "ThemesIcon": () => (/* reexport */ ic_themes),
+  "TrashFilledIcon": () => (/* reexport */ ic_trash_filled),
+  "TrashIcon": () => (/* reexport */ ic_trash),
+  "TrashSweepIcon": () => (/* reexport */ ic_trash_sweep),
+  "TuneIcon": () => (/* reexport */ ic_tune),
+  "UnarchiveIcon": () => (/* reexport */ ic_unarchive),
+  "UnpinIcon": () => (/* reexport */ ic_pin_off),
+  "UserIcon": () => (/* reexport */ ic_user),
+  "UserSwitch": () => (/* reexport */ ic_user_switch),
+  "WindowIcon": () => (/* reexport */ ic_window)
 });
 
 ;// CONCATENATED MODULE: ./src/js/Alert.js
@@ -145,10 +211,1995 @@ class SKAlert {
   }
 
 }
+// EXTERNAL MODULE: external {"commonjs":"preact","commonjs2":"preact","amd":"preact","root":"_"}
+var external_commonjs_preact_commonjs2_preact_amd_preact_root_ = __webpack_require__(670);
+;// CONCATENATED MODULE: ./node_modules/preact/hooks/dist/hooks.module.js
+
+var t,
+    u,
+    r,
+    o = 0,
+    i = [],
+    c = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b,
+    f = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r,
+    e = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed,
+    a = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c,
+    v = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount;
+
+function m(t, r) {
+  external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h(u, t, o || r), o = 0;
+  var i = u.__H || (u.__H = {
+    __: [],
+    __h: []
+  });
+  return t >= i.__.length && i.__.push({}), i.__[t];
+}
+
+function l(n) {
+  return o = 1, p(w, n);
+}
+
+function p(n, r, o) {
+  var i = m(t++, 2);
+  return i.t = n, i.__c || (i.__ = [o ? o(r) : w(void 0, r), function (n) {
+    var t = i.t(i.__[0], n);
+    i.__[0] !== t && (i.__ = [t, i.__[1]], i.__c.setState({}));
+  }], i.__c = u), i.__;
+}
+
+function y(r, o) {
+  var i = m(t++, 3);
+  !external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__H.__h.push(i));
+}
+
+function h(r, o) {
+  var i = m(t++, 4);
+  !external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__h.push(i));
+}
+
+function s(n) {
+  return o = 5, d(function () {
+    return {
+      current: n
+    };
+  }, []);
+}
+
+function _(n, t, u) {
+  o = 6, h(function () {
+    "function" == typeof n ? n(t()) : n && (n.current = t());
+  }, null == u ? u : u.concat(n));
+}
+
+function d(n, u) {
+  var r = m(t++, 7);
+  return k(r.__H, u) && (r.__ = n(), r.__H = u, r.__h = n), r.__;
+}
+
+function A(n, t) {
+  return o = 8, d(function () {
+    return n;
+  }, t);
+}
+
+function F(n) {
+  var r = u.context[n.__c],
+      o = m(t++, 9);
+  return o.__c = n, r ? (null == o.__ && (o.__ = !0, r.sub(u)), r.props.value) : n.__;
+}
+
+function T(t, u) {
+  external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.useDebugValue && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.useDebugValue(u ? u(t) : t);
+}
+
+function q(n) {
+  var r = m(t++, 10),
+      o = l();
+  return r.__ = n, u.componentDidCatch || (u.componentDidCatch = function (n) {
+    r.__ && r.__(n), o[1](n);
+  }), [o[0], function () {
+    o[1](void 0);
+  }];
+}
+
+function x() {
+  i.forEach(function (t) {
+    if (t.__P) try {
+      t.__H.__h.forEach(g), t.__H.__h.forEach(j), t.__H.__h = [];
+    } catch (u) {
+      t.__H.__h = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, t.__v);
+    }
+  }), i = [];
+}
+
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = function (n) {
+  u = null, c && c(n);
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r = function (n) {
+  f && f(n), t = 0;
+  var r = (u = n.__c).__H;
+  r && (r.__h.forEach(g), r.__h.forEach(j), r.__h = []);
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed = function (t) {
+  e && e(t);
+  var o = t.__c;
+  o && o.__H && o.__H.__h.length && (1 !== i.push(o) && r === external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame || ((r = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame) || function (n) {
+    var t,
+        u = function () {
+      clearTimeout(r), b && cancelAnimationFrame(t), setTimeout(n);
+    },
+        r = setTimeout(u, 100);
+
+    b && (t = requestAnimationFrame(u));
+  })(x)), u = void 0;
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c = function (t, u) {
+  u.some(function (t) {
+    try {
+      t.__h.forEach(g), t.__h = t.__h.filter(function (n) {
+        return !n.__ || j(n);
+      });
+    } catch (r) {
+      u.some(function (n) {
+        n.__h && (n.__h = []);
+      }), u = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(r, t.__v);
+    }
+  }), a && a(t, u);
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount = function (t) {
+  v && v(t);
+  var u = t.__c;
+  if (u && u.__H) try {
+    u.__H.__.forEach(g);
+  } catch (t) {
+    external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(t, u.__v);
+  }
+};
+var b = "function" == typeof requestAnimationFrame;
+
+function g(n) {
+  var t = u;
+  "function" == typeof n.__c && n.__c(), u = t;
+}
+
+function j(n) {
+  var t = u;
+  n.__c = n.__(), u = t;
+}
+
+function k(n, t) {
+  return !n || n.length !== t.length || t.some(function (t, u) {
+    return t !== n[u];
+  });
+}
+
+function w(n, t) {
+  return "function" == typeof t ? t(n) : t;
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/preact/compat/dist/compat.module.js
+
+
+
+
+
+function C(n, t) {
+  for (var e in t) n[e] = t[e];
+
+  return n;
+}
+
+function S(n, t) {
+  for (var e in n) if ("__source" !== e && !(e in t)) return !0;
+
+  for (var r in t) if ("__source" !== r && n[r] !== t[r]) return !0;
+
+  return !1;
+}
+
+function E(n) {
+  this.props = n;
+}
+
+function compat_module_g(n, t) {
+  function e(n) {
+    var e = this.props.ref,
+        r = e == n.ref;
+    return !r && e && (e.call ? e(null) : e.current = null), t ? !t(this.props, n) || !r : S(this.props, n);
+  }
+
+  function r(t) {
+    return this.shouldComponentUpdate = e, (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(n, t);
+  }
+
+  return r.displayName = "Memo(" + (n.displayName || n.name) + ")", r.prototype.isReactComponent = !0, r.__f = !0, r;
+}
+
+(E.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).isPureReactComponent = !0, E.prototype.shouldComponentUpdate = function (n, t) {
+  return S(this.props, n) || S(this.state, t);
+};
+var compat_module_w = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b;
+
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = function (n) {
+  n.type && n.type.__f && n.ref && (n.props.ref = n.ref, n.ref = null), compat_module_w && compat_module_w(n);
+};
+
+var R = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.forward_ref") || 3911;
+
+function compat_module_x(n) {
+  function t(t, e) {
+    var r = C({}, t);
+    return delete r.ref, n(r, (e = t.ref || e) && ("object" != typeof e || "current" in e) ? e : null);
+  }
+
+  return t.$$typeof = R, t.render = t, t.prototype.isReactComponent = t.__f = !0, t.displayName = "ForwardRef(" + (n.displayName || n.name) + ")", t;
+}
+
+var N = function (n, t) {
+  return null == n ? null : (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)((0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(n).map(t));
+},
+    compat_module_k = {
+  map: N,
+  forEach: N,
+  count: function (n) {
+    return n ? (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(n).length : 0;
+  },
+  only: function (n) {
+    var t = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(n);
+    if (1 !== t.length) throw "Children.only";
+    return t[0];
+  },
+  toArray: external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray
+},
+    compat_module_A = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e;
+
+function O() {
+  this.__u = 0, this.t = null, this.__b = null;
+}
+
+function L(n) {
+  var t = n.__.__c;
+  return t && t.__e && t.__e(n);
+}
+
+function U(n) {
+  var t, e, r;
+
+  function u(u) {
+    if (t || (t = n()).then(function (n) {
+      e = n.default || n;
+    }, function (n) {
+      r = n;
+    }), r) throw r;
+    if (!e) throw t;
+    return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(e, u);
+  }
+
+  return u.displayName = "Lazy", u.__f = !0, u;
+}
+
+function D() {
+  this.u = null, this.o = null;
+}
+
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e = function (n, t, e) {
+  if (n.then) for (var r, u = t; u = u.__;) if ((r = u.__c) && r.__c) return null == t.__e && (t.__e = e.__e, t.__k = e.__k), r.__c(n, t);
+  compat_module_A(n, t, e);
+}, (O.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).__c = function (n, t) {
+  var e = t.__c,
+      r = this;
+  null == r.t && (r.t = []), r.t.push(e);
+
+  var u = L(r.__v),
+      o = !1,
+      i = function () {
+    o || (o = !0, e.componentWillUnmount = e.__c, u ? u(l) : l());
+  };
+
+  e.__c = e.componentWillUnmount, e.componentWillUnmount = function () {
+    i(), e.__c && e.__c();
+  };
+
+  var l = function () {
+    if (! --r.__u) {
+      if (r.state.__e) {
+        var n = r.state.__e;
+
+        r.__v.__k[0] = function n(t, e, r) {
+          return t && (t.__v = null, t.__k = t.__k && t.__k.map(function (t) {
+            return n(t, e, r);
+          }), t.__c && t.__c.__P === e && (t.__e && r.insertBefore(t.__e, t.__d), t.__c.__e = !0, t.__c.__P = r)), t;
+        }(n, n.__c.__P, n.__c.__O);
+      }
+
+      var t;
+
+      for (r.setState({
+        __e: r.__b = null
+      }); t = r.t.pop();) t.forceUpdate();
+    }
+  },
+      f = !0 === t.__h;
+
+  r.__u++ || f || r.setState({
+    __e: r.__b = r.__v.__k[0]
+  }), n.then(i, i);
+}, O.prototype.componentWillUnmount = function () {
+  this.t = [];
+}, O.prototype.render = function (n, t) {
+  if (this.__b) {
+    if (this.__v.__k) {
+      var e = document.createElement("div"),
+          r = this.__v.__k[0].__c;
+
+      this.__v.__k[0] = function n(t, e, r) {
+        return t && (t.__c && t.__c.__H && (t.__c.__H.__.forEach(function (n) {
+          "function" == typeof n.__c && n.__c();
+        }), t.__c.__H = null), null != (t = C({}, t)).__c && (t.__c.__P === r && (t.__c.__P = e), t.__c = null), t.__k = t.__k && t.__k.map(function (t) {
+          return n(t, e, r);
+        })), t;
+      }(this.__b, e, r.__O = r.__P);
+    }
+
+    this.__b = null;
+  }
+
+  var u = t.__e && (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment, null, n.fallback);
+  return u && (u.__h = null), [(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment, null, t.__e ? null : n.children), u];
+};
+
+var compat_module_F = function (n, t, e) {
+  if (++e[1] === e[0] && n.o.delete(t), n.props.revealOrder && ("t" !== n.props.revealOrder[0] || !n.o.size)) for (e = n.u; e;) {
+    for (; e.length > 3;) e.pop()();
+
+    if (e[1] < e[0]) break;
+    n.u = e = e[2];
+  }
+};
+
+function M(n) {
+  return this.getChildContext = function () {
+    return n.context;
+  }, n.children;
+}
+
+function compat_module_T(n) {
+  var t = this,
+      e = n.i;
+  t.componentWillUnmount = function () {
+    (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)(null, t.l), t.l = null, t.i = null;
+  }, t.i && t.i !== e && t.componentWillUnmount(), n.__v ? (t.l || (t.i = e, t.l = {
+    nodeType: 1,
+    parentNode: e,
+    childNodes: [],
+    appendChild: function (n) {
+      this.childNodes.push(n), t.i.appendChild(n);
+    },
+    insertBefore: function (n, e) {
+      this.childNodes.push(n), t.i.appendChild(n);
+    },
+    removeChild: function (n) {
+      this.childNodes.splice(this.childNodes.indexOf(n) >>> 1, 1), t.i.removeChild(n);
+    }
+  }), (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)((0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(M, {
+    context: t.context
+  }, n.__v), t.l)) : t.l && t.componentWillUnmount();
+}
+
+function compat_module_j(n, t) {
+  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(compat_module_T, {
+    __v: n,
+    i: t
+  });
+}
+
+(D.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).__e = function (n) {
+  var t = this,
+      e = L(t.__v),
+      r = t.o.get(n);
+  return r[0]++, function (u) {
+    var o = function () {
+      t.props.revealOrder ? (r.push(u), compat_module_F(t, n, r)) : u();
+    };
+
+    e ? e(o) : o();
+  };
+}, D.prototype.render = function (n) {
+  this.u = null, this.o = new Map();
+  var t = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(n.children);
+  n.revealOrder && "b" === n.revealOrder[0] && t.reverse();
+
+  for (var e = t.length; e--;) this.o.set(t[e], this.u = [1, 0, this.u]);
+
+  return n.children;
+}, D.prototype.componentDidUpdate = D.prototype.componentDidMount = function () {
+  var n = this;
+  this.o.forEach(function (t, e) {
+    compat_module_F(n, e, t);
+  });
+};
+
+var I = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.element") || 60103,
+    W = /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|fill|flood|font|glyph(?!R)|horiz|marker(?!H|W|U)|overline|paint|stop|strikethrough|stroke|text(?!L)|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/,
+    P = function (n) {
+  return ("undefined" != typeof Symbol && "symbol" == typeof Symbol() ? /fil|che|rad/i : /fil|che|ra/i).test(n);
+};
+
+function V(n, t, e) {
+  return null == t.__k && (t.textContent = ""), (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)(n, t), "function" == typeof e && e(), n ? n.__c : null;
+}
+
+function z(n, t, e) {
+  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.hydrate)(n, t), "function" == typeof e && e(), n ? n.__c : null;
+}
+
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component.prototype.isReactComponent = {}, ["componentWillMount", "componentWillReceiveProps", "componentWillUpdate"].forEach(function (n) {
+  Object.defineProperty(external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component.prototype, n, {
+    configurable: !0,
+    get: function () {
+      return this["UNSAFE_" + n];
+    },
+    set: function (t) {
+      Object.defineProperty(this, n, {
+        configurable: !0,
+        writable: !0,
+        value: t
+      });
+    }
+  });
+});
+var B = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.event;
+
+function H() {}
+
+function Z() {
+  return this.cancelBubble;
+}
+
+function Y() {
+  return this.defaultPrevented;
+}
+
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.event = function (n) {
+  return B && (n = B(n)), n.persist = H, n.isPropagationStopped = Z, n.isDefaultPrevented = Y, n.nativeEvent = n;
+};
+
+var $,
+    compat_module_q = {
+  configurable: !0,
+  get: function () {
+    return this.class;
+  }
+},
+    G = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.vnode;
+
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.vnode = function (n) {
+  var t = n.type,
+      e = n.props,
+      r = e;
+
+  if ("string" == typeof t) {
+    for (var u in r = {}, e) {
+      var o = e[u];
+      "value" === u && "defaultValue" in e && null == o || ("defaultValue" === u && "value" in e && null == e.value ? u = "value" : "download" === u && !0 === o ? o = "" : /ondoubleclick/i.test(u) ? u = "ondblclick" : /^onchange(textarea|input)/i.test(u + t) && !P(e.type) ? u = "oninput" : /^on(Ani|Tra|Tou|BeforeInp)/.test(u) ? u = u.toLowerCase() : W.test(u) ? u = u.replace(/[A-Z0-9]/, "-$&").toLowerCase() : null === o && (o = void 0), r[u] = o);
+    }
+
+    "select" == t && r.multiple && Array.isArray(r.value) && (r.value = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(e.children).forEach(function (n) {
+      n.props.selected = -1 != r.value.indexOf(n.props.value);
+    })), "select" == t && null != r.defaultValue && (r.value = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(e.children).forEach(function (n) {
+      n.props.selected = r.multiple ? -1 != r.defaultValue.indexOf(n.props.value) : r.defaultValue == n.props.value;
+    })), n.props = r;
+  }
+
+  t && e.class != e.className && (compat_module_q.enumerable = "className" in e, null != e.className && (r.class = e.className), Object.defineProperty(r, "className", compat_module_q)), n.$$typeof = I, G && G(n);
+};
+
+var J = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r;
+
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r = function (n) {
+  J && J(n), $ = n.__c;
+};
+
+var K = {
+  ReactCurrentDispatcher: {
+    current: {
+      readContext: function (n) {
+        return $.__n[n.__c].props.value;
+      }
+    }
+  }
+},
+    Q = 1,
+    X = 2,
+    nn = 3,
+    tn = 4,
+    en = 5;
+
+function rn(n, t) {
+  return t();
+}
+
+var un = "object" == typeof performance && "function" == typeof performance.now ? performance.now.bind(performance) : function () {
+  return Date.now();
+},
+    on = "16.8.0";
+
+function ln(n) {
+  return external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement.bind(null, n);
+}
+
+function fn(n) {
+  return !!n && n.$$typeof === I;
+}
+
+function cn(n) {
+  return fn(n) ? external_commonjs_preact_commonjs2_preact_amd_preact_root_.cloneElement.apply(null, arguments) : n;
+}
+
+function an(n) {
+  return !!n.__k && ((0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)(null, n), !0);
+}
+
+function sn(n) {
+  return n && (n.base || 1 === n.nodeType && n) || null;
+}
+
+var hn = function (n, t) {
+  return n(t);
+},
+    pn = external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment;
+
+/* harmony default export */ const compat_module = ({
+  useState: l,
+  useReducer: p,
+  useEffect: y,
+  useLayoutEffect: h,
+  useRef: s,
+  useImperativeHandle: _,
+  useMemo: d,
+  useCallback: A,
+  useContext: F,
+  useDebugValue: T,
+  version: "16.8.0",
+  Children: compat_module_k,
+  render: V,
+  hydrate: z,
+  unmountComponentAtNode: an,
+  createPortal: compat_module_j,
+  createElement: external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement,
+  createContext: external_commonjs_preact_commonjs2_preact_amd_preact_root_.createContext,
+  createFactory: ln,
+  cloneElement: cn,
+  createRef: external_commonjs_preact_commonjs2_preact_amd_preact_root_.createRef,
+  Fragment: external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment,
+  isValidElement: fn,
+  findDOMNode: sn,
+  Component: external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component,
+  PureComponent: E,
+  memo: compat_module_g,
+  forwardRef: compat_module_x,
+  unstable_batchedUpdates: hn,
+  StrictMode: external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment,
+  Suspense: O,
+  SuspenseList: D,
+  lazy: U,
+  __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: K
+});
+
+;// CONCATENATED MODULE: ./src/assets/icons/ic-authenticator.svg
+var _path;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var SvgIcAuthenticator = function SvgIcAuthenticator(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", _extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path || (_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M9.167 14.167a.833.833 0 1 0 1.666 0 .833.833 0 0 0-1.666 0Zm0-11.667v3.333h1.666v-1.6c2.825.409 5 2.825 5 5.767a5.833 5.833 0 1 1-11.666 0c0-1.4.491-2.683 1.316-3.683L10 10.833l1.175-1.175-5.667-5.666v.016A7.46 7.46 0 0 0 2.5 10 7.5 7.5 0 1 0 10 2.5h-.833ZM15 10a.833.833 0 1 0-1.667 0A.833.833 0 0 0 15 10ZM5 10a.833.833 0 1 0 1.667 0A.833.833 0 0 0 5 10Z"
+  })));
+};
+
+/* harmony default export */ const ic_authenticator = (SvgIcAuthenticator);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-editor.svg
+var ic_editor_path;
+
+function ic_editor_extends() { ic_editor_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_editor_extends.apply(this, arguments); }
+
+
+
+var SvgIcEditor = function SvgIcEditor(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_editor_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_editor_path || (ic_editor_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M14.167 3.607V8.43L12.5 6.82 10.833 8.43V3.607H7.5v12.857h8.333V3.607h-1.666ZM2.5 6.017V4.412h1.667v-.804c0-.892.75-1.607 1.666-1.607h10c.875 0 1.667.763 1.667 1.607v12.857c0 .844-.792 1.607-1.667 1.607h-10c-.875 0-1.666-.763-1.666-1.607v-.803H2.5v-1.607h1.667v-3.215H2.5V9.232h1.667V6.018H2.5Zm1.667-1.606v1.607h1.666V4.41H4.167Zm0 11.25h1.666v-1.607H4.167v1.607Zm0-4.822h1.666V9.232H4.167v1.607Z"
+  })));
+};
+
+/* harmony default export */ const ic_editor = (SvgIcEditor);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-premium-feature.svg
+var _rect, ic_premium_feature_path;
+
+function ic_premium_feature_extends() { ic_premium_feature_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_premium_feature_extends.apply(this, arguments); }
+
+
+
+var SvgIcPremiumFeature = function SvgIcPremiumFeature(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_premium_feature_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _rect || (_rect = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("rect", {
+    opacity: 0.36,
+    x: 1,
+    y: 1,
+    width: 18,
+    height: 18,
+    rx: 9,
+    fill: "#BBBEC4"
+  })), ic_premium_feature_path || (ic_premium_feature_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M6.667 12H8c0 .72.913 1.333 2 1.333 1.086 0 2-.613 2-1.333 0-.733-.694-1-2.16-1.353C8.427 10.293 6.667 9.853 6.667 8c0-1.193.98-2.207 2.333-2.547V4h2v1.453c1.353.34 2.333 1.354 2.333 2.547H12c0-.72-.914-1.333-2-1.333-1.087 0-2 .613-2 1.333 0 .733.693 1 2.16 1.353 1.413.354 3.173.794 3.173 2.647 0 1.193-.98 2.207-2.333 2.547V16H9v-1.453c-1.354-.34-2.333-1.354-2.333-2.547Z",
+    fill: "#72767E"
+  })));
+};
+
+/* harmony default export */ const ic_premium_feature = (SvgIcPremiumFeature);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-pencil-off.svg
+var ic_pencil_off_path;
+
+function ic_pencil_off_extends() { ic_pencil_off_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_pencil_off_extends.apply(this, arguments); }
+
+
+
+var SvgIcPencilOff = function SvgIcPencilOff(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_pencil_off_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_pencil_off_path || (ic_pencil_off_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m9.25 7.9 3-3 2.85 2.85-3 3-1.05-1.05L13 7.675 12.325 7l-1.95 1.95L9.25 7.9Zm8.025-3.45L15.55 2.725a.81.81 0 0 0-.525-.225.81.81 0 0 0-.525.225l-1.35 1.35L16 6.925 17.275 5.5c.3-.225.3-.75 0-1.05ZM16 16.525l-.975.975-4.875-4.875L6.85 16H4v-2.85l3.375-3.375-4.875-4.8L3.475 4 16 16.525Zm-6.9-4.95-.675-.675L5.5 13.825v.675h.675L9.1 11.575Z"
+  })));
+};
+
+/* harmony default export */ const ic_pencil_off = (SvgIcPencilOff);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-text-paragraph.svg
+var ic_text_paragraph_path;
+
+function ic_text_paragraph_extends() { ic_text_paragraph_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_text_paragraph_extends.apply(this, arguments); }
+
+
+
+var SvgIcTextParagraph = function SvgIcTextParagraph(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_text_paragraph_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_text_paragraph_path || (ic_text_paragraph_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M17 5v1.667H3V5h14ZM3 15h7v-1.667H3V15Zm0-4.167h14V9.167H3v1.666Z"
+  })));
+};
+
+/* harmony default export */ const ic_text_paragraph = (SvgIcTextParagraph);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-text-rich.svg
+var ic_text_rich_path;
+
+function ic_text_rich_extends() { ic_text_rich_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_text_rich_extends.apply(this, arguments); }
+
+
+
+var SvgIcTextRich = function SvgIcTextRich(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_text_rich_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_text_rich_path || (ic_text_rich_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M2.5 7.5h5v5h-5v-5Zm0-3.333h15v1.666h-15V4.166Zm15 3.333v1.666H9.167V7.5H17.5Zm0 3.333V12.5H9.167v-1.667H17.5Zm-15 3.333h11.667v1.667H2.5v-1.667Z"
+  })));
+};
+
+/* harmony default export */ const ic_text_rich = (SvgIcTextRich);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-trash.svg
+var ic_trash_path;
+
+function ic_trash_extends() { ic_trash_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_trash_extends.apply(this, arguments); }
+
+
+
+var SvgIcTrash = function SvgIcTrash(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_trash_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_trash_path || (ic_trash_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M7.5 2.5v.833H3.333V5h.834v10.833A1.666 1.666 0 0 0 5.833 17.5h8.334a1.667 1.667 0 0 0 1.666-1.667V5h.834V3.333H12.5V2.5h-5ZM5.833 5h8.334v10.833H5.833V5ZM7.5 6.667v7.5h1.667v-7.5H7.5Zm3.333 0v7.5H12.5v-7.5h-1.667Z"
+  })));
+};
+
+/* harmony default export */ const ic_trash = (SvgIcTrash);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-trash-filled.svg
+var ic_trash_filled_path;
+
+function ic_trash_filled_extends() { ic_trash_filled_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_trash_filled_extends.apply(this, arguments); }
+
+
+
+var SvgIcTrashFilled = function SvgIcTrashFilled(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_trash_filled_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_trash_filled_path || (ic_trash_filled_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M7.5 2.5v.833H3.333V5h.834v10.833A1.666 1.666 0 0 0 5.833 17.5h8.334a1.667 1.667 0 0 0 1.666-1.667V5h.834V3.333H12.5V2.5h-5Zm0 4.167h1.667v7.5H7.5v-7.5Zm3.333 0H12.5v7.5h-1.667v-7.5Z"
+  })));
+};
+
+/* harmony default export */ const ic_trash_filled = (SvgIcTrashFilled);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-pin.svg
+var ic_pin_path;
+
+function ic_pin_extends() { ic_pin_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_pin_extends.apply(this, arguments); }
+
+
+
+var SvgIcPin = function SvgIcPin(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_pin_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_pin_path || (ic_pin_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M13 10V4h.75V2.5h-7.5V4H7v6l-2.5 1.5V13h4.9v4.5h1.2V13h4.9v-1.5L13 10Zm-6.4 1.5 1.9-.9V4h3v6.6l1.9.9H6.6Z"
+  })));
+};
+
+/* harmony default export */ const ic_pin = (SvgIcPin);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-pin-filled.svg
+var ic_pin_filled_path;
+
+function ic_pin_filled_extends() { ic_pin_filled_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_pin_filled_extends.apply(this, arguments); }
+
+
+
+var SvgIcPinFilled = function SvgIcPinFilled(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_pin_filled_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_pin_filled_path || (ic_pin_filled_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M13 10V4h.75V2.5h-7.5V4H7v6l-2.5 1.5V13h4.9v4.5h1.2V13h4.9v-1.5L13 10Z"
+  })));
+};
+
+/* harmony default export */ const ic_pin_filled = (SvgIcPinFilled);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-pin-off.svg
+var ic_pin_off_path;
+
+function ic_pin_off_extends() { ic_pin_off_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_pin_off_extends.apply(this, arguments); }
+
+
+
+var SvgIcPinOff = function SvgIcPinOff(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_pin_off_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_pin_off_path || (ic_pin_off_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    clipRule: "evenodd",
+    d: "M7 9.69 1.667 4.357l1.178-1.179L16.987 17.32 15.81 18.5l-5.209-5.21V17.5H9.4V13H4.5v-1.5L7 10v-.31Zm1.81 1.81H6.6l1.5-.71.71.71ZM11.5 4v5.476L15.024 13h.476v-1.5L13 10V4h.75V2.5h-7.5V4H7v.976l1.5 1.5V4h3Z"
+  })));
+};
+
+/* harmony default export */ const ic_pin_off = (SvgIcPinOff);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-archive.svg
+var ic_archive_path, _path2;
+
+function ic_archive_extends() { ic_archive_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_archive_extends.apply(this, arguments); }
+
+
+
+var SvgIcArchive = function SvgIcArchive(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_archive_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_archive_path || (ic_archive_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M15.444 12.333h-3.11a2.333 2.333 0 1 1-4.667 0H4.556V4.556h10.888v7.777Zm0-9.333H4.556C3.692 3 3 3.7 3 4.556v10.888A1.556 1.556 0 0 0 4.556 17h10.888A1.556 1.556 0 0 0 17 15.444V4.556A1.556 1.556 0 0 0 15.444 3Z"
+  })), _path2 || (_path2 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M13.111 8.444h-1.555V6.111H8.444v2.333H6.89L10 11.555l3.111-3.11Z"
+  })));
+};
+
+/* harmony default export */ const ic_archive = (SvgIcArchive);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-unarchive.svg
+var ic_unarchive_path;
+
+function ic_unarchive_extends() { ic_unarchive_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_unarchive_extends.apply(this, arguments); }
+
+
+
+var SvgIcUnarchive = function SvgIcUnarchive(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_unarchive_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_unarchive_path || (ic_unarchive_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    clipRule: "evenodd",
+    d: "M12.333 12.333h3.111V4.556H4.556v7.777h3.11a2.333 2.333 0 1 0 4.667 0ZM4.556 3h10.888A1.556 1.556 0 0 1 17 4.556v10.888A1.556 1.556 0 0 1 15.444 17H4.556A1.556 1.556 0 0 1 3 15.444V4.556C3 3.7 3.692 3 4.556 3Zm3.888 5.917H6.89L10 5.806l3.111 3.11h-1.556v2.334h-3.11V8.917Z"
+  })));
+};
+
+/* harmony default export */ const ic_unarchive = (SvgIcUnarchive);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-hashtag.svg
+var ic_hashtag_path;
+
+function ic_hashtag_extends() { ic_hashtag_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_hashtag_extends.apply(this, arguments); }
+
+
+
+var SvgIcHashtag = function SvgIcHashtag(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_hashtag_extends({
+    viewBox: "0 0 20 20",
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_hashtag_path || (ic_hashtag_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M8.6 3.5H7v3.4H3.5v1.6H7v2.9H3.5V13H7v3.5h1.6V13h2.9v3.5h1.6V13h3.4v-1.6h-3.4V8.5h3.4V6.9h-3.4V3.5h-1.6v3.4H8.6V3.5Zm0 5v2.9h2.9V8.5H8.6Z"
+  })));
+};
+
+/* harmony default export */ const ic_hashtag = (SvgIcHashtag);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-chevron-right.svg
+var ic_chevron_right_path;
+
+function ic_chevron_right_extends() { ic_chevron_right_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_chevron_right_extends.apply(this, arguments); }
+
+
+
+var SvgIcChevronRight = function SvgIcChevronRight(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_chevron_right_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_chevron_right_path || (ic_chevron_right_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m6.91 14.067 3.824-3.825L6.91 6.417l1.184-1.175 5 5-5 5-1.184-1.175Z"
+  })));
+};
+
+/* harmony default export */ const ic_chevron_right = (SvgIcChevronRight);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-restore.svg
+var ic_restore_path;
+
+function ic_restore_extends() { ic_restore_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_restore_extends.apply(this, arguments); }
+
+
+
+var SvgIcRestore = function SvgIcRestore(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_restore_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_restore_path || (ic_restore_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 2.5A7.5 7.5 0 0 0 2.5 10H0l3.333 3.333L6.667 10h-2.5A5.833 5.833 0 1 1 10 15.833a5.946 5.946 0 0 1-3.383-1.083l-1.2 1.2A7.595 7.595 0 0 0 10 17.5a7.5 7.5 0 0 0 0-15Zm1.667 7.5a1.667 1.667 0 1 0-3.333 0 1.667 1.667 0 0 0 3.333 0Z"
+  })));
+};
+
+/* harmony default export */ const ic_restore = (SvgIcRestore);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-close.svg
+var ic_close_path;
+
+function ic_close_extends() { ic_close_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_close_extends.apply(this, arguments); }
+
+
+
+var SvgIcClose = function SvgIcClose(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_close_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_close_path || (ic_close_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M15.246 5.93a.83.83 0 1 0-1.175-1.176L10 8.825l-4.072-4.07a.83.83 0 1 0-1.175 1.174L8.825 10l-4.07 4.07a.83.83 0 1 0 1.174 1.176L10 11.176l4.07 4.07a.83.83 0 1 0 1.176-1.175L11.176 10l4.07-4.072Z"
+  })));
+};
+
+/* harmony default export */ const ic_close = (SvgIcClose);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-textbox-password.svg
+var ic_textbox_password_path;
+
+function ic_textbox_password_extends() { ic_textbox_password_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_textbox_password_extends.apply(this, arguments); }
+
+
+
+var SvgIcTextboxPassword = function SvgIcTextboxPassword(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_textbox_password_extends({
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_textbox_password_path || (ic_textbox_password_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M16.2 7.8h4.2v8.4h-4.2v1.68a.84.84 0 0 0 .84.84h1.68v1.68h-2.1c-.462 0-1.26-.378-1.26-.84 0 .462-.798.84-1.26.84H12v-1.68h1.68a.84.84 0 0 0 .84-.84V6.12a.84.84 0 0 0-.84-.84H12V3.6h2.1c.462 0 1.26.378 1.26.84 0-.462.798-.84 1.26-.84h2.1v1.68h-1.68a.84.84 0 0 0-.84.84V7.8Zm-12.6 0h9.24v1.68H5.28v5.04h7.56v1.68H3.6V7.8Zm15.12 6.72V9.48H16.2v5.04h2.52ZM9.06 12a1.26 1.26 0 1 0-2.52 0 1.26 1.26 0 0 0 2.52 0Zm3.78-.932a1.254 1.254 0 0 0-1.78.092 1.238 1.238 0 0 0 .1 1.772 1.24 1.24 0 0 0 1.68 0v-1.864Z"
+  })));
+};
+
+/* harmony default export */ const ic_textbox_password = (SvgIcTextboxPassword);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-trash-sweep.svg
+var ic_trash_sweep_path;
+
+function ic_trash_sweep_extends() { ic_trash_sweep_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_trash_sweep_extends.apply(this, arguments); }
+
+
+
+var SvgIcTrashSweep = function SvgIcTrashSweep(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_trash_sweep_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_trash_sweep_path || (ic_trash_sweep_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M12.5 13.333h3.333V15H12.5v-1.667Zm0-6.666h5.833v1.666H12.5V6.667Zm0 3.333h5v1.667h-5V10ZM9.167 8.333V15h-5V8.333h5Zm1.666-1.666H2.5V15a1.667 1.667 0 0 0 1.667 1.667h5A1.667 1.667 0 0 0 10.833 15V6.667Zm.834-2.5h-2.5l-.834-.834H5l-.833.834h-2.5v1.666h10V4.167Z"
+  })));
+};
+
+/* harmony default export */ const ic_trash_sweep = (SvgIcTrashSweep);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-more.svg
+var ic_more_path;
+
+function ic_more_extends() { ic_more_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_more_extends.apply(this, arguments); }
+
+
+
+var SvgIcMore = function SvgIcMore(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_more_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_more_path || (ic_more_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M13.333 10a1.666 1.666 0 1 1 3.333 0 1.666 1.666 0 0 1-3.333 0Zm-5 0a1.667 1.667 0 1 1 3.334 0 1.667 1.667 0 0 1-3.334 0Zm-5 0a1.667 1.667 0 1 1 3.334 0 1.667 1.667 0 0 1-3.334 0Z"
+  })));
+};
+
+/* harmony default export */ const ic_more = (SvgIcMore);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-tune.svg
+var ic_tune_path;
+
+function ic_tune_extends() { ic_tune_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_tune_extends.apply(this, arguments); }
+
+
+
+var SvgIcTune = function SvgIcTune(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_tune_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_tune_path || (ic_tune_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M2.5 14.167v1.666h5v-1.666h-5Zm0-10v1.666h8.333V4.167H2.5ZM10.833 17.5v-1.667H17.5v-1.666h-6.667V12.5H9.167v5h1.666Zm-5-10v1.667H2.5v1.666h3.333V12.5H7.5v-5H5.833ZM17.5 10.833V9.167H9.167v1.666H17.5Zm-5-3.333h1.667V5.833H17.5V4.167h-3.333V2.5H12.5v5Z"
+  })));
+};
+
+/* harmony default export */ const ic_tune = (SvgIcTune);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-user-switch.svg
+var ic_user_switch_path;
+
+function ic_user_switch_extends() { ic_user_switch_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_user_switch_extends.apply(this, arguments); }
+
+
+
+var SvgIcUserSwitch = function SvgIcUserSwitch(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_user_switch_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_user_switch_path || (ic_user_switch_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M15.833 17.5v-1.667H12.5v-1.666h3.333V12.5l2.5 2.5-2.5 2.5Zm-5-2.5c0 .592.125 1.158.35 1.667H1.667v-2.5c0-1.842 2.983-3.334 6.666-3.334.834 0 1.634.075 2.375.217a9.637 9.637 0 0 1 1.884.55 4.164 4.164 0 0 0-1.759 3.4Zm-7.5-.833V15h5.834c0-.867.191-1.692.533-2.433L8.333 12.5c-2.758 0-5 .75-5 1.667Zm5-10.834a3.333 3.333 0 1 1 0 6.667 3.333 3.333 0 0 1 0-6.667Zm0 1.667a1.667 1.667 0 1 0 0 3.333 1.667 1.667 0 0 0 0-3.333Z"
+  })));
+};
+
+/* harmony default export */ const ic_user_switch = (SvgIcUserSwitch);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-menu-arrow-down.svg
+var ic_menu_arrow_down_path;
+
+function ic_menu_arrow_down_extends() { ic_menu_arrow_down_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_menu_arrow_down_extends.apply(this, arguments); }
+
+
+
+var SvgIcMenuArrowDown = function SvgIcMenuArrowDown(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_menu_arrow_down_extends({
+    viewBox: "0 0 8 4",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_menu_arrow_down_path || (ic_menu_arrow_down_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M.667.667 4 4 7.333.667H.667Z"
+  })));
+};
+
+/* harmony default export */ const ic_menu_arrow_down = (SvgIcMenuArrowDown);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-menu-close.svg
+var ic_menu_close_path;
+
+function ic_menu_close_extends() { ic_menu_close_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_menu_close_extends.apply(this, arguments); }
+
+
+
+var SvgIcMenuClose = function SvgIcMenuClose(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_menu_close_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_menu_close_path || (ic_menu_close_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m17.5 13.008-1.175 1.159L12.15 10l4.175-4.167L17.5 6.992 14.533 10l2.967 3.008ZM2.5 5h10.833v1.667H2.5V5Zm0 5.833V9.167h8.333v1.666H2.5ZM2.5 15v-1.667h10.833V15H2.5Z"
+  })));
+};
+
+/* harmony default export */ const ic_menu_close = (SvgIcMenuClose);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-spreadsheets.svg
+var ic_spreadsheets_path;
+
+function ic_spreadsheets_extends() { ic_spreadsheets_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_spreadsheets_extends.apply(this, arguments); }
+
+
+
+var SvgIcSpreadsheets = function SvgIcSpreadsheets(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_spreadsheets_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_spreadsheets_path || (ic_spreadsheets_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M4 3h12c.398 0 .78.155 1.06.432.282.276.44.65.44 1.042v11.052c0 .391-.158.766-.44 1.042A1.514 1.514 0 0 1 16 17H4c-.398 0-.78-.155-1.06-.432a1.46 1.46 0 0 1-.44-1.042V4.474c0-.391.158-.766.44-1.042A1.514 1.514 0 0 1 4 3Zm0 2.947v2.21h3v-2.21H4Zm4.5 0v2.21h3v-2.21h-3Zm7.5 2.21v-2.21h-3v2.21h3ZM4 9.633v2.21h3v-2.21H4Zm0 5.894h3v-2.21H4v2.21Zm4.5-5.894v2.21h3v-2.21h-3Zm0 5.894h3v-2.21h-3v2.21Zm7.5 0v-2.21h-3v2.21h3Zm0-5.894h-3v2.21h3v-2.21Z"
+  })));
+};
+
+/* harmony default export */ const ic_spreadsheets = (SvgIcSpreadsheets);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-tasks.svg
+var ic_tasks_path;
+
+function ic_tasks_extends() { ic_tasks_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_tasks_extends.apply(this, arguments); }
+
+
+
+var SvgIcTasks = function SvgIcTasks(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_tasks_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_tasks_path || (ic_tasks_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M15.833 15.833H4.167V4.167H12.5V2.5H4.167A1.66 1.66 0 0 0 2.5 4.167v11.666A1.666 1.666 0 0 0 4.167 17.5h11.666a1.666 1.666 0 0 0 1.667-1.667V9.167h-1.667v6.666ZM6.592 8.4 5.417 9.583l3.75 3.75L17.5 5l-1.175-1.183-7.158 7.158L6.592 8.4Z"
+  })));
+};
+
+/* harmony default export */ const ic_tasks = (SvgIcTasks);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-markdown.svg
+var ic_markdown_path;
+
+function ic_markdown_extends() { ic_markdown_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_markdown_extends.apply(this, arguments); }
+
+
+
+var SvgIcMarkdown = function SvgIcMarkdown(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_markdown_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_markdown_path || (ic_markdown_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M12.5 3.333V5H15v10h-2.5v1.667h4.167V3.333H12.5Zm-9.167 0v13.334H7.5V15H5V5h2.5V3.333H3.333Z"
+  })));
+};
+
+/* harmony default export */ const ic_markdown = (SvgIcMarkdown);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-notes.svg
+var ic_notes_path;
+
+function ic_notes_extends() { ic_notes_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_notes_extends.apply(this, arguments); }
+
+
+
+var SvgIcNotes = function SvgIcNotes(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_notes_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_notes_path || (ic_notes_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M4.556 3A1.55 1.55 0 0 0 3 4.556v10.888A1.55 1.55 0 0 0 4.556 17h10.888A1.55 1.55 0 0 0 17 15.444V4.556A1.55 1.55 0 0 0 15.444 3H4.556Zm0 1.556h10.888v10.888H4.556V4.556ZM6.11 6.11v1.556h7.778V6.11H6.11Zm0 3.111v1.556h7.778V9.222H6.11Zm0 3.111v1.556h5.445v-1.556H6.11Z"
+  })));
+};
+
+/* harmony default export */ const ic_notes = (SvgIcNotes);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-code.svg
+var ic_code_path;
+
+function ic_code_extends() { ic_code_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_code_extends.apply(this, arguments); }
+
+
+
+var SvgIcCode = function SvgIcCode(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_code_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_code_path || (ic_code_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m10.742 2.5 1.633.333L9.258 17.5l-1.633-.333L10.742 2.5Zm5.583 7.5-2.992-2.992V4.65l5.35 5.35-5.35 5.342v-2.359L16.325 10ZM1.317 10l5.35-5.35v2.358L3.675 10l2.992 2.983v2.359L1.317 10Z"
+  })));
+};
+
+/* harmony default export */ const ic_code = (SvgIcCode);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-accessibility.svg
+var ic_accessibility_path;
+
+function ic_accessibility_extends() { ic_accessibility_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_accessibility_extends.apply(this, arguments); }
+
+
+
+var SvgIcAccessibility = function SvgIcAccessibility(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_accessibility_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_accessibility_path || (ic_accessibility_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M17.5 7.5h-5v10.833h-1.667v-5H9.167v5H7.5V7.5h-5V5.833h15V7.5ZM10 1.667A1.667 1.667 0 1 1 10 5a1.667 1.667 0 0 1 0-3.333Z"
+  })));
+};
+
+/* harmony default export */ const ic_accessibility = (SvgIcAccessibility);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-add.svg
+var ic_add_path;
+
+function ic_add_extends() { ic_add_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_add_extends.apply(this, arguments); }
+
+
+
+var SvgIcAdd = function SvgIcAdd(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_add_extends({
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_add_path || (ic_add_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M13.6 8a.8.8 0 0 1-.8.8h-4v4a.8.8 0 1 1-1.6 0v-4h-4a.8.8 0 1 1 0-1.6h4v-4a.8.8 0 0 1 1.6 0v4h4a.8.8 0 0 1 .8.8Z"
+  })));
+};
+
+/* harmony default export */ const ic_add = (SvgIcAdd);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-help.svg
+var ic_help_path;
+
+function ic_help_extends() { ic_help_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_help_extends.apply(this, arguments); }
+
+
+
+var SvgIcHelp = function SvgIcHelp(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_help_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_help_path || (ic_help_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M9.167 15h1.666v-1.667H9.167V15ZM10 1.667a8.333 8.333 0 1 0 0 16.666 8.333 8.333 0 0 0 0-16.666Zm0 15A6.676 6.676 0 0 1 3.333 10 6.676 6.676 0 0 1 10 3.333 6.676 6.676 0 0 1 16.667 10 6.676 6.676 0 0 1 10 16.667ZM10 5a3.333 3.333 0 0 0-3.333 3.333h1.666a1.667 1.667 0 1 1 3.334 0c0 1.667-2.5 1.459-2.5 4.167h1.666c0-1.875 2.5-2.083 2.5-4.167A3.333 3.333 0 0 0 10 5Z"
+  })));
+};
+
+/* harmony default export */ const ic_help = (SvgIcHelp);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-keyboard.svg
+var ic_keyboard_path;
+
+function ic_keyboard_extends() { ic_keyboard_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_keyboard_extends.apply(this, arguments); }
+
+
+
+var SvgIcKeyboard = function SvgIcKeyboard(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_keyboard_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_keyboard_path || (ic_keyboard_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M3.333 4.167a1.667 1.667 0 0 0-1.666 1.666v8.334a1.667 1.667 0 0 0 1.666 1.666h13.334a1.667 1.667 0 0 0 1.666-1.666V5.833a1.667 1.667 0 0 0-1.666-1.666H3.333Zm0 1.666h13.334v8.334H3.333V5.833Zm.834.834v1.666h1.666V6.667H4.167Zm2.5 0v1.666h1.666V6.667H6.667Zm2.5 0v1.666h1.666V6.667H9.167Zm2.5 0v1.666h1.666V6.667h-1.666Zm2.5 0v1.666h1.666V6.667h-1.666Zm-10 2.5v1.666h1.666V9.167H4.167Zm2.5 0v1.666h1.666V9.167H6.667Zm2.5 0v1.666h1.666V9.167H9.167Zm2.5 0v1.666h1.666V9.167h-1.666Zm2.5 0v1.666h1.666V9.167h-1.666Zm-7.5 2.5v1.666h6.666v-1.666H6.667Z"
+  })));
+};
+
+/* harmony default export */ const ic_keyboard = (SvgIcKeyboard);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-list-bulleted.svg
+var ic_list_bulleted_path;
+
+function ic_list_bulleted_extends() { ic_list_bulleted_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_list_bulleted_extends.apply(this, arguments); }
+
+
+
+var SvgIcListBulleted = function SvgIcListBulleted(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_list_bulleted_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_list_bulleted_path || (ic_list_bulleted_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M5.833 4.167H17.5v1.666H5.833V4.167Zm0 6.666V9.167H17.5v1.666H5.833Zm-2.5-7.083a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm0 5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm2.5 7.083v-1.666H17.5v1.666H5.833Zm-2.5-2.083a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
+  })));
+};
+
+/* harmony default export */ const ic_list_bulleted = (SvgIcListBulleted);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-listed.svg
+var ic_listed_path;
+
+function ic_listed_extends() { ic_listed_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_listed_extends.apply(this, arguments); }
+
+
+
+var SvgIcListed = function SvgIcListed(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_listed_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_listed_path || (ic_listed_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M4.286 3.6h11.428c.379 0 .686.307.686.686v11.428a.686.686 0 0 1-.686.686H4.286a.686.686 0 0 1-.686-.686V4.286c0-.379.307-.686.686-.686ZM2 4.286A2.286 2.286 0 0 1 4.286 2h11.428A2.286 2.286 0 0 1 18 4.286v11.428A2.286 2.286 0 0 1 15.714 18H4.286A2.286 2.286 0 0 1 2 15.714V4.286Zm7.805 2.03c.142-.045.365-.075.668-.09V6c-.463.023-1.123.034-1.98.034-.9 0-1.564-.011-1.993-.034v.226c.277.015.48.045.605.09a.394.394 0 0 1 .265.26c.05.128.076.335.076.622v5.604c0 .287-.025.494-.076.622a.393.393 0 0 1-.265.26c-.126.045-.328.075-.605.09V14c.908-.023 2.279-.034 4.112-.034 1.354 0 2.316.011 2.888.034a14.745 14.745 0 0 1-.088-1.785c0-.407.012-.739.037-.995h-.29c-.126.761-.399 1.371-.82 1.83-.411.46-.903.69-1.475.69h-.618c-.236 0-.408-.019-.517-.056a.36.36 0 0 1-.215-.215c-.042-.113-.063-.29-.063-.531v-5.74c0-.287.026-.494.076-.622a.43.43 0 0 1 .278-.26Z",
+    fill: "currentColor"
+  })));
+};
+
+/* harmony default export */ const ic_listed = (SvgIcListed);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-security.svg
+var ic_security_path;
+
+function ic_security_extends() { ic_security_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_security_extends.apply(this, arguments); }
+
+
+
+var SvgIcSecurity = function SvgIcSecurity(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_security_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_security_path || (ic_security_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 10h5.444c-.412 2.99-2.55 5.658-5.444 6.487V10H4.556V5.855L10 3.593V10Zm0-8L3 4.91v4.363c0 4.036 2.987 7.803 7 8.727 4.013-.924 7-4.69 7-8.727V4.909L10 2Z"
+  })));
+};
+
+/* harmony default export */ const ic_security = (SvgIcSecurity);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-settings.svg
+var ic_settings_path;
+
+function ic_settings_extends() { ic_settings_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_settings_extends.apply(this, arguments); }
+
+
+
+var SvgIcSettings = function SvgIcSettings(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_settings_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_settings_path || (ic_settings_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 6.667a3.333 3.333 0 1 1 0 6.666 3.333 3.333 0 0 1 0-6.666Zm0 1.666a1.667 1.667 0 1 0 0 3.334 1.667 1.667 0 0 0 0-3.334Zm-1.667 10a.421.421 0 0 1-.416-.35l-.309-2.208A5.79 5.79 0 0 1 6.2 14.95l-2.075.842a.419.419 0 0 1-.508-.184L1.95 12.725a.41.41 0 0 1 .1-.533l1.758-1.384L3.75 10l.058-.833L2.05 7.808a.41.41 0 0 1-.1-.533l1.667-2.883a.41.41 0 0 1 .508-.184l2.075.834a6.04 6.04 0 0 1 1.408-.817l.309-2.208c.033-.2.208-.35.416-.35h3.334c.208 0 .383.15.416.35l.309 2.208a6.04 6.04 0 0 1 1.408.817l2.075-.834a.41.41 0 0 1 .508.184l1.667 2.883a.41.41 0 0 1-.1.533l-1.758 1.359.058.833-.058.833 1.758 1.359c.158.125.208.35.1.533l-1.667 2.883a.41.41 0 0 1-.508.184l-2.075-.834a6.042 6.042 0 0 1-1.408.817l-.309 2.208a.421.421 0 0 1-.416.35H8.333Zm1.042-15-.308 2.175c-1 .209-1.884.742-2.525 1.484l-2.009-.867-.625 1.083L5.667 8.5a4.625 4.625 0 0 0 0 3L3.9 12.8l.625 1.083 2.025-.866a4.536 4.536 0 0 0 2.508 1.466l.309 2.184h1.266l.309-2.175a4.598 4.598 0 0 0 2.508-1.475l2.025.866.625-1.083-1.767-1.292a4.65 4.65 0 0 0 0-3.008l1.759-1.292-.625-1.083-2.009.867a4.517 4.517 0 0 0-2.525-1.475l-.308-2.184h-1.25Z"
+  })));
+};
+
+/* harmony default export */ const ic_settings = (SvgIcSettings);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-star.svg
+var ic_star_path;
+
+function ic_star_extends() { ic_star_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_star_extends.apply(this, arguments); }
+
+
+
+var SvgIcStar = function SvgIcStar(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_star_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_star_path || (ic_star_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10.104 12.887a.2.2 0 0 0-.207 0l-2.625 1.585a.2.2 0 0 1-.299-.216l.692-2.989a.2.2 0 0 0-.064-.196l-2.318-2.01a.2.2 0 0 1 .114-.35l3.058-.26a.2.2 0 0 0 .167-.12l1.194-2.82a.2.2 0 0 1 .368 0l1.194 2.82a.2.2 0 0 0 .167.12l3.058.26a.2.2 0 0 1 .114.35L12.4 11.07a.2.2 0 0 0-.063.196l.69 2.99a.2.2 0 0 1-.297.215l-2.625-1.585Zm7.871-4.877a.2.2 0 0 0-.114-.35l-5.4-.458a.2.2 0 0 1-.166-.121l-2.11-4.98a.2.2 0 0 0-.37 0l-2.11 4.98a.2.2 0 0 1-.167.12l-5.4.46a.2.2 0 0 0-.114.35l4.093 3.552a.2.2 0 0 1 .064.196l-1.224 5.28a.2.2 0 0 0 .298.217l4.642-2.802a.2.2 0 0 1 .206 0l4.641 2.801a.2.2 0 0 0 .298-.216l-1.231-5.28a.2.2 0 0 1 .064-.196l4.1-3.553Z"
+  })));
+};
+
+/* harmony default export */ const ic_star = (SvgIcStar);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-themes.svg
+var ic_themes_path;
+
+function ic_themes_extends() { ic_themes_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_themes_extends.apply(this, arguments); }
+
+
+
+var SvgIcThemes = function SvgIcThemes(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_themes_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_themes_path || (ic_themes_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 18a7.999 7.999 0 1 1 0-16c4.4 0 8 3.2 8 7.2a4.8 4.8 0 0 1-4.8 4.8h-1.44c-.24 0-.4.16-.4.4 0 .08.08.16.08.24.32.4.48.88.48 1.36.08 1.12-.8 2-1.92 2Zm0-14.4a6.4 6.4 0 1 0 0 12.8c.24 0 .4-.16.4-.4 0-.16-.08-.24-.08-.32-.32-.4-.48-.8-.48-1.28 0-1.12.88-2 2-2h1.36a3.2 3.2 0 0 0 3.2-3.2c0-3.12-2.88-5.6-6.4-5.6ZM5.6 8.4c.64 0 1.2.56 1.2 1.2 0 .64-.56 1.2-1.2 1.2-.64 0-1.2-.56-1.2-1.2 0-.64.56-1.2 1.2-1.2ZM8 5.2c.64 0 1.2.56 1.2 1.2 0 .64-.56 1.2-1.2 1.2-.64 0-1.2-.56-1.2-1.2 0-.64.56-1.2 1.2-1.2Zm4 0c.64 0 1.2.56 1.2 1.2 0 .64-.56 1.2-1.2 1.2-.64 0-1.2-.56-1.2-1.2 0-.64.56-1.2 1.2-1.2Zm2.4 3.2c.64 0 1.2.56 1.2 1.2 0 .64-.56 1.2-1.2 1.2-.64 0-1.2-.56-1.2-1.2 0-.64.56-1.2 1.2-1.2Z"
+  })));
+};
+
+/* harmony default export */ const ic_themes = (SvgIcThemes);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-user.svg
+var ic_user_path;
+
+function ic_user_extends() { ic_user_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_user_extends.apply(this, arguments); }
+
+
+
+var SvgIcUser = function SvgIcUser(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_user_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_user_path || (ic_user_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 3a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm0 1.75a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5Zm0 6.125c2.336 0 7 1.164 7 3.5V17H3v-2.625c0-2.336 4.664-3.5 7-3.5Zm0 1.662c-2.599 0-5.338 1.278-5.338 1.838v.963h10.675v-.963c0-.56-2.738-1.838-5.337-1.838Z"
+  })));
+};
+
+/* harmony default export */ const ic_user = (SvgIcUser);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-copy.svg
+var ic_copy_path;
+
+function ic_copy_extends() { ic_copy_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_copy_extends.apply(this, arguments); }
+
+
+
+var SvgIcCopy = function SvgIcCopy(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_copy_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_copy_path || (ic_copy_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M1.667 3.666a2 2 0 0 1 2-2h7.667a2 2 0 0 1 2 2v9.667H3.667a2 2 0 0 1-2-2V3.666Zm14.667 3a2 2 0 0 1 2 2v7.667a2 2 0 0 1-2 2H8.667a2 2 0 0 1-2-2V15h8.334V6.666h1.333Zm-13-3.333v8.333h8.333V3.333H3.334Z"
+  })));
+};
+
+/* harmony default export */ const ic_copy = (SvgIcCopy);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-download.svg
+var ic_download_path;
+
+function ic_download_extends() { ic_download_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_download_extends.apply(this, arguments); }
+
+
+
+var SvgIcDownload = function SvgIcDownload(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_download_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_download_path || (ic_download_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M11 3.5v6h1.17L10 11.67 7.83 9.5H9v-6h2Zm2-2H7v6H3l7 7 7-7h-4v-6Zm4 15H3v2h14v-2Z"
+  })));
+};
+
+/* harmony default export */ const ic_download = (SvgIcDownload);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-info.svg
+var ic_info_path;
+
+function ic_info_extends() { ic_info_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_info_extends.apply(this, arguments); }
+
+
+
+var SvgIcInfo = function SvgIcInfo(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_info_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_info_path || (ic_info_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M9.167 7.5h1.666V5.833H9.167V7.5ZM10 16.667A6.675 6.675 0 0 1 3.333 10 6.676 6.676 0 0 1 10 3.333 6.675 6.675 0 0 1 16.667 10 6.675 6.675 0 0 1 10 16.667Zm0-15a8.333 8.333 0 1 0 0 16.666 8.333 8.333 0 0 0 0-16.666Zm-.833 12.5h1.666v-5H9.167v5Z"
+  })));
+};
+
+/* harmony default export */ const ic_info = (SvgIcInfo);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-check.svg
+var ic_check_path;
+
+function ic_check_extends() { ic_check_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_check_extends.apply(this, arguments); }
+
+
+
+var SvgIcCheck = function SvgIcCheck(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_check_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_check_path || (ic_check_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m17.5 5.833-10 10-4.583-4.583 1.175-1.175 3.408 3.4 8.825-8.817L17.5 5.833Z"
+  })));
+};
+
+/* harmony default export */ const ic_check = (SvgIcCheck);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-check-bold.svg
+var ic_check_bold_path;
+
+function ic_check_bold_extends() { ic_check_bold_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_check_bold_extends.apply(this, arguments); }
+
+
+
+var SvgIcCheckBold = function SvgIcCheckBold(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_check_bold_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_check_bold_path || (ic_check_bold_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m7.5 17.017-5.175-5.175 2.358-2.359L7.5 12.308l8.233-8.241 2.359 2.358L7.5 17.017Z"
+  })));
+};
+
+/* harmony default export */ const ic_check_bold = (SvgIcCheckBold);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-account-circle.svg
+var ic_account_circle_path;
+
+function ic_account_circle_extends() { ic_account_circle_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_account_circle_extends.apply(this, arguments); }
+
+
+
+var SvgIcAccountCircle = function SvgIcAccountCircle(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_account_circle_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_account_circle_path || (ic_account_circle_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 16a6.027 6.027 0 0 1-5-2.667c.025-1.666 3.333-2.583 5-2.583 1.667 0 4.975.917 5 2.583A6.027 6.027 0 0 1 10 16Zm0-11.833a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm0-2.5A8.333 8.333 0 1 0 18.333 10c0-4.608-3.75-8.333-8.333-8.333Z"
+  })));
+};
+
+/* harmony default export */ const ic_account_circle = (SvgIcAccountCircle);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-cloud-off.svg
+var ic_cloud_off_path;
+
+function ic_cloud_off_extends() { ic_cloud_off_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_cloud_off_extends.apply(this, arguments); }
+
+
+
+var SvgIcCloudOff = function SvgIcCloudOff(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_cloud_off_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_cloud_off_path || (ic_cloud_off_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M6.442 8.333 13.108 15H5a3.333 3.333 0 0 1 0-6.667h1.442ZM2.5 4.392l2.292 2.275C2.133 6.792 0 8.975 0 11.667a5 5 0 0 0 5 5h9.775l1.667 1.666 1.058-1.058L3.558 3.333 2.5 4.392Zm13.625 3.966A6.242 6.242 0 0 0 10 3.333a6.09 6.09 0 0 0-3.333.975l1.208 1.217a4.583 4.583 0 0 1 6.708 4.058V10h1.25a2.5 2.5 0 0 1 2.5 2.5c0 .942-.533 1.758-1.3 2.183l1.209 1.209A4.17 4.17 0 0 0 20 12.5c0-2.2-1.708-3.983-3.875-4.142Z"
+  })));
+};
+
+/* harmony default export */ const ic_cloud_off = (SvgIcCloudOff);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-signin.svg
+var ic_signin_path;
+
+function ic_signin_extends() { ic_signin_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_signin_extends.apply(this, arguments); }
+
+
+
+var SvgIcSignin = function SvgIcSignin(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_signin_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_signin_path || (ic_signin_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M15.833 2.5H4.167A1.66 1.66 0 0 0 2.5 4.167V7.5h1.667V4.167h11.666v11.666H4.167V12.5H2.5v3.333A1.666 1.666 0 0 0 4.167 17.5h11.666a1.666 1.666 0 0 0 1.667-1.667V4.167c0-.925-.75-1.667-1.667-1.667ZM8.4 12.983l1.183 1.184L13.75 10 9.583 5.833 8.4 7.008l2.158 2.159H2.5v1.666h8.058L8.4 12.983Z"
+  })));
+};
+
+/* harmony default export */ const ic_signin = (SvgIcSignin);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-signout.svg
+var ic_signout_path;
+
+function ic_signout_extends() { ic_signout_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_signout_extends.apply(this, arguments); }
+
+
+
+var SvgIcSignout = function SvgIcSignout(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_signout_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_signout_path || (ic_signout_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m11.733 12.992 2.159-2.159H5.833V9.167h8.059l-2.159-2.159 1.184-1.175L17.083 10l-4.166 4.167-1.184-1.175Zm4.1-10.492A1.666 1.666 0 0 1 17.5 4.167v3.891l-1.667-1.666V4.167H4.167v11.666h11.666v-2.225l1.667-1.666v3.891a1.666 1.666 0 0 1-1.667 1.667H4.167c-.925 0-1.667-.75-1.667-1.667V4.167A1.66 1.66 0 0 1 4.167 2.5h11.666Z"
+  })));
+};
+
+/* harmony default export */ const ic_signout = (SvgIcSignout);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-check-circle.svg
+var ic_check_circle_path;
+
+function ic_check_circle_extends() { ic_check_circle_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_check_circle_extends.apply(this, arguments); }
+
+
+
+var SvgIcCheckCircle = function SvgIcCheckCircle(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_check_circle_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_check_circle_path || (ic_check_circle_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 1.667c-4.583 0-8.333 3.75-8.333 8.333s3.75 8.333 8.333 8.333 8.333-3.75 8.333-8.333S14.583 1.667 10 1.667Zm0 15A6.676 6.676 0 0 1 3.333 10 6.676 6.676 0 0 1 10 3.333 6.676 6.676 0 0 1 16.667 10 6.676 6.676 0 0 1 10 16.667Zm3.825-10.35-5.492 5.491-2.158-2.15L5 10.833l3.333 3.334L15 7.5l-1.175-1.183Z"
+  })));
+};
+
+/* harmony default export */ const ic_check_circle = (SvgIcCheckCircle);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-sync.svg
+var ic_sync_path;
+
+function ic_sync_extends() { ic_sync_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_sync_extends.apply(this, arguments); }
+
+
+
+var SvgIcSync = function SvgIcSync(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_sync_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_sync_path || (ic_sync_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 15a5 5 0 0 1-5-5c0-.833.208-1.642.583-2.333L4.367 6.45A6.609 6.609 0 0 0 3.333 10 6.667 6.667 0 0 0 10 16.667v2.5l3.333-3.334L10 12.5V15Zm0-11.667v-2.5L6.667 4.167 10 7.5V5a5 5 0 0 1 5 5c0 .833-.208 1.642-.583 2.333l1.216 1.217A6.61 6.61 0 0 0 16.667 10 6.667 6.667 0 0 0 10 3.333Z"
+  })));
+};
+
+/* harmony default export */ const ic_sync = (SvgIcSync);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-arrow-left.svg
+var ic_arrow_left_path;
+
+function ic_arrow_left_extends() { ic_arrow_left_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_arrow_left_extends.apply(this, arguments); }
+
+
+
+var SvgIcArrowLeft = function SvgIcArrowLeft(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_arrow_left_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_arrow_left_path || (ic_arrow_left_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M16.667 9.167v1.666h-10l3.991 3.992a.837.837 0 1 1-1.183 1.183L3.467 10l6.008-6.008a.837.837 0 1 1 1.183 1.183L6.667 9.167h10Z"
+  })));
+};
+
+/* harmony default export */ const ic_arrow_left = (SvgIcArrowLeft);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-chevron-down.svg
+var ic_chevron_down_path;
+
+function ic_chevron_down_extends() { ic_chevron_down_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_chevron_down_extends.apply(this, arguments); }
+
+
+
+var SvgIcChevronDown = function SvgIcChevronDown(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_chevron_down_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_chevron_down_path || (ic_chevron_down_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m6.176 7.15 3.825 3.825 3.825-3.825 1.175 1.183-5 5-5-5L6.176 7.15Z"
+  })));
+};
+
+/* harmony default export */ const ic_chevron_down = (SvgIcChevronDown);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-email.svg
+var ic_email_path;
+
+function ic_email_extends() { ic_email_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_email_extends.apply(this, arguments); }
+
+
+
+var SvgIcEmail = function SvgIcEmail(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_email_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_email_path || (ic_email_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M3.333 3.333h13.334A1.667 1.667 0 0 1 18.332 5v10a1.667 1.667 0 0 1-1.666 1.667H3.332c-.925 0-1.667-.75-1.667-1.667V5a1.66 1.66 0 0 1 1.667-1.667ZM10 9.167 16.666 5H3.333L10 9.167ZM3.333 15h13.334V6.975L10 11.133 3.333 6.975V15Z"
+  })));
+};
+
+/* harmony default export */ const ic_email = (SvgIcEmail);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-server.svg
+var ic_server_path;
+
+function ic_server_extends() { ic_server_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_server_extends.apply(this, arguments); }
+
+
+
+var SvgIcServer = function SvgIcServer(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_server_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_server_path || (ic_server_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10.833 15.833h.834a.833.833 0 0 1 .833.834h5.833v1.666H12.5a.833.833 0 0 1-.833.834H8.333a.833.833 0 0 1-.833-.834H1.667v-1.666H7.5a.833.833 0 0 1 .833-.834h.834v-1.666H3.333a.833.833 0 0 1-.833-.834V10a.833.833 0 0 1 .833-.833h13.334A.833.833 0 0 1 17.5 10v3.333a.833.833 0 0 1-.833.834h-5.834v1.666ZM3.333 2.5h13.334a.833.833 0 0 1 .833.833v3.334a.833.833 0 0 1-.833.833H3.333a.833.833 0 0 1-.833-.833V3.333a.833.833 0 0 1 .833-.833ZM7.5 5.833h.833V4.167H7.5v1.666Zm0 6.667h.833v-1.667H7.5V12.5ZM4.167 4.167v1.666h1.666V4.167H4.167Zm0 6.666V12.5h1.666v-1.667H4.167Z"
+  })));
+};
+
+/* harmony default export */ const ic_server = (SvgIcServer);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-eye.svg
+var ic_eye_path;
+
+function ic_eye_extends() { ic_eye_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_eye_extends.apply(this, arguments); }
+
+
+
+var SvgIcEye = function SvgIcEye(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_eye_extends({
+    viewBox: "0 0 16 10",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_eye_path || (ic_eye_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M8 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm0-3c3.333 0 6.18 2.073 7.333 5-1.153 2.927-4 5-7.333 5S1.82 7.927.667 5C1.82 2.073 4.667 0 8 0ZM2.12 5a6.547 6.547 0 0 0 11.76 0A6.547 6.547 0 0 0 2.12 5Z"
+  })));
+};
+
+/* harmony default export */ const ic_eye = (SvgIcEye);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-eye-off.svg
+var ic_eye_off_path;
+
+function ic_eye_off_extends() { ic_eye_off_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_eye_off_extends.apply(this, arguments); }
+
+
+
+var SvgIcEyeOff = function SvgIcEyeOff(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_eye_off_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_eye_off_path || (ic_eye_off_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m1.667 4.392 1.066-1.059 13.934 13.934-1.059 1.066-2.566-2.566A9.647 9.647 0 0 1 10 16.25c-4.167 0-7.725-2.592-9.167-6.25a9.795 9.795 0 0 1 2.659-3.783L1.667 4.392ZM10 7.5a2.5 2.5 0 0 1 2.358 3.333L9.167 7.642A2.5 2.5 0 0 1 10 7.5Zm0-3.75c4.167 0 7.725 2.592 9.167 6.25a9.824 9.824 0 0 1-3.334 4.325l-1.183-1.192A8.219 8.219 0 0 0 17.35 10 8.184 8.184 0 0 0 10 5.417c-.908 0-1.8.15-2.633.416L6.083 4.558A9.887 9.887 0 0 1 10 3.75ZM2.65 10A8.184 8.184 0 0 0 10 14.583c.575 0 1.142-.058 1.667-.175l-1.9-1.908A2.553 2.553 0 0 1 7.5 10.233L4.667 7.392A8.212 8.212 0 0 0 2.65 10Z"
+  })));
+};
+
+/* harmony default export */ const ic_eye_off = (SvgIcEyeOff);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-lock.svg
+var ic_lock_path;
+
+function ic_lock_extends() { ic_lock_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_lock_extends.apply(this, arguments); }
+
+
+
+var SvgIcLock = function SvgIcLock(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_lock_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_lock_path || (ic_lock_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 14.167c-.925 0-1.666-.75-1.666-1.667A1.667 1.667 0 1 1 10 14.167Zm5 2.5V8.333H5v8.334h10Zm0-10a1.667 1.667 0 0 1 1.667 1.666v8.334A1.667 1.667 0 0 1 15 18.333H5c-.925 0-1.667-.75-1.667-1.666V8.333A1.66 1.66 0 0 1 5 6.667h.833V5a4.167 4.167 0 1 1 8.334 0v1.667H15ZM10 2.5A2.5 2.5 0 0 0 7.5 5v1.667h5V5A2.5 2.5 0 0 0 10 2.5Z"
+  })));
+};
+
+/* harmony default export */ const ic_lock = (SvgIcLock);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-lock-filled.svg
+var ic_lock_filled_path;
+
+function ic_lock_filled_extends() { ic_lock_filled_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_lock_filled_extends.apply(this, arguments); }
+
+
+
+var SvgIcLockFilled = function SvgIcLockFilled(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_lock_filled_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_lock_filled_path || (ic_lock_filled_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10 14.167a1.666 1.666 0 1 0 0-3.333 1.666 1.666 0 0 0 0 3.333Zm5-7.5a1.667 1.667 0 0 1 1.667 1.666v8.334A1.667 1.667 0 0 1 15 18.333H5a1.667 1.667 0 0 1-1.667-1.666V8.333c0-.925.75-1.666 1.667-1.666h.833V5a4.167 4.167 0 0 1 8.334 0v1.667H15ZM10 2.5A2.5 2.5 0 0 0 7.5 5v1.667h5V5A2.5 2.5 0 0 0 10 2.5Z"
+  })));
+};
+
+/* harmony default export */ const ic_lock_filled = (SvgIcLockFilled);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-arrows-sort-up.svg
+var ic_arrows_sort_up_path, ic_arrows_sort_up_path2;
+
+function ic_arrows_sort_up_extends() { ic_arrows_sort_up_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_arrows_sort_up_extends.apply(this, arguments); }
+
+
+
+var SvgIcArrowsSortUp = function SvgIcArrowsSortUp(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_arrows_sort_up_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_arrows_sort_up_path || (ic_arrows_sort_up_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M7.5 2.5 4.167 5.833h2.5v5.834h1.666V5.833h2.5L7.5 2.5Z",
+    fill: "#086DD6"
+  })), ic_arrows_sort_up_path2 || (ic_arrows_sort_up_path2 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M13.333 8.333v5.834h2.5L12.5 17.5l-3.334-3.333h2.5V8.333h1.667Z"
+  })));
+};
+
+/* harmony default export */ const ic_arrows_sort_up = (SvgIcArrowsSortUp);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-arrows-sort-down.svg
+var ic_arrows_sort_down_path, ic_arrows_sort_down_path2;
+
+function ic_arrows_sort_down_extends() { ic_arrows_sort_down_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_arrows_sort_down_extends.apply(this, arguments); }
+
+
+
+var SvgIcArrowsSortDown = function SvgIcArrowsSortDown(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_arrows_sort_down_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_arrows_sort_down_path || (ic_arrows_sort_down_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M7.5 2.5 4.167 5.833h2.5v5.834h1.666V5.833h2.5L7.5 2.5Z"
+  })), ic_arrows_sort_down_path2 || (ic_arrows_sort_down_path2 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M13.333 8.333v5.834h2.5L12.5 17.5l-3.334-3.333h2.5V8.333h1.667Z",
+    fill: "#086DD6"
+  })));
+};
+
+/* harmony default export */ const ic_arrows_sort_down = (SvgIcArrowsSortDown);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-window.svg
+var ic_window_path;
+
+function ic_window_extends() { ic_window_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_window_extends.apply(this, arguments); }
+
+
+
+var SvgIcWindow = function SvgIcWindow(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_window_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_window_path || (ic_window_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M3.333 3.333h13.334v13.334H3.333V3.333ZM5 6.667V15h10V6.667H5Z"
+  })));
+};
+
+/* harmony default export */ const ic_window = (SvgIcWindow);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-link-off.svg
+var ic_link_off_path;
+
+function ic_link_off_extends() { ic_link_off_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_link_off_extends.apply(this, arguments); }
+
+
+
+var SvgIcLinkOff = function SvgIcLinkOff(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_link_off_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_link_off_path || (ic_link_off_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M14.167 5.833h-3.334v1.584h3.334A2.586 2.586 0 0 1 16.75 10c0 1.192-.817 2.192-1.925 2.5l1.217 1.2c1.358-.692 2.291-2.075 2.291-3.7a4.167 4.167 0 0 0-4.166-4.167Zm-.834 3.334h-1.825l1.667 1.666h.158V9.167ZM1.667 3.558 4.258 6.15a4.16 4.16 0 0 0-1.37 6.796 4.167 4.167 0 0 0 2.945 1.22h3.334v-1.583H5.833A2.586 2.586 0 0 1 3.25 10a2.58 2.58 0 0 1 2.3-2.558l1.725 1.725h-.608v1.666h2.275l1.891 1.892v1.442h1.442l3.342 3.333 1.05-1.05L2.725 2.5 1.667 3.558Z"
+  })));
+};
+
+/* harmony default export */ const ic_link_off = (SvgIcLinkOff);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-menu-arrow-down-alt.svg
+var ic_menu_arrow_down_alt_path;
+
+function ic_menu_arrow_down_alt_extends() { ic_menu_arrow_down_alt_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_menu_arrow_down_alt_extends.apply(this, arguments); }
+
+
+
+var SvgIcMenuArrowDownAlt = function SvgIcMenuArrowDownAlt(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_menu_arrow_down_alt_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_menu_arrow_down_alt_path || (ic_menu_arrow_down_alt_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M5.833 8.333 10 12.5l4.167-4.167H5.833Z"
+  })));
+};
+
+/* harmony default export */ const ic_menu_arrow_down_alt = (SvgIcMenuArrowDownAlt);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-menu-arrow-right.svg
+var ic_menu_arrow_right_path;
+
+function ic_menu_arrow_right_extends() { ic_menu_arrow_right_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_menu_arrow_right_extends.apply(this, arguments); }
+
+
+
+var SvgIcMenuArrowRight = function SvgIcMenuArrowRight(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_menu_arrow_right_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_menu_arrow_right_path || (ic_menu_arrow_right_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "m7.917 14.583 4.166-4.166L7.917 6.25v8.333Z"
+  })));
+};
+
+/* harmony default export */ const ic_menu_arrow_right = (SvgIcMenuArrowRight);
+;// CONCATENATED MODULE: ./src/assets/icons/il-notes.svg
+var _circle, _g, il_notes_rect, _rect2, _rect3, _g2, _rect4, _rect5, _rect6, _defs;
+
+function il_notes_extends() { il_notes_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return il_notes_extends.apply(this, arguments); }
+
+
+
+var SvgIlNotes = function SvgIlNotes(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", il_notes_extends({
+    width: 120,
+    height: 120,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _circle || (_circle = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("circle", {
+    cx: 60,
+    cy: 60,
+    r: 60,
+    fill: "#F4F5F7"
+  })), _g || (_g = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("g", {
+    filter: "url(#il-notes_svg__a)"
+  }, /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("rect", {
+    x: 21.505,
+    y: 49.353,
+    width: 40,
+    height: 40,
+    rx: 4,
+    transform: "rotate(-15 21.505 49.353)",
+    fill: "#fff"
+  }))), il_notes_rect || (il_notes_rect = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("rect", {
+    x: 29.889,
+    y: 57.459,
+    width: 28,
+    height: 4,
+    rx: 2,
+    transform: "rotate(-15 29.889 57.46)",
+    fill: "#BBBEC4"
+  })), _rect2 || (_rect2 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("rect", {
+    x: 31.959,
+    y: 65.186,
+    width: 28,
+    height: 4,
+    rx: 2,
+    transform: "rotate(-15 31.96 65.186)",
+    fill: "#BBBEC4"
+  })), _rect3 || (_rect3 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("rect", {
+    x: 34.03,
+    y: 72.914,
+    width: 16,
+    height: 4,
+    rx: 2,
+    transform: "rotate(-15 34.03 72.914)",
+    fill: "#BBBEC4"
+  })), _g2 || (_g2 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("g", {
+    filter: "url(#il-notes_svg__b)"
+  }, /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("rect", {
+    x: 40,
+    y: 32,
+    width: 56,
+    height: 56,
+    rx: 4,
+    fill: "#fff"
+  }))), _rect4 || (_rect4 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("rect", {
+    x: 48,
+    y: 46,
+    width: 40,
+    height: 6,
+    rx: 3,
+    fill: "#BBBEC4"
+  })), _rect5 || (_rect5 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("rect", {
+    x: 48,
+    y: 57,
+    width: 40,
+    height: 6,
+    rx: 3,
+    fill: "#BBBEC4"
+  })), _rect6 || (_rect6 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("rect", {
+    x: 48,
+    y: 68,
+    width: 22,
+    height: 6,
+    rx: 3,
+    fill: "#BBBEC4"
+  })), _defs || (_defs = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("defs", null, /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("filter", {
+    id: "il-notes_svg__a",
+    x: 10.403,
+    y: 31.898,
+    width: 71.194,
+    height: 71.194,
+    filterUnits: "userSpaceOnUse",
+    colorInterpolationFilters: "sRGB"
+  }, /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feFlood", {
+    floodOpacity: 0,
+    result: "BackgroundImageFix"
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feColorMatrix", {
+    "in": "SourceAlpha",
+    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feOffset", {
+    dy: 4
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feGaussianBlur", {
+    stdDeviation: 6
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feColorMatrix", {
+    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0"
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feBlend", {
+    in2: "BackgroundImageFix",
+    result: "effect1_dropShadow"
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feBlend", {
+    "in": "SourceGraphic",
+    in2: "effect1_dropShadow",
+    result: "shape"
+  })), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("filter", {
+    id: "il-notes_svg__b",
+    x: 28,
+    y: 24,
+    width: 80,
+    height: 80,
+    filterUnits: "userSpaceOnUse",
+    colorInterpolationFilters: "sRGB"
+  }, /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feFlood", {
+    floodOpacity: 0,
+    result: "BackgroundImageFix"
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feColorMatrix", {
+    "in": "SourceAlpha",
+    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feOffset", {
+    dy: 4
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feGaussianBlur", {
+    stdDeviation: 6
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feColorMatrix", {
+    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0"
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feBlend", {
+    in2: "BackgroundImageFix",
+    result: "effect1_dropShadow"
+  }), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("feBlend", {
+    "in": "SourceGraphic",
+    in2: "effect1_dropShadow",
+    result: "shape"
+  })))));
+};
+
+/* harmony default export */ const il_notes = (SvgIlNotes);
+;// CONCATENATED MODULE: ./src/assets/icons/index.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;// CONCATENATED MODULE: ./src/assets/index.js
+
 ;// CONCATENATED MODULE: ./src/stylekit.js
 
 
 
+console.log('oooo, stylekit 2');
+
+
+/***/ }),
+
+/***/ 670:
+/***/ ((module) => {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__670__;
 
 /***/ })
 
@@ -224,7 +2275,7 @@ class SKAlert {
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
-/******/ 			[754]
+/******/ 			[561]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		
