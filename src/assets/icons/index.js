@@ -27,7 +27,6 @@ import TasksIcon from './ic-tasks.svg';
 import MarkdownIcon from './ic-markdown.svg';
 import NotesIcon from './ic-notes.svg';
 import CodeIcon from './ic-code.svg';
-
 import AccessibilityIcon from './ic-accessibility.svg';
 import AddIcon from './ic-add.svg';
 import HelpIcon from './ic-help.svg';
@@ -62,10 +61,16 @@ import ArrowsSortUpIcon from './ic-arrows-sort-up.svg';
 import ArrowsSortDownIcon from './ic-arrows-sort-down.svg';
 import WindowIcon from './ic-window.svg';
 import LinkOffIcon from './ic-link-off.svg';
-
+import ArrowDownCheckmarkIcon from './arrow-down-checkmark.svg';
+import BlueDotIcon from './blue-dot.svg';
+import CircleIcon from './circle-55.svg';
+import DiamondIcon from './diamond-with-horizontal-lines.svg';
+import CreateAccountIllustration from './create-account-illustration.svg';
+import SNLogoFull from './ic-sn-logo-full.svg';
+import AccountIllustration from './il-account.svg';
+import PremiumIllustration from './il-premium.svg';
 import MenuArrowDownAlt from './ic-menu-arrow-down-alt.svg';
 import MenuArrowRight from './ic-menu-arrow-right.svg';
-
 import IlNotesIcon from './il-notes.svg';
 
 export {
@@ -135,4 +140,12 @@ export {
   MenuArrowDownAlt,
   MenuArrowRight,
   IlNotesIcon,
+  ArrowDownCheckmarkIcon,
+  BlueDotIcon,
+  CircleIcon,
+  DiamondIcon,
+  CreateAccountIllustration,
+  SNLogoFull,
+  AccountIllustration,
+  PremiumIllustration,
 };
