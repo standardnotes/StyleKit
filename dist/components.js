@@ -3979,6 +3979,7 @@ var ListboxEvents; /////////////////////////////////////////////////////////////
   ListboxEvents["OptionMouseDown"] = "OPTION_MOUSE_DOWN";
   ListboxEvents["OptionMouseUp"] = "OPTION_MOUSE_UP";
   ListboxEvents["OptionClick"] = "OPTION_CLICK";
+  ListboxEvents["ListMouseUp"] = "LIST_MOUSE_UP";
   ListboxEvents["OptionPress"] = "OPTION_PRESS";
   ListboxEvents["OutsideMouseDown"] = "OUTSIDE_MOUSE_DOWN";
   ListboxEvents["OutsideMouseUp"] = "OUTSIDE_MOUSE_UP";
@@ -4362,6 +4363,9 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
       }], _extends4[ListboxEvents.ButtonMouseUp] = {
         target: ListboxStates.Navigating,
         actions: [navigateFromCurrentValue, focusList]
+      }, _extends4[ListboxEvents.ListMouseUp] = {
+        target: ListboxStates.Navigating,
+        actions: [navigateFromCurrentValue, focusList]
       }, _extends4[ListboxEvents.OptionTouchStart] = {
         target: ListboxStates.Navigating,
         actions: [reach_listbox_esm_navigate, clearTypeahead],
@@ -4595,6 +4599,15 @@ function findOptionFromValue(value, options) {
  */
 
 
+var _excluded = ["as", "aria-labelledby", "aria-label", "children", "defaultValue", "disabled", "form", "name", "onChange", "required", "value", "__componentName"],
+    _excluded2 = (/* unused pure expression or super */ null && (["arrow", "button", "children", "portal"])),
+    _excluded3 = ["aria-label", "arrow", "as", "children", "onKeyDown", "onMouseDown", "onMouseUp"],
+    _excluded4 = ["as", "children"],
+    _excluded5 = ["as", "position", "onBlur", "onKeyDown", "onMouseUp", "portal", "unstable_observableRefs"],
+    _excluded6 = ["as"],
+    _excluded7 = ["as", "children", "disabled", "onClick", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onTouchStart", "value", "label"],
+    _excluded8 = (/* unused pure expression or super */ null && (["as", "label", "children"])),
+    _excluded9 = (/* unused pure expression or super */ null && (["as"]));
 var DEBUG = false; ////////////////////////////////////////////////////////////////////////////////
 // ListboxContext
 
@@ -4626,7 +4639,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
       valueProp = _ref.value,
       _ref$__componentName = _ref.__componentName,
       __componentName = _ref$__componentName === void 0 ? "ListboxInput" : _ref$__componentName,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref, ["as", "aria-labelledby", "aria-label", "children", "defaultValue", "disabled", "form", "name", "onChange", "required", "value", "__componentName"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref, _excluded);
 
   var isControlled = s(valueProp != null);
 
@@ -4660,11 +4673,12 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
       state = _useMachine[0],
       send = _useMachine[1];
 
-  var stableOnChange = useStableCallback(function (newValue) {
+  function handleValueChange(newValue) {
     if (newValue !== state.context.value) {
       onChange == null ? void 0 : onChange(newValue);
     }
-  }); // IDs for aria attributes
+  } // IDs for aria attributes
+
 
   var _id = reach_auto_id_esm_useId(props.id);
 
@@ -4683,27 +4697,24 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     });
     return selected ? selected.label : null;
   }, [options, state.context.value]);
-  var isExpanded = isListboxExpanded(state.value); // TODO: Remove duplication and memoize
-
-  var context = d(function () {
-    return {
-      ariaLabel: ariaLabel,
-      ariaLabelledBy: ariaLabelledBy,
-      disabled: disabled,
-      isExpanded: isExpanded,
-      listboxId: id,
-      listboxValueLabel: valueLabel,
-      onValueChange: stableOnChange,
-      buttonRef: buttonRef,
-      listRef: listRef,
-      popoverRef: popoverRef,
-      selectedOptionRef: selectedOptionRef,
-      highlightedOptionRef: highlightedOptionRef,
-      send: send,
-      state: state.value,
-      stateData: state.context
-    };
-  }, [ariaLabel, ariaLabelledBy, state.value, state.context, disabled, id, isExpanded, stableOnChange, send, valueLabel]); // For uncontrolled listbox components where no `defaultValue` is provided, we
+  var isExpanded = isListboxExpanded(state.value);
+  var context = {
+    ariaLabel: ariaLabel,
+    ariaLabelledBy: ariaLabelledBy,
+    buttonRef: buttonRef,
+    disabled: disabled,
+    highlightedOptionRef: highlightedOptionRef,
+    isExpanded: isExpanded,
+    listboxId: id,
+    listboxValueLabel: valueLabel,
+    listRef: listRef,
+    onValueChange: handleValueChange,
+    popoverRef: popoverRef,
+    selectedOptionRef: selectedOptionRef,
+    send: send,
+    state: state.value,
+    stateData: state.context
+  }; // For uncontrolled listbox components where no `defaultValue` is provided, we
   // will update the value based on the value of the first selectable option.
   // We call the update directly because:
   //   A) we only ever need to do this once, so we can guard with a ref
@@ -4790,19 +4801,19 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     };
   }, [send, isExpanded]);
   useCheckStyles("listbox");
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(DescendantProvider, {
-    context: ListboxDescendantContext,
-    items: options,
-    set: setOptions
-  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(ListboxContext.Provider, {
-    value: context
-  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, reach_listbox_esm_extends({}, props, {
+  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, reach_listbox_esm_extends({}, props, {
     ref: ref,
     "data-reach-listbox-input": "",
     "data-state": isExpanded ? "expanded" : "closed",
     "data-value": state.context.value,
     id: id
-  }), reach_utils_type_check_esm_isFunction(children) ? children({
+  }), /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(ListboxContext.Provider, {
+    value: context
+  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(DescendantProvider, {
+    context: ListboxDescendantContext,
+    items: options,
+    set: setOptions
+  }, reach_utils_type_check_esm_isFunction(children) ? children({
     id: id,
     isExpanded: isExpanded,
     value: state.context.value,
@@ -4811,7 +4822,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     valueLabel: valueLabel,
     // TODO: Remove in 1.0
     expanded: isExpanded
-  }) : children), (form || name || required) && /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)("input", {
+  }) : children, (form || name || required) && /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)("input", {
     ref: hiddenInputRef,
     "data-reach-listbox-hidden-input": "",
     disabled: disabled,
@@ -4822,7 +4833,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     tabIndex: -1,
     type: "hidden",
     value: state.context.value || ""
-  })));
+  }))));
 });
 
 if (false) {}
@@ -4854,7 +4865,7 @@ var Listbox = /*#__PURE__*/(/* unused pure expression or super */ null && (forwa
       children = _ref2.children,
       _ref2$portal = _ref2.portal,
       portal = _ref2$portal === void 0 ? true : _ref2$portal,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref2, ["arrow", "button", "children", "portal"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref2, _excluded2);
 
   return /*#__PURE__*/createElement(ListboxInput, reach_listbox_esm_extends({}, props, {
     __componentName: "Listbox",
@@ -4899,16 +4910,16 @@ var ListboxButtonImpl = /*#__PURE__*/compat_module_x(function ListboxButton(_ref
       onKeyDown = _ref4.onKeyDown,
       onMouseDown = _ref4.onMouseDown,
       onMouseUp = _ref4.onMouseUp,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref4, ["aria-label", "arrow", "as", "children", "onKeyDown", "onMouseDown", "onMouseUp"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref4, _excluded3);
 
   var _React$useContext = F(ListboxContext),
-      ariaLabelledBy = _React$useContext.ariaLabelledBy,
       buttonRef = _React$useContext.buttonRef,
+      send = _React$useContext.send,
+      ariaLabelledBy = _React$useContext.ariaLabelledBy,
       disabled = _React$useContext.disabled,
       isExpanded = _React$useContext.isExpanded,
       listboxId = _React$useContext.listboxId,
       stateData = _React$useContext.stateData,
-      send = _React$useContext.send,
       listboxValueLabel = _React$useContext.listboxValueLabel;
 
   var listboxValue = stateData.value;
@@ -5014,7 +5025,7 @@ var ListboxArrowImpl = /*#__PURE__*/compat_module_x(function ListboxArrow(_ref5,
   var _ref5$as = _ref5.as,
       Comp = _ref5$as === void 0 ? "span" : _ref5$as,
       children = _ref5.children,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref5, _excluded4);
 
   var _React$useContext2 = F(ListboxContext),
       isExpanded = _React$useContext2.isExpanded;
@@ -5057,19 +5068,26 @@ var ListboxPopoverImpl = /*#__PURE__*/compat_module_x(function ListboxPopover(_r
       position = _ref6$position === void 0 ? positionMatchWidth : _ref6$position,
       onBlur = _ref6.onBlur,
       onKeyDown = _ref6.onKeyDown,
+      onMouseUp = _ref6.onMouseUp,
       _ref6$portal = _ref6.portal,
       portal = _ref6$portal === void 0 ? true : _ref6$portal,
       unstable_observableRefs = _ref6.unstable_observableRefs,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref6, ["as", "position", "onBlur", "onKeyDown", "portal", "unstable_observableRefs"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref6, _excluded5);
 
   var _React$useContext3 = F(ListboxContext),
+      isExpanded = _React$useContext3.isExpanded,
       buttonRef = _React$useContext3.buttonRef,
       popoverRef = _React$useContext3.popoverRef,
-      send = _React$useContext3.send,
-      isExpanded = _React$useContext3.isExpanded;
+      send = _React$useContext3.send;
 
   var ref = useComposedRefs(popoverRef, forwardedRef);
   var handleKeyDown = useKeyDown();
+
+  function handleMouseUp() {
+    send({
+      type: ListboxEvents.ListMouseUp
+    });
+  }
 
   var commonProps = reach_listbox_esm_extends({
     hidden: !isExpanded,
@@ -5077,6 +5095,7 @@ var ListboxPopoverImpl = /*#__PURE__*/compat_module_x(function ListboxPopover(_r
   }, props, {
     ref: ref,
     "data-reach-listbox-popover": "",
+    onMouseUp: composeEventHandlers(onMouseUp, handleMouseUp),
     onBlur: composeEventHandlers(onBlur, handleBlur),
     onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown)
   });
@@ -5118,14 +5137,14 @@ var ListboxPopover = /*#__PURE__*/compat_module_g(ListboxPopoverImpl);
 var ListboxList = /*#__PURE__*/compat_module_x(function ListboxList(_ref7, forwardedRef) {
   var _ref7$as = _ref7.as,
       Comp = _ref7$as === void 0 ? "ul" : _ref7$as,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref7, ["as"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref7, _excluded6);
 
   var _React$useContext4 = F(ListboxContext),
+      listRef = _React$useContext4.listRef,
       ariaLabel = _React$useContext4.ariaLabel,
       ariaLabelledBy = _React$useContext4.ariaLabelledBy,
       isExpanded = _React$useContext4.isExpanded,
       listboxId = _React$useContext4.listboxId,
-      listRef = _React$useContext4.listRef,
       _React$useContext4$st = _React$useContext4.stateData,
       value = _React$useContext4$st.value,
       navigationValue = _React$useContext4$st.navigationValue;
@@ -5190,16 +5209,16 @@ var ListboxOption = /*#__PURE__*/compat_module_x(function ListboxOption(_ref8, f
       onTouchStart = _ref8.onTouchStart,
       value = _ref8.value,
       labelProp = _ref8.label,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref8, ["as", "children", "disabled", "onClick", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onTouchStart", "value", "label"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref8, _excluded7);
 
   if (false) {}
 
   var _React$useContext5 = F(ListboxContext),
       highlightedOptionRef = _React$useContext5.highlightedOptionRef,
-      isExpanded = _React$useContext5.isExpanded,
-      onValueChange = _React$useContext5.onValueChange,
       selectedOptionRef = _React$useContext5.selectedOptionRef,
       send = _React$useContext5.send,
+      isExpanded = _React$useContext5.isExpanded,
+      onValueChange = _React$useContext5.onValueChange,
       state = _React$useContext5.state,
       _React$useContext5$st = _React$useContext5.stateData,
       listboxValue = _React$useContext5$st.value,
@@ -5359,7 +5378,7 @@ var ListboxGroup = /*#__PURE__*/(/* unused pure expression or super */ null && (
       Comp = _ref9$as === void 0 ? "div" : _ref9$as,
       label = _ref9.label,
       children = _ref9.children,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref9, ["as", "label", "children"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref9, _excluded8);
 
   var _React$useContext6 = useContext(ListboxContext),
       listboxId = _React$useContext6.listboxId;
@@ -5398,7 +5417,7 @@ if (false) {}
 var ListboxGroupLabel = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function ListboxGroupLabel(_ref10, forwardedRef) {
   var _ref10$as = _ref10.as,
       Comp = _ref10$as === void 0 ? "span" : _ref10$as,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref10, ["as"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref10, _excluded9);
 
   var _React$useContext7 = useContext(ListboxGroupContext),
       labelId = _React$useContext7.labelId;
@@ -5430,10 +5449,10 @@ if (false) {}
 function useListboxContext() {
   var _React$useContext8 = useContext(ListboxContext),
       highlightedOptionRef = _React$useContext8.highlightedOptionRef,
+      selectedOptionRef = _React$useContext8.selectedOptionRef,
       listboxId = _React$useContext8.listboxId,
       listboxValueLabel = _React$useContext8.listboxValueLabel,
       isExpanded = _React$useContext8.isExpanded,
-      selectedOptionRef = _React$useContext8.selectedOptionRef,
       value = _React$useContext8.stateData.value;
 
   return useMemo(function () {
@@ -5455,20 +5474,21 @@ function isListboxExpanded(state) {
 
 function useKeyDown() {
   var _React$useContext9 = F(ListboxContext),
+      send = _React$useContext9.send,
       listboxDisabled = _React$useContext9.disabled,
       onValueChange = _React$useContext9.onValueChange,
       _React$useContext9$st = _React$useContext9.stateData,
       navigationValue = _React$useContext9$st.navigationValue,
-      typeaheadQuery = _React$useContext9$st.typeaheadQuery,
-      send = _React$useContext9.send;
+      typeaheadQuery = _React$useContext9$st.typeaheadQuery;
 
   var options = useDescendants(ListboxDescendantContext);
+  var stableOnValueChange = useStableCallback(onValueChange);
   y(function () {
     if (typeaheadQuery) {
       send({
         type: ListboxEvents.UpdateAfterTypeahead,
         query: typeaheadQuery,
-        callback: onValueChange
+        callback: stableOnValueChange
       });
     }
 
@@ -5482,7 +5502,7 @@ function useKeyDown() {
     return function () {
       window.clearTimeout(timeout);
     };
-  }, [onValueChange, send, typeaheadQuery]);
+  }, [stableOnValueChange, send, typeaheadQuery]);
   var index = options.findIndex(function (_ref11) {
     var value = _ref11.value;
     return value === navigationValue;

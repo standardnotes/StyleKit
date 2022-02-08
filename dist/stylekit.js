@@ -12,7 +12,7 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 341:
+/***/ 974:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -94,6 +94,7 @@ __webpack_require__.d(__webpack_exports__, {
   "UnpinIcon": () => (/* reexport */ ic_pin_off),
   "UserIcon": () => (/* reexport */ ic_user),
   "UserSwitch": () => (/* reexport */ ic_user_switch),
+  "WarningIcon": () => (/* reexport */ ic_warning),
   "WindowIcon": () => (/* reexport */ ic_window)
 });
 
@@ -2524,6 +2525,25 @@ var SvgIlNotes = function SvgIlNotes(props) {
 };
 
 /* harmony default export */ const il_notes = (SvgIlNotes);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-warning.svg
+var ic_warning_path;
+
+function ic_warning_extends() { ic_warning_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_warning_extends.apply(this, arguments); }
+
+
+
+var SvgIcWarning = function SvgIcWarning(props) {
+  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", ic_warning_extends({
+    viewBox: "0 0 20 20",
+    fill: "#fff",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_warning_path || (ic_warning_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+    d: "M10.833 10.834H9.167v-5h1.666v5Zm0 3.333H9.167V12.5h1.666v1.667ZM10 1.667a8.333 8.333 0 1 0 0 16.667 8.333 8.333 0 0 0 0-16.667Z",
+    fill: "currentColor"
+  })));
+};
+
+/* harmony default export */ const ic_warning = (SvgIcWarning);
 ;// CONCATENATED MODULE: ./src/assets/icons/index.js
 
 
@@ -2595,7 +2615,7 @@ var SvgIlNotes = function SvgIlNotes(props) {
 
 
 
- // TODO: check if I need to add types for new icons to snjs
+
 
 
 
@@ -2690,7 +2710,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__670__;
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
-/******/ 			[341]
+/******/ 			[974]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		

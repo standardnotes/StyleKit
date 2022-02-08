@@ -72,6 +72,7 @@ import PremiumIllustration from './il-premium.svg';
 import MenuArrowDownAlt from './ic-menu-arrow-down-alt.svg';
 import MenuArrowRight from './ic-menu-arrow-right.svg';
 import IlNotesIcon from './il-notes.svg';
+import WarningIcon from './ic-warning.svg';
 
 export {
   AuthenticatorIcon,
@@ -148,4 +149,5 @@ export {
   SNLogoFull,
   AccountIllustration,
   PremiumIllustration,
+  WarningIcon,
 };
