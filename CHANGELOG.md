@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.4.0](https://github.com/standardnotes/StyleKit/compare/v5.3.5...v5.4.0) (2022-02-06)
+
+
+### Features
+
+* add new color grey-0 ([f835c10](https://github.com/standardnotes/StyleKit/commit/f835c100c0e1c3d6fc808966cda5d2dbec36c8f2))
+
 ### [5.3.5](https://github.com/standardnotes/StyleKit/compare/v5.3.4...v5.3.5) (2022-01-05)
 
 
