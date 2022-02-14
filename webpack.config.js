@@ -6,14 +6,14 @@ module.exports = (_, { mode }) => ({
   entry: {
     stylekit: path.resolve(__dirname, 'src/stylekit.js'),
     components: path.resolve(__dirname, 'src/index.js'),
-    'web-components': path.resolve(__dirname, 'src/web-components.js')
+    'web-components': path.resolve(__dirname, 'src/web-components.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     library: ['SK', '[name]'],
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
   },
   optimization: {
     minimize: false,
@@ -23,18 +23,18 @@ module.exports = (_, { mode }) => ({
           name: 'styles',
           type: 'css/mini-extract',
           chunks: 'all',
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
   externals: {
     preact: {
       commonjs: 'preact',
       commonjs2: 'preact',
       amd: 'preact',
-      root: '_'
-    }
+      root: '_',
+    },
   },
   devServer: {
     historyApiFallback: true,
@@ -43,8 +43,8 @@ module.exports = (_, { mode }) => ({
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers':
-        'X-Requested-With, content-type, Authorization'
-    }
+        'X-Requested-With, content-type, Authorization',
+    },
   },
   module: {
     rules: [
@@ -57,11 +57,11 @@ module.exports = (_, { mode }) => ({
             loader: 'sass-loader',
             options: {
               sassOptions: {
-                outputStyle: 'expanded'
-              }
-            }
-          }
-        ]
+                outputStyle: 'expanded',
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.js[x]?$/,
@@ -70,9 +70,9 @@ module.exports = (_, { mode }) => ({
           presets: ['preact'],
           plugins: [
             ['@babel/plugin-proposal-class-properties'],
-            ['@babel/plugin-transform-react-jsx', { pragma: 'h' }]
-          ]
-        }
+            ['@babel/plugin-transform-react-jsx', { pragma: 'h' }],
+          ],
+        },
       },
       {
         test: /\.(svg)(\?.*)?$/i,
@@ -80,21 +80,21 @@ module.exports = (_, { mode }) => ({
           {
             loader: '@svgr/webpack',
             options: {
-              limit: 10000000
-            }
-          }
-        ]
-      }
-    ]
+              limit: 10000000,
+            },
+          },
+        ],
+      },
+    ],
   },
   resolve: {
     alias: {
       react: 'preact/compat',
       'react-dom': 'preact/compat',
       'react-dom/test-utils': 'preact/test-utils',
-      '@Components': path.resolve(__dirname, 'src/components')
+      '@Components': path.resolve(__dirname, 'src/components'),
     },
-    extensions: ['.js', '.jsx', '.css', '.scss']
+    extensions: ['.js', '.jsx', '.css', '.scss'],
   },
   plugins: [
     new CopyWebpackPlugin({
@@ -102,12 +102,12 @@ module.exports = (_, { mode }) => ({
         {
           from: '**/*.svg',
           to: 'icons',
-          context: path.resolve(__dirname, 'src', 'assets', 'icons')
-        }
-      ]
+          context: path.resolve(__dirname, 'src', 'assets', 'icons'),
+        },
+      ],
     }),
     new MiniCssExtractPlugin({
-      filename: 'stylekit.css'
-    })
-  ]
+      filename: 'stylekit.css',
+    }),
+  ],
 });
