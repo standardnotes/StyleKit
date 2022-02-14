@@ -35,6 +35,12 @@ module.exports = (_, { mode }) => ({
       amd: 'preact',
       root: '_',
     },
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: '_',
+    },
   },
   devServer: {
     historyApiFallback: true,
