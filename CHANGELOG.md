@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.5.0](https://github.com/standardnotes/StyleKit/compare/v5.4.0...v5.5.0) (2022-02-15)
+
+
+### Features
+
+* export svg icons from stylekit  ([#61](https://github.com/standardnotes/StyleKit/issues/61)) ([a75a930](https://github.com/standardnotes/StyleKit/commit/a75a9309935062b9c06f83fb6f48115e6be052b7))
+
 ## [5.4.0](https://github.com/standardnotes/StyleKit/compare/v5.3.5...v5.4.0) (2022-02-06)
 
 
