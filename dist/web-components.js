@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("preact"));
+		module.exports = factory(require("preact"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define("SK", ["preact"], factory);
+		define("SK", ["preact", "react"], factory);
 	else if(typeof exports === 'object')
-		exports["SK"] = factory(require("preact"));
+		exports["SK"] = factory(require("preact"), require("react"));
 	else
-		root["SK"] = root["SK"] || {}, root["SK"]["web-components"] = factory(root["_"]);
-})(self, function(__WEBPACK_EXTERNAL_MODULE__683__) {
+		root["SK"] = root["SK"] || {}, root["SK"]["web-components"] = factory(root["_"], root["_"]);
+})(self, function(__WEBPACK_EXTERNAL_MODULE__683__, __WEBPACK_EXTERNAL_MODULE__320__) {
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -266,6 +266,178 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external {"commonjs":"preact","commonjs2":"preact","amd":"preact","root":"_"}
 var external_commonjs_preact_commonjs2_preact_amd_preact_root_ = __webpack_require__(683);
+// EXTERNAL MODULE: external {"commonjs":"react","commonjs2":"react","amd":"react","root":"_"}
+var external_commonjs_react_commonjs2_react_amd_react_root_ = __webpack_require__(320);
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__(838);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/can-use-dom/dist/reach-utils-can-use-dom.esm.js
+function canUseDOM() {
+  return !!(typeof window !== "undefined" && window.document && window.document.createElement);
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-isomorphic-layout-effect/dist/reach-utils-use-isomorphic-layout-effect.esm.js
+
+
+/**
+ * React currently throws a warning when using useLayoutEffect on the server. To
+ * get around it, we can conditionally useEffect on the server (no-op) and
+ * useLayoutEffect in the browser. We occasionally need useLayoutEffect to
+ * ensure we don't get a render flash for certain operations, but we may also
+ * need affected components to render on the server. One example is when setting
+ * a component's descendants to retrieve their index values.
+ *
+ * Important to note that using this hook as an escape hatch will break the
+ * eslint dependency warnings unless you rename the import to `useLayoutEffect`.
+ * Use sparingly only when the effect won't effect the rendered HTML to avoid
+ * any server/client mismatch.
+ *
+ * If a useLayoutEffect is needed and the result would create a mismatch, it's
+ * likely that the component in question shouldn't be rendered on the server at
+ * all, so a better approach would be to lazily render those in a parent
+ * component after client-side hydration.
+ *
+ * https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
+ * https://github.com/reduxjs/react-redux/blob/master/src/utils/useIsomorphicLayoutEffect.js
+ *
+ * @param effect
+ * @param deps
+ */
+
+var reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect = /*#__PURE__*/canUseDOM() ? external_commonjs_react_commonjs2_react_amd_react_root_.useLayoutEffect : external_commonjs_react_commonjs2_react_amd_react_root_.useEffect;
+
+;// CONCATENATED MODULE: ./node_modules/@reach/auto-id/dist/reach-auto-id.esm.js
+
+
+/*
+ * Welcome to @reach/auto-id!
+
+ * Let's see if we can make sense of why this hook exists and its
+ * implementation.
+ *
+ * Some background:
+ *   1. Accessibiliy APIs rely heavily on element IDs
+ *   2. Requiring developers to put IDs on every element in Reach UI is both
+ *      cumbersome and error-prone
+ *   3. With a component model, we can generate IDs for them!
+ *
+ * Solution 1: Generate random IDs.
+ *
+ * This works great as long as you don't server render your app. When React (in
+ * the client) tries to reuse the markup from the server, the IDs won't match
+ * and React will then recreate the entire DOM tree.
+ *
+ * Solution 2: Increment an integer
+ *
+ * This sounds great. Since we're rendering the exact same tree on the server
+ * and client, we can increment a counter and get a deterministic result between
+ * client and server. Also, JS integers can go up to nine-quadrillion. I'm
+ * pretty sure the tab will be closed before an app never needs
+ * 10 quadrillion IDs!
+ *
+ * Problem solved, right?
+ *
+ * Ah, but there's a catch! React's concurrent rendering makes this approach
+ * non-deterministic. While the client and server will end up with the same
+ * elements in the end, depending on suspense boundaries (and possibly some user
+ * input during the initial render) the incrementing integers won't always match
+ * up.
+ *
+ * Solution 3: Don't use IDs at all on the server; patch after first render.
+ *
+ * What we've done here is solution 2 with some tricks. With this approach, the
+ * ID returned is an empty string on the first render. This way the server and
+ * client have the same markup no matter how wild the concurrent rendering may
+ * have gotten.
+ *
+ * After the render, we patch up the components with an incremented ID. This
+ * causes a double render on any components with `useId`. Shouldn't be a problem
+ * since the components using this hook should be small, and we're only updating
+ * the ID attribute on the DOM, nothing big is happening.
+ *
+ * It doesn't have to be an incremented number, though--we could do generate
+ * random strings instead, but incrementing a number is probably the cheapest
+ * thing we can do.
+ *
+ * Additionally, we only do this patchup on the very first client render ever.
+ * Any calls to `useId` that happen dynamically in the client will be
+ * populated immediately with a value. So, we only get the double render after
+ * server hydration and never again, SO BACK OFF ALRIGHT?
+ */
+
+var serverHandoffComplete = false;
+var id = 0;
+
+var genId = function genId() {
+  return ++id;
+};
+/**
+ * useId
+ *
+ * Autogenerate IDs to facilitate WAI-ARIA and server rendering.
+ *
+ * Note: The returned ID will initially be `null` and will update after a
+ * component mounts. Users may need to supply their own ID if they need
+ * consistent values for SSR.
+ *
+ * @see Docs https://reach.tech/auto-id
+ */
+
+
+function reach_auto_id_esm_useId(idFromProps) {
+  /*
+   * If this instance isn't part of the initial render, we don't have to do the
+   * double render/patch-up dance. We can just generate the ID and return it.
+   */
+  var initialId = idFromProps || (serverHandoffComplete ? genId() : null);
+
+  var _React$useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(initialId),
+      id = _React$useState[0],
+      setId = _React$useState[1];
+
+  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
+    if (id === null) {
+      /*
+       * Patch the ID after render. We do this in `useLayoutEffect` to avoid any
+       * rendering flicker, though it'll make the first render slower (unlikely
+       * to matter, but you're welcome to measure your app and let us know if
+       * it's a problem).
+       */
+      setId(genId());
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  }, []);
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
+    if (serverHandoffComplete === false) {
+      /*
+       * Flag all future uses of `useId` to skip the update dance. This is in
+       * `useEffect` because it goes after `useLayoutEffect`, ensuring we don't
+       * accidentally bail out of the patch-up dance prematurely.
+       */
+      serverHandoffComplete = true;
+    }
+  }, []);
+  return id != null ? String(id) : undefined;
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-force-update/dist/reach-utils-use-force-update.esm.js
+
+/**
+ * Forces a re-render, similar to `forceUpdate` in class components.
+ */
+
+function useForceUpdate() {
+  var _useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(Object.create(null)),
+      dispatch = _useState[1];
+
+  return (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function () {
+    dispatch(Object.create(null));
+  }, []);
+}
+
+
 ;// CONCATENATED MODULE: ./node_modules/preact/hooks/dist/hooks.module.js
 
 var t,
@@ -836,176 +1008,6 @@ var hn = function (n, t) {
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: K
 });
 
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__(838);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-;// CONCATENATED MODULE: ./node_modules/@reach/utils/can-use-dom/dist/reach-utils-can-use-dom.esm.js
-function canUseDOM() {
-  return !!(typeof window !== "undefined" && window.document && window.document.createElement);
-}
-
-
-;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-isomorphic-layout-effect/dist/reach-utils-use-isomorphic-layout-effect.esm.js
-
-
-/**
- * React currently throws a warning when using useLayoutEffect on the server. To
- * get around it, we can conditionally useEffect on the server (no-op) and
- * useLayoutEffect in the browser. We occasionally need useLayoutEffect to
- * ensure we don't get a render flash for certain operations, but we may also
- * need affected components to render on the server. One example is when setting
- * a component's descendants to retrieve their index values.
- *
- * Important to note that using this hook as an escape hatch will break the
- * eslint dependency warnings unless you rename the import to `useLayoutEffect`.
- * Use sparingly only when the effect won't effect the rendered HTML to avoid
- * any server/client mismatch.
- *
- * If a useLayoutEffect is needed and the result would create a mismatch, it's
- * likely that the component in question shouldn't be rendered on the server at
- * all, so a better approach would be to lazily render those in a parent
- * component after client-side hydration.
- *
- * https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
- * https://github.com/reduxjs/react-redux/blob/master/src/utils/useIsomorphicLayoutEffect.js
- *
- * @param effect
- * @param deps
- */
-
-var reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect = /*#__PURE__*/canUseDOM() ? h : y;
-
-;// CONCATENATED MODULE: ./node_modules/@reach/auto-id/dist/reach-auto-id.esm.js
-
-
-/*
- * Welcome to @reach/auto-id!
-
- * Let's see if we can make sense of why this hook exists and its
- * implementation.
- *
- * Some background:
- *   1. Accessibiliy APIs rely heavily on element IDs
- *   2. Requiring developers to put IDs on every element in Reach UI is both
- *      cumbersome and error-prone
- *   3. With a component model, we can generate IDs for them!
- *
- * Solution 1: Generate random IDs.
- *
- * This works great as long as you don't server render your app. When React (in
- * the client) tries to reuse the markup from the server, the IDs won't match
- * and React will then recreate the entire DOM tree.
- *
- * Solution 2: Increment an integer
- *
- * This sounds great. Since we're rendering the exact same tree on the server
- * and client, we can increment a counter and get a deterministic result between
- * client and server. Also, JS integers can go up to nine-quadrillion. I'm
- * pretty sure the tab will be closed before an app never needs
- * 10 quadrillion IDs!
- *
- * Problem solved, right?
- *
- * Ah, but there's a catch! React's concurrent rendering makes this approach
- * non-deterministic. While the client and server will end up with the same
- * elements in the end, depending on suspense boundaries (and possibly some user
- * input during the initial render) the incrementing integers won't always match
- * up.
- *
- * Solution 3: Don't use IDs at all on the server; patch after first render.
- *
- * What we've done here is solution 2 with some tricks. With this approach, the
- * ID returned is an empty string on the first render. This way the server and
- * client have the same markup no matter how wild the concurrent rendering may
- * have gotten.
- *
- * After the render, we patch up the components with an incremented ID. This
- * causes a double render on any components with `useId`. Shouldn't be a problem
- * since the components using this hook should be small, and we're only updating
- * the ID attribute on the DOM, nothing big is happening.
- *
- * It doesn't have to be an incremented number, though--we could do generate
- * random strings instead, but incrementing a number is probably the cheapest
- * thing we can do.
- *
- * Additionally, we only do this patchup on the very first client render ever.
- * Any calls to `useId` that happen dynamically in the client will be
- * populated immediately with a value. So, we only get the double render after
- * server hydration and never again, SO BACK OFF ALRIGHT?
- */
-
-var serverHandoffComplete = false;
-var id = 0;
-
-var genId = function genId() {
-  return ++id;
-};
-/**
- * useId
- *
- * Autogenerate IDs to facilitate WAI-ARIA and server rendering.
- *
- * Note: The returned ID will initially be `null` and will update after a
- * component mounts. Users may need to supply their own ID if they need
- * consistent values for SSR.
- *
- * @see Docs https://reach.tech/auto-id
- */
-
-
-function reach_auto_id_esm_useId(idFromProps) {
-  /*
-   * If this instance isn't part of the initial render, we don't have to do the
-   * double render/patch-up dance. We can just generate the ID and return it.
-   */
-  var initialId = idFromProps || (serverHandoffComplete ? genId() : null);
-
-  var _React$useState = l(initialId),
-      id = _React$useState[0],
-      setId = _React$useState[1];
-
-  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
-    if (id === null) {
-      /*
-       * Patch the ID after render. We do this in `useLayoutEffect` to avoid any
-       * rendering flicker, though it'll make the first render slower (unlikely
-       * to matter, but you're welcome to measure your app and let us know if
-       * it's a problem).
-       */
-      setId(genId());
-    } // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  }, []);
-  y(function () {
-    if (serverHandoffComplete === false) {
-      /*
-       * Flag all future uses of `useId` to skip the update dance. This is in
-       * `useEffect` because it goes after `useLayoutEffect`, ensuring we don't
-       * accidentally bail out of the patch-up dance prematurely.
-       */
-      serverHandoffComplete = true;
-    }
-  }, []);
-  return id != null ? String(id) : undefined;
-}
-
-
-;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-force-update/dist/reach-utils-use-force-update.esm.js
-
-/**
- * Forces a re-render, similar to `forceUpdate` in class components.
- */
-
-function useForceUpdate() {
-  var _useState = l(Object.create(null)),
-      dispatch = _useState[1];
-
-  return A(function () {
-    dispatch(Object.create(null));
-  }, []);
-}
-
-
 ;// CONCATENATED MODULE: ./node_modules/@reach/portal/dist/reach-portal.esm.js
 
 
@@ -1034,8 +1036,8 @@ var Portal = function Portal(_ref) {
   var children = _ref.children,
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? "reach-portal" : _ref$type;
-  var mountNode = s(null);
-  var portalNode = s(null);
+  var mountNode = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var portalNode = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
   var forceUpdate = useForceUpdate();
   reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     // This ref may be null when a hot-loader replaces components on the page
@@ -1052,7 +1054,7 @@ var Portal = function Portal(_ref) {
       }
     };
   }, [type, forceUpdate]);
-  return portalNode.current ? /*#__PURE__*/compat_module_j(children, portalNode.current) : /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)("span", {
+  return portalNode.current ? /*#__PURE__*/compat_module_j(children, portalNode.current) : /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)("span", {
     ref: mountNode
   });
 };
@@ -1253,19 +1255,19 @@ function useRect(nodeRef, observeOrOptions, deprecated_onChange) {
 
   if (false) {}
 
-  var _React$useState = l(nodeRef.current),
+  var _React$useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(nodeRef.current),
       element = _React$useState[0],
       setElement = _React$useState[1];
 
-  var initialRectIsSet = s(false);
-  var initialRefIsSet = s(false);
+  var initialRectIsSet = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false);
+  var initialRefIsSet = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false);
 
-  var _React$useState2 = l(null),
+  var _React$useState2 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(null),
       rect = _React$useState2[0],
       setRect = _React$useState2[1];
 
-  var onChangeRef = s(onChange);
-  var stableOnChange = A(function (rect) {
+  var onChangeRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(onChange);
+  var stableOnChange = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (rect) {
     onChangeRef.current && onChangeRef.current(rect);
   }, []); // eslint-disable-next-line react-hooks/exhaustive-deps
 
@@ -1419,7 +1421,7 @@ function useComposedRefs() {
     refs[_key] = arguments[_key];
   }
 
-  return A(function (node) {
+  return (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (node) {
     for (var _iterator = _createForOfIteratorHelperLoose(refs), _step; !(_step = _iterator()).done;) {
       var ref = _step.value;
       assignRef(ref, node);
@@ -1478,8 +1480,8 @@ function _extends() {
  */
 
 
-var Popover = /*#__PURE__*/compat_module_x(function Popover(props, ref) {
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Portal, null, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(PopoverImpl, _extends({
+var Popover = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function Popover(props, ref) {
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Portal, null, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(PopoverImpl, _extends({
     ref: ref
   }, props)));
 });
@@ -1494,7 +1496,7 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var PopoverImpl = /*#__PURE__*/compat_module_x(function PopoverImpl(_ref, forwardedRef) {
+var PopoverImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function PopoverImpl(_ref, forwardedRef) {
   var _ref$as = _ref.as,
       Comp = _ref$as === void 0 ? "div" : _ref$as,
       targetRef = _ref.targetRef,
@@ -1504,7 +1506,7 @@ var PopoverImpl = /*#__PURE__*/compat_module_x(function PopoverImpl(_ref, forwar
       unstable_observableRefs = _ref$unstable_observa === void 0 ? [] : _ref$unstable_observa,
       props = _objectWithoutPropertiesLoose(_ref, ["as", "targetRef", "position", "unstable_observableRefs"]);
 
-  var popoverRef = s(null);
+  var popoverRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
   var popoverRect = useRect(popoverRef, {
     observe: !props.hidden
   });
@@ -1513,7 +1515,7 @@ var PopoverImpl = /*#__PURE__*/compat_module_x(function PopoverImpl(_ref, forwar
   });
   var ref = useComposedRefs(popoverRef, forwardedRef);
   useSimulateTabNavigationForReactTree(targetRef, popoverRef);
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, _extends({
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, _extends({
     "data-reach-popover": "",
     ref: ref
   }, props, {
@@ -1646,7 +1648,7 @@ function useSimulateTabNavigationForReactTree(triggerRef, popoverRef) {
     }
   }
 
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     ownerDocument.addEventListener("keydown", handleKeyDown);
     return function () {
       ownerDocument.removeEventListener("keydown", handleKeyDown);
@@ -1775,8 +1777,8 @@ function useSimulateTabNavigationForReactTree(triggerRef, popoverRef) {
  */
 
 function usePrevious(value) {
-  var ref = s(null);
-  y(function () {
+  var ref = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     ref.current = value;
   }, [value]);
   return ref.current;
@@ -1787,7 +1789,7 @@ function usePrevious(value) {
 
 
 function createNamedContext(name, defaultValue) {
-  var Ctx = /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createContext)(defaultValue);
+  var Ctx = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createContext)(defaultValue);
 
   if (false) {}
 
@@ -1880,7 +1882,7 @@ function createDescendantContext(name, initialValue) {
 function useDescendant(descendant, context, indexProp) {
   var forceUpdate = useForceUpdate();
 
-  var _React$useContext = F(context),
+  var _React$useContext = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(context),
       registerDescendant = _React$useContext.registerDescendant,
       unregisterDescendant = _React$useContext.unregisterDescendant,
       descendants = _React$useContext.descendants; // This will initially return -1 because we haven't registered the descendant
@@ -1917,11 +1919,11 @@ function useDescendant(descendant, context, indexProp) {
 }
 
 function useDescendantsInit() {
-  return l([]);
+  return (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)([]);
 }
 
 function useDescendants(ctx) {
-  return F(ctx).descendants;
+  return (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ctx).descendants;
 }
 
 function DescendantProvider(_ref) {
@@ -1929,7 +1931,7 @@ function DescendantProvider(_ref) {
       children = _ref.children,
       items = _ref.items,
       set = _ref.set;
-  var registerDescendant = A(function (_ref2) {
+  var registerDescendant = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (_ref2) {
     var element = _ref2.element,
         explicitIndex = _ref2.index,
         rest = reach_descendants_esm_objectWithoutPropertiesLoose(_ref2, ["element", "index"]);
@@ -2006,7 +2008,7 @@ function DescendantProvider(_ref) {
   // between renders.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   []);
-  var unregisterDescendant = A(function (element) {
+  var unregisterDescendant = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (element) {
     if (!element) {
       return;
     }
@@ -2021,8 +2023,8 @@ function DescendantProvider(_ref) {
   // between renders.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   []);
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Ctx.Provider, {
-    value: d(function () {
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Ctx.Provider, {
+    value: (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
       return {
         descendants: items,
         registerDescendant: registerDescendant,
@@ -2047,7 +2049,7 @@ function DescendantProvider(_ref) {
 
 
 function useDescendantKeyDown(context, options) {
-  var _React$useContext2 = F(context),
+  var _React$useContext2 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(context),
       descendants = _React$useContext2.descendants;
 
   var callback = options.callback,
@@ -2366,15 +2368,15 @@ var initialState = {
 var Menu = function Menu(_ref) {
   var id = _ref.id,
       children = _ref.children;
-  var buttonRef = s(null);
-  var menuRef = s(null);
-  var popoverRef = s(null);
+  var buttonRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var menuRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var popoverRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
 
   var _useDescendantsInit = useDescendantsInit(),
       descendants = _useDescendantsInit[0],
       setDescendants = _useDescendantsInit[1];
 
-  var _React$useReducer = p(reducer, initialState),
+  var _React$useReducer = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useReducer)(reducer, initialState),
       state = _React$useReducer[0],
       dispatch = _React$useReducer[1];
 
@@ -2385,21 +2387,21 @@ var Menu = function Menu(_ref) {
   // when a menu is closed, so we can track this behavior in a ref for now.
   // We shouldn't need this when we rewrite with state machine logic.
 
-  var buttonClickedRef = s(false); // We will put children callbacks in a ref to avoid triggering endless render
+  var buttonClickedRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false); // We will put children callbacks in a ref to avoid triggering endless render
   // loops when using render props if the app code doesn't useCallback
   // https://github.com/reach/reach-ui/issues/523
 
-  var selectCallbacks = s([]); // If the popover's position overlaps with an option when the popover
+  var selectCallbacks = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)([]); // If the popover's position overlaps with an option when the popover
   // initially opens, the mouseup event will trigger a select. To prevent that,
   // we decide the menu button is only ready to make a selection if the pointer
   // moves first, otherwise the user is just registering the initial button
   // click rather than selecting an item. This is similar to a native select
   // on most platforms, and our menu button popover works similarly.
 
-  var readyToSelect = s(false); // Trying a new approach for splitting up contexts by stable/unstable
+  var readyToSelect = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false); // Trying a new approach for splitting up contexts by stable/unstable
   // references. We'll see how it goes!
 
-  var stableContext = d(function () {
+  var stableContext = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
     return {
       buttonRef: buttonRef,
       dispatch: dispatch,
@@ -2416,7 +2418,7 @@ var Menu = function Menu(_ref) {
   }; // When the menu is open, focus is placed on the menu itself so that
   // keyboard navigation is still possible.
 
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     if (state.isExpanded) {
       // @ts-ignore
       window.__REACH_DISABLE_TOOLTIPS = true;
@@ -2432,13 +2434,13 @@ var Menu = function Menu(_ref) {
     }
   }, [state.isExpanded]);
   useCheckStyles("menu-button");
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(DescendantProvider, {
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(DescendantProvider, {
     context: MenuDescendantContext,
     items: descendants,
     set: setDescendants
-  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(StableMenuContext.Provider, {
+  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(StableMenuContext.Provider, {
     value: stableContext
-  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(UnstableMenuContext.Provider, {
+  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(UnstableMenuContext.Provider, {
     value: unstableContext
   }, reach_utils_type_check_esm_isFunction(children) ? children({
     isExpanded: state.isExpanded,
@@ -2463,7 +2465,7 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuButton = /*#__PURE__*/compat_module_x(function MenuButton(_ref2, forwardedRef) {
+var MenuButton = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuButton(_ref2, forwardedRef) {
   var _ref2$as = _ref2.as,
       Comp = _ref2$as === void 0 ? "button" : _ref2$as,
       onKeyDown = _ref2.onKeyDown,
@@ -2471,12 +2473,12 @@ var MenuButton = /*#__PURE__*/compat_module_x(function MenuButton(_ref2, forward
       id = _ref2.id,
       props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref2, ["as", "onKeyDown", "onMouseDown", "id"]);
 
-  var _React$useContext = F(StableMenuContext),
+  var _React$useContext = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(StableMenuContext),
       buttonRef = _React$useContext.buttonRef,
       buttonClickedRef = _React$useContext.buttonClickedRef,
       dispatch = _React$useContext.dispatch;
 
-  var _React$useContext2 = F(UnstableMenuContext),
+  var _React$useContext2 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
       menuId = _React$useContext2.menuId,
       _React$useContext2$st = _React$useContext2.state,
       buttonId = _React$useContext2$st.buttonId,
@@ -2484,12 +2486,12 @@ var MenuButton = /*#__PURE__*/compat_module_x(function MenuButton(_ref2, forward
 
   var ref = useComposedRefs(buttonRef, forwardedRef);
   var items = useDescendants(MenuDescendantContext);
-  var firstNonDisabledIndex = d(function () {
+  var firstNonDisabledIndex = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
     return items.findIndex(function (item) {
       return !item.disabled;
     });
   }, [items]);
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     var newButtonId = id != null ? id : menuId ? reach_utils_make_id_esm_makeId("menu-button", menuId) : "menu-button";
 
     if (buttonId !== newButtonId) {
@@ -2544,7 +2546,7 @@ var MenuButton = /*#__PURE__*/compat_module_x(function MenuButton(_ref2, forward
     }
   }
 
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // When the menu is displayed, the element with role `button` has
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp // When the menu is displayed, the element with role `button` has
   // `aria-expanded` set to `true`. When the menu is hidden, it is
   // recommended that `aria-expanded` is not present.
   // https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton
@@ -2580,7 +2582,7 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuItemImpl = /*#__PURE__*/compat_module_x(function MenuItemImpl(_ref3, forwardedRef) {
+var MenuItemImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuItemImpl(_ref3, forwardedRef) {
   var _ref3$as = _ref3.as,
       Comp = _ref3$as === void 0 ? "div" : _ref3$as,
       indexProp = _ref3.index,
@@ -2598,32 +2600,32 @@ var MenuItemImpl = /*#__PURE__*/compat_module_x(function MenuItemImpl(_ref3, for
       valueTextProp = _ref3.valueText,
       props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref3, ["as", "index", "isLink", "onClick", "onDragStart", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onSelect", "disabled", "valueText"]);
 
-  var _React$useContext3 = F(StableMenuContext),
+  var _React$useContext3 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(StableMenuContext),
       buttonRef = _React$useContext3.buttonRef,
       dispatch = _React$useContext3.dispatch,
       readyToSelect = _React$useContext3.readyToSelect,
       selectCallbacks = _React$useContext3.selectCallbacks;
 
-  var _React$useContext4 = F(UnstableMenuContext),
+  var _React$useContext4 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
       _React$useContext4$st = _React$useContext4.state,
       selectionIndex = _React$useContext4$st.selectionIndex,
       isExpanded = _React$useContext4$st.isExpanded;
 
-  var ownRef = s(null); // After the ref is mounted to the DOM node, we check to see if we have an
+  var ownRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null); // After the ref is mounted to the DOM node, we check to see if we have an
   // explicit valueText prop before looking for the node's textContent for
   // typeahead functionality.
 
-  var _React$useState = l(valueTextProp || ""),
+  var _React$useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(valueTextProp || ""),
       valueText = _React$useState[0],
       setValueText = _React$useState[1];
 
-  var setValueTextFromDOM = A(function (node) {
+  var setValueTextFromDOM = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (node) {
     if (!valueTextProp && node != null && node.textContent) {
       setValueText(node.textContent);
     }
   }, [valueTextProp]);
   var ref = useComposedRefs(forwardedRef, ownRef, setValueTextFromDOM);
-  var mouseEventStarted = s(false);
+  var mouseEventStarted = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false);
   var index = useDescendant({
     element: ownRef.current,
     key: valueText,
@@ -2731,14 +2733,14 @@ var MenuItemImpl = /*#__PURE__*/compat_module_x(function MenuItemImpl(_ref3, for
   } // When the menu closes, reset readyToSelect for the next interaction.
 
 
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     if (!isExpanded) {
       readyToSelect.current = false;
     }
   }, [isExpanded, readyToSelect]); // Any time a mouseup event occurs anywhere in the document, we reset the
   // mouseEventStarted ref so we can check it again when needed.
 
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     var ownerDocument = getOwnerDocument(ownRef.current);
     ownerDocument.addEventListener("mouseup", listener);
     return function () {
@@ -2749,7 +2751,7 @@ var MenuItemImpl = /*#__PURE__*/compat_module_x(function MenuItemImpl(_ref3, for
       mouseEventStarted.current = false;
     }
   }, []);
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, reach_menu_button_esm_extends({
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, reach_menu_button_esm_extends({
     role: "menuitem",
     id: useMenuItemId(index),
     tabIndex: -1
@@ -2777,12 +2779,12 @@ var MenuItemImpl = /*#__PURE__*/compat_module_x(function MenuItemImpl(_ref3, for
  * @see Docs https://reach.tech/menu-button#menuitem
  */
 
-var MenuItem = /*#__PURE__*/compat_module_x(function MenuItem(_ref4, forwardedRef) {
+var MenuItem = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuItem(_ref4, forwardedRef) {
   var _ref4$as = _ref4.as,
       as = _ref4$as === void 0 ? "div" : _ref4$as,
       props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref4, ["as"]);
 
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(MenuItemImpl, reach_menu_button_esm_extends({}, props, {
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(MenuItemImpl, reach_menu_button_esm_extends({}, props, {
     ref: forwardedRef,
     as: as
   }));
@@ -2804,7 +2806,7 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuItems = /*#__PURE__*/compat_module_x(function MenuItems(_ref5, forwardedRef) {
+var MenuItems = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuItems(_ref5, forwardedRef) {
   var _ref5$as = _ref5.as,
       Comp = _ref5$as === void 0 ? "div" : _ref5$as,
       children = _ref5.children;
@@ -2813,13 +2815,13 @@ var MenuItems = /*#__PURE__*/compat_module_x(function MenuItems(_ref5, forwarded
   var onKeyDown = _ref5.onKeyDown,
       props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children", "id", "onKeyDown"]);
 
-  var _React$useContext5 = F(StableMenuContext),
+  var _React$useContext5 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(StableMenuContext),
       dispatch = _React$useContext5.dispatch,
       buttonRef = _React$useContext5.buttonRef,
       menuRef = _React$useContext5.menuRef,
       selectCallbacks = _React$useContext5.selectCallbacks;
 
-  var _React$useContext6 = F(UnstableMenuContext),
+  var _React$useContext6 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
       menuId = _React$useContext6.menuId,
       _React$useContext6$st = _React$useContext6.state,
       isExpanded = _React$useContext6$st.isExpanded,
@@ -2829,7 +2831,7 @@ var MenuItems = /*#__PURE__*/compat_module_x(function MenuItems(_ref5, forwarded
 
   var menuItems = useDescendants(MenuDescendantContext);
   var ref = useComposedRefs(menuRef, forwardedRef);
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     // Respond to user char key input with typeahead
     var match = findItemFromTypeahead(menuItems, typeaheadQuery);
 
@@ -2855,7 +2857,7 @@ var MenuItems = /*#__PURE__*/compat_module_x(function MenuItems(_ref5, forwarded
   var prevMenuItemsLength = usePrevious(menuItems.length);
   var prevSelected = usePrevious(menuItems[selectionIndex]);
   var prevSelectionIndex = usePrevious(selectionIndex);
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     if (selectionIndex > menuItems.length - 1) {
       // If for some reason our selection index is larger than our possible
       // index range (let's say the last item is selected and the list
@@ -2964,7 +2966,7 @@ var MenuItems = /*#__PURE__*/compat_module_x(function MenuItems(_ref5, forwarded
     // TODO: Should probably file a but in jsx-a11y, but this is correct
     // according to https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-actions-active-descendant.html
     // eslint-disable-next-line jsx-a11y/aria-activedescendant-has-tabindex
-    (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // Refers to the descendant menuitem element that is visually indicated
+    (0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp // Refers to the descendant menuitem element that is visually indicated
     // as focused.
     // https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-actions-active-descendant.html
     , reach_menu_button_esm_extends({
@@ -3037,14 +3039,14 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuList = /*#__PURE__*/compat_module_x(function MenuList(_ref7, forwardedRef) {
+var MenuList = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuList(_ref7, forwardedRef) {
   var _ref7$portal = _ref7.portal,
       portal = _ref7$portal === void 0 ? true : _ref7$portal,
       props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref7, ["portal"]);
 
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(MenuPopover, {
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(MenuPopover, {
     portal: portal
-  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(MenuItems, reach_menu_button_esm_extends({}, props, {
+  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(MenuItems, reach_menu_button_esm_extends({}, props, {
     ref: forwardedRef,
     "data-reach-menu-list": ""
   })));
@@ -3068,7 +3070,7 @@ if (false) {} //////////////////////////////////////////////////////////////////
   */
 
 
-var MenuPopover = /*#__PURE__*/compat_module_x(function MenuPopover(_ref8, forwardedRef) {
+var MenuPopover = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuPopover(_ref8, forwardedRef) {
   var _ref8$as = _ref8.as,
       Comp = _ref8$as === void 0 ? "div" : _ref8$as,
       children = _ref8.children,
@@ -3078,18 +3080,18 @@ var MenuPopover = /*#__PURE__*/compat_module_x(function MenuPopover(_ref8, forwa
       position = _ref8.position,
       props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref8, ["as", "children", "onBlur", "portal", "position"]);
 
-  var _React$useContext7 = F(StableMenuContext),
+  var _React$useContext7 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(StableMenuContext),
       buttonRef = _React$useContext7.buttonRef,
       buttonClickedRef = _React$useContext7.buttonClickedRef,
       dispatch = _React$useContext7.dispatch,
       menuRef = _React$useContext7.menuRef,
       popoverRef = _React$useContext7.popoverRef;
 
-  var _React$useContext8 = F(UnstableMenuContext),
+  var _React$useContext8 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
       isExpanded = _React$useContext8.state.isExpanded;
 
   var ref = useComposedRefs(popoverRef, forwardedRef);
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     if (!isExpanded) {
       return;
     }
@@ -3133,11 +3135,11 @@ var MenuPopover = /*#__PURE__*/compat_module_x(function MenuPopover(_ref8, forwa
     })
   }, props);
 
-  return portal ? /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Popover, reach_menu_button_esm_extends({}, commonProps, {
+  return portal ? /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Popover, reach_menu_button_esm_extends({}, commonProps, {
     as: Comp,
     targetRef: buttonRef,
     position: position
-  })) : /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, commonProps);
+  })) : /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, commonProps);
 });
 /**
  * @see Docs https://reach.tech/menu-button#menupopover-props
@@ -3188,7 +3190,7 @@ function findItemFromTypeahead(items, string) {
 }
 
 function useMenuItemId(index) {
-  var _React$useContext10 = F(UnstableMenuContext),
+  var _React$useContext10 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
       menuId = _React$useContext10.menuId;
 
   return index != null && index > -1 ? reach_utils_make_id_esm_makeId("option-" + index, menuId) : undefined;
@@ -3312,60 +3314,60 @@ function icons_sprite_extends() { icons_sprite_extends = Object.assign || functi
 
 
 var SvgIconsSprite = function SvgIconsSprite(props) {
-  return /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", icons_sprite_extends({
     xmlns: "http://www.w3.org/2000/svg"
-  }, props), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+  }, props), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", icons_sprite_extends({
     width: 20,
     height: 20,
     fill: "none",
     viewBox: "0 0 20 20",
     xmlns: "http://www.w3.org/2000/svg"
-  }, props), _path || (_path = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+  }, props), _path || (_path = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
     d: "M11.667 6.667h-1.25v4.166l3.566 2.117.6-1.008-2.916-1.734V6.667zM11.25 2.5a7.5 7.5 0 0 0-7.5 7.5h-2.5l3.3 3.358L7.917 10h-2.5a5.833 5.833 0 1 1 5.833 5.833 5.786 5.786 0 0 1-4.117-1.716L5.95 15.3a7.413 7.413 0 0 0 5.3 2.2 7.5 7.5 0 0 0 0-15z",
     fill: "#72767E"
-  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+  }))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", icons_sprite_extends({
     width: 20,
     height: 20,
     fill: "none",
     viewBox: "0 0 20 20",
     xmlns: "http://www.w3.org/2000/svg"
-  }, props), _path2 || (_path2 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+  }, props), _path2 || (_path2 = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
     fill: "#72767E",
     d: "M14.167 12.5 10 8.333 5.833 12.5h8.334z"
-  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+  }))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", icons_sprite_extends({
     width: 20,
     height: 20,
     fill: "none",
     viewBox: "0 0 20 20",
     xmlns: "http://www.w3.org/2000/svg"
-  }, props), _path3 || (_path3 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+  }, props), _path3 || (_path3 = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
     d: "M5.833 8.333 10 12.5l4.167-4.167H5.833z",
     fill: "#72767E"
-  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+  }))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", icons_sprite_extends({
     width: 20,
     height: 20,
     fill: "none",
     viewBox: "0 0 20 20",
     xmlns: "http://www.w3.org/2000/svg"
-  }, props), _path4 || (_path4 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+  }, props), _path4 || (_path4 = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
     d: "M14.537 9.4a7.306 7.306 0 0 0-4.722-1.733c-3.182 0-5.87 2.02-6.815 4.813l1.615.52c.718-2.127 2.771-3.667 5.2-3.667 1.335 0 2.553.48 3.504 1.254L10.842 13H17V7l-2.463 2.4z",
     fill: "#72767E"
-  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+  }))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", icons_sprite_extends({
     width: 20,
     height: 20,
     fill: "none",
     viewBox: "0 0 20 20",
     xmlns: "http://www.w3.org/2000/svg"
-  }, props), _path5 || (_path5 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+  }, props), _path5 || (_path5 = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
     d: "M2.5 7.5h5v5h-5v-5zm0-3.333h15v1.666h-15V4.166zm15 3.333v1.666H9.167V7.5H17.5zm0 3.333V12.5H9.167v-1.667H17.5zm-15 3.333h11.667v1.667H2.5v-1.667z",
     fill: "#72767E"
-  }))), /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("svg", icons_sprite_extends({
+  }))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", icons_sprite_extends({
     width: 20,
     height: 20,
     fill: "none",
     viewBox: "0 0 20 20",
     xmlns: "http://www.w3.org/2000/svg"
-  }, props), _path6 || (_path6 = /*#__PURE__*/external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement("path", {
+  }, props), _path6 || (_path6 = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
     d: "M10.181 7.667A7.3 7.3 0 0 0 5.462 9.4L3 7v6h6.155L6.68 10.587a5.523 5.523 0 0 1 3.501-1.254c2.421 0 4.48 1.54 5.198 3.667L17 12.48c-.95-2.793-3.639-4.813-6.819-4.813z",
     fill: "#72767E"
   }))));
@@ -3456,12 +3458,12 @@ DropdownMenu.propTypes = {
  */
 
 function createStableCallbackHook(useEffectHook, callback) {
-  var callbackRef = s(callback);
+  var callbackRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(callback);
   useEffectHook(function () {
     callbackRef.current = callback;
   }); // eslint-disable-next-line react-hooks/exhaustive-deps
 
-  return A(function () {
+  return (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function () {
     callbackRef.current && callbackRef.current.apply(callbackRef, arguments);
   }, []);
 }
@@ -3473,7 +3475,7 @@ function createStableCallbackHook(useEffectHook, callback) {
 
 
 function useStableCallback(callback) {
-  return createStableCallbackHook(y, callback);
+  return createStableCallbackHook(external_commonjs_react_commonjs2_react_amd_react_root_.useEffect, callback);
 }
 /**
  * Converts a callback to a ref to avoid triggering re-renders when passed as a
@@ -3717,7 +3719,7 @@ function es_f(e) {
  */
 
 function useConstant(fn) {
-  var ref = s();
+  var ref = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)();
 
   if (!ref.current) {
     ref.current = {
@@ -3787,13 +3789,13 @@ function useMachine(initialMachine, refs, DEBUG) {
   // State machine should not change between renders, so let's store it in a
   // ref. This should also help if we need to use a creator function to inject
   // dynamic initial state values based on props.
-  var machineRef = s(initialMachine);
+  var machineRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(initialMachine);
   var service = useConstant(function () {
     return es_f(machineRef.current).start();
   });
-  var lastEventType = s(null);
+  var lastEventType = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
 
-  var _React$useState = l(function () {
+  var _React$useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(function () {
     return getServiceState(service);
   }),
       state = _React$useState[0],
@@ -3806,7 +3808,7 @@ function useMachine(initialMachine, refs, DEBUG) {
   // Add refs to every event so we can use them to perform actions.
 
 
-  var send = A(function (rawEvent) {
+  var send = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (rawEvent) {
     var event = isString(rawEvent) ? {
       type: rawEvent
     } : rawEvent;
@@ -3823,7 +3825,7 @@ function useMachine(initialMachine, refs, DEBUG) {
   // machine service persist for the life of the component.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   [DEBUG]);
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     service.subscribe(function setStateIfChanged(newState) {
       if (newState.changed) {
         setState(newState);
@@ -3833,13 +3835,13 @@ function useMachine(initialMachine, refs, DEBUG) {
       service.stop();
     };
   }, [service]);
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     if (false) {}
   }, [DEBUG, state]); // We are going to pass along our state without the actions to avoid excess
   // renders when the reference changes. We haven't really needed them at this
   // point, but if we do we can maybe reconsider this approach.
 
-  var memoizedState = d(function () {
+  var memoizedState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
     return reach_machine_esm_extends({}, state, {
       matches: function matches(value) {
         return value === state.value;
@@ -4608,7 +4610,7 @@ var ListboxGroupContext = /*#__PURE__*/createNamedContext("ListboxGroupContext",
  * @see Docs https://reach.tech/listbox#listboxinput
  */
 
-var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forwardedRef) {
+var ListboxInput = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function ListboxInput(_ref, forwardedRef) {
   var _ref$as = _ref.as,
       Comp = _ref$as === void 0 ? "div" : _ref$as,
       ariaLabelledBy = _ref["aria-labelledby"],
@@ -4626,20 +4628,20 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
       __componentName = _ref$__componentName === void 0 ? "ListboxInput" : _ref$__componentName,
       props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref, ["as", "aria-labelledby", "aria-label", "children", "defaultValue", "disabled", "form", "name", "onChange", "required", "value", "__componentName"]);
 
-  var isControlled = s(valueProp != null);
+  var isControlled = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(valueProp != null);
 
   var _useDescendantsInit = useDescendantsInit(),
       options = _useDescendantsInit[0],
       setOptions = _useDescendantsInit[1]; // DOM refs
 
 
-  var buttonRef = s(null);
-  var hiddenInputRef = s(null);
-  var highlightedOptionRef = s(null);
-  var inputRef = s(null);
-  var listRef = s(null);
-  var popoverRef = s(null);
-  var selectedOptionRef = s(null);
+  var buttonRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var hiddenInputRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var highlightedOptionRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var inputRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var listRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var popoverRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var selectedOptionRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
   var machine = useCreateMachine(createMachineDefinition({
     // The initial value of our machine should come from the `value` or
     // `defaultValue` props if they exist.
@@ -4675,7 +4677,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
   // they need to control the state of the component and pass a label directly
   // to the button.
 
-  var valueLabel = d(function () {
+  var valueLabel = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
     var selected = options.find(function (option) {
       return option.value === state.context.value;
     });
@@ -4683,7 +4685,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
   }, [options, state.context.value]);
   var isExpanded = isListboxExpanded(state.value); // TODO: Remove duplication and memoize
 
-  var context = d(function () {
+  var context = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
     return {
       ariaLabel: ariaLabel,
       ariaLabelledBy: ariaLabelledBy,
@@ -4708,7 +4710,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
   //   B) useLayoutEffect races useDecendant, so we might not have options yet
   //   C) useEffect will cause a flash
 
-  var mounted = s(false);
+  var mounted = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false);
 
   if (!isControlled.current && // the app is not controlling state
   defaultValue == null && // there is no default value
@@ -4745,7 +4747,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
       }
     });
   }, [options, send]);
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     function handleMouseDown(event) {
       var target = event.target,
           relatedTarget = event.relatedTarget;
@@ -4766,7 +4768,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
       window.removeEventListener("mousedown", handleMouseDown);
     };
   }, [send, isExpanded]);
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     function handleMouseUp(event) {
       var target = event.target,
           relatedTarget = event.relatedTarget;
@@ -4788,13 +4790,13 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     };
   }, [send, isExpanded]);
   useCheckStyles("listbox");
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(DescendantProvider, {
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(DescendantProvider, {
     context: ListboxDescendantContext,
     items: options,
     set: setOptions
-  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(ListboxContext.Provider, {
+  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(ListboxContext.Provider, {
     value: context
-  }, /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, reach_listbox_esm_extends({}, props, {
+  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, reach_listbox_esm_extends({}, props, {
     ref: ref,
     "data-reach-listbox-input": "",
     "data-state": isExpanded ? "expanded" : "closed",
@@ -4809,7 +4811,7 @@ var ListboxInput = /*#__PURE__*/compat_module_x(function ListboxInput(_ref, forw
     valueLabel: valueLabel,
     // TODO: Remove in 1.0
     expanded: isExpanded
-  }) : children), (form || name || required) && /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)("input", {
+  }) : children), (form || name || required) && /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)("input", {
     ref: hiddenInputRef,
     "data-reach-listbox-hidden-input": "",
     disabled: disabled,
@@ -4887,7 +4889,7 @@ if (false) {}
  */
 
 
-var ListboxButtonImpl = /*#__PURE__*/compat_module_x(function ListboxButton(_ref4, forwardedRef) {
+var ListboxButtonImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function ListboxButton(_ref4, forwardedRef) {
   var ariaLabel = _ref4["aria-label"],
       _ref4$arrow = _ref4.arrow,
       arrow = _ref4$arrow === void 0 ? false : _ref4$arrow,
@@ -4899,7 +4901,7 @@ var ListboxButtonImpl = /*#__PURE__*/compat_module_x(function ListboxButton(_ref
       onMouseUp = _ref4.onMouseUp,
       props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref4, ["aria-label", "arrow", "as", "children", "onKeyDown", "onMouseDown", "onMouseUp"]);
 
-  var _React$useContext = F(ListboxContext),
+  var _React$useContext = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
       ariaLabelledBy = _React$useContext.ariaLabelledBy,
       buttonRef = _React$useContext.buttonRef,
       disabled = _React$useContext.disabled,
@@ -4939,7 +4941,7 @@ var ListboxButtonImpl = /*#__PURE__*/compat_module_x(function ListboxButton(_ref
   // errors, they need to control the state of the component and pass a label
   // directly to the button.
 
-  var label = d(function () {
+  var label = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
     if (!children) {
       return listboxValueLabel;
     } else if (reach_utils_type_check_esm_isFunction(children)) {
@@ -4954,7 +4956,7 @@ var ListboxButtonImpl = /*#__PURE__*/compat_module_x(function ListboxButton(_ref
 
     return children;
   }, [children, listboxValueLabel, isExpanded, listboxValue]);
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // Applicable to all host language elements regardless of whether a
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp // Applicable to all host language elements regardless of whether a
   // `role` is applied.
   // https://www.w3.org/WAI/PF/aria/states_and_properties#global_states_header
   , reach_listbox_esm_extends({
@@ -4989,12 +4991,12 @@ var ListboxButtonImpl = /*#__PURE__*/compat_module_x(function ListboxButton(_ref
     onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown),
     onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),
     onMouseUp: composeEventHandlers(onMouseUp, handleMouseUp)
-  }), label, arrow && /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(ListboxArrow, null, isBoolean(arrow) ? null : arrow));
+  }), label, arrow && /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(ListboxArrow, null, isBoolean(arrow) ? null : arrow));
 });
 
 if (false) {}
 
-var ListboxButton = /*#__PURE__*/compat_module_g(ListboxButtonImpl);
+var ListboxButton = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.memo)(ListboxButtonImpl);
 /**
  * @see Docs https://reach.tech/listbox#listboxbutton-props
  */
@@ -5008,16 +5010,16 @@ var ListboxButton = /*#__PURE__*/compat_module_g(ListboxButtonImpl);
  * @see Docs https://reach.tech/listbox#listboxarrow
  */
 
-var ListboxArrowImpl = /*#__PURE__*/compat_module_x(function ListboxArrow(_ref5, forwardedRef) {
+var ListboxArrowImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function ListboxArrow(_ref5, forwardedRef) {
   var _ref5$as = _ref5.as,
       Comp = _ref5$as === void 0 ? "span" : _ref5$as,
       children = _ref5.children,
       props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children"]);
 
-  var _React$useContext2 = F(ListboxContext),
+  var _React$useContext2 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
       isExpanded = _React$useContext2.isExpanded;
 
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // The arrow provides no semantic value and its inner content should be
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp // The arrow provides no semantic value and its inner content should be
   // hidden from the accessibility tree
   , reach_listbox_esm_extends({
     "aria-hidden": true
@@ -5034,7 +5036,7 @@ var ListboxArrowImpl = /*#__PURE__*/compat_module_x(function ListboxArrow(_ref5,
 
 if (false) {}
 
-var ListboxArrow = /*#__PURE__*/compat_module_g(ListboxArrowImpl);
+var ListboxArrow = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.memo)(ListboxArrowImpl);
 /**
  * @see Docs https://reach.tech/listbox#listboxarrow-props
  */
@@ -5048,7 +5050,7 @@ var ListboxArrow = /*#__PURE__*/compat_module_g(ListboxArrowImpl);
  * @see Docs https://reach.tech/listbox#listboxpopover
  */
 
-var ListboxPopoverImpl = /*#__PURE__*/compat_module_x(function ListboxPopover(_ref6, forwardedRef) {
+var ListboxPopoverImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function ListboxPopover(_ref6, forwardedRef) {
   var _ref6$as = _ref6.as,
       Comp = _ref6$as === void 0 ? "div" : _ref6$as,
       _ref6$position = _ref6.position,
@@ -5060,7 +5062,7 @@ var ListboxPopoverImpl = /*#__PURE__*/compat_module_x(function ListboxPopover(_r
       unstable_observableRefs = _ref6.unstable_observableRefs,
       props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref6, ["as", "position", "onBlur", "onKeyDown", "portal", "unstable_observableRefs"]);
 
-  var _React$useContext3 = F(ListboxContext),
+  var _React$useContext3 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
       buttonRef = _React$useContext3.buttonRef,
       popoverRef = _React$useContext3.popoverRef,
       send = _React$useContext3.send,
@@ -5089,17 +5091,17 @@ var ListboxPopoverImpl = /*#__PURE__*/compat_module_x(function ListboxPopover(_r
     });
   }
 
-  return portal ? /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Popover, reach_listbox_esm_extends({}, commonProps, {
+  return portal ? /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Popover, reach_listbox_esm_extends({}, commonProps, {
     as: Comp,
     targetRef: buttonRef,
     position: position,
     unstable_observableRefs: unstable_observableRefs
-  })) : /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp, commonProps);
+  })) : /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, commonProps);
 });
 
 if (false) {}
 
-var ListboxPopover = /*#__PURE__*/compat_module_g(ListboxPopoverImpl);
+var ListboxPopover = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.memo)(ListboxPopoverImpl);
 /**
  * @see Docs https://reach.tech/listbox#listboxpopover-props
  */
@@ -5113,12 +5115,12 @@ var ListboxPopover = /*#__PURE__*/compat_module_g(ListboxPopoverImpl);
  * @see Docs https://reach.tech/listbox#listboxlist
  */
 
-var ListboxList = /*#__PURE__*/compat_module_x(function ListboxList(_ref7, forwardedRef) {
+var ListboxList = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function ListboxList(_ref7, forwardedRef) {
   var _ref7$as = _ref7.as,
       Comp = _ref7$as === void 0 ? "ul" : _ref7$as,
       props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref7, ["as"]);
 
-  var _React$useContext4 = F(ListboxContext),
+  var _React$useContext4 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
       ariaLabel = _React$useContext4.ariaLabel,
       ariaLabelledBy = _React$useContext4.ariaLabelledBy,
       isExpanded = _React$useContext4.isExpanded,
@@ -5129,7 +5131,7 @@ var ListboxList = /*#__PURE__*/compat_module_x(function ListboxList(_ref7, forwa
       navigationValue = _React$useContext4$st.navigationValue;
 
   var ref = useComposedRefs(forwardedRef, listRef);
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // Tells assistive technologies which of the options, if any, is
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp // Tells assistive technologies which of the options, if any, is
   // visually indicated as having keyboard focus. DOM focus remains on the
   // `ul` element and the idref specified for `aria-activedescendant`
   // refers to the `li` element that is visually styled as focused. When
@@ -5174,7 +5176,7 @@ if (false) {}
  */
 
 
-var ListboxOption = /*#__PURE__*/compat_module_x(function ListboxOption(_ref8, forwardedRef) {
+var ListboxOption = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function ListboxOption(_ref8, forwardedRef) {
   var _ref8$as = _ref8.as,
       Comp = _ref8$as === void 0 ? "li" : _ref8$as,
       children = _ref8.children,
@@ -5192,7 +5194,7 @@ var ListboxOption = /*#__PURE__*/compat_module_x(function ListboxOption(_ref8, f
 
   if (false) {}
 
-  var _React$useContext5 = F(ListboxContext),
+  var _React$useContext5 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
       highlightedOptionRef = _React$useContext5.highlightedOptionRef,
       isExpanded = _React$useContext5.isExpanded,
       onValueChange = _React$useContext5.onValueChange,
@@ -5203,12 +5205,12 @@ var ListboxOption = /*#__PURE__*/compat_module_x(function ListboxOption(_ref8, f
       listboxValue = _React$useContext5$st.value,
       navigationValue = _React$useContext5$st.navigationValue;
 
-  var _React$useState = l(labelProp),
+  var _React$useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(labelProp),
       labelState = _React$useState[0],
       setLabel = _React$useState[1];
 
   var label = labelProp || labelState || "";
-  var ownRef = s(null);
+  var ownRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
   useDescendant({
     element: ownRef.current,
     value: value,
@@ -5218,7 +5220,7 @@ var ListboxOption = /*#__PURE__*/compat_module_x(function ListboxOption(_ref8, f
   // explicit label prop before looking for the node's textContent for
   // typeahead functionality.
 
-  var getLabelFromDomNode = A(function (node) {
+  var getLabelFromDomNode = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (node) {
     if (!labelProp && node) {
       setLabel(function (prevState) {
         if (node.textContent && prevState !== node.textContent) {
@@ -5306,7 +5308,7 @@ var ListboxOption = /*#__PURE__*/compat_module_x(function ListboxOption(_ref8, f
     }
   }
 
-  return /*#__PURE__*/(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(Comp // In a single-select listbox, the selected option has `aria-selected`
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp // In a single-select listbox, the selected option has `aria-selected`
   // set to `true`.
   // https://www.w3.org/TR/wai-aria-practices-1.2/#Listbox
   , reach_listbox_esm_extends({
@@ -5452,7 +5454,7 @@ function isListboxExpanded(state) {
 }
 
 function useKeyDown() {
-  var _React$useContext9 = F(ListboxContext),
+  var _React$useContext9 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
       listboxDisabled = _React$useContext9.disabled,
       onValueChange = _React$useContext9.onValueChange,
       _React$useContext9$st = _React$useContext9.stateData,
@@ -5461,7 +5463,7 @@ function useKeyDown() {
       send = _React$useContext9.send;
 
   var options = useDescendants(ListboxDescendantContext);
-  y(function () {
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     if (typeaheadQuery) {
       send({
         type: ListboxEvents.UpdateAfterTypeahead,
@@ -5557,7 +5559,7 @@ function useKeyDown() {
 }
 
 function useOptionId(value) {
-  var _React$useContext10 = F(ListboxContext),
+  var _React$useContext10 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
       listboxId = _React$useContext10.listboxId;
 
   return value ? reach_utils_make_id_esm_makeId("option-" + value, listboxId) : undefined;
@@ -5570,7 +5572,7 @@ function reach_listbox_esm_popoverContainsEventTarget(popover, target) {
 
 
 function useControlledStateSync(controlPropValue, internalValue, send) {
-  var _React$useRef = s(controlPropValue != null),
+  var _React$useRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(controlPropValue != null),
       isControlled = _React$useRef.current;
 
   if (isControlled && controlPropValue !== internalValue) {
@@ -5793,6 +5795,14 @@ preact_custom_element_esm(src.Select, 'sn-select');
 
 "use strict";
 module.exports = __WEBPACK_EXTERNAL_MODULE__683__;
+
+/***/ }),
+
+/***/ 320:
+/***/ ((module) => {
+
+"use strict";
+module.exports = __WEBPACK_EXTERNAL_MODULE__320__;
 
 /***/ })
 
