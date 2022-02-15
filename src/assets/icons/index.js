@@ -73,6 +73,7 @@ import MenuArrowDownAlt from './ic-menu-arrow-down-alt.svg';
 import MenuArrowRight from './ic-menu-arrow-right.svg';
 import IlNotesIcon from './il-notes.svg';
 import WarningIcon from './ic-warning.svg';
+import HistoryIcon from "./ic-history.svg";
 
 export {
   AuthenticatorIcon,
@@ -150,4 +151,5 @@ export {
   AccountIllustration,
   PremiumIllustration,
   WarningIcon,
+  HistoryIcon,
 };
