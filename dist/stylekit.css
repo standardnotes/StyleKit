@@ -350,6 +350,7 @@ template {
   --sn-stylekit-font-size-h1: 1.05625rem;
   --sn-stylekit-white: #ffffff;
   --sn-stylekit-black: #19191c;
+  --sn-stylekit-grey-0: #515357;
   --sn-stylekit-grey-1: #72767e;
   --sn-stylekit-grey-2: #bbbec4;
   --sn-stylekit-grey-3: #dfe1e4;
@@ -3043,6 +3044,14 @@ template {
 
 .sn-component .color-info-dark {
   color: var(--sn-stylekit-info-color-darkened);
+}
+
+.sn-component .bg-grey-0 {
+  background-color: var(--sn-stylekit-grey-0);
+}
+
+.sn-component .color-grey-0 {
+  color: var(--sn-stylekit-grey-0);
 }
 
 .sn-component .bg-grey-1 {

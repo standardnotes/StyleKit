@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (_, { mode }) => ({
   entry: {
@@ -32,6 +33,12 @@ module.exports = (_, { mode }) => ({
       commonjs: 'preact',
       commonjs2: 'preact',
       amd: 'preact',
+      root: '_',
+    },
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
       root: '_',
     },
   },
@@ -77,7 +84,7 @@ module.exports = (_, { mode }) => ({
         test: /\.(svg)(\?.*)?$/i,
         use: [
           {
-            loader: 'url-loader',
+            loader: '@svgr/webpack',
             options: {
               limit: 10000000,
             },
@@ -96,6 +103,15 @@ module.exports = (_, { mode }) => ({
     extensions: ['.js', '.jsx', '.css', '.scss'],
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: '**/*.svg',
+          to: 'icons',
+          context: path.resolve(__dirname, 'src', 'assets', 'icons'),
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: 'stylekit.css',
     }),
