@@ -12,7 +12,7 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 766:
+/***/ 356:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -42,6 +42,7 @@ __webpack_require__.d(__webpack_exports__, {
   "CodeIcon": () => (/* reexport */ ic_code),
   "CopyIcon": () => (/* reexport */ ic_copy),
   "CreateAccountIllustration": () => (/* reexport */ create_account_illustration),
+  "DashboardIcon": () => (/* reexport */ ic_dashboard),
   "DiamondIcon": () => (/* reexport */ diamond_with_horizontal_lines),
   "DownloadIcon": () => (/* reexport */ ic_download),
   "EditorIcon": () => (/* reexport */ ic_editor),
@@ -1993,7 +1994,26 @@ var SvgIcHistory = function SvgIcHistory(props) {
 };
 
 /* harmony default export */ const ic_history = (SvgIcHistory);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-dashboard.svg
+var ic_dashboard_path;
+
+function ic_dashboard_extends() { ic_dashboard_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_dashboard_extends.apply(this, arguments); }
+
+
+
+var SvgIcDashboard = function SvgIcDashboard(props) {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", ic_dashboard_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_dashboard_path || (ic_dashboard_path = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
+    d: "M15.833 4.167v1.666H12.5V4.167h3.333Zm-8.333 0v5H4.167v-5H7.5Zm8.333 6.666v5H12.5v-5h3.333ZM7.5 14.167v1.666H4.167v-1.666H7.5ZM17.5 2.5h-6.667v5H17.5v-5Zm-8.333 0H2.5v8.333h6.667V2.5ZM17.5 9.167h-6.667V17.5H17.5V9.167ZM9.167 12.5H2.5v5h6.667v-5Z"
+  })));
+};
+
+/* harmony default export */ const ic_dashboard = (SvgIcDashboard);
 ;// CONCATENATED MODULE: ./src/assets/icons/index.js
+
 
 
 
@@ -2237,7 +2257,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__320__;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(766)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(356)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ 	return __webpack_exports__;

@@ -1,4 +1,4 @@
-import AuthenticatorIcon from './ic-authenticator.svg'
+import AuthenticatorIcon from './ic-authenticator.svg';
 import EditorIcon from './ic-editor.svg';
 import PremiumFeatureIcon from './ic-premium-feature.svg';
 import PencilOffIcon from './ic-pencil-off.svg';
@@ -73,7 +73,8 @@ import MenuArrowDownAlt from './ic-menu-arrow-down-alt.svg';
 import MenuArrowRight from './ic-menu-arrow-right.svg';
 import IlNotesIcon from './il-notes.svg';
 import WarningIcon from './ic-warning.svg';
-import HistoryIcon from "./ic-history.svg";
+import HistoryIcon from './ic-history.svg';
+import DashboardIcon from './ic-dashboard.svg';
 
 export {
   AuthenticatorIcon,
@@ -152,4 +153,5 @@ export {
   PremiumIllustration,
   WarningIcon,
   HistoryIcon,
+  DashboardIcon,
 };
