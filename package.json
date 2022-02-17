@@ -1,6 +1,6 @@
 {
   "name": "@standardnotes/stylekit",
-  "version": "5.6.0",
+  "version": "5.7.0",
   "main": "dist/stylekit.js",
   "publishConfig": {
     "access": "public"
