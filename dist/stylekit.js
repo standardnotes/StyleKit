@@ -12,7 +12,7 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 593:
+/***/ 327:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -71,6 +71,7 @@ __webpack_require__.d(__webpack_exports__, {
   "MenuCloseIcon": () => (/* reexport */ ic_menu_close),
   "MoreIcon": () => (/* reexport */ ic_more),
   "NotesIcon": () => (/* reexport */ ic_notes),
+  "OpenInIcon": () => (/* reexport */ ic_open_in),
   "PasswordIcon": () => (/* reexport */ ic_textbox_password),
   "PencilFilledIcon": () => (/* reexport */ ic_pencil_filled),
   "PencilIcon": () => (/* reexport */ ic_pencil),
@@ -104,6 +105,7 @@ __webpack_require__.d(__webpack_exports__, {
   "UnarchiveIcon": () => (/* reexport */ ic_unarchive),
   "UndoIcon": () => (/* reexport */ ic_undo),
   "UnpinIcon": () => (/* reexport */ ic_pin_off),
+  "UserAddIcon": () => (/* reexport */ ic_user_add),
   "UserIcon": () => (/* reexport */ ic_user),
   "UserSwitch": () => (/* reexport */ ic_user_switch),
   "WarningIcon": () => (/* reexport */ ic_warning),
@@ -1495,6 +1497,24 @@ var SvgIcNotes = function SvgIcNotes(props) {
 };
 
 /* harmony default export */ const ic_notes = (SvgIcNotes);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-open-in.svg
+var ic_open_in_path;
+
+function ic_open_in_extends() { ic_open_in_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_open_in_extends.apply(this, arguments); }
+
+
+
+var SvgIcOpenIn = function SvgIcOpenIn(props) {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", ic_open_in_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_open_in_path || (ic_open_in_path = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
+    d: "M11.667 2.5v1.667h2.991l-8.191 8.191 1.175 1.175 8.191-8.191v2.991H17.5V2.5h-5.833Zm4.166 13.333H4.167V4.167H10V2.5H4.167c-.925 0-1.667.75-1.667 1.667v11.666A1.666 1.666 0 0 0 4.167 17.5h11.666a1.666 1.666 0 0 0 1.667-1.667V10h-1.667v5.833Z"
+  })));
+};
+
+/* harmony default export */ const ic_open_in = (SvgIcOpenIn);
 ;// CONCATENATED MODULE: ./src/assets/icons/ic-textbox-password.svg
 var ic_textbox_password_path;
 
@@ -2134,6 +2154,24 @@ var SvgIcPinOff = function SvgIcPinOff(props) {
 };
 
 /* harmony default export */ const ic_pin_off = (SvgIcPinOff);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-user-add.svg
+var ic_user_add_path;
+
+function ic_user_add_extends() { ic_user_add_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_user_add_extends.apply(this, arguments); }
+
+
+
+var SvgIcUserAdd = function SvgIcUserAdd(props) {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", ic_user_add_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_user_add_path || (ic_user_add_path = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
+    d: "M12.5 3.333a3.333 3.333 0 1 0 0 6.667 3.333 3.333 0 0 0 0-6.667Zm0 1.584a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Zm-9.167.916v2.5h-2.5V10h2.5v2.5H5V10h2.5V8.333H5v-2.5H3.333Zm9.167 5c-2.225 0-6.667 1.109-6.667 3.334v2.5h13.334v-2.5c0-2.225-4.442-3.334-6.667-3.334Zm0 1.584c2.475 0 5.083 1.216 5.083 1.75v.916H7.417v-.916c0-.534 2.583-1.75 5.083-1.75Z"
+  })));
+};
+
+/* harmony default export */ const ic_user_add = (SvgIcUserAdd);
 ;// CONCATENATED MODULE: ./src/assets/icons/ic-user.svg
 var ic_user_path;
 
@@ -2208,6 +2246,8 @@ var SvgIcWindow = function SvgIcWindow(props) {
 
 /* harmony default export */ const ic_window = (SvgIcWindow);
 ;// CONCATENATED MODULE: ./src/assets/icons/index.js
+
+
 
 
 
@@ -2462,7 +2502,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__320__;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(593)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(327)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ 	return __webpack_exports__;
