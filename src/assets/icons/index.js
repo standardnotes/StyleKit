@@ -49,6 +49,7 @@ import MenuArrowRight from './ic-menu-arrow-right.svg';
 import MenuCloseIcon from './ic-menu-close.svg';
 import MoreIcon from './ic-more.svg';
 import NotesIcon from './ic-notes.svg';
+import OpenInIcon from './ic-open-in.svg';
 import PasswordIcon from './ic-textbox-password.svg';
 import PencilOffIcon from './ic-pencil-off.svg';
 import PencilIcon from './ic-pencil.svg';
@@ -81,6 +82,7 @@ import TuneIcon from './ic-tune.svg';
 import UnarchiveIcon from './ic-unarchive.svg';
 import UndoIcon from './ic-undo.svg';
 import UnpinIcon from './ic-pin-off.svg';
+import UserAddIcon from './ic-user-add.svg';
 import UserIcon from './ic-user.svg';
 import UserSwitch from './ic-user-switch.svg';
 import WarningIcon from './ic-warning.svg';
@@ -138,6 +140,7 @@ export {
   MenuCloseIcon,
   MoreIcon,
   NotesIcon,
+  OpenInIcon,
   PasswordIcon,
   PencilOffIcon,
   PencilIcon,
@@ -170,6 +173,7 @@ export {
   UnarchiveIcon,
   UndoIcon,
   UnpinIcon,
+  UserAddIcon,
   UserIcon,
   UserSwitch,
   WarningIcon,
