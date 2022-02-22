@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.9.0](https://github.com/standardnotes/StyleKit/compare/v5.8.0...v5.9.0) (2022-02-22)
+
+
+### Features
+
+* add new icons ([#68](https://github.com/standardnotes/StyleKit/issues/68)) ([3e634b0](https://github.com/standardnotes/StyleKit/commit/3e634b02c7d0841da40c7f4a55097303d4c9fe2b))
+
 ## [5.8.0](https://github.com/standardnotes/StyleKit/compare/v5.7.0...v5.8.0) (2022-02-17)
 
 
