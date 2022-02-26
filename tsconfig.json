@@ -1,0 +1,12 @@
+{
+  "exclude": [
+    "dist/**/*"
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "target": "ES6",
+    "moduleResolution": "node",
+  }
+}
