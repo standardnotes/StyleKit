@@ -252,7 +252,7 @@ module.exports = tabbable;
 
 /***/ }),
 
-/***/ 118:
+/***/ 297:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -510,7 +510,7 @@ function A(n, t) {
 function F(n) {
   var r = u.context[n.__c],
       o = m(t++, 9);
-  return o.__c = n, r ? (null == o.__ && (o.__ = !0, r.sub(u)), r.props.value) : n.__;
+  return o.c = n, r ? (null == o.__ && (o.__ = !0, r.sub(u)), r.props.value) : n.__;
 }
 
 function T(t, u) {
@@ -528,13 +528,11 @@ function q(n) {
 }
 
 function x() {
-  i.forEach(function (t) {
-    if (t.__P) try {
-      t.__H.__h.forEach(g), t.__H.__h.forEach(j), t.__H.__h = [];
-    } catch (u) {
-      t.__H.__h = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, t.__v);
-    }
-  }), i = [];
+  for (var t; t = i.shift();) if (t.__P) try {
+    t.__H.__h.forEach(g), t.__H.__h.forEach(j), t.__H.__h = [];
+  } catch (u) {
+    t.__H.__h = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, t.__v);
+  }
 }
 
 external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = function (n) {
@@ -554,7 +552,7 @@ external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = functio
         r = setTimeout(u, 100);
 
     b && (t = requestAnimationFrame(u));
-  })(x)), u = void 0;
+  })(x)), u = null;
 }, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c = function (t, u) {
   u.some(function (t) {
     try {
@@ -569,18 +567,22 @@ external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = functio
   }), a && a(t, u);
 }, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount = function (t) {
   v && v(t);
-  var u = t.__c;
-  if (u && u.__H) try {
-    u.__H.__.forEach(g);
-  } catch (t) {
-    external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(t, u.__v);
-  }
+  var u,
+      r = t.__c;
+  r && r.__H && (r.__H.__.forEach(function (n) {
+    try {
+      g(n);
+    } catch (n) {
+      u = n;
+    }
+  }), u && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, r.__v));
 };
 var b = "function" == typeof requestAnimationFrame;
 
 function g(n) {
-  var t = u;
-  "function" == typeof n.__c && n.__c(), u = t;
+  var t = u,
+      r = n.__c;
+  "function" == typeof r && (n.__c = void 0, r()), u = t;
 }
 
 function j(n) {
@@ -675,16 +677,23 @@ var N = function (n, t) {
 },
     compat_module_A = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e;
 
-function O() {
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e = function (n, t, e) {
+  if (n.then) for (var r, u = t; u = u.__;) if ((r = u.__c) && r.__c) return null == t.__e && (t.__e = e.__e, t.__k = e.__k), r.__c(n, t);
+  compat_module_A(n, t, e);
+};
+
+var O = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount;
+
+function L() {
   this.__u = 0, this.t = null, this.__b = null;
 }
 
-function L(n) {
+function U(n) {
   var t = n.__.__c;
   return t && t.__e && t.__e(n);
 }
 
-function U(n) {
+function compat_module_F(n) {
   var t, e, r;
 
   function u(u) {
@@ -700,27 +709,25 @@ function U(n) {
   return u.displayName = "Lazy", u.__f = !0, u;
 }
 
-function D() {
+function M() {
   this.u = null, this.o = null;
 }
 
-external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e = function (n, t, e) {
-  if (n.then) for (var r, u = t; u = u.__;) if ((r = u.__c) && r.__c) return null == t.__e && (t.__e = e.__e, t.__k = e.__k), r.__c(n, t);
-  compat_module_A(n, t, e);
-}, (O.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).__c = function (n, t) {
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount = function (n) {
+  var t = n.__c;
+  t && t.__R && t.__R(), t && !0 === n.__h && (n.type = null), O && O(n);
+}, (L.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).__c = function (n, t) {
   var e = t.__c,
       r = this;
   null == r.t && (r.t = []), r.t.push(e);
 
-  var u = L(r.__v),
+  var u = U(r.__v),
       o = !1,
       i = function () {
-    o || (o = !0, e.componentWillUnmount = e.__c, u ? u(l) : l());
+    o || (o = !0, e.__R = null, u ? u(l) : l());
   };
 
-  e.__c = e.componentWillUnmount, e.componentWillUnmount = function () {
-    i(), e.__c && e.__c();
-  };
+  e.__R = i;
 
   var l = function () {
     if (! --r.__u) {
@@ -741,14 +748,14 @@ external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e = functio
       }); t = r.t.pop();) t.forceUpdate();
     }
   },
-      f = !0 === t.__h;
+      c = !0 === t.__h;
 
-  r.__u++ || f || r.setState({
+  r.__u++ || c || r.setState({
     __e: r.__b = r.__v.__k[0]
   }), n.then(i, i);
-}, O.prototype.componentWillUnmount = function () {
+}, L.prototype.componentWillUnmount = function () {
   this.t = [];
-}, O.prototype.render = function (n, t) {
+}, L.prototype.render = function (n, t) {
   if (this.__b) {
     if (this.__v.__k) {
       var e = document.createElement("div"),
@@ -770,7 +777,7 @@ external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e = functio
   return u && (u.__h = null), [(0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment, null, t.__e ? null : n.children), u];
 };
 
-var compat_module_F = function (n, t, e) {
+var compat_module_T = function (n, t, e) {
   if (++e[1] === e[0] && n.o.delete(t), n.props.revealOrder && ("t" !== n.props.revealOrder[0] || !n.o.size)) for (e = n.u; e;) {
     for (; e.length > 3;) e.pop()();
 
@@ -779,13 +786,13 @@ var compat_module_F = function (n, t, e) {
   }
 };
 
-function M(n) {
+function D(n) {
   return this.getChildContext = function () {
     return n.context;
   }, n.children;
 }
 
-function compat_module_T(n) {
+function I(n) {
   var t = this,
       e = n.i;
   t.componentWillUnmount = function () {
@@ -803,30 +810,30 @@ function compat_module_T(n) {
     removeChild: function (n) {
       this.childNodes.splice(this.childNodes.indexOf(n) >>> 1, 1), t.i.removeChild(n);
     }
-  }), (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)((0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(M, {
+  }), (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)((0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(D, {
     context: t.context
   }, n.__v), t.l)) : t.l && t.componentWillUnmount();
 }
 
-function compat_module_j(n, t) {
-  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(compat_module_T, {
+function W(n, t) {
+  return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement)(I, {
     __v: n,
     i: t
   });
 }
 
-(D.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).__e = function (n) {
+(M.prototype = new external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component()).__e = function (n) {
   var t = this,
-      e = L(t.__v),
+      e = U(t.__v),
       r = t.o.get(n);
   return r[0]++, function (u) {
     var o = function () {
-      t.props.revealOrder ? (r.push(u), compat_module_F(t, n, r)) : u();
+      t.props.revealOrder ? (r.push(u), compat_module_T(t, n, r)) : u();
     };
 
     e ? e(o) : o();
   };
-}, D.prototype.render = function (n) {
+}, M.prototype.render = function (n) {
   this.u = null, this.o = new Map();
   var t = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(n.children);
   n.revealOrder && "b" === n.revealOrder[0] && t.reverse();
@@ -834,24 +841,25 @@ function compat_module_j(n, t) {
   for (var e = t.length; e--;) this.o.set(t[e], this.u = [1, 0, this.u]);
 
   return n.children;
-}, D.prototype.componentDidUpdate = D.prototype.componentDidMount = function () {
+}, M.prototype.componentDidUpdate = M.prototype.componentDidMount = function () {
   var n = this;
   this.o.forEach(function (t, e) {
-    compat_module_F(n, e, t);
+    compat_module_T(n, e, t);
   });
 };
 
-var I = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.element") || 60103,
-    W = /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|fill|flood|font|glyph(?!R)|horiz|marker(?!H|W|U)|overline|paint|stop|strikethrough|stroke|text(?!L)|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/,
-    P = function (n) {
+var compat_module_j = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.element") || 60103,
+    P = /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|marker(?!H|W|U)|overline|paint|stop|strikethrough|stroke|text(?!L)|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/,
+    V = "undefined" != typeof document,
+    z = function (n) {
   return ("undefined" != typeof Symbol && "symbol" == typeof Symbol() ? /fil|che|rad/i : /fil|che|ra/i).test(n);
 };
 
-function V(n, t, e) {
+function B(n, t, e) {
   return null == t.__k && (t.textContent = ""), (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)(n, t), "function" == typeof e && e(), n ? n.__c : null;
 }
 
-function z(n, t, e) {
+function $(n, t, e) {
   return (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.hydrate)(n, t), "function" == typeof e && e(), n ? n.__c : null;
 }
 
@@ -870,30 +878,30 @@ external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component.prototype.i
     }
   });
 });
-var B = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.event;
+var H = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.event;
 
-function H() {}
+function Z() {}
 
-function Z() {
+function Y() {
   return this.cancelBubble;
 }
 
-function Y() {
+function compat_module_q() {
   return this.defaultPrevented;
 }
 
 external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.event = function (n) {
-  return B && (n = B(n)), n.persist = H, n.isPropagationStopped = Z, n.isDefaultPrevented = Y, n.nativeEvent = n;
+  return H && (n = H(n)), n.persist = Z, n.isPropagationStopped = Y, n.isDefaultPrevented = compat_module_q, n.nativeEvent = n;
 };
 
-var $,
-    compat_module_q = {
+var G,
+    J = {
   configurable: !0,
   get: function () {
     return this.class;
   }
 },
-    G = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.vnode;
+    K = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.vnode;
 
 external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.vnode = function (n) {
   var t = n.type,
@@ -901,75 +909,67 @@ external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.vnode = funct
       r = e;
 
   if ("string" == typeof t) {
-    for (var u in r = {}, e) {
-      var o = e[u];
-      "value" === u && "defaultValue" in e && null == o || ("defaultValue" === u && "value" in e && null == e.value ? u = "value" : "download" === u && !0 === o ? o = "" : /ondoubleclick/i.test(u) ? u = "ondblclick" : /^onchange(textarea|input)/i.test(u + t) && !P(e.type) ? u = "oninput" : /^on(Ani|Tra|Tou|BeforeInp)/.test(u) ? u = u.toLowerCase() : W.test(u) ? u = u.replace(/[A-Z0-9]/, "-$&").toLowerCase() : null === o && (o = void 0), r[u] = o);
+    var u = -1 === t.indexOf("-");
+
+    for (var o in r = {}, e) {
+      var i = e[o];
+      V && "children" === o && "noscript" === t || "value" === o && "defaultValue" in e && null == i || ("defaultValue" === o && "value" in e && null == e.value ? o = "value" : "download" === o && !0 === i ? i = "" : /ondoubleclick/i.test(o) ? o = "ondblclick" : /^onchange(textarea|input)/i.test(o + t) && !z(e.type) ? o = "oninput" : /^onfocus$/i.test(o) ? o = "onfocusin" : /^onblur$/i.test(o) ? o = "onfocusout" : /^on(Ani|Tra|Tou|BeforeInp|Compo)/.test(o) ? o = o.toLowerCase() : u && P.test(o) ? o = o.replace(/[A-Z0-9]/, "-$&").toLowerCase() : null === i && (i = void 0), r[o] = i);
     }
 
     "select" == t && r.multiple && Array.isArray(r.value) && (r.value = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(e.children).forEach(function (n) {
       n.props.selected = -1 != r.value.indexOf(n.props.value);
     })), "select" == t && null != r.defaultValue && (r.value = (0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.toChildArray)(e.children).forEach(function (n) {
       n.props.selected = r.multiple ? -1 != r.defaultValue.indexOf(n.props.value) : r.defaultValue == n.props.value;
-    })), n.props = r;
+    })), n.props = r, e.class != e.className && (J.enumerable = "className" in e, null != e.className && (r.class = e.className), Object.defineProperty(r, "className", J));
   }
 
-  t && e.class != e.className && (compat_module_q.enumerable = "className" in e, null != e.className && (r.class = e.className), Object.defineProperty(r, "className", compat_module_q)), n.$$typeof = I, G && G(n);
+  n.$$typeof = compat_module_j, K && K(n);
 };
 
-var J = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r;
+var Q = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r;
 
 external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r = function (n) {
-  J && J(n), $ = n.__c;
+  Q && Q(n), G = n.__c;
 };
 
-var K = {
+var X = {
   ReactCurrentDispatcher: {
     current: {
       readContext: function (n) {
-        return $.__n[n.__c].props.value;
+        return G.__n[n.__c].props.value;
       }
     }
   }
 },
-    Q = 1,
-    X = 2,
-    nn = 3,
-    tn = 4,
-    en = 5;
+    nn = "17.0.2";
 
-function rn(n, t) {
-  return t();
-}
-
-var un = "object" == typeof performance && "function" == typeof performance.now ? performance.now.bind(performance) : function () {
-  return Date.now();
-},
-    on = "16.8.0";
-
-function ln(n) {
+function tn(n) {
   return external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement.bind(null, n);
 }
 
-function fn(n) {
-  return !!n && n.$$typeof === I;
+function en(n) {
+  return !!n && n.$$typeof === compat_module_j;
 }
 
-function cn(n) {
-  return fn(n) ? external_commonjs_preact_commonjs2_preact_amd_preact_root_.cloneElement.apply(null, arguments) : n;
+function rn(n) {
+  return en(n) ? external_commonjs_preact_commonjs2_preact_amd_preact_root_.cloneElement.apply(null, arguments) : n;
 }
 
-function an(n) {
+function un(n) {
   return !!n.__k && ((0,external_commonjs_preact_commonjs2_preact_amd_preact_root_.render)(null, n), !0);
 }
 
-function sn(n) {
+function on(n) {
   return n && (n.base || 1 === n.nodeType && n) || null;
 }
 
-var hn = function (n, t) {
+var ln = function (n, t) {
   return n(t);
 },
-    pn = external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment;
+    cn = function (n, t) {
+  return n(t);
+},
+    fn = external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment;
 
 /* harmony default export */ const compat_module = ({
   useState: l,
@@ -982,30 +982,31 @@ var hn = function (n, t) {
   useCallback: A,
   useContext: F,
   useDebugValue: T,
-  version: "16.8.0",
+  version: "17.0.2",
   Children: compat_module_k,
-  render: V,
-  hydrate: z,
-  unmountComponentAtNode: an,
-  createPortal: compat_module_j,
+  render: B,
+  hydrate: $,
+  unmountComponentAtNode: un,
+  createPortal: W,
   createElement: external_commonjs_preact_commonjs2_preact_amd_preact_root_.createElement,
   createContext: external_commonjs_preact_commonjs2_preact_amd_preact_root_.createContext,
-  createFactory: ln,
-  cloneElement: cn,
+  createFactory: tn,
+  cloneElement: rn,
   createRef: external_commonjs_preact_commonjs2_preact_amd_preact_root_.createRef,
   Fragment: external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment,
-  isValidElement: fn,
-  findDOMNode: sn,
+  isValidElement: en,
+  findDOMNode: on,
   Component: external_commonjs_preact_commonjs2_preact_amd_preact_root_.Component,
   PureComponent: E,
   memo: compat_module_g,
   forwardRef: compat_module_x,
-  unstable_batchedUpdates: hn,
+  flushSync: cn,
+  unstable_batchedUpdates: ln,
   StrictMode: external_commonjs_preact_commonjs2_preact_amd_preact_root_.Fragment,
-  Suspense: O,
-  SuspenseList: D,
-  lazy: U,
-  __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: K
+  Suspense: L,
+  SuspenseList: M,
+  lazy: compat_module_F,
+  __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: X
 });
 
 ;// CONCATENATED MODULE: ./node_modules/@reach/portal/dist/reach-portal.esm.js
@@ -1054,7 +1055,7 @@ var Portal = function Portal(_ref) {
       }
     };
   }, [type, forceUpdate]);
-  return portalNode.current ? /*#__PURE__*/compat_module_j(children, portalNode.current) : /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)("span", {
+  return portalNode.current ? /*#__PURE__*/W(children, portalNode.current) : /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)("span", {
     ref: mountNode
   });
 };
@@ -5780,7 +5781,7 @@ function u(e, n) {
   }), customElements.define(e || t.tagName || t.displayName || t.name, r);
 }
 // EXTERNAL MODULE: ./src/index.js + 37 modules
-var src = __webpack_require__(118);
+var src = __webpack_require__(297);
 ;// CONCATENATED MODULE: ./src/web-components.js
 
 

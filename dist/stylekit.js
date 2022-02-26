@@ -1,18 +1,18 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"));
+		module.exports = factory(require("preact"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define("SK", ["react"], factory);
+		define("SK", ["preact", "react"], factory);
 	else if(typeof exports === 'object')
-		exports["SK"] = factory(require("react"));
+		exports["SK"] = factory(require("preact"), require("react"));
 	else
-		root["SK"] = root["SK"] || {}, root["SK"]["stylekit"] = factory(root["_"]);
-})(self, function(__WEBPACK_EXTERNAL_MODULE__320__) {
+		root["SK"] = root["SK"] || {}, root["SK"]["stylekit"] = factory(root["_"], root["_"]);
+})(self, function(__WEBPACK_EXTERNAL_MODULE__683__, __WEBPACK_EXTERNAL_MODULE__320__) {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 327:
+/***/ 194:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -35,11 +35,13 @@ __webpack_require__.d(__webpack_exports__, {
   "AuthenticatorIcon": () => (/* reexport */ ic_authenticator),
   "BlueDotIcon": () => (/* reexport */ blue_dot),
   "CheckBoldIcon": () => (/* reexport */ ic_check_bold),
+  "CheckCircleFilledIcon": () => (/* reexport */ ic_check_circle_filled),
   "CheckCircleIcon": () => (/* reexport */ ic_check_circle),
   "CheckIcon": () => (/* reexport */ ic_check),
   "ChevronDownIcon": () => (/* reexport */ ic_chevron_down),
   "ChevronRightIcon": () => (/* reexport */ ic_chevron_right),
   "CircleIcon": () => (/* reexport */ circle_55),
+  "ClearCircleFilledIcon": () => (/* reexport */ ic_clear_circle_filled),
   "CloseIcon": () => (/* reexport */ ic_close),
   "CloudOffIcon": () => (/* reexport */ ic_cloud_off),
   "CodeIcon": () => (/* reexport */ ic_code),
@@ -98,6 +100,7 @@ __webpack_require__.d(__webpack_exports__, {
   "SyncIcon": () => (/* reexport */ ic_sync),
   "TasksIcon": () => (/* reexport */ ic_tasks),
   "ThemesIcon": () => (/* reexport */ ic_themes),
+  "ToastContainer": () => (/* reexport */ ToastContainer),
   "TrashFilledIcon": () => (/* reexport */ ic_trash_filled),
   "TrashIcon": () => (/* reexport */ ic_trash),
   "TrashSweepIcon": () => (/* reexport */ ic_trash_sweep),
@@ -109,7 +112,10 @@ __webpack_require__.d(__webpack_exports__, {
   "UserIcon": () => (/* reexport */ ic_user),
   "UserSwitch": () => (/* reexport */ ic_user_switch),
   "WarningIcon": () => (/* reexport */ ic_warning),
-  "WindowIcon": () => (/* reexport */ ic_window)
+  "WindowIcon": () => (/* reexport */ ic_window),
+  "addToast": () => (/* reexport */ addToast),
+  "removeToast": () => (/* reexport */ removeToast),
+  "updateToast": () => (/* reexport */ updateToast)
 });
 
 ;// CONCATENATED MODULE: ./src/js/Alert.js
@@ -236,6 +242,306 @@ class SKAlert {
 }
 // EXTERNAL MODULE: external {"commonjs":"react","commonjs2":"react","amd":"react","root":"_"}
 var external_commonjs_react_commonjs2_react_amd_react_root_ = __webpack_require__(320);
+;// CONCATENATED MODULE: ./node_modules/nanoid/index.browser.js
+
+
+let random = bytes => crypto.getRandomValues(new Uint8Array(bytes));
+
+let customRandom = (alphabet, defaultSize, getRandom) => {
+  let mask = (2 << Math.log(alphabet.length - 1) / Math.LN2) - 1;
+  let step = -~(1.6 * mask * defaultSize / alphabet.length);
+  return (size = defaultSize) => {
+    let id = '';
+
+    while (true) {
+      let bytes = getRandom(step);
+      let j = step;
+
+      while (j--) {
+        id += alphabet[bytes[j] & mask] || '';
+        if (id.length === size) return id;
+      }
+    }
+  };
+};
+
+let customAlphabet = (alphabet, size = 21) => customRandom(alphabet, size, random);
+
+let nanoid = (size = 21) => {
+  let id = '';
+  let bytes = crypto.getRandomValues(new Uint8Array(size));
+
+  while (size--) {
+    let byte = bytes[size] & 63;
+
+    if (byte < 36) {
+      id += byte.toString(36);
+    } else if (byte < 62) {
+      id += (byte - 26).toString(36).toUpperCase();
+    } else if (byte < 63) {
+      id += '_';
+    } else {
+      id += '-';
+    }
+  }
+
+  return id;
+};
+
+
+// EXTERNAL MODULE: external {"commonjs":"preact","commonjs2":"preact","amd":"preact","root":"_"}
+var external_commonjs_preact_commonjs2_preact_amd_preact_root_ = __webpack_require__(683);
+;// CONCATENATED MODULE: ./node_modules/preact/hooks/dist/hooks.module.js
+
+var t,
+    u,
+    r,
+    o = 0,
+    i = [],
+    c = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b,
+    f = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r,
+    e = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed,
+    a = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c,
+    v = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount;
+
+function m(t, r) {
+  external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h(u, t, o || r), o = 0;
+  var i = u.__H || (u.__H = {
+    __: [],
+    __h: []
+  });
+  return t >= i.__.length && i.__.push({}), i.__[t];
+}
+
+function l(n) {
+  return o = 1, p(w, n);
+}
+
+function p(n, r, o) {
+  var i = m(t++, 2);
+  return i.t = n, i.__c || (i.__ = [o ? o(r) : w(void 0, r), function (n) {
+    var t = i.t(i.__[0], n);
+    i.__[0] !== t && (i.__ = [t, i.__[1]], i.__c.setState({}));
+  }], i.__c = u), i.__;
+}
+
+function y(r, o) {
+  var i = m(t++, 3);
+  !external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__H.__h.push(i));
+}
+
+function h(r, o) {
+  var i = m(t++, 4);
+  !n.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__h.push(i));
+}
+
+function s(n) {
+  return o = 5, d(function () {
+    return {
+      current: n
+    };
+  }, []);
+}
+
+function _(n, t, u) {
+  o = 6, h(function () {
+    "function" == typeof n ? n(t()) : n && (n.current = t());
+  }, null == u ? u : u.concat(n));
+}
+
+function d(n, u) {
+  var r = m(t++, 7);
+  return k(r.__H, u) && (r.__ = n(), r.__H = u, r.__h = n), r.__;
+}
+
+function A(n, t) {
+  return o = 8, d(function () {
+    return n;
+  }, t);
+}
+
+function F(n) {
+  var r = u.context[n.__c],
+      o = m(t++, 9);
+  return o.c = n, r ? (null == o.__ && (o.__ = !0, r.sub(u)), r.props.value) : n.__;
+}
+
+function T(t, u) {
+  n.useDebugValue && n.useDebugValue(u ? u(t) : t);
+}
+
+function q(n) {
+  var r = m(t++, 10),
+      o = l();
+  return r.__ = n, u.componentDidCatch || (u.componentDidCatch = function (n) {
+    r.__ && r.__(n), o[1](n);
+  }), [o[0], function () {
+    o[1](void 0);
+  }];
+}
+
+function x() {
+  for (var t; t = i.shift();) if (t.__P) try {
+    t.__H.__h.forEach(g), t.__H.__h.forEach(j), t.__H.__h = [];
+  } catch (u) {
+    t.__H.__h = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, t.__v);
+  }
+}
+
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = function (n) {
+  u = null, c && c(n);
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r = function (n) {
+  f && f(n), t = 0;
+  var r = (u = n.__c).__H;
+  r && (r.__h.forEach(g), r.__h.forEach(j), r.__h = []);
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed = function (t) {
+  e && e(t);
+  var o = t.__c;
+  o && o.__H && o.__H.__h.length && (1 !== i.push(o) && r === external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame || ((r = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame) || function (n) {
+    var t,
+        u = function () {
+      clearTimeout(r), b && cancelAnimationFrame(t), setTimeout(n);
+    },
+        r = setTimeout(u, 100);
+
+    b && (t = requestAnimationFrame(u));
+  })(x)), u = null;
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c = function (t, u) {
+  u.some(function (t) {
+    try {
+      t.__h.forEach(g), t.__h = t.__h.filter(function (n) {
+        return !n.__ || j(n);
+      });
+    } catch (r) {
+      u.some(function (n) {
+        n.__h && (n.__h = []);
+      }), u = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(r, t.__v);
+    }
+  }), a && a(t, u);
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount = function (t) {
+  v && v(t);
+  var u,
+      r = t.__c;
+  r && r.__H && (r.__H.__.forEach(function (n) {
+    try {
+      g(n);
+    } catch (n) {
+      u = n;
+    }
+  }), u && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, r.__v));
+};
+var b = "function" == typeof requestAnimationFrame;
+
+function g(n) {
+  var t = u,
+      r = n.__c;
+  "function" == typeof r && (n.__c = void 0, r()), u = t;
+}
+
+function j(n) {
+  var t = u;
+  n.__c = n.__(), u = t;
+}
+
+function k(n, t) {
+  return !n || n.length !== t.length || t.some(function (t, u) {
+    return t !== n[u];
+  });
+}
+
+function w(n, t) {
+  return "function" == typeof t ? t(n) : t;
+}
+
+
+;// CONCATENATED MODULE: ./src/components/Toast/toastStore.ts
+
+
+let externalState = {
+  toasts: []
+};
+var ReducerActionType;
+
+(function (ReducerActionType) {
+  ReducerActionType[ReducerActionType["Add"] = 0] = "Add";
+  ReducerActionType[ReducerActionType["Update"] = 1] = "Update";
+  ReducerActionType[ReducerActionType["AddOrUpdate"] = 2] = "AddOrUpdate";
+  ReducerActionType[ReducerActionType["Remove"] = 3] = "Remove";
+})(ReducerActionType || (ReducerActionType = {}));
+
+const storeStateUpdaters = [];
+
+const reducer = (state, action) => {
+  var _a;
+
+  switch (action.type) {
+    case ReducerActionType.Add:
+      {
+        const id = (_a = action.payload.id) !== null && _a !== void 0 ? _a : nanoid();
+        const toast = Object.assign(Object.assign({}, action.payload), {
+          id
+        });
+        return Object.assign(Object.assign({}, state), {
+          toasts: [toast, ...state.toasts]
+        });
+      }
+
+    case ReducerActionType.Update:
+      {
+        return Object.assign(Object.assign({}, state), {
+          toasts: state.toasts.map(toast => {
+            if (toast.id === action.payload.id) {
+              return Object.assign(Object.assign({}, toast), action.payload.options);
+            } else {
+              return toast;
+            }
+          })
+        });
+      }
+
+    case ReducerActionType.AddOrUpdate:
+      {
+        return state.toasts.find(toast => toast.id === action.payload.id) ? reducer(state, {
+          type: ReducerActionType.Update,
+          payload: {
+            id: action.payload.id,
+            options: action.payload
+          }
+        }) : reducer(state, {
+          type: ReducerActionType.Add,
+          payload: action.payload
+        });
+      }
+
+    case ReducerActionType.Remove:
+      {
+        return Object.assign(Object.assign({}, state), {
+          toasts: state.toasts.filter(toast => toast.id !== action.payload)
+        });
+      }
+  }
+};
+
+const dispatch = action => {
+  externalState = reducer(externalState, action);
+  storeStateUpdaters.forEach(updateState => {
+    updateState(externalState);
+  });
+};
+const useToastStore = () => {
+  const [state, setState] = l(externalState);
+  y(() => {
+    storeStateUpdaters.push(setState);
+    return () => {
+      const indexOfCurrentStateUpdater = storeStateUpdaters.indexOf(setState);
+
+      if (indexOfCurrentStateUpdater > -1) {
+        storeStateUpdaters.splice(indexOfCurrentStateUpdater, 1);
+      }
+    };
+  }, [state]);
+  return state;
+};
 ;// CONCATENATED MODULE: ./src/assets/icons/ic-accessibility.svg
 var _path;
 
@@ -599,6 +905,27 @@ var SvgIcCheckCircle = function SvgIcCheckCircle(props) {
 };
 
 /* harmony default export */ const ic_check_circle = (SvgIcCheckCircle);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-check-circle-filled.svg
+var ic_check_circle_filled_path;
+
+function ic_check_circle_filled_extends() { ic_check_circle_filled_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_check_circle_filled_extends.apply(this, arguments); }
+
+
+
+var SvgIcCheckCircleFilled = function SvgIcCheckCircleFilled(props) {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", ic_check_circle_filled_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_check_circle_filled_path || (ic_check_circle_filled_path = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M10.005 18.34a8.335 8.335 0 1 0 0-16.67 8.335 8.335 0 0 0 0 16.67ZM8.57 14 5 10.16l1.007-1.09 2.564 2.756L13.993 6 15 7.09 8.571 14Z",
+    fill: "currentColor"
+  })));
+};
+
+/* harmony default export */ const ic_check_circle_filled = (SvgIcCheckCircleFilled);
 ;// CONCATENATED MODULE: ./src/assets/icons/ic-check.svg
 var ic_check_path;
 
@@ -689,6 +1016,25 @@ var SvgCircle55 = function SvgCircle55(props) {
 };
 
 /* harmony default export */ const circle_55 = (SvgCircle55);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-clear-circle-filled.svg
+var ic_clear_circle_filled_path;
+
+function ic_clear_circle_filled_extends() { ic_clear_circle_filled_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_clear_circle_filled_extends.apply(this, arguments); }
+
+
+
+var SvgIcClearCircleFilled = function SvgIcClearCircleFilled(props) {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", ic_clear_circle_filled_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_clear_circle_filled_path || (ic_clear_circle_filled_path = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
+    d: "M12.946 12.946a.833.833 0 0 1-1.178 0L10 11.178l-1.768 1.768a.833.833 0 1 1-1.178-1.178L8.82 10 7.054 8.232a.833.833 0 1 1 1.178-1.178L10 8.82l1.768-1.767a.833.833 0 1 1 1.178 1.178L11.178 10l1.768 1.768a.833.833 0 0 1 0 1.178Zm2.946-8.839A8.334 8.334 0 1 0 4.107 15.893 8.334 8.334 0 0 0 15.892 4.107Z",
+    fill: "currentColor"
+  })));
+};
+
+/* harmony default export */ const ic_clear_circle_filled = (SvgIcClearCircleFilled);
 ;// CONCATENATED MODULE: ./src/assets/icons/ic-close.svg
 var ic_close_path;
 
@@ -2336,6 +2682,127 @@ var SvgIcWindow = function SvgIcWindow(props) {
 
 
 
+
+
+;// CONCATENATED MODULE: ./src/components/Toast/ToastContainer.tsx
+
+
+
+
+const colorForToastType = type => {
+  switch (type) {
+    case 'success':
+      return 'color-success';
+
+    case 'error':
+      return 'color-danger';
+
+    default:
+      return 'color-info';
+  }
+};
+
+const iconForToastType = type => {
+  switch (type) {
+    case 'success':
+      return external_commonjs_react_commonjs2_react_amd_react_root_.createElement(ic_check_circle_filled, {
+        className: colorForToastType(type)
+      });
+
+    case 'error':
+      return external_commonjs_react_commonjs2_react_amd_react_root_.createElement(ic_clear_circle_filled, {
+        className: colorForToastType(type)
+      });
+
+    case 'loading':
+      return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+        className: "sk-spinner w-4 h-4 spinner-info"
+      });
+
+    default:
+      return null;
+  }
+};
+
+const ToastContainer = () => {
+  const {
+    toasts
+  } = useToastStore();
+  return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+    className: "flex flex-col items-end",
+    style: {
+      position: 'fixed',
+      zIndex: 9999,
+      bottom: '1.5rem',
+      right: '1.5rem'
+    }
+  }, toasts.map(toast => {
+    var _a;
+
+    const icon = iconForToastType(toast.type);
+    const hasActions = ((_a = toast === null || toast === void 0 ? void 0 : toast.actions) === null || _a === void 0 ? void 0 : _a.length) > 0;
+    return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+      key: toast.id,
+      className: `inline-flex items-center bg-grey-5 mt-2 ${hasActions ? 'p-2 pl-3' : 'p-3'}`,
+      style: {
+        transition: 'all 230ms cubic-bezier(.21,1.02,.73,1)',
+        borderRadius: '0.25rem',
+        boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.16)'
+      }
+    }, icon ? external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+      className: "flex items-center justify-center sn-icon mr-2"
+    }, icon) : null, external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+      className: "select-none text-sm"
+    }, toast.message), hasActions && external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+      className: "ml-4"
+    }, toast.actions.map((action, index) => external_commonjs_react_commonjs2_react_amd_react_root_.createElement("button", {
+      style: {
+        paddingLeft: '0.45rem',
+        paddingRight: '0.45rem',
+        borderRadius: '0.25rem'
+      },
+      className: `py-1 border-0 bg-transparent cursor-pointer font-semibold text-sm select-none hover:bg-grey-3 ${colorForToastType(toast.type)} ${index !== 0 ? 'ml-2' : ''}`,
+      onClick: () => {
+        action.callback(toast.id);
+      }
+    }, action.label))));
+  }));
+};
+;// CONCATENATED MODULE: ./src/components/Toast/toast.ts
+
+
+const addToast = options => {
+  var _a;
+
+  const id = (_a = options.id) !== null && _a !== void 0 ? _a : nanoid();
+  dispatch({
+    type: ReducerActionType.AddOrUpdate,
+    payload: Object.assign(Object.assign({}, options), {
+      id
+    })
+  });
+  return id;
+};
+const updateToast = (id, options) => {
+  dispatch({
+    type: ReducerActionType.Update,
+    payload: {
+      id,
+      options
+    }
+  });
+  return id;
+};
+const removeToast = id => {
+  dispatch({
+    type: ReducerActionType.Remove,
+    payload: id
+  });
+  return id;
+};
+;// CONCATENATED MODULE: ./src/components/Toast/index.ts
+
+
 ;// CONCATENATED MODULE: ./src/assets/index.js
 
 ;// CONCATENATED MODULE: ./src/stylekit.js
@@ -2343,6 +2810,14 @@ var SvgIcWindow = function SvgIcWindow(props) {
 
 
 
+
+
+/***/ }),
+
+/***/ 683:
+/***/ ((module) => {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__683__;
 
 /***/ }),
 
@@ -2502,7 +2977,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__320__;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(327)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(194)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ 	return __webpack_exports__;

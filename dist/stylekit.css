@@ -3046,6 +3046,14 @@ template {
   color: var(--sn-stylekit-info-color-darkened);
 }
 
+.sn-component .bg-success {
+  background-color: var(--sn-stylekit-success-color);
+}
+
+.sn-component .color-success {
+  color: var(--sn-stylekit-success-color);
+}
+
 .sn-component .bg-grey-0 {
   background-color: var(--sn-stylekit-grey-0);
 }
