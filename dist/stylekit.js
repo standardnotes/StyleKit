@@ -12,7 +12,7 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 194:
+/***/ 932:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -242,306 +242,6 @@ class SKAlert {
 }
 // EXTERNAL MODULE: external {"commonjs":"react","commonjs2":"react","amd":"react","root":"_"}
 var external_commonjs_react_commonjs2_react_amd_react_root_ = __webpack_require__(320);
-;// CONCATENATED MODULE: ./node_modules/nanoid/index.browser.js
-
-
-let random = bytes => crypto.getRandomValues(new Uint8Array(bytes));
-
-let customRandom = (alphabet, defaultSize, getRandom) => {
-  let mask = (2 << Math.log(alphabet.length - 1) / Math.LN2) - 1;
-  let step = -~(1.6 * mask * defaultSize / alphabet.length);
-  return (size = defaultSize) => {
-    let id = '';
-
-    while (true) {
-      let bytes = getRandom(step);
-      let j = step;
-
-      while (j--) {
-        id += alphabet[bytes[j] & mask] || '';
-        if (id.length === size) return id;
-      }
-    }
-  };
-};
-
-let customAlphabet = (alphabet, size = 21) => customRandom(alphabet, size, random);
-
-let nanoid = (size = 21) => {
-  let id = '';
-  let bytes = crypto.getRandomValues(new Uint8Array(size));
-
-  while (size--) {
-    let byte = bytes[size] & 63;
-
-    if (byte < 36) {
-      id += byte.toString(36);
-    } else if (byte < 62) {
-      id += (byte - 26).toString(36).toUpperCase();
-    } else if (byte < 63) {
-      id += '_';
-    } else {
-      id += '-';
-    }
-  }
-
-  return id;
-};
-
-
-// EXTERNAL MODULE: external {"commonjs":"preact","commonjs2":"preact","amd":"preact","root":"_"}
-var external_commonjs_preact_commonjs2_preact_amd_preact_root_ = __webpack_require__(683);
-;// CONCATENATED MODULE: ./node_modules/preact/hooks/dist/hooks.module.js
-
-var t,
-    u,
-    r,
-    o = 0,
-    i = [],
-    c = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b,
-    f = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r,
-    e = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed,
-    a = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c,
-    v = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount;
-
-function m(t, r) {
-  external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h(u, t, o || r), o = 0;
-  var i = u.__H || (u.__H = {
-    __: [],
-    __h: []
-  });
-  return t >= i.__.length && i.__.push({}), i.__[t];
-}
-
-function l(n) {
-  return o = 1, p(w, n);
-}
-
-function p(n, r, o) {
-  var i = m(t++, 2);
-  return i.t = n, i.__c || (i.__ = [o ? o(r) : w(void 0, r), function (n) {
-    var t = i.t(i.__[0], n);
-    i.__[0] !== t && (i.__ = [t, i.__[1]], i.__c.setState({}));
-  }], i.__c = u), i.__;
-}
-
-function y(r, o) {
-  var i = m(t++, 3);
-  !external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__H.__h.push(i));
-}
-
-function h(r, o) {
-  var i = m(t++, 4);
-  !n.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__h.push(i));
-}
-
-function s(n) {
-  return o = 5, d(function () {
-    return {
-      current: n
-    };
-  }, []);
-}
-
-function _(n, t, u) {
-  o = 6, h(function () {
-    "function" == typeof n ? n(t()) : n && (n.current = t());
-  }, null == u ? u : u.concat(n));
-}
-
-function d(n, u) {
-  var r = m(t++, 7);
-  return k(r.__H, u) && (r.__ = n(), r.__H = u, r.__h = n), r.__;
-}
-
-function A(n, t) {
-  return o = 8, d(function () {
-    return n;
-  }, t);
-}
-
-function F(n) {
-  var r = u.context[n.__c],
-      o = m(t++, 9);
-  return o.c = n, r ? (null == o.__ && (o.__ = !0, r.sub(u)), r.props.value) : n.__;
-}
-
-function T(t, u) {
-  n.useDebugValue && n.useDebugValue(u ? u(t) : t);
-}
-
-function q(n) {
-  var r = m(t++, 10),
-      o = l();
-  return r.__ = n, u.componentDidCatch || (u.componentDidCatch = function (n) {
-    r.__ && r.__(n), o[1](n);
-  }), [o[0], function () {
-    o[1](void 0);
-  }];
-}
-
-function x() {
-  for (var t; t = i.shift();) if (t.__P) try {
-    t.__H.__h.forEach(g), t.__H.__h.forEach(j), t.__H.__h = [];
-  } catch (u) {
-    t.__H.__h = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, t.__v);
-  }
-}
-
-external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = function (n) {
-  u = null, c && c(n);
-}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r = function (n) {
-  f && f(n), t = 0;
-  var r = (u = n.__c).__H;
-  r && (r.__h.forEach(g), r.__h.forEach(j), r.__h = []);
-}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed = function (t) {
-  e && e(t);
-  var o = t.__c;
-  o && o.__H && o.__H.__h.length && (1 !== i.push(o) && r === external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame || ((r = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame) || function (n) {
-    var t,
-        u = function () {
-      clearTimeout(r), b && cancelAnimationFrame(t), setTimeout(n);
-    },
-        r = setTimeout(u, 100);
-
-    b && (t = requestAnimationFrame(u));
-  })(x)), u = null;
-}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c = function (t, u) {
-  u.some(function (t) {
-    try {
-      t.__h.forEach(g), t.__h = t.__h.filter(function (n) {
-        return !n.__ || j(n);
-      });
-    } catch (r) {
-      u.some(function (n) {
-        n.__h && (n.__h = []);
-      }), u = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(r, t.__v);
-    }
-  }), a && a(t, u);
-}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount = function (t) {
-  v && v(t);
-  var u,
-      r = t.__c;
-  r && r.__H && (r.__H.__.forEach(function (n) {
-    try {
-      g(n);
-    } catch (n) {
-      u = n;
-    }
-  }), u && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, r.__v));
-};
-var b = "function" == typeof requestAnimationFrame;
-
-function g(n) {
-  var t = u,
-      r = n.__c;
-  "function" == typeof r && (n.__c = void 0, r()), u = t;
-}
-
-function j(n) {
-  var t = u;
-  n.__c = n.__(), u = t;
-}
-
-function k(n, t) {
-  return !n || n.length !== t.length || t.some(function (t, u) {
-    return t !== n[u];
-  });
-}
-
-function w(n, t) {
-  return "function" == typeof t ? t(n) : t;
-}
-
-
-;// CONCATENATED MODULE: ./src/components/Toast/toastStore.ts
-
-
-let externalState = {
-  toasts: []
-};
-var ReducerActionType;
-
-(function (ReducerActionType) {
-  ReducerActionType[ReducerActionType["Add"] = 0] = "Add";
-  ReducerActionType[ReducerActionType["Update"] = 1] = "Update";
-  ReducerActionType[ReducerActionType["AddOrUpdate"] = 2] = "AddOrUpdate";
-  ReducerActionType[ReducerActionType["Remove"] = 3] = "Remove";
-})(ReducerActionType || (ReducerActionType = {}));
-
-const storeStateUpdaters = [];
-
-const reducer = (state, action) => {
-  var _a;
-
-  switch (action.type) {
-    case ReducerActionType.Add:
-      {
-        const id = (_a = action.payload.id) !== null && _a !== void 0 ? _a : nanoid();
-        const toast = Object.assign(Object.assign({}, action.payload), {
-          id
-        });
-        return Object.assign(Object.assign({}, state), {
-          toasts: [toast, ...state.toasts]
-        });
-      }
-
-    case ReducerActionType.Update:
-      {
-        return Object.assign(Object.assign({}, state), {
-          toasts: state.toasts.map(toast => {
-            if (toast.id === action.payload.id) {
-              return Object.assign(Object.assign({}, toast), action.payload.options);
-            } else {
-              return toast;
-            }
-          })
-        });
-      }
-
-    case ReducerActionType.AddOrUpdate:
-      {
-        return state.toasts.find(toast => toast.id === action.payload.id) ? reducer(state, {
-          type: ReducerActionType.Update,
-          payload: {
-            id: action.payload.id,
-            options: action.payload
-          }
-        }) : reducer(state, {
-          type: ReducerActionType.Add,
-          payload: action.payload
-        });
-      }
-
-    case ReducerActionType.Remove:
-      {
-        return Object.assign(Object.assign({}, state), {
-          toasts: state.toasts.filter(toast => toast.id !== action.payload)
-        });
-      }
-  }
-};
-
-const dispatch = action => {
-  externalState = reducer(externalState, action);
-  storeStateUpdaters.forEach(updateState => {
-    updateState(externalState);
-  });
-};
-const useToastStore = () => {
-  const [state, setState] = l(externalState);
-  y(() => {
-    storeStateUpdaters.push(setState);
-    return () => {
-      const indexOfCurrentStateUpdater = storeStateUpdaters.indexOf(setState);
-
-      if (indexOfCurrentStateUpdater > -1) {
-        storeStateUpdaters.splice(indexOfCurrentStateUpdater, 1);
-      }
-    };
-  }, [state]);
-  return state;
-};
 ;// CONCATENATED MODULE: ./src/assets/icons/ic-accessibility.svg
 var _path;
 
@@ -2684,7 +2384,425 @@ var SvgIcWindow = function SvgIcWindow(props) {
 
 
 
+// EXTERNAL MODULE: external {"commonjs":"preact","commonjs2":"preact","amd":"preact","root":"_"}
+var external_commonjs_preact_commonjs2_preact_amd_preact_root_ = __webpack_require__(683);
+;// CONCATENATED MODULE: ./node_modules/preact/hooks/dist/hooks.module.js
+
+var t,
+    u,
+    r,
+    o = 0,
+    i = [],
+    c = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b,
+    f = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r,
+    e = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed,
+    a = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c,
+    v = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount;
+
+function m(t, r) {
+  external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__h(u, t, o || r), o = 0;
+  var i = u.__H || (u.__H = {
+    __: [],
+    __h: []
+  });
+  return t >= i.__.length && i.__.push({}), i.__[t];
+}
+
+function l(n) {
+  return o = 1, p(w, n);
+}
+
+function p(n, r, o) {
+  var i = m(t++, 2);
+  return i.t = n, i.__c || (i.__ = [o ? o(r) : w(void 0, r), function (n) {
+    var t = i.t(i.__[0], n);
+    i.__[0] !== t && (i.__ = [t, i.__[1]], i.__c.setState({}));
+  }], i.__c = u), i.__;
+}
+
+function y(r, o) {
+  var i = m(t++, 3);
+  !external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__H.__h.push(i));
+}
+
+function h(r, o) {
+  var i = m(t++, 4);
+  !n.__s && k(i.__H, o) && (i.__ = r, i.__H = o, u.__h.push(i));
+}
+
+function s(n) {
+  return o = 5, d(function () {
+    return {
+      current: n
+    };
+  }, []);
+}
+
+function _(n, t, u) {
+  o = 6, h(function () {
+    "function" == typeof n ? n(t()) : n && (n.current = t());
+  }, null == u ? u : u.concat(n));
+}
+
+function d(n, u) {
+  var r = m(t++, 7);
+  return k(r.__H, u) && (r.__ = n(), r.__H = u, r.__h = n), r.__;
+}
+
+function A(n, t) {
+  return o = 8, d(function () {
+    return n;
+  }, t);
+}
+
+function F(n) {
+  var r = u.context[n.__c],
+      o = m(t++, 9);
+  return o.c = n, r ? (null == o.__ && (o.__ = !0, r.sub(u)), r.props.value) : n.__;
+}
+
+function T(t, u) {
+  n.useDebugValue && n.useDebugValue(u ? u(t) : t);
+}
+
+function q(n) {
+  var r = m(t++, 10),
+      o = l();
+  return r.__ = n, u.componentDidCatch || (u.componentDidCatch = function (n) {
+    r.__ && r.__(n), o[1](n);
+  }), [o[0], function () {
+    o[1](void 0);
+  }];
+}
+
+function x() {
+  for (var t; t = i.shift();) if (t.__P) try {
+    t.__H.__h.forEach(g), t.__H.__h.forEach(j), t.__H.__h = [];
+  } catch (u) {
+    t.__H.__h = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, t.__v);
+  }
+}
+
+external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__b = function (n) {
+  u = null, c && c(n);
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__r = function (n) {
+  f && f(n), t = 0;
+  var r = (u = n.__c).__H;
+  r && (r.__h.forEach(g), r.__h.forEach(j), r.__h = []);
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.diffed = function (t) {
+  e && e(t);
+  var o = t.__c;
+  o && o.__H && o.__H.__h.length && (1 !== i.push(o) && r === external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame || ((r = external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.requestAnimationFrame) || function (n) {
+    var t,
+        u = function () {
+      clearTimeout(r), b && cancelAnimationFrame(t), setTimeout(n);
+    },
+        r = setTimeout(u, 100);
+
+    b && (t = requestAnimationFrame(u));
+  })(x)), u = null;
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__c = function (t, u) {
+  u.some(function (t) {
+    try {
+      t.__h.forEach(g), t.__h = t.__h.filter(function (n) {
+        return !n.__ || j(n);
+      });
+    } catch (r) {
+      u.some(function (n) {
+        n.__h && (n.__h = []);
+      }), u = [], external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(r, t.__v);
+    }
+  }), a && a(t, u);
+}, external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.unmount = function (t) {
+  v && v(t);
+  var u,
+      r = t.__c;
+  r && r.__H && (r.__H.__.forEach(function (n) {
+    try {
+      g(n);
+    } catch (n) {
+      u = n;
+    }
+  }), u && external_commonjs_preact_commonjs2_preact_amd_preact_root_.options.__e(u, r.__v));
+};
+var b = "function" == typeof requestAnimationFrame;
+
+function g(n) {
+  var t = u,
+      r = n.__c;
+  "function" == typeof r && (n.__c = void 0, r()), u = t;
+}
+
+function j(n) {
+  var t = u;
+  n.__c = n.__(), u = t;
+}
+
+function k(n, t) {
+  return !n || n.length !== t.length || t.some(function (t, u) {
+    return t !== n[u];
+  });
+}
+
+function w(n, t) {
+  return "function" == typeof t ? t(n) : t;
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/nanostores/listen-keys/index.js
+function listenKeys(store, keys, listener) {
+  let keysSet = new Set([...keys, undefined]);
+  return store.listen((value, changed) => {
+    if (keysSet.has(changed)) {
+      listener(value, changed);
+    }
+  });
+}
+;// CONCATENATED MODULE: ./node_modules/@nanostores/preact/index.js
+
+
+function useStore(store, opts = {}) {
+  let [, forceRender] = l({});
+
+  if (false) {}
+
+  y(() => {
+    let batching, timer, unlisten;
+
+    let rerender = () => {
+      if (!batching) {
+        batching = 1;
+        timer = setTimeout(() => {
+          batching = undefined;
+          forceRender({});
+        });
+      }
+    };
+
+    if (opts.keys) {
+      unlisten = listenKeys(store, opts.keys, rerender);
+    } else {
+      unlisten = store.listen(rerender);
+    }
+
+    return () => {
+      unlisten();
+      clearTimeout(timer);
+    };
+  }, [store, '' + opts.keys]);
+  return store.get();
+}
+;// CONCATENATED MODULE: ./node_modules/nanoid/index.browser.js
+
+
+let random = bytes => crypto.getRandomValues(new Uint8Array(bytes));
+
+let customRandom = (alphabet, defaultSize, getRandom) => {
+  let mask = (2 << Math.log(alphabet.length - 1) / Math.LN2) - 1;
+  let step = -~(1.6 * mask * defaultSize / alphabet.length);
+  return (size = defaultSize) => {
+    let id = '';
+
+    while (true) {
+      let bytes = getRandom(step);
+      let j = step;
+
+      while (j--) {
+        id += alphabet[bytes[j] & mask] || '';
+        if (id.length === size) return id;
+      }
+    }
+  };
+};
+
+let customAlphabet = (alphabet, size = 21) => customRandom(alphabet, size, random);
+
+let nanoid = (size = 21) => {
+  let id = '';
+  let bytes = crypto.getRandomValues(new Uint8Array(size));
+
+  while (size--) {
+    let byte = bytes[size] & 63;
+
+    if (byte < 36) {
+      id += byte.toString(36);
+    } else if (byte < 62) {
+      id += (byte - 26).toString(36).toUpperCase();
+    } else if (byte < 63) {
+      id += '_';
+    } else {
+      id += '-';
+    }
+  }
+
+  return id;
+};
+
+
+;// CONCATENATED MODULE: ./node_modules/nanostores/atom/index.js
+
+let atom = initialValue => {
+  let currentListeners;
+  let nextListeners = [];
+  let store = {
+    lc: 0,
+    value: initialValue,
+
+    set(data) {
+      store.value = data;
+      store.notify();
+    },
+
+    get() {
+      if (!store.lc) {
+        store.listen(() => {})();
+      }
+
+      return store.value;
+    },
+
+    notify(changedKey) {
+      currentListeners = nextListeners;
+
+      for (let listener of currentListeners) {
+        listener(store.value, changedKey);
+      }
+    },
+
+    listen(listener) {
+      if (nextListeners === currentListeners) {
+        nextListeners = nextListeners.slice();
+      }
+
+      store.lc = nextListeners.push(listener);
+      return () => {
+        if (nextListeners === currentListeners) {
+          nextListeners = nextListeners.slice();
+        }
+
+        let index = nextListeners.indexOf(listener);
+
+        if (~index) {
+          nextListeners.splice(index, 1);
+          store.lc--;
+          if (!store.lc) store.off();
+        }
+      };
+    },
+
+    subscribe(cb) {
+      let unbind = store.listen(cb);
+      cb(store.value);
+      return unbind;
+    },
+
+    off() {}
+
+  };
+
+  if (false) {}
+
+  return store;
+};
+;// CONCATENATED MODULE: ./node_modules/nanostores/task/index.js
+let tasks = 0;
+let resolves = [];
+function startTask() {
+  tasks += 1;
+  return () => {
+    tasks -= 1;
+
+    if (tasks === 0) {
+      let prevResolves = resolves;
+      resolves = [];
+
+      for (let i of prevResolves) i();
+    }
+  };
+}
+function task(cb) {
+  let endTask = startTask();
+  return cb().finally(endTask);
+}
+function allTasks() {
+  if (tasks === 0) {
+    return Promise.resolve();
+  } else {
+    return new Promise(resolve => {
+      resolves.push(resolve);
+    });
+  }
+}
+function cleanTasks() {
+  tasks = 0;
+}
+;// CONCATENATED MODULE: ./node_modules/nanostores/action/index.js
+
+let lastAction = Symbol();
+
+let doAction = (store, actionName, cb, args) => {
+  let tracker = { ...store
+  };
+
+  tracker.set = (...setArgs) => {
+    store[lastAction] = actionName;
+    store.set(...setArgs);
+    delete store[lastAction];
+  };
+
+  if (store.setKey) {
+    tracker.setKey = (...setArgs) => {
+      store[lastAction] = actionName;
+      store.setKey(...setArgs);
+      delete store[lastAction];
+    };
+  }
+
+  let result = cb(tracker, ...args);
+
+  if (result instanceof Promise) {
+    let endTask = startTask();
+    return result.finally(endTask);
+  }
+
+  return result;
+};
+
+let action = (store, actionName, cb) => (...args) => doAction(store, actionName, cb, args);
+let actionFor = (Template, actionName, cb) => {
+  return (store, ...rest) => doAction(store, actionName, cb, rest);
+};
+;// CONCATENATED MODULE: ./src/components/Toast/toastStore.ts
+
+
+const toastStore = atom([]);
+const addToast = action(toastStore, 'addToast', (store, options) => {
+  var _a;
+
+  const existingToasts = store.get();
+  const id = (_a = options === null || options === void 0 ? void 0 : options.id) !== null && _a !== void 0 ? _a : nanoid();
+  const toast = Object.assign(Object.assign({}, options), {
+    id
+  });
+  store.set([toast, ...existingToasts]);
+  return id;
+});
+const updateToast = action(toastStore, 'updateToast', (store, toastId, options) => {
+  const existingToasts = store.get();
+  store.set(existingToasts.map(toast => {
+    if (toast.id === toastId) {
+      return Object.assign(Object.assign({}, toast), options);
+    } else {
+      return toast;
+    }
+  }));
+});
+const removeToast = action(toastStore, 'removeToast', (store, toastId) => {
+  const existingToasts = store.get();
+  store.set(existingToasts.filter(toast => toast.id !== toastId));
+});
 ;// CONCATENATED MODULE: ./src/components/Toast/ToastContainer.tsx
+
 
 
 
@@ -2725,9 +2843,7 @@ const iconForToastType = type => {
 };
 
 const ToastContainer = () => {
-  const {
-    toasts
-  } = useToastStore();
+  const toasts = useStore(toastStore);
   return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
     className: "flex flex-col items-end",
     style: {
@@ -2767,38 +2883,6 @@ const ToastContainer = () => {
       }
     }, action.label))));
   }));
-};
-;// CONCATENATED MODULE: ./src/components/Toast/toast.ts
-
-
-const addToast = options => {
-  var _a;
-
-  const id = (_a = options.id) !== null && _a !== void 0 ? _a : nanoid();
-  dispatch({
-    type: ReducerActionType.AddOrUpdate,
-    payload: Object.assign(Object.assign({}, options), {
-      id
-    })
-  });
-  return id;
-};
-const updateToast = (id, options) => {
-  dispatch({
-    type: ReducerActionType.Update,
-    payload: {
-      id,
-      options
-    }
-  });
-  return id;
-};
-const removeToast = id => {
-  dispatch({
-    type: ReducerActionType.Remove,
-    payload: id
-  });
-  return id;
 };
 ;// CONCATENATED MODULE: ./src/components/Toast/index.ts
 
@@ -2977,7 +3061,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__320__;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(194)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(932)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ 	return __webpack_exports__;

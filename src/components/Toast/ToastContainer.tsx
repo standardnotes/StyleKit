@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { h, FunctionComponent } from 'preact';
-import { useToastStore } from './toastStore';
 import type { ToastType } from './types';
 import {
   CheckCircleFilledIcon,
   ClearCircleFilledIcon,
 } from '../../assets/icons';
+import { useStore } from '@nanostores/preact';
+import { toastStore } from './toastStore';
 
 const colorForToastType = (type: ToastType) => {
   switch (type) {
@@ -32,7 +33,7 @@ const iconForToastType = (type: ToastType) => {
 };
 
 export const ToastContainer: FunctionComponent = () => {
-  const { toasts } = useToastStore();
+  const toasts = useStore(toastStore);
 
   return (
     <div
