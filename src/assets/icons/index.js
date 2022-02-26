@@ -14,10 +14,12 @@ import AuthenticatorIcon from './ic-authenticator.svg';
 import BlueDotIcon from './blue-dot.svg';
 import CheckBoldIcon from './ic-check-bold.svg';
 import CheckCircleIcon from './ic-check-circle.svg';
+import CheckCircleFilledIcon from './ic-check-circle-filled.svg';
 import CheckIcon from './ic-check.svg';
 import ChevronDownIcon from './ic-chevron-down.svg';
 import ChevronRightIcon from './ic-chevron-right.svg';
 import CircleIcon from './circle-55.svg';
+import ClearCircleFilledIcon from './ic-clear-circle-filled.svg';
 import CloseIcon from './ic-close.svg';
 import CloudOffIcon from './ic-cloud-off.svg';
 import CodeIcon from './ic-code.svg';
@@ -105,10 +107,12 @@ export {
   BlueDotIcon,
   CheckBoldIcon,
   CheckCircleIcon,
+  CheckCircleFilledIcon,
   CheckIcon,
   ChevronDownIcon,
   ChevronRightIcon,
   CircleIcon,
+  ClearCircleFilledIcon,
   CloseIcon,
   CloudOffIcon,
   CodeIcon,
