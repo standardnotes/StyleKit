@@ -31,6 +31,7 @@ import EmailIcon from './ic-email.svg';
 import EyeIcon from './ic-eye.svg';
 import EyeOffIcon from './ic-eye-off.svg';
 import HashtagIcon from './ic-hashtag.svg';
+import HashtagOffIcon from './ic-hashtag-off.svg';
 import HelpIcon from './ic-help.svg';
 import HistoryIcon from './ic-history.svg';
 import IlNotesIcon from './il-notes.svg';
@@ -122,6 +123,7 @@ export {
   EyeIcon,
   EyeOffIcon,
   HashtagIcon,
+  HashtagOffIcon,
   HelpIcon,
   HistoryIcon,
   IlNotesIcon,

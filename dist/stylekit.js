@@ -12,7 +12,7 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 327:
+/***/ 500:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -53,6 +53,7 @@ __webpack_require__.d(__webpack_exports__, {
   "EyeIcon": () => (/* reexport */ ic_eye),
   "EyeOffIcon": () => (/* reexport */ ic_eye_off),
   "HashtagIcon": () => (/* reexport */ ic_hashtag),
+  "HashtagOffIcon": () => (/* reexport */ ic_hashtag_off),
   "HelpIcon": () => (/* reexport */ ic_help),
   "HistoryIcon": () => (/* reexport */ ic_history),
   "IlNotesIcon": () => (/* reexport */ il_notes),
@@ -1047,6 +1048,29 @@ var SvgIcHashtag = function SvgIcHashtag(props) {
 };
 
 /* harmony default export */ const ic_hashtag = (SvgIcHashtag);
+;// CONCATENATED MODULE: ./src/assets/icons/ic-hashtag-off.svg
+var ic_hashtag_off_path, ic_hashtag_off_path2, ic_hashtag_off_path3;
+
+function ic_hashtag_off_extends() { ic_hashtag_off_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ic_hashtag_off_extends.apply(this, arguments); }
+
+
+
+var SvgIcHashtagOff = function SvgIcHashtagOff(props) {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("svg", ic_hashtag_off_extends({
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), ic_hashtag_off_path || (ic_hashtag_off_path = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
+    clipRule: "evenodd",
+    d: "M1.75 4.108 2.93 2.93 17.07 17.072l-1.179 1.178-2.792-2.792V16.5h-1.6v-2.642L10.642 13H8.6v3.5H7V13H3.5v-1.6H7V9.358L6.142 8.5H3.5V6.9h1.042L1.75 4.108ZM8.6 11.4v-.442l.442.442H8.6Z"
+  })), ic_hashtag_off_path2 || (ic_hashtag_off_path2 = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
+    d: "M15.356 13H16.5v-1.6h-2.744l1.6 1.6ZM13.1 10.744V8.5h3.4V6.9h-3.4V3.5h-1.6v3.4H9.256l1.6 1.6h.644v.644l1.6 1.6ZM8.6 6.244V3.5H7v1.144l1.6 1.6ZM8.6 10.958v.442h.442l-.442-.442Z"
+  })), ic_hashtag_off_path3 || (ic_hashtag_off_path3 = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_react_root_.createElement("path", {
+    d: "M11.5 8.5h-.644l.644.644V8.5Z"
+  })));
+};
+
+/* harmony default export */ const ic_hashtag_off = (SvgIcHashtagOff);
 ;// CONCATENATED MODULE: ./src/assets/icons/ic-help.svg
 var ic_help_path;
 
@@ -2336,6 +2360,7 @@ var SvgIcWindow = function SvgIcWindow(props) {
 
 
 
+
 ;// CONCATENATED MODULE: ./src/assets/index.js
 
 ;// CONCATENATED MODULE: ./src/stylekit.js
@@ -2502,7 +2527,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__320__;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(327)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(500)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ 	return __webpack_exports__;
