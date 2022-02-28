@@ -68,3 +68,7 @@
 .selected\:fg-color[aria-selected='true'] {
   color: var(--sn-stylekit-contrast-foreground-color);
 }
+
+.fill-current {
+  fill: currentColor;
+}
