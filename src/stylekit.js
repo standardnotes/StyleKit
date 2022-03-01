@@ -5,9 +5,9 @@ import {
   ToastContainer,
   addToast,
   updateToast,
-  removeToast,
+  dismissToast,
 } from './components/Toast';
 
-export { SKAlert, ToastContainer, addToast, updateToast, removeToast };
+export { SKAlert, ToastContainer, addToast, updateToast, dismissToast };
 
 export * from './assets';

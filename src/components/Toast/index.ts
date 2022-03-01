@@ -1,2 +1,2 @@
 export { ToastContainer } from './ToastContainer';
-export { addToast, updateToast, removeToast } from './toastStore';
+export { addToast, updateToast, dismissToast } from './toastStore';
