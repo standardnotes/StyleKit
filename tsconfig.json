@@ -2,6 +2,7 @@
   "exclude": ["dist/**/*"],
   "include": ["src/components/Toast/**/*"],
   "compilerOptions": {
+    "rootDir": ".",
     "baseUrl": "src",
     "allowJs": true,
     "sourceMap": true,
