@@ -2,6 +2,7 @@
   "name": "@standardnotes/stylekit",
   "version": "5.9.0",
   "main": "dist/stylekit.js",
+  "types": "dist/stylekit.d.ts",
   "publishConfig": {
     "access": "public"
   },

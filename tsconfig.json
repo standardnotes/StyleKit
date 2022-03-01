@@ -1,17 +1,16 @@
 {
   "exclude": ["dist/**/*"],
-  "include": ["src/components/Toast/**/*"],
+  "include": ["src/**/*"],
   "compilerOptions": {
-    "rootDir": ".",
-    "baseUrl": "src",
+    "rootDir": "src",
+    "outDir": "dist",
+    "declarationDir": "dist",
     "allowJs": true,
     "sourceMap": true,
     "jsx": "react",
     "target": "ES6",
     "moduleResolution": "node",
-    "outDir": "dist",
     "emitDeclarationOnly": true,
-    "declaration": true,
-    "declarationDir": "dist/@types"
+    "declaration": true
   }
 }
