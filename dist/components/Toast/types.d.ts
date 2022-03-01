@@ -1,7 +1,7 @@
 import { ToastType } from './enums';
 export declare type ToastAction = {
     label: string;
-    callback: (toastId: Toast['id']) => void;
+    handler: (toastId: Toast['id']) => void;
 };
 declare type CommonToastProperties = {
     type: ToastType;
@@ -17,6 +17,7 @@ export declare type ToastOptions = CommonToastProperties & {
     autoClose?: boolean;
     duration?: number;
 };
+export declare type ToastUpdateOptions = Partial<ToastOptions>;
 export declare type ToastState = {
     toasts: Toast[];
 };

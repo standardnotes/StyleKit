@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 import { action, atom, WritableAtom } from 'nanostores';
 import { ToastType } from './enums';
-import { Toast, ToastOptions } from './types';
+import { Toast, ToastOptions, ToastUpdateOptions } from './types';
 
 export const toastStore = atom<Toast[]>([]);
 
@@ -11,7 +11,7 @@ export const updateToast = action(
   (
     store: WritableAtom<Toast[]>,
     toastId: Toast['id'],
-    options: ToastOptions
+    options: ToastUpdateOptions
   ) => {
     const existingToasts = store.get();
     store.set(
