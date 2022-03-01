@@ -12,7 +12,7 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 840:
+/***/ 828:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -630,7 +630,17 @@ let action = (store, actionName, cb) => (...args) => doAction(store, actionName,
 let actionFor = (Template, actionName, cb) => {
   return (store, ...rest) => doAction(store, actionName, cb, rest);
 };
+;// CONCATENATED MODULE: ./src/components/Toast/enums.ts
+var ToastType;
+
+(function (ToastType) {
+  ToastType["Regular"] = "regular";
+  ToastType["Success"] = "success";
+  ToastType["Error"] = "error";
+  ToastType["Loading"] = "loading";
+})(ToastType || (ToastType = {}));
 ;// CONCATENATED MODULE: ./src/components/Toast/toastStore.ts
+
 
 
 const toastStore = atom([]);
@@ -673,7 +683,7 @@ const addToast = action(toastStore, 'addToast', (store, options) => {
     dismissed: false
   });
   store.set([toast, ...existingToasts]);
-  const autoClose = (_b = options.autoClose) !== null && _b !== void 0 ? _b : !options.actions && options.type !== 'loading';
+  const autoClose = (_b = options.autoClose) !== null && _b !== void 0 ? _b : !options.actions && options.type !== ToastType.Loading;
   const duration = (_c = options.duration) !== null && _c !== void 0 ? _c : 4000;
 
   if (autoClose) {
@@ -2831,12 +2841,13 @@ var SvgIcWindow = function SvgIcWindow(props) {
 
 
 
+
 const colorForToastType = type => {
   switch (type) {
-    case 'success':
+    case ToastType.Success:
       return 'color-success';
 
-    case 'error':
+    case ToastType.Error:
       return 'color-danger';
 
     default:
@@ -2846,17 +2857,17 @@ const colorForToastType = type => {
 
 const iconForToastType = type => {
   switch (type) {
-    case 'success':
+    case ToastType.Success:
       return external_commonjs_react_commonjs2_react_amd_react_root_.createElement(ic_check_circle_filled, {
         className: colorForToastType(type)
       });
 
-    case 'error':
+    case ToastType.Error:
       return external_commonjs_react_commonjs2_react_amd_react_root_.createElement(ic_clear_circle_filled, {
         className: colorForToastType(type)
       });
 
-    case 'loading':
+    case ToastType.Loading:
       return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
         className: "sk-spinner w-4 h-4 spinner-info"
       });
@@ -2882,7 +2893,7 @@ const Toast = ({
       willChange: 'transform'
     },
     onClick: () => {
-      if (!hasActions && toast.type !== 'loading') {
+      if (!hasActions && toast.type !== ToastType.Loading) {
         dismissToast(toast.id);
       }
     }
@@ -3100,7 +3111,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__320__;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(840)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(828)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ 	return __webpack_exports__;

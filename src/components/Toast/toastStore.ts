@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
 import { action, atom, WritableAtom } from 'nanostores';
-import { Toast, ToastOptions, ToastType } from './types';
+import { ToastType } from './enums';
+import { Toast, ToastOptions } from './types';
 
 export const toastStore = atom<Toast[]>([]);
 
@@ -76,7 +77,8 @@ export const addToast = action(
     store.set([toast, ...existingToasts]);
 
     const autoClose =
-      options.autoClose ?? (!options.actions && options.type !== 'loading');
+      options.autoClose ??
+      (!options.actions && options.type !== ToastType.Loading);
     const duration = options.duration ?? 4000;
 
     if (autoClose) {

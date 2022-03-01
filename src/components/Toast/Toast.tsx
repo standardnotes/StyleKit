@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { FunctionComponent } from 'preact';
-import { memo } from 'preact/compat';
-import type { Toast as ToastPropType, ToastType } from './types';
+import type { Toast as ToastPropType } from './types';
 import {
   CheckCircleFilledIcon,
   ClearCircleFilledIcon,
 } from '../../assets/icons';
 import { dismissToast } from '.';
+import { ToastType } from './enums';
 
 const colorForToastType = (type: ToastType) => {
   switch (type) {
-    case 'success':
+    case ToastType.Success:
       return 'color-success';
-    case 'error':
+    case ToastType.Error:
       return 'color-danger';
     default:
       return 'color-info';
@@ -21,11 +21,11 @@ const colorForToastType = (type: ToastType) => {
 
 const iconForToastType = (type: ToastType) => {
   switch (type) {
-    case 'success':
+    case ToastType.Success:
       return <CheckCircleFilledIcon className={colorForToastType(type)} />;
-    case 'error':
+    case ToastType.Error:
       return <ClearCircleFilledIcon className={colorForToastType(type)} />;
-    case 'loading':
+    case ToastType.Loading:
       return <div className="sk-spinner w-4 h-4 spinner-info" />;
     default:
       return null;
@@ -54,7 +54,7 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
         willChange: 'transform',
       }}
       onClick={() => {
-        if (!hasActions && toast.type !== 'loading') {
+        if (!hasActions && toast.type !== ToastType.Loading) {
           dismissToast(toast.id);
         }
       }}

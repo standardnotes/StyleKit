@@ -1,9 +1,4 @@
-export enum ToastType {
-  Regular = 'regular',
-  Success = 'success',
-  Error = 'error',
-  Loading = 'loading',
-}
+import { ToastType } from './enums';
 
 export type ToastAction = {
   label: string;
