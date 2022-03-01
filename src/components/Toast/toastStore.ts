@@ -1,23 +1,8 @@
 import { nanoid } from 'nanoid';
 import { action, atom, WritableAtom } from 'nanostores';
-import type { Toast, ToastOptions } from './types';
+import { Toast, ToastOptions, ToastType } from './types';
 
 export const toastStore = atom<Toast[]>([]);
-
-export const addToast = action(
-  toastStore,
-  'addToast',
-  (store: WritableAtom<Toast[]>, options: ToastOptions) => {
-    const existingToasts = store.get();
-    const id = options?.id ?? nanoid();
-    const toast = {
-      ...options,
-      id,
-    };
-    store.set([toast, ...existingToasts]);
-    return id;
-  }
-);
 
 export const updateToast = action(
   toastStore,
@@ -43,11 +28,63 @@ export const updateToast = action(
   }
 );
 
-export const removeToast = action(
+const removeToast = action(
   toastStore,
   'removeToast',
   (store: WritableAtom<Toast[]>, toastId: Toast['id']) => {
     const existingToasts = store.get();
     store.set(existingToasts.filter((toast) => toast.id !== toastId));
+  }
+);
+
+export const dismissToast = action(
+  toastStore,
+  'dismissToast',
+  (store: WritableAtom<Toast[]>, toastId: Toast['id']) => {
+    const existingToasts = store.get();
+    store.set(
+      existingToasts.map((toast) => {
+        if (toast.id === toastId) {
+          return {
+            ...toast,
+            dismissed: true,
+          };
+        } else {
+          return toast;
+        }
+      })
+    );
+    setTimeout(() => {
+      removeToast(toastId);
+    }, 175);
+  }
+);
+
+export const addToast = action(
+  toastStore,
+  'addToast',
+  (store: WritableAtom<Toast[]>, options: ToastOptions) => {
+    const existingToasts = store.get();
+    const id = options.id ?? nanoid();
+
+    const toast = {
+      ...options,
+      id,
+      dismissed: false,
+    };
+
+    store.set([toast, ...existingToasts]);
+
+    const autoClose =
+      options.autoClose ?? (!options.actions && options.type !== 'loading');
+    const duration = options.duration ?? 4000;
+
+    if (autoClose) {
+      setTimeout(() => {
+        dismissToast(id);
+      }, duration);
+    }
+
+    return id;
   }
 );

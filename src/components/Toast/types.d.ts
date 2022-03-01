@@ -10,15 +10,21 @@ export type ToastAction = {
   callback: (toastId: Toast['id']) => void;
 };
 
-export type Toast = {
+type CommonToastProperties = {
   type: ToastType;
   message: string;
-  id: string;
   actions?: ToastAction[];
 };
 
-export type ToastOptions = Omit<Toast, 'id'> & {
+export type Toast = CommonToastProperties & {
+  id: string;
+  dismissed: boolean;
+};
+
+export type ToastOptions = CommonToastProperties & {
   id?: string;
+  autoClose?: boolean;
+  duration?: number;
 };
 
 export type ToastState = {
