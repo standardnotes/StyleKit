@@ -81,7 +81,7 @@ module.exports = (_, { mode }) => ({
         },
       },
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)?$/,
         exclude: /(node_modules)/,
         use: [
           'babel-loader',
