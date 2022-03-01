@@ -8,6 +8,11 @@ import {
 import { dismissToast } from '.';
 import { ToastType } from './enums';
 
+const prefersReducedMotion = () => {
+  const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
+  return mediaQuery.matches;
+};
+
 const colorForToastType = (type: ToastType) => {
   switch (type) {
     case ToastType.Success:
@@ -41,8 +46,18 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
   const icon = iconForToastType(toast.type);
   const hasActions = toast?.actions?.length > 0;
 
+  const shouldReduceMotion = prefersReducedMotion();
+  const enterAnimation = shouldReduceMotion
+    ? 'fade-in-animation'
+    : 'slide-in-right-animation';
+  const exitAnimation = shouldReduceMotion
+    ? 'fade-out-animation'
+    : 'slide-out-left-animation';
+  const currentAnimation = toast.dismissed ? exitAnimation : enterAnimation;
+
   return (
     <div
+      role="status"
       className={`inline-flex items-center bg-grey-5 mt-2 rounded opacity-0 animation-fill-forwards select-none max-w-80 ${
         toast.dismissed
           ? 'slide-out-left-animation'
@@ -50,7 +65,7 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
       } ${hasActions ? 'p-2 pl-3' : 'p-3 cursor-pointer'}`}
       style={{
         boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.16)',
-        transition: 'all 0.2s ease',
+        transition: shouldReduceMotion ? undefined : 'all 0.2s ease',
         willChange: 'transform',
       }}
       onClick={() => {
@@ -77,7 +92,7 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
                 toast.type
               )} ${index !== 0 ? 'ml-2' : ''}`}
               onClick={() => {
-                action.callback(toast.id);
+                action.handler(toast.id);
               }}
             >
               {action.label}
