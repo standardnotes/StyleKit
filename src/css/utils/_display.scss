@@ -21,8 +21,13 @@
 .flex-grow {
   flex-grow: 1;
 }
+
 .flex-shrink {
   flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 .flex-wrap {
@@ -106,4 +111,8 @@
 
 .flex-basis-55 {
   flex-basis: 13.75rem;
+}
+
+.opacity-0 {
+  opacity: 0;
 }

@@ -12,3 +12,37 @@
 .slide-down-animation {
   animation: slide-down 0.2s ease;
 }
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right-animation {
+  animation: slide-in-right 0.2s ease;
+}
+
+@keyframes slide-out-left {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.slide-out-left-animation {
+  animation: slide-out-left 0.2s ease;
+}
+
+.animation-fill-forwards {
+  animation-fill-mode: forwards;
+}
