@@ -11,7 +11,7 @@
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 245:
+/***/ 218:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -23,7 +23,7 @@ return /******/ (() => { // webpackBootstrap
  */
 
 
-var ReactPropTypesSecret = __webpack_require__(132);
+var ReactPropTypesSecret = __webpack_require__(924);
 
 function emptyFunction() {}
 
@@ -81,6 +81,319 @@ module.exports = function () {
 
 /***/ }),
 
+/***/ 590:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+if (false) { var throwOnDirectAccess, ReactIs; } else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(218)();
+}
+
+/***/ }),
+
+/***/ 924:
+/***/ ((module) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+module.exports = ReactPropTypesSecret;
+
+/***/ }),
+
+/***/ 344:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var ReactPropTypesSecret = __webpack_require__(818);
+
+function emptyFunction() {}
+
+function emptyFunctionWithReset() {}
+
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+module.exports = function () {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
+
+    var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+    err.name = 'Invariant Violation';
+    throw err;
+  }
+
+  ;
+  shim.isRequired = shim;
+
+  function getShim() {
+    return shim;
+  }
+
+  ; // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+
+/***/ }),
+
+/***/ 167:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+if (false) { var throwOnDirectAccess, ReactIs; } else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(344)();
+}
+
+/***/ }),
+
+/***/ 818:
+/***/ ((module) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+module.exports = ReactPropTypesSecret;
+
+/***/ }),
+
+/***/ 966:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var ReactPropTypesSecret = __webpack_require__(588);
+
+function emptyFunction() {}
+
+function emptyFunctionWithReset() {}
+
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+module.exports = function () {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
+
+    var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+    err.name = 'Invariant Violation';
+    throw err;
+  }
+
+  ;
+  shim.isRequired = shim;
+
+  function getShim() {
+    return shim;
+  }
+
+  ; // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+
+/***/ }),
+
+/***/ 229:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+if (false) { var throwOnDirectAccess, ReactIs; } else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(966)();
+}
+
+/***/ }),
+
+/***/ 588:
+/***/ ((module) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+module.exports = ReactPropTypesSecret;
+
+/***/ }),
+
+/***/ 245:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var ReactPropTypesSecret = __webpack_require__(132);
+
+function emptyFunction() {}
+
+function emptyFunctionWithReset() {}
+
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+module.exports = function () {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
+
+    var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+    err.name = 'Invariant Violation';
+    throw err;
+  }
+
+  ;
+  shim.isRequired = shim;
+
+  function getShim() {
+    return shim;
+  }
+
+  ; // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+
+  var ReactPropTypes = {
+    array: shim,
+    bigint: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+
+/***/ }),
+
 /***/ 838:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -112,6 +425,165 @@ if (false) { var throwOnDirectAccess, ReactIs; } else {
 
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
+
+/***/ }),
+
+/***/ 100:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+var __webpack_unused_export__;
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var b = "function" === typeof Symbol && Symbol.for,
+    c = b ? Symbol.for("react.element") : 60103,
+    d = b ? Symbol.for("react.portal") : 60106,
+    e = b ? Symbol.for("react.fragment") : 60107,
+    f = b ? Symbol.for("react.strict_mode") : 60108,
+    g = b ? Symbol.for("react.profiler") : 60114,
+    h = b ? Symbol.for("react.provider") : 60109,
+    k = b ? Symbol.for("react.context") : 60110,
+    l = b ? Symbol.for("react.async_mode") : 60111,
+    m = b ? Symbol.for("react.concurrent_mode") : 60111,
+    n = b ? Symbol.for("react.forward_ref") : 60112,
+    p = b ? Symbol.for("react.suspense") : 60113,
+    q = b ? Symbol.for("react.suspense_list") : 60120,
+    r = b ? Symbol.for("react.memo") : 60115,
+    t = b ? Symbol.for("react.lazy") : 60116,
+    v = b ? Symbol.for("react.block") : 60121,
+    w = b ? Symbol.for("react.fundamental") : 60117,
+    x = b ? Symbol.for("react.responder") : 60118,
+    y = b ? Symbol.for("react.scope") : 60119;
+
+function z(a) {
+  if ("object" === typeof a && null !== a) {
+    var u = a.$$typeof;
+
+    switch (u) {
+      case c:
+        switch (a = a.type, a) {
+          case l:
+          case m:
+          case e:
+          case g:
+          case f:
+          case p:
+            return a;
+
+          default:
+            switch (a = a && a.$$typeof, a) {
+              case k:
+              case n:
+              case t:
+              case r:
+              case h:
+                return a;
+
+              default:
+                return u;
+            }
+
+        }
+
+      case d:
+        return u;
+    }
+  }
+}
+
+function A(a) {
+  return z(a) === m;
+}
+
+__webpack_unused_export__ = l;
+__webpack_unused_export__ = m;
+__webpack_unused_export__ = k;
+__webpack_unused_export__ = h;
+__webpack_unused_export__ = c;
+__webpack_unused_export__ = n;
+__webpack_unused_export__ = e;
+__webpack_unused_export__ = t;
+__webpack_unused_export__ = r;
+__webpack_unused_export__ = d;
+__webpack_unused_export__ = g;
+__webpack_unused_export__ = f;
+__webpack_unused_export__ = p;
+
+__webpack_unused_export__ = function (a) {
+  return A(a) || z(a) === l;
+};
+
+__webpack_unused_export__ = A;
+
+__webpack_unused_export__ = function (a) {
+  return z(a) === k;
+};
+
+__webpack_unused_export__ = function (a) {
+  return z(a) === h;
+};
+
+__webpack_unused_export__ = function (a) {
+  return "object" === typeof a && null !== a && a.$$typeof === c;
+};
+
+__webpack_unused_export__ = function (a) {
+  return z(a) === n;
+};
+
+exports.isFragment = function (a) {
+  return z(a) === e;
+};
+
+__webpack_unused_export__ = function (a) {
+  return z(a) === t;
+};
+
+__webpack_unused_export__ = function (a) {
+  return z(a) === r;
+};
+
+__webpack_unused_export__ = function (a) {
+  return z(a) === d;
+};
+
+__webpack_unused_export__ = function (a) {
+  return z(a) === g;
+};
+
+__webpack_unused_export__ = function (a) {
+  return z(a) === f;
+};
+
+__webpack_unused_export__ = function (a) {
+  return z(a) === p;
+};
+
+__webpack_unused_export__ = function (a) {
+  return "string" === typeof a || "function" === typeof a || a === e || a === m || a === g || a === f || a === p || a === q || "object" === typeof a && null !== a && (a.$$typeof === t || a.$$typeof === r || a.$$typeof === h || a.$$typeof === k || a.$$typeof === n || a.$$typeof === w || a.$$typeof === x || a.$$typeof === y || a.$$typeof === v);
+};
+
+__webpack_unused_export__ = z;
+
+/***/ }),
+
+/***/ 64:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+if (true) {
+  module.exports = __webpack_require__(100);
+} else {}
 
 /***/ }),
 
@@ -252,7 +724,7 @@ module.exports = tabbable;
 
 /***/ }),
 
-/***/ 297:
+/***/ 706:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -270,9 +742,8 @@ __webpack_require__.d(__webpack_exports__, {
 var external_commonjs_preact_commonjs2_preact_amd_preact_root_ = __webpack_require__(683);
 // EXTERNAL MODULE: external {"commonjs":"react","commonjs2":"react","amd":"react","root":"_"}
 var external_commonjs_react_commonjs2_react_amd_react_root_ = __webpack_require__(320);
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__(838);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+// EXTERNAL MODULE: ./node_modules/@reach/menu-button/node_modules/prop-types/index.js
+var prop_types = __webpack_require__(167);
 ;// CONCATENATED MODULE: ./node_modules/@reach/utils/can-use-dom/dist/reach-utils-can-use-dom.esm.js
 function canUseDOM() {
   return !!(typeof window !== "undefined" && window.document && window.document.createElement);
@@ -308,121 +779,6 @@ function canUseDOM() {
  */
 
 var reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect = /*#__PURE__*/canUseDOM() ? external_commonjs_react_commonjs2_react_amd_react_root_.useLayoutEffect : external_commonjs_react_commonjs2_react_amd_react_root_.useEffect;
-
-;// CONCATENATED MODULE: ./node_modules/@reach/auto-id/dist/reach-auto-id.esm.js
-
-
-/*
- * Welcome to @reach/auto-id!
-
- * Let's see if we can make sense of why this hook exists and its
- * implementation.
- *
- * Some background:
- *   1. Accessibiliy APIs rely heavily on element IDs
- *   2. Requiring developers to put IDs on every element in Reach UI is both
- *      cumbersome and error-prone
- *   3. With a component model, we can generate IDs for them!
- *
- * Solution 1: Generate random IDs.
- *
- * This works great as long as you don't server render your app. When React (in
- * the client) tries to reuse the markup from the server, the IDs won't match
- * and React will then recreate the entire DOM tree.
- *
- * Solution 2: Increment an integer
- *
- * This sounds great. Since we're rendering the exact same tree on the server
- * and client, we can increment a counter and get a deterministic result between
- * client and server. Also, JS integers can go up to nine-quadrillion. I'm
- * pretty sure the tab will be closed before an app never needs
- * 10 quadrillion IDs!
- *
- * Problem solved, right?
- *
- * Ah, but there's a catch! React's concurrent rendering makes this approach
- * non-deterministic. While the client and server will end up with the same
- * elements in the end, depending on suspense boundaries (and possibly some user
- * input during the initial render) the incrementing integers won't always match
- * up.
- *
- * Solution 3: Don't use IDs at all on the server; patch after first render.
- *
- * What we've done here is solution 2 with some tricks. With this approach, the
- * ID returned is an empty string on the first render. This way the server and
- * client have the same markup no matter how wild the concurrent rendering may
- * have gotten.
- *
- * After the render, we patch up the components with an incremented ID. This
- * causes a double render on any components with `useId`. Shouldn't be a problem
- * since the components using this hook should be small, and we're only updating
- * the ID attribute on the DOM, nothing big is happening.
- *
- * It doesn't have to be an incremented number, though--we could do generate
- * random strings instead, but incrementing a number is probably the cheapest
- * thing we can do.
- *
- * Additionally, we only do this patchup on the very first client render ever.
- * Any calls to `useId` that happen dynamically in the client will be
- * populated immediately with a value. So, we only get the double render after
- * server hydration and never again, SO BACK OFF ALRIGHT?
- */
-
-var serverHandoffComplete = false;
-var id = 0;
-
-var genId = function genId() {
-  return ++id;
-};
-/**
- * useId
- *
- * Autogenerate IDs to facilitate WAI-ARIA and server rendering.
- *
- * Note: The returned ID will initially be `null` and will update after a
- * component mounts. Users may need to supply their own ID if they need
- * consistent values for SSR.
- *
- * @see Docs https://reach.tech/auto-id
- */
-
-
-function reach_auto_id_esm_useId(idFromProps) {
-  /*
-   * If this instance isn't part of the initial render, we don't have to do the
-   * double render/patch-up dance. We can just generate the ID and return it.
-   */
-  var initialId = idFromProps || (serverHandoffComplete ? genId() : null);
-
-  var _React$useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(initialId),
-      id = _React$useState[0],
-      setId = _React$useState[1];
-
-  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
-    if (id === null) {
-      /*
-       * Patch the ID after render. We do this in `useLayoutEffect` to avoid any
-       * rendering flicker, though it'll make the first render slower (unlikely
-       * to matter, but you're welcome to measure your app and let us know if
-       * it's a problem).
-       */
-      setId(genId());
-    } // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  }, []);
-  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
-    if (serverHandoffComplete === false) {
-      /*
-       * Flag all future uses of `useId` to skip the update dance. This is in
-       * `useEffect` because it goes after `useLayoutEffect`, ensuring we don't
-       * accidentally bail out of the patch-up dance prematurely.
-       */
-      serverHandoffComplete = true;
-    }
-  }, []);
-  return id != null ? String(id) : undefined;
-}
-
 
 ;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-force-update/dist/reach-utils-use-force-update.esm.js
 
@@ -1016,6 +1372,7 @@ var ln = function (n, t) {
 
 
 
+
 /**
  * Welcome to @reach/portal!
  *
@@ -1038,25 +1395,30 @@ var ln = function (n, t) {
 var Portal = function Portal(_ref) {
   var children = _ref.children,
       _ref$type = _ref.type,
-      type = _ref$type === void 0 ? "reach-portal" : _ref$type;
+      type = _ref$type === void 0 ? "reach-portal" : _ref$type,
+      containerRef = _ref.containerRef;
   var mountNode = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
   var portalNode = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
   var forceUpdate = useForceUpdate();
+
+  if (false) {}
+
   reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     // This ref may be null when a hot-loader replaces components on the page
     if (!mountNode.current) return; // It's possible that the content of the portal has, itself, been portaled.
     // In that case, it's important to append to the correct document element.
 
     var ownerDocument = mountNode.current.ownerDocument;
+    var body = (containerRef == null ? void 0 : containerRef.current) || ownerDocument.body;
     portalNode.current = ownerDocument == null ? void 0 : ownerDocument.createElement(type);
-    ownerDocument.body.appendChild(portalNode.current);
+    body.appendChild(portalNode.current);
     forceUpdate();
     return function () {
-      if (portalNode.current && portalNode.current.ownerDocument) {
-        portalNode.current.ownerDocument.body.removeChild(portalNode.current);
+      if (portalNode.current && body) {
+        body.removeChild(portalNode.current);
       }
     };
-  }, [type, forceUpdate]);
+  }, [type, forceUpdate, containerRef]);
   return portalNode.current ? /*#__PURE__*/W(children, portalNode.current) : /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)("span", {
     ref: mountNode
   });
@@ -1071,6 +1433,8 @@ if (false) {} //////////////////////////////////////////////////////////////////
 
 /* harmony default export */ const reach_portal_esm = ((/* unused pure expression or super */ null && (Portal)));
 
+// EXTERNAL MODULE: ./node_modules/@reach/rect/node_modules/prop-types/index.js
+var node_modules_prop_types = __webpack_require__(229);
 ;// CONCATENATED MODULE: ./node_modules/@reach/observe-rect/dist/observe-rect.esm.js
 var props = ["bottom", "height", "left", "right", "top", "width"];
 
@@ -1269,10 +1633,7 @@ function useRect(nodeRef, observeOrOptions, deprecated_onChange) {
       rect = _React$useState2[0],
       setRect = _React$useState2[1];
 
-  var onChangeRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(onChange);
-  var stableOnChange = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (rect) {
-    onChangeRef.current && onChangeRef.current(rect);
-  }, []); // eslint-disable-next-line react-hooks/exhaustive-deps
+  var onChangeRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(onChange); // eslint-disable-next-line react-hooks/exhaustive-deps
 
   reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
     onChangeRef.current = onChange;
@@ -1288,7 +1649,10 @@ function useRect(nodeRef, observeOrOptions, deprecated_onChange) {
     }
   }, [element]);
   reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
-    var observer;
+    if (!observe) {
+      return;
+    }
+
     var elem = element; // State initializes before refs are placed, meaning the element state will
     // be undefined on the first render. We still want the rect on the first
     // render, so initially we'll use the nodeRef that was passed instead of
@@ -1302,20 +1666,18 @@ function useRect(nodeRef, observeOrOptions, deprecated_onChange) {
     if (!elem) {
       if (false) {}
 
-      return cleanup;
+      return;
     }
 
-    observer = observe_rect_esm(elem, function (rect) {
-      stableOnChange(rect);
+    var observer = observe_rect_esm(elem, function (rect) {
+      onChangeRef.current == null ? void 0 : onChangeRef.current(rect);
       setRect(rect);
     });
-    observe && observer.observe();
-    return cleanup;
-
-    function cleanup() {
-      observer && observer.unobserve();
-    }
-  }, [observe, element, nodeRef, stableOnChange]);
+    observer.observe();
+    return function () {
+      observer.unobserve();
+    };
+  }, [observe, element, nodeRef]);
   return rect;
 }
 
@@ -1476,14 +1838,15 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
-} ////////////////////////////////////////////////////////////////////////////////
+}
+
+var _excluded = ["as", "targetRef", "position", "unstable_observableRefs"]; ////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Popover
  */
 
-
-var Popover = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function Popover(props, ref) {
+var reach_popover_esm_Popover = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function Popover(props, ref) {
   return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Portal, null, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(PopoverImpl, _extends({
     ref: ref
   }, props)));
@@ -1507,7 +1870,7 @@ var PopoverImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_re
       position = _ref$position === void 0 ? positionDefault : _ref$position,
       _ref$unstable_observa = _ref.unstable_observableRefs,
       unstable_observableRefs = _ref$unstable_observa === void 0 ? [] : _ref$unstable_observa,
-      props = _objectWithoutPropertiesLoose(_ref, ["as", "targetRef", "position", "unstable_observableRefs"]);
+      props = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var popoverRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
   var popoverRect = useRect(popoverRef, {
@@ -1769,22 +2132,120 @@ function useSimulateTabNavigationForReactTree(triggerRef, popoverRef) {
 } ////////////////////////////////////////////////////////////////////////////////
 
 
-/* harmony default export */ const reach_popover_esm = ((/* unused pure expression or super */ null && (Popover)));
+/* harmony default export */ const reach_popover_esm = ((/* unused pure expression or super */ null && (reach_popover_esm_Popover)));
 
-;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-previous/dist/reach-utils-use-previous.esm.js
+;// CONCATENATED MODULE: ./node_modules/@reach/auto-id/dist/reach-auto-id.esm.js
 
-/**
- * Returns the previous value of a reference after a component update.
+
+/*
+ * Welcome to @reach/auto-id!
+
+ * Let's see if we can make sense of why this hook exists and its
+ * implementation.
  *
- * @param value
+ * Some background:
+ *   1. Accessibility APIs rely heavily on element IDs
+ *   2. Requiring developers to put IDs on every element in Reach UI is both
+ *      cumbersome and error-prone
+ *   3. With a component model, we can generate IDs for them!
+ *
+ * Solution 1: Generate random IDs.
+ *
+ * This works great as long as you don't server render your app. When React (in
+ * the client) tries to reuse the markup from the server, the IDs won't match
+ * and React will then recreate the entire DOM tree.
+ *
+ * Solution 2: Increment an integer
+ *
+ * This sounds great. Since we're rendering the exact same tree on the server
+ * and client, we can increment a counter and get a deterministic result between
+ * client and server. Also, JS integers can go up to nine-quadrillion. I'm
+ * pretty sure the tab will be closed before an app never needs
+ * 10 quadrillion IDs!
+ *
+ * Problem solved, right?
+ *
+ * Ah, but there's a catch! React's concurrent rendering makes this approach
+ * non-deterministic. While the client and server will end up with the same
+ * elements in the end, depending on suspense boundaries (and possibly some user
+ * input during the initial render) the incrementing integers won't always match
+ * up.
+ *
+ * Solution 3: Don't use IDs at all on the server; patch after first render.
+ *
+ * What we've done here is solution 2 with some tricks. With this approach, the
+ * ID returned is an empty string on the first render. This way the server and
+ * client have the same markup no matter how wild the concurrent rendering may
+ * have gotten.
+ *
+ * After the render, we patch up the components with an incremented ID. This
+ * causes a double render on any components with `useId`. Shouldn't be a problem
+ * since the components using this hook should be small, and we're only updating
+ * the ID attribute on the DOM, nothing big is happening.
+ *
+ * It doesn't have to be an incremented number, though--we could do generate
+ * random strings instead, but incrementing a number is probably the cheapest
+ * thing we can do.
+ *
+ * Additionally, we only do this patchup on the very first client render ever.
+ * Any calls to `useId` that happen dynamically in the client will be
+ * populated immediately with a value. So, we only get the double render after
+ * server hydration and never again, SO BACK OFF ALRIGHT?
  */
 
-function usePrevious(value) {
-  var ref = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+var serverHandoffComplete = false;
+var id = 0;
+
+var genId = function genId() {
+  return ++id;
+};
+/**
+ * useId
+ *
+ * Autogenerate IDs to facilitate WAI-ARIA and server rendering.
+ *
+ * Note: The returned ID will initially be `null` and will update after a
+ * component mounts. Users may need to supply their own ID if they need
+ * consistent values for SSR.
+ *
+ * @see Docs https://reach.tech/auto-id
+ */
+
+
+function reach_auto_id_esm_useId(idFromProps) {
+  /*
+   * If this instance isn't part of the initial render, we don't have to do the
+   * double render/patch-up dance. We can just generate the ID and return it.
+   */
+  var initialId = idFromProps || (serverHandoffComplete ? genId() : null);
+
+  var _React$useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(initialId),
+      id = _React$useState[0],
+      setId = _React$useState[1];
+
+  reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
+    if (id === null) {
+      /*
+       * Patch the ID after render. We do this in `useLayoutEffect` to avoid any
+       * rendering flicker, though it'll make the first render slower (unlikely
+       * to matter, but you're welcome to measure your app and let us know if
+       * it's a problem).
+       */
+      setId(genId());
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  }, []);
   (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
-    ref.current = value;
-  }, [value]);
-  return ref.current;
+    if (serverHandoffComplete === false) {
+      /*
+       * Flag all future uses of `useId` to skip the update dance. This is in
+       * `useEffect` because it goes after `useLayoutEffect`, ensuring we don't
+       * accidentally bail out of the patch-up dance prematurely.
+       */
+      serverHandoffComplete = true;
+    }
+  }, []);
+  return id != null ? String(id) : undefined;
 }
 
 
@@ -1805,7 +2266,6 @@ function reach_utils_noop_esm_noop() {}
 
 
 ;// CONCATENATED MODULE: ./node_modules/@reach/descendants/dist/reach-descendants.esm.js
-
 
 
 
@@ -1845,6 +2305,8 @@ function reach_descendants_esm_extends() {
   return reach_descendants_esm_extends.apply(this, arguments);
 }
 
+var reach_descendants_esm_excluded = ["element", "index"];
+
 function createDescendantContext(name, initialValue) {
   if (initialValue === void 0) {
     initialValue = {};
@@ -1875,7 +2337,7 @@ function createDescendantContext(name, initialValue) {
  *   5) index always up-to-date with the tree despite changes
  *   6) works with memoization of any component in the tree (hopefully)
  *
- * * As for SSR, the good news is that we don't actually need the index on the
+ * As for SSR, the good news is that we don't actually need the index on the
  * server for most use-cases, as we are only using it to determine the order of
  * composed descendants for keyboard navigation. However, in the few cases where
  * this is not the case, we can require an explicit index from the app.
@@ -1890,23 +2352,12 @@ function useDescendant(descendant, context, indexProp) {
       unregisterDescendant = _React$useContext.unregisterDescendant,
       descendants = _React$useContext.descendants; // This will initially return -1 because we haven't registered the descendant
   // on the first render. After we register, this will then return the correct
-  // index on the following render and we will re-register descendants
-  // so that everything is up-to-date before the user interacts with a
-  // collection.
+  // index on the following render and we will re-register descendants so that
+  // everything is up-to-date before the user interacts with a collection.
 
 
   var index = indexProp != null ? indexProp : descendants.findIndex(function (item) {
     return item.element === descendant.element;
-  });
-  var previousDescendants = usePrevious(descendants); // We also need to re-register descendants any time ANY of the other
-  // descendants have changed. My brain was melting when I wrote this and it
-  // feels a little off, but checking in render and using the result in the
-  // effect's dependency array works well enough.
-
-  var someDescendantsHaveChanged = descendants.some(function (descendant, index) {
-    var _previousDescendants$;
-
-    return descendant.element !== (previousDescendants == null ? void 0 : (_previousDescendants$ = previousDescendants[index]) == null ? void 0 : _previousDescendants$.element);
   }); // Prevent any flashing
 
   reach_utils_use_isomorphic_layout_effect_esm_useIsomorphicLayoutEffect(function () {
@@ -1915,9 +2366,9 @@ function useDescendant(descendant, context, indexProp) {
       index: index
     }));
     return function () {
-      return unregisterDescendant(descendant.element);
-    }; // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [forceUpdate, index, registerDescendant, someDescendantsHaveChanged, unregisterDescendant].concat(Object.values(descendant)));
+      unregisterDescendant(descendant.element);
+    };
+  }, [descendant, forceUpdate, index, registerDescendant, unregisterDescendant].concat(Object.values(descendant)));
   return index;
 }
 
@@ -1937,7 +2388,7 @@ function DescendantProvider(_ref) {
   var registerDescendant = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (_ref2) {
     var element = _ref2.element,
         explicitIndex = _ref2.index,
-        rest = reach_descendants_esm_objectWithoutPropertiesLoose(_ref2, ["element", "index"]);
+        rest = reach_descendants_esm_objectWithoutPropertiesLoose(_ref2, reach_descendants_esm_excluded);
 
     if (!element) {
       return;
@@ -1947,16 +2398,18 @@ function DescendantProvider(_ref) {
       var newItems;
 
       if (explicitIndex != null) {
-        newItems = [].concat(items, [reach_descendants_esm_extends({}, rest, {
+        return [].concat(items, [reach_descendants_esm_extends({}, rest, {
           element: element,
           index: explicitIndex
-        })]);
+        })]).sort(function (a, b) {
+          return a.index - b.index;
+        });
       } else if (items.length === 0) {
         // If there are no items, register at index 0 and bail.
-        newItems = [].concat(items, [reach_descendants_esm_extends({}, rest, {
+        newItems = [reach_descendants_esm_extends({}, rest, {
           element: element,
           index: 0
-        })]);
+        })];
       } else if (items.find(function (item) {
         return item.element === element;
       })) {
@@ -2074,28 +2527,24 @@ function useDescendantKeyDown(context, options) {
     var index = currentIndex != null ? currentIndex : -1; // If we use a filter function, we need to re-index our descendants array
     // so that filtered descendent elements aren't selected.
 
-    var selectableDescendants = filter ? descendants.filter(filter) : descendants; // Current index should map to the updated array vs. the original
-    // descendants array.
-
-    if (filter) {
-      index = selectableDescendants.findIndex(function (descendant) {
-        return descendant.index === currentIndex;
-      });
-    } // We need some options for any of this to work!
-
+    var selectableDescendants = filter ? descendants.filter(filter) : descendants; // We need some options for any of this to work!
 
     if (!selectableDescendants.length) {
       return;
     }
 
+    var selectableIndex = selectableDescendants.findIndex(function (descendant) {
+      return descendant.index === currentIndex;
+    });
+
     function getNextOption() {
-      var atBottom = index === selectableDescendants.length - 1;
-      return atBottom ? rotate ? getFirstOption() : selectableDescendants[index] : selectableDescendants[(index + 1) % selectableDescendants.length];
+      var atBottom = index === getLastOption().index;
+      return atBottom ? rotate ? getFirstOption() : selectableDescendants[selectableIndex] : selectableDescendants[(selectableIndex + 1) % selectableDescendants.length];
     }
 
     function getPreviousOption() {
-      var atTop = index === 0;
-      return atTop ? rotate ? getLastOption() : selectableDescendants[index] : selectableDescendants[(index - 1 + selectableDescendants.length) % selectableDescendants.length];
+      var atTop = index === getFirstOption().index;
+      return atTop ? rotate ? getLastOption() : selectableDescendants[selectableIndex] : selectableDescendants[(selectableIndex - 1 + selectableDescendants.length) % selectableDescendants.length];
     }
 
     function getFirstOption() {
@@ -2183,6 +2632,23 @@ function isRightClick(nativeEvent) {
 }
 
 
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-previous/dist/reach-utils-use-previous.esm.js
+
+/**
+ * Returns the previous value of a reference after a component update.
+ *
+ * @param value
+ */
+
+function usePrevious(value) {
+  var ref = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
+    ref.current = value;
+  }, [value]);
+  return ref.current;
+}
+
+
 ;// CONCATENATED MODULE: ./node_modules/@reach/utils/make-id/dist/reach-utils-make-id.esm.js
 /**
  * Joins strings to format IDs for compound components.
@@ -2198,6 +2664,1019 @@ function reach_utils_make_id_esm_makeId() {
     return val != null;
   }).join("--");
 }
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-stateful-ref-value/dist/reach-utils-use-stateful-ref-value.esm.js
+
+
+function useStatefulRefValue(ref, initialState) {
+  var _useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(initialState),
+      state = _useState[0],
+      setState = _useState[1];
+
+  var callbackRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (refValue) {
+    ref.current = refValue;
+    setState(refValue); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return [state, callbackRef];
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/utils/compose-event-handlers/dist/reach-utils-compose-event-handlers.esm.js
+/**
+ * Wraps a lib-defined event handler and a user-defined event handler, returning
+ * a single handler that allows a user to prevent lib-defined handlers from
+ * firing.
+ *
+ * @param theirHandler User-supplied event handler
+ * @param ourHandler Library-supplied event handler
+ */
+function composeEventHandlers(theirHandler, ourHandler) {
+  return function (event) {
+    theirHandler && theirHandler(event);
+
+    if (!event.defaultPrevented) {
+      return ourHandler(event);
+    }
+  };
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/@reach/dropdown/dist/reach-dropdown.esm.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function reach_dropdown_esm_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function reach_dropdown_esm_extends() {
+  reach_dropdown_esm_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return reach_dropdown_esm_extends.apply(this, arguments);
+}
+
+var reach_dropdown_esm_excluded = ["onKeyDown", "onMouseDown", "id", "ref"],
+    _excluded2 = (/* unused pure expression or super */ null && (["as"])),
+    _excluded3 = ["index", "isLink", "onClick", "onDragStart", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onSelect", "disabled", "onFocus", "valueText", "ref"],
+    _excluded4 = (/* unused pure expression or super */ null && (["as"])),
+    _excluded5 = ["id", "onKeyDown", "ref"],
+    _excluded6 = (/* unused pure expression or super */ null && (["as"])),
+    _excluded7 = ["onBlur", "portal", "position", "ref"],
+    _excluded8 = (/* unused pure expression or super */ null && (["as"])); ////////////////////////////////////////////////////////////////////////////////
+// Actions
+
+var CLEAR_SELECTION_INDEX = "CLEAR_SELECTION_INDEX";
+var CLICK_MENU_ITEM = "CLICK_MENU_ITEM";
+var CLOSE_MENU = "CLOSE_MENU";
+var OPEN_MENU_AT_FIRST_ITEM = "OPEN_MENU_AT_FIRST_ITEM";
+var OPEN_MENU_AT_INDEX = "OPEN_MENU_AT_INDEX";
+var OPEN_MENU_CLEARED = "OPEN_MENU_CLEARED";
+var SEARCH_FOR_ITEM = "SEARCH_FOR_ITEM";
+var SELECT_ITEM_AT_INDEX = "SELECT_ITEM_AT_INDEX";
+var SET_BUTTON_ID = "SET_BUTTON_ID";
+var DropdownDescendantContext = /*#__PURE__*/createDescendantContext("DropdownDescendantContext");
+var DropdownContext = /*#__PURE__*/createNamedContext("DropdownContext", {});
+var initialState = {
+  // The button ID is needed for aria controls and can be set directly and
+  // updated for top-level use via context. Otherwise a default is set by useId.
+  // TODO: Consider deprecating direct ID in 1.0 in favor of id at the top level
+  //       for passing deterministic IDs to descendent components.
+  triggerId: null,
+  // Whether or not the dropdown is expanded
+  isExpanded: false,
+  // When a user begins typing a character string, the selection will change if
+  // a matching item is found
+  typeaheadQuery: "",
+  // The index of the current selected item. When the selection is cleared a
+  // value of -1 is used.
+  selectionIndex: -1
+}; ////////////////////////////////////////////////////////////////////////////////
+// Dropdown!
+
+var DropdownProvider = function DropdownProvider(_ref) {
+  var id = _ref.id,
+      children = _ref.children;
+  var triggerRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var dropdownRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+  var popoverRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+
+  var _useDescendantsInit = useDescendantsInit(),
+      descendants = _useDescendantsInit[0],
+      setDescendants = _useDescendantsInit[1];
+
+  var _id = reach_auto_id_esm_useId(id);
+
+  var dropdownId = id || reach_utils_make_id_esm_makeId("menu", _id);
+  var triggerId = reach_utils_make_id_esm_makeId("menu-button", dropdownId);
+
+  var _React$useReducer = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useReducer)(reducer, reach_dropdown_esm_extends({}, initialState, {
+    triggerId: triggerId
+  })),
+      state = _React$useReducer[0],
+      dispatch = _React$useReducer[1]; // We use an event listener attached to the window to capture outside clicks
+  // that close the dropdown. We don't want the initial button click to trigger
+  // this when a dropdown is closed, so we can track this behavior in a ref for
+  // now. We shouldn't need this when we rewrite with state machine logic.
+
+
+  var triggerClickedRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false); // We will put children callbacks in a ref to avoid triggering endless render
+  // loops when using render props if the app code doesn't useCallback
+  // https://github.com/reach/reach-ui/issues/523
+
+  var selectCallbacks = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)([]); // If the popover's position overlaps with an option when the popover
+  // initially opens, the mouseup event will trigger a select. To prevent that,
+  // we decide the control is only ready to make a selection if the pointer
+  // moves a certain distance OR if the mouse button is pressed for a certain
+  // length of time, otherwise the user is just registering the initial button
+  // click rather than selecting an item.
+  // For context on some implementation details, see https://github.com/reach/reach-ui/issues/563
+
+  var readyToSelect = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false);
+  var mouseDownStartPosRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)({
+    x: 0,
+    y: 0
+  }); // Trying a new approach for splitting up contexts by stable/unstable
+  // references. We'll see how it goes!
+
+  var context = {
+    dispatch: dispatch,
+    dropdownId: dropdownId,
+    dropdownRef: dropdownRef,
+    mouseDownStartPosRef: mouseDownStartPosRef,
+    popoverRef: popoverRef,
+    readyToSelect: readyToSelect,
+    selectCallbacks: selectCallbacks,
+    state: state,
+    triggerClickedRef: triggerClickedRef,
+    triggerRef: triggerRef
+  }; // When the dropdown is open, focus is placed on the dropdown itself so that
+  // keyboard navigation is still possible.
+
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
+    if (state.isExpanded) {
+      // @ts-ignore
+      window.__REACH_DISABLE_TOOLTIPS = true;
+      window.requestAnimationFrame(function () {
+        reach_dropdown_esm_focus(dropdownRef.current);
+      });
+    } else {
+      // We want to ignore the immediate focus of a tooltip so it doesn't pop up
+      // again when the dropdown closes, only pops up when focus returns again
+      // to the tooltip (like native OS tooltips).
+      // @ts-ignore
+      window.__REACH_DISABLE_TOOLTIPS = false;
+    }
+  }, [state.isExpanded]);
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(DescendantProvider, {
+    context: DropdownDescendantContext,
+    items: descendants,
+    set: setDescendants
+  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(DropdownContext.Provider, {
+    value: context
+  }, reach_utils_type_check_esm_isFunction(children) ? children({
+    isExpanded: state.isExpanded,
+    // TODO: Remove in 1.0
+    isOpen: state.isExpanded
+  }) : children));
+};
+
+if (false) {} ////////////////////////////////////////////////////////////////////////////////
+
+
+function useDropdownTrigger(_ref2) {
+  var onKeyDown = _ref2.onKeyDown,
+      onMouseDown = _ref2.onMouseDown,
+      id = _ref2.id,
+      forwardedRef = _ref2.ref,
+      props = reach_dropdown_esm_objectWithoutPropertiesLoose(_ref2, reach_dropdown_esm_excluded);
+
+  var _useDropdownContext = reach_dropdown_esm_useDropdownContext(),
+      dispatch = _useDropdownContext.dispatch,
+      dropdownId = _useDropdownContext.dropdownId,
+      mouseDownStartPosRef = _useDropdownContext.mouseDownStartPosRef,
+      triggerClickedRef = _useDropdownContext.triggerClickedRef,
+      triggerRef = _useDropdownContext.triggerRef,
+      _useDropdownContext$s = _useDropdownContext.state,
+      triggerId = _useDropdownContext$s.triggerId,
+      isExpanded = _useDropdownContext$s.isExpanded;
+
+  var ref = useComposedRefs(triggerRef, forwardedRef);
+  var items = useDropdownDescendants();
+  var firstNonDisabledIndex = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
+    return items.findIndex(function (item) {
+      return !item.disabled;
+    });
+  }, [items]);
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
+    if (id != null && id !== triggerId) {
+      dispatch({
+        type: SET_BUTTON_ID,
+        payload: id
+      });
+    }
+  }, [triggerId, dispatch, id]);
+
+  function handleKeyDown(event) {
+    switch (event.key) {
+      case "ArrowDown":
+      case "ArrowUp":
+        event.preventDefault(); // prevent scroll
+
+        dispatch({
+          type: OPEN_MENU_AT_INDEX,
+          payload: {
+            index: firstNonDisabledIndex
+          }
+        });
+        break;
+
+      case "Enter":
+      case " ":
+        dispatch({
+          type: OPEN_MENU_AT_INDEX,
+          payload: {
+            index: firstNonDisabledIndex
+          }
+        });
+        break;
+    }
+  }
+
+  function handleMouseDown(event) {
+    if (isRightClick(event.nativeEvent)) {
+      return;
+    }
+
+    mouseDownStartPosRef.current = {
+      x: event.clientX,
+      y: event.clientY
+    };
+
+    if (!isExpanded) {
+      triggerClickedRef.current = true;
+    }
+
+    if (isExpanded) {
+      dispatch({
+        type: CLOSE_MENU
+      });
+    } else {
+      dispatch({
+        type: OPEN_MENU_CLEARED
+      });
+    }
+  }
+
+  return {
+    data: {
+      isExpanded: isExpanded,
+      controls: dropdownId
+    },
+    props: reach_dropdown_esm_extends({}, props, {
+      ref: ref,
+      id: triggerId || undefined,
+      onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown),
+      onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),
+      type: "button"
+    })
+  };
+}
+
+var DropdownTrigger = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function (_ref3, forwardedRef) {
+  var _ref3$as = _ref3.as,
+      Comp = _ref3$as === void 0 ? "button" : _ref3$as,
+      rest = reach_dropdown_esm_objectWithoutPropertiesLoose(_ref3, _excluded2);
+
+  var _useDropdownTrigger = useDropdownTrigger(reach_dropdown_esm_extends({}, rest, {
+    ref: forwardedRef
+  })),
+      props = _useDropdownTrigger.props;
+
+  return /*#__PURE__*/createElement(Comp, reach_dropdown_esm_extends({
+    "data-reach-dropdown-trigger": ""
+  }, props));
+})));
+
+if (false) {} ////////////////////////////////////////////////////////////////////////////////
+
+
+function useDropdownItem(_ref4) {
+  var indexProp = _ref4.index,
+      _ref4$isLink = _ref4.isLink,
+      isLink = _ref4$isLink === void 0 ? false : _ref4$isLink,
+      onClick = _ref4.onClick,
+      onDragStart = _ref4.onDragStart,
+      onMouseDown = _ref4.onMouseDown,
+      onMouseEnter = _ref4.onMouseEnter,
+      onMouseLeave = _ref4.onMouseLeave,
+      onMouseMove = _ref4.onMouseMove,
+      onMouseUp = _ref4.onMouseUp,
+      onSelect = _ref4.onSelect,
+      disabled = _ref4.disabled,
+      onFocus = _ref4.onFocus,
+      valueTextProp = _ref4.valueText,
+      forwardedRef = _ref4.ref,
+      props = reach_dropdown_esm_objectWithoutPropertiesLoose(_ref4, _excluded3);
+
+  var _useDropdownContext2 = reach_dropdown_esm_useDropdownContext(),
+      dispatch = _useDropdownContext2.dispatch,
+      dropdownRef = _useDropdownContext2.dropdownRef,
+      mouseDownStartPosRef = _useDropdownContext2.mouseDownStartPosRef,
+      readyToSelect = _useDropdownContext2.readyToSelect,
+      selectCallbacks = _useDropdownContext2.selectCallbacks,
+      triggerRef = _useDropdownContext2.triggerRef,
+      _useDropdownContext2$ = _useDropdownContext2.state,
+      selectionIndex = _useDropdownContext2$.selectionIndex,
+      isExpanded = _useDropdownContext2$.isExpanded;
+
+  var ownRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null); // After the ref is mounted to the DOM node, we check to see if we have an
+  // explicit valueText prop before looking for the node's textContent for
+  // typeahead functionality.
+
+  var _React$useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(valueTextProp || ""),
+      valueText = _React$useState[0],
+      setValueText = _React$useState[1];
+
+  var setValueTextFromDOM = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (node) {
+    if (!valueTextProp && node != null && node.textContent) {
+      setValueText(node.textContent);
+    }
+  }, [valueTextProp]);
+  var mouseEventStarted = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false);
+
+  var _useStatefulRefValue = useStatefulRefValue(ownRef, null),
+      element = _useStatefulRefValue[0],
+      handleRefSet = _useStatefulRefValue[1];
+
+  var descendant = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
+    return {
+      element: element,
+      key: valueText,
+      disabled: disabled,
+      isLink: isLink
+    };
+  }, [disabled, element, isLink, valueText]);
+  var index = useDescendant(descendant, DropdownDescendantContext, indexProp);
+  var isSelected = index === selectionIndex && !disabled;
+  var ref = useComposedRefs(forwardedRef, handleRefSet, setValueTextFromDOM); // Update the callback ref array on every render
+
+  selectCallbacks.current[index] = onSelect;
+
+  function select() {
+    reach_dropdown_esm_focus(triggerRef.current);
+    onSelect && onSelect();
+    dispatch({
+      type: CLICK_MENU_ITEM
+    });
+  }
+
+  function handleClick(event) {
+    if (isRightClick(event.nativeEvent)) {
+      return;
+    }
+
+    if (isLink) {
+      if (disabled) {
+        event.preventDefault();
+      } else {
+        select();
+      }
+    }
+  }
+
+  function handleDragStart(event) {
+    // Because we don't preventDefault on mousedown for links (we need the
+    // native click event), clicking and holding on a link triggers a
+    // dragstart which we don't want.
+    if (isLink) {
+      event.preventDefault();
+    }
+  }
+
+  function handleMouseDown(event) {
+    if (isRightClick(event.nativeEvent)) {
+      return;
+    }
+
+    if (isLink) {
+      // Signal that the mouse is down so we can call the right function if the
+      // user is clicking on a link.
+      mouseEventStarted.current = true;
+    } else {
+      event.preventDefault();
+    }
+  }
+
+  function handleMouseEnter(event) {
+    var doc = getOwnerDocument(dropdownRef.current);
+
+    if (!isSelected && index != null && !disabled) {
+      if (dropdownRef != null && dropdownRef.current && dropdownRef.current !== doc.activeElement && ownRef.current !== doc.activeElement) {
+        dropdownRef.current.focus();
+      }
+
+      dispatch({
+        type: SELECT_ITEM_AT_INDEX,
+        payload: {
+          index: index
+        }
+      });
+    }
+  }
+
+  function handleMouseLeave(event) {
+    // Clear out selection when mouse over a non-dropdown-item child.
+    dispatch({
+      type: CLEAR_SELECTION_INDEX
+    });
+  }
+
+  function handleMouseMove(event) {
+    if (!readyToSelect.current) {
+      var threshold = 8;
+      var deltaX = Math.abs(event.clientX - mouseDownStartPosRef.current.x);
+      var deltaY = Math.abs(event.clientY - mouseDownStartPosRef.current.y);
+
+      if (deltaX > threshold || deltaY > threshold) {
+        readyToSelect.current = true;
+      }
+    }
+
+    if (!isSelected && index != null && !disabled) {
+      dispatch({
+        type: SELECT_ITEM_AT_INDEX,
+        payload: {
+          index: index,
+          dropdownRef: dropdownRef
+        }
+      });
+    }
+  }
+
+  function handleFocus() {
+    readyToSelect.current = true;
+
+    if (!isSelected && index != null && !disabled) {
+      dispatch({
+        type: SELECT_ITEM_AT_INDEX,
+        payload: {
+          index: index
+        }
+      });
+    }
+  }
+
+  function handleMouseUp(event) {
+    if (isRightClick(event.nativeEvent)) {
+      return;
+    }
+
+    if (!readyToSelect.current) {
+      readyToSelect.current = true;
+      return;
+    }
+
+    if (isLink) {
+      // If a mousedown event was initiated on a link item followed by a mouseup
+      // event on the same link, we do nothing; a click event will come next and
+      // handle selection. Otherwise, we trigger a click event.
+      if (mouseEventStarted.current) {
+        mouseEventStarted.current = false;
+      } else if (ownRef.current) {
+        ownRef.current.click();
+      }
+    } else {
+      if (!disabled) {
+        select();
+      }
+    }
+  }
+
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
+    if (isExpanded) {
+      // When the dropdown opens, wait for about half a second before enabling
+      // selection. This is designed to mirror dropdown menus on macOS, where
+      // opening a menu on top of a trigger would otherwise result in an
+      // immediate accidental selection once the click trigger is released.
+      var id = window.setTimeout(function () {
+        readyToSelect.current = true;
+      }, 400);
+      return function () {
+        window.clearTimeout(id);
+      };
+    } else {
+      // When the dropdown closes, reset readyToSelect for the next interaction.
+      readyToSelect.current = false;
+    }
+  }, [isExpanded, readyToSelect]); // Any time a mouseup event occurs anywhere in the document, we reset the
+  // mouseEventStarted ref so we can check it again when needed.
+
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
+    var ownerDocument = getOwnerDocument(ownRef.current);
+    ownerDocument.addEventListener("mouseup", listener);
+    return function () {
+      ownerDocument.removeEventListener("mouseup", listener);
+    };
+
+    function listener() {
+      mouseEventStarted.current = false;
+    }
+  }, []);
+  return {
+    data: {
+      disabled: disabled
+    },
+    props: reach_dropdown_esm_extends({
+      id: useItemId(index),
+      tabIndex: -1
+    }, props, {
+      ref: ref,
+      "data-disabled": disabled ? "" : undefined,
+      "data-selected": isSelected ? "" : undefined,
+      "data-valuetext": valueText,
+      onClick: composeEventHandlers(onClick, handleClick),
+      onDragStart: composeEventHandlers(onDragStart, handleDragStart),
+      onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),
+      onMouseEnter: composeEventHandlers(onMouseEnter, handleMouseEnter),
+      onMouseLeave: composeEventHandlers(onMouseLeave, handleMouseLeave),
+      onMouseMove: composeEventHandlers(onMouseMove, handleMouseMove),
+      onFocus: composeEventHandlers(onFocus, handleFocus),
+      onMouseUp: composeEventHandlers(onMouseUp, handleMouseUp)
+    })
+  };
+}
+/**
+ * DropdownItem
+ */
+
+
+var DropdownItem = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function (_ref5, forwardedRef) {
+  var _ref5$as = _ref5.as,
+      Comp = _ref5$as === void 0 ? "div" : _ref5$as,
+      rest = reach_dropdown_esm_objectWithoutPropertiesLoose(_ref5, _excluded4);
+
+  var _useDropdownItem = useDropdownItem(reach_dropdown_esm_extends({}, rest, {
+    ref: forwardedRef
+  })),
+      props = _useDropdownItem.props;
+
+  return /*#__PURE__*/createElement(Comp, reach_dropdown_esm_extends({
+    "data-reach-dropdown-item": ""
+  }, props));
+})));
+
+if (false) {} ////////////////////////////////////////////////////////////////////////////////
+
+
+function useDropdownItems(_ref6) {
+  _ref6.id;
+
+  var onKeyDown = _ref6.onKeyDown,
+      forwardedRef = _ref6.ref,
+      props = reach_dropdown_esm_objectWithoutPropertiesLoose(_ref6, _excluded5);
+
+  var _useDropdownContext3 = reach_dropdown_esm_useDropdownContext(),
+      dispatch = _useDropdownContext3.dispatch,
+      triggerRef = _useDropdownContext3.triggerRef,
+      dropdownRef = _useDropdownContext3.dropdownRef,
+      selectCallbacks = _useDropdownContext3.selectCallbacks,
+      dropdownId = _useDropdownContext3.dropdownId,
+      _useDropdownContext3$ = _useDropdownContext3.state,
+      isExpanded = _useDropdownContext3$.isExpanded,
+      triggerId = _useDropdownContext3$.triggerId,
+      selectionIndex = _useDropdownContext3$.selectionIndex,
+      typeaheadQuery = _useDropdownContext3$.typeaheadQuery;
+
+  var items = useDropdownDescendants();
+  var ref = useComposedRefs(dropdownRef, forwardedRef);
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
+    // Respond to user char key input with typeahead
+    var match = findItemFromTypeahead(items, typeaheadQuery);
+
+    if (typeaheadQuery && match != null) {
+      dispatch({
+        type: SELECT_ITEM_AT_INDEX,
+        payload: {
+          index: match,
+          dropdownRef: dropdownRef
+        }
+      });
+    }
+
+    var timeout = window.setTimeout(function () {
+      return typeaheadQuery && dispatch({
+        type: SEARCH_FOR_ITEM,
+        payload: ""
+      });
+    }, 1000);
+    return function () {
+      return window.clearTimeout(timeout);
+    };
+  }, [dispatch, items, typeaheadQuery, dropdownRef]);
+  var prevItemsLength = usePrevious(items.length);
+  var prevSelected = usePrevious(items[selectionIndex]);
+  var prevSelectionIndex = usePrevious(selectionIndex);
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
+    if (selectionIndex > items.length - 1) {
+      // If for some reason our selection index is larger than our possible
+      // index range (let's say the last item is selected and the list
+      // dynamically updates), we need to select the last item in the list.
+      dispatch({
+        type: SELECT_ITEM_AT_INDEX,
+        payload: {
+          index: items.length - 1,
+          dropdownRef: dropdownRef
+        }
+      });
+    } else if ( // Checks if
+    //  - item length has changed
+    //  - selection index has not changed BUT selected item has changed
+    //
+    // This prevents any dynamic adding/removing of items from actually
+    // changing a user's expected selection.
+    prevItemsLength !== items.length && selectionIndex > -1 && prevSelected && prevSelectionIndex === selectionIndex && items[selectionIndex] !== prevSelected) {
+      dispatch({
+        type: SELECT_ITEM_AT_INDEX,
+        payload: {
+          index: items.findIndex(function (i) {
+            return i.key === (prevSelected == null ? void 0 : prevSelected.key);
+          }),
+          dropdownRef: dropdownRef
+        }
+      });
+    }
+  }, [dropdownRef, dispatch, items, prevItemsLength, prevSelected, prevSelectionIndex, selectionIndex]);
+  var handleKeyDown = composeEventHandlers(function handleKeyDown(event) {
+    var key = event.key;
+
+    if (!isExpanded) {
+      return;
+    }
+
+    switch (key) {
+      case "Enter":
+      case " ":
+        var selected = items.find(function (item) {
+          return item.index === selectionIndex;
+        }); // For links, the Enter key will trigger a click by default, but for
+        // consistent behavior across items we'll trigger a click when the
+        // spacebar is pressed.
+
+        if (selected && !selected.disabled) {
+          event.preventDefault();
+
+          if (selected.isLink && selected.element) {
+            selected.element.click();
+          } else {
+            // Focus the button first by default when an item is selected.
+            // We fire the onSelect callback next so the app can manage
+            // focus if needed.
+            reach_dropdown_esm_focus(triggerRef.current);
+            selectCallbacks.current[selected.index] && selectCallbacks.current[selected.index]();
+            dispatch({
+              type: CLICK_MENU_ITEM
+            });
+          }
+        }
+
+        break;
+
+      case "Escape":
+        reach_dropdown_esm_focus(triggerRef.current);
+        dispatch({
+          type: CLOSE_MENU
+        });
+        break;
+
+      case "Tab":
+        // prevent leaving
+        event.preventDefault();
+        break;
+
+      default:
+        // Check if a user is typing some char keys and respond by setting
+        // the query state.
+        if (isString(key) && key.length === 1) {
+          var query = typeaheadQuery + key.toLowerCase();
+          dispatch({
+            type: SEARCH_FOR_ITEM,
+            payload: query
+          });
+        }
+
+        break;
+    }
+  }, useDescendantKeyDown(DropdownDescendantContext, {
+    currentIndex: selectionIndex,
+    orientation: "vertical",
+    rotate: false,
+    filter: function filter(item) {
+      return !item.disabled;
+    },
+    callback: function callback(index) {
+      dispatch({
+        type: SELECT_ITEM_AT_INDEX,
+        payload: {
+          index: index,
+          dropdownRef: dropdownRef
+        }
+      });
+    },
+    key: "index"
+  }));
+  return {
+    data: {
+      activeDescendant: useItemId(selectionIndex) || undefined,
+      triggerId: triggerId
+    },
+    props: reach_dropdown_esm_extends({
+      tabIndex: -1
+    }, props, {
+      ref: ref,
+      id: dropdownId,
+      onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown)
+    })
+  };
+}
+/**
+ * DropdownItem
+ */
+
+
+var DropdownItems = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function (_ref7, forwardedRef) {
+  var _ref7$as = _ref7.as,
+      Comp = _ref7$as === void 0 ? "div" : _ref7$as,
+      rest = reach_dropdown_esm_objectWithoutPropertiesLoose(_ref7, _excluded6);
+
+  var _useDropdownItems = useDropdownItems(reach_dropdown_esm_extends({}, rest, {
+    ref: forwardedRef
+  })),
+      props = _useDropdownItems.props;
+
+  return /*#__PURE__*/createElement(Comp, reach_dropdown_esm_extends({
+    "data-reach-dropdown-items": ""
+  }, props));
+})));
+
+if (false) {} ////////////////////////////////////////////////////////////////////////////////
+
+
+function useDropdownPopover(_ref8) {
+  var onBlur = _ref8.onBlur,
+      _ref8$portal = _ref8.portal,
+      portal = _ref8$portal === void 0 ? true : _ref8$portal,
+      position = _ref8.position,
+      forwardedRef = _ref8.ref,
+      props = reach_dropdown_esm_objectWithoutPropertiesLoose(_ref8, _excluded7);
+
+  var _useDropdownContext4 = reach_dropdown_esm_useDropdownContext(),
+      triggerRef = _useDropdownContext4.triggerRef,
+      triggerClickedRef = _useDropdownContext4.triggerClickedRef,
+      dispatch = _useDropdownContext4.dispatch,
+      dropdownRef = _useDropdownContext4.dropdownRef,
+      popoverRef = _useDropdownContext4.popoverRef,
+      isExpanded = _useDropdownContext4.state.isExpanded;
+
+  var ref = useComposedRefs(popoverRef, forwardedRef);
+  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
+    if (!isExpanded) {
+      return;
+    }
+
+    var ownerDocument = getOwnerDocument(popoverRef.current);
+
+    function listener(event) {
+      if (triggerClickedRef.current) {
+        triggerClickedRef.current = false;
+      } else if (!popoverContainsEventTarget(popoverRef.current, event.target)) {
+        // We on want to close only if focus rests outside the dropdown
+        dispatch({
+          type: CLOSE_MENU
+        });
+      }
+    }
+
+    ownerDocument.addEventListener("mousedown", listener); // see https://github.com/reach/reach-ui/pull/700#discussion_r530369265
+    // ownerDocument.addEventListener("touchstart", listener);
+
+    return function () {
+      ownerDocument.removeEventListener("mousedown", listener); // ownerDocument.removeEventListener("touchstart", listener);
+    };
+  }, [triggerClickedRef, triggerRef, dispatch, dropdownRef, popoverRef, isExpanded]);
+  return {
+    data: {
+      portal: portal,
+      position: position,
+      targetRef: triggerRef,
+      isExpanded: isExpanded
+    },
+    props: reach_dropdown_esm_extends({
+      ref: ref,
+      hidden: !isExpanded,
+      onBlur: composeEventHandlers(onBlur, function (event) {
+        if (event.currentTarget.contains(event.relatedTarget)) {
+          return;
+        }
+
+        dispatch({
+          type: CLOSE_MENU
+        });
+      })
+    }, props)
+  };
+}
+
+var DropdownPopover = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function (_ref9, forwardedRef) {
+  var _ref9$as = _ref9.as,
+      Comp = _ref9$as === void 0 ? "div" : _ref9$as,
+      rest = reach_dropdown_esm_objectWithoutPropertiesLoose(_ref9, _excluded8);
+
+  var _useDropdownPopover = useDropdownPopover(reach_dropdown_esm_extends({}, rest, {
+    ref: forwardedRef
+  })),
+      _useDropdownPopover$d = _useDropdownPopover.data,
+      portal = _useDropdownPopover$d.portal,
+      targetRef = _useDropdownPopover$d.targetRef,
+      position = _useDropdownPopover$d.position,
+      props = _useDropdownPopover.props;
+
+  var sharedProps = {
+    "data-reach-dropdown-popover": ""
+  };
+  return portal ? /*#__PURE__*/createElement(Popover, reach_dropdown_esm_extends({}, props, sharedProps, {
+    as: Comp,
+    targetRef: targetRef,
+    position: position
+  })) : /*#__PURE__*/createElement(Comp, reach_dropdown_esm_extends({}, props, sharedProps));
+})));
+
+if (false) {} ////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * When a user's typed input matches the string displayed in an item, it is
+ * expected that the matching item is selected. This is our matching function.
+ */
+
+
+function findItemFromTypeahead(items, string) {
+  if (string === void 0) {
+    string = "";
+  }
+
+  if (!string) {
+    return null;
+  }
+
+  var found = items.find(function (item) {
+    var _item$element, _item$element$dataset, _item$element$dataset2;
+
+    return item.disabled ? false : (_item$element = item.element) == null ? void 0 : (_item$element$dataset = _item$element.dataset) == null ? void 0 : (_item$element$dataset2 = _item$element$dataset.valuetext) == null ? void 0 : _item$element$dataset2.toLowerCase().startsWith(string);
+  });
+  return found ? items.indexOf(found) : null;
+}
+
+function useItemId(index) {
+  var _React$useContext = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(DropdownContext),
+      dropdownId = _React$useContext.dropdownId;
+
+  return index != null && index > -1 ? reach_utils_make_id_esm_makeId("option-" + index, dropdownId) : undefined;
+}
+
+function reach_dropdown_esm_focus(element) {
+  element && element.focus();
+}
+
+function popoverContainsEventTarget(popover, target) {
+  return !!(popover && popover.contains(target));
+}
+
+function reducer(state, action) {
+  if (action === void 0) {
+    action = {};
+  }
+
+  switch (action.type) {
+    case CLICK_MENU_ITEM:
+      return reach_dropdown_esm_extends({}, state, {
+        isExpanded: false,
+        selectionIndex: -1
+      });
+
+    case CLOSE_MENU:
+      return reach_dropdown_esm_extends({}, state, {
+        isExpanded: false,
+        selectionIndex: -1
+      });
+
+    case OPEN_MENU_AT_FIRST_ITEM:
+      return reach_dropdown_esm_extends({}, state, {
+        isExpanded: true,
+        selectionIndex: 0
+      });
+
+    case OPEN_MENU_AT_INDEX:
+      return reach_dropdown_esm_extends({}, state, {
+        isExpanded: true,
+        selectionIndex: action.payload.index
+      });
+
+    case OPEN_MENU_CLEARED:
+      return reach_dropdown_esm_extends({}, state, {
+        isExpanded: true,
+        selectionIndex: -1
+      });
+
+    case SELECT_ITEM_AT_INDEX:
+      {
+        var _action$payload$dropd = action.payload.dropdownRef,
+            dropdownRef = _action$payload$dropd === void 0 ? {
+          current: null
+        } : _action$payload$dropd;
+
+        if (action.payload.index >= 0 && action.payload.index !== state.selectionIndex) {
+          if (dropdownRef.current) {
+            var doc = getOwnerDocument(dropdownRef.current);
+
+            if (dropdownRef.current !== (doc == null ? void 0 : doc.activeElement)) {
+              dropdownRef.current.focus();
+            }
+          }
+
+          return reach_dropdown_esm_extends({}, state, {
+            selectionIndex: action.payload.max != null ? Math.min(Math.max(action.payload.index, 0), action.payload.max) : Math.max(action.payload.index, 0)
+          });
+        }
+
+        return state;
+      }
+
+    case CLEAR_SELECTION_INDEX:
+      return reach_dropdown_esm_extends({}, state, {
+        selectionIndex: -1
+      });
+
+    case SET_BUTTON_ID:
+      return reach_dropdown_esm_extends({}, state, {
+        triggerId: action.payload
+      });
+
+    case SEARCH_FOR_ITEM:
+      if (typeof action.payload !== "undefined") {
+        return reach_dropdown_esm_extends({}, state, {
+          typeaheadQuery: action.payload
+        });
+      }
+
+      return state;
+
+    default:
+      return state;
+  }
+}
+
+function reach_dropdown_esm_useDropdownContext() {
+  return (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(DropdownContext);
+}
+
+function useDropdownDescendants() {
+  return useDescendants(DropdownDescendantContext);
+} ////////////////////////////////////////////////////////////////////////////////
+
 
 
 ;// CONCATENATED MODULE: ./node_modules/@reach/utils/dev-utils/dist/reach-utils-dev-utils.esm.js
@@ -2259,35 +3738,9 @@ function useControlledSwitchWarning(controlledValue, controlledPropName, compone
 }
 
 
-;// CONCATENATED MODULE: ./node_modules/@reach/utils/compose-event-handlers/dist/reach-utils-compose-event-handlers.esm.js
-/**
- * Wraps a lib-defined event handler and a user-defined event handler, returning
- * a single handler that allows a user to prevent lib-defined handlers from
- * firing.
- *
- * @param theirHandler User-supplied event handler
- * @param ourHandler Library-supplied event handler
- */
-function composeEventHandlers(theirHandler, ourHandler) {
-  return function (event) {
-    theirHandler && theirHandler(event);
-
-    if (!event.defaultPrevented) {
-      return ourHandler(event);
-    }
-  };
-}
-
-
+// EXTERNAL MODULE: ./node_modules/react-is/index.js
+var react_is = __webpack_require__(64);
 ;// CONCATENATED MODULE: ./node_modules/@reach/menu-button/dist/reach-menu-button.esm.js
-
-
-
-
-
-
-
-
 
 
 
@@ -2328,37 +3781,16 @@ function reach_menu_button_esm_objectWithoutPropertiesLoose(source, excluded) {
   }
 
   return target;
-} ////////////////////////////////////////////////////////////////////////////////
-// Actions
+}
 
-
-var CLEAR_SELECTION_INDEX = "CLEAR_SELECTION_INDEX";
-var CLICK_MENU_ITEM = "CLICK_MENU_ITEM";
-var CLOSE_MENU = "CLOSE_MENU";
-var OPEN_MENU_AT_FIRST_ITEM = "OPEN_MENU_AT_FIRST_ITEM";
-var OPEN_MENU_AT_INDEX = "OPEN_MENU_AT_INDEX";
-var OPEN_MENU_CLEARED = "OPEN_MENU_CLEARED";
-var SEARCH_FOR_ITEM = "SEARCH_FOR_ITEM";
-var SELECT_ITEM_AT_INDEX = "SELECT_ITEM_AT_INDEX";
-var SET_BUTTON_ID = "SET_BUTTON_ID";
-var MenuDescendantContext = /*#__PURE__*/createDescendantContext("MenuDescendantContext");
-var StableMenuContext = /*#__PURE__*/createNamedContext("StableMenuContext", {});
-var UnstableMenuContext = /*#__PURE__*/createNamedContext("UnstableMenuContext", {});
-var initialState = {
-  // The button ID is needed for aria controls and can be set directly and
-  // updated for top-level use via context. Otherwise a default is set by useId.
-  // TODO: Consider deprecating direct ID in 1.0 in favor of id at the top level
-  //       for passing deterministic IDs to descendent components.
-  buttonId: null,
-  // Whether or not the menu is expanded
-  isExpanded: false,
-  // When a user begins typing a character string, the selection will change if
-  // a matching item is found
-  typeaheadQuery: "",
-  // The index of the current selected item. When the selection is cleared a
-  // value of -1 is used.
-  selectionIndex: -1
-}; ////////////////////////////////////////////////////////////////////////////////
+var reach_menu_button_esm_excluded = ["as", "id", "children"],
+    reach_menu_button_esm_excluded2 = ["as"],
+    reach_menu_button_esm_excluded3 = ["as"],
+    reach_menu_button_esm_excluded4 = ["as"],
+    reach_menu_button_esm_excluded5 = ["as"],
+    reach_menu_button_esm_excluded6 = (/* unused pure expression or super */ null && (["as", "component", "onSelect"])),
+    reach_menu_button_esm_excluded7 = ["portal"],
+    reach_menu_button_esm_excluded8 = ["as"]; ////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Menu
@@ -2368,93 +3800,38 @@ var initialState = {
  * @see Docs https://reach.tech/menu-button#menu
  */
 
-var Menu = function Menu(_ref) {
-  var id = _ref.id,
-      children = _ref.children;
-  var buttonRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
-  var menuRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
-  var popoverRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
+var Menu = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function (_ref, forwardedRef) {
+  var _ref$as = _ref.as,
+      Comp = _ref$as === void 0 ? external_commonjs_react_commonjs2_react_amd_react_root_.Fragment : _ref$as,
+      id = _ref.id,
+      children = _ref.children,
+      rest = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref, reach_menu_button_esm_excluded);
 
-  var _useDescendantsInit = useDescendantsInit(),
-      descendants = _useDescendantsInit[0],
-      setDescendants = _useDescendantsInit[1];
-
-  var _React$useReducer = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useReducer)(reducer, initialState),
-      state = _React$useReducer[0],
-      dispatch = _React$useReducer[1];
-
-  var _id = reach_auto_id_esm_useId(id);
-
-  var menuId = id || reach_utils_make_id_esm_makeId("menu", _id); // We use an event listener attached to the window to capture outside clicks
-  // that close the menu. We don't want the initial button click to trigger this
-  // when a menu is closed, so we can track this behavior in a ref for now.
-  // We shouldn't need this when we rewrite with state machine logic.
-
-  var buttonClickedRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false); // We will put children callbacks in a ref to avoid triggering endless render
-  // loops when using render props if the app code doesn't useCallback
-  // https://github.com/reach/reach-ui/issues/523
-
-  var selectCallbacks = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)([]); // If the popover's position overlaps with an option when the popover
-  // initially opens, the mouseup event will trigger a select. To prevent that,
-  // we decide the menu button is only ready to make a selection if the pointer
-  // moves first, otherwise the user is just registering the initial button
-  // click rather than selecting an item. This is similar to a native select
-  // on most platforms, and our menu button popover works similarly.
-
-  var readyToSelect = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false); // Trying a new approach for splitting up contexts by stable/unstable
-  // references. We'll see how it goes!
-
-  var stableContext = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
-    return {
-      buttonRef: buttonRef,
-      dispatch: dispatch,
-      menuRef: menuRef,
-      popoverRef: popoverRef,
-      buttonClickedRef: buttonClickedRef,
-      readyToSelect: readyToSelect,
-      selectCallbacks: selectCallbacks
-    };
-  }, []);
-  var unstableContext = {
-    menuId: menuId,
-    state: state
-  }; // When the menu is open, focus is placed on the menu itself so that
-  // keyboard navigation is still possible.
-
-  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
-    if (state.isExpanded) {
-      // @ts-ignore
-      window.__REACH_DISABLE_TOOLTIPS = true;
-      window.requestAnimationFrame(function () {
-        reach_menu_button_esm_focus(menuRef.current);
-      });
-    } else {
-      // We want to ignore the immediate focus of a tooltip so it doesn't pop
-      // up again when the menu closes, only pops up when focus returns again
-      // to the tooltip (like native OS tooltips).
-      // @ts-ignore
-      window.__REACH_DISABLE_TOOLTIPS = false;
-    }
-  }, [state.isExpanded]);
   useCheckStyles("menu-button");
-  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(DescendantProvider, {
-    context: MenuDescendantContext,
-    items: descendants,
-    set: setDescendants
-  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(StableMenuContext.Provider, {
-    value: stableContext
-  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(UnstableMenuContext.Provider, {
-    value: unstableContext
-  }, reach_utils_type_check_esm_isFunction(children) ? children({
-    isExpanded: state.isExpanded,
-    // TODO: Remove in 1.0
-    isOpen: state.isExpanded
-  }) : children)));
-};
+  var parentIsFragment = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
+    try {
+      // To test if the component renders a fragment we need to actually
+      // render it, but this may throw an error since we can't predict what is
+      // actually provided. There's technically a small chance that this could
+      // get it wrong but I don't think it's too likely in practice.
+      return (0,react_is.isFragment)( /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, null));
+    } catch (err) {
+      return false;
+    }
+  }, [Comp]);
+  var props = parentIsFragment ? {} : reach_menu_button_esm_extends({
+    ref: forwardedRef,
+    id: id,
+    "data-reach-menu": ""
+  }, rest);
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, props, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(DropdownProvider, {
+    id: id,
+    children: children
+  }));
+});
 /**
  * @see Docs https://reach.tech/menu-button#menu-props
  */
-
 
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
@@ -2468,86 +3845,18 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuButton = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuButton(_ref2, forwardedRef) {
+var MenuButton = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function (_ref2, forwardedRef) {
   var _ref2$as = _ref2.as,
       Comp = _ref2$as === void 0 ? "button" : _ref2$as,
-      onKeyDown = _ref2.onKeyDown,
-      onMouseDown = _ref2.onMouseDown,
-      id = _ref2.id,
-      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref2, ["as", "onKeyDown", "onMouseDown", "id"]);
+      rest = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref2, reach_menu_button_esm_excluded2);
 
-  var _React$useContext = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(StableMenuContext),
-      buttonRef = _React$useContext.buttonRef,
-      buttonClickedRef = _React$useContext.buttonClickedRef,
-      dispatch = _React$useContext.dispatch;
-
-  var _React$useContext2 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
-      menuId = _React$useContext2.menuId,
-      _React$useContext2$st = _React$useContext2.state,
-      buttonId = _React$useContext2$st.buttonId,
-      isExpanded = _React$useContext2$st.isExpanded;
-
-  var ref = useComposedRefs(buttonRef, forwardedRef);
-  var items = useDescendants(MenuDescendantContext);
-  var firstNonDisabledIndex = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
-    return items.findIndex(function (item) {
-      return !item.disabled;
-    });
-  }, [items]);
-  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
-    var newButtonId = id != null ? id : menuId ? reach_utils_make_id_esm_makeId("menu-button", menuId) : "menu-button";
-
-    if (buttonId !== newButtonId) {
-      dispatch({
-        type: SET_BUTTON_ID,
-        payload: newButtonId
-      });
-    }
-  }, [buttonId, dispatch, id, menuId]);
-
-  function handleKeyDown(event) {
-    switch (event.key) {
-      case "ArrowDown":
-      case "ArrowUp":
-        event.preventDefault(); // prevent scroll
-
-        dispatch({
-          type: OPEN_MENU_AT_INDEX,
-          payload: {
-            index: firstNonDisabledIndex
-          }
-        });
-        break;
-
-      case "Enter":
-      case " ":
-        dispatch({
-          type: OPEN_MENU_AT_INDEX,
-          payload: {
-            index: firstNonDisabledIndex
-          }
-        });
-        break;
-    }
-  }
-
-  function handleMouseDown(event) {
-    if (!isExpanded) {
-      buttonClickedRef.current = true;
-    }
-
-    if (isRightClick(event.nativeEvent)) {
-      return;
-    } else if (isExpanded) {
-      dispatch({
-        type: CLOSE_MENU
-      });
-    } else {
-      dispatch({
-        type: OPEN_MENU_CLEARED
-      });
-    }
-  }
+  var _useDropdownTrigger = useDropdownTrigger(reach_menu_button_esm_extends({}, rest, {
+    ref: forwardedRef
+  })),
+      _useDropdownTrigger$d = _useDropdownTrigger.data,
+      isExpanded = _useDropdownTrigger$d.isExpanded,
+      controls = _useDropdownTrigger$d.controls,
+      props = _useDropdownTrigger.props;
 
   return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp // When the menu is displayed, the element with role `button` has
   // `aria-expanded` set to `true`. When the menu is hidden, it is
@@ -2562,14 +3871,9 @@ var MenuButton = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_rea
     // `aria-controls` that refers to the element with role `menu`.
     // https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton
     ,
-    "aria-controls": menuId
+    "aria-controls": controls
   }, props, {
-    ref: ref,
-    "data-reach-menu-button": "",
-    id: buttonId || undefined,
-    onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown),
-    onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),
-    type: "button"
+    "data-reach-menu-button": ""
   }));
 });
 /**
@@ -2585,192 +3889,22 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuItemImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuItemImpl(_ref3, forwardedRef) {
+var MenuItemImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function (_ref3, forwardedRef) {
   var _ref3$as = _ref3.as,
       Comp = _ref3$as === void 0 ? "div" : _ref3$as,
-      indexProp = _ref3.index,
-      _ref3$isLink = _ref3.isLink,
-      isLink = _ref3$isLink === void 0 ? false : _ref3$isLink,
-      onClick = _ref3.onClick,
-      onDragStart = _ref3.onDragStart,
-      onMouseDown = _ref3.onMouseDown,
-      onMouseEnter = _ref3.onMouseEnter,
-      onMouseLeave = _ref3.onMouseLeave,
-      onMouseMove = _ref3.onMouseMove,
-      onMouseUp = _ref3.onMouseUp,
-      onSelect = _ref3.onSelect,
-      disabled = _ref3.disabled,
-      valueTextProp = _ref3.valueText,
-      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref3, ["as", "index", "isLink", "onClick", "onDragStart", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onSelect", "disabled", "valueText"]);
+      rest = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref3, reach_menu_button_esm_excluded3);
 
-  var _React$useContext3 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(StableMenuContext),
-      buttonRef = _React$useContext3.buttonRef,
-      dispatch = _React$useContext3.dispatch,
-      readyToSelect = _React$useContext3.readyToSelect,
-      selectCallbacks = _React$useContext3.selectCallbacks;
+  var _useDropdownItem = useDropdownItem(reach_menu_button_esm_extends({}, rest, {
+    ref: forwardedRef
+  })),
+      disabled = _useDropdownItem.data.disabled,
+      props = _useDropdownItem.props;
 
-  var _React$useContext4 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
-      _React$useContext4$st = _React$useContext4.state,
-      selectionIndex = _React$useContext4$st.selectionIndex,
-      isExpanded = _React$useContext4$st.isExpanded;
-
-  var ownRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null); // After the ref is mounted to the DOM node, we check to see if we have an
-  // explicit valueText prop before looking for the node's textContent for
-  // typeahead functionality.
-
-  var _React$useState = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useState)(valueTextProp || ""),
-      valueText = _React$useState[0],
-      setValueText = _React$useState[1];
-
-  var setValueTextFromDOM = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useCallback)(function (node) {
-    if (!valueTextProp && node != null && node.textContent) {
-      setValueText(node.textContent);
-    }
-  }, [valueTextProp]);
-  var ref = useComposedRefs(forwardedRef, ownRef, setValueTextFromDOM);
-  var mouseEventStarted = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(false);
-  var index = useDescendant({
-    element: ownRef.current,
-    key: valueText,
-    disabled: disabled,
-    isLink: isLink
-  }, MenuDescendantContext, indexProp);
-  var isSelected = index === selectionIndex && !disabled; // Update the callback ref array on every render
-
-  selectCallbacks.current[index] = onSelect;
-
-  function select() {
-    reach_menu_button_esm_focus(buttonRef.current);
-    onSelect && onSelect();
-    dispatch({
-      type: CLICK_MENU_ITEM
-    });
-  }
-
-  function handleClick(event) {
-    if (isLink && !isRightClick(event.nativeEvent)) {
-      if (disabled) {
-        event.preventDefault();
-      } else {
-        select();
-      }
-    }
-  }
-
-  function handleDragStart(event) {
-    // Because we don't preventDefault on mousedown for links (we need the
-    // native click event), clicking and holding on a link triggers a
-    // dragstart which we don't want.
-    if (isLink) {
-      event.preventDefault();
-    }
-  }
-
-  function handleMouseDown(event) {
-    if (isRightClick(event.nativeEvent)) {
-      return;
-    }
-
-    if (isLink) {
-      // Signal that the mouse is down so we can call the right function if the
-      // user is clicking on a link.
-      mouseEventStarted.current = true;
-    } else {
-      event.preventDefault();
-    }
-  }
-
-  function handleMouseEnter(event) {
-    if (!isSelected && index != null && !disabled) {
-      dispatch({
-        type: SELECT_ITEM_AT_INDEX,
-        payload: {
-          index: index
-        }
-      });
-    }
-  }
-
-  function handleMouseLeave(event) {
-    // Clear out selection when mouse over a non-menu item child.
-    dispatch({
-      type: CLEAR_SELECTION_INDEX
-    });
-  }
-
-  function handleMouseMove() {
-    readyToSelect.current = true;
-
-    if (!isSelected && index != null && !disabled) {
-      dispatch({
-        type: SELECT_ITEM_AT_INDEX,
-        payload: {
-          index: index
-        }
-      });
-    }
-  }
-
-  function handleMouseUp(event) {
-    if (!readyToSelect.current) {
-      readyToSelect.current = true;
-      return;
-    }
-
-    if (isRightClick(event.nativeEvent)) return;
-
-    if (isLink) {
-      // If a mousedown event was initiated on a menu link followed by a
-      // mouseup event on the same link, we do nothing; a click event will
-      // come next and handle selection. Otherwise, we trigger a click event.
-      if (mouseEventStarted.current) {
-        mouseEventStarted.current = false;
-      } else if (ownRef.current) {
-        ownRef.current.click();
-      }
-    } else {
-      if (!disabled) {
-        select();
-      }
-    }
-  } // When the menu closes, reset readyToSelect for the next interaction.
-
-
-  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
-    if (!isExpanded) {
-      readyToSelect.current = false;
-    }
-  }, [isExpanded, readyToSelect]); // Any time a mouseup event occurs anywhere in the document, we reset the
-  // mouseEventStarted ref so we can check it again when needed.
-
-  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
-    var ownerDocument = getOwnerDocument(ownRef.current);
-    ownerDocument.addEventListener("mouseup", listener);
-    return function () {
-      ownerDocument.removeEventListener("mouseup", listener);
-    };
-
-    function listener() {
-      mouseEventStarted.current = false;
-    }
-  }, []);
   return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, reach_menu_button_esm_extends({
-    role: "menuitem",
-    id: useMenuItemId(index),
-    tabIndex: -1
+    role: "menuitem"
   }, props, {
-    ref: ref,
     "aria-disabled": disabled || undefined,
-    "data-reach-menu-item": "",
-    "data-selected": isSelected ? "" : undefined,
-    "data-valuetext": valueText,
-    onClick: composeEventHandlers(onClick, handleClick),
-    onDragStart: composeEventHandlers(onDragStart, handleDragStart),
-    onMouseDown: composeEventHandlers(onMouseDown, handleMouseDown),
-    onMouseEnter: composeEventHandlers(onMouseEnter, handleMouseEnter),
-    onMouseLeave: composeEventHandlers(onMouseLeave, handleMouseLeave),
-    onMouseMove: composeEventHandlers(onMouseMove, handleMouseMove),
-    onMouseUp: composeEventHandlers(onMouseUp, handleMouseUp)
+    "data-reach-menu-item": ""
   }));
 }); ////////////////////////////////////////////////////////////////////////////////
 
@@ -2782,10 +3916,10 @@ var MenuItemImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_r
  * @see Docs https://reach.tech/menu-button#menuitem
  */
 
-var MenuItem = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuItem(_ref4, forwardedRef) {
+var MenuItem = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function (_ref4, forwardedRef) {
   var _ref4$as = _ref4.as,
       as = _ref4$as === void 0 ? "div" : _ref4$as,
-      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref4, ["as"]);
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref4, reach_menu_button_esm_excluded4);
 
   return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(MenuItemImpl, reach_menu_button_esm_extends({}, props, {
     ref: forwardedRef,
@@ -2809,161 +3943,19 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuItems = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuItems(_ref5, forwardedRef) {
+var MenuItems = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function (_ref5, forwardedRef) {
   var _ref5$as = _ref5.as,
       Comp = _ref5$as === void 0 ? "div" : _ref5$as,
-      children = _ref5.children;
-  _ref5.id;
+      rest = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref5, reach_menu_button_esm_excluded5);
 
-  var onKeyDown = _ref5.onKeyDown,
-      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children", "id", "onKeyDown"]);
+  var _useDropdownItems = useDropdownItems(reach_menu_button_esm_extends({}, rest, {
+    ref: forwardedRef
+  })),
+      _useDropdownItems$dat = _useDropdownItems.data,
+      activeDescendant = _useDropdownItems$dat.activeDescendant,
+      triggerId = _useDropdownItems$dat.triggerId,
+      props = _useDropdownItems.props;
 
-  var _React$useContext5 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(StableMenuContext),
-      dispatch = _React$useContext5.dispatch,
-      buttonRef = _React$useContext5.buttonRef,
-      menuRef = _React$useContext5.menuRef,
-      selectCallbacks = _React$useContext5.selectCallbacks;
-
-  var _React$useContext6 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
-      menuId = _React$useContext6.menuId,
-      _React$useContext6$st = _React$useContext6.state,
-      isExpanded = _React$useContext6$st.isExpanded,
-      buttonId = _React$useContext6$st.buttonId,
-      selectionIndex = _React$useContext6$st.selectionIndex,
-      typeaheadQuery = _React$useContext6$st.typeaheadQuery;
-
-  var menuItems = useDescendants(MenuDescendantContext);
-  var ref = useComposedRefs(menuRef, forwardedRef);
-  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
-    // Respond to user char key input with typeahead
-    var match = findItemFromTypeahead(menuItems, typeaheadQuery);
-
-    if (typeaheadQuery && match != null) {
-      dispatch({
-        type: SELECT_ITEM_AT_INDEX,
-        payload: {
-          index: match
-        }
-      });
-    }
-
-    var timeout = window.setTimeout(function () {
-      return typeaheadQuery && dispatch({
-        type: SEARCH_FOR_ITEM,
-        payload: ""
-      });
-    }, 1000);
-    return function () {
-      return window.clearTimeout(timeout);
-    };
-  }, [dispatch, menuItems, typeaheadQuery]);
-  var prevMenuItemsLength = usePrevious(menuItems.length);
-  var prevSelected = usePrevious(menuItems[selectionIndex]);
-  var prevSelectionIndex = usePrevious(selectionIndex);
-  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
-    if (selectionIndex > menuItems.length - 1) {
-      // If for some reason our selection index is larger than our possible
-      // index range (let's say the last item is selected and the list
-      // dynamically updates), we need to select the last item in the list.
-      dispatch({
-        type: SELECT_ITEM_AT_INDEX,
-        payload: {
-          index: menuItems.length - 1
-        }
-      });
-    } else if ( // Checks if
-    //  - menu length has changed
-    //  - selection index has not changed BUT selected item has changed
-    //
-    // This prevents any dynamic adding/removing of menu items from actually
-    // changing a user's expected selection.
-    prevMenuItemsLength !== menuItems.length && selectionIndex > -1 && prevSelected && prevSelectionIndex === selectionIndex && menuItems[selectionIndex] !== prevSelected) {
-      dispatch({
-        type: SELECT_ITEM_AT_INDEX,
-        payload: {
-          index: menuItems.findIndex(function (i) {
-            return i.key === prevSelected.key;
-          })
-        }
-      });
-    }
-  }, [dispatch, menuItems, prevMenuItemsLength, prevSelected, prevSelectionIndex, selectionIndex]);
-  var handleKeyDown = composeEventHandlers(function handleKeyDown(event) {
-    var key = event.key;
-
-    if (!isExpanded) {
-      return;
-    }
-
-    switch (key) {
-      case "Enter":
-      case " ":
-        var selected = menuItems.find(function (item) {
-          return item.index === selectionIndex;
-        }); // For links, the Enter key will trigger a click by default, but for
-        // consistent behavior across menu items we'll trigger a click when
-        // the spacebar is pressed.
-
-        if (selected) {
-          if (selected.isLink && selected.element) {
-            selected.element.click();
-          } else {
-            event.preventDefault(); // Focus the button first by default when an item is selected.
-            // We fire the onSelect callback next so the app can manage
-            // focus if needed.
-
-            reach_menu_button_esm_focus(buttonRef.current);
-            selectCallbacks.current[selected.index] && selectCallbacks.current[selected.index]();
-            dispatch({
-              type: CLICK_MENU_ITEM
-            });
-          }
-        }
-
-        break;
-
-      case "Escape":
-        reach_menu_button_esm_focus(buttonRef.current);
-        dispatch({
-          type: CLOSE_MENU
-        });
-        break;
-
-      case "Tab":
-        // prevent leaving
-        event.preventDefault();
-        break;
-
-      default:
-        // Check if a user is typing some char keys and respond by setting
-        // the query state.
-        if (isString(key) && key.length === 1) {
-          var query = typeaheadQuery + key.toLowerCase();
-          dispatch({
-            type: SEARCH_FOR_ITEM,
-            payload: query
-          });
-        }
-
-        break;
-    }
-  }, useDescendantKeyDown(MenuDescendantContext, {
-    currentIndex: selectionIndex,
-    orientation: "vertical",
-    rotate: false,
-    filter: function filter(item) {
-      return !item.disabled;
-    },
-    callback: function callback(index) {
-      dispatch({
-        type: SELECT_ITEM_AT_INDEX,
-        payload: {
-          index: index
-        }
-      });
-    },
-    key: "index"
-  }));
   return (
     /*#__PURE__*/
     // TODO: Should probably file a but in jsx-a11y, but this is correct
@@ -2973,22 +3965,18 @@ var MenuItems = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_reac
     // as focused.
     // https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-actions-active-descendant.html
     , reach_menu_button_esm_extends({
-      "aria-activedescendant": useMenuItemId(selectionIndex) || undefined // Refers to the element that contains the accessible name for the
+      "aria-activedescendant": activeDescendant // Refers to the element that contains the accessible name for the
       // `menu`. The menu is labeled by the menu button.
       // https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-actions-active-descendant.html
       ,
-      "aria-labelledby": buttonId || undefined // The element that contains the menu items displayed by activating the
+      "aria-labelledby": triggerId || undefined // The element that contains the menu items displayed by activating the
       // button has role menu.
       // https://www.w3.org/TR/wai-aria-practices-1.2/#menubutton
       ,
-      role: "menu",
-      tabIndex: -1
+      role: "menu"
     }, props, {
-      ref: ref,
-      "data-reach-menu-items": "",
-      id: menuId,
-      onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown)
-    }), children)
+      "data-reach-menu-items": ""
+    }))
   );
 });
 /**
@@ -3010,12 +3998,12 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuLink = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function MenuLink(_ref6, forwardedRef) {
+var MenuLink = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function (_ref6, forwardedRef) {
   var _ref6$as = _ref6.as,
       as = _ref6$as === void 0 ? "a" : _ref6$as,
       component = _ref6.component,
       onSelect = _ref6.onSelect,
-      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref6, ["as", "component", "onSelect"]);
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref6, reach_menu_button_esm_excluded6);
 
   useDevWarning(!component, "[@reach/menu-button]: Please use the `as` prop instead of `component`");
   return /*#__PURE__*/createElement(MenuItemImpl, reach_menu_button_esm_extends({}, props, {
@@ -3042,10 +4030,10 @@ if (false) {} //////////////////////////////////////////////////////////////////
  */
 
 
-var MenuList = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuList(_ref7, forwardedRef) {
+var MenuList = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function (_ref7, forwardedRef) {
   var _ref7$portal = _ref7.portal,
       portal = _ref7$portal === void 0 ? true : _ref7$portal,
-      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref7, ["portal"]);
+      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref7, reach_menu_button_esm_excluded7);
 
   return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(MenuPopover, {
     portal: portal
@@ -3061,88 +4049,39 @@ var MenuList = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react
 if (false) {} ////////////////////////////////////////////////////////////////////////////////
 
 /**
-  * 
-  
-  *
-  * A low-level wrapper for the popover that appears when a menu button is open.
-  * You can compose it with `MenuItems` for more control over the nested
-  * components and their rendered DOM nodes, or if you need to nest arbitrary
-  * components between the outer wrapper and your list.
-  *
-  * @see Docs https://reach.tech/menu-button#menupopover
-  */
+ * MenuPopover
+ *
+ * A low-level wrapper for the popover that appears when a menu button is open.
+ * You can compose it with `MenuItems` for more control over the nested
+ * components and their rendered DOM nodes, or if you need to nest arbitrary
+ * components between the outer wrapper and your list.
+ *
+ * @see Docs https://reach.tech/menu-button#menupopover
+ */
 
 
-var MenuPopover = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function MenuPopover(_ref8, forwardedRef) {
+var MenuPopover = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function (_ref8, forwardedRef) {
   var _ref8$as = _ref8.as,
       Comp = _ref8$as === void 0 ? "div" : _ref8$as,
-      children = _ref8.children,
-      onBlur = _ref8.onBlur,
-      _ref8$portal = _ref8.portal,
-      portal = _ref8$portal === void 0 ? true : _ref8$portal,
-      position = _ref8.position,
-      props = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref8, ["as", "children", "onBlur", "portal", "position"]);
+      rest = reach_menu_button_esm_objectWithoutPropertiesLoose(_ref8, reach_menu_button_esm_excluded8);
 
-  var _React$useContext7 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(StableMenuContext),
-      buttonRef = _React$useContext7.buttonRef,
-      buttonClickedRef = _React$useContext7.buttonClickedRef,
-      dispatch = _React$useContext7.dispatch,
-      menuRef = _React$useContext7.menuRef,
-      popoverRef = _React$useContext7.popoverRef;
+  var _useDropdownPopover = useDropdownPopover(reach_menu_button_esm_extends({}, rest, {
+    ref: forwardedRef
+  })),
+      _useDropdownPopover$d = _useDropdownPopover.data,
+      portal = _useDropdownPopover$d.portal,
+      targetRef = _useDropdownPopover$d.targetRef,
+      position = _useDropdownPopover$d.position,
+      props = _useDropdownPopover.props;
 
-  var _React$useContext8 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
-      isExpanded = _React$useContext8.state.isExpanded;
-
-  var ref = useComposedRefs(popoverRef, forwardedRef);
-  (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
-    if (!isExpanded) {
-      return;
-    }
-
-    var ownerDocument = getOwnerDocument(popoverRef.current);
-
-    function listener(event) {
-      if (buttonClickedRef.current) {
-        buttonClickedRef.current = false;
-      } else if (!popoverContainsEventTarget(popoverRef.current, event.target)) {
-        // We on want to close only if focus rests outside the menu
-        dispatch({
-          type: CLOSE_MENU
-        });
-      }
-    }
-
-    ownerDocument.addEventListener("mousedown", listener); // see https://github.com/reach/reach-ui/pull/700#discussion_r530369265
-    // ownerDocument.addEventListener("touchstart", listener);
-
-    return function () {
-      ownerDocument.removeEventListener("mousedown", listener); // ownerDocument.removeEventListener("touchstart", listener);
-    };
-  }, [buttonClickedRef, buttonRef, dispatch, menuRef, popoverRef, isExpanded]);
-
-  var commonProps = reach_menu_button_esm_extends({
-    ref: ref,
-    // TODO: remove in 1.0
-    "data-reach-menu": "",
-    "data-reach-menu-popover": "",
-    hidden: !isExpanded,
-    children: children,
-    onBlur: composeEventHandlers(onBlur, function (event) {
-      if (event.currentTarget.contains(event.relatedTarget)) {
-        return;
-      }
-
-      dispatch({
-        type: CLOSE_MENU
-      });
-    })
-  }, props);
-
-  return portal ? /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Popover, reach_menu_button_esm_extends({}, commonProps, {
+  var sharedProps = {
+    "data-reach-menu-popover": ""
+  };
+  return portal ? /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(reach_popover_esm_Popover, reach_menu_button_esm_extends({}, props, sharedProps, {
     as: Comp,
-    targetRef: buttonRef,
+    targetRef: targetRef,
     position: position
-  })) : /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, commonProps);
+  })) : /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, reach_menu_button_esm_extends({}, props, sharedProps));
 });
 /**
  * @see Docs https://reach.tech/menu-button#menupopover-props
@@ -3158,8 +4097,8 @@ if (false) {} //////////////////////////////////////////////////////////////////
 
 
 function useMenuButtonContext() {
-  var _React$useContext9 = useContext(UnstableMenuContext),
-      isExpanded = _React$useContext9.state.isExpanded;
+  var _useDropdownContext = useDropdownContext(),
+      isExpanded = _useDropdownContext.state.isExpanded;
 
   return useMemo(function () {
     return {
@@ -3168,113 +4107,6 @@ function useMenuButtonContext() {
   }, [isExpanded]);
 } ////////////////////////////////////////////////////////////////////////////////
 
-/**
- * When a user's typed input matches the string displayed in a menu item, it is
- * expected that the matching menu item is selected. This is our matching
- * function.
- */
-
-
-function findItemFromTypeahead(items, string) {
-  if (string === void 0) {
-    string = "";
-  }
-
-  if (!string) {
-    return null;
-  }
-
-  var found = items.find(function (item) {
-    var _item$element, _item$element$dataset, _item$element$dataset2;
-
-    return item.disabled ? false : (_item$element = item.element) == null ? void 0 : (_item$element$dataset = _item$element.dataset) == null ? void 0 : (_item$element$dataset2 = _item$element$dataset.valuetext) == null ? void 0 : _item$element$dataset2.toLowerCase().startsWith(string);
-  });
-  return found ? items.indexOf(found) : null;
-}
-
-function useMenuItemId(index) {
-  var _React$useContext10 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(UnstableMenuContext),
-      menuId = _React$useContext10.menuId;
-
-  return index != null && index > -1 ? reach_utils_make_id_esm_makeId("option-" + index, menuId) : undefined;
-}
-
-function reach_menu_button_esm_focus(element) {
-  element && element.focus();
-}
-
-function popoverContainsEventTarget(popover, target) {
-  return !!(popover && popover.contains(target));
-}
-
-function reducer(state, action) {
-  if (action === void 0) {
-    action = {};
-  }
-
-  switch (action.type) {
-    case CLICK_MENU_ITEM:
-      return reach_menu_button_esm_extends({}, state, {
-        isExpanded: false,
-        selectionIndex: -1
-      });
-
-    case CLOSE_MENU:
-      return reach_menu_button_esm_extends({}, state, {
-        isExpanded: false,
-        selectionIndex: -1
-      });
-
-    case OPEN_MENU_AT_FIRST_ITEM:
-      return reach_menu_button_esm_extends({}, state, {
-        isExpanded: true,
-        selectionIndex: 0
-      });
-
-    case OPEN_MENU_AT_INDEX:
-      return reach_menu_button_esm_extends({}, state, {
-        isExpanded: true,
-        selectionIndex: action.payload.index
-      });
-
-    case OPEN_MENU_CLEARED:
-      return reach_menu_button_esm_extends({}, state, {
-        isExpanded: true,
-        selectionIndex: -1
-      });
-
-    case SELECT_ITEM_AT_INDEX:
-      if (action.payload.index >= 0) {
-        return reach_menu_button_esm_extends({}, state, {
-          selectionIndex: action.payload.max != null ? Math.min(Math.max(action.payload.index, 0), action.payload.max) : Math.max(action.payload.index, 0)
-        });
-      }
-
-      return state;
-
-    case CLEAR_SELECTION_INDEX:
-      return reach_menu_button_esm_extends({}, state, {
-        selectionIndex: -1
-      });
-
-    case SET_BUTTON_ID:
-      return reach_menu_button_esm_extends({}, state, {
-        buttonId: action.payload
-      });
-
-    case SEARCH_FOR_ITEM:
-      if (typeof action.payload !== "undefined") {
-        return reach_menu_button_esm_extends({}, state, {
-          typeaheadQuery: action.payload
-        });
-      }
-
-      return state;
-
-    default:
-      return state;
-  }
-}
 
 function useDevWarning(condition, message) {
   if (false) { var messageRef; }
@@ -3282,6 +4114,9 @@ function useDevWarning(condition, message) {
 
 
 
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var node_modules_prop_types_0 = __webpack_require__(838);
+var node_modules_prop_types_default_0 = /*#__PURE__*/__webpack_require__.n(node_modules_prop_types_0);
 ;// CONCATENATED MODULE: ./src/components/Button/component.js
 
 
@@ -3299,9 +4134,9 @@ const Button = ({
 };
 
 Button.propTypes = {
-  label: (prop_types_default()).string.isRequired,
-  onClick: (prop_types_default()).func.isRequired,
-  variant: prop_types_default().oneOf(["contrast", "neutral", "info", "warning", "danger", "success"])
+  label: (node_modules_prop_types_default_0()).string.isRequired,
+  onClick: (node_modules_prop_types_default_0()).func.isRequired,
+  variant: node_modules_prop_types_default_0().oneOf(["contrast", "neutral", "info", "warning", "danger", "success"])
 };
 Button.defaultProps = {
   variant: "info"
@@ -3398,10 +4233,10 @@ const Icon = ({
 };
 
 Icon.propTypes = {
-  name: prop_types_default().oneOf(["history", "menu-arrow-down", "menu-arrow-up", "text-rich", "undo", "redo"]).isRequired,
-  classList: (prop_types_default()).string,
-  width: (prop_types_default()).number,
-  height: (prop_types_default()).number
+  name: node_modules_prop_types_default_0().oneOf(["history", "menu-arrow-down", "menu-arrow-up", "text-rich", "undo", "redo"]).isRequired,
+  classList: (node_modules_prop_types_default_0()).string,
+  width: (node_modules_prop_types_default_0()).number,
+  height: (node_modules_prop_types_default_0()).number
 };
 Icon.defaultProps = {
   width: 20,
@@ -3440,14 +4275,16 @@ const DropdownMenu = ({
 };
 
 DropdownMenu.propTypes = {
-  label: (prop_types_default()).string.isRequired,
-  items: (prop_types_default()).array.isRequired,
-  onSelectItem: (prop_types_default()).func.isRequired,
-  icon: (prop_types_default()).element
+  label: (node_modules_prop_types_default_0()).string.isRequired,
+  items: (node_modules_prop_types_default_0()).array.isRequired,
+  onSelectItem: (node_modules_prop_types_default_0()).func.isRequired,
+  icon: (node_modules_prop_types_default_0()).element
 };
 /* harmony default export */ const DropdownMenu_component = (DropdownMenu);
 ;// CONCATENATED MODULE: ./src/components/DropdownMenu/index.js
 
+// EXTERNAL MODULE: ./node_modules/@reach/listbox/node_modules/prop-types/index.js
+var listbox_node_modules_prop_types = __webpack_require__(590);
 ;// CONCATENATED MODULE: ./node_modules/@reach/utils/use-stable-callback/dist/reach-utils-use-stable-callback.esm.js
 
 
@@ -3911,6 +4748,7 @@ function useCreateMachine(machineDefinition, options) {
 
 
 
+
 function reach_listbox_esm_extends() {
   reach_listbox_esm_extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -3982,6 +4820,7 @@ var ListboxEvents; /////////////////////////////////////////////////////////////
   ListboxEvents["OptionMouseDown"] = "OPTION_MOUSE_DOWN";
   ListboxEvents["OptionMouseUp"] = "OPTION_MOUSE_UP";
   ListboxEvents["OptionClick"] = "OPTION_CLICK";
+  ListboxEvents["ListMouseUp"] = "LIST_MOUSE_UP";
   ListboxEvents["OptionPress"] = "OPTION_PRESS";
   ListboxEvents["OutsideMouseDown"] = "OUTSIDE_MOUSE_DOWN";
   ListboxEvents["OutsideMouseUp"] = "OUTSIDE_MOUSE_UP";
@@ -4365,6 +5204,9 @@ var createMachineDefinition = function createMachineDefinition(_ref) {
       }], _extends4[ListboxEvents.ButtonMouseUp] = {
         target: ListboxStates.Navigating,
         actions: [navigateFromCurrentValue, focusList]
+      }, _extends4[ListboxEvents.ListMouseUp] = {
+        target: ListboxStates.Navigating,
+        actions: [navigateFromCurrentValue, focusList]
       }, _extends4[ListboxEvents.OptionTouchStart] = {
         target: ListboxStates.Navigating,
         actions: [reach_listbox_esm_navigate, clearTypeahead],
@@ -4598,6 +5440,15 @@ function findOptionFromValue(value, options) {
  */
 
 
+var reach_listbox_esm_excluded = ["as", "aria-labelledby", "aria-label", "children", "defaultValue", "disabled", "form", "name", "onChange", "required", "value", "__componentName"],
+    reach_listbox_esm_excluded2 = (/* unused pure expression or super */ null && (["arrow", "button", "children", "portal"])),
+    reach_listbox_esm_excluded3 = ["aria-label", "arrow", "as", "children", "onKeyDown", "onMouseDown", "onMouseUp"],
+    reach_listbox_esm_excluded4 = ["as", "children"],
+    reach_listbox_esm_excluded5 = ["as", "position", "onBlur", "onKeyDown", "onMouseUp", "portal", "unstable_observableRefs"],
+    reach_listbox_esm_excluded6 = ["as"],
+    reach_listbox_esm_excluded7 = ["as", "children", "disabled", "index", "label", "onClick", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onTouchStart", "value"],
+    reach_listbox_esm_excluded8 = (/* unused pure expression or super */ null && (["as", "label", "children"])),
+    _excluded9 = (/* unused pure expression or super */ null && (["as"]));
 var DEBUG = false; ////////////////////////////////////////////////////////////////////////////////
 // ListboxContext
 
@@ -4629,7 +5480,7 @@ var ListboxInput = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_r
       valueProp = _ref.value,
       _ref$__componentName = _ref.__componentName,
       __componentName = _ref$__componentName === void 0 ? "ListboxInput" : _ref$__componentName,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref, ["as", "aria-labelledby", "aria-label", "children", "defaultValue", "disabled", "form", "name", "onChange", "required", "value", "__componentName"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref, reach_listbox_esm_excluded);
 
   var isControlled = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(valueProp != null);
 
@@ -4663,11 +5514,12 @@ var ListboxInput = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_r
       state = _useMachine[0],
       send = _useMachine[1];
 
-  var stableOnChange = useStableCallback(function (newValue) {
+  function handleValueChange(newValue) {
     if (newValue !== state.context.value) {
       onChange == null ? void 0 : onChange(newValue);
     }
-  }); // IDs for aria attributes
+  } // IDs for aria attributes
+
 
   var _id = reach_auto_id_esm_useId(props.id);
 
@@ -4686,27 +5538,24 @@ var ListboxInput = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_r
     });
     return selected ? selected.label : null;
   }, [options, state.context.value]);
-  var isExpanded = isListboxExpanded(state.value); // TODO: Remove duplication and memoize
-
-  var context = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
-    return {
-      ariaLabel: ariaLabel,
-      ariaLabelledBy: ariaLabelledBy,
-      disabled: disabled,
-      isExpanded: isExpanded,
-      listboxId: id,
-      listboxValueLabel: valueLabel,
-      onValueChange: stableOnChange,
-      buttonRef: buttonRef,
-      listRef: listRef,
-      popoverRef: popoverRef,
-      selectedOptionRef: selectedOptionRef,
-      highlightedOptionRef: highlightedOptionRef,
-      send: send,
-      state: state.value,
-      stateData: state.context
-    };
-  }, [ariaLabel, ariaLabelledBy, state.value, state.context, disabled, id, isExpanded, stableOnChange, send, valueLabel]); // For uncontrolled listbox components where no `defaultValue` is provided, we
+  var isExpanded = isListboxExpanded(state.value);
+  var context = {
+    ariaLabel: ariaLabel,
+    ariaLabelledBy: ariaLabelledBy,
+    buttonRef: buttonRef,
+    disabled: disabled,
+    highlightedOptionRef: highlightedOptionRef,
+    isExpanded: isExpanded,
+    listboxId: id,
+    listboxValueLabel: valueLabel,
+    listRef: listRef,
+    onValueChange: handleValueChange,
+    popoverRef: popoverRef,
+    selectedOptionRef: selectedOptionRef,
+    send: send,
+    state: state.value,
+    stateData: state.context
+  }; // For uncontrolled listbox components where no `defaultValue` is provided, we
   // will update the value based on the value of the first selectable option.
   // We call the update directly because:
   //   A) we only ever need to do this once, so we can guard with a ref
@@ -4720,18 +5569,18 @@ var ListboxInput = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_r
   !mounted.current && // we haven't done this already
   options.length // we have some options
   ) {
-      mounted.current = true;
-      var first = options.find(function (option) {
-        return !option.disabled;
-      });
+    mounted.current = true;
+    var first = options.find(function (option) {
+      return !option.disabled;
+    });
 
-      if (first && first.value) {
-        send({
-          type: ListboxEvents.ValueChange,
-          value: first.value
-        });
-      }
+    if (first && first.value) {
+      send({
+        type: ListboxEvents.ValueChange,
+        value: first.value
+      });
     }
+  }
 
   useControlledSwitchWarning(valueProp, "value", __componentName); // Even if the app controls state, we still need to update it internally to
   // run the state machine transitions
@@ -4793,19 +5642,19 @@ var ListboxInput = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_r
     };
   }, [send, isExpanded]);
   useCheckStyles("listbox");
-  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(DescendantProvider, {
-    context: ListboxDescendantContext,
-    items: options,
-    set: setOptions
-  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(ListboxContext.Provider, {
-    value: context
-  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, reach_listbox_esm_extends({}, props, {
+  return /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Comp, reach_listbox_esm_extends({}, props, {
     ref: ref,
     "data-reach-listbox-input": "",
     "data-state": isExpanded ? "expanded" : "closed",
     "data-value": state.context.value,
     id: id
-  }), reach_utils_type_check_esm_isFunction(children) ? children({
+  }), /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(ListboxContext.Provider, {
+    value: context
+  }, /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(DescendantProvider, {
+    context: ListboxDescendantContext,
+    items: options,
+    set: setOptions
+  }, reach_utils_type_check_esm_isFunction(children) ? children({
     id: id,
     isExpanded: isExpanded,
     value: state.context.value,
@@ -4814,7 +5663,7 @@ var ListboxInput = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_r
     valueLabel: valueLabel,
     // TODO: Remove in 1.0
     expanded: isExpanded
-  }) : children), (form || name || required) && /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)("input", {
+  }) : children, (form || name || required) && /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)("input", {
     ref: hiddenInputRef,
     "data-reach-listbox-hidden-input": "",
     disabled: disabled,
@@ -4825,7 +5674,7 @@ var ListboxInput = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_r
     tabIndex: -1,
     type: "hidden",
     value: state.context.value || ""
-  })));
+  }))));
 });
 
 if (false) {}
@@ -4857,7 +5706,7 @@ var Listbox = /*#__PURE__*/(/* unused pure expression or super */ null && (forwa
       children = _ref2.children,
       _ref2$portal = _ref2.portal,
       portal = _ref2$portal === void 0 ? true : _ref2$portal,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref2, ["arrow", "button", "children", "portal"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref2, reach_listbox_esm_excluded2);
 
   return /*#__PURE__*/createElement(ListboxInput, reach_listbox_esm_extends({}, props, {
     __componentName: "Listbox",
@@ -4902,16 +5751,16 @@ var ListboxButtonImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_
       onKeyDown = _ref4.onKeyDown,
       onMouseDown = _ref4.onMouseDown,
       onMouseUp = _ref4.onMouseUp,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref4, ["aria-label", "arrow", "as", "children", "onKeyDown", "onMouseDown", "onMouseUp"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref4, reach_listbox_esm_excluded3);
 
   var _React$useContext = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
-      ariaLabelledBy = _React$useContext.ariaLabelledBy,
       buttonRef = _React$useContext.buttonRef,
+      send = _React$useContext.send,
+      ariaLabelledBy = _React$useContext.ariaLabelledBy,
       disabled = _React$useContext.disabled,
       isExpanded = _React$useContext.isExpanded,
       listboxId = _React$useContext.listboxId,
       stateData = _React$useContext.stateData,
-      send = _React$useContext.send,
       listboxValueLabel = _React$useContext.listboxValueLabel;
 
   var listboxValue = stateData.value;
@@ -5017,7 +5866,7 @@ var ListboxArrowImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_a
   var _ref5$as = _ref5.as,
       Comp = _ref5$as === void 0 ? "span" : _ref5$as,
       children = _ref5.children,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref5, ["as", "children"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref5, reach_listbox_esm_excluded4);
 
   var _React$useContext2 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
       isExpanded = _React$useContext2.isExpanded;
@@ -5060,19 +5909,26 @@ var ListboxPopoverImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react
       position = _ref6$position === void 0 ? positionMatchWidth : _ref6$position,
       onBlur = _ref6.onBlur,
       onKeyDown = _ref6.onKeyDown,
+      onMouseUp = _ref6.onMouseUp,
       _ref6$portal = _ref6.portal,
       portal = _ref6$portal === void 0 ? true : _ref6$portal,
       unstable_observableRefs = _ref6.unstable_observableRefs,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref6, ["as", "position", "onBlur", "onKeyDown", "portal", "unstable_observableRefs"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref6, reach_listbox_esm_excluded5);
 
   var _React$useContext3 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
+      isExpanded = _React$useContext3.isExpanded,
       buttonRef = _React$useContext3.buttonRef,
       popoverRef = _React$useContext3.popoverRef,
-      send = _React$useContext3.send,
-      isExpanded = _React$useContext3.isExpanded;
+      send = _React$useContext3.send;
 
   var ref = useComposedRefs(popoverRef, forwardedRef);
   var handleKeyDown = useKeyDown();
+
+  function handleMouseUp() {
+    send({
+      type: ListboxEvents.ListMouseUp
+    });
+  }
 
   var commonProps = reach_listbox_esm_extends({
     hidden: !isExpanded,
@@ -5080,6 +5936,7 @@ var ListboxPopoverImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react
   }, props, {
     ref: ref,
     "data-reach-listbox-popover": "",
+    onMouseUp: composeEventHandlers(onMouseUp, handleMouseUp),
     onBlur: composeEventHandlers(onBlur, handleBlur),
     onKeyDown: composeEventHandlers(onKeyDown, handleKeyDown)
   });
@@ -5094,7 +5951,7 @@ var ListboxPopoverImpl = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react
     });
   }
 
-  return portal ? /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(Popover, reach_listbox_esm_extends({}, commonProps, {
+  return portal ? /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.createElement)(reach_popover_esm_Popover, reach_listbox_esm_extends({}, commonProps, {
     as: Comp,
     targetRef: buttonRef,
     position: position,
@@ -5121,14 +5978,14 @@ var ListboxPopover = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd
 var ListboxList = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_react_root_.forwardRef)(function ListboxList(_ref7, forwardedRef) {
   var _ref7$as = _ref7.as,
       Comp = _ref7$as === void 0 ? "ul" : _ref7$as,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref7, ["as"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref7, reach_listbox_esm_excluded6);
 
   var _React$useContext4 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
+      listRef = _React$useContext4.listRef,
       ariaLabel = _React$useContext4.ariaLabel,
       ariaLabelledBy = _React$useContext4.ariaLabelledBy,
       isExpanded = _React$useContext4.isExpanded,
       listboxId = _React$useContext4.listboxId,
-      listRef = _React$useContext4.listRef,
       _React$useContext4$st = _React$useContext4.stateData,
       value = _React$useContext4$st.value,
       navigationValue = _React$useContext4$st.navigationValue;
@@ -5184,6 +6041,8 @@ var ListboxOption = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_
       Comp = _ref8$as === void 0 ? "li" : _ref8$as,
       children = _ref8.children,
       disabled = _ref8.disabled,
+      indexProp = _ref8.index,
+      labelProp = _ref8.label,
       onClick = _ref8.onClick,
       onMouseDown = _ref8.onMouseDown,
       onMouseEnter = _ref8.onMouseEnter,
@@ -5192,17 +6051,16 @@ var ListboxOption = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_
       onMouseUp = _ref8.onMouseUp,
       onTouchStart = _ref8.onTouchStart,
       value = _ref8.value,
-      labelProp = _ref8.label,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref8, ["as", "children", "disabled", "onClick", "onMouseDown", "onMouseEnter", "onMouseLeave", "onMouseMove", "onMouseUp", "onTouchStart", "value", "label"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref8, reach_listbox_esm_excluded7);
 
   if (false) {}
 
   var _React$useContext5 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
       highlightedOptionRef = _React$useContext5.highlightedOptionRef,
-      isExpanded = _React$useContext5.isExpanded,
-      onValueChange = _React$useContext5.onValueChange,
       selectedOptionRef = _React$useContext5.selectedOptionRef,
       send = _React$useContext5.send,
+      isExpanded = _React$useContext5.isExpanded,
+      onValueChange = _React$useContext5.onValueChange,
       state = _React$useContext5.state,
       _React$useContext5$st = _React$useContext5.stateData,
       listboxValue = _React$useContext5$st.value,
@@ -5214,12 +6072,20 @@ var ListboxOption = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_
 
   var label = labelProp || labelState || "";
   var ownRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useRef)(null);
-  useDescendant({
-    element: ownRef.current,
-    value: value,
-    label: label,
-    disabled: !!disabled
-  }, ListboxDescendantContext); // After the ref is mounted to the DOM node, we check to see if we have an
+
+  var _useStatefulRefValue = useStatefulRefValue(ownRef, null),
+      element = _useStatefulRefValue[0],
+      handleRefSet = _useStatefulRefValue[1];
+
+  var descendant = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useMemo)(function () {
+    return {
+      element: element,
+      value: value,
+      label: label,
+      disabled: !!disabled
+    };
+  }, [disabled, element, label, value]);
+  useDescendant(descendant, ListboxDescendantContext, indexProp); // After the ref is mounted to the DOM node, we check to see if we have an
   // explicit label prop before looking for the node's textContent for
   // typeahead functionality.
 
@@ -5236,7 +6102,7 @@ var ListboxOption = /*#__PURE__*/(0,external_commonjs_react_commonjs2_react_amd_
   }, [labelProp]);
   var isHighlighted = navigationValue ? navigationValue === value : false;
   var isSelected = listboxValue === value;
-  var ref = useComposedRefs(getLabelFromDomNode, forwardedRef, ownRef, isSelected ? selectedOptionRef : null, isHighlighted ? highlightedOptionRef : null);
+  var ref = useComposedRefs(getLabelFromDomNode, forwardedRef, handleRefSet, isSelected ? selectedOptionRef : null, isHighlighted ? highlightedOptionRef : null);
 
   function handleMouseEnter() {
     send({
@@ -5362,7 +6228,7 @@ var ListboxGroup = /*#__PURE__*/(/* unused pure expression or super */ null && (
       Comp = _ref9$as === void 0 ? "div" : _ref9$as,
       label = _ref9.label,
       children = _ref9.children,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref9, ["as", "label", "children"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref9, reach_listbox_esm_excluded8);
 
   var _React$useContext6 = useContext(ListboxContext),
       listboxId = _React$useContext6.listboxId;
@@ -5401,7 +6267,7 @@ if (false) {}
 var ListboxGroupLabel = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function ListboxGroupLabel(_ref10, forwardedRef) {
   var _ref10$as = _ref10.as,
       Comp = _ref10$as === void 0 ? "span" : _ref10$as,
-      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref10, ["as"]);
+      props = reach_listbox_esm_objectWithoutPropertiesLoose(_ref10, _excluded9);
 
   var _React$useContext7 = useContext(ListboxGroupContext),
       labelId = _React$useContext7.labelId;
@@ -5433,10 +6299,10 @@ if (false) {}
 function useListboxContext() {
   var _React$useContext8 = useContext(ListboxContext),
       highlightedOptionRef = _React$useContext8.highlightedOptionRef,
+      selectedOptionRef = _React$useContext8.selectedOptionRef,
       listboxId = _React$useContext8.listboxId,
       listboxValueLabel = _React$useContext8.listboxValueLabel,
       isExpanded = _React$useContext8.isExpanded,
-      selectedOptionRef = _React$useContext8.selectedOptionRef,
       value = _React$useContext8.stateData.value;
 
   return useMemo(function () {
@@ -5458,20 +6324,21 @@ function isListboxExpanded(state) {
 
 function useKeyDown() {
   var _React$useContext9 = (0,external_commonjs_react_commonjs2_react_amd_react_root_.useContext)(ListboxContext),
+      send = _React$useContext9.send,
       listboxDisabled = _React$useContext9.disabled,
       onValueChange = _React$useContext9.onValueChange,
       _React$useContext9$st = _React$useContext9.stateData,
       navigationValue = _React$useContext9$st.navigationValue,
-      typeaheadQuery = _React$useContext9$st.typeaheadQuery,
-      send = _React$useContext9.send;
+      typeaheadQuery = _React$useContext9$st.typeaheadQuery;
 
   var options = useDescendants(ListboxDescendantContext);
+  var stableOnValueChange = useStableCallback(onValueChange);
   (0,external_commonjs_react_commonjs2_react_amd_react_root_.useEffect)(function () {
     if (typeaheadQuery) {
       send({
         type: ListboxEvents.UpdateAfterTypeahead,
         query: typeaheadQuery,
-        callback: onValueChange
+        callback: stableOnValueChange
       });
     }
 
@@ -5485,7 +6352,7 @@ function useKeyDown() {
     return function () {
       window.clearTimeout(timeout);
     };
-  }, [onValueChange, send, typeaheadQuery]);
+  }, [stableOnValueChange, send, typeaheadQuery]);
   var index = options.findIndex(function (_ref11) {
     var value = _ref11.value;
     return value === navigationValue;
@@ -5636,10 +6503,10 @@ const Select = ({
 };
 
 Select.propTypes = {
-  defaultValue: (prop_types_default()).string,
-  options: (prop_types_default()).array.isRequired,
-  onChange: (prop_types_default()).func.isRequired,
-  placeholder: (prop_types_default()).string
+  defaultValue: (node_modules_prop_types_default_0()).string,
+  options: (node_modules_prop_types_default_0()).array.isRequired,
+  onChange: (node_modules_prop_types_default_0()).func.isRequired,
+  placeholder: (node_modules_prop_types_default_0()).string
 };
 Select.defaultProps = {
   defaultValue: "",
@@ -5833,7 +6700,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__320__;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(297)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(706)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ 	return __webpack_exports__;

@@ -660,6 +660,7 @@ const removeToast = action(toastStore, 'removeToast', (store, toastId) => {
   const existingToasts = store.get();
   store.set(existingToasts.filter(toast => toast.id !== toastId));
 });
+const DELAY_BEFORE_REMOVING_TOAST = 175;
 const dismissToast = action(toastStore, 'dismissToast', (store, toastId) => {
   const existingToasts = store.get();
   store.set(existingToasts.map(toast => {
@@ -673,7 +674,7 @@ const dismissToast = action(toastStore, 'dismissToast', (store, toastId) => {
   }));
   setTimeout(() => {
     removeToast(toastId);
-  }, 175);
+  }, DELAY_BEFORE_REMOVING_TOAST);
 });
 const addToast = action(toastStore, 'addToast', (store, options) => {
   var _a, _b, _c;
@@ -2981,7 +2982,7 @@ const ToastContainer = () => {
   return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
     className: "flex flex-col items-end fixed",
     style: {
-      zIndex: 9999,
+      zIndex: 11000,
       bottom: DEFAULT_OFFSET,
       right: DEFAULT_OFFSET
     }
