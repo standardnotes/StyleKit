@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.11.0](https://github.com/standardnotes/StyleKit/compare/v5.10.0...v5.11.0) (2022-03-02)
+
+
+### Features
+
+* add toast notifications ([#71](https://github.com/standardnotes/StyleKit/issues/71)) ([729005f](https://github.com/standardnotes/StyleKit/commit/729005f18670d1a1bf064b5ab7c6dbd660063f79))
+
 ## [5.10.0](https://github.com/standardnotes/StyleKit/compare/v5.9.0...v5.10.0) (2022-02-27)
 
 
