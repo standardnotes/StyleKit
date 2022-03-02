@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.12.2](https://github.com/standardnotes/StyleKit/compare/v5.12.1...v5.12.2) (2022-03-02)
+
+
+### Bug Fixes
+
+* make alert buttons optional ([080cc68](https://github.com/standardnotes/StyleKit/commit/080cc683178364878e4f34c3db2ab4c593a66824))
+
 ### [5.12.1](https://github.com/standardnotes/StyleKit/compare/v5.12.0...v5.12.1) (2022-03-02)
 
 
