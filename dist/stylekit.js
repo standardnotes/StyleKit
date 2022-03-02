@@ -101,6 +101,7 @@ __webpack_require__.d(__webpack_exports__, {
   "TasksIcon": () => (/* reexport */ ic_tasks),
   "ThemesIcon": () => (/* reexport */ ic_themes),
   "ToastContainer": () => (/* reexport */ ToastContainer),
+  "ToastType": () => (/* reexport */ ToastType),
   "TrashFilledIcon": () => (/* reexport */ ic_trash_filled),
   "TrashIcon": () => (/* reexport */ ic_trash),
   "TrashSweepIcon": () => (/* reexport */ ic_trash_sweep),
@@ -2842,6 +2843,12 @@ var SvgIcWindow = function SvgIcWindow(props) {
 
 
 
+
+const prefersReducedMotion = () => {
+  const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
+  return mediaQuery.matches;
+};
+
 const colorForToastType = type => {
   switch (type) {
     case ToastType.Success:
@@ -2877,26 +2884,50 @@ const iconForToastType = type => {
   }
 };
 
+const getToastPosition = (boundingRect, index) => {
+  const positionFromBottom = index > 0 ? boundingRect.height * index : 0;
+  const margin = index > 0 ? index * 0.45 : 0;
+  return {
+    bottom: `calc(${positionFromBottom}px + ${margin}rem)`
+  };
+};
+
 const Toast = ({
   toast,
   index
 }) => {
   var _a;
 
+  const toastElementRef = s();
   const icon = iconForToastType(toast.type);
   const hasActions = ((_a = toast === null || toast === void 0 ? void 0 : toast.actions) === null || _a === void 0 ? void 0 : _a.length) > 0;
+  const [position, setPosition] = l();
+  y(() => {
+    if (toastElementRef.current) {
+      setTimeout(() => {
+        const boundingRect = toastElementRef.current.getBoundingClientRect();
+        setPosition(getToastPosition(boundingRect, index));
+      });
+    }
+  }, [toastElementRef.current, index]);
+  const shouldReduceMotion = prefersReducedMotion();
+  const enterAnimation = shouldReduceMotion ? 'fade-in-animation' : 'slide-in-right-animation';
+  const exitAnimation = shouldReduceMotion ? 'fade-out-animation' : 'slide-out-left-animation';
+  const currentAnimation = toast.dismissed ? exitAnimation : enterAnimation;
   return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
-    className: `inline-flex items-center bg-grey-5 mt-2 rounded opacity-0 animation-fill-forwards select-none max-w-80 ${toast.dismissed ? 'slide-out-left-animation' : 'slide-in-right-animation'} ${hasActions ? 'p-2 pl-3' : 'p-3 cursor-pointer'}`,
-    style: {
+    role: "status",
+    className: `absolute bottom-0 right-0 inline-flex items-center bg-grey-5 rounded opacity-0 animation-fill-forwards select-none min-w-max ${position ? currentAnimation : ''} ${hasActions ? 'p-2 pl-3' : 'p-3'}`,
+    style: Object.assign({
       boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.16)',
-      transition: 'all 0.2s ease',
-      willChange: 'transform'
-    },
+      transition: shouldReduceMotion ? undefined : 'all 0.2s ease',
+      willChange: 'bottom'
+    }, position),
     onClick: () => {
       if (!hasActions && toast.type !== ToastType.Loading) {
         dismissToast(toast.id);
       }
-    }
+    },
+    ref: toastElementRef
   }, icon ? external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
     className: "flex flex-shrink-0 items-center justify-center sn-icon mr-2"
   }, icon) : null, external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
@@ -2910,7 +2941,7 @@ const Toast = ({
     },
     className: `py-1 border-0 bg-transparent cursor-pointer font-semibold text-sm hover:bg-grey-3 rounded ${colorForToastType(toast.type)} ${index !== 0 ? 'ml-2' : ''}`,
     onClick: () => {
-      action.callback(toast.id);
+      action.handler(toast.id);
     }
   }, action.label))));
 };
@@ -2919,14 +2950,15 @@ const Toast = ({
 
 
 
+const DEFAULT_OFFSET = '1.5rem';
 const ToastContainer = () => {
   const toasts = useStore(toastStore);
   return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
     className: "flex flex-col items-end fixed",
     style: {
       zIndex: 9999,
-      bottom: '1.5rem',
-      right: '1.5rem'
+      bottom: DEFAULT_OFFSET,
+      right: DEFAULT_OFFSET
     }
   }, toasts.map((toast, index) => external_commonjs_react_commonjs2_react_amd_react_root_.createElement(Toast, {
     toast: toast,
@@ -2935,6 +2967,7 @@ const ToastContainer = () => {
   })));
 };
 ;// CONCATENATED MODULE: ./src/components/Toast/index.ts
+
 
 
 ;// CONCATENATED MODULE: ./src/assets/index.js

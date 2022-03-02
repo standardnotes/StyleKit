@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { FunctionComponent } from 'preact';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import type { Toast as ToastPropType } from './types';
 import {
   CheckCircleFilledIcon,
@@ -37,14 +38,39 @@ const iconForToastType = (type: ToastType) => {
   }
 };
 
+const getToastPosition = (
+  boundingRect: DOMRect,
+  index: number
+): React.CSSProperties => {
+  const positionFromBottom = index > 0 ? boundingRect.height * index : 0;
+  const margin = index > 0 ? index * 0.45 : 0;
+
+  return {
+    bottom: `calc(${positionFromBottom}px + ${margin}rem)`,
+  };
+};
+
 type Props = {
   toast: ToastPropType;
   index: number;
 };
 
 export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
+  const toastElementRef = useRef<HTMLDivElement>();
+
   const icon = iconForToastType(toast.type);
   const hasActions = toast?.actions?.length > 0;
+
+  const [position, setPosition] = useState<React.CSSProperties>();
+
+  useEffect(() => {
+    if (toastElementRef.current) {
+      setTimeout(() => {
+        const boundingRect = toastElementRef.current.getBoundingClientRect();
+        setPosition(getToastPosition(boundingRect, index));
+      });
+    }
+  }, [toastElementRef.current, index]);
 
   const shouldReduceMotion = prefersReducedMotion();
   const enterAnimation = shouldReduceMotion
@@ -58,21 +84,21 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
   return (
     <div
       role="status"
-      className={`inline-flex items-center bg-grey-5 mt-2 rounded opacity-0 animation-fill-forwards select-none max-w-80 ${
-        toast.dismissed
-          ? 'slide-out-left-animation'
-          : 'slide-in-right-animation'
-      } ${hasActions ? 'p-2 pl-3' : 'p-3 cursor-pointer'}`}
+      className={`absolute bottom-0 right-0 inline-flex items-center bg-grey-5 rounded opacity-0 animation-fill-forwards select-none min-w-max ${
+        position ? currentAnimation : ''
+      } ${hasActions ? 'p-2 pl-3' : 'p-3'}`}
       style={{
         boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.16)',
         transition: shouldReduceMotion ? undefined : 'all 0.2s ease',
-        willChange: 'transform',
+        willChange: 'bottom',
+        ...position,
       }}
       onClick={() => {
         if (!hasActions && toast.type !== ToastType.Loading) {
           dismissToast(toast.id);
         }
       }}
+      ref={toastElementRef}
     >
       {icon ? (
         <div className="flex flex-shrink-0 items-center justify-center sn-icon mr-2">

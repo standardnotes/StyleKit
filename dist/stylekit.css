@@ -2917,6 +2917,32 @@ template {
   animation: slide-out-left 0.2s ease;
 }
 
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.sn-component .fade-out-animation {
+  animation: fade-out 0.2s ease;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.sn-component .fade-in-animation {
+  animation: fade-in 0.2s ease;
+}
+
 .sn-component .animation-fill-forwards {
   animation-fill-mode: forwards;
 }
@@ -3930,6 +3956,10 @@ template {
   min-width: 20rem;
 }
 
+.sn-component .min-w-max {
+  min-width: max-content;
+}
+
 .sn-component .max-w-xs {
   max-width: 20rem;
 }
@@ -3980,6 +4010,14 @@ template {
 
 .sn-component .left-0, .sn-component .top-left-0, .sn-component .sn-full-screen {
   left: 0;
+}
+
+.sn-component .bottom-0 {
+  bottom: 0;
+}
+
+.sn-component .right-0 {
+  right: 0;
 }
 
 .sn-component .-top-10 {
