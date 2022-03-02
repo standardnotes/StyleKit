@@ -1,15 +1,43 @@
+type AlertButtonStyle =
+  | 'small'
+  | 'outlined'
+  | 'contrast'
+  | 'neutral'
+  | 'info'
+  | 'warning'
+  | 'danger'
+  | 'success';
+
+type AlertButton = {
+  text: string;
+  style: AlertButtonStyle;
+  action: () => void;
+  primary?: boolean;
+};
+
 export class SKAlert {
-  /*
-  buttons: [{text, style, action}]
-  */
-  constructor({ title, text, buttons }) {
+  private title: string;
+  private text: string;
+  private buttons: AlertButton[];
+  private element: HTMLDivElement;
+  private onElement: HTMLElement;
+
+  constructor({
+    title,
+    text,
+    buttons,
+  }: {
+    title: string;
+    text: string;
+    buttons: AlertButton[];
+  }) {
     this.title = title;
     this.text = text;
     this.buttons = buttons;
   }
 
   buttonsString() {
-    const genButton = function (buttonDesc, index) {
+    const genButton = function (buttonDesc: AlertButton, index: number) {
       return `
         <button id='button-${index}' class='sn-button small ${buttonDesc.style}'>
           <div class='sk-label'>${buttonDesc.text}</div>
@@ -32,8 +60,8 @@ export class SKAlert {
   }
 
   templateString() {
-    let buttonsTemplate;
-    let panelStyle;
+    let buttonsTemplate: string;
+    let panelStyle: string;
     if (this.buttons) {
       buttonsTemplate = `
         <div class="sk-panel-row" style='margin-top: 8px;'>
@@ -88,7 +116,7 @@ export class SKAlert {
     return primary;
   }
 
-  present({ onElement } = {}) {
+  present(onElement?: HTMLElement) {
     if (!onElement) {
       onElement = document.body;
     }
@@ -103,7 +131,9 @@ export class SKAlert {
 
     if (this.buttons && this.buttons.length) {
       this.buttons.forEach((buttonDesc, index) => {
-        let buttonElem = this.element.querySelector(`#button-${index}`);
+        let buttonElem = this.element.querySelector(
+          `#button-${index}`
+        ) as HTMLButtonElement;
         buttonElem.onclick = () => {
           buttonDesc.action && buttonDesc.action();
           this.dismiss();
