@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.11.2](https://github.com/standardnotes/StyleKit/compare/v5.11.1...v5.11.2) (2022-03-02)
+
 ### [5.11.1](https://github.com/standardnotes/StyleKit/compare/v5.11.0...v5.11.1) (2022-03-02)
 
 ## [5.11.0](https://github.com/standardnotes/StyleKit/compare/v5.10.0...v5.11.0) (2022-03-02)
