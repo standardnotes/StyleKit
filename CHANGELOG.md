@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.12.1](https://github.com/standardnotes/StyleKit/compare/v5.12.0...v5.12.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* SKAlert types ([64e31de](https://github.com/standardnotes/StyleKit/commit/64e31de5be2658626437eeef1dc9bf7631c8494f))
+
 ## [5.12.0](https://github.com/standardnotes/StyleKit/compare/v5.11.2...v5.12.0) (2022-03-02)
 
 
