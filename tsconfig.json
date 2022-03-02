@@ -1,6 +1,6 @@
 {
   "exclude": ["dist/**/*"],
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/assets/types.d.ts"],
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",

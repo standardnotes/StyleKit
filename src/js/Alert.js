@@ -1,4 +1,4 @@
-export default class SKAlert {
+export class SKAlert {
   /*
   buttons: [{text, style, action}]
   */

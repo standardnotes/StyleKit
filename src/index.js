@@ -1,5 +1,3 @@
-import { Button } from '@Components/Button';
-import { DropdownMenu } from '@Components/DropdownMenu';
-import { Select } from '@Components/Select';
-
-export { Button, DropdownMenu, Select };
+export * from '@Components/Button';
+export * from '@Components/DropdownMenu';
+export * from '@Components/Select';
