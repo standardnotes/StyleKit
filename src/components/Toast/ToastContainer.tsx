@@ -4,6 +4,8 @@ import { useStore } from '@nanostores/preact';
 import { toastStore } from './toastStore';
 import { Toast } from './Toast';
 
+const DEFAULT_OFFSET = '1.5rem';
+
 export const ToastContainer: FunctionComponent = () => {
   const toasts = useStore(toastStore);
 
@@ -12,8 +14,8 @@ export const ToastContainer: FunctionComponent = () => {
       className="flex flex-col items-end fixed"
       style={{
         zIndex: 9999,
-        bottom: '1.5rem',
-        right: '1.5rem',
+        bottom: DEFAULT_OFFSET,
+        right: DEFAULT_OFFSET,
       }}
     >
       {toasts.map((toast, index) => (
