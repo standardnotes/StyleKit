@@ -29,7 +29,7 @@ export class SKAlert {
   }: {
     title?: string;
     text: string;
-    buttons: AlertButton[];
+    buttons?: AlertButton[];
   }) {
     this.title = title;
     this.text = text;
