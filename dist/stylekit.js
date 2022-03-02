@@ -12,7 +12,7 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 500:
+/***/ 580:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -2860,6 +2860,141 @@ var SvgIcWindow = function SvgIcWindow(props) {
 
 
 
+
+
+;// CONCATENATED MODULE: ./src/components/Toast/Toast.tsx
+
+
+
+
+
+
+const prefersReducedMotion = () => {
+  const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
+  return mediaQuery.matches;
+};
+
+const colorForToastType = type => {
+  switch (type) {
+    case ToastType.Success:
+      return 'color-success';
+
+    case ToastType.Error:
+      return 'color-danger';
+
+    default:
+      return 'color-info';
+  }
+};
+
+const iconForToastType = type => {
+  switch (type) {
+    case ToastType.Success:
+      return external_commonjs_react_commonjs2_react_amd_react_root_.createElement(ic_check_circle_filled, {
+        className: colorForToastType(type)
+      });
+
+    case ToastType.Error:
+      return external_commonjs_react_commonjs2_react_amd_react_root_.createElement(ic_clear_circle_filled, {
+        className: colorForToastType(type)
+      });
+
+    case ToastType.Loading:
+      return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+        className: "sk-spinner w-4 h-4 spinner-info"
+      });
+
+    default:
+      return null;
+  }
+};
+
+const getToastPosition = (boundingRect, index) => {
+  const positionFromBottom = index > 0 ? boundingRect.height * index : 0;
+  const margin = index > 0 ? index * 0.45 : 0;
+  return {
+    bottom: `calc(${positionFromBottom}px + ${margin}rem)`
+  };
+};
+
+const Toast = ({
+  toast,
+  index
+}) => {
+  var _a;
+
+  const toastElementRef = s();
+  const icon = iconForToastType(toast.type);
+  const hasActions = ((_a = toast === null || toast === void 0 ? void 0 : toast.actions) === null || _a === void 0 ? void 0 : _a.length) > 0;
+  const [position, setPosition] = l();
+  y(() => {
+    if (toastElementRef.current) {
+      setTimeout(() => {
+        const boundingRect = toastElementRef.current.getBoundingClientRect();
+        setPosition(getToastPosition(boundingRect, index));
+      });
+    }
+  }, [toastElementRef.current, index]);
+  const shouldReduceMotion = prefersReducedMotion();
+  const enterAnimation = shouldReduceMotion ? 'fade-in-animation' : 'slide-in-right-animation';
+  const exitAnimation = shouldReduceMotion ? 'fade-out-animation' : 'slide-out-left-animation';
+  const currentAnimation = toast.dismissed ? exitAnimation : enterAnimation;
+  return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+    role: "status",
+    className: `absolute bottom-0 right-0 inline-flex items-center bg-grey-5 rounded opacity-0 animation-fill-forwards select-none min-w-max ${position ? currentAnimation : ''} ${hasActions ? 'p-2 pl-3' : 'p-3'}`,
+    style: Object.assign({
+      boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.16)',
+      transition: shouldReduceMotion ? undefined : 'all 0.2s ease',
+      willChange: 'bottom'
+    }, position),
+    onClick: () => {
+      if (!hasActions && toast.type !== ToastType.Loading) {
+        dismissToast(toast.id);
+      }
+    },
+    ref: toastElementRef
+  }, icon ? external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+    className: "flex flex-shrink-0 items-center justify-center sn-icon mr-2"
+  }, icon) : null, external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+    className: "text-sm"
+  }, toast.message), hasActions && external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+    className: "ml-4"
+  }, toast.actions.map((action, index) => external_commonjs_react_commonjs2_react_amd_react_root_.createElement("button", {
+    style: {
+      paddingLeft: '0.45rem',
+      paddingRight: '0.45rem'
+    },
+    className: `py-1 border-0 bg-transparent cursor-pointer font-semibold text-sm hover:bg-grey-3 rounded ${colorForToastType(toast.type)} ${index !== 0 ? 'ml-2' : ''}`,
+    onClick: () => {
+      action.handler(toast.id);
+    }
+  }, action.label))));
+};
+;// CONCATENATED MODULE: ./src/components/Toast/ToastContainer.tsx
+
+
+
+
+const DEFAULT_OFFSET = '1.5rem';
+const ToastContainer = () => {
+  const toasts = useStore(toastStore);
+  return external_commonjs_react_commonjs2_react_amd_react_root_.createElement("div", {
+    className: "flex flex-col items-end fixed",
+    style: {
+      zIndex: 9999,
+      bottom: DEFAULT_OFFSET,
+      right: DEFAULT_OFFSET
+    }
+  }, toasts.map((toast, index) => external_commonjs_react_commonjs2_react_amd_react_root_.createElement(Toast, {
+    toast: toast,
+    index: index,
+    key: toast.id
+  })));
+};
+;// CONCATENATED MODULE: ./src/components/Toast/index.ts
+
+
+
 ;// CONCATENATED MODULE: ./src/assets/index.js
 
 ;// CONCATENATED MODULE: ./src/stylekit.js
@@ -3034,7 +3169,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__320__;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(500)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [532], () => (__webpack_require__(580)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ 	return __webpack_exports__;
