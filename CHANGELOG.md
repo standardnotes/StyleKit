@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.12.3](https://github.com/standardnotes/StyleKit/compare/v5.12.2...v5.12.3) (2022-03-02)
+
+
+### Bug Fixes
+
+* storybook builds failing ([4a874a5](https://github.com/standardnotes/StyleKit/commit/4a874a579f5ca11d2f5560d355b65b83687f8ee1))
+* storybook builds failing ([29a7d97](https://github.com/standardnotes/StyleKit/commit/29a7d9784c277c873a784bde832759209547d35d))
+
 ### [5.12.2](https://github.com/standardnotes/StyleKit/compare/v5.12.1...v5.12.2) (2022-03-02)
 
 
