@@ -13,7 +13,7 @@ export const ToastContainer: FunctionComponent = () => {
     <div
       className="flex flex-col items-end fixed"
       style={{
-        zIndex: 9999,
+        zIndex: 11000,
         bottom: DEFAULT_OFFSET,
         right: DEFAULT_OFFSET,
       }}
