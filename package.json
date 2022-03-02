@@ -15,8 +15,7 @@
     "build:storybook": "build-storybook -o storybook",
     "clean-cache:gh-pages": "rm -rf node_modules/.cache/gh-pages",
     "publish:storybook": "gh-pages -b gh-pages -d storybook",
-    "release": "standard-version",
-    "prepare": "husky install"
+    "release": "standard-version"
   },
   "dependencies": {
     "@nanostores/preact": "^0.1.3",
