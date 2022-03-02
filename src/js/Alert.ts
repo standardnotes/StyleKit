@@ -16,7 +16,7 @@ type AlertButton = {
 };
 
 export class SKAlert {
-  private title: string;
+  private title?: string;
   private text: string;
   private buttons: AlertButton[];
   private element: HTMLDivElement;
@@ -27,7 +27,7 @@ export class SKAlert {
     text,
     buttons,
   }: {
-    title: string;
+    title?: string;
     text: string;
     buttons: AlertButton[];
   }) {
