@@ -21,8 +21,13 @@
 .flex-grow {
   flex-grow: 1;
 }
+
 .flex-shrink {
   flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 .flex-wrap {
@@ -38,6 +43,9 @@
 }
 .items-start {
   align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
 }
 .items-stretch {
   align-items: stretch;
@@ -103,4 +111,8 @@
 
 .flex-basis-55 {
   flex-basis: 13.75rem;
+}
+
+.opacity-0 {
+  opacity: 0;
 }

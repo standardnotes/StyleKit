@@ -81,6 +81,19 @@ module.exports = (_, { mode }) => ({
         },
       },
       {
+        test: /\.(ts|tsx)?$/,
+        exclude: /(node_modules)/,
+        use: [
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.(svg)(\?.*)?$/i,
         use: [
           {
@@ -100,7 +113,7 @@ module.exports = (_, { mode }) => ({
       'react-dom/test-utils': 'preact/test-utils',
       '@Components': path.resolve(__dirname, 'src/components'),
     },
-    extensions: ['.js', '.jsx', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss'],
   },
   plugins: [
     new CopyWebpackPlugin({

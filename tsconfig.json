@@ -1,0 +1,16 @@
+{
+  "exclude": ["dist/**/*"],
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "declarationDir": "dist",
+    "allowJs": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "target": "ES6",
+    "moduleResolution": "node",
+    "emitDeclarationOnly": true,
+    "declaration": true
+  }
+}

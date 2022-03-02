@@ -112,7 +112,8 @@
   font-family: var(--sn-stylekit-sans-serif-font);
   -webkit-font-smoothing: antialiased;
 
-  &.no-select {
+  &.no-select,
+  .select-none {
     user-select: none;
   }
 

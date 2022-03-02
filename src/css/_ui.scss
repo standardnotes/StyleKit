@@ -736,6 +736,11 @@ input[type='radio'] {
   }
 }
 
+.spinner-info {
+  border-color: var(--sn-stylekit-info-color);
+  border-right-color: transparent;
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
