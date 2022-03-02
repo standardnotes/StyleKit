@@ -38,6 +38,8 @@ const removeToast = action(
   }
 );
 
+const DELAY_BEFORE_REMOVING_TOAST = 175;
+
 export const dismissToast = action(
   toastStore,
   'dismissToast',
@@ -57,7 +59,7 @@ export const dismissToast = action(
     );
     setTimeout(() => {
       removeToast(toastId);
-    }, 175);
+    }, DELAY_BEFORE_REMOVING_TOAST);
   }
 );
 
