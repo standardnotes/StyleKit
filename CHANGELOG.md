@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.12.0](https://github.com/standardnotes/StyleKit/compare/v5.11.2...v5.12.0) (2022-03-02)
+
+
+### Features
+
+* convert SKAlert to TypeScript ([#72](https://github.com/standardnotes/StyleKit/issues/72)) ([347eb8d](https://github.com/standardnotes/StyleKit/commit/347eb8d669de6a8d3d2702a12d127fa7d7c2d74b))
+
 ### [5.11.2](https://github.com/standardnotes/StyleKit/compare/v5.11.1...v5.11.2) (2022-03-02)
 
 ### [5.11.1](https://github.com/standardnotes/StyleKit/compare/v5.11.0...v5.11.1) (2022-03-02)
