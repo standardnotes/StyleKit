@@ -6,7 +6,7 @@ import {
   CheckCircleFilledIcon,
   ClearCircleFilledIcon,
 } from '../../assets/icons';
-import { dismissToast } from '.';
+import { dismissToast } from './toastStore';
 import { ToastType } from './enums';
 
 const prefersReducedMotion = () => {
@@ -38,12 +38,14 @@ const iconForToastType = (type: ToastType) => {
   }
 };
 
+const ToastMarginMultiplier = 0.45;
+
 const getToastPosition = (
   boundingRect: DOMRect,
   index: number
 ): React.CSSProperties => {
   const positionFromBottom = index > 0 ? boundingRect.height * index : 0;
-  const margin = index > 0 ? index * 0.45 : 0;
+  const margin = index > 0 ? index * ToastMarginMultiplier : 0;
 
   return {
     bottom: `calc(${positionFromBottom}px + ${margin}rem)`,
@@ -59,7 +61,7 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
   const toastElementRef = useRef<HTMLDivElement>();
 
   const icon = iconForToastType(toast.type);
-  const hasActions = toast?.actions?.length > 0;
+  const hasActions = toast.actions?.length > 0;
 
   const [position, setPosition] = useState<React.CSSProperties>();
 

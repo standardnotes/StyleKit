@@ -38,7 +38,7 @@ const removeToast = action(
   }
 );
 
-const DELAY_BEFORE_REMOVING_TOAST = 175;
+const DelayBeforeRemovingToast = 175;
 
 export const dismissToast = action(
   toastStore,
@@ -59,9 +59,11 @@ export const dismissToast = action(
     );
     setTimeout(() => {
       removeToast(toastId);
-    }, DELAY_BEFORE_REMOVING_TOAST);
+    }, DelayBeforeRemovingToast);
   }
 );
+
+const DefaultToastDuration = 4000;
 
 export const addToast = action(
   toastStore,
@@ -81,7 +83,7 @@ export const addToast = action(
     const autoClose =
       options.autoClose ??
       (!options.actions && options.type !== ToastType.Loading);
-    const duration = options.duration ?? 4000;
+    const duration = options.duration ?? DefaultToastDuration;
 
     if (autoClose) {
       setTimeout(() => {
