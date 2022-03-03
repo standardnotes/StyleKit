@@ -15,6 +15,7 @@ import ArrowsVerticalIcon from './ic-arrows-vertical.svg';
 import ArrowUpIcon from './ic-arrow-up.svg';
 import AttachmentFileIcon from './ic-attachment-file.svg';
 import AuthenticatorIcon from './ic-authenticator.svg';
+import AuthenticatorVariantIcon from './ic-authenticator-variant.svg';
 import BackIosIcon from './ic-back-ios.svg';
 import BlueDotIcon from './blue-dot.svg';
 import BoxFilledIcon from './ic-box-filled.svg';
@@ -34,12 +35,14 @@ import ClearCircleFilledIcon from './ic-clear-circle-filled.svg';
 import CloseIcon from './ic-close.svg';
 import CloudOffIcon from './ic-cloud-off.svg';
 import CodeIcon from './ic-code.svg';
+import CodeTagsIcon from './ic-code-tags.svg';
 import CopyIcon from './ic-copy.svg';
 import CreateAccountIllustration from './create-account-illustration.svg';
 import DashboardIcon from './ic-dashboard.svg';
 import DiamondIcon from './diamond-with-horizontal-lines.svg';
 import DownloadIcon from './ic-download.svg';
 import DrawIcon from './ic-draw.svg';
+import EditorFilledIcon from './ic-editor-filled.svg';
 import EditorIcon from './ic-editor.svg';
 import EmailIcon from './ic-email.svg';
 import EyeIcon from './ic-eye.svg';
@@ -50,6 +53,7 @@ import FolderFilledIcon from './ic-folder-filled.svg';
 import FolderIcon from './ic-folder.svg';
 import FolderKeyFilledIcon from './ic-folder-key-filled.svg';
 import ForwardIosIcon from './ic-forward-ios.svg';
+import HashtagFilledIcon from './ic-hashtag-filled.svg';
 import HashtagIcon from './ic-hashtag.svg';
 import HashtagOffIcon from './ic-hashtag-off.svg';
 import HeartFilledIcon from './ic-heart-filled.svg';
@@ -74,6 +78,7 @@ import MenuCloseIcon from './ic-menu-close.svg';
 import MergeIcon from './ic-merge.svg';
 import MoreIcon from './ic-more.svg';
 import MoreVertIcon from './ic-more-vert.svg';
+import NotesFilledIcon from './ic-notes-filled.svg';
 import NotesIcon from './ic-notes.svg';
 import OpenInIcon from './ic-open-in.svg';
 import PasswordIcon from './ic-textbox-password.svg';
@@ -91,6 +96,7 @@ import RedoIcon from './ic-redo.svg';
 import ReorderIcon from './ic-reorder.svg';
 import RestoreIcon from './ic-restore.svg';
 import RichTextIcon from './ic-text-rich.svg';
+import SafeIcon from './ic-safe.svg';
 import SaveIcon from './ic-save.svg';
 import SearchIcon from './ic-search.svg';
 import SearchIosIcon from './ic-search-ios.svg';
@@ -112,7 +118,9 @@ import StarIcon from './ic-star.svg';
 import StarVariantFilledIcon from './ic-star-variant-filled.svg';
 import SyncIcon from './ic-sync.svg';
 import TasksIcon from './ic-tasks.svg';
+import TextParagraphLongIcon from './ic-text-paragraph-long.svg';
 import ThemesIcon from './ic-themes.svg';
+import TimerIcon from './ic-timer.svg';
 import TrashFilledIcon from './ic-trash-filled.svg';
 import TrashIcon from './ic-trash.svg';
 import TrashSweepFilledIcon from './ic-trash-sweep-filled.svg';
@@ -146,6 +154,7 @@ export {
   ArrowUpIcon,
   AttachmentFileIcon,
   AuthenticatorIcon,
+  AuthenticatorVariantIcon,
   BackIosIcon,
   BlueDotIcon,
   BoxFilledIcon,
@@ -165,12 +174,14 @@ export {
   CloseIcon,
   CloudOffIcon,
   CodeIcon,
+  CodeTagsIcon,
   CopyIcon,
   CreateAccountIllustration,
   DashboardIcon,
   DiamondIcon,
   DownloadIcon,
   DrawIcon,
+  EditorFilledIcon,
   EditorIcon,
   EmailIcon,
   EyeIcon,
@@ -181,6 +192,7 @@ export {
   FolderIcon,
   FolderKeyFilledIcon,
   ForwardIosIcon,
+  HashtagFilledIcon,
   HashtagIcon,
   HashtagOffIcon,
   HeartFilledIcon,
@@ -205,6 +217,7 @@ export {
   MergeIcon,
   MoreIcon,
   MoreVertIcon,
+  NotesFilledIcon,
   NotesIcon,
   OpenInIcon,
   PasswordIcon,
@@ -222,6 +235,7 @@ export {
   ReorderIcon,
   RestoreIcon,
   RichTextIcon,
+  SafeIcon,
   SaveIcon,
   SearchIcon,
   SearchIosIcon,
@@ -243,7 +257,9 @@ export {
   StarVariantFilledIcon,
   SyncIcon,
   TasksIcon,
+  TextParagraphLongIcon,
   ThemesIcon,
+  TimerIcon,
   TrashFilledIcon,
   TrashIcon,
   TrashSweepFilledIcon,
