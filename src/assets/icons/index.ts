@@ -71,6 +71,7 @@ import FileOtherIcon from './ic-file-other.svg';
 import FilePdfIcon from './ic-file-pdf.svg';
 import FilePptIcon from './ic-file-ppt.svg';
 import FileSelectedIcon from './ic-file-selected.svg';
+import FilesIllustration from './il-files.svg';
 import FileXlsIcon from './ic-file-xls.svg';
 import FileZipIcon from './ic-file-zip.svg';
 import FolderFilledIcon from './ic-folder-filled.svg';
@@ -264,6 +265,7 @@ export {
   FilePdfIcon,
   FilePptIcon,
   FileSelectedIcon,
+  FilesIllustration,
   FileXlsIcon,
   FileZipIcon,
   FolderFilledIcon,
