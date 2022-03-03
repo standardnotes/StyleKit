@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.14.0](https://github.com/standardnotes/StyleKit/compare/v5.13.0...v5.14.0) (2022-03-03)
+
+
+### Features
+
+* add files illustration ([613faa7](https://github.com/standardnotes/StyleKit/commit/613faa7ee8f279149aecf273e01b9ee8145b4ca2))
+
 ## [5.13.0](https://github.com/standardnotes/StyleKit/compare/v5.12.3...v5.13.0) (2022-03-03)
 
 
