@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.13.0](https://github.com/standardnotes/StyleKit/compare/v5.12.3...v5.13.0) (2022-03-03)
+
+
+### Features
+
+* add new icons ([9171ed1](https://github.com/standardnotes/StyleKit/commit/9171ed1ffe8fa10bd63453a8efab83480b97d5c2))
+* add new icons ([2b88940](https://github.com/standardnotes/StyleKit/commit/2b88940e465ad47caea6b16168ad1b68e6a6004d))
+* add new icons ([1f13aec](https://github.com/standardnotes/StyleKit/commit/1f13aec70fa44f6e6142308f80e60f4c870bff71))
+
+
+### Bug Fixes
+
+* icon file name ([1832f94](https://github.com/standardnotes/StyleKit/commit/1832f943d4658fc5910d9597fb75643176327ca3))
+
 ### [5.12.3](https://github.com/standardnotes/StyleKit/compare/v5.12.2...v5.12.3) (2022-03-02)
 
 
