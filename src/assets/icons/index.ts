@@ -102,7 +102,7 @@ import KeyboardIcon from './ic-keyboard.svg';
 import KeyboardOptionIcon from './ic-keyboard-option.svg';
 import KeyboardShiftIcon from './ic-keyboard-shift.svg';
 import KeyboardShowIcon from './ic-keyboard-show.svg';
-import LifebuoyIcon from './ic-lifebouy.svg';
+import LifebuoyIcon from './ic-lifebuoy.svg';
 import LineWidthIcon from './ic-line-width.svg';
 import LinkIcon from './ic-link.svg';
 import LinkOffIcon from './ic-link-off.svg';
