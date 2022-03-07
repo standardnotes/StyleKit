@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.15.0](https://github.com/standardnotes/StyleKit/compare/v5.14.0...v5.15.0) (2022-03-07)
+
+
+### Features
+
+* add new utility class ([d764940](https://github.com/standardnotes/StyleKit/commit/d76494019c260ed488f3274ed3d726bf9cb2a3f3))
+* use min-width instead of width for icon button ([8d0f328](https://github.com/standardnotes/StyleKit/commit/8d0f3287f6b56c3da808dc86027af1e5d94f889c))
+
 ## [5.14.0](https://github.com/standardnotes/StyleKit/compare/v5.13.0...v5.14.0) (2022-03-03)
 
 
