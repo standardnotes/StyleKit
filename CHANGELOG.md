@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.16.0](https://github.com/standardnotes/StyleKit/compare/v5.15.0...v5.16.0) (2022-03-10)
+
+
+### Features
+
+* remove hardcoded widths and heights from icons ([ce90c7b](https://github.com/standardnotes/StyleKit/commit/ce90c7bf2ef53ebd3443d7d4969f2057fba27117))
+
 ## [5.15.0](https://github.com/standardnotes/StyleKit/compare/v5.14.0...v5.15.0) (2022-03-07)
 
 
