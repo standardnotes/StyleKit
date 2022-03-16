@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.17.0](https://github.com/standardnotes/StyleKit/compare/v5.16.0...v5.17.0) (2022-03-16)
+
+
+### Features
+
+* add 'no-preview' illustration ([9eaa075](https://github.com/standardnotes/StyleKit/commit/9eaa0754c6455517b26fff8161702a92d7352cea))
+
 ## [5.16.0](https://github.com/standardnotes/StyleKit/compare/v5.15.0...v5.16.0) (2022-03-10)
 
 
