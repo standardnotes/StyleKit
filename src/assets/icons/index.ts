@@ -124,6 +124,7 @@ import MoreIcon from './ic-more.svg';
 import MoreVertIcon from './ic-more-vert.svg';
 import NotesFilledIcon from './ic-notes-filled.svg';
 import NotesIcon from './ic-notes.svg';
+import NoPreviewIllustration from './il-no-preview.svg';
 import OpenInIcon from './ic-open-in.svg';
 import PasswordIcon from './ic-textbox-password.svg';
 import PencilFilledIcon from './ic-pencil-filled.svg';
@@ -318,6 +319,7 @@ export {
   MoreVertIcon,
   NotesFilledIcon,
   NotesIcon,
+  NoPreviewIllustration,
   OpenInIcon,
   PasswordIcon,
   PencilFilledIcon,
