@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.18.0](https://github.com/standardnotes/StyleKit/compare/v5.17.0...v5.18.0) (2022-03-25)
+
+
+### Features
+
+* add protected illustration ([afc3efe](https://github.com/standardnotes/StyleKit/commit/afc3efec28f7ac69111910dacbbc9ef9b9c4e866))
+
 ## [5.17.0](https://github.com/standardnotes/StyleKit/compare/v5.16.0...v5.17.0) (2022-03-16)
 
 
