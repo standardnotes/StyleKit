@@ -137,6 +137,7 @@ import PlusCircleFilledIcon from './ic-plus-circle-filled.svg';
 import PlusCircleIcon from './ic-plus-circle.svg';
 import PremiumFeatureIcon from './ic-premium-feature.svg';
 import PremiumIllustration from './il-premium.svg';
+import ProtectedIllustration from './il-protected.svg';
 import PrintIcon from './ic-print.svg';
 import RedoIcon from './ic-redo.svg';
 import ReorderIcon from './ic-reorder.svg';
@@ -332,6 +333,7 @@ export {
   PlusCircleIcon,
   PremiumFeatureIcon,
   PremiumIllustration,
+  ProtectedIllustration,
   PrintIcon,
   RedoIcon,
   ReorderIcon,
