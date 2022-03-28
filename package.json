@@ -22,6 +22,7 @@
     "@reach/listbox": "^0.16.2",
     "@reach/menu-button": "^0.16.2",
     "@svgr/webpack": "^6.2.1",
+    "focus-trap": "^6.7.3",
     "nanoid": "^3.3.1",
     "nanostores": "^0.5.10",
     "prop-types": "^15.8.1"
