@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.19.0](https://github.com/standardnotes/StyleKit/compare/v5.18.0...v5.19.0) (2022-03-28)
+
+
+### Features
+
+* lock focus in alert for better a11y ([9409eb6](https://github.com/standardnotes/StyleKit/commit/9409eb645e678ecde04e765725eb9738f7cdfb19))
+
 ## [5.18.0](https://github.com/standardnotes/StyleKit/compare/v5.17.0...v5.18.0) (2022-03-25)
 
 
