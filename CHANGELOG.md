@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.20.0](https://github.com/standardnotes/StyleKit/compare/v5.19.0...v5.20.0) (2022-03-29)
+
+
+### Features
+
+* only activate focus lock if alert has buttons ([839c191](https://github.com/standardnotes/StyleKit/commit/839c19187e6fd65f4c0c89f560b0240aea213acf))
+
 ## [5.19.0](https://github.com/standardnotes/StyleKit/compare/v5.18.0...v5.19.0) (2022-03-28)
 
 
