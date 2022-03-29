@@ -131,10 +131,10 @@ export class SKAlert {
 
     onElement.appendChild(this.element);
 
-    const focusLock = focusTrap.createFocusTrap(this.element);
-    focusLock.activate();
-
     if (this.buttons && this.buttons.length) {
+      const focusLock = focusTrap.createFocusTrap(this.element);
+      focusLock.activate();
+
       this.buttons.forEach((buttonDesc, index) => {
         let buttonElem = this.element.querySelector(
           `#button-${index}`
