@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.21.0](https://github.com/standardnotes/StyleKit/compare/v5.20.0...v5.21.0) (2022-04-11)
+
+
+### Features
+
+* addTimedToast utility ([de9d935](https://github.com/standardnotes/StyleKit/commit/de9d9357f3e31b9863196afa0c0bab6132f031df))
+
 ## [5.20.0](https://github.com/standardnotes/StyleKit/compare/v5.19.0...v5.20.0) (2022-03-29)
 
 
