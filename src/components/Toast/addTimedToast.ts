@@ -13,7 +13,7 @@ export const addTimedToast = (
   let timeRemainingInSeconds = timeInSeconds;
 
   const intervalId = setInterval(() => {
-    if (timeRemainingInSeconds > 1) {
+    if (timeRemainingInSeconds > 0) {
       timeRemainingInSeconds--;
       updateToast(toastId, {
         message: initialOptions.message(timeRemainingInSeconds),
