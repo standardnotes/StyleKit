@@ -9,10 +9,10 @@ export const addTimedToast = (
   initialOptions: InitialToastOptions,
   callback: () => void,
   timeInSeconds: number,
-): [Toast['id'], NodeJS.Timeout] => {
+) => {
   let timeRemainingInSeconds = timeInSeconds;
 
-  const intervalId = setInterval(() => {
+  const intervalId = window.setInterval(() => {
     if (timeRemainingInSeconds > 0) {
       timeRemainingInSeconds--;
       updateToast(toastId, {
