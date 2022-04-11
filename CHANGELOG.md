@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.21.1](https://github.com/standardnotes/StyleKit/compare/v5.21.0...v5.21.1) (2022-04-11)
+
+
+### Bug Fixes
+
+* timed toast timing ([5175e03](https://github.com/standardnotes/StyleKit/commit/5175e03ac9333170feac8199aa028f0a9a50e535))
+
 ## [5.21.0](https://github.com/standardnotes/StyleKit/compare/v5.20.0...v5.21.0) (2022-04-11)
 
 
