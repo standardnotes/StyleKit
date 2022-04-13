@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.21.3](https://github.com/standardnotes/StyleKit/compare/v5.21.2...v5.21.3) (2022-04-11)
+
+
+### Bug Fixes
+
+* make addTimedToast return definitely typed ([eff5a4a](https://github.com/standardnotes/StyleKit/commit/eff5a4aee39d67963f93d7bf4a4cd370fff7acaa))
+
 ### [5.21.2](https://github.com/standardnotes/StyleKit/compare/v5.21.1...v5.21.2) (2022-04-11)
 
 
