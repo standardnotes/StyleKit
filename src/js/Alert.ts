@@ -1,5 +1,3 @@
-import * as focusTrap from 'focus-trap';
-
 type AlertButtonStyle =
   | 'small'
   | 'outlined'
@@ -132,16 +130,12 @@ export class SKAlert {
     onElement.appendChild(this.element);
 
     if (this.buttons && this.buttons.length) {
-      const focusLock = focusTrap.createFocusTrap(this.element);
-      focusLock.activate();
-
       this.buttons.forEach((buttonDesc, index) => {
         let buttonElem = this.element.querySelector(
           `#button-${index}`
         ) as HTMLButtonElement;
         buttonElem.onclick = () => {
           buttonDesc.action && buttonDesc.action();
-          focusLock.deactivate();
           this.dismiss();
         };
         if (index === 0) {
