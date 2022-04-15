@@ -8,13 +8,13 @@ type InitialToastOptions = Omit<ToastOptions, 'message'> & {
 export const addTimedToast = (
   initialOptions: InitialToastOptions,
   callback: () => void,
-  timeInSeconds: number,
+  timeInSeconds: number
 ): [string, number] => {
   let timeRemainingInSeconds = timeInSeconds;
 
   const intervalId = window.setInterval(() => {
+    timeRemainingInSeconds--;
     if (timeRemainingInSeconds > 0) {
-      timeRemainingInSeconds--;
       updateToast(toastId, {
         message: initialOptions.message(timeRemainingInSeconds),
       });
