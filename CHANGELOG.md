@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.22.0](https://github.com/standardnotes/StyleKit/compare/v5.21.3...v5.22.0) (2022-04-13)
+
+
+### Features
+
+* remove focus trap from alert ([74413c1](https://github.com/standardnotes/StyleKit/commit/74413c1950e115abd7a566a4d37abceaaf88011b))
+
 ### [5.21.3](https://github.com/standardnotes/StyleKit/compare/v5.21.2...v5.21.3) (2022-04-11)
 
 
