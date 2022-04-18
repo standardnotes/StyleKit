@@ -168,6 +168,7 @@ import StarFilledIcon from './ic-star-filled.svg';
 import StarIcon from './ic-star.svg';
 import StarVariantFilledIcon from './ic-star-variant-filled.svg';
 import StrikethroughIcon from './ic-strikethrough.svg';
+import SubtractIcon from './ic-subtract.svg';
 import SyncIcon from './ic-sync.svg';
 import TasksIcon from './ic-tasks.svg';
 import TextCircleIcon from './ic-text-circle.svg';
@@ -364,6 +365,7 @@ export {
   StarIcon,
   StarVariantFilledIcon,
   StrikethroughIcon,
+  SubtractIcon,
   SyncIcon,
   TasksIcon,
   TextCircleIcon,
