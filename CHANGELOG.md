@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.23.0](https://github.com/standardnotes/StyleKit/compare/v5.22.1...v5.23.0) (2022-04-18)
+
+
+### Features
+
+* add subtract icon ([7fb2ac6](https://github.com/standardnotes/StyleKit/commit/7fb2ac648086576495aa5ae43545d32112a3e76b))
+
 ### [5.22.1](https://github.com/standardnotes/StyleKit/compare/v5.22.0...v5.22.1) (2022-04-15)
 
 
