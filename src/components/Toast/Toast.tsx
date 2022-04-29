@@ -31,6 +31,7 @@ const iconForToastType = (type: ToastType) => {
       return <CheckCircleFilledIcon className={colorForToastType(type)} />;
     case ToastType.Error:
       return <ClearCircleFilledIcon className={colorForToastType(type)} />;
+    case ToastType.Progress:
     case ToastType.Loading:
       return <div className="sk-spinner w-4 h-4 spinner-info" />;
     default:
@@ -62,6 +63,7 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
 
   const icon = iconForToastType(toast.type);
   const hasActions = toast.actions?.length > 0;
+  const hasProgress = toast.type === ToastType.Progress && toast.progress > -1;
 
   const [position, setPosition] = useState<React.CSSProperties>();
 
@@ -72,7 +74,7 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
         setPosition(getToastPosition(boundingRect, index));
       });
     }
-  }, [toastElementRef.current, index]);
+  }, [toast, index]);
 
   const shouldReduceMotion = prefersReducedMotion();
   const enterAnimation = shouldReduceMotion
@@ -85,10 +87,11 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
 
   return (
     <div
+      data-index={index}
       role="status"
-      className={`absolute bottom-0 right-0 inline-flex items-center bg-grey-5 rounded opacity-0 animation-fill-forwards select-none min-w-max ${
+      className={`absolute bottom-0 right-0 flex flex-col bg-grey-5 rounded opacity-0 animation-fill-forwards select-none min-w-max ${
         position ? currentAnimation : ''
-      } ${hasActions ? 'p-2 pl-3' : 'p-3'}`}
+      }`}
       style={{
         boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.16)',
         transition: shouldReduceMotion ? undefined : 'all 0.2s ease',
@@ -96,37 +99,58 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
         ...position,
       }}
       onClick={() => {
-        if (!hasActions && toast.type !== ToastType.Loading) {
+        if (
+          !hasActions &&
+          toast.type !== ToastType.Loading &&
+          toast.type !== ToastType.Progress
+        ) {
           dismissToast(toast.id);
         }
       }}
       ref={toastElementRef}
     >
-      {icon ? (
-        <div className="flex flex-shrink-0 items-center justify-center sn-icon mr-2">
-          {icon}
-        </div>
-      ) : null}
-      <div className="text-sm">{toast.message}</div>
-      {hasActions && (
-        <div className="ml-4">
-          {toast.actions.map((action, index) => (
-            <button
-              style={{
-                paddingLeft: '0.45rem',
-                paddingRight: '0.45rem',
-              }}
-              className={`py-1 border-0 bg-transparent cursor-pointer font-semibold text-sm hover:bg-grey-3 rounded ${colorForToastType(
-                toast.type
-              )} ${index !== 0 ? 'ml-2' : ''}`}
-              onClick={() => {
-                action.handler(toast.id);
-              }}
-            >
-              {action.label}
-            </button>
-          ))}
-        </div>
+      <div
+        className={`flex items-center w-full ${
+          hasActions ? 'p-2 pl-3' : hasProgress ? 'px-3 py-2.5' : 'p-3'
+        }`}
+      >
+        {icon ? (
+          <div className="flex flex-shrink-0 items-center justify-center sn-icon mr-2">
+            {icon}
+          </div>
+        ) : null}
+        <div className="text-sm">{toast.message}</div>
+        {hasActions && (
+          <div className="ml-4">
+            {toast.actions.map((action, index) => (
+              <button
+                style={{
+                  paddingLeft: '0.45rem',
+                  paddingRight: '0.45rem',
+                }}
+                className={`py-1 border-0 bg-transparent cursor-pointer font-semibold text-sm hover:bg-grey-3 rounded ${colorForToastType(
+                  toast.type
+                )} ${index !== 0 ? 'ml-2' : ''}`}
+                onClick={() => {
+                  action.handler(toast.id);
+                }}
+              >
+                {action.label}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      {hasProgress && (
+        <div
+          className="toast-progress-bar"
+          role="progressbar"
+          style={{
+            width: `${toast.progress}%`,
+            ...(toast.progress === 100 ? { borderTopRightRadius: 0 } : {}),
+          }}
+          aria-valuenow={toast.progress}
+        />
       )}
     </div>
   );

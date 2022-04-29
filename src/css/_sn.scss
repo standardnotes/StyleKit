@@ -261,3 +261,12 @@
   @extend .absolute;
   @extend .top-left-0;
 }
+
+.toast-progress-bar {
+  @extend .rounded;
+  @extend .h-2;
+  @extend .bg-info;
+
+  border-top-left-radius: 0;
+  transition: width 0.1s;
+}
