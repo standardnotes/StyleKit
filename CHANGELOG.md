@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.24.0](https://github.com/standardnotes/StyleKit/compare/v5.23.0...v5.24.0) (2022-05-02)
+
+
+### Features
+
+* add progress bar to toast ([#78](https://github.com/standardnotes/StyleKit/issues/78)) ([0f12039](https://github.com/standardnotes/StyleKit/commit/0f12039bb5fbc5c9113e8afc8d038506829dc201))
+
 ## [5.23.0](https://github.com/standardnotes/StyleKit/compare/v5.22.1...v5.23.0) (2022-04-18)
 
 

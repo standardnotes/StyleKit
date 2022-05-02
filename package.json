@@ -1,6 +1,6 @@
 {
   "name": "@standardnotes/stylekit",
-  "version": "5.23.0",
+  "version": "5.24.0",
   "main": "dist/stylekit.js",
   "types": "dist/stylekit.d.ts",
   "publishConfig": {
