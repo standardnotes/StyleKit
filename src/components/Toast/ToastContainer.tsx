@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { h, FunctionComponent } from 'preact';
-import { useStore } from '@nanostores/preact';
-import { toastStore } from './toastStore';
-import { Toast } from './Toast';
+import * as React from 'react'
+import { FunctionComponent } from 'preact'
+import { useStore } from '@nanostores/preact'
+import { toastStore } from './toastStore'
+import { Toast } from './Toast'
 
 export const ToastContainer: FunctionComponent = () => {
-  const toasts = useStore(toastStore);
+  const toasts = useStore(toastStore)
 
   return (
     <div className="flex flex-col items-end fixed z-index-toast bottom-6 right-6">
@@ -13,5 +13,5 @@ export const ToastContainer: FunctionComponent = () => {
         <Toast toast={toast} index={index} key={toast.id} />
       ))}
     </div>
-  );
-};
+  )
+}

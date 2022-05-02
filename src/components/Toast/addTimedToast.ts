@@ -1,34 +1,34 @@
-import { addToast, dismissToast, updateToast } from './toastStore';
-import { Toast, ToastOptions } from './types';
+import { addToast, dismissToast, updateToast } from './toastStore'
+import { ToastOptions } from './types'
 
 type InitialToastOptions = Omit<ToastOptions, 'message'> & {
-  message: (timeRemainingInSeconds: number) => string;
-};
+  message: (timeRemainingInSeconds: number) => string
+}
 
 export const addTimedToast = (
   initialOptions: InitialToastOptions,
   callback: () => void,
-  timeInSeconds: number
+  timeInSeconds: number,
 ): [string, number] => {
-  let timeRemainingInSeconds = timeInSeconds;
+  let timeRemainingInSeconds = timeInSeconds
 
   const intervalId = window.setInterval(() => {
-    timeRemainingInSeconds--;
+    timeRemainingInSeconds--
     if (timeRemainingInSeconds > 0) {
       updateToast(toastId, {
         message: initialOptions.message(timeRemainingInSeconds),
-      });
+      })
     } else {
-      dismissToast(toastId);
-      clearInterval(intervalId);
-      callback();
+      dismissToast(toastId)
+      clearInterval(intervalId)
+      callback()
     }
-  }, 1000);
+  }, 1000)
 
   const toastId = addToast({
     ...initialOptions,
     message: initialOptions.message(timeRemainingInSeconds),
-  });
+  })
 
-  return [toastId, intervalId];
-};
+  return [toastId, intervalId]
+}

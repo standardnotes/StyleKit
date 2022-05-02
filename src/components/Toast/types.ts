@@ -1,30 +1,30 @@
-import { ToastType } from './enums';
+import { ToastType } from './enums'
 
 export type ToastAction = {
-  label: string;
-  handler: (toastId: Toast['id']) => void;
-};
+  label: string
+  handler: (toastId: Toast['id']) => void
+}
 
 type CommonToastProperties = {
-  type: ToastType;
-  message: string;
-  actions?: ToastAction[];
-  progress?: number;
-};
+  type: ToastType
+  message: string
+  actions?: ToastAction[]
+  progress?: number
+  autoClose?: boolean
+  duration?: number
+}
 
 export type Toast = CommonToastProperties & {
-  id: string;
-  dismissed: boolean;
-};
+  id: string
+  dismissed: boolean
+}
 
 export type ToastOptions = CommonToastProperties & {
-  id?: string;
-  autoClose?: boolean;
-  duration?: number;
-};
+  id?: string
+}
 
-export type ToastUpdateOptions = Partial<ToastOptions>;
+export type ToastUpdateOptions = Partial<ToastOptions>
 
 export type ToastState = {
-  toasts: Toast[];
-};
+  toasts: Toast[]
+}

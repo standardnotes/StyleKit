@@ -1,9 +1,6 @@
-import { h } from "preact";
-import {
-  Menu,
-  MenuButton
-} from "@reach/menu-button";
-import PropTypes from 'prop-types';
+import { h } from 'preact'
+import { Menu, MenuButton } from '@reach/menu-button'
+import PropTypes from 'prop-types'
 
 const Button = ({ label, onClick, variant }) => {
   return (
@@ -12,24 +9,17 @@ const Button = ({ label, onClick, variant }) => {
         {label}
       </MenuButton>
     </Menu>
-  );
-};
+  )
+}
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  variant: PropTypes.oneOf([
-    "contrast",
-    "neutral",
-    "info",
-    "warning",
-    "danger",
-    "success"
-  ])
-};
+  variant: PropTypes.oneOf(['contrast', 'neutral', 'info', 'warning', 'danger', 'success']),
+}
 
 Button.defaultProps = {
-  variant: "info"
-};
+  variant: 'info',
+}
 
-export default Button;
+export default Button

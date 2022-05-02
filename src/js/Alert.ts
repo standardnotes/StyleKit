@@ -1,39 +1,23 @@
-type AlertButtonStyle =
-  | 'small'
-  | 'outlined'
-  | 'contrast'
-  | 'neutral'
-  | 'info'
-  | 'warning'
-  | 'danger'
-  | 'success';
+type AlertButtonStyle = 'small' | 'outlined' | 'contrast' | 'neutral' | 'info' | 'warning' | 'danger' | 'success'
 
 type AlertButton = {
-  text: string;
-  style: AlertButtonStyle;
-  action: () => void;
-  primary?: boolean;
-};
+  text: string
+  style: AlertButtonStyle
+  action: () => void
+  primary?: boolean
+}
 
 export class SKAlert {
-  private title?: string;
-  private text: string;
-  private buttons: AlertButton[];
-  private element: HTMLDivElement;
-  private onElement: HTMLElement;
+  private title?: string
+  private text: string
+  private buttons: AlertButton[]
+  private element: HTMLDivElement
+  private onElement: HTMLElement
 
-  constructor({
-    title,
-    text,
-    buttons,
-  }: {
-    title?: string;
-    text: string;
-    buttons?: AlertButton[];
-  }) {
-    this.title = title;
-    this.text = text;
-    this.buttons = buttons;
+  constructor({ title, text, buttons }: { title?: string; text: string; buttons?: AlertButton[] }) {
+    this.title = title
+    this.text = text
+    this.buttons = buttons
   }
 
   buttonsString() {
@@ -42,43 +26,41 @@ export class SKAlert {
         <button id='button-${index}' class='sn-button small ${buttonDesc.style}'>
           <div class='sk-label'>${buttonDesc.text}</div>
         </button>
-      `;
-    };
+      `
+    }
 
-    let buttonString = this.buttons
+    const buttonString = this.buttons
       .map(function (buttonDesc, index) {
-        return genButton(buttonDesc, index);
+        return genButton(buttonDesc, index)
       })
-      .join('');
+      .join('')
 
-    let str = `
+    const str = `
       <div class='sk-button-group'>
         ${buttonString}
       </div>
-    `;
-    return str;
+    `
+    return str
   }
 
   templateString() {
-    let buttonsTemplate: string;
-    let panelStyle: string;
+    let buttonsTemplate: string
+    let panelStyle: string
     if (this.buttons) {
       buttonsTemplate = `
         <div class="sk-panel-row" style='margin-top: 8px;'>
           ${this.buttonsString()}
         </div>
-      `;
-      panelStyle = '';
+      `
+      panelStyle = ''
     } else {
-      buttonsTemplate = '';
-      panelStyle = 'style="padding-bottom: 8px"';
+      buttonsTemplate = ''
+      panelStyle = 'style="padding-bottom: 8px"'
     }
-    let titleTemplate = this.title
-      ? `<div class='sk-h3 sk-panel-section-title'>${this.title}</div>`
-      : '';
-    let messageTemplate = this.text ? `<p class='sk-p'>${this.text}</p>` : '';
+    const titleTemplate = this.title ? `<div class='sk-h3 sk-panel-section-title'>${this.title}</div>` : ''
+    const messageTemplate = this.text ? `<p class='sk-p'>${this.text}</p>` : ''
 
-    let template = `
+    const template = `
       <div class="sk-modal">
         <div class="sk-modal-background"></div>
         <div class="sk-modal-content">
@@ -99,49 +81,47 @@ export class SKAlert {
           </div>
         </div>
       </div>
-    `;
+    `
 
-    return template;
+    return template
   }
 
   dismiss() {
-    this.onElement.removeChild(this.element);
+    this.onElement.removeChild(this.element)
   }
 
   primaryButton() {
-    let primary = this.buttons.find((button) => button.primary === true);
+    let primary = this.buttons.find((button) => button.primary === true)
     if (!primary) {
-      primary = this.buttons[this.buttons.length - 1];
+      primary = this.buttons[this.buttons.length - 1]
     }
-    return primary;
+    return primary
   }
 
   present(onElement?: HTMLElement) {
     if (!onElement) {
-      onElement = document.body;
+      onElement = document.body
     }
 
-    this.onElement = onElement;
+    this.onElement = onElement
 
-    this.element = document.createElement('div');
-    this.element.className = 'sn-component';
-    this.element.innerHTML = this.templateString().trim();
+    this.element = document.createElement('div')
+    this.element.className = 'sn-component'
+    this.element.innerHTML = this.templateString().trim()
 
-    onElement.appendChild(this.element);
+    onElement.appendChild(this.element)
 
     if (this.buttons && this.buttons.length) {
       this.buttons.forEach((buttonDesc, index) => {
-        let buttonElem = this.element.querySelector(
-          `#button-${index}`
-        ) as HTMLButtonElement;
+        const buttonElem = this.element.querySelector(`#button-${index}`) as HTMLButtonElement
         buttonElem.onclick = () => {
-          buttonDesc.action && buttonDesc.action();
-          this.dismiss();
-        };
-        if (index === 0) {
-          buttonElem.focus();
+          buttonDesc.action && buttonDesc.action()
+          this.dismiss()
         }
-      });
+        if (index === 0) {
+          buttonElem.focus()
+        }
+      })
     }
   }
 }
