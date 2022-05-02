@@ -113,15 +113,17 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
         )}
       </div>
       {hasProgress && (
-        <div
-          className="toast-progress-bar"
-          role="progressbar"
-          style={{
-            width: `${toast.progress}%`,
-            ...(toast.progress === 100 ? { borderTopRightRadius: 0 } : {}),
-          }}
-          aria-valuenow={toast.progress}
-        />
+        <div className="toast-progress-bar">
+          <div
+            className="toast-progress-bar__value"
+            role="progressbar"
+            style={{
+              width: `${toast.progress}%`,
+              ...(toast.progress === 100 ? { borderTopRightRadius: 0 } : {}),
+            }}
+            aria-valuenow={toast.progress}
+          />
+        </div>
       )}
     </div>
   )

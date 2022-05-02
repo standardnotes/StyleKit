@@ -264,9 +264,19 @@
 
 .toast-progress-bar {
   @extend .rounded;
-  @extend .h-2;
-  @extend .bg-info;
+  @extend .w-full;
+  @extend .bg-default;
+  @extend .overflow-hidden;
 
   border-top-left-radius: 0;
-  transition: width 0.1s;
+  border-top-right-radius: 0;
+
+  &__value {
+    @extend .rounded;
+    @extend .h-2;
+    @extend .bg-info;
+
+    border-top-left-radius: 0;
+    transition: width 0.1s;
+  }
 }
