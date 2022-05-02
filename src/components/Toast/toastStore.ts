@@ -32,8 +32,6 @@ export const updateToast = action(
     store.set(
       existingToasts.map((toast) => {
         if (toast.id === toastId) {
-          autoCloseToast(toastId, options);
-
           return {
             ...toast,
             ...options,
