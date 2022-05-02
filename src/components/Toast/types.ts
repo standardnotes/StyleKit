@@ -9,6 +9,7 @@ type CommonToastProperties = {
   type: ToastType;
   message: string;
   actions?: ToastAction[];
+  progress?: number;
 };
 
 export type Toast = CommonToastProperties & {

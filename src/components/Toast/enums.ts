@@ -3,4 +3,5 @@ export enum ToastType {
   Success = 'success',
   Error = 'error',
   Loading = 'loading',
+  Progress = 'progress',
 }

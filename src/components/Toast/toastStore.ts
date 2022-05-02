@@ -5,6 +5,21 @@ import { Toast, ToastOptions, ToastUpdateOptions } from './types';
 
 export const toastStore = atom<Toast[]>([]);
 
+const autoCloseToast = (id: Toast['id'], options: Partial<ToastOptions>) => {
+  const autoClose =
+    options.autoClose ??
+    (!options.actions &&
+      options.type !== ToastType.Loading &&
+      options.type !== ToastType.Progress);
+  const duration = options.duration ?? DefaultToastDuration;
+
+  if (autoClose) {
+    setTimeout(() => {
+      dismissToast(id);
+    }, duration);
+  }
+};
+
 export const updateToast = action(
   toastStore,
   'updateToast',
@@ -78,18 +93,9 @@ export const addToast = action(
       dismissed: false,
     };
 
-    store.set([toast, ...existingToasts]);
+    store.set([...existingToasts, toast]);
 
-    const autoClose =
-      options.autoClose ??
-      (!options.actions && options.type !== ToastType.Loading);
-    const duration = options.duration ?? DefaultToastDuration;
-
-    if (autoClose) {
-      setTimeout(() => {
-        dismissToast(id);
-      }, duration);
-    }
+    autoCloseToast(id, options);
 
     return id;
   }
