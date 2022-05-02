@@ -39,20 +39,6 @@ const iconForToastType = (type: ToastType) => {
   }
 };
 
-const ToastMarginMultiplier = 0.45;
-
-const getToastPosition = (
-  boundingRect: DOMRect,
-  index: number
-): React.CSSProperties => {
-  const positionFromBottom = index > 0 ? boundingRect.height * index : 0;
-  const margin = index > 0 ? index * ToastMarginMultiplier : 0;
-
-  return {
-    bottom: `calc(${positionFromBottom}px + ${margin}rem)`,
-  };
-};
-
 type Props = {
   toast: ToastPropType;
   index: number;
@@ -65,17 +51,6 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
   const hasActions = toast.actions?.length > 0;
   const hasProgress = toast.type === ToastType.Progress && toast.progress > -1;
 
-  const [position, setPosition] = useState<React.CSSProperties>();
-
-  useEffect(() => {
-    if (toastElementRef.current) {
-      setTimeout(() => {
-        const boundingRect = toastElementRef.current.getBoundingClientRect();
-        setPosition(getToastPosition(boundingRect, index));
-      });
-    }
-  }, [toast, index]);
-
   const shouldReduceMotion = prefersReducedMotion();
   const enterAnimation = shouldReduceMotion
     ? 'fade-in-animation'
@@ -85,18 +60,33 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
     : 'slide-out-left-animation';
   const currentAnimation = toast.dismissed ? exitAnimation : enterAnimation;
 
+  useEffect(() => {
+    if (toastElementRef.current && toast.dismissed) {
+      const { scrollHeight, style } = toastElementRef.current;
+
+      requestAnimationFrame(() => {
+        style.minHeight = 'initial';
+        style.height = scrollHeight + 'px';
+        style.transition = `all 200ms`;
+
+        requestAnimationFrame(() => {
+          style.height = '0';
+          style.padding = '0';
+          style.margin = '0';
+        });
+      });
+    }
+  }, [toast.dismissed]);
+
   return (
     <div
       data-index={index}
       role="status"
-      className={`absolute bottom-0 right-0 flex flex-col bg-grey-5 rounded opacity-0 animation-fill-forwards select-none min-w-max ${
-        position ? currentAnimation : ''
-      }`}
+      className={`flex flex-col bg-grey-5 rounded opacity-0 animation-fill-forwards select-none min-w-max relative mt-3 ${currentAnimation}`}
       style={{
         boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.16)',
         transition: shouldReduceMotion ? undefined : 'all 0.2s ease',
-        willChange: 'bottom',
-        ...position,
+        animationDelay: !toast.dismissed ? '50ms' : null,
       }}
       onClick={() => {
         if (
