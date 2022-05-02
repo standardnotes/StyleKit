@@ -1,82 +1,75 @@
-import * as React from 'react';
-import { FunctionComponent } from 'preact';
-import { useEffect, useRef, useState } from 'preact/hooks';
-import type { Toast as ToastPropType } from './types';
-import {
-  CheckCircleFilledIcon,
-  ClearCircleFilledIcon,
-} from '../../assets/icons';
-import { dismissToast } from './toastStore';
-import { ToastType } from './enums';
+import * as React from 'react'
+import { FunctionComponent } from 'preact'
+import { useEffect, useRef } from 'preact/hooks'
+import type { Toast as ToastPropType } from './types'
+import { CheckCircleFilledIcon, ClearCircleFilledIcon } from '../../assets/icons'
+import { dismissToast } from './toastStore'
+import { ToastType } from './enums'
 
 const prefersReducedMotion = () => {
-  const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
-  return mediaQuery.matches;
-};
+  const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)')
+  return mediaQuery.matches
+}
 
 const colorForToastType = (type: ToastType) => {
   switch (type) {
     case ToastType.Success:
-      return 'color-success';
+      return 'color-success'
     case ToastType.Error:
-      return 'color-danger';
+      return 'color-danger'
     default:
-      return 'color-info';
+      return 'color-info'
   }
-};
+}
 
 const iconForToastType = (type: ToastType) => {
   switch (type) {
     case ToastType.Success:
-      return <CheckCircleFilledIcon className={colorForToastType(type)} />;
+      return <CheckCircleFilledIcon className={colorForToastType(type)} />
     case ToastType.Error:
-      return <ClearCircleFilledIcon className={colorForToastType(type)} />;
+      return <ClearCircleFilledIcon className={colorForToastType(type)} />
     case ToastType.Progress:
     case ToastType.Loading:
-      return <div className="sk-spinner w-4 h-4 spinner-info" />;
+      return <div className="sk-spinner w-4 h-4 spinner-info" />
     default:
-      return null;
+      return null
   }
-};
+}
 
 type Props = {
-  toast: ToastPropType;
-  index: number;
-};
+  toast: ToastPropType
+  index: number
+}
 
 export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
-  const toastElementRef = useRef<HTMLDivElement>();
+  const toastElementRef = useRef<HTMLDivElement>()
 
-  const icon = iconForToastType(toast.type);
-  const hasActions = toast.actions?.length > 0;
-  const hasProgress = toast.type === ToastType.Progress && toast.progress > -1;
+  const icon = iconForToastType(toast.type)
+  const hasActions = toast.actions?.length > 0
+  const hasProgress = toast.type === ToastType.Progress && toast.progress > -1
 
-  const shouldReduceMotion = prefersReducedMotion();
-  const enterAnimation = shouldReduceMotion
-    ? 'fade-in-animation'
-    : 'slide-in-right-animation';
-  const exitAnimation = shouldReduceMotion
-    ? 'fade-out-animation'
-    : 'slide-out-left-animation';
-  const currentAnimation = toast.dismissed ? exitAnimation : enterAnimation;
+  const shouldReduceMotion = prefersReducedMotion()
+  const enterAnimation = shouldReduceMotion ? 'fade-in-animation' : 'slide-in-right-animation'
+  const exitAnimation = shouldReduceMotion ? 'fade-out-animation' : 'slide-out-left-animation'
+  const currentAnimation = toast.dismissed ? exitAnimation : enterAnimation
 
   useEffect(() => {
     if (toastElementRef.current && toast.dismissed) {
-      const { scrollHeight, style } = toastElementRef.current;
+      const { scrollHeight, style } = toastElementRef.current
 
       requestAnimationFrame(() => {
-        style.minHeight = 'initial';
-        style.height = scrollHeight + 'px';
-        style.transition = `all 200ms`;
+        style.minHeight = 'initial'
+        style.height = scrollHeight + 'px'
+        style.transition = 'all 200ms'
 
         requestAnimationFrame(() => {
-          style.height = '0';
-          style.padding = '0';
-          style.margin = '0';
-        });
-      });
+          style.height = '0'
+          style.padding = '0'
+          style.margin = '0'
+        })
+      })
     }
-  }, [toast.dismissed]);
+  }, [toast.dismissed])
 
   return (
     <div
@@ -89,26 +82,14 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
         animationDelay: !toast.dismissed ? '50ms' : null,
       }}
       onClick={() => {
-        if (
-          !hasActions &&
-          toast.type !== ToastType.Loading &&
-          toast.type !== ToastType.Progress
-        ) {
-          dismissToast(toast.id);
+        if (!hasActions && toast.type !== ToastType.Loading && toast.type !== ToastType.Progress) {
+          dismissToast(toast.id)
         }
       }}
       ref={toastElementRef}
     >
-      <div
-        className={`flex items-center w-full ${
-          hasActions ? 'p-2 pl-3' : hasProgress ? 'px-3 py-2.5' : 'p-3'
-        }`}
-      >
-        {icon ? (
-          <div className="flex flex-shrink-0 items-center justify-center sn-icon mr-2">
-            {icon}
-          </div>
-        ) : null}
+      <div className={`flex items-center w-full ${hasActions ? 'p-2 pl-3' : hasProgress ? 'px-3 py-2.5' : 'p-3'}`}>
+        {icon ? <div className="flex flex-shrink-0 items-center justify-center sn-icon mr-2">{icon}</div> : null}
         <div className="text-sm">{toast.message}</div>
         {hasActions && (
           <div className="ml-4">
@@ -119,10 +100,10 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
                   paddingRight: '0.45rem',
                 }}
                 className={`py-1 border-0 bg-transparent cursor-pointer font-semibold text-sm hover:bg-grey-3 rounded ${colorForToastType(
-                  toast.type
+                  toast.type,
                 )} ${index !== 0 ? 'ml-2' : ''}`}
                 onClick={() => {
-                  action.handler(toast.id);
+                  action.handler(toast.id)
                 }}
               >
                 {action.label}
@@ -145,5 +126,5 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}

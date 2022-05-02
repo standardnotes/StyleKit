@@ -464,31 +464,19 @@ input[type='radio'] {
 .sk-button.sk-base,
 .sk-box.sk-base,
 .sk-circle.sk-base {
-  @include ui-rect(
-    var(--sn-stylekit-background-color),
-    var(--sn-stylekit-foreground-color),
-    true
-  );
+  @include ui-rect(var(--sn-stylekit-background-color), var(--sn-stylekit-foreground-color), true);
 }
 
 .sk-button.contrast,
 .sk-box.contrast,
 .sk-circle.contrast {
-  @include ui-rect(
-    var(--sn-stylekit-contrast-background-color),
-    var(--sn-stylekit-contrast-foreground-color),
-    true
-  );
+  @include ui-rect(var(--sn-stylekit-contrast-background-color), var(--sn-stylekit-contrast-foreground-color), true);
 }
 
 .sk-button.sk-secondary,
 .sk-box.sk-secondary,
 .sk-circle.sk-secondary {
-  @include ui-rect(
-    var(--sn-stylekit-secondary-background-color),
-    var(--sn-stylekit-secondary-foreground-color),
-    true
-  );
+  @include ui-rect(var(--sn-stylekit-secondary-background-color), var(--sn-stylekit-secondary-foreground-color), true);
 }
 
 .sk-button.sk-secondary-contrast,
@@ -504,51 +492,31 @@ input[type='radio'] {
 .sk-button.neutral,
 .sk-box.neutral,
 .sk-circle.neutral {
-  @include ui-rect(
-    var(--sn-stylekit-neutral-color),
-    var(--sn-stylekit-neutral-contrast-color),
-    true
-  );
+  @include ui-rect(var(--sn-stylekit-neutral-color), var(--sn-stylekit-neutral-contrast-color), true);
 }
 
 .sk-button.info,
 .sk-box.info,
 .sk-circle.info {
-  @include ui-rect(
-    var(--sn-stylekit-info-color),
-    var(--sn-stylekit-info-contrast-color),
-    true
-  );
+  @include ui-rect(var(--sn-stylekit-info-color), var(--sn-stylekit-info-contrast-color), true);
 }
 
 .sk-button.warning,
 .sk-box.warning,
 .sk-circle.warning {
-  @include ui-rect(
-    var(--sn-stylekit-warning-color),
-    var(--sn-stylekit-warning-contrast-color),
-    true
-  );
+  @include ui-rect(var(--sn-stylekit-warning-color), var(--sn-stylekit-warning-contrast-color), true);
 }
 
 .sk-button.danger,
 .sk-box.danger,
 .sk-circle.danger {
-  @include ui-rect(
-    var(--sn-stylekit-danger-color),
-    var(--sn-stylekit-danger-contrast-color),
-    true
-  );
+  @include ui-rect(var(--sn-stylekit-danger-color), var(--sn-stylekit-danger-contrast-color), true);
 }
 
 .sk-button.success,
 .sk-box.success,
 .sk-circle.success {
-  @include ui-rect(
-    var(--sn-stylekit-success-color),
-    var(--sn-stylekit-success-contrast-color),
-    true
-  );
+  @include ui-rect(var(--sn-stylekit-success-color), var(--sn-stylekit-success-contrast-color), true);
 }
 
 .sk-notification.contrast,
@@ -593,47 +561,27 @@ input[type='radio'] {
 
 .sk-notification.neutral,
 .sk-input.neutral {
-  @include ui-rect(
-    var(--sn-stylekit-neutral-color),
-    var(--sn-stylekit-neutral-contrast-color),
-    false
-  );
+  @include ui-rect(var(--sn-stylekit-neutral-color), var(--sn-stylekit-neutral-contrast-color), false);
 }
 
 .sk-notification.info,
 .sk-input.info {
-  @include ui-rect(
-    var(--sn-stylekit-info-color),
-    var(--sn-stylekit-info-contrast-color),
-    false
-  );
+  @include ui-rect(var(--sn-stylekit-info-color), var(--sn-stylekit-info-contrast-color), false);
 }
 
 .sk-notification.warning,
 .sk-input.warning {
-  @include ui-rect(
-    var(--sn-stylekit-warning-color),
-    var(--sn-stylekit-warning-contrast-color),
-    false
-  );
+  @include ui-rect(var(--sn-stylekit-warning-color), var(--sn-stylekit-warning-contrast-color), false);
 }
 
 .sk-notification.danger,
 .sk-input.danger {
-  @include ui-rect(
-    var(--sn-stylekit-danger-color),
-    var(--sn-stylekit-danger-contrast-color),
-    false
-  );
+  @include ui-rect(var(--sn-stylekit-danger-color), var(--sn-stylekit-danger-contrast-color), false);
 }
 
 .sk-notification.success,
 .sk-input.success {
-  @include ui-rect(
-    var(--sn-stylekit-success-color),
-    var(--sn-stylekit-success-contrast-color),
-    false
-  );
+  @include ui-rect(var(--sn-stylekit-success-color), var(--sn-stylekit-success-contrast-color), false);
 }
 
 .sk-notification {

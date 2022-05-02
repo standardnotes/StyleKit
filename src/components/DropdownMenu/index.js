@@ -1,1 +1,1 @@
-export { default as DropdownMenu } from "./component";
+export { default as DropdownMenu } from './component'
