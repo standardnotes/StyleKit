@@ -52,7 +52,14 @@ export const dismissToast = action(toastStore, 'dismissToast', (store: WritableA
 
 export const addToast = action(toastStore, 'addToast', (store: WritableAtom<Toast[]>, options: ToastOptions) => {
   const existingToasts = store.get()
-  const id = options.id ?? nanoid()
+  const isToastIdDuplicate = existingToasts.findIndex((toast) => toast.id === options.id) > -1
+
+  const id = options.id && !isToastIdDuplicate ? options.id : nanoid()
+
+  if (isToastIdDuplicate) {
+    console.warn(`Generated new ID for toast instead of overriding toast of ID "${options.id}".
+If you want to update an existing toast, use the \`updateToast()\` function instead.`)
+  }
 
   const toast = {
     ...options,
