@@ -28,6 +28,7 @@ export const addTimedToast = (
   const toastId = addToast({
     ...initialOptions,
     message: initialOptions.message(timeRemainingInSeconds),
+    autoClose: false,
   })
 
   return [toastId, intervalId]
