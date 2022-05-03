@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.25.0](https://github.com/standardnotes/StyleKit/compare/v5.24.1...v5.25.0) (2022-05-03)
+
+
+### Features
+
+* generate new id instead of using existing id ([b226122](https://github.com/standardnotes/StyleKit/commit/b22612269eafff1f6c38bc3536d1405e6891c07d))
+* pause/resume toast on hover, page visibility/blur ([b44775a](https://github.com/standardnotes/StyleKit/commit/b44775a1ec908e976644c4c8ef01563bf0d5e539))
+
+
+### Bug Fixes
+
+* don't allow changing the id of an existing toast ([01c8b54](https://github.com/standardnotes/StyleKit/commit/01c8b54f47d3243663d8e19567c5d0c234934612))
+* don't render ToastContainer if no toasts exist ([94a6c6d](https://github.com/standardnotes/StyleKit/commit/94a6c6db1bcb3c64e1d9a8e767fe7bae6ad6d660))
+* override auto-close initial options for timed toast ([cdcee35](https://github.com/standardnotes/StyleKit/commit/cdcee35a0e2a0225ab0647d46384a5e4e3fc2a67))
+
 ### [5.24.1](https://github.com/standardnotes/StyleKit/compare/v5.24.0...v5.24.1) (2022-05-02)
 
 ## [5.24.0](https://github.com/standardnotes/StyleKit/compare/v5.23.0...v5.24.0) (2022-05-02)
