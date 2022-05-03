@@ -23,7 +23,7 @@ export type ToastOptions = CommonToastProperties & {
   id?: string
 }
 
-export type ToastUpdateOptions = Partial<ToastOptions>
+export type ToastUpdateOptions = Omit<Partial<ToastOptions>, 'id'>
 
 export type ToastState = {
   toasts: Toast[]
