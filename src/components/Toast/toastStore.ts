@@ -1,21 +1,8 @@
 import { nanoid } from 'nanoid'
 import { action, atom, WritableAtom } from 'nanostores'
-import { ToastType } from './enums'
 import { Toast, ToastOptions, ToastUpdateOptions } from './types'
 
 export const toastStore = atom<Toast[]>([])
-
-const autoCloseToast = (id: Toast['id'], options: Partial<ToastOptions>) => {
-  const autoClose =
-    options.autoClose ?? (!options.actions && options.type !== ToastType.Loading && options.type !== ToastType.Progress)
-  const duration = options.duration ?? DefaultToastDuration
-
-  if (autoClose) {
-    setTimeout(() => {
-      dismissToast(id)
-    }, duration)
-  }
-}
 
 export const updateToast = action(
   toastStore,
@@ -63,8 +50,6 @@ export const dismissToast = action(toastStore, 'dismissToast', (store: WritableA
   }, DelayBeforeRemovingToast)
 })
 
-const DefaultToastDuration = 4000
-
 export const addToast = action(toastStore, 'addToast', (store: WritableAtom<Toast[]>, options: ToastOptions) => {
   const existingToasts = store.get()
   const id = options.id ?? nanoid()
@@ -76,8 +61,6 @@ export const addToast = action(toastStore, 'addToast', (store: WritableAtom<Toas
   }
 
   store.set([...existingToasts, toast])
-
-  autoCloseToast(id, options)
 
   return id
 })

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { FunctionComponent } from 'preact'
-import { useEffect, useRef } from 'preact/hooks'
+import { Ref, useEffect } from 'preact/hooks'
+import { forwardRef } from 'preact/compat'
 import type { Toast as ToastPropType } from './types'
 import { CheckCircleFilledIcon, ClearCircleFilledIcon } from '../../assets/icons'
 import { dismissToast } from './toastStore'
@@ -41,9 +42,7 @@ type Props = {
   index: number
 }
 
-export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
-  const toastElementRef = useRef<HTMLDivElement>()
-
+export const Toast: FunctionComponent<Props> = forwardRef(({ toast, index }: Props, ref: Ref<HTMLDivElement>) => {
   const icon = iconForToastType(toast.type)
   const hasActions = toast.actions?.length > 0
   const hasProgress = toast.type === ToastType.Progress && toast.progress > -1
@@ -54,8 +53,8 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
   const currentAnimation = toast.dismissed ? exitAnimation : enterAnimation
 
   useEffect(() => {
-    if (toastElementRef.current && toast.dismissed) {
-      const { scrollHeight, style } = toastElementRef.current
+    if (ref.current && toast.dismissed) {
+      const { scrollHeight, style } = ref.current
 
       requestAnimationFrame(() => {
         style.minHeight = 'initial'
@@ -69,7 +68,7 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
         })
       })
     }
-  }, [toast.dismissed])
+  }, [ref, toast.dismissed])
 
   return (
     <div
@@ -86,7 +85,7 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
           dismissToast(toast.id)
         }
       }}
-      ref={toastElementRef}
+      ref={ref}
     >
       <div className={`flex items-center w-full ${hasActions ? 'p-2 pl-3' : hasProgress ? 'px-3 py-2.5' : 'p-3'}`}>
         {icon ? <div className="flex flex-shrink-0 items-center justify-center sn-icon mr-2">{icon}</div> : null}
@@ -127,4 +126,4 @@ export const Toast: FunctionComponent<Props> = ({ toast, index }) => {
       )}
     </div>
   )
-}
+})
