@@ -700,6 +700,7 @@ input[type='radio'] {
 
 svg.sk-circular-progress {
   $pi: 3.14159265358979;
+
   $circle-size: 18px;
   $stroke-width: $circle-size * (0.1 / 100) * 100 + 1;
   $radius: ($circle-size - $stroke-width) / 2;
@@ -732,6 +733,10 @@ svg.sk-circular-progress {
     @mixin set-progress($progress) {
       $dash: ($progress * $circumference) / 100;
       stroke-dasharray: $dash $circumference - $dash;
+    }
+
+    &.p-0 {
+      @include set-progress(0);
     }
 
     &.p-10 {
