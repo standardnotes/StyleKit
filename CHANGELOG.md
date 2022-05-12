@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.26.0](https://github.com/standardnotes/StyleKit/compare/v5.25.0...v5.26.0) (2022-05-12)
+
+
+### Features
+
+* circular progress bar ([#80](https://github.com/standardnotes/StyleKit/issues/80)) ([4664152](https://github.com/standardnotes/StyleKit/commit/4664152440018c773d2bb0272dfce682287c145a))
+
 ## [5.25.0](https://github.com/standardnotes/StyleKit/compare/v5.24.1...v5.25.0) (2022-05-03)
 
 
