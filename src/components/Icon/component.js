@@ -1,11 +1,10 @@
-import { h } from 'preact'
 import PropTypes from 'prop-types'
-import IconSprite from './icons-sprite.svg'
+import { IconsSpriteStylekit } from '@standardnotes/icons'
 
 const Icon = ({ name, width, height, className }) => {
   return (
     <svg className={`sn-icon ${className ? className : ''}`} width={width} height={height}>
-      <use href={IconSprite + `#ic-${name}`}></use>
+      <use href={IconsSpriteStylekit + `#ic-${name}`}></use>
     </svg>
   )
 }
