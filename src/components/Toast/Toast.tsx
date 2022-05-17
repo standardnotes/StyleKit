@@ -3,7 +3,7 @@ import { FunctionComponent } from 'preact'
 import { Ref, useEffect } from 'preact/hooks'
 import { forwardRef } from 'preact/compat'
 import type { Toast as ToastPropType } from './types'
-import { CheckCircleFilledIcon, ClearCircleFilledIcon } from '../../assets/icons'
+import { CheckCircleFilledIcon, ClearCircleFilledIcon } from '@standardnotes/icons'
 import { dismissToast } from './toastStore'
 import { ToastType } from './enums'
 

@@ -92,17 +92,6 @@ module.exports = (_, { mode }) => ({
           },
         ],
       },
-      {
-        test: /\.(svg)(\?.*)?$/i,
-        use: [
-          {
-            loader: '@svgr/webpack',
-            options: {
-              limit: 10000000,
-            },
-          },
-        ],
-      },
     ],
   },
   resolve: {
@@ -115,15 +104,6 @@ module.exports = (_, { mode }) => ({
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss'],
   },
   plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: '**/*.svg',
-          to: 'icons',
-          context: path.resolve(__dirname, 'src', 'assets', 'icons'),
-        },
-      ],
-    }),
     new MiniCssExtractPlugin({
       filename: 'stylekit.css',
     }),
