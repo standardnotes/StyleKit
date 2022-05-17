@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.27.0](https://github.com/standardnotes/StyleKit/compare/v5.26.0...v5.27.0) (2022-05-17)
+
+
+### Features
+
+* extract icons into separate package ([#81](https://github.com/standardnotes/StyleKit/issues/81)) ([a3f61b9](https://github.com/standardnotes/StyleKit/commit/a3f61b92ac9d5ea2f5d5b0910c8037d7885f450c))
+
 ## [5.26.0](https://github.com/standardnotes/StyleKit/compare/v5.25.0...v5.26.0) (2022-05-12)
 
 
