@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.29.0](https://github.com/standardnotes/StyleKit/compare/v5.28.0...v5.29.0) (2022-05-23)
+
+
+### Features
+
+* update theme colors ([265e5d6](https://github.com/standardnotes/StyleKit/commit/265e5d6445cd6eafc0430029286214899eb71d12))
+
 ## [5.28.0](https://github.com/standardnotes/StyleKit/compare/v5.27.1...v5.28.0) (2022-05-23)
 
 
