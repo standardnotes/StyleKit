@@ -13,12 +13,12 @@ export default {
         options: [
           'info',
           'black',
-          'grey-1',
-          'grey-2',
-          'grey-3',
-          'grey-4',
-          'grey-5',
-          'grey-6',
+          'passive-1',
+          'passive-2',
+          'passive-3',
+          'passive-4',
+          'passive-5',
+          'passive-6',
           'danger',
         ],
       },
@@ -37,9 +37,9 @@ Info.args = {
   variant: 'info',
 };
 
-export const Grey3 = DemoComponent.bind({});
+export const Passive3 = DemoComponent.bind({});
 
-Grey3.args = {
+Passive3.args = {
   label: 'Some Label',
-  variant: 'grey-3',
+  variant: 'passive-3',
 };

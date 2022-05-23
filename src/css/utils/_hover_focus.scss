@@ -1,5 +1,5 @@
-.hover\:bg-grey-3:hover {
-  background-color: var(--sn-stylekit-grey-3);
+.hover\:bg-passive-3:hover {
+  background-color: var(--sn-stylekit-passive-color-3);
 }
 
 .hover\:brightness-130:hover {
@@ -11,11 +11,11 @@
 }
 
 .hover\:bg-highlight:hover {
-  background-color: var(--sn-stylekit-list-item-highlight-color);
+  background-color: var(--sn-stylekit-passive-color-5);
 }
 
 .focus\:bg-highlight:focus {
-  background-color: var(--sn-stylekit-list-item-highlight-color);
+  background-color: var(--sn-stylekit-passive-color-5);
 }
 
 .hover\:bg-contrast:hover {

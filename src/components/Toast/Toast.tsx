@@ -74,7 +74,7 @@ export const Toast: FunctionComponent<Props> = forwardRef(({ toast, index }: Pro
     <div
       data-index={index}
       role="status"
-      className={`flex flex-col bg-grey-5 rounded opacity-0 animation-fill-forwards select-none min-w-max relative mt-3 ${currentAnimation}`}
+      className={`flex flex-col bg-passive-5 rounded opacity-0 animation-fill-forwards select-none min-w-max relative mt-3 ${currentAnimation}`}
       style={{
         boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.16)',
         transition: shouldReduceMotion ? undefined : 'all 0.2s ease',
@@ -98,7 +98,7 @@ export const Toast: FunctionComponent<Props> = forwardRef(({ toast, index }: Pro
                   paddingLeft: '0.45rem',
                   paddingRight: '0.45rem',
                 }}
-                className={`py-1 border-0 bg-transparent cursor-pointer font-semibold text-sm hover:bg-grey-3 rounded ${colorForToastType(
+                className={`py-1 border-0 bg-transparent cursor-pointer font-semibold text-sm hover:bg-passive-3 rounded ${colorForToastType(
                   toast.type,
                 )} ${index !== 0 ? 'ml-2' : ''}`}
                 onClick={() => {

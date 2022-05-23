@@ -41,19 +41,15 @@
 @include define-color('info-dark', 'info-color-darkened');
 @include define-color('success', 'success-color');
 
-@include define-color('grey-0');
-@include define-color('grey-1');
-@include define-color('grey-2');
-@include define-color('grey-3');
-@include define-color('grey-4');
-@include define-color('grey-4-opacity-variant');
-@include define-color('grey-5');
-@include define-color('grey-6');
-@include define-color('grey-super-light');
-
-@include define-color('black');
-@include define-color('white');
-@include define-color('dark-red');
+@include define-color('passive-0', 'passive-color-0');
+@include define-color('passive-1', 'passive-color-1');
+@include define-color('passive-2', 'passive-color-2');
+@include define-color('passive-3', 'passive-color-3');
+@include define-color('passive-4', 'passive-color-4');
+@include define-color('passive-4-opacity-varient', 'passive-color-4-opacity-variant');
+@include define-color('passive-5', 'passive-color-5');
+@include define-color('passive-6', 'passive-color-6');
+@include define-color('passive-super-light', 'passive-color-super-light');
 
 @for $i from 1 to 7 {
   @include define-color('accessory-tint-#{$i}', 'accessory-tint-color-#{$i}');
@@ -61,7 +57,7 @@
 
 .selected\:bg-color[data-selected],
 .selected\:bg-color[aria-selected='true'] {
-  background-color: var(--sn-stylekit-list-item-highlight-color);
+  background-color: var(--sn-stylekit-passive-color-5);
 }
 
 .selected\:fg-color[data-selected],

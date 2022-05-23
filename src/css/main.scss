@@ -13,19 +13,6 @@
   --sn-stylekit-font-size-h2: 0.975rem;
   --sn-stylekit-font-size-h1: 1.05625rem;
 
-  --sn-stylekit-white: #ffffff;
-  --sn-stylekit-black: #19191c;
-  --sn-stylekit-grey-0: #515357;
-  --sn-stylekit-grey-1: #72767e;
-  --sn-stylekit-grey-2: #bbbec4;
-  --sn-stylekit-grey-3: #dfe1e4;
-  --sn-stylekit-grey-4: #eeeff1;
-  --sn-stylekit-grey-4-opacity-variant: #bbbec43d;
-  --sn-stylekit-grey-5: #f4f5f7;
-  --sn-stylekit-grey-6: #e5e5e5;
-  --sn-stylekit-grey-super-light: #f9f9f9;
-  --sn-stylekit-dark-red: #cc2128;
-
   --sn-stylekit-neutral-color: #989898;
   --sn-stylekit-neutral-contrast-color: #ffffff;
 
@@ -40,7 +27,7 @@
   --sn-stylekit-warning-color: #f6a200;
   --sn-stylekit-warning-contrast-color: #ffffff;
 
-  --sn-stylekit-danger-color: #f80324;
+  --sn-stylekit-danger-color: #cc2128;
   --sn-stylekit-danger-contrast-color: #ffffff;
 
   --sn-stylekit-shadow-color: #c8c8c8;
@@ -77,8 +64,6 @@
 
   --sn-stylekit-general-border-radius: 2px;
 
-  --sn-stylekit-list-item-highlight-color: var(--sn-stylekit-grey-5);
-
   --sn-stylekit-simplified-chinese-font: 'Microsoft Yahei', '微软雅黑体';
   --sn-stylekit-monospace-font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, 'Ubuntu Mono', 'Courier New',
     monospace;
@@ -88,6 +73,16 @@
 
   --sn-stylekit-theme-type: light;
   --sn-stylekit-theme-name: sn-light;
+
+  --sn-stylekit-passive-color-0: #515357;
+  --sn-stylekit-passive-color-1: #72767e;
+  --sn-stylekit-passive-color-2: #bbbec4;
+  --sn-stylekit-passive-color-3: #dfe1e4;
+  --sn-stylekit-passive-color-4: #eeeff1;
+  --sn-stylekit-passive-color-4-opacity-variant: #bbbec43d;
+  --sn-stylekit-passive-color-5: #f4f5f7;
+  --sn-stylekit-passive-color-6: #e5e5e5;
+  --sn-stylekit-passive-color-super-light: #f9f9f9;
 
   --sn-stylekit-accessory-tint-color-1: #086dd6;
   --sn-stylekit-accessory-tint-color-2: #ea6595;

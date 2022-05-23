@@ -5,9 +5,11 @@
 .border-0 {
   border-width: 0px;
 }
+
 .border-1 {
   border-width: 1px;
 }
+
 .border-2 {
   border-width: 2px;
 }
@@ -70,10 +72,6 @@
 
 .shadow-overlay {
   box-shadow: 0px 4px 24px 0px #00000029;
-}
-
-.border-dark-red {
-  border-color: var(--sn-stylekit-dark-red);
 }
 
 .border-bottom-1-gray {
