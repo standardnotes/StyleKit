@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.28.0](https://github.com/standardnotes/StyleKit/compare/v5.27.1...v5.28.0) (2022-05-23)
+
+
+### Features
+
+* remove grey css variables in favor of passive ([449dea7](https://github.com/standardnotes/StyleKit/commit/449dea7edf1c6a62f2cfb2000e97e77e0316c7e2))
+
 ### [5.27.1](https://github.com/standardnotes/StyleKit/compare/v5.27.0...v5.27.1) (2022-05-18)
 
 ## [5.27.0](https://github.com/standardnotes/StyleKit/compare/v5.26.0...v5.27.0) (2022-05-17)
