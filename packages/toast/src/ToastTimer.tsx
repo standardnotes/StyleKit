@@ -1,9 +1,7 @@
-import * as React from 'react'
-import { FunctionComponent } from 'preact'
+import { FunctionComponent, useCallback, useEffect, useRef } from 'react'
 import { Toast } from './Toast'
 import { Toast as ToastPropType } from './types'
 import { ToastType } from './enums'
-import { useCallback, useEffect, useRef } from 'preact/hooks'
 import { dismissToast } from './toastStore'
 
 type Props = {
@@ -21,7 +19,8 @@ export const ToastTimer: FunctionComponent<Props> = ({ toast, index }) => {
   const toastElementRef = useRef<HTMLDivElement>(null)
   const toastTimerIdRef = useRef<number>()
 
-  const shouldAutoClose = toast.autoClose ?? getDefaultForAutoClose(toast?.actions?.length < 1, toast.type)
+  const toastActionLength = toast?.actions?.length || 0
+  const shouldAutoClose = toast.autoClose ?? getDefaultForAutoClose(toastActionLength < 1, toast.type)
   const duration = toast.duration ?? getDefaultToastDuration(toast.type)
 
   const startTimeRef = useRef(duration)
@@ -80,16 +79,20 @@ export const ToastTimer: FunctionComponent<Props> = ({ toast, index }) => {
     }
 
     const toastElement = toastElementRef.current
-    toastElement.addEventListener('mouseenter', handleMouseEnter)
-    toastElement.addEventListener('mouseleave', handleMouseLeave)
+    if (toastElement) {
+      toastElement.addEventListener('mouseenter', handleMouseEnter)
+      toastElement.addEventListener('mouseleave', handleMouseLeave)
+    }
     document.addEventListener('visibilitychange', handlePageVisibility)
     window.addEventListener('focus', handlePageFocus)
     window.addEventListener('blur', handlePageBlur)
 
     return () => {
       clearTimer()
-      toastElement.removeEventListener('mouseenter', handleMouseEnter)
-      toastElement.removeEventListener('mouseleave', handleMouseLeave)
+      if (toastElement) {
+        toastElement.removeEventListener('mouseenter', handleMouseEnter)
+        toastElement.removeEventListener('mouseleave', handleMouseLeave)
+      }
       document.removeEventListener('visibilitychange', handlePageVisibility)
       window.removeEventListener('focus', handlePageFocus)
       window.removeEventListener('blur', handlePageBlur)
