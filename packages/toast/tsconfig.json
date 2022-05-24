@@ -1,0 +1,12 @@
+{
+  "extends": "../../node_modules/@standardnotes/config/src/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    // "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+  },
+  "exclude": ["dist", "node_modules"]
+}

@@ -1,8 +1,8 @@
 {
   "exclude": ["dist/**/*"],
-  "include": ["src/**/*", "src/assets/types.d.ts"],
+  "include": ["packages/styles/src/**/*", "packages/styles/src/assets/types.d.ts"],
   "compilerOptions": {
-    "rootDir": "src",
+    "rootDir": "packages/styles/src",
     "outDir": "dist",
     "declarationDir": "dist",
     "allowJs": true,
