@@ -79,16 +79,20 @@ export const ToastTimer: FunctionComponent<Props> = ({ toast, index }) => {
     }
 
     const toastElement = toastElementRef.current
-    toastElement!.addEventListener('mouseenter', handleMouseEnter)
-    toastElement!.addEventListener('mouseleave', handleMouseLeave)
+    if (toastElement) {
+      toastElement.addEventListener('mouseenter', handleMouseEnter)
+      toastElement.addEventListener('mouseleave', handleMouseLeave)
+    }
     document.addEventListener('visibilitychange', handlePageVisibility)
     window.addEventListener('focus', handlePageFocus)
     window.addEventListener('blur', handlePageBlur)
 
     return () => {
       clearTimer()
-      toastElement!.removeEventListener('mouseenter', handleMouseEnter)
-      toastElement!.removeEventListener('mouseleave', handleMouseLeave)
+      if (toastElement) {
+        toastElement.removeEventListener('mouseenter', handleMouseEnter)
+        toastElement.removeEventListener('mouseleave', handleMouseLeave)
+      }
       document.removeEventListener('visibilitychange', handlePageVisibility)
       window.removeEventListener('focus', handlePageFocus)
       window.removeEventListener('blur', handlePageBlur)

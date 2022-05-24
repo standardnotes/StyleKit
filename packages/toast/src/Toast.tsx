@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, forwardRef } from 'react'
+import { useEffect, forwardRef, RefObject } from 'react'
 import type { Toast as ToastPropType } from './types'
 import { CheckCircleFilledIcon, ClearCircleFilledIcon } from '@standardnotes/icons'
 import { dismissToast } from './toastStore'
@@ -39,8 +39,8 @@ type Props = {
   index: number
 }
 
-export const Toast: FunctionComponent<Props> = forwardRef(
-  ({ toast, index }: Props, ref: React.ForwardedRef<HTMLDivElement>) => {
+export const Toast = forwardRef<HTMLDivElement, Props>(
+  ({ toast, index }, ref) => {
     const icon = iconForToastType(toast.type)
     const toastActionLength = toast?.actions?.length || 0
     const hasActions = toastActionLength > 0
@@ -52,8 +52,9 @@ export const Toast: FunctionComponent<Props> = forwardRef(
     const currentAnimation = toast.dismissed ? exitAnimation : enterAnimation
 
     useEffect(() => {
-      if (ref.current && toast.dismissed) {
-        const { scrollHeight, style } = ref
+      const toastElement = ref && (ref as RefObject<HTMLDivElement>).current
+      if (toastElement && toast.dismissed) {
+        const { scrollHeight, style } = toastElement
 
         requestAnimationFrame(() => {
           style.minHeight = 'initial'
