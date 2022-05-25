@@ -1,9 +1,7 @@
-import * as React from 'react'
-import { FunctionComponent } from 'preact'
+import { useCallback, useEffect, useRef, FunctionComponent } from 'react'
 import { Toast } from './Toast'
 import { Toast as ToastPropType } from './types'
 import { ToastType } from './enums'
-import { useCallback, useEffect, useRef } from 'preact/hooks'
 import { dismissToast } from './toastStore'
 
 type Props = {

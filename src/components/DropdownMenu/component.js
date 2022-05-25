@@ -1,4 +1,4 @@
-import { h, Fragment } from 'preact'
+import { Fragment } from 'react'
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button'
 import { Icon } from '@Components/Icon'
 import PropTypes from 'prop-types'

@@ -1,6 +1,5 @@
-import * as React from 'react'
-import { FunctionComponent } from 'preact'
-import { useStore } from '@nanostores/preact'
+import { FunctionComponent } from 'react'
+import { useStore } from '@nanostores/react'
 import { toastStore } from './toastStore'
 import { ToastTimer } from './ToastTimer'
 

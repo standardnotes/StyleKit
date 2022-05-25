@@ -1,5 +1,3 @@
-import { h } from 'preact';
-
 export default {
   title: 'Design System/Styles/Colors',
   component: DemoComponent,

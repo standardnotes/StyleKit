@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import { Button } from '@Components/Button';
 
 export default {

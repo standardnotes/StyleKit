@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import { DropdownMenu } from '@Components/DropdownMenu';
 import { Icon } from '@Components/Icon';
 

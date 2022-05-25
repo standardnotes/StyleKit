@@ -1,4 +1,3 @@
-import { h } from 'preact'
 import { Menu, MenuButton } from '@reach/menu-button'
 import PropTypes from 'prop-types'
 

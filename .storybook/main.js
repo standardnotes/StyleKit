@@ -6,14 +6,9 @@ module.exports = {
 
   /**
    * Extending Storybook's webpack config.
-   * The compatibility layer is what makes React-based modules work with Preact.
-   * This is necessary for @reach packages to work.
    */
   webpackFinal: config => {
     config.entry.push(path.resolve(__dirname, '../src/css/main.scss'));
-    config.resolve.alias["react"] = 'preact/compat';
-    config.resolve.alias["react-dom"] = 'preact/compat';
-    config.resolve.alias["react-dom/test-utils"] = 'preact/test-utils';
     config.resolve.alias["@Components"] = path.resolve(__dirname, '../src/components');
     config.module.rules.push({
       test: /\.s[ac]ss$/i,

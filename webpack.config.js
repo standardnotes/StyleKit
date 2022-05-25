@@ -5,7 +5,6 @@ module.exports = (_, { mode }) => ({
   entry: {
     stylekit: path.resolve(__dirname, 'src/stylekit.js'),
     components: path.resolve(__dirname, 'src/index.js'),
-    'web-components': path.resolve(__dirname, 'src/web-components.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -28,12 +27,6 @@ module.exports = (_, { mode }) => ({
     },
   },
   externals: {
-    preact: {
-      commonjs: 'preact',
-      commonjs2: 'preact',
-      amd: 'preact',
-      root: '_',
-    },
     react: {
       commonjs: 'react',
       commonjs2: 'react',
@@ -68,18 +61,7 @@ module.exports = (_, { mode }) => ({
         ],
       },
       {
-        test: /\.js[x]?$/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['preact'],
-          plugins: [
-            ['@babel/plugin-proposal-class-properties'],
-            ['@babel/plugin-transform-react-jsx', { pragma: 'h' }],
-          ],
-        },
-      },
-      {
-        test: /\.(ts|tsx)?$/,
+        test: /\.(js|tsx?)$/,
         exclude: /(node_modules)/,
         use: [
           'babel-loader',
@@ -95,9 +77,6 @@ module.exports = (_, { mode }) => ({
   },
   resolve: {
     alias: {
-      react: 'preact/compat',
-      'react-dom': 'preact/compat',
-      'react-dom/test-utils': 'preact/test-utils',
       '@Components': path.resolve(__dirname, 'src/components'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss'],

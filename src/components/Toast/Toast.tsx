@@ -1,11 +1,8 @@
-import * as React from 'react'
-import { FunctionComponent } from 'preact'
-import { Ref, useEffect } from 'preact/hooks'
-import { forwardRef } from 'preact/compat'
 import type { Toast as ToastPropType } from './types'
 import { CheckCircleFilledIcon, ClearCircleFilledIcon } from '@standardnotes/icons'
 import { dismissToast } from './toastStore'
 import { ToastType } from './enums'
+import { forwardRef, RefObject, useEffect } from 'react'
 
 const prefersReducedMotion = () => {
   const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)')
@@ -42,7 +39,7 @@ type Props = {
   index: number
 }
 
-export const Toast: FunctionComponent<Props> = forwardRef(({ toast, index }: Props, ref: Ref<HTMLDivElement>) => {
+export const Toast = forwardRef(({ toast, index }: Props, ref: RefObject<HTMLDivElement>) => {
   const icon = iconForToastType(toast.type)
   const hasActions = toast.actions?.length > 0
   const hasProgress = toast.type === ToastType.Progress && toast.progress > -1

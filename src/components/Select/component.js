@@ -1,4 +1,4 @@
-import { h, Fragment } from 'preact'
+import { Fragment } from 'react'
 import { ListboxInput, ListboxButton, ListboxPopover, ListboxList, ListboxOption } from '@reach/listbox'
 import '@reach/listbox/styles.css'
 import { Icon } from '@Components/Icon'

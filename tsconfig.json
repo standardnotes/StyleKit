@@ -1,13 +1,18 @@
 {
-  "exclude": ["dist/**/*"],
-  "include": ["src/**/*", "src/assets/types.d.ts"],
+  "exclude": [
+    "dist/**/*"
+  ],
+  "include": [
+    "src/**/*",
+    "src/assets/types.d.ts"
+  ],
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
     "declarationDir": "dist",
     "allowJs": true,
     "sourceMap": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "target": "ES6",
     "moduleResolution": "node",
     "emitDeclarationOnly": true,
