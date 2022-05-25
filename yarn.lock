@@ -2235,10 +2235,10 @@
     eslint-plugin-prettier "^4.0.0"
     prettier "^2.6.2"
 
-"@standardnotes/icons@^1.1.7":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@standardnotes/icons/-/icons-1.1.7.tgz#4523d8e2e3aa34d0e921df802d54c0babe054279"
-  integrity sha512-yHB/KInj7qSmtnUqtTo6CPttu+2+oAwdANfjE3a69sgS7nVBxUuwSHHxb9xUOKpJBmipFjJi5F0YVF9kLmHiwg==
+"@standardnotes/icons@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@standardnotes/icons/-/icons-1.1.8.tgz#958b73cc3dd68c7fe31dcceb8ee48627093ab468"
+  integrity sha512-RhNzHEbSYFVwVz5+BqDAC5wJZ8DkQlboofwPxuTLSrmezjBeNi9kOw9metoC1Sf82u3bXJr5fgXAC8DEYXYKTg==
 
 "@storybook/addon-a11y@^6.5.5":
   version "6.5.5"
