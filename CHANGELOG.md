@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.29.3](https://github.com/standardnotes/StyleKit/compare/v5.29.2...v5.29.3) (2022-05-30)
+
+
+### Bug Fixes
+
+* class name ([f1d3580](https://github.com/standardnotes/StyleKit/commit/f1d3580dfa99a782475b0bdd2ab2f0531cd846cd))
+
 ### [5.29.2](https://github.com/standardnotes/StyleKit/compare/v5.29.1...v5.29.2) (2022-05-25)
 
 ### [5.29.1](https://github.com/standardnotes/StyleKit/compare/v5.29.0...v5.29.1) (2022-05-25)
